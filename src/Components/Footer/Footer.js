@@ -10,7 +10,7 @@ import you from '../images/youtube-64.png'
 const Footer = () => {
     return (
         <Container fluid className='footer pb-5 ps-5'>
-            <Container className='text-secondary mt-5 pt-3'>
+            <Container className='text-secondary my-5 pt-3'>
                 <img src={foot} alt="" height='50' width='150' />
                 <p className='text-light mt-2 '>Learn in-demand tech skills in half the time</p>
                 <hr className='bg-light' />
