@@ -1,3 +1,11 @@
 .middle {
     background-color: rgba(237, 241, 242, 0.275);
 }
+
+.top-video {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.shadow {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
