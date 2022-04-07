@@ -10,6 +10,7 @@ import ar from '../images/icons8-arrow-.png'
 
 import useData from '../dataloadHooks/dataload'
 import ReviewCard from '../Common/ReviewCard'
+import NormalCards from '../Common/NormalCards'
 export default function Individual() {
     const [item] = useData();
 
@@ -32,56 +33,23 @@ export default function Individual() {
             {/* middle part */}
             <Container fluid className='text-center py-5 middle'>
                 {/* middle part */}
-                <section className='container mt-5'>
-                    <h1 className=''>How we help</h1>
-                    <Row className='my-5'>
-                        <Col xs={4} className='mt-5'>
-                            <Card>
-                                <Card.Img variant="img-fluid" height={250} src="https://png.pngtree.com/png-vector/20200428/ourlarge/pngtree-illustration-of-a-man-working-on-a-laptop-png-image_2195561.jpg" />
-                                <Card.Body className='text-start'>
-                                    <Card.Title className='fw-bold'>Shake the rust</Card.Title>
-                                    <Card.Text>
-                                        Has it been a while since you used a certain skill? We hear that a lot. Our hands-on courses help you practice right in your browser, so you'll sharpen those skills in no time.
-                                    </Card.Text>
-                                </Card.Body>
-
-                            </Card>
-                        </Col>
-                        <Col xs={4}>
-                            <Card>
-                                <Card.Img variant="img-fluid" height={250} src="https://png.pngtree.com/png-vector/20200428/ourlarge/pngtree-illustration-of-a-man-working-on-a-laptop-png-image_2195561.jpg" />
-                                <Card.Body className='text-start'>
-                                    <Card.Title className='fw-bold' >Interview prep</Card.Title>
-                                    <Card.Text>
-                                        Land your dream job. We can help whether you're days or weeks away from your next technical interview. Our customers now work at FAANG and Fortune500 companies around the world.
-                                    </Card.Text>
-                                </Card.Body>
-
-                            </Card>
-                        </Col>
-                        <Col xs={4} className='mt-5'>
-                            <Card>
-                                <Card.Img variant="img-fluid" height={250} src="https://png.pngtree.com/png-vector/20200428/ourlarge/pngtree-illustration-of-a-man-working-on-a-laptop-png-image_2195561.jpg" />
-                                <Card.Body className='text-start'>
-                                    <Card.Title className='fw-bold'>Grow your career</Card.Title>
-                                    <Card.Text>
-                                        95% of engineers want to learn a new skill each year. Join them and accelerate your growth with our interactive experiences that help you test, learn, and grow.
-                                    </Card.Text>
-                                </Card.Body>
-                                <Card.Footer>
-                                    <small className="text-muted">Last updated 3 mins ago</small>
-                                </Card.Footer>
-                            </Card>
-                        </Col>
-                    </Row>
-
-                </section>
+                <NormalCards
+                    titleSection={"How we help"}
+                    card1Msg={"Has it been a while since you used a certain skill? We hear that a lot. Our hands-on courses help you practice right in your browser, so you'll sharpen those skills in no time."}
+                    card1Img={"https://png.pngtree.com/png-vector/20200428/ourlarge/pngtree-illustration-of-a-man-working-on-a-laptop-png-image_2195561.jpg"}
+                    card1Name={"Shake the rust"}
+                    card2Msg={"Land your dream job. We can help whether you're days or weeks away from your next technical interview. Our customers now work at FAANG and Fortune500 companies around the world."}
+                    card2Img={"https://png.pngtree.com/png-vector/20200428/ourlarge/pngtree-illustration-of-a-man-working-on-a-laptop-png-image_2195561.jpg"}
+                    card2Name={"Interview prep"}
+                    card3Msg={"95% of engineers want to learn a new skill each year. Join them and accelerate your growth with our interactive experiences that help you test, learn, and grow."}
+                    card3Img={"https://png.pngtree.com/png-vector/20200428/ourlarge/pngtree-illustration-of-a-man-working-on-a-laptop-png-image_2195561.jpg"}
+                    card3Name={"Grow your career"}
+                />
 
             </Container>
 
-            {/* 2nd last part */}
+            {/* Educative difference */}
             <Container fluid className='text-center py-5 '>
-                {/* middle part */}
                 <section className='container my-5 '>
                     <h1 className=''>The Educative Difference</h1>
                     <Row className='my-5 py-5'>

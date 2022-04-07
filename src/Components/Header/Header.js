@@ -35,12 +35,12 @@ export default function Header() {
                                 <NavLink to='/individual-learner'> <NavDropdown.Item href="#action4">Developers</NavDropdown.Item></NavLink>
                             </NavDropdown>
                             <NavDropdown title="Products" id="navbarScrollingDropdown" >
-                                <NavDropdown.Item href="#action3">Learning for teams</NavDropdown.Item>
-                                <NavDropdown.Item href="#action4">Learning for individuals</NavDropdown.Item>
-                                <NavDropdown.Item href="#action3">Onboarding</NavDropdown.Item>
-                                <NavDropdown.Item href="#action4">Assesments</NavDropdown.Item>
-                                <NavDropdown.Item href="#action3">Personalized learning plans</NavDropdown.Item>
-                                <NavDropdown.Item href="#action4">Projects</NavDropdown.Item>
+                                <NavLink to='/upskill'> <NavDropdown.Item href="#action3">Learning for teams</NavDropdown.Item></NavLink >
+                                <NavLink to='/upskill'><NavDropdown.Item href="#action4">Learning for individuals</NavDropdown.Item></NavLink >
+                                <NavLink to='/upskill'><NavDropdown.Item href="#action3">Onboarding</NavDropdown.Item></NavLink >
+                                <NavLink to='/upskill'><NavDropdown.Item href="#action4">Assesments</NavDropdown.Item></NavLink >
+                                <NavLink to='/upskill'><NavDropdown.Item href="#action3">Personalized learning plans</NavDropdown.Item></NavLink >
+                                <NavLink to='/upskill'><NavDropdown.Item href="#action4">Projects</NavDropdown.Item></NavLink >
                             </NavDropdown>
                             <NavDropdown title="Pricing" id="navbarScrollingDropdown" >
                                 <NavDropdown.Item href="#action3">for individuals</NavDropdown.Item>
