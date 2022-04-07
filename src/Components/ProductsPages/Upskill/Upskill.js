@@ -2,7 +2,6 @@ import React from 'react'
 import { Button, Card, Col, Container, Row } from 'react-bootstrap'
 import Demo from '../../Common/Demo'
 import NormalCards from '../../Common/NormalCards'
-import ReviewCard from '../../Common/ReviewCard'
 import up0 from '../../images/up0.png'
 import up1 from '../../images/up1.png'
 import up2 from '../../images/up2.png'
@@ -13,10 +12,12 @@ export default function Upskill() {
             {/* top part */}
             <Container className='my-5'>
                 <section className='text-center '>
-                    <h2 className=''>Your future starts here.</h2>
-                    <h4 className=' mt-3  ps-1'>World-class courses for world-class software developers</h4>
+                    <h2 className='fs-1 fw-bold'>Upskill Your Team.</h2>
+                    <h3 className=' fs-2 mt-3'>Improve Their Code and Career.</h3>
+                    <p className=' mt-5 '>Educative helps engineering managers and their teams learn, practice,<br />and test their coding skills using hands-on, interactive tools right from their internet browser.</p>
+                    <p className=' '></p>
                     <div className=" mt-3   ">
-                        <Button className='p-3 m-3 w-25' href="#">Start a free trial</Button>
+                        <Button className='p-3 m-3 w-25' href="#">Request a demo</Button>
                     </div>
                     <div >
                         <img className='img-fluid w-50' src={up0} alt="" />
