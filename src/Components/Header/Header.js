@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Button, Container, Form, FormControl, Nav, Navbar, NavDropdown } from 'react-bootstrap'
+import { NavLink } from 'react-router-dom';
 import logo from '../images/educate.png'
 import arrow from '../images/icons8-arrow-24.png'
 
@@ -30,8 +31,8 @@ export default function Header() {
                         <Nav className="me-auto fw-bold">
                             {/* <Nav.Link href="#home">Solution</Nav.Link> */}
                             <NavDropdown title="Solution" id="navbarScrollingDropdown" >
-                                <NavDropdown.Item href="#action3">Developer team</NavDropdown.Item>
-                                <NavDropdown.Item href="#action4">Developers</NavDropdown.Item>
+                                <NavLink to='/business'>    <NavDropdown.Item href="#action3">Developer team</NavDropdown.Item></NavLink>
+                                <NavLink to='/individual-learner'> <NavDropdown.Item href="#action4">Developers</NavDropdown.Item></NavLink>
                             </NavDropdown>
                             <NavDropdown title="Products" id="navbarScrollingDropdown" >
                                 <NavDropdown.Item href="#action3">Learning for teams</NavDropdown.Item>
