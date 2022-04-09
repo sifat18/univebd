@@ -20,6 +20,7 @@ export default function Onboarding() {
     const [flag3, setFlag3] = useState(false)
     const handleOnb = (param) => {
         if (param === 'onb') {
+            setFlag(true)
             setFlag2(false)
             setFlag3(false)
         }

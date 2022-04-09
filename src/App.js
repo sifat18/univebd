@@ -12,6 +12,8 @@ import {
 import Individual from './Components/Developer/Individual';
 import Upskill from './Components/ProductsPages/Upskill/Upskill';
 import Onboarding from './Components/ProductsPages/Onboarding/Onboarding';
+import LearningPlan from './Components/ProductsPages/LearningPlan/LearningPlan';
+import Projects from './Components/ProductsPages/Projects/Projects';
 
 function App() {
   return (
@@ -27,7 +29,8 @@ function App() {
           <Route path="/individual-learner" element={<Individual />} />
           <Route path="/upskill" element={<Upskill />} />
           <Route path="/onboarding" element={<Onboarding />} />
-          <Route path="/learning-plans" element={<Upskill />} />
+          <Route path="/learning-plans" element={<LearningPlan />} />
+          <Route path="/projects" element={<Projects />} />
         </Routes>
         <Footer />
 

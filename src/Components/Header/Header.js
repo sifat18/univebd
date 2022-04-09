@@ -40,7 +40,7 @@ export default function Header() {
                                 <NavLink to='/onboarding'><NavDropdown.Item href="#action3">Onboarding</NavDropdown.Item></NavLink >
                                 <NavLink to='/upskill'><NavDropdown.Item href="#action4">Assesments</NavDropdown.Item></NavLink >
                                 <NavLink to='/learning-plans'><NavDropdown.Item href="#action3">Personalized learning plans</NavDropdown.Item></NavLink >
-                                <NavLink to='/upskill'><NavDropdown.Item href="#action4">Projects</NavDropdown.Item></NavLink >
+                                <NavLink to='/projects'><NavDropdown.Item href="#action4">Projects</NavDropdown.Item></NavLink >
                             </NavDropdown>
                             <NavDropdown title="Pricing" id="navbarScrollingDropdown" >
                                 <NavDropdown.Item href="#action3">for individuals</NavDropdown.Item>
