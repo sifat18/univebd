@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Card, Col, Container, Row } from 'react-bootstrap'
+import { Button, Col, Container, Row } from 'react-bootstrap'
 import Demo from '../../Common/Demo'
 import NormalCards from '../../Common/NormalCards'
 import up0 from '../../images/up0.png'

@@ -1,0 +1,8 @@
+.onbButton {
+    color: black;
+}
+
+.onbButton:hover {
+    background-color: rgb(52, 52, 239);
+    color: white;
+}

@@ -11,6 +11,7 @@ import {
 } from "react-router-dom";
 import Individual from './Components/Developer/Individual';
 import Upskill from './Components/ProductsPages/Upskill/Upskill';
+import Onboarding from './Components/ProductsPages/Onboarding/Onboarding';
 
 function App() {
   return (
@@ -25,6 +26,8 @@ function App() {
           <Route path="/learn" element={<Learn />} />
           <Route path="/individual-learner" element={<Individual />} />
           <Route path="/upskill" element={<Upskill />} />
+          <Route path="/onboarding" element={<Onboarding />} />
+          <Route path="/learning-plans" element={<Upskill />} />
         </Routes>
         <Footer />
 

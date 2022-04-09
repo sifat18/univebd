@@ -37,9 +37,9 @@ export default function Header() {
                             <NavDropdown title="Products" id="navbarScrollingDropdown" >
                                 <NavLink to='/upskill'> <NavDropdown.Item href="#action3">Learning for teams</NavDropdown.Item></NavLink >
                                 <NavLink to='/upskill'><NavDropdown.Item href="#action4">Learning for individuals</NavDropdown.Item></NavLink >
-                                <NavLink to='/upskill'><NavDropdown.Item href="#action3">Onboarding</NavDropdown.Item></NavLink >
+                                <NavLink to='/onboarding'><NavDropdown.Item href="#action3">Onboarding</NavDropdown.Item></NavLink >
                                 <NavLink to='/upskill'><NavDropdown.Item href="#action4">Assesments</NavDropdown.Item></NavLink >
-                                <NavLink to='/upskill'><NavDropdown.Item href="#action3">Personalized learning plans</NavDropdown.Item></NavLink >
+                                <NavLink to='/learning-plans'><NavDropdown.Item href="#action3">Personalized learning plans</NavDropdown.Item></NavLink >
                                 <NavLink to='/upskill'><NavDropdown.Item href="#action4">Projects</NavDropdown.Item></NavLink >
                             </NavDropdown>
                             <NavDropdown title="Pricing" id="navbarScrollingDropdown" >
