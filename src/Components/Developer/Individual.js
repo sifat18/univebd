@@ -11,6 +11,7 @@ import ar from '../images/icons8-arrow-.png'
 import useData from '../dataloadHooks/dataload'
 import ReviewCard from '../Common/ReviewCard'
 import NormalCards from '../Common/NormalCards'
+import PriceCard from '../Common/PriceCard'
 export default function Individual() {
     const [item] = useData();
 
@@ -30,9 +31,8 @@ export default function Individual() {
                     </div>
                 </section>
             </Container>
-            {/* middle part */}
+            {/* how can we help */}
             <Container fluid className='text-center py-5 middle'>
-                {/* middle part */}
                 <NormalCards
                     titleSection={"How we help"}
                     card1Msg={"Has it been a while since you used a certain skill? We hear that a lot. Our hands-on courses help you practice right in your browser, so you'll sharpen those skills in no time."}
@@ -83,7 +83,7 @@ export default function Individual() {
                 </section>
 
             </Container>
-
+            {/* start coding */}
             <Container fluid className='text-center py-5 middle'>
                 <section className='container mt-5'>
                     <h3 className='text-center fw-bold fs-2'>Stop scrolling. Start coding. </h3>
@@ -117,6 +117,7 @@ export default function Individual() {
                 </section>
 
             </Container>
+            {/* curated paths */}
             <Container fluid className='text-center py-5 '>
                 <section className='container mt-5'>
                     <h1 className=''>Curated Paths</h1>
@@ -188,68 +189,10 @@ export default function Individual() {
                 </section>
 
             </Container>
+            {/* pricing */}
             <Container fluid className='text-center py-5 middle'>
-                {/* middle part */}
-                <section className='container mt-5'>
-                    <h1 className=''>Simple pricing, uniquely yours</h1>
-                    <Row className='my-5'>
-                        <Col xs={4} className='mt-5'>
-                            <Card className="text-center pt-5">
-                                <Card.Title>Annual Plan</Card.Title>
-                                <p className='text-decoration-line-through'>$16.66</p>
-                                <h4 className='text-primary fs-2'>$11.<span className='text-primary fs-4'>66</span><span className='text-dark'>/per month</span></h4>
-                                <p>discounted price for </p>
-                                <p className='fs-5'> $139 billed annually</p>
-                                <Button variant="outline-primary text-center w-50 mx-auto">Get Unlimited</Button>
-                                <p className='text-decoration-underline'>Choose a 2 year plan</p>
-                                <Card.Body className='text-start mx-auto my-3'>
-                                    <p><img src={check} alt="" />24 months of unlimited access</p>
-                                    <p><img src={check} alt="" />Completion certificates</p>
-                                    <p><img src={check} alt="" />New courses every week</p>
-                                    <p><img src={check} alt="" />Early access to upcoming courses</p>
-                                </Card.Body>
-                                <Card.Footer className="text-muted">Gift A subscription</Card.Footer>
-                            </Card>
-                        </Col>
-                        <Col xs={4}>
-                            <Card className="text-center pt-5">
-                                <Card.Title>Annual Plan</Card.Title>
-                                <p className='text-decoration-line-through'>$16.66</p>
-                                <h4 className='text-primary fs-2'>$11.<span className='text-primary fs-4'>66</span><span className='text-dark'>/per month</span></h4>
-                                <p>discounted price for </p>
-                                <p className='fs-5'> $139 billed annually</p>
-                                <Button variant="outline-primary text-center w-50 mx-auto">Get Unlimited</Button>
-                                <p className='text-decoration-underline'>Choose a 2 year plan</p>
-                                <Card.Body className='text-start mx-auto my-3'>
-                                    <p><img src={check} alt="" />24 months of unlimited access</p>
-                                    <p><img src={check} alt="" />Completion certificates</p>
-                                    <p><img src={check} alt="" />New courses every week</p>
-                                    <p><img src={check} alt="" />Early access to upcoming courses</p>
-                                </Card.Body>
-                                <Card.Footer className="text-muted">Gift A subscription</Card.Footer>
-                            </Card>
-                        </Col>
-                        <Col xs={4} className='mt-5'>
-                            <Card className="text-center pt-5">
-                                <Card.Title>Annual Plan</Card.Title>
-                                <p className='text-decoration-line-through'>$16.66</p>
-                                <h4 className='text-primary fs-2'>$11.<span className='text-primary fs-4'>66</span><span className='text-dark'>/per month</span></h4>
-                                <p>discounted price for </p>
-                                <p className='fs-5'> $139 billed annually</p>
-                                <Button variant="outline-primary text-center w-50 mx-auto">Get Unlimited</Button>
-                                <p className='text-decoration-underline'>Choose a 2 year plan</p>
-                                <Card.Body className='text-start mx-auto my-3'>
-                                    <p><img src={check} alt="" />24 months of unlimited access</p>
-                                    <p><img src={check} alt="" />Completion certificates</p>
-                                    <p><img src={check} alt="" />New courses every week</p>
-                                    <p><img src={check} alt="" />Early access to upcoming courses</p>
-                                </Card.Body>
-                                <Card.Footer className="text-muted">Gift A subscription</Card.Footer>
-                            </Card>
-                        </Col>
-                    </Row>
-
-                </section>
+                <h1 className=''>Simple pricing, uniquely yours</h1>
+                <PriceCard />
 
             </Container>
 

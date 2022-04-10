@@ -14,6 +14,8 @@ import Upskill from './Components/ProductsPages/Upskill/Upskill';
 import Onboarding from './Components/ProductsPages/Onboarding/Onboarding';
 import LearningPlan from './Components/ProductsPages/LearningPlan/LearningPlan';
 import Projects from './Components/ProductsPages/Projects/Projects';
+import Paths from './Components/Paths/Paths';
+import Unlimited from './Components/PricingLinks/Unlimited/Unlimited';
 
 function App() {
   return (
@@ -31,6 +33,8 @@ function App() {
           <Route path="/onboarding" element={<Onboarding />} />
           <Route path="/learning-plans" element={<LearningPlan />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/paths" element={<Paths />} />
+          <Route path="/unlimited" element={<Unlimited />} />
         </Routes>
         <Footer />
 
