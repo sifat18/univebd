@@ -18,6 +18,8 @@ import Paths from './Components/Paths/Paths';
 import Unlimited from './Components/PricingLinks/Unlimited/Unlimited';
 import './App.css'
 import Univewhy from './Components/Whyunive/Univewhy';
+import HowItworks from './Components/HowItWorks/HowItworks';
+import Contact from './Components/Contact/Contact';
 function App() {
   return (
     <div>
@@ -26,7 +28,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
 
-          <Route path="/whyunive" element={<Univewhy />} />
+          <Route path="/why-unive" element={<Univewhy />} />
+          <Route path="/how-it-works" element={<HowItworks />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/business" element={<Business />} />
           <Route path="/learn" element={<Learn />} />
           <Route path="/individual-learner" element={<Individual />} />
