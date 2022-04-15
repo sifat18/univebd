@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Button, Container, Form, FormControl, Nav, Navbar, NavDropdown } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom';
-import logo from '../images/educate.png'
+import logo from '../images/logos/cropped-small-px-e1638453380416.png'
 import arrow from '../images/icons8-arrow-24.png'
 
 export default function Header() {
@@ -17,7 +17,7 @@ export default function Header() {
             <Navbar sticky="top" fluid collapseOnSelect expand="lg" bg="white" variant="light">
                 <Container fluid>
 
-                    <Navbar.Brand href="#home">
+                    <Navbar.Brand href="#home" className="d-md-none ">
                         <img
                             src={logo}
                             width="120"
@@ -28,26 +28,45 @@ export default function Header() {
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="me-auto fw-bold">
+                        <Nav className="  fw-bold  ">
                             {/* <Nav.Link href="#home">Solution</Nav.Link> */}
-                            <NavDropdown title="Solution" id="navbarScrollingDropdown" >
+                            <Nav.Link className=" mx-3" href="/whyunive">ইউনিভ কেন</Nav.Link>
+                            <Nav.Link className=" mx-5" href="#ds">কিভাবে কাজ করে</Nav.Link>
+
+                            {/* <NavDropdown title="ইউনিভ কেন" id="navbarScrollingDropdown" >
                                 <NavLink to='/business'>    <NavDropdown.Item href="#action3">Developer team</NavDropdown.Item></NavLink>
                                 <NavLink to='/individual-learner'> <NavDropdown.Item href="#action4">Developers</NavDropdown.Item></NavLink>
                             </NavDropdown>
-                            <NavDropdown title="Products" id="navbarScrollingDropdown" >
+                            <NavDropdown title="কিভাবে কাজ করে" id="navbarScrollingDropdown" >
                                 <NavLink to='/upskill'> <NavDropdown.Item href="#action3">Learning for teams</NavDropdown.Item></NavLink >
                                 <NavLink to='/upskill'><NavDropdown.Item href="#action4">Learning for individuals</NavDropdown.Item></NavLink >
                                 <NavLink to='/onboarding'><NavDropdown.Item href="#action3">Onboarding</NavDropdown.Item></NavLink >
                                 <NavLink to='/upskill'><NavDropdown.Item href="#action4">Assesments</NavDropdown.Item></NavLink >
                                 <NavLink to='/learning-plans'><NavDropdown.Item href="#action3">Personalized learning plans</NavDropdown.Item></NavLink >
                                 <NavLink to='/projects'><NavDropdown.Item href="#action4">Projects</NavDropdown.Item></NavLink >
-                            </NavDropdown>
-                            <NavDropdown title="Pricing" id="navbarScrollingDropdown" >
-                                <NavDropdown.Item href="#action3">for individuals</NavDropdown.Item>
-                                <NavDropdown.Item href="#action4">for teams</NavDropdown.Item>
-                            </NavDropdown>
+                            </NavDropdown> */}
+
                         </Nav>
-                        <Form className="d-flex">
+
+                        <Navbar.Brand href="#home" className="d-none d-md-block mx-auto ps-3">
+                            <img
+                                src={logo}
+                                width="100"
+                                height="40"
+                                className="d-inline-block align-top"
+                                alt="React Bootstrap logo"
+                            />
+                        </Navbar.Brand>
+                    </Navbar.Collapse>
+
+                    <Navbar.Collapse id="responsive-navbar-nav">
+                        <Nav className="fw-bold ms-auto">
+                            <Nav.Link className=" me-5" href="#course">কোর্সসমুহ</Nav.Link>
+                            <Nav.Link className=" mx-5" href="#features">যোগাযোগ</Nav.Link>
+
+                        </Nav>
+
+                        <Form className="d-flex ms-auto">
                             <FormControl
                                 type="search"
                                 placeholder="&#xF002; Search"

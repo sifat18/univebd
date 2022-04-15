@@ -1,18 +1,19 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import './footer.css'
-import foot from '../images/footlogo.jpg'
+// import foot from '../images/footlogo.jpg'
 import face from '../images/facebook-64.png'
 import linkd from '../images/linkedin-64.png'
 import twit from '../images/twitter-64.png'
 import you from '../images/youtube-64.png'
+import foot from '../images/logos/Unive-v3-1.png'
 
 const Footer = () => {
     return (
         <Container fluid className='footer pb-5 ps-5'>
             <Container className='text-secondary my-5 pt-3'>
-                <img src={foot} alt="" height='50' width='150' />
-                <p className='text-light mt-2 '>Learn in-demand tech skills in half the time</p>
+                <img src={foot} alt="" />
+                <p className='text-light mt-3 '>Skill focused learning platform </p>
                 <hr className='bg-light' />
 
 
@@ -20,24 +21,24 @@ const Footer = () => {
                     {/*  footer img */}
                     <Col xs={2} className='me-5 pe-5'>
                         <p className='text-white'>Solutions</p>
-                        <p>Educative for business</p>
-                        <p>Educative for Individuals</p>
-                        <p>Educative for HR/ recruiting</p>
+                        <p>Unive for Individuals</p>
+                        <p>Unive for HR/ Recruiting</p>
+                        <p>Unive for Enterprise</p>
                         <p>Educative for Bootcamps</p>
                     </Col>
                     <Col xs={2} className=' me-5 pe-5'>
                         <Row>
                             <Col xs={12}>
                                 <p className='text-white'>Products</p>
-                                <p>Educative Learning</p>
-                                <p>Educative Onboarding</p>
-                                <p>Educative Skill Assessments</p>
+                                <p>Unive Learning</p>
+                                <p>Unive Onboarding</p>
+                                <p>Unive Skill Assessments</p>
                             </Col>
                             <Col xs={12}>
                                 <p className='text-white'>Pricing</p>
                                 <p>For Individuals</p>
-                                <p>Educative Onboarding</p>
-                                <p>For Teams</p>
+                                <p>For Enterprise</p>
+                                <p>For Manpower as a Service</p>
                             </Col>
                         </Row>
 
@@ -45,14 +46,13 @@ const Footer = () => {
                     <Col xs={2} className=' me-5 pe-5'>
                         <Row>
                             <Col xs={12} className='mb-4'>
-                                <p className='text-white'>RESOURCES</p>
-                                <p>Educative Blog</p>
-                                <p>Edpresso</p>
+                                <p className='text-white'>Resources</p>
+                                <p>Unive Blog</p>
+                                <p>FAQ</p>
                             </Col>
                             <Col xs={12}>
-                                <p className='text-white'>CONTRIBUTE</p>
-                                <p>Become an Author</p>
-                                <p>Become an Affiliate</p>
+                                <p className='text-white'>Contribute</p>
+                                <p>Become an instructor</p>
                                 <p>Become a Contributor</p>
                             </Col>
                         </Row>
@@ -61,14 +61,14 @@ const Footer = () => {
                     <Col xs={2} className=' me-5 pe-5'>
                         <Row>
                             <Col xs={12}>
-                                <p className='text-white'>LEGAL</p>
+                                <p className='text-white'>Legal</p>
                                 <p>Privacy Policy</p>
                                 <p>Cookie Settings</p>
                                 <p>Terms of Service</p>
                                 <p>Business Terms of Service</p>
                             </Col>
                             <Col xs={12}>
-                                <p className='text-white'>ABOUT US</p>
+                                <p className='text-white'>About Us</p>
                                 <p>Our Team</p>
                                 <p>Careers</p>
                             </Col>
@@ -76,10 +76,9 @@ const Footer = () => {
 
                     </Col>
                     <Col xs={2} className=''>
-                        <p className='text-white'>MORE</p>
+                        <p className='text-white'>More</p>
                         <p>Course Catalog</p>
-                        <p>Early Access Courses</p>
-                        <p>CodingInterview.com</p>
+                        <p>Scholarships</p>
                         <p>Press</p>
                         <p>Contact Us</p>
                     </Col>
@@ -95,7 +94,7 @@ const Footer = () => {
                         </div>
                     </Col>
                     <Col xs={4} className='pe-auto'>
-                        <p>Copyright ©2022 Educative, Inc. All rights reserved.</p>
+                        <p>2021 Unive © All rights reserved.</p>
                     </Col>
                 </Row>
             </Container>

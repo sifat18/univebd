@@ -16,16 +16,17 @@ import LearningPlan from './Components/ProductsPages/LearningPlan/LearningPlan';
 import Projects from './Components/ProductsPages/Projects/Projects';
 import Paths from './Components/Paths/Paths';
 import Unlimited from './Components/PricingLinks/Unlimited/Unlimited';
-
+import './App.css'
+import Univewhy from './Components/Whyunive/Univewhy';
 function App() {
   return (
     <div>
       <BrowserRouter>
         <Header />
-
         <Routes>
           <Route path="/" element={<Home />} />
 
+          <Route path="/whyunive" element={<Univewhy />} />
           <Route path="/business" element={<Business />} />
           <Route path="/learn" element={<Learn />} />
           <Route path="/individual-learner" element={<Individual />} />
