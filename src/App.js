@@ -20,9 +20,11 @@ import './App.css'
 import Univewhy from './Components/Whyunive/Univewhy';
 import HowItworks from './Components/HowItWorks/HowItworks';
 import Contact from './Components/Contact/Contact';
+import Nopage from './Components/Nopage/Nopage';
+import Authprovider from './Components/AuthProvider/Authprovider';
 function App() {
   return (
-    <div>
+    <Authprovider>
       <BrowserRouter>
         <Header />
         <Routes>
@@ -40,13 +42,14 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/paths" element={<Paths />} />
           <Route path="/unlimited" element={<Unlimited />} />
+          <Route path="*" element={<Nopage />} />
         </Routes>
         <Footer />
 
       </BrowserRouter>
 
 
-    </div>
+    </Authprovider>
   );
 }
 

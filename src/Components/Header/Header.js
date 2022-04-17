@@ -1,16 +1,90 @@
-import { Button, Container, Form, FormControl, Nav, Navbar } from 'react-bootstrap'
-import { NavLink } from 'react-router-dom';
+import { Button, Container, Form, FormControl, Modal, Nav, Navbar, Spinner } from 'react-bootstrap'
+import { NavLink, useLocation } from 'react-router-dom';
 import logo from '../images/logos/cropped-small-px-e1638453380416.png'
+import gogo from '../images/logos/icons8-google.svg'
 import arrow from '../images/icons8-arrow-24.png'
+import { useState } from 'react';
+import Register from '../Register/Register';
+import { useNavigate } from "react-router-dom";
+import useAuth from '../Context/useAuth';
 
 export default function Header() {
+    const [show, setShow] = useState(false);
+    const [Lshow, setLShow] = useState(false);
 
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+    const handleCloseL = () => setLShow(false);
+    const handleShowL = () => setLShow(true);
+
+    const [registerData, setregisterData] = useState({});
+    const [passError, setpassError] = useState('');
+    const [LoginData, setLoginData] = useState({});
+    const history = useNavigate();
+    const { createUser, signGoogle, emailPass, error, user, isLoading, logOut } = useAuth();
+    const location = useLocation();
+
+    let repassword;
+    const handleOnChange = e => {
+        const field = e.target.name;
+        const value = e.target.value;
+        const newRegisterData = { ...registerData };
+        newRegisterData[field] = value;
+        setregisterData(newRegisterData);
+        // console.log(loginData)
+
+    }
+    const hadlePass = e => {
+        console.log(e.target.value);
+        repassword = e.target.value;
+        if (registerData.pass === repassword) {
+            console.log(registerData.pass, repassword)
+            setpassError('')
+        } else {
+            console.log(registerData.pass, repassword)
+            setpassError('passward doesnt match')
+
+        }
+    }
+    const handleRegisterSubmit = e => {
+        e.preventDefault()
+        console.log(registerData);
+        createUser(registerData.name, registerData.email, registerData.pass, history);
+        // console.log('testing');
+        handleClose()
+    }
+    // login
+    const handleOnChangeL = e => {
+        const field = e.target.name;
+        const value = e.target.value;
+        const newLoginData = { ...LoginData };
+        newLoginData[field] = value;
+        setLoginData(newLoginData);
+        // console.log(loginData)
+
+    }
+    const handleLogin = () => {
+        signGoogle(location, history)
+        handleCloseL()
+    }
+    const handleLoginSubmit = e => {
+        e.preventDefault()
+        console.log(LoginData);
+        emailPass(LoginData.email, LoginData.pass, location, history)
+        handleCloseL()
+
+    }
+
+    if (isLoading) {
+        return <div className='text-center'><Spinner animation="border" variant="danger" /></div>
+    }
     return (
         <>
             <Navbar sticky="top" fluid collapseOnSelect expand="lg" bg="white" variant="light">
                 <Container fluid>
 
-                    <Navbar.Brand href="#home" className="d-md-none ">
+                    <NavLink to='/'> <Navbar.Brand href="#home" className="d-md-none ">
                         <img
                             src={logo}
                             width="120"
@@ -18,13 +92,13 @@ export default function Header() {
                             className="d-inline-block align-top"
                             alt="React Bootstrap logo"
                         />
-                    </Navbar.Brand>
+                    </Navbar.Brand></NavLink >
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="  fw-bold  ">
                             {/* <Nav.Link href="#home">Solution</Nav.Link> */}
-                            <Nav.Link className=" mx-3" href="/why-unive">ইউনিভ কেন</Nav.Link>
-                            <Nav.Link className=" mx-5" href="/how-it-works">কিভাবে কাজ করে</Nav.Link>
+                            <NavLink to='/why-unive'>  <Nav.Link className=" mx-3" href="/why-unive">ইউনিভ কেন</Nav.Link></NavLink>
+                            <NavLink to='/how-it-works'><Nav.Link className=" mx-5" href="/how-it-works">কিভাবে কাজ করে</Nav.Link></NavLink>
 
                             {/* <NavDropdown title="ইউনিভ কেন" id="navbarScrollingDropdown" >
                                 <NavLink to='/business'>    <NavDropdown.Item href="#action3">Developer team</NavDropdown.Item></NavLink>
@@ -41,7 +115,7 @@ export default function Header() {
 
                         </Nav>
 
-                        <Navbar.Brand href="#home" className="d-none d-md-block mx-auto ps-3">
+                        <NavLink to='/'><Navbar.Brand href="#home" className="d-none d-md-block mx-auto ps-5">
                             <img
                                 src={logo}
                                 width="100"
@@ -49,13 +123,13 @@ export default function Header() {
                                 className="d-inline-block align-top"
                                 alt="React Bootstrap logo"
                             />
-                        </Navbar.Brand>
+                        </Navbar.Brand></NavLink>
                     </Navbar.Collapse>
 
                     <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="fw-bold ms-auto">
-                            <Nav.Link className=" me-5" href="#course">কোর্সসমুহ</Nav.Link>
-                            <Nav.Link className=" mx-5" href="/contact">যোগাযোগ</Nav.Link>
+                        <Nav className="fw-bold ms-3">
+                            <NavLink to='/'><Nav.Link className=" me-5" href="#course">কোর্সসমুহ</Nav.Link></NavLink >
+                            <NavLink to='/contact'><Nav.Link className=" mx-5" href="/contact">যোগাযোগ</Nav.Link></NavLink >
 
                         </Nav>
 
@@ -68,10 +142,13 @@ export default function Header() {
                             />
                             {/* <Button variant="outline-success">Search</Button> */}
                         </Form>
+                        {user.displayName && <Navbar.Text>
+                            Signed in as: <a href="#login">{user.displayName}</a>
+                        </Navbar.Text>}
                         <Nav className="fw-bold">
-                            <Nav.Link href="#features">Log In</Nav.Link>
-                            <Button variant="btn btn-primary">Join For free <img src={arrow} alt="arrow" /></Button>
-
+                            {user.displayName && <Nav.Link onClick={logOut}>LogOut</Nav.Link>}
+                            {!user.displayName && <Nav.Link onClick={handleShowL}>Log In</Nav.Link>}
+                            {!user.displayName && <Button onClick={handleShow} variant="btn btn-primary">Join For free <img src={arrow} alt="arrow" /></Button>}
                         </Nav>
 
                     </Navbar.Collapse>
@@ -79,6 +156,59 @@ export default function Header() {
             </Navbar>
             <hr />
 
+            {/* modal register*/}
+            <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+
+                </Modal.Header>
+                <Modal.Body>
+                    <Container className='py-2'>
+                        {/* register form */}
+                        <h3 className='text-center'>Join Unive for free</h3>
+                        <form className='mx-auto  py-3 ' onSubmit={handleRegisterSubmit}>
+                            <label htmlFor="">Username</label>
+                            <input required className='input-group mt-2 mb-3 ' type="text" onChange={handleOnChange} placeholder='name' name="name" id="name" />
+                            <label htmlFor="">Email</label>
+                            <input required className='input-group my-2 mb-3 ' type="email" onChange={handleOnChange} placeholder='email' name="email" id="email" />
+                            <label htmlFor="">Password</label>
+                            <input required className='input-group my-2 mb-3 ' type="password" onChange={handleOnChange} placeholder='password' name="pass" id="pass" />
+                            <label htmlFor="">Confirm Password</label>
+                            <input required className='input-group my-2 mb-5 ' type="password" onBlur={hadlePass} placeholder='re-enter password' name="re-pass" id="pass" />
+                            {passError ? <p className='text-danger text-center'>{passError}</p> : ''}
+
+                            <button className='btn btn-primary d-block px-5 mx-auto mt-2  mb-5'>Register </button>
+                        </form>
+                    </Container>
+
+                </Modal.Body>
+
+
+            </Modal>
+
+            <Modal show={Lshow} onHide={handleCloseL}>
+                <Modal.Header closeButton>
+                    <h2 className='mx-auto ps-5'>Welcome Back</h2>
+                </Modal.Header>
+                <Modal.Body>
+                    <Container className='py-2'>
+                        {/* Login form */}
+                        <h2 className='text-center fs-1 fw-bold'>Login</h2>
+                        <form className='mt-3  py-3' onSubmit={handleLoginSubmit}>
+                            <label htmlFor="">Email</label>
+                            <input required className='input-group mt-2 mb-3 ' type="text" onChange={handleOnChangeL} placeholder='email' name="email" id="email" />
+                            <label htmlFor="">Password</label>
+                            <input required className='input-group mt-2 mb-5 ' type="password" onChange={handleOnChangeL} placeholder='password' name="pass" id="pass" />
+                            {error ? <p className='text-danger text-center'>{error}</p> : ''}
+
+                            <button className='btn btn-primary d-block mx-auto my-3 px-5 '>Login </button>
+                        </form>
+                        <button className='btn  border border-1 d-block mb-5 mx-auto text-dark' onClick={handleLogin} > <img src={gogo} alt="" height='30' width='30' /> Google Sign In</button>
+                    </Container>
+
+                </Modal.Body>
+
+
+            </Modal>
         </>
     )
 }
