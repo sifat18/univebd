@@ -97,8 +97,10 @@ export default function Header() {
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="  fw-bold  ">
                             {/* <Nav.Link href="#home">Solution</Nav.Link> */}
-                            <NavLink to='/why-unive'>  <Nav.Link className=" mx-3" href="/why-unive">ইউনিভ কেন</Nav.Link></NavLink>
-                            <NavLink to='/how-it-works'><Nav.Link className=" mx-5" href="/how-it-works">কিভাবে কাজ করে</Nav.Link></NavLink>
+                            <NavLink to='/why-unive'>  <Nav.Link className=" d-none d-md-block ms-3" href="/why-unive">ইউনিভ কেন</Nav.Link></NavLink>
+                            <NavLink to='/how-it-works'><Nav.Link className="d-none d-md-block mx-5" href="/how-it-works">কিভাবে কাজ করে</Nav.Link></NavLink>
+                            <NavLink to='/why-unive'>  <Nav.Link className=" d-md-none" href="/why-unive">ইউনিভ কেন</Nav.Link></NavLink>
+                            <NavLink to='/how-it-works'><Nav.Link className=" d-md-none" href="/how-it-works">কিভাবে কাজ করে</Nav.Link></NavLink>
 
                             {/* <NavDropdown title="ইউনিভ কেন" id="navbarScrollingDropdown" >
                                 <NavLink to='/business'>    <NavDropdown.Item href="#action3">Developer team</NavDropdown.Item></NavLink>
@@ -127,17 +129,20 @@ export default function Header() {
                     </Navbar.Collapse>
 
                     <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="fw-bold ms-3">
-                            <NavLink to='/'><Nav.Link className=" me-5" href="#course">কোর্সসমুহ</Nav.Link></NavLink >
-                            <NavLink to='/contact'><Nav.Link className=" mx-5" href="/contact">যোগাযোগ</Nav.Link></NavLink >
-
+                        <Nav className="fw-bold d-none d-md-block ">
+                            <NavLink to='/'><Nav.Link className=" d-inline me-5" href="#course">কোর্সসমুহ</Nav.Link></NavLink >
+                            <NavLink to='/contact'><Nav.Link className=" d-inline mx-5" href="/contact">যোগাযোগ</Nav.Link></NavLink >
+                        </Nav>
+                        <Nav className="fw-bold d-md-none ">
+                            <NavLink to='/'><Nav.Link className=" " href="#course">কোর্সসমুহ</Nav.Link></NavLink >
+                            <NavLink to='/contact'><Nav.Link className="" href="/contact">যোগাযোগ</Nav.Link></NavLink >
                         </Nav>
 
                         <Form className="d-flex ms-auto">
                             <FormControl
                                 type="search"
                                 placeholder="&#xF002; Search"
-                                className="me-2"
+                                className="me-2 d-none d-md-block"
                                 aria-label="Search"
                             />
                             {/* <Button variant="outline-success">Search</Button> */}

@@ -7,18 +7,16 @@ export default function PriceCard() {
             <Row className='my-5'>
                 <Col xs={4} className='mt-5'>
                     <Card className="text-center pt-5">
-                        <Card.Title>Annual Plan</Card.Title>
+                        <Card.Title>Free Plan</Card.Title>
                         <p className='text-decoration-line-through'>$16.66</p>
                         <h4 className='text-primary fs-2'>$11.<span className='text-primary fs-4'>66</span><span className='text-dark'>/per month</span></h4>
                         <p>discounted price for </p>
                         <p className='fs-5'> $139 billed annually</p>
                         <Button variant="outline-primary text-center w-50 mx-auto">Get Unlimited</Button>
-                        <p className='text-decoration-underline'>Choose a 2 year plan</p>
+                        <p className='text-decoration-underline'>Unlimited Course video access</p>
                         <Card.Body className='text-start mx-auto my-3'>
-                            <p><img src={check} alt="" />24 months of unlimited access</p>
-                            <p><img src={check} alt="" />Completion certificates</p>
-                            <p><img src={check} alt="" />New courses every week</p>
-                            <p><img src={check} alt="" />Early access to upcoming courses</p>
+
+                            <p><img src={check} alt="" />Unlimited Course video access</p>
                         </Card.Body>
                         <Card.Footer className="text-muted">Gift A subscription</Card.Footer>
                     </Card>
@@ -31,19 +29,20 @@ export default function PriceCard() {
                         <p>discounted price for </p>
                         <p className='fs-5'> $139 billed annually</p>
                         <Button variant="outline-primary text-center w-50 mx-auto">Get Unlimited</Button>
-                        <p className='text-decoration-underline'>Choose a 2 year plan</p>
+                        <p className='text-decoration-underline'>Pay annually with a 50% discount</p>
                         <Card.Body className='text-start mx-auto my-3'>
-                            <p><img src={check} alt="" />24 months of unlimited access</p>
-                            <p><img src={check} alt="" />Completion certificates</p>
-                            <p><img src={check} alt="" />New courses every week</p>
-                            <p><img src={check} alt="" />Early access to upcoming courses</p>
+                            <p><img src={check} alt="" />Lifetime accesses</p>
+                            <p><img src={check} alt="" />Certifications</p>
+                            <p><img src={check} alt="" />Interview scheduling</p>
+                            <p><img src={check} alt="" />Job support 24/7</p>
+                            <p><img src={check} alt="" />Growth path</p>
                         </Card.Body>
                         <Card.Footer className="text-muted">Gift A subscription</Card.Footer>
                     </Card>
                 </Col>
                 <Col xs={4} className='mt-5'>
                     <Card className="text-center pt-5">
-                        <Card.Title>Annual Plan</Card.Title>
+                        <Card.Title>Per course</Card.Title>
                         <p className='text-decoration-line-through'>$16.66</p>
                         <h4 className='text-primary fs-2'>$11.<span className='text-primary fs-4'>66</span><span className='text-dark'>/per month</span></h4>
                         <p>discounted price for </p>
@@ -51,10 +50,10 @@ export default function PriceCard() {
                         <Button variant="outline-primary text-center w-50 mx-auto">Get Unlimited</Button>
                         <p className='text-decoration-underline'>Choose a 2 year plan</p>
                         <Card.Body className='text-start mx-auto my-3'>
-                            <p><img src={check} alt="" />24 months of unlimited access</p>
+                            <p><img src={check} alt="" />Unlimited Course Access with assessments</p>
                             <p><img src={check} alt="" />Completion certificates</p>
-                            <p><img src={check} alt="" />New courses every week</p>
-                            <p><img src={check} alt="" />Early access to upcoming courses</p>
+                            <p><img src={check} alt="" />Interview scheduling</p>
+                            <p><img src={check} alt="" />Job support 24/7</p>
                         </Card.Body>
                         <Card.Footer className="text-muted">Gift A subscription</Card.Footer>
                     </Card>

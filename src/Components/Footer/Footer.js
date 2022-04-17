@@ -7,6 +7,7 @@ import linkd from '../images/linkedin-64.png'
 import twit from '../images/twitter-64.png'
 import you from '../images/youtube-64.png'
 import foot from '../images/logos/Unive-v3-1.png'
+import { NavLink } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -21,17 +22,17 @@ const Footer = () => {
                     {/*  footer img */}
                     <Col xs={2} className='me-5 pe-5'>
                         <p className='text-white'>Solutions</p>
-                        <p>Unive for Individuals</p>
-                        <p>Unive for HR/ Recruiting</p>
+                        <NavLink to='/individual-learner'><p>Unive for Individuals</p></NavLink>
+                        <NavLink to='/recruiting'><p>Unive for HR/ Recruiting</p></NavLink>
                         <p>Unive for Enterprise</p>
-                        <p>Educative for Bootcamps</p>
+
                     </Col>
                     <Col xs={2} className=' me-5 pe-5'>
                         <Row>
                             <Col xs={12}>
                                 <p className='text-white'>Products</p>
-                                <p>Unive Learning</p>
-                                <p>Unive Onboarding</p>
+                                <NavLink to='/individual-learner'> <p>Unive Learning</p></NavLink>
+                                <NavLink to='/onboarding'> <p>Unive Onboarding</p></NavLink>
                                 <p>Unive Skill Assessments</p>
                             </Col>
                             <Col xs={12}>

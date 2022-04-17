@@ -4,6 +4,7 @@ import './home.css'
 import home from '../images/home.png'
 import home2 from '../images/home2.png'
 import b2 from '../images/b2.mp4'
+
 import bot from '../images/bot.jpg'
 import bot2 from '../images/bot2.jpg'
 import ar from '../images/icons8-arrow-.png'
@@ -17,9 +18,8 @@ import vs from '../images/visual-studio-code-2019-48.png'
 import sub from '../images/sublime-text-48.png'
 import sql from '../images/sql-server-64.png'
 import py from '../images/php-logo-48.png'
-import php from '../images/python.gif'
-import rec from '../images/react.gif'
 import ReviewCard from '../Common/ReviewCard'
+import Companies from '../Common/Companies'
 export default function Home() {
     return (
         <>
@@ -27,26 +27,27 @@ export default function Home() {
             <Container className='my-5'>
                 <section className='text-center '>
                     <h1 className=''>Learn something new. Everyday.</h1>
-                    <h5 className=' mt-3 ms-5 ps-5'>Educative helps software engineers and their teams increase productivity and reach their </h5>
+                    <h5 className=' mt-3 '>Educative helps software engineers and their teams increase productivity and reach their </h5>
                     <h5 className=' ms-5 '>potential</h5>
                     <div className=" mt-3   ">
-                        <Button className='p-3 m-3' href="#">I'm an individual</Button>
-                        <Button className='p-3 m-3' href="#">I'm a business</Button>
+                        <Button className='p-3 m-3' href="#">আমি শিখতে চাই</Button>
+                        <Button className='p-3 m-3' href="#">আমি কর্মী খুঁজছি</Button>
+                        <Button className='p-3 m-3' href="#">আমি কাজ খুঁজছি</Button>
                     </div>
                     <div >
                         <img className='img-fluid' src={home} alt="" />
                         <p className='my-3'>Trusted by more than 1.1 million learners working for companies like
-                            <img className='img-fluid my-5' src={home2} alt="" />
-
+                            {/* <img className='img-fluid my-5' src={home2} alt="" /> */}
                         </p>
                     </div>
+                    <Companies />
                 </section>
             </Container>
             {/* middle part */}
             <Container fluid className='text-center py-5 middle'>
                 {/* middle part */}
                 <section className='container mt-5'>
-                    <h1 className=''>Hands-on coding environments</h1>
+                    <h1 className=''>শিখুন ইন্টারেক্টিভ ভিডিও টিউটোরিয়াল এর মাধ্যমে</h1>
                     <h5 className=' mt-3  ps-2'>You don’t get better at swimming by watching others. Coding is no different. Practice as </h5>
                     <h5 className=' ms-5 '>you learn with live code environments inside your browser.</h5>
                     <div className=" top-video mt-5   ">
@@ -56,7 +57,7 @@ export default function Home() {
                     </div>
 
                 </section>
-                <Row className='mt-5 ms-5'>
+                {/* <Row className='mt-5 ms-5'>
                     <Col xs={1}>
                         <Row className='mt-5'>
                             <Col xs={12}><img src={ht} alt="" /></Col>
@@ -124,7 +125,7 @@ export default function Home() {
                             <Col xs={12}><img src={py} alt="" width='50' height='50' /></Col>
                         </Row>
                     </Col>
-                </Row>
+                </Row> */}
             </Container>
             {/* 2nd last part */}
             <Container fluid className='text-center py-5 '>
@@ -157,6 +158,13 @@ export default function Home() {
             </Container>
 
             <Container fluid className='text-center py-5 middle'>
+                <h3>
+                    যারা কোর্স সম্পন্ন করেছেন তাদের মতামত-
+                </h3>
+                <p className='text-muted my-4'>
+
+                    ইউনিভে যারা কোর্স করে জব পেয়েছে –
+                </p>
                 <ReviewCard />
 
             </Container >

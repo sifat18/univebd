@@ -22,6 +22,7 @@ import HowItworks from './Components/HowItWorks/HowItworks';
 import Contact from './Components/Contact/Contact';
 import Nopage from './Components/Nopage/Nopage';
 import Authprovider from './Components/AuthProvider/Authprovider';
+import Recruiting from './Components/Recruting/Recruiting';
 function App() {
   return (
     <Authprovider>
@@ -42,6 +43,7 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/paths" element={<Paths />} />
           <Route path="/unlimited" element={<Unlimited />} />
+          <Route path="/recruiting" element={<Recruiting />} />
           <Route path="*" element={<Nopage />} />
         </Routes>
         <Footer />

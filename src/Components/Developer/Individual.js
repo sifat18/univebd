@@ -20,10 +20,10 @@ export default function Individual() {
             {/* top part */}
             <Container className='my-5'>
                 <section className='text-center '>
-                    <h2 className=''>Your future starts here.</h2>
-                    <h4 className=' mt-3  ps-1'>World-class courses for world-class software developers</h4>
+                    <h2 className=''>বর্তমানের ইন্ডাস্ট্রি প্র্যাকটিস ফোকাসড কোর্স শুরু করুন এখনি!</h2>
+                    {/* <h4 className=' mt-3  ps-1'>World-class courses for world-class software developers</h4> */}
                     <div className=" mt-3   ">
-                        <Button className='p-3 m-3 w-25' href="#">Start a free trial</Button>
+                        <Button className='p-3 m-3 w-25' href="#">কোর্স শুরু করুন</Button>
                     </div>
                     <div >
                         <img className='img-fluid w-50' src={indi} alt="" />
@@ -34,16 +34,16 @@ export default function Individual() {
             {/* how can we help */}
             <Container fluid className='text-center py-5 middle'>
                 <NormalCards
-                    titleSection={"How we help"}
-                    card1Msg={"Has it been a while since you used a certain skill? We hear that a lot. Our hands-on courses help you practice right in your browser, so you'll sharpen those skills in no time."}
+                    titleSection={"আমরা কিভাবে সাহায্য করি"}
+                    card1Msg={"আপনার কলেজ/ ইন্সটিটিউট এর পুরানো কারিকুলাম ইন্ডাস্ট্রিতে ব্যবহার করার সম্ভাবনা খুবি সীমিত। আমরা আপনাকে বর্তমানের ইন্ডাস্ট্রি প্র্যাকটিস নিয়ে প্র্যাকটিকাল নলেজ নির্ভর কন্টেন্ট প্রদান করি"}
                     card1Img={"https://png.pngtree.com/png-vector/20200428/ourlarge/pngtree-illustration-of-a-man-working-on-a-laptop-png-image_2195561.jpg"}
-                    card1Name={"Shake the rust"}
-                    card2Msg={"Land your dream job. We can help whether you're days or weeks away from your next technical interview. Our customers now work at FAANG and Fortune500 companies around the world."}
+                    card1Name={"ইন্ডাস্ট্রি নলেজ"}
+                    card2Msg={"আমরা আপনাকে আপনার ড্রিম জবে দেশে হোক বা বিদেশে ল্যান্ড করার জন্যে প্রয়োজনীয় প্রিপারেশন নিতে সাহায্য করি"}
                     card2Img={"https://png.pngtree.com/png-vector/20200428/ourlarge/pngtree-illustration-of-a-man-working-on-a-laptop-png-image_2195561.jpg"}
-                    card2Name={"Interview prep"}
-                    card3Msg={"95% of engineers want to learn a new skill each year. Join them and accelerate your growth with our interactive experiences that help you test, learn, and grow."}
+                    card2Name={"ইন্টারভিউ প্রিপারেশন"}
+                    card3Msg={"বেশিরভাগ ক্ষেত্রে আপনার ক্যারিয়ার স্থবির হয়ে যায় নিজেকে যুগের এবং নতুন নতুন স্কিল শিখতে না পারলে। আমরা নিশ্চিত করি প্রয়োজনীয় রিসোর্সেস আপনি যাতে আপনার ক্যারিয়ারে গ্রো করতে পারেন টু দ্যা টপ"}
                     card3Img={"https://png.pngtree.com/png-vector/20200428/ourlarge/pngtree-illustration-of-a-man-working-on-a-laptop-png-image_2195561.jpg"}
-                    card3Name={"Grow your career"}
+                    card3Name={"ক্যারিয়ারে আগাতে"}
                 />
 
             </Container>
@@ -51,21 +51,23 @@ export default function Individual() {
             {/* Educative difference */}
             <Container fluid className='text-center py-5 '>
                 <section className='container my-5 '>
-                    <h1 className=''>The Educative Difference</h1>
+                    <h1 className=''>Why Unive is different</h1>
                     <Row className='my-5 py-5'>
                         <Col xs={6}>
                             <img className='img-fluid' src={indi2} alt="" />
                         </Col>
                         <Col xs={6} className="text-start">
-                            <h3>Better than videos</h3>
-                            <p className='text-start'>Reading is faster than watching: The average tutorial is spoken at 150 words per minute. You can read at 250. That’s why our courses are laid out as rich text and interactive experience so you learn more, learn faster, and learn exactly what you need.</p>
-
+                            <h3>Interactive Video Lesson</h3>
+                            <p className='text-start'>শিখুন ইন্টারেক্টিভ ভিডিও এর মাধ্যমে। শিখার সাথে সাথে নিজেকে যাচাই করে নিন।</p>
+                            <h3 className='mt-5 '>Interview setup</h3>
+                            <p className='text-start'>সাক্সেসফুল কোর্স কমপ্লিটের এর ১৫ দিনের মাঝে ইন্টারভিউ এর ব্যবস্থা আপনার কোর্স রিলেভান্ট ইন্ডাস্ট্রি সেক্টরে।</p>
                         </Col>
                     </Row>
                     <Row>
                         <Col xs={6} className="text-start">
-                            <h3>Slick coding environments</h3>
-                            <p className='text-start'>Have your team practice as they learn with full-fledged code playgrounds inside their browsers.</p>
+                            <h3>Support 24 / 7</h3>
+                            <p className='text-start'>আপনার যেকোনো প্রশ্ন / জব ফিল্ডেরই কোনো প্রব্লেম এর সলিউশান এর জন্যে কন্সাল্ট করুন অভিজ্ঞ ইঞ্জিনিয়ারদের সাথে  ২৪/৭
+                            </p>
                             <div className="text-start">
 
                                 <p><img src={check} alt="" className='img-fluid ' /> No time is wasted on set-up</p>
@@ -86,8 +88,8 @@ export default function Individual() {
             {/* start coding */}
             <Container fluid className='text-center py-5 middle'>
                 <section className='container mt-5'>
-                    <h3 className='text-center fw-bold fs-2'>Stop scrolling. Start coding. </h3>
-                    <p className=' text-center fs-7 mt-2 ps-2'>Kick off your new skillset with these free courses.</p>
+                    <h3 className='text-center fw-bold fs-2'>Start a course </h3>
+                    <p className=' text-center fs-7 mt-2 ps-2'>নতুন স্কিল যোগ করুন আপনার সিভিতে / স্কিল আপডেট করুন কারেন্ট ইন্ডাস্ট্রি এর জন্যে।</p>
                     <Container className='my-5 mx-2'>
                         <Row xs={1} md={3} className="g-4 ms-5 ps-5">
                             {item.map((id) => (
@@ -123,8 +125,8 @@ export default function Individual() {
                     <h1 className=''>Curated Paths</h1>
                     <h5 className='text-center'>Go in-depth and become a subject matter expert </h5>
                     <h5 className='text-center'> with our hand-picked, curated content.</h5>
-                    <Row className='my-5'>
-                        <Col xs={4}>
+                    <Row className='my-5 gx-5 ms-5 ps-5 '>
+                        <Col xs={5}>
                             <Card className='bg-dark text-white'>
                                 <Card.Img variant="img-fluid" height={250} src="https://repository-images.githubusercontent.com/353592899/33d81200-a1d0-11eb-87ec-74fc98b824ea" />
                                 <Card.Body className='text-start'>
@@ -144,7 +146,7 @@ export default function Individual() {
                                 </Row>
                             </Card>
                         </Col>
-                        <Col xs={4}>
+                        <Col xs={5}>
                             <Card className='bg-dark text-white'>
                                 <Card.Img variant="img-fluid" height={250} src="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX30316331.jpg" />
                                 <Card.Body className='text-start'>
@@ -164,7 +166,7 @@ export default function Individual() {
                                 </Row>
                             </Card>
                         </Col>
-                        <Col xs={4} >
+                        {/* <Col xs={4} >
                             <Card className='bg-dark text-white'>
                                 <Card.Img variant="img-fluid" height={250} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdhd8iGwfvol0_yRJ0jOhD-oEI9cIjGqMuwQ&usqp=CAU" />
                                 <Card.Body className='text-start'>
@@ -183,7 +185,7 @@ export default function Individual() {
                                     </Col>
                                 </Row>
                             </Card>
-                        </Col>
+                        </Col> */}
                     </Row>
 
                 </section>
@@ -198,6 +200,13 @@ export default function Individual() {
 
             {/* Review */}
             <Container fluid className='text-center py-5 '>
+                <h3>
+                    যারা কোর্স সম্পন্ন করেছেন তাদের মতামত-
+                </h3>
+                <p className='text-muted my-4'>
+
+                    ইউনিভে যারা কোর্স করে জব পেয়েছে –
+                </p>
                 <ReviewCard />
 
             </Container >
