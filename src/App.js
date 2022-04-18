@@ -28,6 +28,10 @@ import Blogs from './Components/Blogs/Blogs';
 import Instructor from './Components/Instructor/Instructor';
 import Contributor from './Components/Contributor/Contributor';
 import Enterprise from './Components/Enterprise/Enterprise';
+import Privacy from './Components/Privacy/Privacy';
+import EnterPriseTerm from './Components/EnterPriseTerm/EnterPriseTerm';
+import Terms from './Components/Terms/Terms';
+import EnterprisePricing from './Components/EnterprisePricing/EnterprisePricing';
 function App() {
   return (
     <Authprovider>
@@ -54,6 +58,10 @@ function App() {
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/become-an-unive-instructor" element={<Instructor />} />
           <Route path="/write-on-edpresso" element={<Contributor />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/enterprise-terms" element={<EnterPriseTerm />} />
+          <Route path="/enterprise-price" element={<EnterprisePricing />} />
+          <Route path="/terms" element={<Terms />} />
           <Route path="*" element={<Nopage />} />
         </Routes>
         <Footer />

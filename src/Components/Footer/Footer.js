@@ -38,7 +38,7 @@ const Footer = () => {
                             <Col xs={12}>
                                 <p className='text-white'>Pricing</p>
                                 <NavLink to='/unlimited '> <p>For Individuals</p></NavLink>
-                                <p>For Enterprise</p>
+                                <NavLink to='/enterprise-price '> <p>For Enterprise</p></NavLink>
                                 <p>For Manpower as a Service</p>
                             </Col>
                         </Row>
@@ -63,10 +63,10 @@ const Footer = () => {
                         <Row>
                             <Col xs={12}>
                                 <p className='text-white'>Legal</p>
-                                <p>Privacy Policy</p>
-                                <p>Cookie Settings</p>
-                                <p>Terms of Service</p>
-                                <p>Business Terms of Service</p>
+                                <NavLink to='/privacy'><p>Privacy Policy</p></NavLink>
+                                <NavLink to='/privacy'><p>Cookie Settings</p></NavLink>
+                                <NavLink to='/terms'><p>Terms of Service</p></NavLink>
+                                <NavLink to='/enterprise-terms'> <p>Business Terms of Service</p></NavLink>
                             </Col>
                             <Col xs={12}>
                                 <p className='text-white'>About Us</p>

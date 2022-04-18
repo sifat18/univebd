@@ -5,7 +5,7 @@ export default function PriceCard() {
     return (
         <section className='container mt-5'>
             <Row className='my-5'>
-                <Col xs={4} className='mt-5'>
+                <Col xs={12} md={4} className='mt-5'>
                     <Card className="text-center pt-5">
                         <Card.Title>Free Plan</Card.Title>
                         <p className='text-decoration-line-through'>$16.66</p>
@@ -21,7 +21,7 @@ export default function PriceCard() {
                         <Card.Footer className="text-muted">Gift A subscription</Card.Footer>
                     </Card>
                 </Col>
-                <Col xs={4}>
+                <Col xs={12} md={4}>
                     <Card className="text-center pt-5">
                         <Card.Title>Annual Plan</Card.Title>
                         <p className='text-decoration-line-through'>$16.66</p>
@@ -40,7 +40,7 @@ export default function PriceCard() {
                         <Card.Footer className="text-muted">Gift A subscription</Card.Footer>
                     </Card>
                 </Col>
-                <Col xs={4} className='mt-5'>
+                <Col xs={12} md={4} className='mt-5'>
                     <Card className="text-center pt-5">
                         <Card.Title>Per course</Card.Title>
                         <p className='text-decoration-line-through'>$16.66</p>
