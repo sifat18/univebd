@@ -24,7 +24,7 @@ const Footer = () => {
                         <p className='text-white'>Solutions</p>
                         <NavLink to='/individual-learner'><p>Unive for Individuals</p></NavLink>
                         <NavLink to='/recruiting'><p>Unive for HR/ Recruiting</p></NavLink>
-                        <p>Unive for Enterprise</p>
+                        <NavLink to='/enterprise'><p>Unive for Enterprise</p></NavLink>
 
                     </Col>
                     <Col xs={2} className=' me-5 pe-5'>
@@ -33,11 +33,11 @@ const Footer = () => {
                                 <p className='text-white'>Products</p>
                                 <NavLink to='/individual-learner'> <p>Unive Learning</p></NavLink>
                                 <NavLink to='/onboarding'> <p>Unive Onboarding</p></NavLink>
-                                <p>Unive Skill Assessments</p>
+                                <NavLink to='/assessments '><p>Unive Skill Assessments</p></NavLink>
                             </Col>
                             <Col xs={12}>
                                 <p className='text-white'>Pricing</p>
-                                <p>For Individuals</p>
+                                <NavLink to='/unlimited '> <p>For Individuals</p></NavLink>
                                 <p>For Enterprise</p>
                                 <p>For Manpower as a Service</p>
                             </Col>
@@ -48,13 +48,13 @@ const Footer = () => {
                         <Row>
                             <Col xs={12} className='mb-4'>
                                 <p className='text-white'>Resources</p>
-                                <p>Unive Blog</p>
+                                <NavLink to='/blogs'><p>Unive Blog</p></NavLink>
                                 <p>FAQ</p>
                             </Col>
                             <Col xs={12}>
                                 <p className='text-white'>Contribute</p>
-                                <p>Become an instructor</p>
-                                <p>Become a Contributor</p>
+                                <NavLink to='/become-an-unive-instructor'><p>Become an instructor</p></NavLink>
+                                <NavLink to='/write-on-edpresso'><p>Become a Contributor</p></NavLink>
                             </Col>
                         </Row>
 
@@ -81,7 +81,7 @@ const Footer = () => {
                         <p>Course Catalog</p>
                         <p>Scholarships</p>
                         <p>Press</p>
-                        <p>Contact Us</p>
+                        <NavLink to='/contact'><p>Contact Us</p></NavLink>
                     </Col>
                 </Row>
                 <hr />
@@ -98,9 +98,9 @@ const Footer = () => {
                         <p>2021 Unive © All rights reserved.</p>
                     </Col>
                 </Row>
-            </Container>
+            </Container >
 
-        </Container>
+        </Container >
     );
 };
 

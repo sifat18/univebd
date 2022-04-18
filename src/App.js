@@ -23,6 +23,11 @@ import Contact from './Components/Contact/Contact';
 import Nopage from './Components/Nopage/Nopage';
 import Authprovider from './Components/AuthProvider/Authprovider';
 import Recruiting from './Components/Recruting/Recruiting';
+import Assessments from './Components/Assessments/Assessments';
+import Blogs from './Components/Blogs/Blogs';
+import Instructor from './Components/Instructor/Instructor';
+import Contributor from './Components/Contributor/Contributor';
+import Enterprise from './Components/Enterprise/Enterprise';
 function App() {
   return (
     <Authprovider>
@@ -35,6 +40,7 @@ function App() {
           <Route path="/how-it-works" element={<HowItworks />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/business" element={<Business />} />
+          <Route path="/enterprise" element={<Enterprise />} />
           <Route path="/learn" element={<Learn />} />
           <Route path="/individual-learner" element={<Individual />} />
           <Route path="/upskill" element={<Upskill />} />
@@ -44,6 +50,10 @@ function App() {
           <Route path="/paths" element={<Paths />} />
           <Route path="/unlimited" element={<Unlimited />} />
           <Route path="/recruiting" element={<Recruiting />} />
+          <Route path="/assessments" element={<Assessments />} />
+          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/become-an-unive-instructor" element={<Instructor />} />
+          <Route path="/write-on-edpresso" element={<Contributor />} />
           <Route path="*" element={<Nopage />} />
         </Routes>
         <Footer />

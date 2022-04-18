@@ -128,5 +128,6 @@ export default function Recruiting() {
                 <p className=' my-4 fs-5 text-muted'>Contact our team today! We'll get back to you within 1 business day.</p>
                 <Button variant='btn btn-primary' href='/home'> Speak to the representative</Button>
             </Container>
-        </>)
+        </>
+    )
 }

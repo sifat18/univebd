@@ -12,7 +12,7 @@ export default function Unlimited() {
             {/* top part */}
             <Container className='my-5'>
                 <section className='text-center '>
-                    <h2 className=''>Stay ahead of the curve with Educative Unlimited.</h2>
+                    <h2 className=''>Career এ এগিয়ে থাকুন with Unive </h2>
                     <h4 className=' mt-3 fs-5 mx-auto'>75% of developers learn new tech skills at least once a year.</h4>
                     <h4 className=' mt-3 fs-5 mx-auto'>Stand out from the crowd with real-world skills and accelerate your career.</h4>
                     <div className=" mt-3   ">
