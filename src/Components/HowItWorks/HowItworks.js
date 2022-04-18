@@ -10,47 +10,47 @@ import pic7 from '../images/How-It-works/Picture8-1.png'
 export default function HowItworks() {
     return (
         <>
-            <h2 className='text-center my-5 py-5'>
+            <h2 data-aos="fade-up-right" className='text-center my-5 py-5'>
                 ইউনিভ কিভাবে কাজ করে?
             </h2>
             {/* pic1 */}
-            <Container fluid className='middle my-5'>
+            <Container data-aos="fade-up-left" fluid className='middle my-5'>
                 <Container className='w-75 text-center'>
                     <img className='img-fluid ' src={pic1} alt="" />
                 </Container>
             </Container>
             {/* pic2 */}
-            <Container fluid className='my-5 py-5'>
+            <Container fluid data-aos="fade-right" className='my-5 py-5'>
                 <Container className='w-75 text-center'>
                     <img className='img-fluid ' src={pic2} alt="" />
                 </Container>
             </Container>
             {/* pic3 */}
-            <Container fluid className='middle my-5 py-5'>
+            <Container fluid data-aos="fade-up" className='middle my-5 py-5'>
                 <Container className='w-75 text-center'>
                     <img className='img-fluid ' src={pic3} alt="" />
                 </Container>
             </Container>
             {/* pic4 */}
-            <Container fluid className='my-5 py-5'>
+            <Container fluid data-aos="fade-up-left" className='my-5 py-5'>
                 <Container className='w-75 text-center'>
                     <img className='img-fluid ' src={pic4} alt="" />
                 </Container>
             </Container>
             {/* pic5 */}
-            <Container fluid className='middle my-5 py-5' >
+            <Container fluid data-aos="fade-up-right" className='middle my-5 py-5' >
                 <Container className='w-75 text-center'>
                     <img className='img-fluid ' src={pic5} alt="" />
                 </Container>
             </Container>
             {/* pic6 */}
-            <Container fluid className='my-5 py-5'>
+            <Container fluid data-aos="fade-down" className='my-5 py-5'>
                 <Container className='w-75 text-center py-5'>
                     <img className='img-fluid ' src={pic6} alt="" />
                 </Container>
             </Container>
             {/* pic7 */}
-            <Container fluid className='middle my-5 py-5'>
+            <Container fluid data-aos="fade-up" className='middle my-5 py-5'>
                 <Container className='w-75 text-center'>
                     <img className='img-fluid ' src={pic7} alt="" />
                 </Container>

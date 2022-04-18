@@ -39,7 +39,7 @@ export default function Onboarding() {
 
         <>
             {/* top part */}
-            <Container className='my-5'>
+            <Container className='my-5' data-aos="fade-up-left">
                 <section className='text-center '>
                     <h2 className='fs-1 fw-bold'>Onboard your new software engineers. <br />Upskill the ones you already have.</h2>
                     <h3 className=' mt-5 '>Onboarding your growing team of developers is monotonous, <br />difficult, and time-consuming. It doesn't have to be.</h3>
@@ -56,7 +56,7 @@ export default function Onboarding() {
 
             </Container>
             {/* How we help */}
-            <Container fluid className='text-center py-5 middle'>
+            <Container fluid data-aos="fade-up" className='text-center py-5 middle'>
                 <Container className='my-5 w-75'>
                     <div className="bg-white mx-auto py-4 w-50 my-5 rounded-pill d-flex justify-content-around">
                         <Button onClick={() => handleOnb('onb')} variant="outline-light onbButton  py-3 px-5 rounded-pill ">Onboard</Button>
@@ -111,7 +111,7 @@ export default function Onboarding() {
             </Container>
 
             {/* Custom leaerning */}
-            <Container fluid className='text-center py-5 '>
+            <Container fluid data-aos="fade-down" className='text-center py-5 '>
                 <h2 className=''>How we help you onboard your <br /> teams more efficiently</h2>
                 <section className='container my-5 '>
 
@@ -186,7 +186,7 @@ export default function Onboarding() {
 
             </Container>
 
-            <Container fluid className='text-center py-5 middle'>
+            <Container fluid data-aos="fade-down" className='text-center py-5 middle'>
 
                 <Demo />
             </Container>

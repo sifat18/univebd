@@ -16,7 +16,7 @@ export default function Enterprise() {
     return (
         <>
             {/* top part */}
-            <Container className='my-5'>
+            <Container data-aos="fade-down" className='my-5'>
                 <section className='text-center '>
                     <h2 className='fs-1'>The Ultimate Engineering Enablement Platform</h2>
                     <h4 className=' mt-3  ps-1'>Personalized learning & onboarding at scale for high-growth <br />software engineering teams</h4>
@@ -31,7 +31,7 @@ export default function Enterprise() {
                 </section>
             </Container>
             {/* middle part */}
-            <Container fluid className='text-center py-5 middle'>
+            <Container data-aos="fade-up-right" fluid className='text-center py-5 middle'>
                 <section className='container mt-5'>
                     <h1 className=''>A Complete Enablement Toolkit for High-growth Teams</h1>
                     <Row className='my-5'>
@@ -55,7 +55,7 @@ export default function Enterprise() {
                 </section>
 
             </Container>
-            <Container>
+            <Container data-aos="fade-left">
                 <Row>
                     <Col xs={6}>
                         <h3>The Quickest Path To Engineering Productivity</h3>
@@ -76,7 +76,7 @@ export default function Enterprise() {
                 </Row>
             </Container>
 
-            <Container fluid className='text-center py-5 middle'>
+            <Container data-aos="fade-right" fluid className='text-center py-5 middle'>
                 <section className='container mt-5'>
                     <Row className='my-5'>
                         <Col xs={6}>
@@ -100,7 +100,7 @@ export default function Enterprise() {
 
             </Container>
 
-            <Container>
+            <Container data-aos="fade-down">
                 <Row>
                     <Col xs={6}>
                         <h3>Learn. Practice. Build. Repeat.</h3>
@@ -124,7 +124,7 @@ export default function Enterprise() {
 
             </Container >
 
-            <Container fluid className='text-center py-5 middle'>
+            <Container fluid data-aos="fade-up-right" className='text-center py-5 middle'>
                 <section className='container mt-5'>
                     <h3 className='fw-bold fs-'>Resources </h3>
                     <h3 className=' fs-5  ps-2'>Read more about Educative’s approach to enabling engineers from day one and beyond.</h3>
@@ -168,7 +168,7 @@ export default function Enterprise() {
                     </Container>
                 </section>
 
-            </Container>
+            </Container >
             <Demo />
         </>
     )

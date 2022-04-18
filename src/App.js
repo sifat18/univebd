@@ -1,4 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import Business from './Components/Business/Business';
 import Footer from './Components/Footer/Footer';
 import Header from './Components/Header/Header';
@@ -32,7 +34,11 @@ import Privacy from './Components/Privacy/Privacy';
 import EnterPriseTerm from './Components/EnterPriseTerm/EnterPriseTerm';
 import Terms from './Components/Terms/Terms';
 import EnterprisePricing from './Components/EnterprisePricing/EnterprisePricing';
+import { useEffect } from 'react';
 function App() {
+  useEffect(() => {
+    AOS.init();
+  }, [])
   return (
     <Authprovider>
       <BrowserRouter>

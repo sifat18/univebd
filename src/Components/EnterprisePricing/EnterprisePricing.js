@@ -8,7 +8,7 @@ export default function EnterprisePricing() {
     return (
         <>
             {/* top part */}
-            <Container className='my-5'>
+            <Container data-aos="fade-down" className='my-5'>
                 <section className='text-center '>
                     <h2 className=''>Choose the Educative Experience. <br /> Make it uniquely yours. </h2>
                     <h4 className=' mt-3 fs-5 mx-auto'>No two teams are exactly alike, and neither are their training needs.<br />
@@ -16,7 +16,7 @@ export default function EnterprisePricing() {
                         Just contact us.</h4>
                 </section>
             </Container>
-            <Container fluid className='middle text-center my-5 py-5'>
+            <Container data-aos="fade-up" fluid className='middle text-center my-5 py-5'>
                 <section className='container mt-5'>
                     <p className='text-center'>MOST POPULAR</p>
                     <Row className='g-0 shadow-sm border'>
@@ -94,12 +94,12 @@ export default function EnterprisePricing() {
                 </section>
             </Container>
 
-            <Container  >
+            <Container data-aos="fade-up-left"  >
                 <Companies />
 
             </Container>
 
-            <Container fluid className=' text-center my-5 middle'>
+            <Container fluid data-aos="fade-up-right" className=' text-center my-5 middle'>
                 <Container className=' text-start'>
                     <h2 className=' text-start py-5 fs-1'>Frequently Asked Questions</h2>
                     <Accordion flush>
@@ -137,7 +137,7 @@ export default function EnterprisePricing() {
                     </Accordion>
                 </Container>
             </Container>
-            <Container fluid className='middle my-5 py-5'>
+            <Container fluid data-aos="fade-down" className='middle my-5 py-5'>
                 <Demo />
             </Container>
         </>

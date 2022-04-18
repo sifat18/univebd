@@ -18,7 +18,7 @@ export default function Individual() {
     return (
         <>
             {/* top part */}
-            <Container className='my-5'>
+            <Container data-aos="fade-up-right" className='my-5'>
                 <section className='text-center '>
                     <h2 className=''>বর্তমানের ইন্ডাস্ট্রি প্র্যাকটিস ফোকাসড কোর্স শুরু করুন এখনি!</h2>
                     {/* <h4 className=' mt-3  ps-1'>World-class courses for world-class software developers</h4> */}
@@ -32,7 +32,7 @@ export default function Individual() {
                 </section>
             </Container>
             {/* how can we help */}
-            <Container fluid className='text-center py-5 middle'>
+            <Container fluid data-aos="fade-up-left" className='text-center py-5 middle'>
                 <NormalCards
                     titleSection={"আমরা কিভাবে সাহায্য করি"}
                     card1Msg={"আপনার কলেজ/ ইন্সটিটিউট এর পুরানো কারিকুলাম ইন্ডাস্ট্রিতে ব্যবহার করার সম্ভাবনা খুবি সীমিত। আমরা আপনাকে বর্তমানের ইন্ডাস্ট্রি প্র্যাকটিস নিয়ে প্র্যাকটিকাল নলেজ নির্ভর কন্টেন্ট প্রদান করি"}
@@ -49,7 +49,7 @@ export default function Individual() {
             </Container>
 
             {/* Educative difference */}
-            <Container fluid className='text-center py-5 '>
+            <Container fluid data-aos="fade-down" className='text-center py-5 '>
                 <section className='container my-5 '>
                     <h1 className=''>Why Unive is different</h1>
                     <Row className='my-5 py-5'>
@@ -86,7 +86,7 @@ export default function Individual() {
 
             </Container>
             {/* start coding */}
-            <Container fluid className='text-center py-5 middle'>
+            <Container fluid data-aos="fade-left" className='text-center py-5 middle'>
                 <section className='container mt-5'>
                     <h3 className='text-center fw-bold fs-2'>Start a course </h3>
                     <p className=' text-center fs-7 mt-2 ps-2'>নতুন স্কিল যোগ করুন আপনার সিভিতে / স্কিল আপডেট করুন কারেন্ট ইন্ডাস্ট্রি এর জন্যে।</p>
@@ -120,7 +120,7 @@ export default function Individual() {
 
             </Container>
             {/* curated paths */}
-            <Container fluid className='text-center py-5 '>
+            <Container fluid data-aos="fade-down" className='text-center py-5 '>
                 <section className='container mt-5'>
                     <h1 className=''>Curated Paths</h1>
                     <h5 className='text-center'>Go in-depth and become a subject matter expert </h5>
@@ -192,14 +192,14 @@ export default function Individual() {
 
             </Container>
             {/* pricing */}
-            <Container fluid className='text-center py-5 middle'>
+            <Container fluid data-aos="fade-up" className='text-center py-5 middle'>
                 <h1 className=''>Simple pricing, uniquely yours</h1>
                 <PriceCard />
 
             </Container>
 
             {/* Review */}
-            <Container fluid className='text-center py-5 '>
+            <Container fluid data-aos="fade-down" className='text-center py-5 '>
                 <h3>
                     যারা কোর্স সম্পন্ন করেছেন তাদের মতামত-
                 </h3>

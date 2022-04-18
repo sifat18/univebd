@@ -10,7 +10,7 @@ export default function Upskill() {
     return (
         <>
             {/* top part */}
-            <Container className='my-5'>
+            <Container data-aos="fade-down" className='my-5'>
                 <section className='text-center '>
                     <h2 className='fs-1 fw-bold'>Upskill Your Team.</h2>
                     <h3 className=' fs-2 mt-3'>Improve Their Code and Career.</h3>
@@ -26,7 +26,7 @@ export default function Upskill() {
                 </section>
             </Container>
             {/* How we help */}
-            <Container fluid className='text-center py-5 middle'>
+            <Container fluid data-aos="fade-left" className='text-center py-5 middle'>
                 <NormalCards
                     titleSection={"How we help"}
                     card1Msg={"Videos are boring. And slow. Learn at your own pace with our vast and growing library of interactive hands-on courses."}
@@ -43,7 +43,7 @@ export default function Upskill() {
             </Container>
 
             {/* Custom leaerning */}
-            <Container fluid className='text-center py-5 '>
+            <Container fluid data-aos="fade-up-right" className='text-center py-5 '>
                 {/* middle part */}
                 <section className='container my-5 '>
 
@@ -81,7 +81,7 @@ export default function Upskill() {
 
             </Container>
 
-            <Container fluid className='text-center py-5 middle'>
+            <Container fluid data-aos="fade-up" className='text-center py-5 middle'>
 
                 <Demo />
             </Container>

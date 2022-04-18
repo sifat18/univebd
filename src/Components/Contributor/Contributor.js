@@ -4,7 +4,7 @@ import contribe from '../images/contribute/contribe.png'
 export default function Contributor() {
     return (
         <>
-            <Container className=''>
+            <Container data-aos="fade-up-left " className=''>
                 <Row className='my-5 container'>
                     <Col xs={12} md={6} className='text-start ps-3 ms-5 '>
                         <h2 className='fs-1 fw-bold'>Write on Unive!</h2>
@@ -19,7 +19,7 @@ export default function Contributor() {
             </Container>
 
 
-            <Container fluid className='middle'>
+            <Container data-aos="fade-up-right" fluid className='middle'>
                 <Container className='text-center my-2  py-5 '>
                     <Row className='my-5'>
 
@@ -66,7 +66,7 @@ export default function Contributor() {
                 </Container>
             </Container>
 
-            <Container className='py-5'>
+            <Container data-aos="fade-up" className='py-5'>
                 <h2 className='text-center'>Contribute to Edpresso today! </h2>
                 <p className='text-center'>There are two ways that you can contribute to the growing Edpresso database.
                 </p>
@@ -99,12 +99,12 @@ export default function Contributor() {
                 </Row>
             </Container>
 
-            <Container fluid className='middle py-5'>
+            <Container fluid data-aos="fade-up-left" className='middle py-5'>
                 <h2 className='text-center fs-1 fw-bold my-5'>Sign-up to write!</h2>
                 <Button variant='btn btn-primary mx-auto d-block'>Here</Button>
             </Container>
 
-            <Container className='  my-5'>
+            <Container data-aos="fade-up" className='  my-5'>
                 <Row>
                     <Col md={4}>
                         <h2 className='my-5 mx-auto fs-1 text-start'>Frequently asked <br /> questions</h2>
@@ -132,7 +132,7 @@ export default function Contributor() {
                     </Col>
                 </Row>
             </Container>
-            <Container fluid className=' py-5 text-center'>
+            <Container data-aos="fade-down " fluid className=' py-5 text-center'>
                 <h2 className='text-center'>On the fence?</h2>
                 <Container className='text-center my-5 w-50'>
                     <ul className='text-start '>

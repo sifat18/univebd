@@ -9,7 +9,7 @@ export default function Blogs() {
     const [item] = useData();
     return (
         <>
-            <Container fluid className='bg-primary mb-5 py-5'>
+            <Container data-aos="fade-up-left" fluid className='bg-primary mb-5 py-5'>
                 <Container className='text-light text-center py-5'>
                     <h2 className='fs-1 mb-4'>Unive.blog()</h2>
                     <p className='fs-5'>For developers. By developers.</p>
@@ -22,12 +22,12 @@ export default function Blogs() {
 
                 </Container>
             </Container>
-            <Container className='bg-color my-5'>
+            <Container data-aos="fade-up" className='bg-color my-5'>
                 {/* search div  */}
                 <div className=" text-center my-4 ">
                     <input className='w-75 py-1 rounded-pill ' onChange='{handlesearch}' placeholder='Search ' type="text" name="search" id="search" />
                 </div> </Container>
-            <Container>
+            <Container data-aos="fade-up-left">
                 <Row className='my-5'>
                     <Col xs={12} md={7}>
                         <img className='img-fluid' src={blog} alt="" />

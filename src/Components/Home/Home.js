@@ -24,7 +24,7 @@ export default function Home() {
     return (
         <>
             {/* top part */}
-            <Container className='my-5'>
+            <Container data-aos="fade-right" className='my-5'>
                 <section className='text-center '>
                     <h1 className=''>Learn something new. Everyday.</h1>
                     <h5 className=' mt-3 '>Educative helps software engineers and their teams increase productivity and reach their </h5>
@@ -44,7 +44,7 @@ export default function Home() {
                 </section>
             </Container>
             {/* middle part */}
-            <Container fluid className='text-center py-5 middle'>
+            <Container fluid data-aos="fade-left" className='text-center py-5 middle'>
                 {/* middle part */}
                 <section className='container mt-5'>
                     <h1 className=''>শিখুন ইন্টারেক্টিভ ভিডিও টিউটোরিয়াল এর মাধ্যমে</h1>
@@ -128,7 +128,7 @@ export default function Home() {
                 </Row> */}
             </Container>
             {/* 2nd last part */}
-            <Container fluid className='text-center py-5 '>
+            <Container fluid data-aos="fade-down" className='text-center py-5 '>
                 <section className='container mt-5'>
                     <h3 className='fw-bold'>Inspired by and developed for </h3>
                     <h3 className=' fw-bold  ps-2'>Engineers like you</h3>
@@ -157,7 +157,7 @@ export default function Home() {
 
             </Container>
 
-            <Container fluid className='text-center py-5 middle'>
+            <Container fluid data-aos="fade-up" className='text-center py-5 middle'>
                 <h3>
                     যারা কোর্স সম্পন্ন করেছেন তাদের মতামত-
                 </h3>

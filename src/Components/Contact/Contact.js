@@ -6,7 +6,7 @@ export default function Contact() {
 
     return (
         <>
-            <h2 className='text-center my-5 py-5'>
+            <h2 data-aos="fade-down" className='text-center my-5 py-5'>
                 সরাসরি মেসেজ করুন        </h2>
             {/* form */}
             <Container fluid className='middle my-5'>
@@ -15,7 +15,7 @@ export default function Contact() {
                 </Container>
             </Container>
             {/* pic2 */}
-            <Container fluid className='my-5 py-5'>
+            <Container data-aos="fade-up-right" fluid className='my-5 py-5'>
                 <Container className='w-75 text-center'>
                     <img className='img-fluid ' src={conactImage} alt="" />
                 </Container>

@@ -6,7 +6,7 @@ export default function Assessments() {
     const [item] = useData();
     return (
         <>
-            <Container fluid className='bg-primary mb-5 py-5'>
+            <Container data-aos="fade-up-right" fluid className='bg-primary mb-5 py-5'>
                 <Container className='text-light'>
                     <Row>
                         <Col xs={8} >
@@ -22,7 +22,7 @@ export default function Assessments() {
                 </Container>
             </Container>
 
-            <Container>
+            <Container data-aos="fade-up-left">
                 <Row className='g-5'>
                     <Col xs={6}>
                         {item.map((id) => (

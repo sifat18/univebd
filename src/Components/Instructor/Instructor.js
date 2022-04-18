@@ -9,7 +9,7 @@ import lady from '../images/instructor/chair-lady.png'
 export default function Instructor() {
     return (
         <>
-            <Container className=''>
+            <Container data-aos="fade-up" className=''>
                 <Row className='my-5 container'>
                     <Col xs={12} md={6} className='text-start ps-3 ms-5 '>
                         <h2 className='fs-1 fw-bold'>Shape the future</h2>
@@ -26,7 +26,7 @@ export default function Instructor() {
 
             </Container>
 
-            <Container className='text-center my-5'>
+            <Container data-aos="fade-right" className='text-center my-5'>
                 <h2 className='fs-1'>Why Teach at Unive?</h2>
                 <Row className='my-5'>
                     <Col xs={12} md={7}>
@@ -38,7 +38,7 @@ export default function Instructor() {
                     </Col>
                 </Row>
             </Container>
-            <Container className='text-center my-5 middle'>
+            <Container data-aos="fade-up-left " className='text-center my-5 middle'>
                 <Row className='my-5'>
 
                     <Col xs={12} md={5}>
@@ -71,7 +71,7 @@ export default function Instructor() {
             </Container>
             <hr className='w-25 fw-bold mx-auto' />
 
-            <Container className='text-center my-2  py-5'>
+            <Container data-aos="fade-up-left" className='text-center my-2  py-5'>
                 <h2 className='fs-1 fw-bold'>  Join our Community of Instructors</h2>
                 <Row className='my-5'>
 
@@ -111,7 +111,7 @@ export default function Instructor() {
 
             </Container>
 
-            <Container className='w-50  my-5'>
+            <Container data-aos="fade-left" className='w-50  my-5'>
                 <h2 className='my-5 fs-1 text-center'>Frequently Asked Questions</h2>
                 <Accordion defaultActiveKey={['0', '1', '2', '3', '4']} alwaysOpen >
                     <Accordion.Item eventKey="0" >

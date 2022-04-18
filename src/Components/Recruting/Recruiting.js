@@ -10,7 +10,7 @@ export default function Recruiting() {
     return (
         <>
             <Container>
-                <Row className='my-5'>
+                <Row data-aos="fade-up" className='my-5'>
                     <Col xs={12} md={7} className='text-start ms-3'>
                         <h2 className='fs-1 '>Increase your technical <br /> interview-to-hire rate</h2>
                         <p className='my-4 fs-5'>With curated interview prep courses, Educative for <br /> Recruiting helps you improve hiring outcomes and reach <br /> your D&I goals.</p>
@@ -22,13 +22,13 @@ export default function Recruiting() {
                 </Row>
 
             </Container>
-            <Container fluid className='middle'>
+            <Container data-aos="fade-down" fluid className='middle'>
                 <Container>
                     <h2>Unive learning platform is used by 500,000+ users at companies such as:</h2>
                     <Companies />
                 </Container>
             </Container>
-            <Container className='text-center my-5'>
+            <Container data-aos="fade-up" className='text-center my-5'>
                 <h2 className='fs-1'>Empower your candidates with Unive</h2>
                 <p className='fs-5 my-4'>The Recruiting plan lets each of your candidates prepare for their interview using a selection of courses curated for your company.</p>
                 <Row className='my-5'>
@@ -41,7 +41,7 @@ export default function Recruiting() {
                     </Col>
                 </Row>
             </Container>
-            <Container className='text-center my-5 middle'>
+            <Container data-aos="fade-up-left" className='text-center my-5 middle'>
                 <Row className='my-5'>
 
                     <Col xs={12} md={5}>
@@ -53,7 +53,7 @@ export default function Recruiting() {
                     </Col>
                 </Row>
             </Container>
-            <Container className='text-center my-5'>
+            <Container data-aos="fade-up-right" className='text-center my-5'>
                 <Row className='my-5'>
                     <Col xs={12} md={7}>
                         video here
@@ -65,7 +65,7 @@ export default function Recruiting() {
                     </Col>
                 </Row>
             </Container>
-            <Container className='text-center my-5 middle py-5'>
+            <Container data-aos="fade-up-left " className='text-center my-5 middle py-5'>
                 <Row className='my-5'>
                     <Col xs={12} md={5}>
                         <h2 className='fs-1 text-start'>Deliver a better candidate experience</h2>
@@ -77,13 +77,13 @@ export default function Recruiting() {
 
                 </Row>
             </Container>
-            <Container fluid className='bg-primary text-center py-5'>
+            <Container data-aos="fade-up" fluid className='bg-primary text-center py-5'>
                 <h2 className='text-white'>Contact us for more information</h2>
                 <Container className='bg-white w-50 text-center mx-auto p-5 py-3'>
                     <ContactForm />
                 </Container>
             </Container>
-            <Container className='w-50 text-center my-5'>
+            <Container data-aos="fade-down" className='w-50 text-center my-5'>
                 <h2 className='my-5 fs-1'>Frequently Asked Questions</h2>
                 <Accordion>
                     <Accordion.Item eventKey="0">

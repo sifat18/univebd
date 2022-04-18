@@ -10,7 +10,7 @@ export default function Unlimited() {
     return (
         <>
             {/* top part */}
-            <Container className='my-5'>
+            <Container data-aos="fade-up-right" className='my-5'>
                 <section className='text-center '>
                     <h2 className=''>Career এ এগিয়ে থাকুন with Unive </h2>
                     <h4 className=' mt-3 fs-5 mx-auto'>75% of developers learn new tech skills at least once a year.</h4>
@@ -20,7 +20,7 @@ export default function Unlimited() {
 
                 </section>
             </Container>
-            <Container fluid className='middle text-center my-5 py-5'>
+            <Container fluid data-aos="fade-up-left" className='middle text-center my-5 py-5'>
                 <PriceCard />
                 <p className='my-5'> <a href='/home'> explore for your team</a></p>
                 <p className='my-5'> Trusted by more than 1.1 million learners working for companies like</p>
@@ -29,7 +29,7 @@ export default function Unlimited() {
                 </Container>
 
             </Container>
-            <Container  >
+            <Container data-aos="fade-up" >
                 <Row className='gx-5'>
                     <Col className='text-center '>
                         <img src="" alt="someimage" />
@@ -58,7 +58,7 @@ export default function Unlimited() {
                 </Row>
 
             </Container>
-            <Container fluid className='middle my-5 py-5'>
+            <Container data-aos="fade-down" fluid className='middle my-5 py-5'>
                 <Demo />
             </Container>
         </>
