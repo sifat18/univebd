@@ -35,6 +35,12 @@ import EnterPriseTerm from './Components/EnterPriseTerm/EnterPriseTerm';
 import Terms from './Components/Terms/Terms';
 import EnterprisePricing from './Components/EnterprisePricing/EnterprisePricing';
 import { useEffect } from 'react';
+import FAQ from './Components/FAQ/FAQ';
+import OurTeam from './Components/OurTeam/OurTeam';
+import Careers from './Components/Careers/Careers';
+import CourseCatalog from './Components/CourseCatalog/CourseCatalog';
+import Scholarships from './Components/Scholarships/Scholarships';
+import Press from './Components/Press/Press';
 function App() {
   useEffect(() => {
     AOS.init();
@@ -68,6 +74,12 @@ function App() {
           <Route path="/enterprise-terms" element={<EnterPriseTerm />} />
           <Route path="/enterprise-price" element={<EnterprisePricing />} />
           <Route path="/terms" element={<Terms />} />
+          <Route path="/FAQ" element={<FAQ />} />
+          <Route path="/our-team" element={<OurTeam />} />
+          <Route path="/careers" element={<Careers />} />
+          <Route path="/course-catalogue" element={<CourseCatalog />} />
+          <Route path="/scholarships" element={<Scholarships />} />
+          <Route path="/press" element={<Press />} />
           <Route path="*" element={<Nopage />} />
         </Routes>
         <Footer />

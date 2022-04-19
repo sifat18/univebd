@@ -1,12 +1,14 @@
 import { Button, Container, Form, FormControl, Modal, Nav, Navbar, Spinner } from 'react-bootstrap'
 import { NavLink, useLocation } from 'react-router-dom';
-import logo from '../images/logos/cropped-small-px-e1638453380416.png'
+// import logo from '../images/logos/cropped-small-px-e1638453380416.png'
 import gogo from '../images/logos/icons8-google.svg'
+import logo from '../images/logos/logo.png'
 import arrow from '../images/icons8-arrow-24.png'
 import { useState } from 'react';
 import Register from '../Register/Register';
 import { useNavigate } from "react-router-dom";
 import useAuth from '../Context/useAuth';
+import './header.css'
 
 export default function Header() {
     const [show, setShow] = useState(false);
@@ -84,12 +86,12 @@ export default function Header() {
             <Navbar sticky="top" fluid collapseOnSelect expand="lg" bg="white" variant="light">
                 <Container fluid>
 
-                    <NavLink to='/'> <Navbar.Brand href="#home" className="d-md-none ">
+                    <NavLink to='/'> <Navbar.Brand href="#home" className="mx-5 ">
                         <img
                             src={logo}
-                            width="120"
-                            height="40"
-                            className="d-inline-block align-top"
+                            width="100"
+                            height=""
+                            className="d-inline-block align-top img-fluid"
                             alt="React Bootstrap logo"
                         />
                     </Navbar.Brand></NavLink >
@@ -97,10 +99,10 @@ export default function Header() {
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="  fw-bold  ">
                             {/* <Nav.Link href="#home">Solution</Nav.Link> */}
-                            <NavLink to='/why-unive'>  <Nav.Link className=" d-none d-md-block ms-3" href="/why-unive">ইউনিভ কেন</Nav.Link></NavLink>
-                            <NavLink to='/how-it-works'><Nav.Link className="d-none d-md-block mx-5" href="/how-it-works">কিভাবে কাজ করে</Nav.Link></NavLink>
-                            <NavLink to='/why-unive'>  <Nav.Link className=" d-md-none" href="/why-unive">ইউনিভ কেন</Nav.Link></NavLink>
-                            <NavLink to='/how-it-works'><Nav.Link className=" d-md-none" href="/how-it-works">কিভাবে কাজ করে</Nav.Link></NavLink>
+                            <NavLink to='/why-unive'>  <Nav.Link className=" d-none d-md-block mx-5 text-dark" href="/why-unive">ইউনিভ কেন</Nav.Link></NavLink>
+                            <NavLink to='/how-it-works'><Nav.Link className="d-none d-md-block ms-5 text-dark " href="/how-it-works">কিভাবে কাজ করে</Nav.Link></NavLink>
+                            <NavLink to='/why-unive'>  <Nav.Link className=" d-md-none text-dark" href="/why-unive">ইউনিভ কেন</Nav.Link></NavLink>
+                            <NavLink to='/how-it-works'><Nav.Link className=" d-md-none text-dark" href="/how-it-works">কিভাবে কাজ করে</Nav.Link></NavLink>
 
                             {/* <NavDropdown title="ইউনিভ কেন" id="navbarScrollingDropdown" >
                                 <NavLink to='/business'>    <NavDropdown.Item href="#action3">Developer team</NavDropdown.Item></NavLink>
@@ -116,50 +118,29 @@ export default function Header() {
                             </NavDropdown> */}
 
                         </Nav>
-
-                        <NavLink to='/'><Navbar.Brand href="#home" className="d-none d-md-block mx-auto ps-5">
-                            <img
-                                src={logo}
-                                width="100"
-                                height="40"
-                                className="d-inline-block align-top"
-                                alt="React Bootstrap logo"
-                            />
-                        </Navbar.Brand></NavLink>
                     </Navbar.Collapse>
 
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="fw-bold d-none d-md-block ">
-                            <NavLink to='/'><Nav.Link className=" d-inline me-5" href="#course">কোর্সসমুহ</Nav.Link></NavLink >
-                            <NavLink to='/contact'><Nav.Link className=" d-inline mx-5" href="/contact">যোগাযোগ</Nav.Link></NavLink >
+                            <NavLink to='/'><Nav.Link className=" d-inline mx-5 text-dark" href="#course">কোর্সসমুহ</Nav.Link></NavLink >
+                            <NavLink to='/contact'><Nav.Link className=" d-inline mx-5 text-dark" href="/contact">যোগাযোগ</Nav.Link></NavLink >
                         </Nav>
                         <Nav className="fw-bold d-md-none ">
-                            <NavLink to='/'><Nav.Link className=" " href="#course">কোর্সসমুহ</Nav.Link></NavLink >
-                            <NavLink to='/contact'><Nav.Link className="" href="/contact">যোগাযোগ</Nav.Link></NavLink >
+                            <NavLink to='/'><Nav.Link className="text-dark " href="#course">কোর্সসমুহ</Nav.Link></NavLink >
+                            <NavLink to='/contact'><Nav.Link className="text-dark" href="/contact">যোগাযোগ</Nav.Link></NavLink >
                         </Nav>
-
-                        <Form className="d-flex ms-auto">
-                            <FormControl
-                                type="search"
-                                placeholder="&#xF002; Search"
-                                className="me-2 d-none d-md-block"
-                                aria-label="Search"
-                            />
-                            {/* <Button variant="outline-success">Search</Button> */}
-                        </Form>
                         {user.displayName && <Navbar.Text>
                             Signed in as: <a href="#login">{user.displayName}</a>
                         </Navbar.Text>}
                         <Nav className="fw-bold">
                             {user.displayName && <Nav.Link onClick={logOut}>LogOut</Nav.Link>}
                             {!user.displayName && <Nav.Link onClick={handleShowL}>Log In</Nav.Link>}
-                            {!user.displayName && <Button onClick={handleShow} variant="btn btn-primary">Join For free <img src={arrow} alt="arrow" /></Button>}
+                            {!user.displayName && <Button onClick={handleShow} variant="btn btn-primary" className="ms-5 bluebtn">Join For free <img src={arrow} alt="arrow" /></Button>}
                         </Nav>
 
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-            <hr />
 
             {/* modal register*/}
             <Modal show={show} onHide={handleClose}>

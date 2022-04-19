@@ -27,12 +27,12 @@ export default function Home() {
             <Container data-aos="fade-right" className='my-5'>
                 <section className='text-center '>
                     <h1 className=''>Learn something new. Everyday.</h1>
-                    <h5 className=' mt-3 '>Educative helps software engineers and their teams increase productivity and reach their </h5>
-                    <h5 className=' ms-5 '>potential</h5>
+                    <h5 className=' mt-3 smallText '>Educative helps software engineers and their teams increase productivity and reach their <br/>potential</h5>
+                    {/* <h5 className=' ms-5 '></h5> */}
                     <div className=" mt-3   ">
-                        <Button className='p-3 m-3' href="#">আমি শিখতে চাই</Button>
-                        <Button className='p-3 m-3' href="#">আমি কর্মী খুঁজছি</Button>
-                        <Button className='p-3 m-3' href="#">আমি কাজ খুঁজছি</Button>
+                        <Button className='p-3 m-3 bluebtn' href="#">আমি শিখতে চাই</Button>
+                        <Button className='p-3 m-3 bluebtn' href="#">আমি কর্মী খুঁজছি</Button>
+                        <Button className='p-3 m-3 bluebtn' href="#">আমি কাজ খুঁজছি</Button>
                     </div>
                     <div >
                         <img className='img-fluid' src={home} alt="" />
@@ -134,7 +134,7 @@ export default function Home() {
                     <h3 className=' fw-bold  ps-2'>Engineers like you</h3>
                     <Container className='my-5'>
                         <Row>
-                            <Col xs={6} className='p-0 m-0'>
+                            <Col xs={12} md={6} className='p-0 mb-3'>
                                 <img src={bot} alt="" className='img-fluid' />
                                 <div className='mt-5 border-end text-start'>
                                     <h2 className='' >Engineering Managers and Executives</h2>
@@ -142,7 +142,7 @@ export default function Home() {
                                     <Button variant="outline-secondary">See how <img src={ar} alt="" /></Button>
                                 </div>
                             </Col>
-                            <Col xs={6} className='p-0 m-0'>
+                            <Col xs={12} md={6} className='p-0 m-0'>
                                 <img src={bot2} alt="" className='img-fluid' />
                                 <div className='mt-5 ps-5 text-start'>
                                     <h2 className=' '>Software Engineers</h2>

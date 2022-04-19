@@ -11,5 +11,11 @@
     .social {
         margin-bottom: 50px;
     }
+    .words{
+        font-size: 0.7rem;
+    }
+    .ashText{
+        color:darkgrey
+    }
 
 }
