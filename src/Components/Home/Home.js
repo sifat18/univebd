@@ -26,8 +26,8 @@ export default function Home() {
             {/* top part */}
             <Container data-aos="fade-right" className='my-5'>
                 <section className='text-center '>
-                    <h1 className=''>Learn something new. Everyday.</h1>
-                    <h5 className=' mt-3 smallText '>Educative helps software engineers and their teams increase productivity and reach their <br/>potential</h5>
+                    <h1 className=''>অনলাইনে টেকনিক্যাল স্কিল শিখুন এবং আয় করুন​</h1>
+                    <h5 className=' mt-3 smallText '>ক্যারিয়ার রিলেটেড প্র্যাকটিকাল কোর্স ​</h5>
                     {/* <h5 className=' ms-5 '></h5> */}
                     <div className=" mt-3   ">
                         <Button className='p-3 m-3 bluebtn' href="#">আমি শিখতে চাই</Button>
