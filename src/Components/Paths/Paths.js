@@ -13,18 +13,18 @@ export default function Paths() {
         <>
             <Container fluid className=' my-5 pt-5 '>
                 <Container>
-                    <Row>
-                        <Col xs={6}>
-                            <section className='text-start ms-5 mt-5 ps-5 '>
+                    <Row className='mb-3'>
+                        <Col xs={12} md={6} className='order-md-1 order-2'>
+                            <section className='text-start ms-5 mt-5 '>
                                 <h2 className='fs-1 fw-bold'>Learning Paths</h2>
-                                <h2 className='fs-5 '>All our Learning Paths are carefully curated to help you achieve a specific learning goal. Find the perfect Learning Path for your needs here.</h2>
+                                <h2 className=' smallText'>All our Learning Paths are carefully curated to help you achieve a specific learning goal. Find the perfect Learning Path for your needs here.</h2>
                             </section>
                         </Col>
-                        <Col xs={4}>
-                            <img src={path} alt="" />
+                        <Col xs={12} md={4} className='order-md-2 order-1'>
+                            <img className='img-fluid ' src={path} alt="" />
                         </Col>
                     </Row>
-                    <Nav variant="tabs" defaultActiveKey="/home">
+                    <Nav justify variant="tabs" defaultActiveKey="/home">
                         <Nav.Item>
                             <Nav.Link onClick={() => getAll('all')}>All path</Nav.Link>
                         </Nav.Item>
@@ -41,7 +41,7 @@ export default function Paths() {
 
             </Container>
             <Container>
-                <Row xs={1} md={3} className="g-4 ms-5 ps-5">
+                <Row xs={1} md={3} className="g-4 bigMargin">
                     {item.map((id) => (
                         <Col key={id.key}>
                             <Card className='py-1'>
