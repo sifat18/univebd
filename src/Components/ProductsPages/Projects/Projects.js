@@ -12,8 +12,8 @@ export default function Projects() {
         <>
             <Container fluid className=' my-5 pt-5 '>
                 <Row>
-                    <Col xs={8}>
-                        <section className='text-start ms-5 ps-5 '>
+                    <Col xs={12} md={8} className='order-2 order-md-1'>
+                        <section className='text-start mx-3 '>
                             <h2 className='fs-1 fw-bold'>Build real-world programming projects</h2>
                             <Row className=" py-5   ">
                                 <Col>
@@ -29,14 +29,14 @@ export default function Projects() {
                             </Row>
                         </section>
                     </Col>
-                    <Col xs={4}>
+                    <Col xs={12} md={4} className='order-1 pb-5 order-md-2'>
                         <img src={project} alt="" />
                     </Col>
                 </Row>
                 <hr />
             </Container>
             <Container>
-                <Row xs={1} md={3} className="g-4 ms-5 ps-5">
+                <Row xs={1} md={3} className="g-4 bigMargin mb-5">
                     {item.map((id) => (
                         <Col key={id.key}>
                             <Card className='py-1'>
