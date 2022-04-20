@@ -11,7 +11,7 @@ export default function EnterprisePricing() {
             <Container data-aos="fade-down" className='my-5'>
                 <section className='text-center '>
                     <h2 className=''>Choose the Educative Experience. <br /> Make it uniquely yours. </h2>
-                    <h4 className=' mt-3 fs-5 mx-auto'>No two teams are exactly alike, and neither are their training needs.<br />
+                    <h4 className=' mt-3  mx-auto smallText'>No two teams are exactly alike, and neither are their training needs.<br />
                         Questions about our plans? Looking for more detailed information? We'd love to help.<br />
                         Just contact us.</h4>
                 </section>

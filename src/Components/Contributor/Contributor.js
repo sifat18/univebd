@@ -142,7 +142,8 @@ export default function Contributor() {
                         <li> schedule a call for more information!</li>
                         <li>Check out our FAQ page and/or our EdPresso Community Guidelines for more information.</li>
                     </ul>
-                </Container>            </Container>
+                </Container>
+            </Container>
         </>
     )
 }
