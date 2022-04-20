@@ -86,7 +86,7 @@ export default function Header() {
             <Navbar sticky="top" fluid collapseOnSelect expand="lg" bg="white" variant="light">
                 <Container fluid>
 
-                    <NavLink to='/'> <Navbar.Brand href="#home" className="mx-5 ">
+                    <NavLink to='/'> <Navbar.Brand href="#home" className="me-5 ">
                         <img
                             src={logo}
                             width="100"

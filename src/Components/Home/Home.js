@@ -48,8 +48,8 @@ export default function Home() {
                 {/* middle part */}
                 <section className='container mt-5'>
                     <h1 className=''>শিখুন ইন্টারেক্টিভ ভিডিও টিউটোরিয়াল এর মাধ্যমে</h1>
-                    <h5 className=' mt-3  ps-2'>You don’t get better at swimming by watching others. Coding is no different. Practice as </h5>
-                    <h5 className=' ms-5 '>you learn with live code environments inside your browser.</h5>
+                    <h5 className=' mt-3 smallText ps-2'>You don’t get better at swimming by watching others. Coding is no different. Practice as </h5>
+                    <h5 className=' text-center smallText'>you learn with live code environments inside your browser.</h5>
                     <div className=" top-video mt-5   ">
                         <video loop="true" className='w-75 h-75' autoplay="autoplay" muted >
                             <source src={b2} type='video/mp4' />
