@@ -12,6 +12,7 @@ import check from '../images/check.png'
 import Companies from '../Common/Companies'
 import ReviewCard from '../Common/ReviewCard'
 import Demo from '../Common/Demo'
+import Resources from '../Common/Resources'
 export default function Enterprise() {
     return (
         <>
@@ -19,26 +20,28 @@ export default function Enterprise() {
             <Container data-aos="fade-down" className='my-5'>
                 <section className='text-center '>
                     <h2 className='fs-1'>The Ultimate Engineering Enablement Platform</h2>
-                    <h4 className=' mt-3  ps-1'>Personalized learning & onboarding at scale for high-growth <br />software engineering teams</h4>
+                    <h4 className=' mt-3 smallText ps-1'>Personalized learning & onboarding at scale for high-growth <br />software engineering teams</h4>
                     <div className=" mt-3   ">
-                        <Button className='p-3 m-3 w-25' href="#">Start a Interactive Demo</Button>
+                        <Button className='p-3 m-3 bluebtn' href="#">Start a Interactive Demo</Button>
                     </div>
                     <div >
-                        <img className='img-fluid w-50' src={top} alt="" />
+                        <img className='img-fluid w-75' src={top} alt="" />
 
                     </div>
                     <Companies />
                 </section>
             </Container>
-            {/* middle part */}
+            {/* Complete Enablement Toolkit */}
             <Container data-aos="fade-up-right" fluid className='text-center py-5 middle'>
+                {/* 1st row */}
                 <section className='container mt-5'>
-                    <h1 className=''>A Complete Enablement Toolkit for High-growth Teams</h1>
+                    <h1 className='fs-3 fw-bold'>A Complete Enablement Toolkit for High-growth Teams</h1>
+                    {/* Enable Engineer */}
                     <Row className='my-5'>
-                        <Col xs={6}>
+                        <Col xs={12} md={6} className='mb-3'>
                             <img className='img-fluid' src={row1} alt="" />
                         </Col>
-                        <Col xs={6}>
+                        <Col xs={12} md={6}>
                             <h3 className='text-start'>Enable Your Engineers to Reach Their Potential Faster</h3>
                             <p className='text-start'>Educative Enterprise has all the tools and integrations you need to seamlessly onboard new hires and level up your team. Educative's integrated learning resources never require setup, and include in-browser quizzes, projects, and playgrounds – no passive learning through videos.</p>
                             <div className="text-start">
@@ -55,9 +58,10 @@ export default function Enterprise() {
                 </section>
 
             </Container>
+            {/* 2nd row */}
             <Container data-aos="fade-left">
                 <Row>
-                    <Col xs={6}>
+                    <Col xs={12} md={6}>
                         <h3>The Quickest Path To Engineering Productivity</h3>
                         <p className='text-start'>Every developer's needs are different. Educative Onboarding empowers you to easily create and monitor custom growth plans for everyone. Accelerate onboarding and learning so engineering teams can reach their potential, faster.</p>
                         <div className="text-start">
@@ -69,21 +73,21 @@ export default function Enterprise() {
                             <p>Accelerate time to production for new hires and focus on growing and leading at scale.</p>
                         </div>
                     </Col>
-                    <Col xs={6}>
+                    <Col xs={12} md={6}>
                         <img className='img-fluid' src={row2} alt="" />
                         <img className='img-fluid' src={row22} alt="" />
                     </Col>
                 </Row>
             </Container>
-
+            {/* 3rd row */}
             <Container data-aos="fade-right" fluid className='text-center py-5 middle'>
                 <section className='container mt-5'>
                     <Row className='my-5'>
-                        <Col xs={6}>
+                        <Col xs={12} md={6} className='mb-3'>
                             <img className='img-fluid' src={row3} alt="" />
                         </Col>
-                        <Col xs={6}>
-                            <h3 className='text-start'>Just-in-Time Learning For Developers, By Developers</h3>
+                        <Col xs={12} md={6}>
+                            <h3 className='text-start '>Just-in-Time Learning For Developers, By Developers</h3>
                             <p className='text-start'>Educative offers a robust course library covering today's most in-demand technologies, including cloud computing, full-stack web development, DevOps, networking, cybersecurity, data science, AI, and more.</p>
                             <div className="text-start">
                                 <p><img src={check} alt="" className='img-fluid ' /> Learn Quickly and Actively with No Setup</p>
@@ -99,11 +103,11 @@ export default function Enterprise() {
                 </section>
 
             </Container>
-
-            <Container data-aos="fade-down">
+            {/* 4th row */}
+            <Container data-aos="fade-left">
                 <Row>
-                    <Col xs={6}>
-                        <h3>Learn. Practice. Build. Repeat.</h3>
+                    <Col xs={12} md={6}>
+                        <h3 className='smallCenter'>Learn. Practice. Build. Repeat.</h3>
                         <p className='text-start'>Educative Projects enables software engineers to learn and practice in-demand skills by building functional projects, without wasting time on setup or risking production environments. No downloads, no configs, no setup.</p>
                         <div className="text-start">
                             <p><img src={check} alt="" className='img-fluid ' /> Hassle Free, In-browser Coding</p>
@@ -112,63 +116,24 @@ export default function Enterprise() {
                             <p>Software engineers learn best by building. Actively develop skills through full-featured projects in over 20 technologies.</p>
                         </div>
                     </Col>
-                    <Col xs={6}>
+                    <Col xs={12} md={6}>
                         <img className='img-fluid' src={row4} alt="" />
                         <img className='img-fluid' src={row42} alt="" />
                     </Col>
                 </Row>
             </Container>
+            {/* review */}
             <Container fluid className='text-center py-5 '>
                 <h2 className='my-5'>The Enablement Platform Your Entire Team Will Love</h2>
                 <ReviewCard />
 
             </Container >
-
+            {/* resources */}
             <Container fluid data-aos="fade-up-right" className='text-center py-5 middle'>
-                <section className='container mt-5'>
-                    <h3 className='fw-bold fs-'>Resources </h3>
-                    <h3 className=' fs-5  ps-2'>Read more about Educative’s approach to enabling engineers from day one and beyond.</h3>
-                    <Container className='my-5 mx-5'>
-                        <Row>
-                            <Col className='' >
-                                <Card className='w-75' >
-                                    <Card.Img variant="top" className='img-fluid ' src="https://media.istockphoto.com/vectors/finding-new-ideas-problem-solving-vector-illustration-banner-teamwork-vector-id959212324?b=1&k=20&m=959212324&s=612x612&w=0&h=UpW-f5_kylsJqqBSjZ0TCnO_p2a5qaoHNRZLRvv9NuM=" />
-                                    <Card.Body className='text-start'>
-                                        <Card.Title>5 tips for technical interviews</Card.Title>
-                                        <Card.Text>
-                                            Conducting technical interviews can feel chaotic, but it doesn't have to. Learn the essentials for conducing great interviews.
-                                        </Card.Text>
-                                        <Button variant="primary">Go somewhere</Button>
-                                    </Card.Body>
-                                </Card>
-                            </Col>
-                            <Col className=''>
-                                <Card className='w-75'>
-                                    <Card.Img variant="top" className='img-fluid ' src="https://media.istockphoto.com/vectors/finding-new-ideas-problem-solving-vector-illustration-banner-teamwork-vector-id959212324?b=1&k=20&m=959212324&s=612x612&w=0&h=UpW-f5_kylsJqqBSjZ0TCnO_p2a5qaoHNRZLRvv9NuM=" />
-                                    <Card.Body className='text-start'>
-                                        <Card.Title>How-to manage distributed teams</Card.Title>
-                                        <Card.Text>
-                                            You're working remote. They're working remote. Learn the essentials to successfully manage a distributed team..
-                                        </Card.Text>
-                                        <Button variant="primary">Go somewhere</Button>
-                                    </Card.Body>
-                                </Card>
-                            </Col>
-                        </Row>
-                        <Row className='my-5'>
-                            <Col >
-                                <img className='img-fluid' src="https://www.hostinger.com/tutorials/wp-content/uploads/sites/2/2018/08/how-to-start-a-blog.webp" alt="" /></Col>
-                            <Col className='text-start mt-5'>
-                                <h2>Create a great onboarding</h2>
-                                <p>First impressions matter. Help your new engineers contribute to code faster and settle into their new role with this ebook.</p>
-                                <Button variant="primary">Go somewhere</Button>
-
-                            </Col>
-                        </Row>
-                    </Container>
-                </section>
+                <Resources />
 
             </Container >
+            {/* demo */}
             <Demo />
         </>
     )
