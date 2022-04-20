@@ -9,15 +9,16 @@ import lady from '../images/instructor/chair-lady.png'
 export default function Instructor() {
     return (
         <>
+            {/* top */}
             <Container data-aos="fade-up" className=''>
                 <Row className='my-5 container'>
                     <Col xs={12} md={6} className='text-start ps-3 ms-5 '>
                         <h2 className='fs-1 fw-bold'>Shape the future</h2>
                         <h3 className='my-4 fs-3 text-primary fw-bold'>Join our team as an Unive  <br /> instructor</h3>
-                        <p className='fs-5 fw-normal'>Share your expertise and empower more people <br /> to learn, advance their career and change the <br /> world.
+                        <p className='smallText fw-normal'>Share your expertise and empower more people <br /> to learn, advance their career and change the <br /> world.
                         </p>
-                        <p className='fs-5 fw-normal'> Build your reputation, and earn income for the <br /> courses you create.</p>
-                        <Button className='p-3 mt-3' href="#">Become an Instructor</Button>
+                        <p className='smallText fw-normal'> Build your reputation, and earn income for the <br /> courses you create.</p>
+                        <Button className='p-3 mt-3 bluebtn' href="#">Become an Instructor</Button>
                     </Col>
                     <Col xs={12} md={5} className='my-5'>
                         <img className='img-fluid' src={instruct} alt="" />
@@ -25,25 +26,26 @@ export default function Instructor() {
                 </Row>
 
             </Container>
-
+            {/* why teach unive */}
             <Container data-aos="fade-right" className='text-center my-5'>
                 <h2 className='fs-1'>Why Teach at Unive?</h2>
                 <Row className='my-5'>
                     <Col xs={12} md={7}>
-                        <img className='img-fluid' src={chair} alt="" />
+                        <img className='img-fluid mb-3' src={chair} alt="" />
                     </Col>
                     <Col xs={12} md={5}>
                         <h2 className='fs-1 text-start'>Interactivity means better learning outcomes</h2>
-                        <p className='fs-5 my-4 text-start'>Educative's unique platform lets you bring your lessons to life with interactive code that runs right in the lesson, saving learners set-up time and increasing their learning.</p>
+                        <p className='smallText my-4 text-start'>Educative's unique platform lets you bring your lessons to life with interactive code that runs right in the lesson, saving learners set-up time and increasing their learning.</p>
                     </Col>
                 </Row>
             </Container>
+            {/* Magic text */}
             <Container data-aos="fade-up-left " className='text-center my-5 middle'>
                 <Row className='my-5'>
 
                     <Col xs={12} md={5}>
-                        <h2 className='fs-1 text-start'>The magic of text</h2>
-                        <p className='fs-5 my-4 text-start'>All our courses are text-based, because developers prefer to learn that way. And that means no fiddling with cameras, no expensive studio equipment, no video editing skills to master… it’s just you, your keyboard, and your ideas.</p>
+                        <h2 className='fs-1 smallCenter '>The magic of text</h2>
+                        <p className='smallText ms-3 my-4 text-start'>All our courses are text-based, because developers prefer to learn that way. And that means no fiddling with cameras, no expensive studio equipment, no video editing skills to master… it’s just you, your keyboard, and your ideas.</p>
                     </Col>
                     <Col xs={12} md={7}>
                         <img className='img-fluid' src={code} alt="" />
@@ -55,14 +57,14 @@ export default function Instructor() {
                     </Col>
                     <Col xs={12} md={5}>
                         <h2 className='fs-1 text-start'>Focus on teaching, not marketing</h2>
-                        <p className='fs-5 my-4 text-start'>From the moment you hand it off, your course will be launched to the rapidly growing community of more than 750,000 developers on our platform. Educative’s in-house marketing team will make your course shine, with newsletters, advertising, social media, and more.</p>
+                        <p className='smallText my-4 text-start'>From the moment you hand it off, your course will be launched to the rapidly growing community of more than 750,000 developers on our platform. Educative’s in-house marketing team will make your course shine, with newsletters, advertising, social media, and more.</p>
                     </Col>
                 </Row>
                 <Row className='my-5'>
 
                     <Col xs={12} md={5}>
                         <h2 className='fs-1 text-start'>Get support when you need it</h2>
-                        <p className='fs-5 my-4 text-start'> Our dedicated Author Success team is available to work with you every step of the way. Need help brainstorming? Want early feedback on your lessons? Troubleshooting a custom environment? A full technical and editorial review? We’ve got you covered.</p>
+                        <p className='smallText my-4 text-start'> Our dedicated Author Success team is available to work with you every step of the way. Need help brainstorming? Want early feedback on your lessons? Troubleshooting a custom environment? A full technical and editorial review? We’ve got you covered.</p>
                     </Col>
                     <Col xs={12} md={7}>
                         <img className='img-fluid' src={phone} alt="" />
@@ -70,7 +72,7 @@ export default function Instructor() {
                 </Row>
             </Container>
             <hr className='w-25 fw-bold mx-auto' />
-
+            {/* instructor */}
             <Container data-aos="fade-up-left" className='text-center my-2  py-5'>
                 <h2 className='fs-1 fw-bold'>  Join our Community of Instructors</h2>
                 <Row className='my-5'>
@@ -110,8 +112,8 @@ export default function Instructor() {
                 <Button className='p-3 mt-3' href="#">Become an Instructor</Button>
 
             </Container>
-
-            <Container data-aos="fade-left" className='w-50  my-5'>
+            {/* faq */}
+            <Container data-aos="fade-left" className='bigWidth  my-5'>
                 <h2 className='my-5 fs-1 text-center'>Frequently Asked Questions</h2>
                 <Accordion defaultActiveKey={['0', '1', '2', '3', '4']} alwaysOpen >
                     <Accordion.Item eventKey="0" >
@@ -145,13 +147,14 @@ export default function Instructor() {
                     </Accordion.Item>
                 </Accordion>
             </Container>
+            {/* instructor form */}
             <Container fluid className='middle py-5 text-center'>
                 <h2 className='text-center'>Become an Unive Instructor</h2>
                 <Row className='my-5'>
-                    <Col xs={6}>
+                    <Col xs={12} md={6}>
                         <img className='img-fluid' src={lady} alt="" />
                     </Col>
-                    <Col xs={4}>
+                    <Col xs={12} md={6}>
                         <Form.Group className="mb-3 text-start">
                             <Form.Label >Area of Interest*</Form.Label>
                             <Form.Select >
