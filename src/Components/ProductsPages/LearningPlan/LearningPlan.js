@@ -15,12 +15,12 @@ export default function LearningPlan() {
                 <Container className=' py-5'>
                     <section className='text-center '>
                         <h2 className='fs-1 fw-bold'>Personalized Learning Plans</h2>
-                        <h3 className=' fs-2 mt-3'>Achieve your goals faster with a plan designed just for you.</h3>
+                        <h3 className='   mt-3 smallText'>Achieve your goals faster with a plan designed just for you.</h3>
                         <div className=" mt-3   ">
-                            <Button className='p-3 m-3 w-25' href="#">Continue where you left off</Button>
+                            <Button className='p-3 m-3 bluebtn ' href="#">Continue where you left off</Button>
                         </div>
                         <div >
-                            <img className='img-fluid w-50' src={learn} alt="" />
+                            <img className='img-fluid ' src={learn} alt="" />
 
                         </div>
                     </section>
@@ -29,24 +29,24 @@ export default function LearningPlan() {
 
             {/* Custom leaerning */}
             <Container fluid className='text-center py-5 '>
-                {/* middle part */}
+
                 <section className='container my-5 '>
 
                     <Row>
-                        <Col xs={6} className="text-start pt-5">
+                        <Col xs={12} md={6} className="text-start pt-5">
                             <h1 className='fw-bold'>Curated by industry experts</h1>
                             <p className='text-start fs-4 pt-5'>Dig into personalized content on topics you want to learn. Your plan will be tailored to your skills, objectives and time constraints.</p>
 
                         </Col>
-                        <Col xs={6}>
+                        <Col xs={12} md={6}>
                             <img className='mt-3 w-75' src={learn1} alt="" />
                         </Col>
                     </Row>
                     <Row className='my-5 py-2'>
-                        <Col xs={6}>
+                        <Col xs={12} md={6}>
                             <img className='img-fluid' src={learn2} alt="" />
                         </Col>
-                        <Col xs={6} className="text-start mt-5 pt-5">
+                        <Col xs={12} md={6} className="text-start mt-5 pt-5">
                             <h3 className='fs-4 fw-bold'>Stop searching, start learning</h3>
                             <p className='text-start fs-5'>Finding the best coursework and building a curriculum on your own is time consuming. Start learning now – just answer a few quick questions to begin.</p>
 
@@ -54,20 +54,20 @@ export default function LearningPlan() {
                     </Row>
 
                     <Row>
-                        <Col xs={6} className="text-start mt-5 pt-5">
+                        <Col xs={12} md={6} className="text-start mt-5 pt-5">
                             <h3 className='fw-bold'>Your personalized curriculum</h3>
                             <p className='text-start fs-4 pt-3'>No two software engineers are the same, neither are their learning needs. Personalized Learning Plans are customized and focused on your individual learning needs and career goals.</p>
 
                         </Col>
-                        <Col xs={6}>
+                        <Col xs={12} md={6}>
                             <img className='mt-5 w-75' src={learn3} alt="" />
                         </Col>
                     </Row>
                     <Row className='my-5 py-2'>
-                        <Col xs={6}>
+                        <Col xs={12} md={6}>
                             <img className='img-fluid' src={learn4} alt="" />
                         </Col>
-                        <Col xs={6} className="text-start pt-3 mt-5 pt-5">
+                        <Col xs={12} md={6} className="text-start pt-3 mt-5 pt-5">
                             <h3 className='fs-4 fw-bold'>Reports and Analytics</h3>
                             <p className='text-start fs-5'>Stay on top of your progress with learning reports and analytics built by data scientists to help you reach your learning goals.</p>
 
@@ -99,7 +99,7 @@ export default function LearningPlan() {
                     <section className='text-center '>
                         <h4 className='fs-1 fw-bold'>Personalized Learning Plans</h4>
                         <div className=" mt-3   ">
-                            <Button className='p-3 m-3 w-25' href="#">Continue where you left off</Button>
+                            <Button className='p-3 m-3' href="#">Continue where you left off</Button>
                         </div>
                     </section>
                 </Container>
