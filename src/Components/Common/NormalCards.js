@@ -6,7 +6,7 @@ export default function NormalCards({ titleSection, card1Msg, card1Img, card1Nam
         <section className='container mt-5'>
             <h1 className=''>{titleSection}</h1>
             <Row className='my-5'>
-                <Col xs={4} className='mt-5'>
+                <Col xs={12} md={4} className='my-5'>
                     <Card>
                         <Card.Img variant="img-fluid" height={250} src={card1Img} />
                         <Card.Body className='text-start'>
@@ -18,7 +18,7 @@ export default function NormalCards({ titleSection, card1Msg, card1Img, card1Nam
 
                     </Card>
                 </Col>
-                <Col xs={4}>
+                <Col xs={12} md={4} className=''>
                     <Card>
                         <Card.Img variant="img-fluid" height={250} src={card2Img} />
                         <Card.Body className='text-start'>
@@ -30,7 +30,7 @@ export default function NormalCards({ titleSection, card1Msg, card1Img, card1Nam
 
                     </Card>
                 </Col>
-                <Col xs={4} className='mt-5'>
+                <Col xs={12} md={4} className='mt-5'>
                     <Card>
                         <Card.Img variant="img-fluid" height={250} src={card3Img} />
                         <Card.Body className='text-start'>

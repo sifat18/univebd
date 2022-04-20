@@ -10,7 +10,7 @@ export default function Contact() {
                 সরাসরি মেসেজ করুন        </h2>
             {/* form */}
             <Container fluid className='middle my-5'>
-                <Container className=' text-center w-50 py-2' >
+                <Container className=' text-center  bigWidth py-2' >
                     <ContactForm />
                 </Container>
             </Container>

@@ -20,3 +20,14 @@
     }
 
 }
+
+@media (min-width:900px) {
+    .bigWidth {
+        max-width: 45%;
+    }
+
+    .bigMargin {
+        margin-top: -20px;
+        margin-left: 5rem;
+    }
+}

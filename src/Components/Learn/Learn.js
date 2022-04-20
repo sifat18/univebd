@@ -10,12 +10,13 @@ export default function Learn() {
     return (
         <>
             <Container fluid className='my-5'>
+                {/* free courses */}
                 <Container className='text-center'>
                     <h2 className='my-5 fw-bold'>Welcome User</h2>
                     <section className='text-start my-5 ms-5'>
-                        <p className='fs-4 ps-3'>Get started with our free courses</p>
+                        <p className='fs-4 smallText'>Get started with our free courses</p>
                     </section>
-                    <Row xs={1} md={3} className="g-4 ms-5 ps-5">
+                    <Row xs={1} md={3} className="g-4 bigMargin">
                         {item.map((id) => (
                             <Col key={id.key}>
                                 <Card className='py-1'>
@@ -50,7 +51,7 @@ export default function Learn() {
                     <section className='text-start my-5 ms-5'>
                         <p className='fs-4 ps-3'>Popular Courses For You</p>
                     </section>
-                    <Row xs={1} md={3} className="g-4 ms-5 ps-5">
+                    <Row xs={1} md={3} className="g-4 bigMargin">
                         {item.map((id) => (
                             <Col key={id.key}>
                                 <Card className='py-1'>
@@ -81,7 +82,7 @@ export default function Learn() {
             </Container>
             <Container className='text-center py-5'>
                 <h3>Take your skills to the next level.</h3>
-                <Button className=' my-2 px-5 py-3' variant="primary">Explore all courses and paths </Button>
+                <Button className=' my-2 text-center' variant="primary">Explore all courses and paths </Button>
 
             </Container>
         </>
