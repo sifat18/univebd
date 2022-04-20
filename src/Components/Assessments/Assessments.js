@@ -9,13 +9,13 @@ export default function Assessments() {
             <Container data-aos="fade-up-right" fluid className='bg-primary mb-5 py-5'>
                 <Container className='text-light'>
                     <Row>
-                        <Col xs={8} >
+                        <Col xs={12} md={8}>
                             <h5>Assessments</h5>
                             <h2 className='fs-1 mb-4'>Identify your skill gaps</h2>
-                            <p className='fs-5'>Take an assessment to benchmark your current coding skills</p>
-                            <p className='fs-5'>Understand your strengths and weaknesses, then get <br /> personalized recommendations to improve your SkillScore</p>
+                            <p className='smallText'>Take an assessment to benchmark your current coding skills</p>
+                            <p className='smallText'>Understand your strengths and weaknesses, then get <br /> personalized recommendations to improve your SkillScore</p>
                         </Col>
-                        <Col xs={4} >
+                        <Col xs={12} md={4} >
                             <img src={top} alt="" className='img-fluid' />
                         </Col>
                     </Row>
@@ -23,10 +23,10 @@ export default function Assessments() {
             </Container>
 
             <Container data-aos="fade-up-left">
-                <Row className='g-5'>
+                <Row className='g-4'>
                     <Col xs={6}>
                         {item.map((id) => (
-                            <Row key={id.key} xs={1} className="g-4 my-3 border">
+                            <Row key={id.key} xs={1} className="g-3 my-3 border">
                                 <Col xs={12} md={4} className='border-end'>
                                     <img className='img-fluid ' src={id.coverImageUrl} alt="" />
                                 </Col>
@@ -42,7 +42,7 @@ export default function Assessments() {
                     </Col>
                     <Col xs={6}>
                         {item.map((id) => (
-                            <Row key={id.key} xs={1} className="g-4 my-3 border">
+                            <Row key={id.key} xs={1} className="g-3 my-3 border">
                                 <Col xs={12} md={4} className='border-end'>
                                     <img className='img-fluid ' src={id.coverImageUrl} alt="" />
                                 </Col>
