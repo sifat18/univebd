@@ -23,6 +23,8 @@
         width: 100%;
     }
 
+
+
 }
 
 @media (min-width:900px) {
@@ -46,5 +48,9 @@
     .onboardingPad {
         padding-left: 3rem;
         padding-right: 3rem;
+    }
+
+    .smallpadding {
+        padding-left: 2rem;
     }
 }

@@ -138,15 +138,15 @@ export default function Home() {
                                 <img src={bot} alt="" className='img-fluid' />
                                 <div className='mt-5 border-end text-start'>
                                     <h2 className='' >Engineering Managers and Executives</h2>
-                                    <p className=' mx-1'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id possimus porro ipsam veritatis aspernatur fuga rerum accusamus ab aut provident? Beatae dolore, quisquam facilis veritatis neque ut accusantium reiciendis! Deserunt?</p>
+                                    <p className=''>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id possimus porro ipsam veritatis aspernatur fuga rerum accusamus ab aut provident? Beatae dolore, quisquam facilis veritatis neque ut accusantium reiciendis! Deserunt?</p>
                                     <Button variant="outline-secondary">See how <img src={ar} alt="" /></Button>
                                 </div>
                             </Col>
                             <Col xs={12} md={6} className='p-0 m-0'>
                                 <img src={bot2} alt="" className='img-fluid' />
-                                <div className='mt-5 ps-5 text-start'>
+                                <div className='mt-5  smallpadding text-start'>
                                     <h2 className=' '>Software Engineers</h2>
-                                    <p className='mx-1'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id possimus porro ipsam veritatis aspernatur fuga rerum accusamus ab aut provident? Beatae dolore, quisquam facilis veritatis neque ut accusantium reiciendis! Deserunt?</p>
+                                    <p className=''>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id possimus porro ipsam veritatis aspernatur fuga rerum accusamus ab aut provident? Beatae dolore, quisquam facilis veritatis neque ut accusantium reiciendis! Deserunt?</p>
                                     <Button variant="outline-secondary">See how <img src={ar} alt="" /></Button>
 
                                 </div>
