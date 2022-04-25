@@ -26,17 +26,17 @@ export default function Home() {
             {/* top part */}
             <Container data-aos="fade-right" className='my-5'>
                 <section className='text-center '>
-                    <h1 className=''>অনলাইনে টেকনিক্যাল স্কিল শিখুন এবং আয় করুন​</h1>
-                    <h5 className=' mt-3 smallText '>ক্যারিয়ার রিলেটেড প্র্যাকটিকাল কোর্স ​</h5>
+                    <h2 className=''>অনলাইনে ইন্ডাস্ট্রি ফোকাসড আইটি এবং টেকনিক্যাল স্কিল শিখুন এবং আয় করুন।​</h2>
+                    <h5 className=' mt-3 smallText '>সমস্ত প্রোগ্রাম ইন্ডাস্ট্রি প্র্যাক্টিস ফোকাসড এবং আপ টু ডেট। ​</h5>
                     {/* <h5 className=' ms-5 '></h5> */}
                     <div className=" mt-3   ">
                         <Button className='p-3 m-3 bluebtn' href="#">আমি শিখতে চাই</Button>
-                        <Button className='p-3 m-3 bluebtn' href="#">আমি কর্মী খুঁজছি</Button>
-                        <Button className='p-3 m-3 bluebtn' href="#">আমি কাজ খুঁজছি</Button>
+                        <Button className='p-3 m-3 bluebtn' href="#">আমি এমপ্লইয়ী খুঁজছি</Button>
+                        <Button className='p-3 m-3 bluebtn' href="#">আমি জব খুঁজছি</Button>
                     </div>
                     <div >
                         <img className='img-fluid' src={home} alt="" />
-                        <p className='my-3'>Trusted by more than 1.1 million learners working for companies like
+                        <p className='my-3'> সমস্ত ইন্ডাস্ট্রি লিডিং কোম্পানি আমাদের প্ল্যাটফর্ম থেকে এমপ্লয়ীজ হায়ার করছে।
                             {/* <img className='img-fluid my-5' src={home2} alt="" /> */}
                         </p>
                     </div>
@@ -48,8 +48,8 @@ export default function Home() {
                 {/* middle part */}
                 <section className='container mt-5'>
                     <h1 className=''>শিখুন ইন্টারেক্টিভ ভিডিও টিউটোরিয়াল এর মাধ্যমে</h1>
-                    <h5 className=' mt-3 smallText ps-2'>You don’t get better at swimming by watching others. Coding is no different. Practice as </h5>
-                    <h5 className=' text-center smallText'>you learn with live code environments inside your browser.</h5>
+                    <h5 className=' mt-3 smallText ps-2'> সমস্ত ক্যারিয়ার পাথ এবং ট্রেনিং কন্টেন্ট এর পিছনে আছেন ভেটেরান ইন্ডাস্ট্রি ইঞ্জিনিয়ার্স যারা প্রতিনিয়ত ট্রেনিং ম্যাটেরিয়ালস আপডেট করে যাচ্ছেন।</h5>
+                    <h5 className=' text-center smallText'></h5>
                     <div className=" top-video mt-5   ">
                         <video loop="true" className='w-75 h-75' autoplay="autoplay" muted >
                             <source src={b2} type='video/mp4' />
@@ -130,24 +130,24 @@ export default function Home() {
             {/* 2nd last part */}
             <Container fluid data-aos="fade-down" className='text-center py-5 '>
                 <section className='container mt-5'>
-                    <h3 className='fw-bold'>Inspired by and developed for </h3>
-                    <h3 className=' fw-bold  ps-2'>Engineers like you</h3>
+                    <h3 className='fw-bold'>প্রোগ্রাম গুলো ডিজাইন এবং ডেভেলপ করেছেন </h3>
+                    <h3 className=' fw-bold  ps-2'>এবং প্রতিনিয়ত আপডেট করছেন ইন্ডাস্ট্রি সেরা ইঞ্জিনিয়াররা।</h3>
                     <Container className='my-5'>
                         <Row>
                             <Col xs={12} md={6} className='p-0 mb-3'>
                                 <img src={bot} alt="" className='img-fluid' />
                                 <div className='mt-5 border-end text-start'>
-                                    <h2 className='' >Engineering Managers and Executives</h2>
-                                    <p className=''>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id possimus porro ipsam veritatis aspernatur fuga rerum accusamus ab aut provident? Beatae dolore, quisquam facilis veritatis neque ut accusantium reiciendis! Deserunt?</p>
-                                    <Button variant="outline-secondary">See how <img src={ar} alt="" /></Button>
+                                    <h2 className='' >সফটওয়্যার এবং আইটি প্রফেশনালদের জন্য</h2>
+                                    <p className=''> এই ক্যারিয়ার পাথটি যারা সফটওয়্যার এবং আইটি ইন্ডাস্ট্রি তে ক্যারিয়ার গড়তে চান তাদের জন্য। এই ক্যারিয়ার পাথ আপনাকে দেশে এবং দেশের বাইরে জব মার্কেট ফোকাস করে তৈরি করে গড়ে উঠতে সাহায্য করবে।</p>
+                                    <Button variant="outline-secondary">এক্সপ্লোর করুন<img src={ar} alt="" /></Button>
                                 </div>
                             </Col>
                             <Col xs={12} md={6} className='p-0 m-0'>
                                 <img src={bot2} alt="" className='img-fluid' />
                                 <div className='mt-5  smallpadding text-start'>
-                                    <h2 className=' '>Software Engineers</h2>
-                                    <p className=''>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id possimus porro ipsam veritatis aspernatur fuga rerum accusamus ab aut provident? Beatae dolore, quisquam facilis veritatis neque ut accusantium reiciendis! Deserunt?</p>
-                                    <Button variant="outline-secondary">See how <img src={ar} alt="" /></Button>
+                                    <h2 className=' '>টেকনিক্যাল ইঞ্জিনিয়ারদের জন্য</h2>
+                                    <p className=''>ইলেকট্রিক্যাল, মেকানিকাল, সিভিল, কেমিক্যাল কিংবা আর্কিটেকচার ইঞ্জিনিয়ারদের জব মার্কেট এর জন্য গড়ে উঠতে আপনাকে সাহায্য করবে এই ক্যারিয়ার পাথটি।</p>
+                                    <Button variant="outline-secondary">এক্সপ্লোর করুন <img src={ar} alt="" /></Button>
 
                                 </div>
                             </Col>
