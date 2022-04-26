@@ -5,12 +5,12 @@ export default function Privacy() {
     return (
         <Container>
             <h2 className='text-center'>Privacy Policy</h2>
-            <p>Last updated: January 31, 2022</p>
-            <p>Educative, Inc ("us", "we", or "our") operates the http://www.educative.io website and the Educative mobile application (the "Service").</p>
+            <p>Last updated: April 30, 2022</p>
+            <p>Unive, Inc ("us", "we", or "our") operates the http://www.unive.com.bd website and the Unive mobile application (the "Service").</p>
             <p>This Privacy Policy informs you of our policies regarding the collection, use and disclosure of Personal Information when you use our Service.</p>
             <p>We will not use or share your information with anyone except as described in this Privacy Policy.</p>
             <p><strong>We use your Personal Information for providing and improving the Service. By using the Service, you agree to the collection and use of information in accordance with this policy. </strong>Unless otherwise defined in this Privacy Policy, capitalized terms used in this Privacy Policy have the same meanings as in our Service Terms of Use. </p>
-            <p>For more information about our use of Cookies, please see Educative's Cookie Policy.</p>
+            <p>For more information about our use of Cookies, please see Unive's Cookie Policy.</p>
             <p className='fw-bold'>Information Collection, Use and Retention</p>
             <p>While using our Service, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you. Personally identifiable information may include, but is not limited to, your email address, name, phone number, postal address ("Personal Information"). In addition, we track your progress on particular Service courses or programs to help you pick up where you left off and track which courses you have completed.</p>
             <p>We collect this information for the purpose of providing the Service, identifying and communicating with you, responding to your requests/inquiries, servicing your purchase orders, and improving our products and services.</p>
@@ -45,7 +45,7 @@ export default function Privacy() {
             <p className="fw-bold">Security</p>
             <p className="fw-bold">International Transfer</p>
             <p>Your information, including Personal Information, may be transferred to — and maintained on — computers located outside of your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from your jurisdiction. The data that we collect from you will primarily be stored in the United States.</p>
-            <p>If you are located outside United States and choose to provide information to us, please note that we transfer the information, including Personal Information, to United States and process it there.Where your personal information originates in the European Economic Area (“EEA”) or Switzerland and is transferred outside the EEA, we will take all steps reasonably necessary to ensure that your data is subject to appropriate safeguards, such as relying on a recognized legal adequacy mechanism, and that it is treated securely and in accordance with this Privacy Policy.</p>
+            <p>If you are located outside Bangladesh and choose to provide information to us, please note that we transfer the information, including Personal Information, to Bangladesh and process it there.Where your personal information originates in the European Economic Area (“EEA”) or Switzerland and is transferred outside the EEA, we will take all steps reasonably necessary to ensure that your data is subject to appropriate safeguards, such as relying on a recognized legal adequacy mechanism, and that it is treated securely and in accordance with this Privacy Policy.</p>
             <p>Your consent to this Privacy Policy followed by your submission of such information represents your agreement to that transfer.</p>
             <p>If you are a European Union resident, under General Data Protection Regulation (GDPR), you have the right under certain circumstances:</p>
             <ul>
@@ -55,7 +55,7 @@ export default function Privacy() {
                 <li>to object to the further processing of your personal data, including the right to object to marketing;</li>
                 <li>to request that your provided personal data be moved to a third party.</li>
             </ul>
-            <p>You may exercise those rights by emailing Educative at privacy@educative.io. </p>
+            <p>You may exercise those rights by emailing Unive at support@unive.com.bd. </p>
             <p>If you are using the Service through your organization, the organization is the Data Controller for purposes of GDPR. You must exercise these rights by contacting your organization’s administrator in charge of the Service.</p>
             <p className="fw-bold">Links To Other Sites</p>
             <p>Our Service may contain links to other sites that are not operated by us. If you click on a third party link, you will be directed to that third party's site. We strongly advise you to review the privacy policy of every site you visit.</p>
@@ -64,11 +64,11 @@ export default function Privacy() {
             <p>Our Service is not designed for use by anyone under the age of 13 ("Children").</p>
             <p>We do not knowingly collect personally identifiable information from children under 13. If you are a parent or guardian and you learn that your Children have provided us with Personal Information, please contact us. If we become aware that we have collected Personal Information from children under age 13 without verification of parental consent, we take steps to remove that information from our servers.</p>
             <p className="fw-bold">Changes To This Privacy Policy</p>
-            <p>This Privacy Policy is effective as of January 14, 2022 and will remain in effect except with respect to any changes in its provisions in the future, which will be in effect immediately after being posted on this page.</p>
+            <p>This Privacy Policy is effective as of April 30, 2022 and will remain in effect except with respect to any changes in its provisions in the future, which will be in effect immediately after being posted on this page.</p>
             <p>We reserve the right to update or change our Privacy Policy at any time and you should check this Privacy Policy periodically. Your continued use of the Service after we post any modifications to the Privacy Policy on this page will constitute your acknowledgment of the modifications and your consent to abide and be bound by the modified Privacy Policy.</p>
             <p>If we make any material changes to this Privacy Policy, we will notify you either through the email address you have provided us, or by placing a prominent notice on our website.</p>
             <p className="fw-bold">Contact Us</p>
-            <p>If you have any questions about this Privacy Policy, please contact us at support@educative.io.</p>
+            <p>If you have any questions about this Privacy Policy, please contact us at support@unive.com.bd.</p>
 
 
 
