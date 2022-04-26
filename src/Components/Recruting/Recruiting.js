@@ -13,9 +13,9 @@ export default function Recruiting() {
             <Container>
                 <Row data-aos="fade-up" className='my-5'>
                     <Col xs={12} md={7} className='text-start ms-3 mb-3'>
-                        <h2 className='fs-1 '>Increase your technical <br /> interview-to-hire rate</h2>
-                        <h4 className='my-4 mx-1 smallText'>With curated interview prep courses, Educative for <br /> Recruiting helps you improve hiring outcomes and reach <br /> your D&I goals.</h4>
-                        <Button className='p-3 mt-3 bluebtn' href="#">Try Unive for Recruiters</Button>
+                        <h2 className='fs-1 '>আপনার প্রতিষ্ঠানের জন্য এমপ্লয়ী খুঁজুন <br /> খুব সহজে ইউনিভ এর মাধ্যমে।</h2>
+                        <h4 className='my-4 mx-1 smallText'>ডিজাইন করুন ইন্টারভিউ প্রিপারেশন কোর্স এবং সম্পূর্ণ রিক্রুটমেন্ট প্রসেস সম্পন্ন করুন আমাদের প্লাটফর্মে।  <br /> শুধুমাত্র যোগ্য ক্যান্ডিডেটদের ইন্টারভিউ নেওয়ার আয়োজন করে ইউনিভ আপনার প্রতিষ্ঠানের প্রোডাক্টিভিটি লস বাঁচিয়ে দেয়। <br /></h4>
+                        <Button className='p-3 mt-3 bluebtn' href="#">ট্রাই করুন ইউনিভ ফর রিক্রুটমেন্ট</Button>
                     </Col>
                     <Col xs={12} md={4}>
                         <img className='img-fluid ' src={hr} alt="" />
@@ -26,21 +26,21 @@ export default function Recruiting() {
             {/* logos */}
             <Container data-aos="fade-down" fluid className='middle'>
                 <Container>
-                    <h2 className='smallText'>Unive learning platform is used by 500,000+ users at companies such as:</h2>
+                    <h5 className='text-center my-5'>ইউনিভ এর রিক্রুটমেন্ট প্ল্যাটফর্ম ইউজ করছে দেশের ইন্ডাস্ট্রি লিডিং কোম্পানিরা:</h5>
                     <Companies />
                 </Container>
             </Container>
             {/* empower */}
             <Container data-aos="fade-up" className='text-center my-5'>
-                <h2 className='fs-1'>Empower your candidates with Unive</h2>
-                <h5 className='smallText my-4'>The Recruiting plan lets each of your candidates prepare for their interview using a selection of courses curated for your company.</h5>
+                <h2 className='fs-1'>আপনার ক্যান্ডিডেটদের জব রোল এর জন্য প্রস্তুত করুন ইউনিভে।</h2>
+                <h5 className='smallText my-4'>আমাদের রিক্রুটিং প্ল্যান আপনার প্রতিষ্ঠানের জব এর জন্য প্রয়োজনীয় নলেজ এবং প্র্যাক্টিস সম্বলিত কোর্স তৈরি করতে আপনাকে সাহায্য করবে।</h5>
                 <Row className='my-5'>
                     <Col xs={12} md={7}>
                         <img className='img-fluid' src={search} alt="" />
                     </Col>
                     <Col xs={12} md={5}>
-                        <h2 className='fs-1 text-start'>Recruit prime candidates with fewer interviews</h2>
-                        <h5 className='smallText my-4 text-start'>Every engineer hour spent interviewing is productivity lost for your company. Give incoming candidates access to Educative and raise your interview pass through rate by an average of 13%.</h5>
+                        <h2 className='fs-1 text-start'>বাছাই করুন যোগ্য ক্যান্ডিডেট অতিরিক্ত সময় নষ্ট করা ছাড়া।</h2>
+                        <h5 className='smallText my-4 text-start'>প্রার্থী বাছাই করতে আপনার প্রতিষ্ঠানের যে গুরুত্বপূর্ণ প্রোডাক্টিভ টাইম নষ্ট হচ্ছে তা কমিয়ে আনতে ব্যবহার করতে পারেন ইউনিভ।</h5>
                     </Col>
                 </Row>
             </Container>
@@ -48,8 +48,8 @@ export default function Recruiting() {
                 <Row className='my-5'>
 
                     <Col xs={12} md={5}>
-                        <h2 className='fs-1 text-start'>Hire more diverse candidates</h2>
-                        <h5 className='smallText my-4 text-start'>Not all candidates have the same resources or educational backgrounds. Reduce false negatives and diversify your workforce with standardized material available to every candidate.</h5>
+                        <h2 className='fs-1 text-start'>বেস্ট ক্যান্ডিডেট বাছাই করুন সমগ্র বাংলাদেশ থেকে</h2>
+                        <h5 className='smallText my-4 text-start'>বেশিরভাগ ক্ষেত্রেই রেফারেন্স এর মাধ্যমে প্রার্থী বাছাইয়ে উঠে আসে না যোগ্য প্রার্থী। এক গবেষণায় দেখা গেছে, যথার্থ রিক্রুটমেন্ট প্রসেসের মাধ্যমে যোগ্য প্রার্থী বাছাই করে আপনার প্রতিষ্ঠানের প্রোডাক্টিভিটি বাড়ানো সম্ভব ৫০% পর্যন্ত! ইউনিভ নিশ্চিত করে আপনি আপনার জব প্লেসমেন্ট এর জন্য সবচেয়ে যোগ্য প্রার্থী নির্বাচিত করছেন।</h5>
                     </Col>
                     <Col xs={12} md={7}>
                         <img className='img-fluid' src={resume} alt="" />
@@ -59,20 +59,20 @@ export default function Recruiting() {
             <Container data-aos="fade-up-right" className='text-center my-5'>
                 <Row className='my-5'>
                     <Col xs={12} md={7}>
-                        video here
+                        <img className='img-fluid' src={search} alt="" />
                     </Col>
                     <Col xs={12} md={5}>
-                        <h2 className='fs-1 text-start'>Curated Paths tailored to your interview process</h2>
-                        <p className='smallText my-2 text-start'>We'll put together an exclusive, curated collection of our existing course content to ensure your candidates brush up on the skills your company is looking for.</p>
-                        <p className='my-4 text-start'>Our team will work with you to create a tailored Learning Path for your needs, so you can be confident candidates come in at their best. </p>
+                        <h2 className='fs-1 text-start'>ট্রেইনিং ম্যাটেরিয়ালস ঠিক আপনার কোম্পানি এর জব রোলটির জন্য</h2>
+                        <p className='smallText my-2 text-start'>আমরা নিশ্চিত করবো আপনার কোম্পানী এর জব রোলের চাহিদা অনুসারে কাষ্টমাইজ্ড ট্রেইনিং পাথ যাতে করে ক্যান্ডিডেট তার সেরা পারফরম্যান্স দিতে পারে।</p>
+                        <p className='my-4 text-start'>পরবর্তীতে একই জব রোলের জন্য আপডেটেড ট্রেইনিং ম্যাটেরিয়ালস দিয়ে ক্যান্ডিডেট বাছাই করতে পারবেন খুব সহজেই।</p>
                     </Col>
                 </Row>
             </Container>
             <Container data-aos="fade-up-left " className='text-center my-5 middle py-5'>
                 <Row className='my-5'>
                     <Col xs={12} md={5}>
-                        <h2 className='fs-1 text-start'>Deliver a better candidate experience</h2>
-                        <p className='smallText my-2 text-start'>Positive interview experiences make candidates advocates for your company, regardless of whether or not they're hired. Small things can go a long way.</p>
+                        <h2 className='fs-1 text-start'>দিন বেটার ক্যান্ডিডেট এক্সপেরিয়েন্স!</h2>
+                        <p className='smallText my-2 text-start'>পজিটিভ ইন্টারভিউ এক্সপেরিয়েন্স একজন ক্যান্ডিডেটকে আপনার প্রতিষ্ঠানের প্রতি আরো ইন্টারেস্টেড করে তুলে এবং আপনার প্রতিষ্ঠান বা ব্র্যান্ডের ভ্যালু বৃদ্ধি করে।</p>
                     </Col>
                     <Col xs={12} md={7}>
                         <img className='img-fluid' src={loud} alt="" />
@@ -82,56 +82,55 @@ export default function Recruiting() {
             </Container>
             {/* contact */}
             <Container data-aos="fade-up" fluid className='bg-primary text-center py-5'>
-                <h2 className='text-white'>Contact us for more information</h2>
+                <h2 className='text-white'>ইউনিভ সম্পর্কে আরও জানতে যোগাযোগ করুন!</h2>
                 <Container className='bg-white bigWidth text-center mx-auto p-5 py-3'>
                     <ContactForm />
                 </Container>
             </Container>
             {/* faq */}
             <Container data-aos="fade-down" className='bigWidth text-center my-5'>
-                <h2 className='my-5 fs-1'>Frequently Asked Questions</h2>
+                <h2 className='my-5 fs-1'>কিছু কমন প্রশ্ন</h2>
                 <Accordion>
                     <Accordion.Item eventKey="0">
-                        <Accordion.Header>Isn't this just giving candidates the answers to the test?</Accordion.Header>
+                        <Accordion.Header>Unive এর ট্রেইনিং বা কোর্স ম্যাটেরিয়ালস এর বিশেষত্ব কি?</Accordion.Header>
                         <Accordion.Body>
-                            No - Educative's courses discourage simple memorization and instead
-                            prioritize lasting learning. Our courses teach students to apply fundamental
-                            concepts, see patterns in questions, and build modes of thought.
+                        Unive এ আমরা বিশ্বাস করি ফর্মুলা মনে রাখা বা মুখস্ত রাখা বা ইনস্টিটিউশনের রেজাল্ট ক্যান্ডিডেট নির্বাচনে অতটা গুরুত্বপূর্ণ নয় যতটা গুরুত্বপূর্ণ নলেজ এর প্রাকটিক্যাল প্রয়োগ, 
+                        যেকোনো সমস্যা সমাধানে অ্যানালিটিক্যাল অ্যাবিলিটির প্রয়োগ, বুদ্ধিমান চিন্তার ধরন,গ্রোথ মাইন্ডসেট। সেজন্য আমাদের ট্রেইনিং ম্যাটেরিয়ালস এর মূল উদ্দেশ্য প্রাকটিক্যাল কন্টেন্টস।
                         </Accordion.Body>
                     </Accordion.Item>
                     <Accordion.Item eventKey="1">
-                        <Accordion.Header>Who is the Recruiting plan for?</Accordion.Header>
+                        <Accordion.Header>রিক্রুটিং প্ল্যান কাদের জন্য?</Accordion.Header>
                         <Accordion.Body>
-                            This plan is ideal for companies that hire engineers at-scale,
-                            care about equal opportunity of employment, and want to make an impact on candidates' experience.
+                        রিক্রুটিং প্ল্যান হচ্ছে সে সব কোম্পানিদের জন্য যারা প্রতিনিয়ত এমপ্লয়ীজ রিক্রুট করছেন, 
+                        যারা ইকুয়াল অপরচুনিটি তে বিশ্বাস করেন এবং ক্যান্ডিডেট কে ভালো রিক্রুটিং এক্সপেরিয়েন্স দিতে চান।
                         </Accordion.Body>
                     </Accordion.Item>
                     <Accordion.Item eventKey="2">
-                        <Accordion.Header>What is a Path?</Accordion.Header>
+                        <Accordion.Header>আপনাদের সাথে লিংকডইন, বি ডি জবস ইত্যাদি এর পার্থক্য কি?</Accordion.Header>
                         <Accordion.Body>
-                            Paths are collections of our best lessons from across our library curated to help learners achieve a specific learning goal. The lessons gradually build from fundamentals to advanced
-                            practice to ensure each learner leaves with a complete and practiced understanding of the Path's subject.
+                        অন্যান্য প্ল্যাটফর্ম এর সাথে আমাদের পার্থক্য হচ্ছে অন্যান্য রা টোটাল রিক্রুটমেন্ট প্রসেস এর একটি অংশ নিয়ে কাজ করছে। 
+                        অন্যদিকে, Unive এর রিক্রুটিং প্ল্যাটফর্ম পুরো রিক্রুটমেন্ট জার্নি এর জন্য একটি কমপ্লিট সলিউশন।
                         </Accordion.Body>
                     </Accordion.Item>
                     <Accordion.Item eventKey="3">
-                        <Accordion.Header>Can we check which candidates use the Path?</Accordion.Header>
+                        <Accordion.Header>আমরা কি ক্যান্ডিডেট এর পারফরম্যান্স ট্র্যাক করতে পারবো?</Accordion.Header>
                         <Accordion.Body>
-                            Yes, you will be able to see usage data of your candidates through an admin dashboard.
-                            You can use this as a helpful indicator of a candidate's willingness to learn and grow.
+                        হ্যা। আপনারা কোম্পানি এর অ্যাডমিন প্যানেল থেকে আপনাদের ক্যান্ডিডেট এর পারফরম্যান্স ট্র্যাক করতে পারবেন 
+                        এবং এ থেকে ক্যান্ডিডেট এর ডেডিকেশন এবং কমপিটেন্সি এর ধারণাও পেয়ে যাবেন।
                         </Accordion.Body>
                     </Accordion.Item>
-                    <Accordion.Item eventKey="4">
+                    {/* <Accordion.Item eventKey="4">
                         <Accordion.Header>What courses will our candidates get access to?</Accordion.Header>
                         <Accordion.Body>
                             Our full library of hundreds of software courses and private access to your company's Curated Path.
                         </Accordion.Body>
-                    </Accordion.Item>
+                    </Accordion.Item> */}
                 </Accordion>
             </Container>
             <Container fluid className='middle py-5 text-center'>
-                <h2 className=' my-2 fs-2 '>Ready to get started?</h2>
-                <p className=' my-4 smallText text-muted'>Contact our team today! We'll get back to you within 1 business day.</p>
-                <Button variant='btn btn-primary' href='/home'> Speak to the representative</Button>
+                <h2 className=' my-2 fs-2 '>রেডী টু স্টার্ট?</h2>
+                <p className=' my-4 smallText text-muted'>আপনি যদি আগ্রহী হন তাহলে যোগাযোগ করুন আমাদের টিম এর সাথে।</p>
+                <Button variant='btn btn-primary' href='/home'> কথা বলুন আমাদের রিপ্রেজেন্টেটিভ এর সাথে</Button>
             </Container>
         </>
     )
