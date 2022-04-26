@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button, Col, Container, Row } from 'react-bootstrap'
 import NormalCards from '../../Common/NormalCards'
+import Header from '../../Header/Header'
 import learn from '../../images/learn.png'
 import learn1 from '../../images/learn1.png'
 import learn2 from '../../images/learn2.png'
@@ -10,6 +11,7 @@ import learn4 from '../../images/learn4.png'
 export default function LearningPlan() {
     return (
         <>
+            <Header />
             {/* top part */}
             <Container fluid className=' middle '>
                 <Container className=' py-5'>

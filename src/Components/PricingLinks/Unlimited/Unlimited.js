@@ -3,6 +3,7 @@ import { Button, Col, Container, Row } from 'react-bootstrap'
 import Companies from '../../Common/Companies'
 import Demo from '../../Common/Demo'
 import PriceCard from '../../Common/PriceCard'
+import Header from '../../Header/Header'
 import home2 from '../../images/home2.png'
 import unlimited from '../../images/unlimited.png'
 
@@ -10,6 +11,7 @@ import unlimited from '../../images/unlimited.png'
 export default function Unlimited() {
     return (
         <>
+            <Header />
             {/* top part */}
             <Container data-aos="fade-up-right" className='my-5'>
                 <section className='text-center '>

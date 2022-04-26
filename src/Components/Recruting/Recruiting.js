@@ -6,9 +6,11 @@ import search from '../images/hr/search.png'
 import resume from '../images/hr/resume.png'
 import loud from '../images/hr/loud.png'
 import ContactForm from '../Common/ContactForm'
+import Header from '../Header/Header'
 export default function Recruiting() {
     return (
         <>
+            <Header />
             {/* top */}
             <Container>
                 <Row data-aos="fade-up" className='my-5'>

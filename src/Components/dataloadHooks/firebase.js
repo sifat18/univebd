@@ -9,6 +9,7 @@ const useFirebase = () => {
     const [error, seterror] = useState('')
     const [token, setoken] = useState('')
     const [admin, setAdmin] = useState(false);
+    const [tutor, setTutor] = useState(false);
 
     const [isLoading, setisLoading] = useState(true)
 
@@ -26,7 +27,7 @@ const useFirebase = () => {
                 setuser(newUser);
                 saveUser(email, name, 'POST');
                 setName(name)
-                history('/');
+                history('/learn');
                 // ...
             })
             .catch((error) => {
@@ -53,7 +54,7 @@ const useFirebase = () => {
                 const user = result.user;
                 saveUser(user.email, user.displayName, 'PUT');
                 seterror('');
-                const destination = location?.state?.from || '/';
+                const destination = location?.state?.from || '/learn';
                 history(destination);
             }).catch((error) => {
                 seterror(error.message);
@@ -68,7 +69,7 @@ const useFirebase = () => {
                 // Signed in
                 seterror('')
                 setuser(userCredential.user);
-                const destination = location?.state?.from || '/';
+                const destination = location?.state?.from || '/learn';
                 history.replace(destination);
                 // ...
             })
@@ -97,9 +98,14 @@ const useFirebase = () => {
 
 
     useEffect(() => {
-        fetch(`https://fierce-woodland-01411.herokuapp.com/${user.email}`)
+        console.log('start');
+        fetch(`https://fierce-woodland-01411.herokuapp.com/user/${user.email}`)
             .then(res => res.json())
-            .then(data => setAdmin(data.admin))
+            .then(data => {
+                console.log(data);
+                setAdmin(data.admin)
+                setTutor(data.tutor)
+            })
     }, [user.email])
 
     // signoUT
@@ -136,7 +142,8 @@ const useFirebase = () => {
         signGoogle,
         seterror,
         admin,
-        token
+        token,
+        tutor
 
     }
 

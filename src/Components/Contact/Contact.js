@@ -1,11 +1,13 @@
 import { Container } from 'react-bootstrap'
 import ContactForm from '../Common/ContactForm'
+import Header from '../Header/Header'
 import conactImage from '../images/Contact/contact.png'
 export default function Contact() {
 
 
     return (
         <>
+            <Header />
             <h2 data-aos="fade-down" className='text-center my-5 py-5'>
                 সরাসরি মেসেজ করুন        </h2>
             {/* form */}

@@ -4,11 +4,14 @@ import useData from '../dataloadHooks/dataload'
 import ar from '../images/icons8-arrow-.png'
 import st from '../images/steps.png'
 import dr from '../images/icons8-down-arrow-40.png'
+import { NavLink } from 'react-router-dom'
+import Header from '../Header/Header'
 export default function Learn() {
     const [item] = useData();
     // console.log(item);
     return (
         <>
+            <Header />
             <Container fluid className='my-5'>
                 {/* free courses */}
                 <Container className='text-center'>
@@ -20,11 +23,11 @@ export default function Learn() {
                         {item.map((id) => (
                             <Col key={id.key}>
                                 <Card className='py-1'>
-                                    <Card.Img variant="top" className='img-fluid ' src={id.coverImageUrl} />
+                                    <Card.Img variant="top" className='img-fluid ' src={id.image} />
                                     <Card.Body className='text-start'>
-                                        <p>educative</p>
-                                        <Card.Title >{id.title}</Card.Title>
-                                        <Card.Text>{id.synopsis.slice(0, 100)}              </Card.Text>
+                                        <p>Unive</p>
+                                        <Card.Title >{id.name}</Card.Title>
+                                        <Card.Text>{id.aboutCourse.slice(0, 100)}              </Card.Text>
                                     </Card.Body>
                                     <Row>
                                         <Col xs={6}>
@@ -32,7 +35,7 @@ export default function Learn() {
                                             <p className='fs-7'>Beginner</p>
                                         </Col>
                                         <Col xs={6}>
-                                            <Button className='p-3' variant="outline-dark">preview <img src={ar} alt="" /></Button>
+                                            <NavLink to={`/learn/${id.name}`}> <Button className='p-3' variant="outline-dark">preview <img src={ar} alt="" /></Button></NavLink>
 
                                         </Col>
                                     </Row>
@@ -55,11 +58,11 @@ export default function Learn() {
                         {item.map((id) => (
                             <Col key={id.key}>
                                 <Card className='py-1'>
-                                    <Card.Img variant="top" className='img-fluid ' src={id.coverImageUrl} />
+                                    <Card.Img variant="top" className='img-fluid ' src={id.image} />
                                     <Card.Body className='text-start'>
-                                        <p>educative</p>
-                                        <Card.Title >{id.title}</Card.Title>
-                                        <Card.Text>{id.synopsis.slice(0, 100)}              </Card.Text>
+                                        <p>Unive</p>
+                                        <Card.Title >{id.name}</Card.Title>
+                                        <Card.Text>{id.aboutCourse.slice(0, 100)}              </Card.Text>
                                     </Card.Body>
                                     <Row>
                                         <Col xs={6}>
@@ -67,7 +70,7 @@ export default function Learn() {
                                             <p className='fs-7'>Beginner</p>
                                         </Col>
                                         <Col xs={6}>
-                                            <Button className='p-3' variant="outline-dark">preview <img src={ar} alt="" /></Button>
+                                            <NavLink to={`/learn/${id.name}`}><Button className='p-3' variant="outline-dark">preview <img src={ar} alt="" /></Button></NavLink>
 
                                         </Col>
                                     </Row>

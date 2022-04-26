@@ -15,6 +15,7 @@ import onb9 from '../../images/onb9.png'
 import check from '../../images/check.png'
 import './onboard.css'
 import Companies from '../../Common/Companies'
+import Header from '../../Header/Header'
 export default function Onboarding() {
     const [flag, setFlag] = useState(true)
     const [flag2, setFlag2] = useState(false)
@@ -39,6 +40,7 @@ export default function Onboarding() {
     return (
 
         <>
+            <Header />
             {/* top part */}
             <Container className='my-5' data-aos="fade-up-left">
                 <section className='text-center '>

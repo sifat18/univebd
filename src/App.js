@@ -44,6 +44,14 @@ import CourseCatalog from './Components/CourseCatalog/CourseCatalog';
 import Scholarships from './Components/Scholarships/Scholarships';
 import Press from './Components/Press/Press';
 import ScrollToTop from './Components/Common/ScrollToTop';
+import Overview from './Components/Course_Overview/Overview';
+import CourseStart from './Components/StartCourse/CourseStart';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import Board from './Components/Board/Board';
+import AdminRoute from './Components/AdminRoute/AdminRoute';
+import InstructorRoute from './Components/InstructorRoute/InstructorRoute';
+import AddInstructor from './Components/Board/AddInstructor/AddInstructor';
+import Admin from './Components/Board/AddAdmin/Admin';
 function App() {
   useEffect(() => {
     AOS.init();
@@ -52,7 +60,7 @@ function App() {
     <Authprovider>
       <BrowserRouter>
         <ScrollToTop>
-          <Header />
+          {/* <Header /> */}
           <Routes>
             <Route path="/" element={<Home />} />
 
@@ -84,6 +92,14 @@ function App() {
             <Route path="/course-catalogue" element={<CourseCatalog />} />
             <Route path="/scholarships" element={<Scholarships />} />
             <Route path="/press" element={<Press />} />
+            <Route path="/learn/:courseName" element={<Overview />} />
+            <Route path="/learn/:courseName/start" element={<PrivateRoute><CourseStart /></PrivateRoute>} />
+            <Route path="/dashboard" element={<AdminRoute><Board /></AdminRoute>} >
+              {/* <Route path="/dashboard" element={<Welcome />} /> */}
+              <Route path="/dashboard" element={<AdminRoute><Admin /></AdminRoute>} />
+              <Route path="/dashboard/adtutor" element={<AddInstructor />} />
+
+            </Route>
             <Route path="*" element={<Nopage />} />
           </Routes>
           <Footer />

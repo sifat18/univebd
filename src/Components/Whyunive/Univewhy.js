@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
+import Header from '../Header/Header'
 import pic1 from '../images/whyUnive/Picture1.png'
 import pic2 from '../images/whyUnive/Picture2.png'
 import pic3 from '../images/whyUnive/Picture3-4.png'
@@ -11,6 +12,7 @@ import pic8 from '../images/whyUnive/Picture9.png'
 export default function Univewhy() {
     return (
         <>
+            <Header />
             <h2 data-aos="fade-up" className='text-center my-5 py-5'>
                 কেন আপনার ক্যারিয়ার গঠনে ইউনিভ ব্যবহার করবেন?
             </h2>

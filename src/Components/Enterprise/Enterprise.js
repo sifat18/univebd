@@ -13,9 +13,11 @@ import Companies from '../Common/Companies'
 import ReviewCard from '../Common/ReviewCard'
 import Demo from '../Common/Demo'
 import Resources from '../Common/Resources'
+import Header from '../Header/Header'
 export default function Enterprise() {
     return (
         <>
+            <Header />
             {/* top part */}
             <Container data-aos="fade-down" className='my-5'>
                 <section className='text-center '>

@@ -6,9 +6,11 @@ import phone from '../images/instructor/phone.png'
 import ppl from '../images/instructor/ppl.png'
 import code from '../images/instructor/code.png'
 import lady from '../images/instructor/chair-lady.png'
+import Header from '../Header/Header'
 export default function Instructor() {
     return (
         <>
+            <Header />
             {/* top */}
             <Container data-aos="fade-up" className=''>
                 <Row className='my-5 container'>

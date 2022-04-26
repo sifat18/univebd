@@ -8,5 +8,10 @@ a {
 }
 
 .ss {
-  width: 150px;
+  width: 100px;
+  background-color: rgb(240, 238, 238);
+}
+
+.littleFont {
+  font-size: 0.8rem;
 }

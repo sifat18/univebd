@@ -1,7 +1,8 @@
 import React from 'react'
+import Header from '../Header/Header'
 
 export default function FAQ() {
   return (
-    <div>FAQ</div>
+    <><Header /></>
   )
 }

@@ -10,9 +10,11 @@ import Demo from '../Common/Demo'
 import Companies from '../Common/Companies'
 import ReviewCard from '../Common/ReviewCard'
 import Resources from '../Common/Resources'
+import Header from '../Header/Header'
 export default function Business() {
     return (
         <>
+            <Header />
             {/* top part */}
             <Container className='my-5'>
                 <section className='text-center '>

@@ -20,9 +20,11 @@ import sql from '../images/sql-server-64.png'
 import py from '../images/php-logo-48.png'
 import ReviewCard from '../Common/ReviewCard'
 import Companies from '../Common/Companies'
+import Header from '../Header/Header'
 export default function Home() {
     return (
         <>
+            <Header />
             {/* top part */}
             <Container data-aos="fade-right" className='my-5'>
                 <section className='text-center '>

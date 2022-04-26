@@ -4,12 +4,15 @@ import project from '../../images/project.png'
 import check from '../../images/check.png'
 import ar from '../../images/icons8-arrow-.png'
 import useData from '../../dataloadHooks/dataload';
+import { NavLink } from 'react-router-dom'
+import Header from '../../Header/Header'
 
 export default function Projects() {
     const [item] = useData();
 
     return (
         <>
+            <Header />
             <Container fluid className=' my-5 pt-5 '>
                 <Row>
                     <Col xs={12} md={8} className='order-2 order-md-1'>
@@ -40,18 +43,18 @@ export default function Projects() {
                     {item.map((id) => (
                         <Col key={id.key}>
                             <Card className='py-1'>
-                                <Card.Img variant="top" className='img-fluid ' src={id.coverImageUrl} />
+                                <Card.Img variant="top" className='img-fluid ' src={id.image} />
                                 <Card.Body className='text-start'>
                                     <p>educative</p>
-                                    <Card.Title >{id.title}</Card.Title>
-                                    <Card.Text>{id.synopsis.slice(0, 100)}              </Card.Text>
+                                    <Card.Title >{id.name}</Card.Title>
+                                    <Card.Text>{id.aboutCourse.slice(0, 100)}              </Card.Text>
                                 </Card.Body>
                                 <Row>
                                     <Col xs={5} className='ms-2 ps-3 mt-3'>
                                         <p className='fs-7'>Beginner</p>
                                     </Col>
                                     <Col xs={6} className='py-3'>
-                                        <Button className=' w-100 h-100' variant="warning">Get Started <img src={ar} alt="" /></Button>
+                                        <NavLink to={`/learn/${id.name}`}> <Button className=' w-100 h-100' variant="warning">Get Started <img src={ar} alt="" /></Button></NavLink>
 
                                     </Col>
                                 </Row>

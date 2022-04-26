@@ -2,6 +2,7 @@ import React from 'react'
 import { Button, Col, Container, Row } from 'react-bootstrap'
 import Demo from '../../Common/Demo'
 import NormalCards from '../../Common/NormalCards'
+import Header from '../../Header/Header'
 import up0 from '../../images/up0.png'
 import up1 from '../../images/up1.png'
 import up2 from '../../images/up2.png'
@@ -9,6 +10,7 @@ import up3 from '../../images/up3.png'
 export default function Upskill() {
     return (
         <>
+            <Header />
             {/* top part */}
             <Container data-aos="fade-down" className='my-5'>
                 <section className='text-center '>

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
+import Header from '../Header/Header'
 import pic1 from '../images/How-It-works/Picture2-1.png'
 import pic2 from '../images/How-It-works/Picture3-1-e1640099208951.png'
 import pic3 from '../images/How-It-works/Picture4-1.png'
@@ -10,6 +11,7 @@ import pic7 from '../images/How-It-works/Picture8-1.png'
 export default function HowItworks() {
     return (
         <>
+            <Header />
             <h2 data-aos="fade-up-right" className='text-center my-5 py-5'>
                 ইউনিভ কিভাবে কাজ করে?
             </h2>

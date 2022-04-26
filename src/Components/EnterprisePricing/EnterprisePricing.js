@@ -2,11 +2,13 @@ import React from 'react'
 import { Accordion, Button, Card, Col, Container, Row } from 'react-bootstrap'
 import Companies from '../Common/Companies'
 import Demo from '../Common/Demo'
+import Header from '../Header/Header'
 import check from '../images/check.png'
 
 export default function EnterprisePricing() {
     return (
         <>
+            <Header />
             {/* top part */}
             <Container data-aos="fade-down" className='my-5'>
                 <section className='text-center '>

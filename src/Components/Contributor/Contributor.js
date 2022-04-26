@@ -1,9 +1,11 @@
 import React from 'react'
 import { Accordion, Button, Col, Container, Form, Row } from 'react-bootstrap'
+import Header from '../Header/Header'
 import contribe from '../images/contribute/contribe.png'
 export default function Contributor() {
     return (
         <>
+            <Header />
             {/* top */}
             <Container data-aos="fade-up-left " className=''>
                 <Row className='my-5 container'>

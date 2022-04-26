@@ -1,4 +1,4 @@
-import { Button, Container, Form, FormControl, Modal, Nav, Navbar, Spinner } from 'react-bootstrap'
+import { Button, Container, Modal, Nav, Navbar, Offcanvas, Spinner } from 'react-bootstrap'
 import { NavLink, useLocation } from 'react-router-dom';
 // import logo from '../images/logos/cropped-small-px-e1638453380416.png'
 import gogo from '../images/logos/icons8-google.svg'
@@ -9,6 +9,13 @@ import Register from '../Register/Register';
 import { useNavigate } from "react-router-dom";
 import useAuth from '../Context/useAuth';
 import './header.css'
+import { GiHamburgerMenu } from "react-icons/gi";
+import { GiPathDistance } from "react-icons/gi";
+import { GiBullseye } from "react-icons/gi";
+import { FiBook } from "react-icons/fi";
+import { BiSearchAlt2 } from "react-icons/bi";
+import { BsStack } from "react-icons/bs";
+import { TiPuzzle } from "react-icons/ti";
 
 export default function Header() {
     const [show, setShow] = useState(false);
@@ -19,6 +26,12 @@ export default function Header() {
 
     const handleCloseL = () => setLShow(false);
     const handleShowL = () => setLShow(true);
+
+    // offcanvas
+    const [showOff, setShowOff] = useState(false);
+
+    const handleOff = () => setShowOff(false);
+    const handleOn = () => setShowOff(true);
 
     const [registerData, setregisterData] = useState({});
     const [passError, setpassError] = useState('');
@@ -85,7 +98,7 @@ export default function Header() {
         <>
             <Navbar sticky="top" fluid collapseOnSelect expand="lg" bg="white" variant="light">
                 <Container fluid>
-
+                    {user.displayName && <span onClick={handleOn} className='fs-2 pe-3'>  <GiHamburgerMenu /></span>}
                     <NavLink to='/'> <Navbar.Brand href="#home" className="me-5 ">
                         <img
                             src={logo}
@@ -122,11 +135,11 @@ export default function Header() {
 
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="fw-bold d-none d-md-block ">
-                            <NavLink to='/'><Nav.Link className=" d-inline mx-5 text-dark" href="#course">কোর্সসমুহ</Nav.Link></NavLink >
+                            <NavLink to='/learn'><Nav.Link className=" d-inline mx-5 text-dark" href="#course">কোর্সসমুহ</Nav.Link></NavLink >
                             <NavLink to='/contact'><Nav.Link className=" d-inline mx-5 text-dark" href="/contact">যোগাযোগ</Nav.Link></NavLink >
                         </Nav>
                         <Nav className="fw-bold d-md-none ">
-                            <NavLink to='/'><Nav.Link className="text-dark " href="#course">কোর্সসমুহ</Nav.Link></NavLink >
+                            <NavLink to='/learn'><Nav.Link className="text-dark " href="#course">কোর্সসমুহ</Nav.Link></NavLink >
                             <NavLink to='/contact'><Nav.Link className="text-dark" href="/contact">যোগাযোগ</Nav.Link></NavLink >
                         </Nav>
                         {user.displayName && <Navbar.Text>
@@ -195,6 +208,20 @@ export default function Header() {
 
 
             </Modal>
+
+            {/* offcanvas */}
+            <Offcanvas className='ss' show={showOff} onHide={handleOff}>
+                <Offcanvas.Body>
+                    <div class="d-flex flex-column  mb-3">
+                        <NavLink to='/learn'> <div className=" py-2"><FiBook className='fs-2 mx-2' /><br /><span className="littleFont">my learning</span></div></NavLink>
+                        <NavLink to='/learn'><div className="py-2 "><BiSearchAlt2 className='fs-2 mx-2' /><br /><span className="littleFont">Explore</span></div></NavLink>
+                        <NavLink to='/learning-plans'><div className="py-2 "><BsStack className='fs-2 mx-2' /><br /><span className="littleFont">Personalized Plans</span></div></NavLink>
+                        <NavLink to='/projects'><div className="py-2 "><TiPuzzle className='fs-2 mx-2' /><br /><span className="littleFont">Projects</span></div></NavLink>
+                        <NavLink to='/paths'><div className="py-2 "><GiPathDistance className='fs-2 mx-2' /><br /><span className="littleFont">Paths</span></div></NavLink>
+                        <NavLink to='/assessments'><div className="py-2 "><GiBullseye className='fs-2 mx-2' /><br /><span className="littleFont">Assesments</span></div></NavLink>
+                    </div>
+                </Offcanvas.Body>
+            </Offcanvas>
         </>
     )
 }

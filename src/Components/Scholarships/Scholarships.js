@@ -1,7 +1,8 @@
 import React from 'react'
+import Header from '../Header/Header'
 
 export default function Scholarships() {
   return (
-    <div>Scholarships</div>
+    <div><Header /></div>
   )
 }

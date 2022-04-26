@@ -38,7 +38,7 @@ export default function ReviewCard() {
                 </Col>
                 <Col xs={12} md={4} className=" mb-5">
                     <div class="bg-white rounded shadow-sm py-5 px-4"><img src={rev3} alt="" width="100" className="img-fluid rounded-circle  img-thumbnail shadow-sm" />
-                        <h5 class="mb-0 ">আশিকুর রহমান</h5> <p className='text-start my-3 text-muted'>
+                        <h5 class="mb-0 mt-3">আশিকুর রহমান</h5> <p className='text-start my-1 text-muted'>
                             আমি এসি রিপেয়ারের কাজ করি। কিন্তু সেন্ট্রাল এসি সিস্টেম ইন্সটল সম্পর্কে আমার কোন আইডিয়া ছিলো না। ইউনিভে সেন্ট্রাল এসি ইন্সটলেশন কোর্সটি করার পর এখন আমি বড় বড় এসির প্রজেক্টে কাজ করতে পারছি। আমার প্রথম ৬০০ টন সেন্ট্রাল এসি ইন্সটলেশনের কাজটি ইউনিভই ব্যাবস্থা করে দিয়েছে। বর্তমানে আমার মাসিক আয় পূর্বের চেয়ে দ্বিগুন হয়েছে।
                         </p>
 

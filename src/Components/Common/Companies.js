@@ -51,11 +51,11 @@ export default function Companies() {
         <Row className='my-5  mx-auto text-center'>
             <Slider {...settings}>
                 <div className='  text-center'>
-                    <img className='img-fluid mx-auto my-auto pt-5 ' src={logo1} alt="" height='150' width='150' />
+                    <img className='img-fluid mx-auto my-auto mt-3 pt-5 ' src={logo1} alt="" height='150' width='150' />
 
                 </div>
                 <div className='  text-center'>
-                    <img className='img-fluid mx-auto my-auto pt-5' src={logo2} alt="" height='150' width='150' />
+                    <img className='img-fluid mx-auto my-auto mt-2 pt-5' src={logo2} alt="" height='150' width='150' />
                 </div>
                 <div className='  text-center'>
                     <img className='img-fluid mx-auto my-auto pt-5' src={logo3} alt="" height='150' width='150' />
@@ -64,13 +64,13 @@ export default function Companies() {
                     <img className='img-fluid mx-auto my-auto pt-5' src={logo4} alt="" height='150' width='150' />
                 </div>
                 <div className='  text-center'>
-                    <img className='img-fluid mx-auto my-auto pt-5' src={logo5} alt="" height='250' width='250' />
+                    <img className='img-fluid mx-auto my-auto pt-3' src={logo5} alt="" height='250' width='250' />
                 </div>
                 <div className='  text-center'>
-                    <img className='img-fluid mx-auto my-auto pt-5' src={logo6} alt="" height='150' width='150' />
+                    <img className='img-fluid mx-auto my-auto pt-5 mt-2' src={logo6} alt="" height='150' width='150' />
                 </div>
                 <div className='  text-center'>
-                    <img className='img-fluid mx-auto my-auto pt-5' src={logo7} alt="" height='150' width='150' />
+                    <img className='img-fluid mx-auto my-auto pt-5 ' src={logo7} alt="" height='150' width='150' />
                 </div>
             </Slider>
             {/*             

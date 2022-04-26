@@ -53,4 +53,9 @@
     .smallpadding {
         padding-left: 2rem;
     }
+
+    .contentpadding {
+        padding-left: 10rem;
+    }
+
 }
