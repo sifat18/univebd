@@ -21,6 +21,7 @@ import py from '../images/php-logo-48.png'
 import ReviewCard from '../Common/ReviewCard'
 import Companies from '../Common/Companies'
 import Header from '../Header/Header'
+import { NavLink } from 'react-router-dom'
 export default function Home() {
     return (
         <>
@@ -32,9 +33,9 @@ export default function Home() {
                     <h5 className=' mt-3 smallText '>সমস্ত প্রোগ্রাম ইন্ডাস্ট্রি প্র্যাক্টিস ফোকাসড এবং আপ টু ডেট। ​</h5>
                     {/* <h5 className=' ms-5 '></h5> */}
                     <div className=" mt-3   ">
-                        <Button className='p-3 m-3 bluebtn' href="#">আমি শিখতে চাই</Button>
-                        <Button className='p-3 m-3 bluebtn' href="#">আমি এমপ্লইয়ী খুঁজছি</Button>
-                        <Button className='p-3 m-3 bluebtn' href="#">আমি জব খুঁজছি</Button>
+                        <NavLink to='/individual-learner'><Button className='p-3 m-3 bluebtn' href="#">আমি শিখতে চাই</Button></NavLink>
+                        <NavLink to='/enterprise'><Button className='p-3 m-3 bluebtn' href="#">আমি এমপ্লইয়ী খুঁজছি</Button></NavLink>
+                        <NavLink to='/individual-learner'><Button className='p-3 m-3 bluebtn' href="#">আমি জব খুঁজছি</Button></NavLink>
                     </div>
                     <div >
                         <img className='img-fluid' src={home} alt="" />
