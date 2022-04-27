@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Card, Col, Row } from 'react-bootstrap'
+import {  Card, Col, Row } from 'react-bootstrap'
 import check from '../images/check.png'
 export default function PriceCard() {
     return (

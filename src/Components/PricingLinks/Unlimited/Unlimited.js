@@ -1,10 +1,9 @@
 import React from 'react'
-import { Button, Col, Container, Row } from 'react-bootstrap'
+import {  Col, Container, Row } from 'react-bootstrap'
 import Companies from '../../Common/Companies'
 import Demo from '../../Common/Demo'
 import PriceCard from '../../Common/PriceCard'
 import Header from '../../Header/Header'
-import home2 from '../../images/home2.png'
 import unlimited from '../../images/unlimited.png'
 
 

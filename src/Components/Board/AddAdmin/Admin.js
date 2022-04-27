@@ -1,14 +1,12 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { Container, Modal, Button } from 'react-bootstrap';
-import useAuth from '../../Context/useAuth';
 import './admin.css'
 const Admin = () => {
     const [email, setEmail] = useState('');
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    // const { token } = useAuth();
     const handleOnChange = e => {
         const value = e.target.value;
         setEmail(value)

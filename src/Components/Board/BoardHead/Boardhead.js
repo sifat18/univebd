@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
-import { Button, Container, Modal, Nav, Navbar, NavLink, Offcanvas, Spinner } from 'react-bootstrap';
+import { Container,  Nav, Navbar, NavLink, Offcanvas, Spinner } from 'react-bootstrap';
 import useAuth from '../../Context/useAuth';
 import logo from '../../images/logos/logo.png'
-import arrow from '../../images/icons8-arrow-24.png'
 import { GiHamburgerMenu } from "react-icons/gi";
 
 export default function Boardhead() {

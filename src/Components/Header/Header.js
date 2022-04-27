@@ -96,6 +96,7 @@ export default function Header() {
     }
     return (
         <>
+        {/* NAV BAR */}
             <Navbar sticky="top" fluid collapseOnSelect expand="lg" bg="white" variant="light">
                 <Container fluid>
                     {user.displayName && <span onClick={handleOn} className='fs-2 pe-3'>  <GiHamburgerMenu /></span>}
@@ -214,7 +215,7 @@ export default function Header() {
                 <Offcanvas.Body>
                     <div class="d-flex flex-column  mb-3">
                         <NavLink to='/learn'> <div className=" py-2"><FiBook className='fs-2 mx-2' /><br /><span className="littleFont">my learning</span></div></NavLink>
-                        <NavLink to='/learn'><div className="py-2 "><BiSearchAlt2 className='fs-2 mx-2' /><br /><span className="littleFont">Explore</span></div></NavLink>
+                        <NavLink to='/assessments'><div className="py-2 "><BiSearchAlt2 className='fs-2 mx-2' /><br /><span className="littleFont">Explore</span></div></NavLink>
                         <NavLink to='/learning-plans'><div className="py-2 "><BsStack className='fs-2 mx-2' /><br /><span className="littleFont">Personalized Plans</span></div></NavLink>
                         <NavLink to='/projects'><div className="py-2 "><TiPuzzle className='fs-2 mx-2' /><br /><span className="littleFont">Projects</span></div></NavLink>
                         <NavLink to='/paths'><div className="py-2 "><GiPathDistance className='fs-2 mx-2' /><br /><span className="littleFont">Paths</span></div></NavLink>

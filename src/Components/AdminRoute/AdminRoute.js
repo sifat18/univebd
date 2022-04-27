@@ -4,7 +4,7 @@ import { Navigate, useLocation } from 'react-router-dom';
 import useAuth from '../Context/useAuth';
 
 const AdminRoute = ({ children, ...rest }) => {
-    const { user, admin, isLoading } = useAuth();
+    const {  admin, isLoading } = useAuth();
     const location = useLocation();
     if (isLoading) {
         return <div className='text-center'><Spinner animation="border" variant="danger" />

@@ -2,7 +2,7 @@ import React from 'react'
 import { Button, Card, Col, Container, Row } from 'react-bootstrap'
 import indi from '../images/indi.png'
 import indi2 from '../images/indi2.png'
-import check from '../images/check.png'
+// import check from '../images/check.png'
 import indi4 from '../images/indi4.webm'
 import indi3 from '../images/indi3.png'
 import st from '../images/steps.png'
@@ -26,7 +26,7 @@ export default function Individual() {
                     <h2 className=''>বর্তমানের ইন্ডাস্ট্রি প্র্যাকটিস ফোকাসড ট্রেইনিং শুরু করুন এখনি!</h2>
                     {/* <h4 className=' mt-3  ps-1'>World-class courses for world-class software developers</h4> */}
                     <div className=" mt-3   ">
-                        <Button className='p-3 smallText bluebtn m-3' href="#">ট্রেইনিং শুরু করুন</Button>
+                      <NavLink to='/learn'> <Button className='p-3 smallText bluebtn m-3'>ট্রেইনিং শুরু করুন</Button></NavLink>
                     </div>
                     <div >
                         <img className='img-fluid ' src={indi} alt="" />
