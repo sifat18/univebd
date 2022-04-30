@@ -23,12 +23,12 @@ export default function Home() {
                     {/* <h5 className=' ms-5 '></h5> */}
                     <div className=" mt-3   ">
                         <NavLink to='/individual-learner'><Button className='p-3 m-3 bluebtn' >আমি শিখতে চাই</Button></NavLink>
-                        <NavLink to='/recruiting'><Button className='p-3 m-3 bluebtn' >আমি এমপ্লইয়ী খুঁজছি</Button></NavLink>
+                        <NavLink to='/recruiting'><Button className='p-3 m-3 bluebtn' >আমি এমপ্লয়ী খুঁজছি</Button></NavLink>
                         <NavLink to='/assessments'><Button className='p-3 m-3 bluebtn'>আমি জব খুঁজছি</Button></NavLink>
                     </div>
                     <div >
                         <img className='img-fluid' src={home} alt="" />
-                        <p className='my-3'> সমস্ত ইন্ডাস্ট্রি লিডিং কোম্পানি আমাদের প্ল্যাটফর্ম থেকে এমপ্লয়ীজ হায়ার করছে।
+                        <p className='my-3'> সমস্ত ইন্ডাস্ট্রি লিডিং কোম্পানি আমাদের প্ল্যাটফর্ম থেকে এমপ্লয়ী হায়ার করছে:
                             {/* <img className='img-fluid my-5' src={home2} alt="" /> */}
                         </p>
                     </div>

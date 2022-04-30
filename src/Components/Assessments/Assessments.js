@@ -13,10 +13,10 @@ export default function Assessments() {
                 <Container className='text-light'>
                     <Row>
                         <Col xs={12} md={8}>
-                            <h5>Assessments</h5>
-                            <h2 className='fs-1 mb-4'>Identify your skill gaps</h2>
-                            <p className='smallText'>Take an assessment to benchmark your current coding skills</p>
-                            <p className='smallText'>Understand your strengths and weaknesses, then get <br /> personalized recommendations to improve your SkillScore</p>
+                            <h5>অ্যাসেসমেন্টস</h5>
+                            <h2 className='fs-1 mb-4'>আপনার স্কিল গ্যাপ খুঁজে বের করুন</h2>
+                            <p className='smallText'>অ্যাসেসমেন্টের মাধ্যমে যে বিষয় গুলোতে আপনার স্কিল গ্যাপ আছে কিংবা ইমপ্রুভ এর সুযোগ আছে তা চিহ্নিত করতে পারবেন।</p>
+                            <p className='smallText'>Unive সেই বিষয় গুলোতে ইমপ্রুভ করার জন্যে আপনাকে পার্সোনালাইজড সাজেশন এবং ট্রেইনিং ম্যাটেরিয়ালস ডিজাইন করে দিবে।<br />  এছাড়া কোনো অ্যাসেসমেন্ট এ এক্সেপশনাল ফলাফলের প্রেক্ষিতে জব প্লেসমেন্ট এর সুযোগ তো আছেই। </p>
                         </Col>
                         <Col xs={12} md={4} >
                             <img src={top} alt="" className='img-fluid' />
@@ -34,7 +34,7 @@ export default function Assessments() {
                                     <img className='img-fluid ' src={id.image} alt="" />
                                 </Col>
                                 <Col xs={12} md={8}>
-                                    <h5 className='fs-5'>Assesement</h5>
+                                    <h5 className='fs-5'>অ্যাসেসমেন্ট</h5>
                                     <h2 className='my-2 text-start fs-4'>{id.name}</h2>
                                     <NavLink to={`/learn/${id.name}`}> <Button variant='btn btn-outline-primary py-2 px-5 d-block my-5 me-3 ms-auto'> Preview</Button></NavLink>
 
@@ -50,7 +50,7 @@ export default function Assessments() {
                                     <img className='img-fluid ' src={id.image} alt="" />
                                 </Col>
                                 <Col xs={12} md={8}>
-                                    <h5 className='fs-5'>Assesement</h5>
+                                    <h5 className='fs-5'>অ্যাসেসমেন্ট</h5>
                                     <h2 className='my-2 text-start fs-4'>{id.name}</h2>
                                     <Button variant='btn btn-outline-primary py-2 px-5 d-block my-5 me-3 ms-auto'> Preview</Button>
 

@@ -14,8 +14,8 @@ export default function Unlimited() {
             {/* top part */}
             <Container data-aos="fade-up-right" className='my-5'>
                 <section className='text-center '>
-                    <h2 className=''>Career এ এগিয়ে থাকুন with Unive </h2>
-                    <h4 className=' mt-3 smallText mx-auto'>75% of developers learn new tech skills at least once a year <br /> Stand out from the crowd with real-world skills and accelerate your career.</h4>
+                    <h2 className=''>ক্যারিয়ারে এগিয়ে থাকুন Unive এর সাথে</h2>
+                    <h4 className=' mt-3 smallText mx-auto'>যারা ক্যারিয়ারে উত্তরোত্তর সাফল্য লাভ করেন তাদের সাফল্যের কারণ তারা প্রতিনিয়ত নতুন নতুন স্কিল শিখছেন। <br /> Unive এর মাধ্যমে আপনিও থাকতে পারেন আপ টু ডেট এবং নতুন নতুন স্কিল যোগ করতে পারেন নিজের ক্যারিয়ারে।</h4>
                     <div className=" mt-3   ">
                     </div>
 
@@ -24,8 +24,8 @@ export default function Unlimited() {
 
             <Container fluid data-aos="fade-up-left" className='middle text-center my-5 py-5'>
                 <PriceCard />
-                <p className='my-5'> <a href='/home'> explore for your team</a></p>
-                <p className='my-5'> Trusted by more than 1.1 million learners working for companies like</p>
+                {/* <p className='my-5'> <a href='/home'> explore for your team</a></p> */}
+                <p className='my-5'> Unive এ শিখছে দেশের প্রথম সারির প্রতিষ্ঠান গুলোর এমপ্লয়ীরা এবং সেসব ইন্ডাস্ট্রিতে জব করতে ইচ্ছুক প্রার্থীরা:</p>
                 <Container >
                     <Companies />
                 </Container>
@@ -36,24 +36,24 @@ export default function Unlimited() {
                 <Row className='gx-5'>
                     <Col xs={12} md={4} className='text-center mb-3 '>
                         <img src="" alt="someimage" />
-                        <h3>Courses you need</h3>
-                        <p>With a vast (and growing) library of 380+ hands-on courses, you’ll find plenty of content to sink your teeth into no matter what your goals are.</p>
+                        <h3>জব ফোকাসড ট্রেইনিং</h3>
+                        <p>প্রতিটি ট্রেইনিং ম্যাটেরিয়ালস কারেন্ট ডিমান্ডিং জবস এর উপর ফোকাস করে তৈরি করা। ট্রেইনিং করে নিজেকে এগিয়ে রাখুন জব রোলের জন্য। সাধারণত এমপ্লয়ার তাকেই নেয় যে জব সম্পর্কে ভালো আইডিয়া রাখে</p>
                     </Col>
                     <Col xs={12} md={4} className='text-center mb-3'>
                         <img src="" alt="someimage" />
-                        <h3>Always expanding</h3>
-                        <p>As a subscriber, you’ll get access to not just courses currently on the site, but to all our new and upcoming courses as well. Look out for new releases each week.</p>
+                        <h3>ল্যান্ড ইন ইউর ড্রিম জব</h3>
+                        <p>ট্রেইনিং বা অ্যাসেসমেন্ট এ ভালো ফলাফল করে ল্যান্ড করুন আপনার ড্রিম জবে। ভালো ফলাফল করা আপনার দায়িত্ব, বাদবাকি আমাদের।</p>
                     </Col>
                     <Col xs={12} md={4} className='text-center '>
                         <img src="" alt="someimage" />
-                        <h3>Cancel anytime</h3>
-                        <p>Prefer not to continue? No problem. Cancel any time to stop future charges. Your access will remain active until the current subscription period ends.</p>
+                        <h3>যেকোনো সময় ক্যান্সেল করুন আপনার প্ল্যান</h3>
+                        <p>আপনার যদি ভালো না লাগে যেকোনো সময় ক্যান্সেল করুন আপনার প্ল্যান। যে ট্রেইনিং আপনি কিনছেন বা শেষ করেছেন তার অ্যাকসেস এবং সার্টিফিকেশন তো থাকছেই সবসময়। </p>
                     </Col>
                 </Row>
                 <Row className='my-5 py-5 smallCenter'>
                     <Col xs={12} md={6} className='my-5 py-5'>
-                        <h3>Show off your skills with <br /> certificates</h3>
-                        <p>Built-in assessments let you test your skills. Certificates <br /> let you show them off.</p>
+                        <h3>এমপ্লয়ারদের কাছে স্কিল শো অফ করুন </h3>
+                        <p>অ্যাসেসমেন্ট এর মাধ্যমে টেস্ট করুন স্কিল  <br /> কিংবা সার্টিফিকেট এর মাধ্যমে শো অফ করুন স্কিল।</p>
                     </Col>
                     <Col xs={12} md={6}>
                         <img src={unlimited} className='img-fluid' alt="" />
