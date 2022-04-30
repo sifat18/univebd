@@ -32,7 +32,7 @@ const Footer = () => {
                             <Col xs={2} md={12}>
                                 <p className='text-white'>Products</p>
                                 <NavLink to='/individual-learner'> <p className='ashText'>Unive Learning</p></NavLink>
-                                <NavLink to='/onboarding'> <p className='ashText'>Unive Onboarding</p></NavLink>
+                                {/* <NavLink to='/onboarding'> <p className='ashText'>Unive Onboarding</p></NavLink> */}
                                 <NavLink to='/assessments '><p className='ashText'>Unive Skill Assessments</p></NavLink>
                             </Col>
                             <Col xs={3} md={12} className='d-none d-md-block text-white'>
@@ -56,7 +56,7 @@ const Footer = () => {
                             <Col xs={12} className='mb-4'>
                                 <p className='text-white'>Resources</p>
                                 <NavLink to='/blogs'><p className='ashText'>Unive Blog</p></NavLink>
-                                <NavLink to='/FAQ'>  <p className='ashText'>FAQ</p></NavLink>
+                                {/* <NavLink to='/FAQ'>  <p className='ashText'>FAQ</p></NavLink> */}
                             </Col>
                             <Col xs={12} className='d-none d-md-block' >
                                 <p className='text-white'>Contribute</p>
@@ -69,7 +69,7 @@ const Footer = () => {
                     <Col xs={5} md={12} className='d-block d-md-none text-white' >
                     <p className='text-white'>Legal</p>
                                 <NavLink to='/privacy'><p className='ashText'>Privacy Policy</p></NavLink>
-                                <NavLink to='/privacy'><p className='ashText'>Cookie Settings</p></NavLink>
+                                {/* <NavLink to='/privacy'><p className='ashText'>Cookie Settings</p></NavLink> */}
                                 <NavLink to='/terms'><p className='ashText'>Terms of Service</p></NavLink>
                                 <NavLink to='/enterprise-terms'> <p className='ashText'> Business Terms of Service</p></NavLink>
                             </Col>
@@ -83,7 +83,7 @@ const Footer = () => {
                             <Col xs={12} className=' d-none d-md-block'>
                             <p className='text-white'>Legal</p>
                                 <NavLink to='/privacy'><p className='ashText'>Privacy Policy</p></NavLink>
-                                <NavLink to='/privacy'><p className='ashText'>Cookie Settings</p></NavLink>
+                                {/* <NavLink to='/privacy'><p className='ashText'>Cookie Settings</p></NavLink> */}
                                 <NavLink to='/terms'><p className='ashText'>Terms of Service</p></NavLink>
                                 <NavLink to='/enterprise-terms'> <p className='ashText'>Business Terms of Service</p></NavLink>
                             </Col>

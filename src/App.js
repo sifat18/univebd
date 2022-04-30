@@ -5,7 +5,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Business from './Components/Business/Business';
 import Footer from './Components/Footer/Footer';
-import Header from './Components/Header/Header';
 import Home from './Components/Home/Home';
 import Learn from './Components/Learn/Learn';
 import {
@@ -49,7 +48,6 @@ import CourseStart from './Components/StartCourse/CourseStart';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import Board from './Components/Board/Board';
 import AdminRoute from './Components/AdminRoute/AdminRoute';
-import InstructorRoute from './Components/InstructorRoute/InstructorRoute';
 import AddInstructor from './Components/Board/AddInstructor/AddInstructor';
 import Admin from './Components/Board/AddAdmin/Admin';
 function App() {

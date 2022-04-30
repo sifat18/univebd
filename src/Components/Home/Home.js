@@ -2,22 +2,11 @@ import React from 'react'
 import { Button, Col, Container, Row } from 'react-bootstrap'
 import './home.css'
 import home from '../images/home.png'
-import home2 from '../images/home2.png'
 import b2 from '../images/b2.mp4'
 
 import bot from '../images/bot.jpg'
 import bot2 from '../images/bot2.jpg'
 import ar from '../images/icons8-arrow-.png'
-import git from '../images/github-48.png'
-import ht from '../images/html-5-48.png'
-import js from '../images/javascript-48.png'
-import jp from '../images/jupyter-48.png'
-import md from '../images/mongodb-48.png'
-import node from '../images/nodejs-48.png'
-import vs from '../images/visual-studio-code-2019-48.png'
-import sub from '../images/sublime-text-48.png'
-import sql from '../images/sql-server-64.png'
-import py from '../images/php-logo-48.png'
 import ReviewCard from '../Common/ReviewCard'
 import Companies from '../Common/Companies'
 import Header from '../Header/Header'
@@ -33,13 +22,13 @@ export default function Home() {
                     <h5 className=' mt-3 smallText '>সমস্ত প্রোগ্রাম ইন্ডাস্ট্রি প্র্যাক্টিস ফোকাসড এবং আপ টু ডেট। ​</h5>
                     {/* <h5 className=' ms-5 '></h5> */}
                     <div className=" mt-3   ">
-                        <NavLink to='/individual-learner'><Button className='p-3 m-3 bluebtn' href="#">আমি শিখতে চাই</Button></NavLink>
-                        <NavLink to='/enterprise'><Button className='p-3 m-3 bluebtn' href="#">আমি এমপ্লইয়ী খুঁজছি</Button></NavLink>
-                        <NavLink to='/individual-learner'><Button className='p-3 m-3 bluebtn' href="#">আমি জব খুঁজছি</Button></NavLink>
+                        <NavLink to='/individual-learner'><Button className='p-3 m-3 bluebtn' >আমি শিখতে চাই</Button></NavLink>
+                        <NavLink to='/recruiting'><Button className='p-3 m-3 bluebtn' >আমি এমপ্লয়ী খুঁজছি</Button></NavLink>
+                        <NavLink to='/assessments'><Button className='p-3 m-3 bluebtn'>আমি জব খুঁজছি</Button></NavLink>
                     </div>
                     <div >
                         <img className='img-fluid' src={home} alt="" />
-                        <p className='my-3'> সমস্ত ইন্ডাস্ট্রি লিডিং কোম্পানি আমাদের প্ল্যাটফর্ম থেকে এমপ্লয়ীজ হায়ার করছে।
+                        <p className='my-3'> সমস্ত ইন্ডাস্ট্রি লিডিং কোম্পানি আমাদের প্ল্যাটফর্ম থেকে এমপ্লয়ী হায়ার করছে:
                             {/* <img className='img-fluid my-5' src={home2} alt="" /> */}
                         </p>
                     </div>
@@ -60,75 +49,7 @@ export default function Home() {
                     </div>
 
                 </section>
-                {/* <Row className='mt-5 ms-5'>
-                    <Col xs={1}>
-                        <Row className='mt-5'>
-                            <Col xs={12}><img src={ht} alt="" /></Col>
-                            <Col xs={12}><img src={git} alt="" /></Col>
-                        </Row>
-
-                    </Col>
-                    <Col xs={1}>
-                        <Row>
-                            <Col xs={12}><img src={js} alt="" /></Col>
-                            <Col xs={12}><img src={node} alt="" /></Col>
-                        </Row>
-                    </Col>
-                    <Col xs={1}>
-                        <Row className='mt-5'>
-                            <Col xs={12}><img src={sql} alt="" /></Col>
-                            <Col xs={12}><img src={jp} alt="" /></Col>
-                        </Row>
-                    </Col>
-                    <Col xs={1}>
-                        <Row>
-                            <Col xs={12}><img src={vs} alt="" /></Col>
-                            <Col xs={12}><img src={sub} alt="" /></Col>
-                        </Row>
-                    </Col>
-                    <Col xs={1}>
-                        <Row className='mt-5'>
-                            <Col xs={12}><img src={md} alt="" /></Col>
-                            <Col xs={12}><img src={js} alt="" /></Col>
-                        </Row>
-                    </Col>
-                    <Col xs={1}>
-                        <Row className=''>
-                            <Col xs={12}><img src={js} alt="" /></Col>
-                            <Col xs={12}><img src={py} alt="" /></Col>
-                        </Row>
-                    </Col>
-                    <Col xs={1}>
-                        <Row className='mt-5'>
-                            <Col xs={12}><img src={ht} alt="" /></Col>
-                            <Col xs={12}><img src={vs} alt="" /></Col>
-                        </Row>
-                    </Col>
-                    <Col xs={1}>
-                        <Row className=''>
-                            <Col xs={12}><img src={jp} alt="" /></Col>
-                            <Col xs={12}><img src={ht} alt="" /></Col>
-                        </Row>
-                    </Col>
-                    <Col xs={1}>
-                        <Row className='mt-5'>
-                            <Col xs={12}><img src={node} alt="" /></Col>
-                            <Col xs={12}><img src={jp} alt="" /></Col>
-                        </Row>
-                    </Col>
-                    <Col xs={1}>
-                        <Row className=''>
-                            <Col xs={12}><img src={js} alt="" /></Col>
-                            <Col xs={12}><img src={py} alt="" /></Col>
-                        </Row>
-                    </Col>
-                    <Col xs={1}>
-                        <Row className='mt-5'>
-                            <Col xs={12}><img src={jp} alt="" /></Col>
-                            <Col xs={12}><img src={py} alt="" width='50' height='50' /></Col>
-                        </Row>
-                    </Col>
-                </Row> */}
+                
             </Container>
             {/* 2nd last part */}
             <Container fluid data-aos="fade-down" className='text-center py-5 '>
@@ -142,7 +63,7 @@ export default function Home() {
                                 <div className='mt-5 border-end text-start'>
                                     <h2 className='' >সফটওয়্যার এবং আইটি প্রফেশনালদের জন্য</h2>
                                     <p className=''> এই ক্যারিয়ার পাথটি যারা সফটওয়্যার এবং আইটি ইন্ডাস্ট্রি তে ক্যারিয়ার গড়তে চান তাদের জন্য। এই ক্যারিয়ার পাথ আপনাকে দেশে এবং দেশের বাইরে জব মার্কেট ফোকাস করে তৈরি করে গড়ে উঠতে সাহায্য করবে।</p>
-                                    <Button variant="outline-secondary">এক্সপ্লোর করুন<img src={ar} alt="" /></Button>
+                                    <NavLink to='/learn'><Button variant="outline-secondary">এক্সপ্লোর করুন<img src={ar} alt="" /></Button></NavLink>
                                 </div>
                             </Col>
                             <Col xs={12} md={6} className='p-0 m-0'>
@@ -150,7 +71,7 @@ export default function Home() {
                                 <div className='mt-5  smallpadding text-start'>
                                     <h2 className=' '>টেকনিক্যাল ইঞ্জিনিয়ারদের জন্য</h2>
                                     <p className=''>ইলেকট্রিক্যাল, মেকানিকাল, সিভিল, কেমিক্যাল কিংবা আর্কিটেকচার ইঞ্জিনিয়ারদের জব মার্কেট এর জন্য গড়ে উঠতে আপনাকে সাহায্য করবে এই ক্যারিয়ার পাথটি।</p>
-                                    <Button variant="outline-secondary">এক্সপ্লোর করুন <img src={ar} alt="" /></Button>
+                                    <NavLink to='/learn'><Button variant="outline-secondary">এক্সপ্লোর করুন <img src={ar} alt="" /></Button></NavLink>
 
                                 </div>
                             </Col>

@@ -4,6 +4,7 @@ import Header from '../Header/Header'
 
 export default function EnterPriseTerm() {
     return (
+        <><Header/>
         <Container>
             <h2 className='text-center'>Unive Enterprise Terms of Service</h2>
             <p>Effective April 30, 2022</p>
@@ -80,5 +81,6 @@ export default function EnterPriseTerm() {
 
 
         </Container>
-    )
+        </>
+        )
 }

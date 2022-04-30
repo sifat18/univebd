@@ -1,5 +1,5 @@
 import React from 'react'
-import { Col, Row } from 'react-bootstrap'
+import {  Row } from 'react-bootstrap'
 import Slider from "react-slick";
 import logo1 from '../images/logos/pixelated-bsrm.jpg'
 import logo2 from '../images/logos/pixelated-ep.jpg'

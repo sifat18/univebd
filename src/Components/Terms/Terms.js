@@ -4,6 +4,7 @@ import Header from '../Header/Header'
 
 export default function Terms() {
     return (
+        <> <Header />
         <Container>
             <h2 className='text-center'>Terms of Agreement</h2>
             <p>Last updated: April 30, 2022</p>
@@ -75,5 +76,6 @@ export default function Terms() {
 
 
         </Container>
+        </>
     )
 }

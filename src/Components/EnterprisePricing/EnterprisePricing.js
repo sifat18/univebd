@@ -12,10 +12,9 @@ export default function EnterprisePricing() {
             {/* top part */}
             <Container data-aos="fade-down" className='my-5'>
                 <section className='text-center '>
-                    <h2 className=''>Choose the Educative Experience. <br /> Make it uniquely yours. </h2>
-                    <h4 className=' mt-3  mx-auto smallText'>No two teams are exactly alike, and neither are their training needs.<br />
-                        Questions about our plans? Looking for more detailed information? We'd love to help.<br />
-                        Just contact us.</h4>
+                    <h2 className=''>আপনার প্রতিষ্ঠানের এমপ্লয়ীদের জন্য সাজান ইউনিক এক্সপেরিয়েন্স! </h2>
+                    <h4 className=' mt-3  mx-auto smallText'>প্রতিটি টীম আলাদা এবং তাদের ট্রেইনিং ও হতে হবে আলাদা। সেই কাস্টোমাইজড ট্রেইনিং ডিজাইন আপনি করতে পারবেন Unive এ।<br />
+                    আমাদের সার্ভিস নিয়ে আরো জানতে যোগাযোগ করুন Unive টীম এর সাথে</h4>
                 </section>
             </Container>
             <Container data-aos="fade-up" fluid className='middle text-center my-5 py-5'>
@@ -25,47 +24,38 @@ export default function EnterprisePricing() {
                         <Col xs={12} md={4} className=' bg-white border-end'>
                             <p className='bg-primary py-2'></p>
                             <Container className='text-start px-3'>
-                                <Card.Title>Team</Card.Title>
-                                <p className='my-4'>Upskill teams who are passionate about learning.</p>
+                                <Card.Title>টীম</Card.Title>
+                                <p className='my-4'>যারা শিখতে আগ্রহী সেইসব টীম কে স্কিলড আপ করুন Unive এ</p>
                                 {/* <p className='text-decoration-line-through'>$16.66</p>
                                 <h4 className='text-primary fs-2'>$11.<span className='text-primary fs-4'>66</span><span className='text-dark'>/per month</span></h4>
                                 <p>discounted price for </p>
                                 <p className='fs-5'> $139 billed annually</p> */}
-                                <Button variant="outline-primary text-center w-100 mx-auto">Buy Now</Button>
-                                <p className='text-start my-3'>Team includes:</p>
+                                <Button variant="outline-primary text-center w-100 mx-auto">যোগাযোগ করুন</Button>
+                                <p className='text-start my-3'>টীম প্ল্যানে যা যা আছে:</p>
                                 <Card.Body className='text-start mx-auto my-3'>
 
-                                    <p><img src={check} alt="" />Manage team subscriptions and learner access</p>
-                                    <p><img src={check} alt="" />Unlimited access to Courses</p>
-                                    <p><img src={check} alt="" />Unlimited access to Skill Paths</p>
-                                    <p><img src={check} alt="" />Personalized Learning Plans </p>
-                                    <p><img src={check} alt="" />New courses every week </p>
-                                    <p><img src={check} alt="" />Single sign-on (Google) </p>
-                                    <p><img src={check} alt="" />Completion certificates. </p>
+                                    <p><img src={check} alt="" />টীম সাবস্ক্রিপশন এবং লার্নার অ্যাকসেস</p>
+                                    <p><img src={check} alt="" />আনলিমিটেড অ্যাকসেস টু কোর্সেস</p>
+                                    <p><img src={check} alt="" />পার্সোনালাইজড লার্নিং প্ল্যান</p>
+                                    <p><img src={check} alt="" />কম্প্লিশন সার্টিফিকেটস </p>
                                 </Card.Body>
                             </Container>
                         </Col>
                         <Col xs={12} md={4} className='bg-white border-end'>
                             <p className='bg-success py-2'></p>
                             <Container className='text-start px-3'>
-                                <Card.Title>Enterprise</Card.Title>
-                                <p>Manage new hire onboarding, create personalized learning plans, and gain valuable team insights.</p>
+                                <Card.Title>এন্টারপ্রাইজ</Card.Title>
+                                <p>নতুন এমপ্লয়ীদের দ্রুততার সাথে প্রতিষ্ঠানে অনবোর্ড করুন, জব রোল বুঝিয়ে দিন এবং টীম লার্নিং পারফরম্যান্স থেকে ডিসিশন নিন এবং যোগ্য এমপ্লয়ীকে দায়িত্ব প্রদান করুন </p>
                                 {/* <p className='text-decoration-line-through'>$16.66</p>
                                 <h4 className='text-primary fs-2'>$11.<span className='text-primary fs-4'>66</span><span className='text-dark'>/per month</span></h4>
                                 <p>discounted price for </p>
                                 <p className='fs-5'> $139 billed annually</p> */}
-                                <Button variant="btn btn-primary text-center w-100 mx-auto">Lets Chat</Button>
-                                <p className='text-start my-3'>Everything included in Team, and:</p>
+                                <Button variant="btn btn-primary text-center w-100 mx-auto">যোগাযোগ করুন</Button>
+                                <p className='text-start my-3'>এন্টারপ্রাইজ প্ল্যানে টীমে যা আছে তা তো থাকছেই সাথে থাকছে:</p>
                                 <Card.Body className='text-start mx-auto my-3'>
-                                    <p><img src={check} alt="" />Team learning analytics</p>
-                                    <p><img src={check} alt="" />Onboard new team members</p>
-                                    <p><img src={check} alt="" />Track usage & progress</p>
-                                    <p><img src={check} alt="" />Access to customer success team</p>
-                                    <p><img src={check} alt="" />Slack integration</p>
-                                    <p><img src={check} alt="" />OpenID SSO (Okta, Azure)</p>
-                                    <p><img src={check} alt="" />Ability to assign Courses & Skill Paths</p>
-                                    <p><img src={check} alt="" />Assign customized Skill Paths</p>
-                                    <p><img src={check} alt="" />Annual SOC2 Type II reports</p>
+                                    <p><img src={check} alt="" />টীম লার্নিং অ্যানালিটিকস</p>
+                                    <p><img src={check} alt="" />অনবোর্ডিং নতুন টীম মেম্বার</p>
+                                    <p><img src={check} alt="" />ইন্ডিভিজুয়াল এবং টীম ট্র্যাক প্রগ্রেস</p>
                                 </Card.Body>
                             </Container>
 
@@ -74,19 +64,19 @@ export default function EnterprisePricing() {
                             <p className='bg-danger py-2'></p>
                             <Container className='text-start px-3'>
 
-                                <Card.Title>Enterprise Plus </Card.Title>
-                                <p>Organizations looking for a faster, easier, and more customized approach to onboarding and learning new skills.</p>
+                                <Card.Title>আনলিমিটেড</Card.Title>
+                                <p>যে সমস্ত প্রতিষ্ঠান এমপ্লয়ীদের ক্যারিয়ার প্রোগ্রেশন নিশ্চিত করতে চান নি, এমপ্লয়ী পারফরম্যান্স এবং স্যাটিসফেকশন নিয়ে কম্প্রোমাইজ করতে চান না প্ল্যান টি তাদের জন্য</p>
                                 {/* <p className='text-decoration-line-through'>$16.66</p>
                             <h4 className='text-primary fs-2'>$11.<span className='text-primary fs-4'>66</span><span className='text-dark'>/per month</span></h4>
                             <p>discounted price for </p>
                             <p className='fs-5'> $139 billed annually</p> */}
-                                <Button variant="outline-primary text-center w-100 mx-auto">Lets Chat</Button>
-                                <p className='text-start my-3'>Everything included in Team, and:</p>
+                                <Button variant="outline-primary text-center w-100 mx-auto">যোগাযোগ করুন</Button>
+                                <p className='text-start my-3'>আনলিমিটেডে প্ল্যানে টীম এবং এন্টারপ্রাইজ প্ল্যানের সব কিছু তো থাকছেই সাথে থাকছে:</p>
                                 <Card.Body className='text-start mx-auto my-3'>
-                                    <p><img src={check} alt="" />Dedicated customer success manager</p>
-                                    <p><img src={check} alt="" />Analytics API (coming soon)</p>
-                                    <p><img src={check} alt="" />Professional services</p>
-                                    <p>Connect with our team about additional professional services, LMS integrations, and custom course development by our industry-leading learning team members</p>
+                                    <p><img src={check} alt="" />থার্ড পার্টি ইন্টিগ্রেশন</p>
+                                    <p><img src={check} alt="" />কাস্টমাইজড সলিউশন অ্যান্ড ফিচারস</p>
+                                    <p><img src={check} alt="" />প্রতিষ্ঠানের এমপ্লয়ীদের জন্য লাইফস্টাইল অফারস ফ্রম বেস্ট ব্র্যান্ডস</p>
+                                    <p>আমাদের টীম এর সাথে কথা বলুন আনলিমিটেড প্ল্যান সম্পর্কে বিস্তারিত জানতে। </p>
                                 </Card.Body>
                             </Container>
 
@@ -97,43 +87,31 @@ export default function EnterprisePricing() {
             </Container>
 
             <Container data-aos="fade-up-left"  >
+            <p className='middle text-center my-5'> Unive ব্যবহার করছে দেশের প্রথম সারির প্রতিষ্ঠানগুলো:</p>
                 <Companies />
 
             </Container>
 
             <Container fluid data-aos="fade-up-right" className=' text-center my-5 middle'>
                 <Container className=' text-start'>
-                    <h2 className=' text-start py-5 fs-1'>Frequently Asked Questions</h2>
+                    <h2 className=' text-start py-5 fs-1'>কিছু কমন প্রশ্ন</h2>
                     <Accordion flush>
                         <Accordion.Item eventKey="0">
-                            <Accordion.Header>Are there required sizes for the different plans?</Accordion.Header>
+                            <Accordion.Header>কোন প্ল্যান এ ইউজার লিমিট কত?</Accordion.Header>
                             <Accordion.Body>
-                                Teams are for 3 to 25 users, Enterprise requires a minimum of 10 users, and Enterprise Plus has a minimum of 50. If you have different business needs,
-                                please get in touch with us and we'll do everything we can to make it work for you.
+                            টিম প্ল্যান ৩ থেকে ২০ জন ইউজার এর জন্য। এন্টারপ্রাইজ প্ল্যান ২০ বা তার বেশি ইউজার দের জন্য। আল্টিমেট প্ল্যান ৩০ বা তার বেশি ইউজার দের জন্য।
                             </Accordion.Body>
                         </Accordion.Item>
                         <Accordion.Item eventKey="1">
-                            <Accordion.Header>Can I upgrade to the next higher plan?</Accordion.Header>
+                            <Accordion.Header>আমরা কি ইচ্ছে মত প্ল্যান চেঞ্জ করতে পারবো?</Accordion.Header>
                             <Accordion.Body>
-                                Of course. You can easily add users or upgrade your plan at any time. Drop us an email for help.
+                            হ্যা। আপনি সাপোর্ট এর সাথে কথা বলে অন ডিমান্ড পরবর্তী বিলিং সাইকেল থেকে প্ল্যান চেঞ্জ করতে পারবেন।
                             </Accordion.Body>
                         </Accordion.Item>
                         <Accordion.Item eventKey="2">
-                            <Accordion.Header>How can I learn more about the pricing levels for the Enterprise options?</Accordion.Header>
+                            <Accordion.Header>প্রাইসিং সম্পর্কে জানবো কিভাবে?</Accordion.Header>
                             <Accordion.Body>
-                                Reach out to us and we'll tailor your price to match the size of your organization and your learning goals.
-                            </Accordion.Body>
-                        </Accordion.Item>
-                        <Accordion.Item eventKey="3">
-                            <Accordion.Header>How can I refer Educative to other teams in my company?</Accordion.Header>
-                            <Accordion.Body>
-                                You can either add them to your admin dashboard or talk to us at enterprise@educative.io
-                            </Accordion.Body>
-                        </Accordion.Item>
-                        <Accordion.Item eventKey="4">
-                            <Accordion.Header>What courses will our candidates get access to?</Accordion.Header>
-                            <Accordion.Body>
-                                Our full library of hundreds of software courses and private access to your company's Curated Path.
+                            অনুগ্রহপূর্বক আপনার জিজ্ঞাসা এবং কন্ট্যাক্ট নম্বর আমাদের কে মেইল করুন বা ডেমো এর জন্য ফর্ম পূরণ করুন। আমাদের টিম ১ দিনের মাঝে আপনার সাথে যোগাযোগ করবে।
                             </Accordion.Body>
                         </Accordion.Item>
                     </Accordion>

@@ -4,6 +4,7 @@ import Header from '../Header/Header'
 
 export default function Privacy() {
     return (
+        <> <Header />
         <Container>
             <h2 className='text-center'>Privacy Policy</h2>
             <p>Last updated: April 30, 2022</p>
@@ -141,5 +142,6 @@ export default function Privacy() {
 
 
         </Container>
+        </>
     )
 }
