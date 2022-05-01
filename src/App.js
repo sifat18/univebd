@@ -50,6 +50,7 @@ import Board from './Components/Board/Board';
 import AdminRoute from './Components/AdminRoute/AdminRoute';
 import AddInstructor from './Components/Board/AddInstructor/AddInstructor';
 import Admin from './Components/Board/AddAdmin/Admin';
+import Mass from './Components/Mass/Mass';
 function App() {
   useEffect(() => {
     AOS.init();
@@ -85,6 +86,7 @@ function App() {
             <Route path="/enterprise-price" element={<EnterprisePricing />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/FAQ" element={<FAQ />} />
+            <Route path="/mass" element={<Mass />} />
             <Route path="/our-team" element={<OurTeam />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/course-catalogue" element={<CourseCatalog />} />

@@ -22,7 +22,7 @@ const Footer = () => {
                     {/*  footer img */}
                     <Col xs={4} md={2} className='me-2'>
                         <p className='text-white'>Solutions</p>
-                        <NavLink to='/individual-learner'><p  className='ashText'>Unive for Individuals</p></NavLink>
+                        <NavLink to='/individual-learner'><p className='ashText'>Unive for Individuals</p></NavLink>
                         <NavLink to='/recruiting'><p className='ashText'>Unive for HR/ Recruiting</p></NavLink>
                         <NavLink to='/enterprise'><p className='ashText'>Unive for Enterprise</p></NavLink>
 
@@ -39,18 +39,18 @@ const Footer = () => {
                                 <p className='text-white'>Pricing</p>
                                 <NavLink to='/unlimited '> <p className='ashText'>For Individuals</p></NavLink>
                                 <NavLink to='/enterprise-price '> <p className='ashText'>For Enterprise</p></NavLink>
-                                <NavLink to='/enterprise-price '><p className='ashText'>For Manpower as a Service</p></NavLink>
+                                <NavLink to='/mass '><p className='ashText'>For Manpower as a Service</p></NavLink>
                             </Col>
                         </Row>
 
                     </Col>
                     <Col xs={5} md={12} className='d-block d-md-none text-white'>
-                                <p className='text-white'>Pricing</p>
-                                <NavLink to='/unlimited '> <p className='ashText'>For Individuals</p></NavLink>
-                                <NavLink to='/enterprise-price '> <p className='ashText'>  For Enterprise</p></NavLink>
-                                <p className='ashText'>For Manpower as a Service</p>
-                            </Col>
-                  
+                        <p className='text-white'>Pricing</p>
+                        <NavLink to='/unlimited '> <p className='ashText'>For Individuals</p></NavLink>
+                        <NavLink to='/enterprise-price '> <p className='ashText'>  For Enterprise</p></NavLink>
+                        <p className='ashText'>For Manpower as a Service</p>
+                    </Col>
+
                     <Col xs={4} md={2} className=' me-5 pe-2'>
                         <Row>
                             <Col xs={12} className='mb-4'>
@@ -67,21 +67,21 @@ const Footer = () => {
 
                     </Col>
                     <Col xs={5} md={12} className='d-block d-md-none text-white' >
-                    <p className='text-white'>Legal</p>
-                                <NavLink to='/privacy'><p className='ashText'>Privacy Policy</p></NavLink>
-                                {/* <NavLink to='/privacy'><p className='ashText'>Cookie Settings</p></NavLink> */}
-                                <NavLink to='/terms'><p className='ashText'>Terms of Service</p></NavLink>
-                                <NavLink to='/enterprise-terms'> <p className='ashText'> Business Terms of Service</p></NavLink>
-                            </Col>
+                        <p className='text-white'>Legal</p>
+                        <NavLink to='/privacy'><p className='ashText'>Privacy Policy</p></NavLink>
+                        {/* <NavLink to='/privacy'><p className='ashText'>Cookie Settings</p></NavLink> */}
+                        <NavLink to='/terms'><p className='ashText'>Terms of Service</p></NavLink>
+                        <NavLink to='/enterprise-terms'> <p className='ashText'> Business Terms of Service</p></NavLink>
+                    </Col>
                     <Col xs={4} className=' d-block d-md-none me-5 pe-4 ' >
-                    <p className='text-white'>Contribute</p>
-                                <NavLink to='/become-an-unive-instructor'><p className='ashText'>Become an instructor</p></NavLink>
-                                <NavLink to='/write-on-edpresso'><p className='ashText'>Become a Contributor</p></NavLink>
-                            </Col>
+                        <p className='text-white'>Contribute</p>
+                        <NavLink to='/become-an-unive-instructor'><p className='ashText'>Become an instructor</p></NavLink>
+                        <NavLink to='/write-on-edpresso'><p className='ashText'>Become a Contributor</p></NavLink>
+                    </Col>
                     <Col xs={2} className=' me-5 pe-5'>
                         <Row>
                             <Col xs={12} className=' d-none d-md-block'>
-                            <p className='text-white'>Legal</p>
+                                <p className='text-white'>Legal</p>
                                 <NavLink to='/privacy'><p className='ashText'>Privacy Policy</p></NavLink>
                                 {/* <NavLink to='/privacy'><p className='ashText'>Cookie Settings</p></NavLink> */}
                                 <NavLink to='/terms'><p className='ashText'>Terms of Service</p></NavLink>
@@ -119,14 +119,14 @@ const Footer = () => {
                 </Row>
             </Container >
             <Container xs={4} className='pe-auto d-block d-md-none'>
-            <div className='d-flex justify-content-center mb-5 '>
-                            <img src={face} alt="" height='25' width='25' className='me-2' />
-                            <img src={linkd} alt="" height='25' width='25' className='mx-2' />
-                            <img src={twit} alt="" height='25' width='25' className='mx-2' />
-                            <img src={you} alt="" height='25' width='25' className='mx-2' />
-                        </div>
-                        <p className='ashText words text-center'>2022 Unive © All rights reserved.</p>
-                    </Container>
+                <div className='d-flex justify-content-center mb-5 '>
+                    <img src={face} alt="" height='25' width='25' className='me-2' />
+                    <img src={linkd} alt="" height='25' width='25' className='mx-2' />
+                    <img src={twit} alt="" height='25' width='25' className='mx-2' />
+                    <img src={you} alt="" height='25' width='25' className='mx-2' />
+                </div>
+                <p className='ashText words text-center'>2022 Unive © All rights reserved.</p>
+            </Container>
         </Container >
     );
 };
