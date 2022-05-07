@@ -23,8 +23,8 @@ export default function Home() {
                     {/* <h5 className=' ms-5 '></h5> */}
                     <div className=" mt-3   ">
                         <NavLink to='/individual-learner'><Button className='p-3 m-3 bluebtn' >আমি শিখতে চাই</Button></NavLink>
-                        <NavLink to='/recruiting'><Button className='p-3 m-3 bluebtn' >আমি এমপ্লয়ী খুঁজছি</Button></NavLink>
-                        <NavLink to='/assessments'><Button className='p-3 m-3 bluebtn'>আমি জব খুঁজছি</Button></NavLink>
+                        <NavLink to='/assessments'><Button className='p-3 m-3 bluebtn' >আমি জব খুঁজছি</Button></NavLink>
+                        <NavLink to='/recruiting'><Button className='p-3 m-3 bluebtn'>আমি এমপ্লয়ী খুঁজছি</Button></NavLink>
                     </div>
                     <div >
                         <img className='img-fluid' src={home} alt="" />
