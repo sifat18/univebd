@@ -55,7 +55,7 @@ export default function Home() {
             <Container fluid data-aos="fade-down" className='text-center py-5 '>
                 <section className='container mt-5'>
                     <h3 className='fw-bold'>প্রোগ্রাম গুলো ডিজাইন এবং ডেভেলপ করেছেন </h3>
-                    <h3 className=' fw-bold  ps-2'>এবং প্রতিনিয়ত আপডেট করছেন ইন্ডাস্ট্রি সেরা ইঞ্জিনিয়াররা।</h3>
+                    <h3 className=' fw-bold  ps-2'>এবং প্রতিনিয়ত আপডেট করছেন ইন্ডাস্ট্রি লিডিং ইঞ্জিনিয়াররা।</h3>
                     <Container className='my-5'>
                         <Row>
                             <Col xs={12} md={6} className='p-0 mb-3'>

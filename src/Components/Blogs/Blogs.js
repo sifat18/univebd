@@ -14,8 +14,8 @@ export default function Blogs() {
             <Header />
             <Container data-aos="fade-up-left" fluid className='bg-primary mb-5 py-5'>
                 <Container className='text-light text-center py-5'>
-                    <h2 className='fs-1 mb-4'>Unive.blog()</h2>
-                    <p className='fs-5'>For developers. By developers.</p>
+                    <h2 className='fs-1 mb-4'>Unive Blog</h2>
+                    <p className='fs-5'>যারা লাইফে গ্রোথ ওরিয়েন্টেড তাদের জন্য</p>
                     <hr className='w-25  bg-white fw-bolder text-light mx-auto' />
                     <div className='d-flex text-center justify-content-center  mt-2 '>
                         <img src={face} alt="" height='25' width='25' className='me-2 text-light' />
@@ -36,8 +36,8 @@ export default function Blogs() {
                         <img className='img-fluid' src={blog} alt="" />
                     </Col>
                     <Col xs={12} md={5}>
-                        <h2> 3 philosophies that influenced software development</h2>
-                        <p className='fs-4 my-5'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur, aperiam. Dignissimos laboriosam velit commodi vel quo ipsam quis odit architecto soluta, </p>
+                        <h2> জীবন সম্পর্কে কিছু আলোচনা</h2>
+                        <p className='fs-4 my-5'>আমরা যদি পৃথিবী বদলাতে চাই তবে মনে রাখতে হবে পৃথিবী বদলানোর চেয়ে নিজেকে বদলানো খুবি সহজ। এবং নিজেকে বদলানোর মাধ্যমেই আমরা পারি পৃথিবীকে বদলাতে। ভালো সবকিছুর শুরু হোক আমাদের নিজেদের দিয়ে।</p>
                     </Col>
                 </Row>
 
@@ -47,7 +47,7 @@ export default function Blogs() {
                             <Card className='py-1'>
                                 <Card.Img variant="top" className='img-fluid ' src={id.image} />
                                 <Card.Body className='text-start'>
-                                    <p>educative</p>
+                                    <p>Unive</p>
                                     <Card.Title >{id.name}</Card.Title>
                                     <Card.Text>{id.aboutCourse.slice(0, 100)}              </Card.Text>
                                 </Card.Body>
