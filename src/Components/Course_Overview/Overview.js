@@ -167,8 +167,6 @@ export default function Overview() {
                         </Col>
                     </Row>
                     <Container className='text-center'>
-                        <Companies />
-                        <ReviewCard />
                     </Container>
 
                     {/* <iframe src={courseData?.demoVideo}
@@ -195,8 +193,8 @@ export default function Overview() {
             <Container className='mb-5'>
                 <Row>
                     <Col xs={12} md={6}>
-                        <h3 className='py-5 mt-5'>Teams of every size choose Unive for Business,<br />
-                            to train, upskill & onboard their developers</h3>
+                        <h3 className='py-5 mt-5'>যারা জব খুঁজছেন,যারা এমপ্লয়ী খুঁজছেন বা এমপ্লয়ী ট্রেইনিং দিতে চান <br />
+                                কিংবা যারা শিখতে চান তারা সবাই ইউনিভ ব্যবহার করছেন</h3>
                     </Col>
                     <Col xs={12} md={6}>
                         <Companies />

@@ -25,7 +25,7 @@ import HowItworks from './Components/HowItWorks/HowItworks';
 import Contact from './Components/Contact/Contact';
 import Nopage from './Components/Nopage/Nopage';
 import Authprovider from './Components/AuthProvider/Authprovider';
-import Recruiting from './Components/Recruting/Recruiting';
+import Recruiting from './Components/Recruiting/Recruiting';
 import Assessments from './Components/Assessments/Assessments';
 import Blogs from './Components/Blogs/Blogs';
 import Instructor from './Components/Instructor/Instructor';
@@ -50,7 +50,7 @@ import Board from './Components/Board/Board';
 import AdminRoute from './Components/AdminRoute/AdminRoute';
 import AddInstructor from './Components/Board/AddInstructor/AddInstructor';
 import Admin from './Components/Board/AddAdmin/Admin';
-import Mass from './Components/Mass/Mass';
+import Maas from './Components/Maas/Maas';
 import CourseAdd from './Components/Addcourse/CourseAdd';
 function App() {
   useEffect(() => {
@@ -87,7 +87,7 @@ function App() {
             <Route path="/enterprise-price" element={<EnterprisePricing />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/FAQ" element={<FAQ />} />
-            <Route path="/Maas" element={<Mass />} />
+            <Route path="/maas" element={<Maas />} />
             <Route path="/our-team" element={<OurTeam />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/course-catalogue" element={<CourseCatalog />} />

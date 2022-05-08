@@ -14,7 +14,7 @@ export default function EnterprisePricing() {
                 <section className='text-center '>
                     <h2 className=''>আপনার প্রতিষ্ঠানের এমপ্লয়ীদের জন্য সাজান ইউনিক এক্সপেরিয়েন্স! </h2>
                     <h4 className=' mt-3  mx-auto smallText'>প্রতিটি টীম আলাদা এবং তাদের ট্রেইনিং ও হতে হবে আলাদা। সেই কাস্টোমাইজড ট্রেইনিং ডিজাইন আপনি করতে পারবেন Unive এ।<br />
-                    আমাদের সার্ভিস নিয়ে আরো জানতে যোগাযোগ করুন Unive টীম এর সাথে</h4>
+                    আমাদের সার্ভিস নিয়ে আরো জানতে যোগাযোগ করুন Unive টীম এর সাথে।</h4>
                 </section>
             </Container>
             <Container data-aos="fade-up" fluid className='middle text-center my-5 py-5'>
