@@ -25,7 +25,7 @@ const useFirebase = () => {
                 seterror('');
                 const newUser = { email, displayName: name };
                 setuser(newUser);
-                saveUser(email, name, 'POST');
+                saveUser(email, name, 'POST', 'signup');
                 setName(name)
                 history('/learn');
                 // ...
@@ -52,7 +52,7 @@ const useFirebase = () => {
         signInWithPopup(auth, provider)
             .then((result) => {
                 const user = result.user;
-                saveUser(user.email, user.displayName, 'PUT');
+                // saveUser(user.email, user.displayName, 'PUT');
                 seterror('');
                 const destination = location?.state?.from || '/learn';
                 history(destination);
@@ -61,7 +61,7 @@ const useFirebase = () => {
             }).finally(() => setisLoading(false));
     }
 
-    // pass sign in
+    // email pass sign in
     const emailPass = (email, password, location, history) => {
         setisLoading(true)
         signInWithEmailAndPassword(auth, email, password)
@@ -69,8 +69,9 @@ const useFirebase = () => {
                 // Signed in
                 seterror('')
                 setuser(userCredential.user);
+                saveUser(email, userCredential.user.displayName, 'POST', 'signin');
                 const destination = location?.state?.from || '/learn';
-                history.replace(destination);
+                history(destination);
                 // ...
             })
             .catch((error) => {
@@ -120,16 +121,30 @@ const useFirebase = () => {
         });
     }
 
-    const saveUser = (email, displayName, method) => {
-        const userData = { email, displayName };
-        fetch('https://fierce-woodland-01411.herokuapp.com/user', {
+    // const saveUser = (email, displayName, method) => {
+    //     const userData = { email, displayName };
+    //     fetch('https://fierce-woodland-01411.herokuapp.com/user', {
+    //         method: method,
+    //         headers: {
+    //             'content-type': 'application/json'
+    //         },
+    //         body: JSON.stringify(userData)
+    //     })
+    //         .then()
+    // }
+    const saveUser = (email, displayName, method, route) => {
+        let Email = email
+        let Username = displayName
+
+        const userData = { Email, Username };
+        fetch(`http://localhost:3000/api/${route}`, {
             method: method,
             headers: {
                 'content-type': 'application/json'
             },
             body: JSON.stringify(userData)
         })
-            .then()
+            .then(res => res.json()).then(data => console.log(data))
     }
     return {
         user,

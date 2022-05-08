@@ -39,7 +39,7 @@ const Footer = () => {
                                 <p className='text-white'>Pricing</p>
                                 <NavLink to='/unlimited '> <p className='ashText'>For Individuals</p></NavLink>
                                 <NavLink to='/enterprise-price '> <p className='ashText'>For Enterprise</p></NavLink>
-                                <NavLink to='/mass '><p className='ashText'>For Manpower as a Service</p></NavLink>
+                                <NavLink to='/Maas '><p className='ashText'>For Manpower as a Service</p></NavLink>
                             </Col>
                         </Row>
 
