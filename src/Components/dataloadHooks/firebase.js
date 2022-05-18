@@ -25,7 +25,7 @@ const useFirebase = () => {
                 seterror('');
                 const newUser = { email, displayName: name };
                 setuser(newUser);
-                saveUser(email, name, 'POST', 'signup');
+                saveUser(email, name, 'POST');
                 setName(name)
                 history('/learn');
                 // ...
@@ -69,7 +69,7 @@ const useFirebase = () => {
                 // Signed in
                 seterror('')
                 setuser(userCredential.user);
-                saveUser(email, userCredential.user.displayName, 'POST', 'signin');
+                saveUser(email, userCredential.user.displayName, 'POST');
                 const destination = location?.state?.from || '/learn';
                 history(destination);
                 // ...
@@ -121,31 +121,31 @@ const useFirebase = () => {
         });
     }
 
-    // const saveUser = (email, displayName, method) => {
-    //     const userData = { email, displayName };
-    //     fetch('https://fierce-woodland-01411.herokuapp.com/user', {
-    //         method: method,
-    //         headers: {
-    //             'content-type': 'application/json'
-    //         },
-    //         body: JSON.stringify(userData)
-    //     })
-    //         .then()
-    // }
-    const saveUser = (email, displayName, method, route) => {
-        let Email = email
-        let Username = displayName
-
-        const userData = { Email, Username };
-        fetch(`http://localhost:3000/api/${route}`, {
+    const saveUser = (email, displayName, method) => {
+        const userData = { email, displayName };
+        fetch('https://fierce-woodland-01411.herokuapp.com/user', {
             method: method,
             headers: {
                 'content-type': 'application/json'
             },
             body: JSON.stringify(userData)
         })
-            .then(res => res.json()).then(data => console.log(data))
+            .then()
     }
+    // const saveUser = (email, displayName, method, route) => {
+    //     let Email = email
+    //     let Username = displayName
+
+    //     const userData = { Email, Username };
+    //     fetch(`http://localhost:3000/api/${route}`, {
+    //         method: method,
+    //         headers: {
+    //             'content-type': 'application/json'
+    //         },
+    //         body: JSON.stringify(userData)
+    //     })
+    //         .then(res => res.json()).then(data => console.log(data))
+    // }
     return {
         user,
         isLoading,
