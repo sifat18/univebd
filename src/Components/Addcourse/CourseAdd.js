@@ -12,7 +12,7 @@ export default function CourseAdd() {
     };
     const handleShow = () => setShow(true);
     const [module, setModule] = useState([
-        { module_name: '', module_description: '', sub_mod1: '', sub_mod2: '', sub_mod3: '', sub_video1: '', sub_video2: '', sub_video3: '', sub_description1: '', sub_description2: '', sub_description3: '', q1: '', q2: '', q3: '', q4: '', q5: '', qA1: '', qA2: '', qA3: '', qA4: '', qA5: '' }
+        { module_name: '', module_description: '', sub_mod1: '', sub_mod2: '', sub_mod3: '', sub_video1: '', sub_video2: '', sub_video3: '', sub_description1: '', sub_description2: '', sub_description3: '', q1: '', q2: '', q3: '', q4: '', q5: '', qA1: '', qA2: '', qA3: '', qA4: '', qA5: '',qOP11: '', qOP12: '', qOP13: '', qOP14: '', qOP21: '', qOP22: '', qOP23: '', qOP24: '',qOP31: '', qOP32: '', qOP33: '', qOP34: '',qOP41: '', qOP42: '', qOP43: '', qOP44: '',qOP51: '', qOP52: '', qOP53: '', qOP54: '' }
     ])
     const handleFormChange = (index, event) => {
         let data = [...module];
@@ -20,7 +20,7 @@ export default function CourseAdd() {
         setModule(data)
     }
     const addFields = () => {
-        let newModule = { module_name: '', module_description: '', sub_mod1: '', sub_mod2: '', sub_mod3: '', sub_video1: '', sub_video2: '', sub_video3: '', sub_description1: '', sub_description2: '', sub_description3: '', q1: '', q2: '', q3: '', q4: '', q5: '', qA1: '', qA2: '', qA3: '', qA4: '', qA5: '' }
+        let newModule = { module_name: '', module_description: '', sub_mod1: '', sub_mod2: '', sub_mod3: '', sub_video1: '', sub_video2: '', sub_video3: '', sub_description1: '', sub_description2: '', sub_description3: '', q1: '', q2: '', q3: '', q4: '', q5: '', qA1: '', qA2: '', qA3: '', qA4: '', qA5: '', qOP11: '', qOP12: '', qOP13: '', qOP14: '', qOP21: '', qOP22: '', qOP23: '', qOP24: '',qOP31: '', qOP32: '', qOP33: '', qOP34: '',qOP41: '', qOP42: '', qOP43: '', qOP44: '',qOP51: '', qOP52: '', qOP53: '', qOP54: ''}
         setModule([...module, newModule])
     }
     const submit = (e) => {
@@ -30,7 +30,7 @@ export default function CourseAdd() {
         setCourse(Finalcourse)
 
         console.log(Finalcourse)
-        axios.post(`https://fierce-woodland-01411.herokuapp.com/courses`, course).then(res => res.data ? handleShow() : '')
+        // axios.post(`https://fierce-woodland-01411.herokuapp.com/courses`, course).then(res => res.data ? handleShow() : '')
 
     }
     const [course, setCourse] = useState({});
@@ -46,16 +46,21 @@ export default function CourseAdd() {
     return (
         <>
             <Header />
-            <Container className=''>
+            <Container fluid className=''>
                 <form onSubmit={submit} >
-                    <div className="mt-5 d-flex align-items-center ps-5 bg-secondary pt-3 pb-5">
-                        <h3 className="my-2 text-light">Basic Course Information</h3>
+                 {/* basic info starts here */}
+                
+                    <Row className='bg-secondary pb-3'>
+                    <h3 className="my-3 py-3 text-light text-center">Basic Course Information</h3>
+                        <Col xs={12} md={3} className='courseFormpad' >
                         <input
                             name='coursename'
                             placeholder='Course_Name'
                             className=''
                             onChange={handleOnChangeL}
                         />
+                        </Col>
+                        <Col xs={12} md={3} className='courseFormpad'>
                         <textarea
                             name='about'
                             placeholder='About_course'
@@ -64,27 +69,40 @@ export default function CourseAdd() {
                             className=''
                             onChange={handleOnChangeL}
                         />
+                        </Col>
+                        <Col xs={12} md={3}  className='courseFormpad'>
                         <input
                             name='imageLink'
                             placeholder='Image_Link'
                             className=''
                             onChange={handleOnChangeL} />
+                        </Col>
+                        <Col xs={12} md={3}  className='courseFormpad'>
                         <input
                             name='demoLink'
                             placeholder='Demo_Link'
                             className=''
                             onChange={handleOnChangeL} />
-                    </div>
-                    {/* module start here */}
+                        </Col>
+                    </Row>
+                    {/* basic ends here */}
+
+                    
                     {module.map((input, index) => (
+                    //    {/* module start here */}
                         <div className="my-5 ps-5 bg-secondary  py-2" key={index}>
-                            <div className="d-flex align-items-center">
-                                <h3 className="my-2 mx-2 text-light">Course Modules {index + 1}</h3>
+                            <Row>
+                                <Col xs={12} md={4} className='text-center pt-2'>
+                                <h3 className="my-2 mx-2 text-light ">Course Modules {index + 1}</h3>
+                                </Col>
+                                <Col xs={12} md={4} className='text-center pt-2'>
                                 <input
                                     name='module_name'
                                     placeholder='Module_name'
                                     value={input.module_name}
                                     onChange={event => handleFormChange(index, event)} />
+                                </Col>
+                                <Col xs={12} md={4} className='text-center pt-2'>
                                 <textarea
                                     name='module_description'
                                     placeholder='About_mdoule'
@@ -93,177 +111,220 @@ export default function CourseAdd() {
                                     className='mx-5'
                                     value={input.module_description}
                                     onChange={event => handleFormChange(index, event)} />
-                            </div>
-                            <div className="d-flex justify-content-around align-items-center my-4">
+                                </Col>
+                            </Row>
+                         
+                            {/* sub module stats here */}
+                            {/* sub module 1 */}
+                            <Row>
+                            <h2 className='text-light mt-5 text-center'>sub module 1</h2>
 
-                                <h2 className='text-light mt-5'>sub module 1</h2>
-                                <div>
-                                    <p className='text-light ps-3'>sub module name</p>
+                                <Col className='courseFormpad'>
+                                <p className='text-light ps-3'>sub module name</p>
                                     <input
                                         name='sub_mod1'
                                         placeholder='sub_module_name'
                                         value={input.sub_mod1}
                                         onChange={event => handleFormChange(index, event)} />
-                                </div>
-                                <div className=''>
-                                    <p className='text-light ps-3'>sub module description</p>
+                                </Col>
+                                <Col className='courseFormpad'>
+                                <p className='text-light ps-3'>sub module description</p>
 
-                                    <textarea
-                                        name='sub_description1'
-                                        placeholder='About_submdoule'
-                                        rows='3'
-                                        cols='30'
-                                        className=''
-                                        value={input.sub_description1}
-                                        onChange={event => handleFormChange(index, event)} />
-                                </div> <div>
-                                    <p className='text-light ps-3'>sub module video</p>
+<textarea
+    name='sub_description1'
+    placeholder='About_submdoule'
+    rows='3'
+    cols='30'
+    className=''
+    value={input.sub_description1}
+    onChange={event => handleFormChange(index, event)} />
+                                </Col>
+                                <Col className='courseFormpad'>
+                                <p className='text-light ps-3'>sub module video</p>
                                     <input
                                         name='sub_video1'
                                         placeholder='Module_Video'
                                         className=''
                                         value={input.sub_video1}
                                         onChange={event => handleFormChange(index, event)} />
-                                </div></div>
-                            <div className="d-flex justify-content-around align-items-center my-4">
-                                <h2 className='text-light mt-5'>sub_module 2</h2>
-                                <div>
-                                    <p className='text-light ps-3'>sub module name</p>
+                                </Col>
+                            </Row>
+                        
+                                {/* sub module 2 */}
+                                <Row>
+                            <h2 className='text-light mt-5 text-center'>sub module 2</h2>
+
+                                <Col className='courseFormpad'>
+                                <p className='text-light ps-3'>sub module name</p>
                                     <input
                                         name='sub_mod2'
                                         placeholder='sub_module_name'
                                         value={input.sub_mod2}
                                         onChange={event => handleFormChange(index, event)} />
-                                </div>
-                                <div className=''>
-                                    <p className='text-light ps-3'>sub module description</p>
+                                </Col>
+                                <Col className='courseFormpad'>
+                                <p className='text-light ps-3'>sub module description</p>
 
-                                    <textarea
-                                        name='sub_description2'
-                                        placeholder='About_submdoule'
-                                        rows='3'
-                                        cols='30'
-                                        className=''
-                                        value={input.sub_description2}
-                                        onChange={event => handleFormChange(index, event)} />
-                                </div> <div>
-                                    <p className='text-light ps-3'>sub module video</p>
+<textarea
+    name='sub_description2'
+    placeholder='About_submdoule'
+    rows='3'
+    cols='30'
+    className=''
+    value={input.sub_description2}
+    onChange={event => handleFormChange(index, event)} />
+                                </Col>
+                                <Col className='courseFormpad'>
+                                <p className='text-light ps-3'>sub module video</p>
                                     <input
                                         name='sub_video2'
                                         placeholder='Module_Video'
                                         className=''
                                         value={input.sub_video2}
                                         onChange={event => handleFormChange(index, event)} />
-                                </div></div>
-                            <div className="d-flex justify-content-around align-items-center my-4">
-                                <h2 className='text-light mt-5'>sub_module 3</h2>
-                                <div>
-                                    <p className='text-light ps-3'>sub module name</p>
+                                </Col>
+                            </Row>
+                                {/* sub module 3  */}
+                                <Row>
+                            <h2 className='text-light mt-5 text-center'>sub module 3</h2>
+
+                                <Col className='courseFormpad'>
+                                <p className='text-light ps-3'>sub module name</p>
                                     <input
                                         name='sub_mod3'
                                         placeholder='sub_module_name'
                                         value={input.sub_mod3}
                                         onChange={event => handleFormChange(index, event)} />
-                                </div>
-                                <div className=''>
-                                    <p className='text-light ps-3'>sub module description</p>
+                                </Col>
+                                <Col className='courseFormpad'>
+                                <p className='text-light ps-3'>sub module description</p>
 
-                                    <textarea
-                                        name='sub_description3'
-                                        placeholder='About_submdoule'
-                                        rows='3'
-                                        cols='30'
-                                        className=''
-                                        value={input.sub_description3}
-                                        onChange={event => handleFormChange(index, event)} />
-                                </div> <div>
-                                    <p className='text-light ps-3'>sub module video</p>
+<textarea
+    name='sub_description3'
+    placeholder='About_submdoule'
+    rows='3'
+    cols='30'
+    className=''
+    value={input.sub_description3}
+    onChange={event => handleFormChange(index, event)} />
+                                </Col>
+                                <Col className='courseFormpad'>
+                                <p className='text-light ps-3'>sub module video</p>
                                     <input
                                         name='sub_video3'
                                         placeholder='Module_Video'
                                         className=''
                                         value={input.sub_video3}
                                         onChange={event => handleFormChange(index, event)} />
-                                </div></div>
-                            <Row className='gx-5 mx-auto my-3 pb-3'>
+                                </Col>
+                            </Row>
+                                {/* add quiz */}
+                            <Row className='gx-5 mx-auto my-3 py-3'>
                                 <h2 className='text-light'>Add Quizes</h2>
-
-                                <Col>
-                                    <div>
-                                        <p className='text-light'> Question 1</p>
+{/* quiz 1 */}
+                                <Col xs={12} >
+                                    <div className='dflex'>
+                                        <p className='text-light pt-3 ps-3'> Question 1</p>
                                         <input
                                             name='q1'
                                             placeholder='Question'
-                                            className=''
+                                            className='mb-3'
                                             value={input.q1}
                                             onChange={event => handleFormChange(index, event)} />
 
-                                        <p className='text-light'>Answer 1</p>
+                                        <p className='text-light pt-3 ps-3'>Answer 1</p>
                                         <input
                                             name='qA1'
                                             placeholder='Answer'
-                                            className=''
+                                            className='mb-3'
                                             value={input.qA1}
                                             onChange={event => handleFormChange(index, event)} />
-                                    </div>
-                                    <div>
-                                        <p className='text-light'>Question 4 </p>
+                                            <p className='text-light pt-3 ps-3'>Choice 1</p>
                                         <input
-                                            name='q4'
-                                            placeholder='Question'
-                                            className=''
-                                            value={input.q4}
+                                            name='qOP11'
+                                            placeholder='choice'
+                                            className='mb-3'
+                                            value={input.qOP11}
                                             onChange={event => handleFormChange(index, event)} />
-
-                                        <p className='text-light'>Answer 4</p>
+                                            <p className='text-light pt-3 ps-3'>Choice 2</p>
                                         <input
-                                            name='qA4'
-                                            placeholder='Answer'
+                                            name='qOP12'
+                                            placeholder='choice'
                                             className=''
-                                            value={input.qA4}
+                                            value={input.qOP12}
                                             onChange={event => handleFormChange(index, event)} />
+                                            <p className='text-light pt-3 ps-3'>Choice 3</p>
+                                        <input
+                                            name='qOP13'
+                                            placeholder='choice'
+                                            className='mb-3'
+                                            value={input.qOP13}
+                                            onChange={event => handleFormChange(index, event)} />
+                                            <p className='text-light pt-3 ps-3'>Choice 4</p>
+                                        <input
+                                            name='qOP14'
+                                            placeholder='choice'
+                                            className='mb-3'
+                                            value={input.qOP14}
+                                            onChange={event => handleFormChange(index, event)} />
+                                       
                                     </div>
-                                </Col>
-                                <Col>
-                                    <div>
+
+                                   
+                                </Col >
+                                <Col xs={12} >
+                                    <div className='dflex'>
 
 
-                                        <p className='text-light'> Question 2</p>
+                                        <p className='text-light pt-3 ps-3'> Question 2</p>
                                         <input
                                             name='q2'
                                             placeholder='Question'
-                                            className=''
+                                            className='mb-3'
                                             value={input.q2}
                                             onChange={event => handleFormChange(index, event)} />
 
-                                        <p className='text-light'>Answer 2</p>
+                                        <p className='text-light pt-3 ps-3'>Answer 2</p>
                                         <input
                                             name='qA2'
                                             placeholder='Answer'
-                                            className=''
+                                            className='mb-3'
                                             value={input.qA2}
                                             onChange={event => handleFormChange(index, event)} />
-                                    </div>
-                                    <div>
-                                        <p className='text-light'> Question 5</p>
+                                   <p className='text-light pt-3 ps-3'>Choice 1</p>
                                         <input
-                                            name='q5'
-                                            placeholder='Question'
-                                            className=''
-                                            value={input.q5}
+                                            name='qOP21'
+                                            placeholder='choice'
+                                            className='mb-3'
+                                            value={input.qOP21}
                                             onChange={event => handleFormChange(index, event)} />
-
-                                        <p className='text-light'>Answer 5</p>
+                                            <p className='text-light pt-3 ps-3'>Choice 2</p>
                                         <input
-                                            name='qA5'
-                                            placeholder='Answer'
-                                            className=''
-                                            value={input.qA5}
+                                            name='qOP22'
+                                            placeholder='choice'
+                                            className='mb-3'
+                                            value={input.qOP22}
                                             onChange={event => handleFormChange(index, event)} />
-                                    </div>
-                                </Col> <Col>
-                                    <div>
-                                        <p className='text-light'> Question 3 </p>
+                                            <p className='text-light pt-3 ps-3'>Choice 3</p>
+                                        <input
+                                            name='qOP23'
+                                            placeholder='choice'
+                                            className=''
+                                            value={input.qOP23}
+                                            onChange={event => handleFormChange(index, event)} />
+                                            <p className='text-light pt-3 ps-3'>Choice 4</p>
+                                        <input
+                                            name='qOP24'
+                                            placeholder='choice'
+                                            className='mb-3'
+                                            value={input.qOP24}
+                                            onChange={event => handleFormChange(index, event)} />
+                                              </div>
+                                   
+                                </Col> 
+                                <Col xs={12}>
+                                    <div className='dflex'>
+                                        <p className='text-light pt-3 ps-3'> Question 3 </p>
                                         <input
                                             name='q3'
                                             placeholder='Question'
@@ -271,12 +332,136 @@ export default function CourseAdd() {
                                             value={input.q3}
                                             onChange={event => handleFormChange(index, event)} />
 
-                                        <p className='text-light'>Answer 3</p>
+                                        <p className='text-light pt-3 ps-3'>Answer 3</p>
                                         <input
                                             name='qA3'
                                             placeholder='Answer'
                                             className=''
                                             value={input.qA3}
+                                            onChange={event => handleFormChange(index, event)} />
+                              <p className='text-light pt-3 ps-3'>Choice 1</p>
+                                        <input
+                                            name='qOP31'
+                                            placeholder='choice'
+                                            className='mb-3'
+                                            value={input.qOP31}
+                                            onChange={event => handleFormChange(index, event)} />
+                                            <p className='text-light pt-3 ps-3'>Choice 2</p>
+                                        <input
+                                            name='qOP32'
+                                            placeholder='choice'
+                                            className=''
+                                            value={input.qOP32}
+                                            onChange={event => handleFormChange(index, event)} />
+                                            <p className='text-light pt-3 ps-3'>Choice 3</p>
+                                        <input
+                                            name='qOP33'
+                                            placeholder='choice'
+                                            className=''
+                                            value={input.qOP33}
+                                            onChange={event => handleFormChange(index, event)} />
+                                            <p className='text-light pt-3 ps-3'>Choice 4</p>
+                                        <input
+                                            name='qOP34'
+                                            placeholder='choice'
+                                            className='mb-3'
+                                            value={input.qOP34}
+                                            onChange={event => handleFormChange(index, event)} />
+                                                   </div>
+                                </Col>
+                                <Col xs={12} >
+                                   
+                                    <div className='dflex'>
+                                        <p className='text-light pt-3 ps-3'>Question 4 </p>
+                                        <input
+                                            name='q4'
+                                            placeholder='Question'
+                                            className=''
+                                            value={input.q4}
+                                            onChange={event => handleFormChange(index, event)} />
+
+                                        <p className='text-light pt-3 ps-3'>Answer 4</p>
+                                        <input
+                                            name='qA4'
+                                            placeholder='Answer'
+                                            className=''
+                                            value={input.qA4}
+                                            onChange={event => handleFormChange(index, event)} />
+                                               <p className='text-light pt-3 ps-3'>Choice 1</p>
+                                        <input
+                                            name='qOP41'
+                                            placeholder='choice'
+                                            className='mb-3'
+                                            value={input.qOP41}
+                                            onChange={event => handleFormChange(index, event)} />
+                                            <p className='text-light pt-3 ps-3'>Choice 2</p>
+                                        <input
+                                            name='qOP42'
+                                            placeholder='choice'
+                                            className='mb-3'
+                                            value={input.qOP42}
+                                            onChange={event => handleFormChange(index, event)} />
+                                            <p className='text-light pt-3 ps-3'>Choice 3</p>
+                                        <input
+                                            name='qOP43'
+                                            placeholder='choice'
+                                            className=''
+                                            value={input.qOP43}
+                                            onChange={event => handleFormChange(index, event)} />
+                                            <p className='text-light pt-3 ps-3'>Choice 4</p>
+                                        <input
+                                            name='qOP44'
+                                            placeholder='choice'
+                                            className='mb-3'
+                                            value={input.qOP44}
+                                            onChange={event => handleFormChange(index, event)} />
+                                    </div>
+                                </Col>
+                                <Col xs={12} >
+                                   
+                                <div className='dflex'>
+                                        <p className='text-light pt-3 ps-3'> Question 5</p>
+                                        <input
+                                            name='q5'
+                                            placeholder='Question'
+                                            className=''
+                                            value={input.q5}
+                                            onChange={event => handleFormChange(index, event)} />
+
+                                        <p className='text-light pt-3 ps-3'>Answer 5</p>
+                                        <input
+                                            name='qA5'
+                                            placeholder='Answer'
+                                            className=''
+                                            value={input.qA5}
+                                            onChange={event => handleFormChange(index, event)} />
+                                               <p className='text-light pt-3 ps-3'>Choice 1</p>
+                                        <input
+                                            name='qOP51'
+                                            placeholder='choice'
+                                            className='mb-3'
+                                            value={input.qOP51}
+                                            onChange={event => handleFormChange(index, event)} />
+                                            <p className='text-light pt-3 ps-3'>Choice 2</p>
+                                        <input
+                                            name='qOP52'
+                                            placeholder='choice'
+                                            className='mb-3'
+                                            value={input.qOP52}
+                                            onChange={event => handleFormChange(index, event)} />
+                                            <p className='text-light pt-3 ps-3'>Choice 3</p>
+                                        <input
+                                            name='qOP53'
+                                            placeholder='choice'
+                                            className=''
+                                            value={input.qOP53}
+                                            onChange={event => handleFormChange(index, event)} />
+                                            <p className='text-light pt-3 ps-3'>Choice 4</p>
+                                        <input
+                                            name='qOP54'
+                                            placeholder='choice'
+                                            className=''
+                                            value={input.qOP54}
                                             onChange={event => handleFormChange(index, event)} />
                                     </div>
                                 </Col>
