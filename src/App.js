@@ -52,6 +52,7 @@ import AddInstructor from './Components/Board/AddInstructor/AddInstructor';
 import Admin from './Components/Board/AddAdmin/Admin';
 import Maas from './Components/Maas/Maas';
 import CourseAdd from './Components/Addcourse/CourseAdd';
+import O2 from './Components/Course_Overview/O2';
 function App() {
   useEffect(() => {
     AOS.init();
@@ -94,8 +95,8 @@ function App() {
             <Route path="/scholarships" element={<Scholarships />} />
             <Route path="/press" element={<Press />} />
             <Route path="/addcourse" element={<CourseAdd />} />
-            <Route path="/learn/:courseName" element={<Overview />} />
-            <Route path="/learn/:courseName/start" element={<PrivateRoute><CourseStart /></PrivateRoute>} />
+            <Route path="/learn/:courseID" element={<O2 />} />
+            <Route path="/learn/start/:courseID" element={<PrivateRoute><CourseStart /></PrivateRoute>} />
             <Route path="/dashboard" element={<AdminRoute><Board /></AdminRoute>} >
               {/* <Route path="/dashboard" element={<Welcome />} /> */}
               <Route path="/dashboard" element={<AdminRoute><Admin /></AdminRoute>} />
