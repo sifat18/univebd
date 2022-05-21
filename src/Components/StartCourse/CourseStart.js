@@ -7,22 +7,48 @@ import Header from '../Header/Header'
 export default function CourseStart() {
     const [course, setcourses] = useState({})
     const [video, setVideo] = useState('')
+    const [nex, setnex] = useState(0)
+    const [nexMod, setnexMod] = useState(false)
     const { courseID } = useParams()
+    const maxModuleIndex = course?.Module?.length - 1
 
     useEffect(() => {
         fetch(`https://fierce-woodland-01411.herokuapp.com/course/${courseID}`).then(res => res.json()).then(data => setcourses(data))
     }, [courseID])
     // console.log(course);
 
-    const sendVideo = (video) => {
-        setVideo(video);
+    const sendVideo = (data, video, idx = 0, unlock = false) => {
+        switch (video) {
+            case 'sub_video1':
+                setVideo(data.sub_video1)
+                setnex(idx)
+                setnexMod(unlock)
+                break;
+            case 'sub_video2':
+                setVideo(data.sub_video2)
+                setnex(idx)
+                setnexMod(unlock)
+                break;
+            case 'sub_video3':
+                setVideo(data.sub_video3)
+                setnex(idx + 1)
+                setnexMod(unlock)
+                break;
+            default:
+        }
+
+    }
+    const nextVideo = (index, lock) => {
+        course.Module[index].show_mod = lock
+        setVideo(course.Module[index].sub_video1)
+        setnexMod(false)
     }
     return (
         <>
             <Header />
             <Container fluid className='my-5'>
                 <Row>
-                    <Col xs={3} md={3} className='border-end border-dark'>
+                    <Col xs={3} md={2} className='border-end border-dark'>
                         <Accordion defaultActiveKey={['0']} alwaysOpen flush>
                             {course?.Module?.map((data, index) => (
                                 <Accordion.Item eventKey={'' + index} key={index} >
@@ -30,9 +56,9 @@ export default function CourseStart() {
                                     <Accordion.Header>{data.module_name}</Accordion.Header>
                                     <Accordion.Body >
                                         <ul>
-                                            <li onClick={() => data.show_mod && sendVideo(data.sub_video1)}>{data.sub_mod1}</li>
-                                            <li onClick={() => data.show_mod && sendVideo(data.sub_video2)}>{data.sub_mod2}</li>
-                                            <li onClick={() => data.show_mod && sendVideo(data.sub_video3)}>{data.sub_mod3}</li>
+                                            <li onClick={() => data.show_mod && sendVideo(data, 'sub_video1', index, false)}>{data.sub_mod1}</li>
+                                            <li onClick={() => data.show_mod && sendVideo(data, 'sub_video2', index, false)}>{data.sub_mod2}</li>
+                                            <li onClick={() => data.show_mod && sendVideo(data, 'sub_video3', index, true)}>{data.sub_mod3}</li>
                                         </ul>
                                     </Accordion.Body>
 
@@ -41,7 +67,7 @@ export default function CourseStart() {
                         </Accordion>
                     </Col>
                     <Col xs={3} md={9}>
-                        <Videos basic={course.demoLink} link={video} />
+                        <Videos basic={course.demoLink} link={video} maxMod={maxModuleIndex} handl={nextVideo} nextIndex={nex} nextMod={nexMod} />
                     </Col>
                 </Row >
             </Container >
