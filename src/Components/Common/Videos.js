@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button as p, Container } from 'react-bootstrap'
 
-export default function Videos({ link, basic, maxMod, handl, nextIndex, nextMod }) {
+export default function Videos({ link, basic, handl2, breif, show }) {
     return (
         <>
             <Container className='text-center'>
@@ -12,8 +12,13 @@ export default function Videos({ link, basic, maxMod, handl, nextIndex, nextMod 
                     title='Xray'
                     width="788" height="500"
                 />
-                {nextMod && nextIndex <= maxMod &&
-                    <p className='btn btn-info text-white w-50 d-block mt-3 mx-auto' onClick={() => handl(nextIndex, nextMod)}> Next</p>
+                <div className="my-5 ms-5 ps-5 text-start">
+                    <h2 className='fw-bold '>A short description</h2>
+                    <hr className='' />
+                    <p className=' fs-5 text-dark'>{breif}</p>
+                </div>
+                {show &&
+                    <p className='btn btn-info text-white w-50 d-block mt-3 mx-auto' onClick={handl2}> Go to Quiz</p>
                 }
             </Container>
         </>

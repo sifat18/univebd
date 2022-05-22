@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { Accordion, Col, Container, Row } from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
+import Quiz from '../Common/Quiz'
 import Videos from '../Common/Videos'
 import Header from '../Header/Header'
 
 export default function CourseStart() {
     const [course, setcourses] = useState({})
     const [video, setVideo] = useState('')
+    const [quiz, setQuiz] = useState(false)
+    const [show, setShow] = useState(false)
+    const [description, setdescription] = useState('')
     const [nex, setnex] = useState(0)
     const [nexMod, setnexMod] = useState(false)
     const { courseID } = useParams()
@@ -23,14 +27,20 @@ export default function CourseStart() {
                 setVideo(data.sub_video1)
                 setnex(idx)
                 setnexMod(unlock)
+                setdescription(data.sub_description1)
+                setShow(false)
                 break;
             case 'sub_video2':
                 setVideo(data.sub_video2)
                 setnex(idx)
                 setnexMod(unlock)
+                setdescription(data.sub_description2)
+
                 break;
             case 'sub_video3':
                 setVideo(data.sub_video3)
+                setdescription(data.sub_description3)
+                setShow(true)
                 setnex(idx + 1)
                 setnexMod(unlock)
                 break;
@@ -41,7 +51,14 @@ export default function CourseStart() {
     const nextVideo = (index, lock) => {
         course.Module[index].show_mod = lock
         setVideo(course.Module[index].sub_video1)
+        setdescription(course.Module[index].sub_description1)
         setnexMod(false)
+        setQuiz(false)
+        setShow(false)
+
+    }
+    const nextModule = () => {
+        setQuiz(true)
     }
     return (
         <>
@@ -67,7 +84,10 @@ export default function CourseStart() {
                         </Accordion>
                     </Col>
                     <Col xs={3} md={9}>
-                        <Videos basic={course.demoLink} link={video} maxMod={maxModuleIndex} handl={nextVideo} nextIndex={nex} nextMod={nexMod} />
+                        {!quiz && <Videos show={show} basic={course.demoLink} link={video} handl2={nextModule} breif={description} />
+                        }
+                        {quiz && <Quiz courseData={course} maxMod={maxModuleIndex} handl={nextVideo} nextIndex={nex} nextMod={nexMod} />
+                        }
                     </Col>
                 </Row >
             </Container >
