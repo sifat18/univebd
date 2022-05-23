@@ -30,7 +30,7 @@ export default function CourseStart() {
                 if (!data.sub_mod2 && !data.sub_mod3) {
                     setShow(true)
                     setnex(idx + 1)
-                    setnexMod(!unlock)
+                    setnexMod(true)
                 } else {
                     setnex(idx)
                     setnexMod(unlock)
@@ -43,7 +43,7 @@ export default function CourseStart() {
                 if (!data.sub_mod3) {
                     setShow(true)
                     setnex(idx + 1)
-                    setnexMod(unlock)
+                    setnexMod(true)
                 } else {
                     setnex(idx)
                     setnexMod(unlock)
