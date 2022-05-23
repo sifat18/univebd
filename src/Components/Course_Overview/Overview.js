@@ -14,37 +14,30 @@ import { GrCertificate } from "react-icons/gr";
 import { MdTextFields } from "react-icons/md";
 import { MdPersonPin } from "react-icons/md";
 import Companies from '../Common/Companies';
-import ReviewCard from '../Common/ReviewCard';
 import Header from '../Header/Header';
 export default function Overview() {
-
-    const [courses, setcourses] = useState([])
-    const course = useParams()
+    const [courses, setcourses] = useState({})
+    const { courseID } = useParams()
+    // single data load based on id
     useEffect(() => {
-        fetch('../courses.json').then(res => res.json()).then(data => setcourses(data))
-    }, [])
-    const courseData = courses.find(sub => sub.name === course.courseName)
-    console.log(courseData);
-
+        fetch(`https://fierce-woodland-01411.herokuapp.com/course/${courseID}`).then(res => res.json()).then(data => setcourses(data))
+    }, [courseID])
     const [arr, setArr] = useState(true)
-    const [dispp, setDispp] = useState(false)
     const contentShow = () => {
         setArr(!arr)
     }
-    const disp = () => {
-        setDispp(!dispp)
-    }
+
     return (
         <>
             <Header />
-            {courseData &&
+            {courses &&
                 <Container className='my-5 contentpadding hor'>
                     <Row className='gx-5'>
                         <Col xs={12} className='d-block d-md-none'>
-                            <img className='img-fluid' src={courseData.image} alt="" />
+                            <img className='img-fluid' src={courses.imageLink} alt="" />
                         </Col>
                         <Col xs={12} md={9} >
-                            <h1 className='my-5'>{courseData?.name}</h1>
+                            <h1 className='my-5'>{courses.coursename}</h1>
                             {/* quiz video bars */}
                             <div className="d-flex justify-content-start flex-wrap ">
                                 <div class="p-2 bd-highlight border-secondary border mb-2 px-2 px-3"><MdOutlinePlayLesson className=' fs-4 me-2' />14 lessons</div>
@@ -56,7 +49,7 @@ export default function Overview() {
                             <div className=" my-3 d-block d-md-none">
                                 <Card >
                                     <Card.Body className='mx-auto mt-4' >
-                                        <NavLink to={`/learn/${course.courseName}/start`}><Button className='bluebtn btn py-2 px-5'>Start learning </Button></NavLink>
+                                        <NavLink to={`/learn/start/${courses._id}`}><Button className='bluebtn btn py-2 px-5'>Start learning </Button></NavLink>
                                     </Card.Body>
                                     <hr className='bg-secondary' />
                                     <Card.Body>
@@ -68,7 +61,7 @@ export default function Overview() {
                             {/* overview */}
                             <div className="my-5">
                                 <h3>Course Overivew</h3>
-                                <Read>{courseData?.aboutCourse || ''}</Read>
+                                <Read>{courses?.about || ''}</Read>
                             </div>
                             {/* how will you learn */}
                             <Row>
@@ -99,64 +92,30 @@ export default function Overview() {
                                     <h3>Course Content</h3>
                                     <Button onClick={contentShow} variant='btn btn-outline-info'>{arr ? 'Hide All Content' : 'Show All Content'}</Button>
                                 </div>
+                                {/* accordion start */}
                                 <Accordion defaultActiveKey={['0', '1', '2', '3', '4']} alwaysOpen flush>
-                                    <Accordion.Item eventKey="0" onClick={disp} >
-                                        <Accordion.Header>Introduction</Accordion.Header>
-                                        <Accordion.Body className={arr | dispp ? 'd-block' : 'd-none'}>
-                                            <ul>
-                                                <li>1</li>
-                                                <li>1</li>
-                                                <li>1</li>
-                                            </ul>
-                                        </Accordion.Body>
-                                    </Accordion.Item>
-                                    <Accordion.Item eventKey="1" onClick={disp} >
-                                        <Accordion.Header >Content2</Accordion.Header>
-                                        <Accordion.Body className={arr || dispp ? 'd-block' : 'd-none'}>
-                                            <ul>
-                                                <li>1</li>
-                                                <li>1</li>
-                                                <li>1</li>
-                                            </ul>
-                                        </Accordion.Body>
-                                    </Accordion.Item >
-                                    <Accordion.Item eventKey="2" onClick={disp} >
-                                        <Accordion.Header >Content3</Accordion.Header>
-                                        <Accordion.Body className={arr || dispp ? 'd-block' : 'd-none'}>
-                                            <ul>
-                                                <li>1</li>
-                                                <li>1</li>
-                                                <li>1</li>
-                                            </ul>
-                                        </Accordion.Body>
-                                    </Accordion.Item>
-                                    <Accordion.Item eventKey="3" onClick={disp} >
-                                        <Accordion.Header >Content4</Accordion.Header>
-                                        <Accordion.Body className={arr || dispp ? 'd-block' : 'd-none'}>
-                                            <ul>
-                                                <li>1</li>
-                                                <li>1</li>
-                                                <li>1</li>
-                                            </ul>
-                                        </Accordion.Body>
-                                    </Accordion.Item>
-                                    <Accordion.Item eventKey="4" onClick={disp} >
-                                        <Accordion.Header >Content5</Accordion.Header>
-                                        <Accordion.Body className={arr || dispp ? 'd-block' : 'd-none'}>
-                                            <ul>
-                                                <li>1</li>
-                                                <li>1</li>
-                                                <li>1</li>
-                                            </ul></Accordion.Body>
-                                    </Accordion.Item>
+                                    {courses?.Module?.map((data, index) => (
+                                        <Accordion.Item eventKey={'' + index} key={index} >
+
+                                            <Accordion.Header>{data.module_name}</Accordion.Header>
+                                            <Accordion.Body className={arr ? 'd-block' : 'd-none'}>
+                                                <ul>
+                                                    {data.sub_mod1 && <li>{data.sub_mod1}</li>}
+                                                    {data.sub_mod2 && <li>{data.sub_mod2}</li>}
+                                                    {data.sub_mod3 && <li>{data.sub_mod3}</li>}
+                                                </ul>
+                                            </Accordion.Body>
+
+                                        </Accordion.Item>
+                                    ))}
                                 </Accordion>
                             </Row>
                         </Col>
                         <Col md={2} className='d-none d-md-block pt-5 ' >
                             <Card style={{ width: '18rem' }} >
-                                <Card.Img variant="top" src={courseData?.image} />
+                                <Card.Img variant="top" src={courses?.imageLink} />
                                 <Card.Body className='mx-auto mt-4' sticky>
-                                    <NavLink to={`/learn/${course.courseName}/start`}><Button className='bluebtn btn py-2 px-5'>Start learning </Button></NavLink>
+                                    <NavLink to={`/learn/start/${courses._id}`}><Button className='bluebtn btn py-2 px-5'>Start learning </Button></NavLink>
                                 </Card.Body>
                                 <hr className='bg-secondary' />
                                 <Card.Body>
@@ -169,20 +128,14 @@ export default function Overview() {
                     <Container className='text-center'>
                     </Container>
 
-                    {/* <iframe src={courseData?.demoVideo}
-                        frameborder='0'
-                        allow='autoplay; encrypted-media'
-                        allowfullscreen
-                        title='Xray'
-                        width="560" height="315"
-                    /> */}
+
 
                     {/* <ul>
                         {courseData?.whatWillYouLearn?.map(data => (
                             <li>{data}</li>
                         ))}
                     </ul> */}
-                </Container>
+                </Container >
 
             }
             <Container fluid className='middle py-5 ps-5 '>
@@ -194,7 +147,7 @@ export default function Overview() {
                 <Row>
                     <Col xs={12} md={6}>
                         <h3 className='py-5 mt-5'>যারা জব খুঁজছেন,যারা এমপ্লয়ী খুঁজছেন বা এমপ্লয়ী ট্রেইনিং দিতে চান <br />
-                                কিংবা যারা শিখতে চান তারা সবাই ইউনিভ ব্যবহার করছেন</h3>
+                            কিংবা যারা শিখতে চান তারা সবাই ইউনিভ ব্যবহার করছেন</h3>
                     </Col>
                     <Col xs={12} md={6}>
                         <Companies />

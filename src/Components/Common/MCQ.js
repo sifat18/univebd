@@ -11,12 +11,12 @@ export default function MCQ({ question, option1, option2, option3, option4, cor,
             <div onClick={() => handlescore(cor, option2)} className="answers w-50 mx-auto">
                 <Checkbox className={'answer'} text={option2} />
             </div>
-            <div onClick={() => handlescore(cor, option3)} className="answers w-50 mx-auto">
+            {option3 && <div onClick={() => handlescore(cor, option3)} className="answers w-50 mx-auto">
                 <Checkbox className={'answer'} text={option3} />
-            </div>
-            <div onClick={() => handlescore(cor, option4)} className="answers w-50 mx-auto">
+            </div>}
+            {option4 && <div onClick={() => handlescore(cor, option4)} className="answers w-50 mx-auto">
                 <Checkbox className={'answer'} text={option4} />
-            </div>
+            </div>}
 
         </div>
     )

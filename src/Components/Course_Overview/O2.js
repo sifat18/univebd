@@ -14,27 +14,19 @@ import { GrCertificate } from "react-icons/gr";
 import { MdTextFields } from "react-icons/md";
 import { MdPersonPin } from "react-icons/md";
 import Companies from '../Common/Companies';
-import ReviewCard from '../Common/ReviewCard';
 import Header from '../Header/Header';
 export default function O2() {
-    const id = '6287b3bac0dd096ee13a048f'
     const [courses, setcourses] = useState({})
-    // const {courseID} = useParams()
+    const { courseID } = useParams()
     // single data load based on id
     useEffect(() => {
-        fetch(`https://fierce-woodland-01411.herokuapp.com/course/${id}`).then(res => res.json()).then(data => setcourses(data))
-    }, [])
-    // const courseData = courses.find(sub => sub.name === course.courseName)
-    // console.log(courseData);
-
+        fetch(`https://fierce-woodland-01411.herokuapp.com/course/${courseID}`).then(res => res.json()).then(data => setcourses(data))
+    }, [courseID])
     const [arr, setArr] = useState(true)
-    const [dispp, setDispp] = useState(false)
     const contentShow = () => {
         setArr(!arr)
     }
-    const disp = () => {
-        setDispp(!dispp)
-    }
+
     return (
         <>
             <Header />
@@ -106,11 +98,11 @@ export default function O2() {
                                         <Accordion.Item eventKey={'' + index} key={index} >
 
                                             <Accordion.Header>{data.module_name}</Accordion.Header>
-                                            <Accordion.Body className={arr | dispp ? 'd-block' : 'd-none'}>
+                                            <Accordion.Body className={arr ? 'd-block' : 'd-none'}>
                                                 <ul>
-                                                    <li>{data.sub_mod1}</li>
-                                                    <li>{data.sub_mod2}</li>
-                                                    <li>{data.sub_mod3}</li>
+                                                    {data.sub_mod1 && <li>{data.sub_mod1}</li>}
+                                                    {data.sub_mod2 && <li>{data.sub_mod2}</li>}
+                                                    {data.sub_mod3 && <li>{data.sub_mod3}</li>}
                                                 </ul>
                                             </Accordion.Body>
 

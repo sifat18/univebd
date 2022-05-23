@@ -41,20 +41,20 @@ export default function Projects() {
             <Container>
                 <Row xs={1} md={3} className="g-4 bigMargin mb-5">
                     {item.map((id) => (
-                        <Col key={id.key}>
+                        <Col key={id._id}>
                             <Card className='py-1'>
-                                <Card.Img variant="top" className='img-fluid ' src={id.image} />
+                                <Card.Img variant="top" className='img-fluid ' src={id.imageLink} />
                                 <Card.Body className='text-start'>
                                     <p>educative</p>
-                                    <Card.Title >{id.name}</Card.Title>
-                                    <Card.Text>{id.aboutCourse.slice(0, 100)}              </Card.Text>
+                                    <Card.Title >{id.coursename}</Card.Title>
+                                    <Card.Text>{id.about.slice(0, 100)}              </Card.Text>
                                 </Card.Body>
                                 <Row>
                                     <Col xs={5} className='ms-2 ps-3 mt-3'>
                                         <p className='fs-7'>Beginner</p>
                                     </Col>
                                     <Col xs={6} className='py-3'>
-                                        <NavLink to={`/learn/${id.name}`}> <Button className=' w-100 h-100' variant="warning">Get Started <img src={ar} alt="" /></Button></NavLink>
+                                        <NavLink to={`/learn/${id._id}`}> <Button className=' w-100 h-100' variant="warning">Get Started <img src={ar} alt="" /></Button></NavLink>
 
                                     </Col>
                                 </Row>

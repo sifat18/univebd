@@ -9,7 +9,13 @@ export default function Quiz({ courseData, maxMod, handl, nextIndex, nextMod }) 
     const [totalQuestion, settotalQuestion] = useState(0)
     // const [showScore, setshowScore] = useState(false)
     useEffect(() => {
-        if (!q3) {
+        if (!q1) {
+            settotalQuestion(0)
+        }
+        else if (!q2) {
+            settotalQuestion(1)
+        }
+        else if (!q3) {
             settotalQuestion(2)
         }
         else if (!q4) {
@@ -21,7 +27,7 @@ export default function Quiz({ courseData, maxMod, handl, nextIndex, nextMod }) 
             settotalQuestion(5)
 
         }
-    }, [q3, q4, q5])
+    }, [q3, q4, q5, q1, q2])
 
 
 
@@ -37,13 +43,13 @@ export default function Quiz({ courseData, maxMod, handl, nextIndex, nextMod }) 
 
         <>
             <Container className=''>
-                {currentQuestion === 0 && <MCQ question={q1} cor={qA1} option1={qOP11} option2={qOP12} option3={qOP13} option4={qOP14} handlescore={updateScoreQuestion} />}
-                {currentQuestion === 1 && <MCQ question={q2} cor={qA2} option1={qOP21} option2={qOP22} option3={qOP23} option4={qOP24} handlescore={updateScoreQuestion} />}
+                {q1 && currentQuestion === 0 && <MCQ question={q1} cor={qA1} option1={qOP11} option2={qOP12} option3={qOP13} option4={qOP14} handlescore={updateScoreQuestion} />}
+                {q2 && currentQuestion === 1 && <MCQ question={q2} cor={qA2} option1={qOP21} option2={qOP22} option3={qOP23} option4={qOP24} handlescore={updateScoreQuestion} />}
                 {q3 && currentQuestion === 2 && <MCQ question={q3} cor={qA3} option1={qOP31} option2={qOP32} option3={qOP33} option4={qOP34} handlescore={updateScoreQuestion} />}
                 {q4 && currentQuestion === 3 && <MCQ question={q4} cor={qA4} option1={qOP41} option2={qOP42} option3={qOP43} option4={qOP44} handlescore={updateScoreQuestion} />}
                 {q5 && currentQuestion === 4 && <MCQ question={q5} cor={qA5} option1={qOP51} option2={qOP52} option3={qOP53} option4={qOP54} handlescore={updateScoreQuestion} />}
 
-                {currentQuestion === totalQuestion && <p>You scored {score}</p>}
+                {currentQuestion === totalQuestion && totalQuestion !== 0 && <p>You scored {score}</p>}
                 {nextIndex <= maxMod && nextMod && currentQuestion === totalQuestion &&
                     <p className='btn btn-info text-white w-50 d-block mt-3 mx-auto' onClick={() => handl(nextIndex, nextMod)}> Go to Next Module</p>
                 }

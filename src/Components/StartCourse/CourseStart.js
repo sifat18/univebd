@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import Quiz from '../Common/Quiz'
 import Videos from '../Common/Videos'
 import Header from '../Header/Header'
+import { RiVideoAddLine } from "react-icons/ri";
 
 export default function CourseStart() {
     const [course, setcourses] = useState({})
@@ -25,17 +26,29 @@ export default function CourseStart() {
         switch (video) {
             case 'sub_video1':
                 setVideo(data.sub_video1)
-                setnex(idx)
-                setnexMod(unlock)
                 setdescription(data.sub_description1)
-                setShow(false)
+                if (!data.sub_mod2 && !data.sub_mod3) {
+                    setShow(true)
+                    setnex(idx + 1)
+                    setnexMod(!unlock)
+                } else {
+                    setnex(idx)
+                    setnexMod(unlock)
+                    setShow(false)
+                }
                 break;
             case 'sub_video2':
                 setVideo(data.sub_video2)
-                setnex(idx)
-                setnexMod(unlock)
                 setdescription(data.sub_description2)
-
+                if (!data.sub_mod3) {
+                    setShow(true)
+                    setnex(idx + 1)
+                    setnexMod(unlock)
+                } else {
+                    setnex(idx)
+                    setnexMod(unlock)
+                    setShow(false)
+                }
                 break;
             case 'sub_video3':
                 setVideo(data.sub_video3)
@@ -73,9 +86,9 @@ export default function CourseStart() {
                                     <Accordion.Header>{data.module_name}</Accordion.Header>
                                     <Accordion.Body >
                                         <ul>
-                                            <li onClick={() => data.show_mod && sendVideo(data, 'sub_video1', index, false)}>{data.sub_mod1}</li>
-                                            <li onClick={() => data.show_mod && sendVideo(data, 'sub_video2', index, false)}>{data.sub_mod2}</li>
-                                            <li onClick={() => data.show_mod && sendVideo(data, 'sub_video3', index, true)}>{data.sub_mod3}</li>
+                                            {data.sub_mod1 && <li onClick={() => data.show_mod && sendVideo(data, 'sub_video1', index, false)}><RiVideoAddLine className='fs-3' />{data.sub_mod1}</li>}
+                                            {data.sub_mod2 && <li onClick={() => data.show_mod && sendVideo(data, 'sub_video2', index, false)}><RiVideoAddLine className='fs-3' />{data.sub_mod2}</li>}
+                                            {data.sub_mod3 && <li onClick={() => data.show_mod && sendVideo(data, 'sub_video3', index, true)}> <RiVideoAddLine className='fs-3' />{data.sub_mod3}</li>}
                                         </ul>
                                     </Accordion.Body>
 

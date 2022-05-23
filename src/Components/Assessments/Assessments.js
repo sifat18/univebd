@@ -29,14 +29,14 @@ export default function Assessments() {
                 <Row className='g-4'>
                     <Col xs={6}>
                         {item.map((id) => (
-                            <Row key={id.key} xs={1} className="g-3 my-3 border">
+                            <Row key={id._id} xs={1} className="g-3 my-3 border">
                                 <Col xs={12} md={4} className='border-end'>
-                                    <img className='img-fluid ' src={id.image} alt="" />
+                                    <img className='img-fluid ' src={id.imageLink} alt="" />
                                 </Col>
                                 <Col xs={12} md={8}>
                                     <h5 className='fs-5'>অ্যাসেসমেন্ট</h5>
-                                    <h2 className='my-2 text-start fs-4'>{id.name}</h2>
-                                    <NavLink to={`/learn/${id.name}`}> <Button variant='btn btn-outline-primary py-2 px-5 d-block my-5 me-3 ms-auto'> Preview</Button></NavLink>
+                                    <h2 className='my-2 text-start fs-4'>{id.coursename}</h2>
+                                    <NavLink to={`/learn/${id._id}`}> <Button variant='btn btn-outline-primary py-2 px-5 d-block my-5 me-3 ms-auto'> Preview</Button></NavLink>
 
                                 </Col>
 
@@ -45,14 +45,14 @@ export default function Assessments() {
                     </Col>
                     <Col xs={6}>
                         {item.map((id) => (
-                            <Row key={id.key} xs={1} className="g-3 my-3 border">
+                            <Row key={id._id} xs={1} className="g-3 my-3 border">
                                 <Col xs={12} md={4} className='border-end'>
-                                    <img className='img-fluid ' src={id.image} alt="" />
+                                    <img className='img-fluid ' src={id.imageLink} alt="" />
                                 </Col>
                                 <Col xs={12} md={8}>
                                     <h5 className='fs-5'>অ্যাসেসমেন্ট</h5>
-                                    <h2 className='my-2 text-start fs-4'>{id.name}</h2>
-                                    <Button variant='btn btn-outline-primary py-2 px-5 d-block my-5 me-3 ms-auto'> Preview</Button>
+                                    <h2 className='my-2 text-start fs-4'>{id.coursename}</h2>
+                                    <NavLink to={`/learn/${id._id}`}>  <Button variant='btn btn-outline-primary py-2 px-5 d-block my-5 me-3 ms-auto'> Preview</Button></NavLink>
 
                                 </Col>
 

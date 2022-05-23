@@ -26,7 +26,7 @@ export default function Individual() {
                     <h2 className=''>বর্তমানের ইন্ডাস্ট্রি প্র্যাকটিস ফোকাসড ট্রেইনিং শুরু করুন এখনি!</h2>
                     {/* <h4 className=' mt-3  ps-1'>World-class courses for world-class software developers</h4> */}
                     <div className=" mt-3   ">
-                      <NavLink to='/learn'> <Button className='p-3 smallText bluebtn m-3'>ট্রেইনিং শুরু করুন</Button></NavLink>
+                        <NavLink to='/learn'> <Button className='p-3 smallText bluebtn m-3'>ট্রেইনিং শুরু করুন</Button></NavLink>
                     </div>
                     <div >
                         <img className='img-fluid ' src={indi} alt="" />
@@ -96,13 +96,13 @@ export default function Individual() {
                     <Container className='my-5 mx-2'>
                         <Row xs={1} md={3} className="g-4 bigMargin">
                             {item.map((id) => (
-                                <Col key={id.key}>
+                                <Col key={id._id}>
                                     <Card className='py-1'>
-                                        <Card.Img variant="top" className='img-fluid ' src={id.image} />
+                                        <Card.Img variant="top" className='img-fluid ' src={id.imageLink} />
                                         <Card.Body className='text-start'>
-                                            <p>educative</p>
-                                            <Card.Title >{id.name}</Card.Title>
-                                            <Card.Text>{id.aboutCourse.slice(0, 100)}              </Card.Text>
+                                            <p>Unive</p>
+                                            <Card.Title >{id.coursename}</Card.Title>
+                                            <Card.Text>{id.about.slice(0, 100)}              </Card.Text>
                                         </Card.Body>
                                         <Row>
                                             <Col xs={6}>
@@ -110,7 +110,7 @@ export default function Individual() {
                                                 <p className='fs-7'>Beginner</p>
                                             </Col>
                                             <Col xs={6}>
-                                                <NavLink to={`/learn/${id.name}`}> <Button className='p-3' variant="">Get Started <img src={ar} alt="" /></Button></NavLink>
+                                                <NavLink to={`/learn/${id._id}`}> <Button className='p-3' variant="">Get Started <img src={ar} alt="" /></Button></NavLink>
 
                                             </Col>
                                         </Row>

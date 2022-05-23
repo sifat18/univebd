@@ -21,13 +21,13 @@ export default function Learn() {
                     </section>
                     <Row xs={1} md={3} className="g-4 bigMargin">
                         {item.map((id) => (
-                            <Col key={id.key}>
+                            <Col key={id._id}>
                                 <Card className='py-1'>
-                                    <Card.Img variant="top" className='img-fluid ' src={id.image} />
+                                    <Card.Img variant="top" className='img-fluid ' src={id.imageLink} />
                                     <Card.Body className='text-start'>
                                         <p>Unive</p>
-                                        <Card.Title >{id.name}</Card.Title>
-                                        <Card.Text>{id.aboutCourse.slice(0, 100)}              </Card.Text>
+                                        <Card.Title >{id.coursename}</Card.Title>
+                                        <Card.Text>{id.about.slice(0, 100)}              </Card.Text>
                                     </Card.Body>
                                     <Row>
                                         <Col xs={6}>
@@ -35,7 +35,7 @@ export default function Learn() {
                                             <p className='fs-7'>Beginner</p>
                                         </Col>
                                         <Col xs={6}>
-                                            <NavLink to={`/learn/${id.name}`}> <Button className='p-3' variant="outline-dark">preview <img src={ar} alt="" /></Button></NavLink>
+                                            <NavLink to={`/learn/${id._id}`}> <Button className='p-3' variant="outline-dark">preview <img src={ar} alt="" /></Button></NavLink>
 
                                         </Col>
                                     </Row>
@@ -56,13 +56,13 @@ export default function Learn() {
                     </section>
                     <Row xs={1} md={3} className="g-4 bigMargin">
                         {item.map((id) => (
-                            <Col key={id.key}>
+                            <Col key={id._id}>
                                 <Card className='py-1'>
-                                    <Card.Img variant="top" className='img-fluid ' src={id.image} />
+                                    <Card.Img variant="top" className='img-fluid ' src={id.imageLink} />
                                     <Card.Body className='text-start'>
                                         <p>Unive</p>
-                                        <Card.Title >{id.name}</Card.Title>
-                                        <Card.Text>{id.aboutCourse.slice(0, 100)}              </Card.Text>
+                                        <Card.Title >{id.coursename}</Card.Title>
+                                        <Card.Text>{id.about.slice(0, 100)}              </Card.Text>
                                     </Card.Body>
                                     <Row>
                                         <Col xs={6}>
@@ -70,7 +70,7 @@ export default function Learn() {
                                             <p className='fs-7'>Beginner</p>
                                         </Col>
                                         <Col xs={6}>
-                                            <NavLink to={`/learn/${id.name}`}><Button className='p-3' variant="outline-dark">preview <img src={ar} alt="" /></Button></NavLink>
+                                            <NavLink to={`/learn/${id._id}`}><Button className='p-3' variant="outline-dark">preview <img src={ar} alt="" /></Button></NavLink>
 
                                         </Col>
                                     </Row>

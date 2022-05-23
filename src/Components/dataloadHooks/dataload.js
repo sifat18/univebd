@@ -3,7 +3,7 @@ const { useState, useEffect } = require("react");
 const useData = () => {
     const [course, setcourse] = useState([])
     useEffect(() => {
-        fetch('courses.json').then(res => res.json()).then(data => setcourse(data))
+        fetch('https://fierce-woodland-01411.herokuapp.com/courses').then(res => res.json()).then(data => setcourse(data))
     }, [])
     return [course]
 }
