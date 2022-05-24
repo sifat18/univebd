@@ -8,14 +8,15 @@ import { MdOutlinePlayLesson } from "react-icons/md";
 import { BsTropicalStorm } from "react-icons/bs";
 import { AiOutlineFieldTime } from "react-icons/ai";
 import { CgBorderStyleDotted } from "react-icons/cg";
-import { BsCodeSlash } from "react-icons/bs";
-import { MdPhonelinkSetup } from "react-icons/md";
-import { GrCertificate } from "react-icons/gr";
-import { MdTextFields } from "react-icons/md";
+import { RiVideoAddLine } from "react-icons/ri";
+import { MdQuiz } from "react-icons/md";
+
 import { MdPersonPin } from "react-icons/md";
 import Companies from '../Common/Companies';
 import Header from '../Header/Header';
+import './over.css'
 export default function Overview() {
+
     const [courses, setcourses] = useState({})
     const { courseID } = useParams()
     // single data load based on id
@@ -64,7 +65,7 @@ export default function Overview() {
                                 <Read>{courses?.about || ''}</Read>
                             </div>
                             {/* how will you learn */}
-                            <Row>
+                            {/* <Row>
                                 <h2>How Will You Learn</h2>
                                 <Col xs={12} md={5}>
                                     <p className='fs-5'><BsCodeSlash className=' me-2' />Hands-on coding environments</p>
@@ -74,9 +75,9 @@ export default function Overview() {
                                     <p className='fs-5'><MdTextFields className=' me-2' />Faster than videos</p>
                                     <p>Videos are holding you back. The average video tutorial is spoken at 150 words per minute, while you can read at 250. That‘s why our courses are text-based.</p>
                                 </Col>
-                            </Row>
+                            </Row> */}
                             {/* part-2 */}
-                            <Row>
+                            {/* <Row>
                                 <Col xs={12} md={5}>
                                     <p className='fs-5'><MdPhonelinkSetup className=' me-2' />No set-up required</p>
                                     <p>Start learning immediately instead of fiddling with SDKs and IDEs. It‘s all on the cloud.</p>
@@ -85,7 +86,7 @@ export default function Overview() {
                                     <p className='fs-5'><GrCertificate className=' me-2' />Progress you can show</p>
                                     <p>Built in assessments let you test your skills. Completion certificates let you show them off.</p>
                                 </Col>
-                            </Row>
+                            </Row> */}
 
                             <Row className='my-5'>
                                 <div className='my-3 d-flex justify-content-between'>
@@ -99,10 +100,11 @@ export default function Overview() {
 
                                             <Accordion.Header>{data.module_name}</Accordion.Header>
                                             <Accordion.Body className={arr ? 'd-block' : 'd-none'}>
-                                                <ul>
-                                                    {data.sub_mod1 && <li>{data.sub_mod1}</li>}
-                                                    {data.sub_mod2 && <li>{data.sub_mod2}</li>}
-                                                    {data.sub_mod3 && <li>{data.sub_mod3}</li>}
+                                                <ul className='nobull'>
+                                                    {data.sub_mod1 && <li><RiVideoAddLine /> {data.sub_mod1}</li>}
+                                                    {data.sub_mod2 && <li><RiVideoAddLine /> {data.sub_mod2}</li>}
+                                                    {data.sub_mod3 && <li><RiVideoAddLine /> {data.sub_mod3}</li>}
+                                                    <li><MdQuiz /> কুইজ</li>
                                                 </ul>
                                             </Accordion.Body>
 

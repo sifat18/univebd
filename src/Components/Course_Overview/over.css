@@ -1,0 +1,7 @@
+.nobull {
+    list-style-type: none;
+}
+
+.courseStartMargin {
+    margin-left: -2rem;
+}

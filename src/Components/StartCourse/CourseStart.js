@@ -78,17 +78,17 @@ export default function CourseStart() {
             <Header />
             <Container fluid className='my-5'>
                 <Row>
-                    <Col xs={3} md={2} className='border-end border-dark'>
+                    <Col md={2} className='border-end border-dark d-none d-md-block'>
                         <Accordion defaultActiveKey={['0']} alwaysOpen flush>
                             {course?.Module?.map((data, index) => (
                                 <Accordion.Item eventKey={'' + index} key={index} >
 
                                     <Accordion.Header>{data.module_name}</Accordion.Header>
                                     <Accordion.Body >
-                                        <ul>
-                                            {data.sub_mod1 && <li onClick={() => data.show_mod && sendVideo(data, 'sub_video1', index, false)}><RiVideoAddLine className='fs-3' />{data.sub_mod1}</li>}
-                                            {data.sub_mod2 && <li onClick={() => data.show_mod && sendVideo(data, 'sub_video2', index, false)}><RiVideoAddLine className='fs-3' />{data.sub_mod2}</li>}
-                                            {data.sub_mod3 && <li onClick={() => data.show_mod && sendVideo(data, 'sub_video3', index, true)}> <RiVideoAddLine className='fs-3' />{data.sub_mod3}</li>}
+                                        <ul className='nobull courseStartMargin'>
+                                            {data.sub_mod1 && <li onClick={() => data.show_mod && sendVideo(data, 'sub_video1', index, false)}><RiVideoAddLine className='fs-3' /> {data.sub_mod1}</li>}
+                                            {data.sub_mod2 && <li onClick={() => data.show_mod && sendVideo(data, 'sub_video2', index, false)}><RiVideoAddLine className='fs-3' /> {data.sub_mod2}</li>}
+                                            {data.sub_mod3 && <li onClick={() => data.show_mod && sendVideo(data, 'sub_video3', index, true)}> <RiVideoAddLine className='fs-3' /> {data.sub_mod3}</li>}
                                         </ul>
                                     </Accordion.Body>
 
@@ -96,11 +96,29 @@ export default function CourseStart() {
                             ))}
                         </Accordion>
                     </Col>
-                    <Col xs={3} md={9}>
+                    <Col xs={12} md={9} className=''>
                         {!quiz && <Videos show={show} basic={course.demoLink} link={video} handl2={nextModule} breif={description} />
                         }
                         {quiz && <Quiz courseData={course} maxMod={maxModuleIndex} handl={nextVideo} nextIndex={nex} nextMod={nexMod} />
                         }
+                    </Col>
+                    <Col xs={12} className='border-end border-dark d-block d-md-none'>
+                        <Accordion defaultActiveKey={['0']} alwaysOpen flush>
+                            {course?.Module?.map((data, index) => (
+                                <Accordion.Item eventKey={'' + index} key={index} >
+
+                                    <Accordion.Header>{data.module_name}</Accordion.Header>
+                                    <Accordion.Body >
+                                        <ul className='nobull courseStartMargin'>
+                                            {data.sub_mod1 && <li onClick={() => data.show_mod && sendVideo(data, 'sub_video1', index, false)}><RiVideoAddLine className='fs-3' /> {data.sub_mod1}</li>}
+                                            {data.sub_mod2 && <li onClick={() => data.show_mod && sendVideo(data, 'sub_video2', index, false)}><RiVideoAddLine className='fs-3' /> {data.sub_mod2}</li>}
+                                            {data.sub_mod3 && <li onClick={() => data.show_mod && sendVideo(data, 'sub_video3', index, true)}> <RiVideoAddLine className='fs-3' /> {data.sub_mod3}</li>}
+                                        </ul>
+                                    </Accordion.Body>
+
+                                </Accordion.Item>
+                            ))}
+                        </Accordion>
                     </Col>
                 </Row >
             </Container >
