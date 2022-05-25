@@ -6,7 +6,10 @@ import st from '../images/steps.png'
 import dr from '../images/icons8-down-arrow-40.png'
 import { NavLink } from 'react-router-dom'
 import Header from '../Header/Header'
+import useAuth from '../Context/useAuth'
 export default function Learn() {
+    const { user, isLoading } = useAuth()
+
     const [item] = useData();
     // console.log(item);
     return (
@@ -15,7 +18,7 @@ export default function Learn() {
             <Container fluid className='my-5'>
                 {/* free courses */}
                 <Container className='text-center'>
-                    <h2 className='my-5 fw-bold'>Welcome User</h2>
+                    <h2 className='my-5 fw-bold'>Welcome {user.displayName}</h2>
                     <section className='text-start my-5 ms-5'>
                         <p className='fs-4 smallText'>Get started with our free courses</p>
                     </section>

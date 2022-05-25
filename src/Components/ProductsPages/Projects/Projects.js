@@ -6,7 +6,7 @@ import ar from '../../images/icons8-arrow-.png'
 import useData from '../../dataloadHooks/dataload';
 import { NavLink } from 'react-router-dom'
 import Header from '../../Header/Header'
-
+import './projects.css'
 export default function Projects() {
     const [item] = useData();
 
@@ -42,10 +42,10 @@ export default function Projects() {
                 <Row xs={1} md={3} className="g-4 bigMargin mb-5">
                     {item.map((id) => (
                         <Col key={id._id}>
-                            <Card className='py-1'>
+                            <Card className='py-1 cardHeight'>
                                 <Card.Img variant="top" className='img-fluid ' src={id.imageLink} />
                                 <Card.Body className='text-start'>
-                                    <p>educative</p>
+                                    <p>Unive</p>
                                     <Card.Title >{id.coursename}</Card.Title>
                                     <Card.Text>{id.about.slice(0, 100)}              </Card.Text>
                                 </Card.Body>

@@ -28,7 +28,7 @@ export default function Assessments() {
             <Container data-aos="fade-up-left">
                 <Row className='g-4'>
                     <Col xs={6}>
-                        {item.map((id) => (
+                        {item.slice(0, item.length / 2).map((id) => (
                             <Row key={id._id} xs={1} className="g-3 my-3 border">
                                 <Col xs={12} md={4} className='border-end'>
                                     <img className='img-fluid ' src={id.imageLink} alt="" />
@@ -44,7 +44,7 @@ export default function Assessments() {
                         ))}
                     </Col>
                     <Col xs={6}>
-                        {item.map((id) => (
+                        {item.slice(item.length / 2, item.length).map((id) => (
                             <Row key={id._id} xs={1} className="g-3 my-3 border">
                                 <Col xs={12} md={4} className='border-end'>
                                     <img className='img-fluid ' src={id.imageLink} alt="" />

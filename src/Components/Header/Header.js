@@ -96,7 +96,7 @@ export default function Header() {
     }
     return (
         <>
-        {/* NAV BAR */}
+            {/* NAV BAR */}
             <Navbar sticky="top" fluid collapseOnSelect expand="lg" bg="white" variant="light">
                 <Container fluid>
                     {user.displayName && <span onClick={handleOn} className='fs-2 pe-3'>  <GiHamburgerMenu /></span>}
@@ -214,12 +214,10 @@ export default function Header() {
             <Offcanvas className='ss' show={showOff} onHide={handleOff}>
                 <Offcanvas.Body>
                     <div class="d-flex flex-column  mb-3">
-                        <NavLink to='/learn'> <div className=" py-2"><FiBook className='fs-2 mx-2' /><br /><span className="littleFont">my learning</span></div></NavLink>
-                        <NavLink to='/assessments'><div className="py-2 "><BiSearchAlt2 className='fs-2 mx-2' /><br /><span className="littleFont">Explore</span></div></NavLink>
-                        <NavLink to='/learning-plans'><div className="py-2 "><BsStack className='fs-2 mx-2' /><br /><span className="littleFont">Personalized Plans</span></div></NavLink>
-                        <NavLink to='/projects'><div className="py-2 "><TiPuzzle className='fs-2 mx-2' /><br /><span className="littleFont">Projects</span></div></NavLink>
-                        <NavLink to='/paths'><div className="py-2 "><GiPathDistance className='fs-2 mx-2' /><br /><span className="littleFont">Paths</span></div></NavLink>
-                        <NavLink to='/assessments'><div className="py-2 "><GiBullseye className='fs-2 mx-2' /><br /><span className="littleFont">Assesments</span></div></NavLink>
+                        <NavLink to='/learn'> <FiBook className='fs-2  text-dark mx-2 mb-2' /><div className="littleFont pb-4"><span className=" ps-3">My </span>Learning</div></NavLink>
+                        <NavLink to='/course-catalogue'><BiSearchAlt2 className='fs-2 mx-2 text-dark ' /> <div className="littleFont pb-3">Explore</div></NavLink>
+                        <NavLink to='/projects'><TiPuzzle className='fs-2 mx-2 text-dark ' /><div className="littleFont pb-3 ">Projects</div></NavLink>
+                        <NavLink to='/assessments'><GiBullseye className='fs-2 mx-2 text-dark ' /> <div className="littleFont pb-3">Assesments</div></NavLink>
                     </div>
                 </Offcanvas.Body>
             </Offcanvas>
