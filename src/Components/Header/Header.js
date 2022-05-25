@@ -211,7 +211,7 @@ export default function Header() {
                             </FloatingLabel>
                             {error ? <p className='text-danger text-center'>{error}</p> : ''}
 
-                            <button className='btn btn-primary d-block mx-auto my-3 px-5 '>Login </button>
+                            <p className='btn btn-primary d-block mx-auto my-3 py-3 px-5 '>Login </p>
                         </form>
                         {/* google sign in */}
                         <p className='fs-5 my-3'>Stay signed in</p>
