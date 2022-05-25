@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button,  Col, Container, Row } from 'react-bootstrap'
+import { Button, Col, Container, Row } from 'react-bootstrap'
 import top from '../images/enterprise/top.png'
 import row1 from '../images/enterprise/row1.png'
 import row2 from '../images/enterprise/row-2-2.png'
@@ -14,6 +14,7 @@ import ReviewCard from '../Common/ReviewCard'
 import Demo from '../Common/Demo'
 import Resources from '../Common/Resources'
 import Header from '../Header/Header'
+import Footer from '../Footer/Footer'
 export default function Enterprise() {
     return (
         <>
@@ -137,6 +138,7 @@ export default function Enterprise() {
             </Container >
             {/* demo */}
             <Demo />
+            <Footer />
         </>
     )
 }

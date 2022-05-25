@@ -1,5 +1,6 @@
 import { Container } from 'react-bootstrap'
 import ContactForm from '../Common/ContactForm'
+import Footer from '../Footer/Footer'
 import Header from '../Header/Header'
 import conactImage from '../images/Contact/contact.png'
 export default function Contact() {
@@ -22,7 +23,7 @@ export default function Contact() {
                     <img className='img-fluid ' src={conactImage} alt="" />
                 </Container>
             </Container>
-
+            <Footer />
         </>
     )
 }

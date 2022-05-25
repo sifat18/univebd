@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button, Col, Container, Row } from 'react-bootstrap'
 import NormalCards from '../../Common/NormalCards'
+import Footer from '../../Footer/Footer'
 import Header from '../../Header/Header'
 import learn from '../../images/learn.png'
 import learn1 from '../../images/learn1.png'
@@ -107,7 +108,7 @@ export default function LearningPlan() {
                 </Container>
             </Container>
 
-
+            <Footer />
 
         </>
     )

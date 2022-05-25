@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
+import Footer from '../Footer/Footer'
 import Header from '../Header/Header'
 import pic1 from '../images/How-It-works/Picture2-1.png'
 import pic2 from '../images/How-It-works/Picture3-1-e1640099208951.png'
@@ -65,6 +66,7 @@ export default function HowItworks() {
                     <img className='img-fluid ' src={pic9} alt="" />
                 </Container>
             </Container> */}
+            <Footer />
         </>
     )
 }

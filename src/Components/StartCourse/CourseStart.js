@@ -5,6 +5,7 @@ import Quiz from '../Common/Quiz'
 import Videos from '../Common/Videos'
 import Header from '../Header/Header'
 import { RiVideoAddLine } from "react-icons/ri";
+import Footer from '../Footer/Footer'
 
 export default function CourseStart() {
     const [course, setcourses] = useState({})
@@ -122,6 +123,7 @@ export default function CourseStart() {
                     </Col>
                 </Row >
             </Container >
+            <Footer />
         </>
     )
 }

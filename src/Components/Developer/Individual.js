@@ -14,6 +14,7 @@ import NormalCards from '../Common/NormalCards'
 import PriceCard from '../Common/PriceCard'
 import { NavLink } from 'react-router-dom'
 import Header from '../Header/Header'
+import Footer from '../Footer/Footer'
 export default function Individual() {
     const [item] = useData();
 
@@ -213,6 +214,7 @@ export default function Individual() {
                 <ReviewCard />
 
             </Container >
+            <Footer />
         </>
     )
 }

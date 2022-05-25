@@ -7,6 +7,7 @@ import ppl from '../images/instructor/ppl.png'
 import code from '../images/instructor/code.png'
 import lady from '../images/instructor/chair-lady.png'
 import Header from '../Header/Header'
+import Footer from '../Footer/Footer'
 export default function Instructor() {
     return (
         <>
@@ -82,7 +83,7 @@ export default function Instructor() {
                     <Col xs={12} md={4} className=" mb-5">
                         <div class="bg-white  py-5 px-4"><img src={'rev1'} alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm" />
                             <p className='text-start my-3 text-muted'>
-                            "কোর্স ডিজাইন করা খুবই সহজ। আমি কোর্স প্ল্যান করার পর এক রাতেই পুরো কোর্স ফরম্যাট Unive এ ডিজাইন করতে পেরেছি যা নিঃসন্দেহে ইন্ডাস্ট্রি বেস্ট"
+                                "কোর্স ডিজাইন করা খুবই সহজ। আমি কোর্স প্ল্যান করার পর এক রাতেই পুরো কোর্স ফরম্যাট Unive এ ডিজাইন করতে পেরেছি যা নিঃসন্দেহে ইন্ডাস্ট্রি বেস্ট"
                             </p>
                             <h5 class="fw-bold text-start"> সায়মা কবির </h5>
                             <h5 class="fw-bold text-start">সিনিয়র লেকচারার, ঢাকা নার্সিং ইনস্টিটিউট</h5>
@@ -92,7 +93,7 @@ export default function Instructor() {
                     <Col xs={12} md={4} className=" mb-5">
                         <div class="bg-white py-5 px-4"><img src={'rev3'} alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm" />
                             <p className='text-start my-3 text-muted'>
-                            "ইন্টুইটিভ ইন্সট্রাক্টর প্যানেল। এছাড়া স্টুডেন্টদের জন্য ইন ব্রাউজার কোডিং স্যান্ডবক্স থাকাতে অন দি গো স্টুডেন্টরা শিখতে পারছে"
+                                "ইন্টুইটিভ ইন্সট্রাক্টর প্যানেল। এছাড়া স্টুডেন্টদের জন্য ইন ব্রাউজার কোডিং স্যান্ডবক্স থাকাতে অন দি গো স্টুডেন্টরা শিখতে পারছে"
                             </p>
                             <h5 class="fw-bold text-start"> জাহিন খান</h5>
                             <h5 class="fw-bold text-start">সফটওয়্যার ইঞ্জিনিয়ার, অ্যামাজন</h5>
@@ -103,7 +104,7 @@ export default function Instructor() {
                     <Col xs={12} md={4} className=" mb-5">
                         <div class="bg-white py-5 px-4"><img src={'rev2'} alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm" />
                             <p className='text-start my-3 text-muted'>
-                            "আমি শুরুতে ইউটিউবে আমার মোবাইল রিপেয়ার  ভিডিও আপলোড করতাম পরবর্তীতে Unive সম্পর্কে জানতে পেরে এখানে কোর্স নিচ্ছি। যেকোনো সমস্যায় সাপোর্ট দ্রুত সমাধান করে দিচ্ছে"
+                                "আমি শুরুতে ইউটিউবে আমার মোবাইল রিপেয়ার  ভিডিও আপলোড করতাম পরবর্তীতে Unive সম্পর্কে জানতে পেরে এখানে কোর্স নিচ্ছি। যেকোনো সমস্যায় সাপোর্ট দ্রুত সমাধান করে দিচ্ছে"
 
                             </p>
                             <h5 class="fw-bold text-start"> বাবু তালুকদার</h5>
@@ -122,20 +123,20 @@ export default function Instructor() {
                     <Accordion.Item eventKey="0" >
                         <Accordion.Header>আমি ইন্সট্রাক্টর হতে চাই। কিভাবে অগ্রসর হবো?</Accordion.Header>
                         <Accordion.Body>
-                        অনুগ্রহপূর্বক আপনি Unive ইনস্ট্রাক্টর ফরম পূরণ করলেই আমাদের টীম আপনার সাথে অতিসত্বর যোগাযোগ করবে।
+                            অনুগ্রহপূর্বক আপনি Unive ইনস্ট্রাক্টর ফরম পূরণ করলেই আমাদের টীম আপনার সাথে অতিসত্বর যোগাযোগ করবে।
                         </Accordion.Body>
                     </Accordion.Item>
                     <Accordion.Item eventKey="1">
                         <Accordion.Header>আমার কিছু ট্রেইনিং আইডিয়া আছে কিন্তু আমি কিভাবে শুরু করবো বুঝছি না।</Accordion.Header>
                         <Accordion.Body>
-                        গ্রেট! আপনি আমাদেরকে ইমেইল করুন কিংবা ইনস্ট্রাক্টর ফরম ফিল আপ করুন। আমাদের টীম আপনাকে আইডিয়া ক্রিয়েশন থেকে শুরু করে ট্রেইনিং ডিজাইন প্রতিটি ক্ষেত্রে সাহায্য করবে। আপনি আপনার এক্সপেরিয়েন্স এবং এক্সপার্টাইজ নিয়ে আসুন, একে ট্রেইনিং এ রূপদান করা থেকে শুরু করে বাকিটা Unive এর দায়িত্ব।
+                            গ্রেট! আপনি আমাদেরকে ইমেইল করুন কিংবা ইনস্ট্রাক্টর ফরম ফিল আপ করুন। আমাদের টীম আপনাকে আইডিয়া ক্রিয়েশন থেকে শুরু করে ট্রেইনিং ডিজাইন প্রতিটি ক্ষেত্রে সাহায্য করবে। আপনি আপনার এক্সপেরিয়েন্স এবং এক্সপার্টাইজ নিয়ে আসুন, একে ট্রেইনিং এ রূপদান করা থেকে শুরু করে বাকিটা Unive এর দায়িত্ব।
 
                         </Accordion.Body>
                     </Accordion.Item>
                     <Accordion.Item eventKey="2">
                         <Accordion.Header>Unive এ সাকসেসফুল ইনস্ট্রাক্টর হতে হলে আমাকে কি করতে হবে?</Accordion.Header>
                         <Accordion.Body>
-                        Unive এ সমস্ত ট্রেইনিং প্র্যাক্টিক্যাল এবং বর্তমান ইন্ডাস্ট্রি প্র্যাক্টিস কে হাইলাইট করে। ইনস্ট্রাক্টর হিসেবে আপনার ফোকাস থাকতে হবে আপনি যে ইন্ডাস্ট্রির জন্য ট্রেইনিং দিচ্ছেন তা যেনো আপ টু ডেট ইন্ডাস্ট্রি প্র্যাক্টিস কে ফলো করে। আমরা পুঁথিগত কন্টেন্ট কে ডিসকারেজ করি। আমাদের দেওয়া গাইডলাইন ফলো করলেই আপনি অনেকদূর এগিয়ে থাকবেন প্রথম সারির ইন্সট্রাক্টর হিসেবে।
+                            Unive এ সমস্ত ট্রেইনিং প্র্যাক্টিক্যাল এবং বর্তমান ইন্ডাস্ট্রি প্র্যাক্টিস কে হাইলাইট করে। ইনস্ট্রাক্টর হিসেবে আপনার ফোকাস থাকতে হবে আপনি যে ইন্ডাস্ট্রির জন্য ট্রেইনিং দিচ্ছেন তা যেনো আপ টু ডেট ইন্ডাস্ট্রি প্র্যাক্টিস কে ফলো করে। আমরা পুঁথিগত কন্টেন্ট কে ডিসকারেজ করি। আমাদের দেওয়া গাইডলাইন ফলো করলেই আপনি অনেকদূর এগিয়ে থাকবেন প্রথম সারির ইন্সট্রাক্টর হিসেবে।
 
                         </Accordion.Body>
                     </Accordion.Item>
@@ -202,6 +203,7 @@ export default function Instructor() {
                     </Col>
                 </Row>
             </Container>
+            <Footer />
         </>
     )
 }

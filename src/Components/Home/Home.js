@@ -11,6 +11,7 @@ import ReviewCard from '../Common/ReviewCard'
 import Companies from '../Common/Companies'
 import Header from '../Header/Header'
 import { NavLink } from 'react-router-dom'
+import Footer from '../Footer/Footer'
 export default function Home() {
     return (
         <>
@@ -49,7 +50,7 @@ export default function Home() {
                     </div>
 
                 </section>
-                
+
             </Container>
             {/* 2nd last part */}
             <Container fluid data-aos="fade-down" className='text-center py-5 '>
@@ -92,6 +93,7 @@ export default function Home() {
                 <ReviewCard />
 
             </Container >
+            <Footer />
         </>
     )
 }

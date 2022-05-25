@@ -7,6 +7,7 @@ import resume from '../images/hr/resume.png'
 import loud from '../images/hr/loud.png'
 import ContactForm from '../Common/ContactForm'
 import Header from '../Header/Header'
+import Footer from '../Footer/Footer'
 export default function Recruiting() {
     return (
         <>
@@ -134,6 +135,7 @@ export default function Recruiting() {
                 <p className=' my-4 smallText text-muted'>আপনি যদি আগ্রহী হন তাহলে যোগাযোগ করুন আমাদের টিম এর সাথে।</p>
                 <Button variant='btn btn-primary' href='/home'> কথা বলুন আমাদের রিপ্রেজেন্টেটিভ এর সাথে</Button>
             </Container>
+            <Footer />
         </>
     )
 }

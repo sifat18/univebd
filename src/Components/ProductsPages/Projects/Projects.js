@@ -7,6 +7,7 @@ import useData from '../../dataloadHooks/dataload';
 import { NavLink } from 'react-router-dom'
 import Header from '../../Header/Header'
 import './projects.css'
+import Footer from '../../Footer/Footer'
 export default function Projects() {
     const [item] = useData();
 
@@ -63,6 +64,7 @@ export default function Projects() {
                     ))}
                 </Row>
             </Container>
+            <Footer />
         </>
     )
 }

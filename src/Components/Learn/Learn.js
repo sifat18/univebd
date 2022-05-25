@@ -7,8 +7,9 @@ import dr from '../images/icons8-down-arrow-40.png'
 import { NavLink } from 'react-router-dom'
 import Header from '../Header/Header'
 import useAuth from '../Context/useAuth'
+import Footer from '../Footer/Footer'
 export default function Learn() {
-    const { user, isLoading } = useAuth()
+    const { user } = useAuth()
 
     const [item] = useData();
     // console.log(item);
@@ -91,6 +92,7 @@ export default function Learn() {
                 <Button className=' my-2 text-center' variant="primary">Explore all courses and paths </Button>
 
             </Container>
+            <Footer />
         </>
     )
 }

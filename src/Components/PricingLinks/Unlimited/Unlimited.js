@@ -1,8 +1,9 @@
 import React from 'react'
-import {  Col, Container, Row } from 'react-bootstrap'
+import { Col, Container, Row } from 'react-bootstrap'
 import Companies from '../../Common/Companies'
 import Demo from '../../Common/Demo'
 import PriceCard from '../../Common/PriceCard'
+import Footer from '../../Footer/Footer'
 import Header from '../../Header/Header'
 import unlimited from '../../images/unlimited.png'
 
@@ -65,6 +66,7 @@ export default function Unlimited() {
             <Container data-aos="fade-down" fluid className='middle my-5 py-5'>
                 <Demo />
             </Container>
+            <Footer />
         </>
     )
 }

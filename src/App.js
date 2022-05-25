@@ -102,9 +102,10 @@ function App() {
               <Route path="/dashboard/adtutor" element={<AddInstructor />} />
 
             </Route>
+
             <Route path="*" element={<Nopage />} />
           </Routes>
-          <Footer />
+
         </ScrollToTop>
       </BrowserRouter>
 

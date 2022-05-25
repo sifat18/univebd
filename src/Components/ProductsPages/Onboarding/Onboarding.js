@@ -16,6 +16,7 @@ import check from '../../images/check.png'
 import './onboard.css'
 import Companies from '../../Common/Companies'
 import Header from '../../Header/Header'
+import Footer from '../../Footer/Footer'
 export default function Onboarding() {
     const [flag, setFlag] = useState(true)
     const [flag2, setFlag2] = useState(false)
@@ -193,7 +194,7 @@ export default function Onboarding() {
                 <Demo />
             </Container>
 
-
+            <Footer />
 
 
         </>

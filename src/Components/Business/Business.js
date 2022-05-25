@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button,  Col, Container, Row } from 'react-bootstrap'
+import { Button, Col, Container, Row } from 'react-bootstrap'
 import bus from '../images/bus.jpg'
 // import bus2 from '../images/bus2.png'
 import check from '../images/check.png'
@@ -11,6 +11,7 @@ import Companies from '../Common/Companies'
 import ReviewCard from '../Common/ReviewCard'
 import Resources from '../Common/Resources'
 import Header from '../Header/Header'
+import Footer from '../Footer/Footer'
 export default function Business() {
     return (
         <>
@@ -80,6 +81,7 @@ export default function Business() {
                 {/* demo */}
             </Container>
             <Demo />
+            <Footer />
         </>
     )
 }

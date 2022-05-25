@@ -2,6 +2,7 @@ import React from 'react'
 import { Accordion, Button, Card, Col, Container, Row } from 'react-bootstrap'
 import Companies from '../Common/Companies'
 import Demo from '../Common/Demo'
+import Footer from '../Footer/Footer'
 import Header from '../Header/Header'
 import check from '../images/check.png'
 
@@ -14,7 +15,7 @@ export default function EnterprisePricing() {
                 <section className='text-center '>
                     <h2 className=''>আপনার প্রতিষ্ঠানের এমপ্লয়ীদের জন্য সাজান ইউনিক এক্সপেরিয়েন্স! </h2>
                     <h4 className=' mt-3  mx-auto smallText'>প্রতিটি টীম আলাদা এবং তাদের ট্রেইনিং ও হতে হবে আলাদা। সেই কাস্টোমাইজড ট্রেইনিং ডিজাইন আপনি করতে পারবেন Unive এ।<br />
-                    আমাদের সার্ভিস নিয়ে আরো জানতে যোগাযোগ করুন Unive টীম এর সাথে।</h4>
+                        আমাদের সার্ভিস নিয়ে আরো জানতে যোগাযোগ করুন Unive টীম এর সাথে।</h4>
                 </section>
             </Container>
             <Container data-aos="fade-up" fluid className='middle text-center my-5 py-5'>
@@ -87,7 +88,7 @@ export default function EnterprisePricing() {
             </Container>
 
             <Container data-aos="fade-up-left"  >
-            <p className='middle text-center my-5'> Unive ব্যবহার করছে দেশের প্রথম সারির প্রতিষ্ঠানগুলো:</p>
+                <p className='middle text-center my-5'> Unive ব্যবহার করছে দেশের প্রথম সারির প্রতিষ্ঠানগুলো:</p>
                 <Companies />
 
             </Container>
@@ -99,19 +100,19 @@ export default function EnterprisePricing() {
                         <Accordion.Item eventKey="0">
                             <Accordion.Header>কোন প্ল্যান এ ইউজার লিমিট কত?</Accordion.Header>
                             <Accordion.Body>
-                            টিম প্ল্যান ৩ থেকে ২০ জন ইউজার এর জন্য। এন্টারপ্রাইজ প্ল্যান ২০ বা তার বেশি ইউজার দের জন্য। আল্টিমেট প্ল্যান ৩০ বা তার বেশি ইউজার দের জন্য।
+                                টিম প্ল্যান ৩ থেকে ২০ জন ইউজার এর জন্য। এন্টারপ্রাইজ প্ল্যান ২০ বা তার বেশি ইউজার দের জন্য। আল্টিমেট প্ল্যান ৩০ বা তার বেশি ইউজার দের জন্য।
                             </Accordion.Body>
                         </Accordion.Item>
                         <Accordion.Item eventKey="1">
                             <Accordion.Header>আমরা কি ইচ্ছে মত প্ল্যান চেঞ্জ করতে পারবো?</Accordion.Header>
                             <Accordion.Body>
-                            হ্যা। আপনি সাপোর্ট এর সাথে কথা বলে অন ডিমান্ড পরবর্তী বিলিং সাইকেল থেকে প্ল্যান চেঞ্জ করতে পারবেন।
+                                হ্যা। আপনি সাপোর্ট এর সাথে কথা বলে অন ডিমান্ড পরবর্তী বিলিং সাইকেল থেকে প্ল্যান চেঞ্জ করতে পারবেন।
                             </Accordion.Body>
                         </Accordion.Item>
                         <Accordion.Item eventKey="2">
                             <Accordion.Header>প্রাইসিং সম্পর্কে জানবো কিভাবে?</Accordion.Header>
                             <Accordion.Body>
-                            অনুগ্রহপূর্বক আপনার জিজ্ঞাসা এবং কন্ট্যাক্ট নম্বর আমাদের কে মেইল করুন বা ডেমো এর জন্য ফর্ম পূরণ করুন। আমাদের টিম ১ দিনের মাঝে আপনার সাথে যোগাযোগ করবে।
+                                অনুগ্রহপূর্বক আপনার জিজ্ঞাসা এবং কন্ট্যাক্ট নম্বর আমাদের কে মেইল করুন বা ডেমো এর জন্য ফর্ম পূরণ করুন। আমাদের টিম ১ দিনের মাঝে আপনার সাথে যোগাযোগ করবে।
                             </Accordion.Body>
                         </Accordion.Item>
                     </Accordion>
@@ -120,6 +121,7 @@ export default function EnterprisePricing() {
             <Container fluid data-aos="fade-down" className='middle my-5 py-5'>
                 <Demo />
             </Container>
+            <Footer />
         </>
     )
 }

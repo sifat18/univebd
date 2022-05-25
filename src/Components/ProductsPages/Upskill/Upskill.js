@@ -2,6 +2,7 @@ import React from 'react'
 import { Button, Col, Container, Row } from 'react-bootstrap'
 import Demo from '../../Common/Demo'
 import NormalCards from '../../Common/NormalCards'
+import Footer from '../../Footer/Footer'
 import Header from '../../Header/Header'
 import up0 from '../../images/up0.png'
 import up1 from '../../images/up1.png'
@@ -89,7 +90,7 @@ export default function Upskill() {
 
 
 
-
+            <Footer />
         </>
     )
 }

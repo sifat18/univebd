@@ -5,6 +5,7 @@ import path from '../images/path.png'
 import ar from '../images/icons8-arrow-.png'
 import { NavLink } from 'react-router-dom';
 import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 
 export default function Paths() {
     const [item] = useData();
@@ -68,6 +69,7 @@ export default function Paths() {
                     ))}
                 </Row>
             </Container>
+            <Footer />
         </>
     )
 }

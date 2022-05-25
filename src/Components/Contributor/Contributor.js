@@ -1,5 +1,6 @@
 import React from 'react'
-import { Accordion, Button, Col, Container,  Row } from 'react-bootstrap'
+import { Accordion, Button, Col, Container, Row } from 'react-bootstrap'
+import Footer from '../Footer/Footer'
 import Header from '../Header/Header'
 import contribe from '../images/contribute/contribe.png'
 export default function Contributor() {
@@ -29,7 +30,7 @@ export default function Contributor() {
                         <Col xs={12} md={4} className=" mb-2">
                             <div class="  px-4">
                                 <p className='text-start my-3 fw-bold fs-4'>
-                                        Unive এ কেন লিখবেন?
+                                    Unive এ কেন লিখবেন?
 
                                 </p>
                                 <ul className='text-start'>
@@ -42,7 +43,7 @@ export default function Contributor() {
                         <Col xs={12} md={4} className=" mb-2">
                             <div class="  px-4">
                                 <p className='text-start my-3 fw-bold fs-4'>
-                                        আপনার জন্য কি আছে?
+                                    আপনার জন্য কি আছে?
 
                                 </p>
                                 <ul className='text-start '>
@@ -56,7 +57,7 @@ export default function Contributor() {
                         <Col xs={12} md={4} className=" mb-5">
                             <div class="  px-4">
                                 <p className='text-start my-3 fw-bold fs-4'>
-                                        কিভাবে শুরু করবেন?
+                                    কিভাবে শুরু করবেন?
                                 </p>
                                 <ul className='text-start'>
                                     <li>প্রথমে Unive এ ফ্রী একাউন্ট খুলে ফেলুন এবং Unive ব্লগ এ আপনার আর্টিকেল বা আর্টিকেল এর কিছু অংশ সাবমিট করুন। Unive মডারেটর আপনার সাথে অতিসত্বর যোগাযোগ করবে।</li>
@@ -115,12 +116,12 @@ export default function Contributor() {
                             <Accordion.Item eventKey="0" >
                                 <Accordion.Header>এখানে কি কোনো রিভিউ প্রসেস আছে?</Accordion.Header>
                                 <Accordion.Body>
-                                জ্বি, এখানে আপনি আর্টিকেল সাবমিট করলে একটি রিভিউ প্রসেস দিয়ে যাবে। আপনি আর্টিকেল সাবমিট করার পর অনতিবিলম্বে আপনার সাথে যোগাযোগ করা হবে।</Accordion.Body>
+                                    জ্বি, এখানে আপনি আর্টিকেল সাবমিট করলে একটি রিভিউ প্রসেস দিয়ে যাবে। আপনি আর্টিকেল সাবমিট করার পর অনতিবিলম্বে আপনার সাথে যোগাযোগ করা হবে।</Accordion.Body>
                             </Accordion.Item>
                             <Accordion.Item eventKey="1">
                                 <Accordion.Header>আমি কোন টপিক নিয়ে লিখবো?</Accordion.Header>
                                 <Accordion.Body>
-                                আপনি Unive এর টপিক লিস্ট থেকে যেকোনো টপিক নিয়ে লিখতে পারেন কিংবা আমাদের সাজেস্ট করতে পারেন নতুন কোনো টপিক।</Accordion.Body>
+                                    আপনি Unive এর টপিক লিস্ট থেকে যেকোনো টপিক নিয়ে লিখতে পারেন কিংবা আমাদের সাজেস্ট করতে পারেন নতুন কোনো টপিক।</Accordion.Body>
                             </Accordion.Item>
                         </Accordion>
                     </Col>
@@ -134,8 +135,9 @@ export default function Contributor() {
                         <li>আমাদেরকে ইমেইল করুন: support@unive.com.bd</li>
                         <li> আমাদের সাথে একটি মিটিং ঠিক করুন।</li>
                     </ul>
-                </Container> 
+                </Container>
             </Container>
+            <Footer />
         </>
     )
 }

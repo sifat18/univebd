@@ -2,6 +2,7 @@ import React from 'react'
 import { Button, Col, Container, Row } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom';
 import useData from '../dataloadHooks/dataload';
+import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import top from '../images/assesment/top.png'
 export default function Assessments() {
@@ -61,6 +62,7 @@ export default function Assessments() {
                     </Col>
                 </Row>
             </Container>
+            <Footer />
         </>
     )
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
+import Footer from '../Footer/Footer'
 import Header from '../Header/Header'
 import pic1 from '../images/whyUnive/Picture1.png'
 import pic2 from '../images/whyUnive/Picture2.png'
@@ -70,6 +71,7 @@ export default function Univewhy() {
                     <img className='img-fluid ' src={pic9} alt="" />
                 </Container>
             </Container> */}
+            <Footer />
         </>
     )
 }

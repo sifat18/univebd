@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Container, Modal, Button, Row, Col } from 'react-bootstrap';
 import './addcourse.css'
 import Header from '../Header/Header'
+import Footer from '../Footer/Footer';
 
 export default function CourseAdd() {
     const [show, setShow] = useState(false);
@@ -488,6 +489,7 @@ export default function CourseAdd() {
                     </Button>
                 </Modal.Footer>
             </Modal>
+            <Footer />
         </>
     )
 }

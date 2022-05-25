@@ -15,6 +15,7 @@ import { MdPersonPin } from "react-icons/md";
 import Companies from '../Common/Companies';
 import Header from '../Header/Header';
 import './over.css'
+import Footer from '../Footer/Footer';
 export default function Overview() {
 
     const [courses, setcourses] = useState({})
@@ -156,6 +157,7 @@ export default function Overview() {
                     </Col>
                 </Row>
             </Container>
+            <Footer />
         </>
     )
 }
