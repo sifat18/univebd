@@ -1,4 +1,4 @@
-import { Button, Container, Modal, Nav, Navbar, Offcanvas, Spinner } from 'react-bootstrap'
+import { Button, Container, FloatingLabel, Form, Modal, Nav, Navbar, Offcanvas, Spinner } from 'react-bootstrap'
 import { NavLink, useLocation } from 'react-router-dom';
 // import logo from '../images/logos/cropped-small-px-e1638453380416.png'
 import gogo from '../images/logos/icons8-google.svg'
@@ -14,7 +14,6 @@ import { GiPathDistance } from "react-icons/gi";
 import { GiBullseye } from "react-icons/gi";
 import { FiBook } from "react-icons/fi";
 import { BiSearchAlt2 } from "react-icons/bi";
-import { BsStack } from "react-icons/bs";
 import { TiPuzzle } from "react-icons/ti";
 
 export default function Header() {
@@ -76,7 +75,7 @@ export default function Header() {
         const newLoginData = { ...LoginData };
         newLoginData[field] = value;
         setLoginData(newLoginData);
-        // console.log(loginData)
+        console.log(newLoginData)
 
     }
     const handleLogin = () => {
@@ -192,16 +191,30 @@ export default function Header() {
                 <Modal.Body>
                     <Container className='py-2'>
                         {/* Login form */}
-                        <h2 className='text-center fs-1 fw-bold'>Login</h2>
+                        <h2 className='text-start fs-3 fw-bold'>Sign in to your account</h2>
                         <form className='mt-3  py-3' onSubmit={handleLoginSubmit}>
-                            <label htmlFor="">Email</label>
-                            <input required className='input-group mt-2 mb-3 ' type="text" onChange={handleOnChangeL} placeholder='email' name="email" id="email" />
-                            <label htmlFor="">Password</label>
-                            <input required className='input-group mt-2 mb-5 ' type="password" onChange={handleOnChangeL} placeholder='password' name="pass" id="pass" />
+                            {/* <label htmlFor="">Email</label>
+                            <input required className='input-group mt-2 mb-3 ' type="text" onChange={handleOnChangeL} placeholder='email' name="email" id="email" /> */}
+                            <FloatingLabel
+                                controlId="floatingInput"
+                                label="Email address"
+                                className="mt-2 mb-5 text-start"
+                            >
+                                <Form.Control type="email" className="text-start" placeholder="name@example.com" name='email' onChange={handleOnChangeL} />
+                            </FloatingLabel>
+
+                            {/* ---------------- */}
+                            {/* <label htmlFor="">Password</label>
+                            <input required className='input-group mt-2 mb-5 ' type="password" onChange={handleOnChangeL} placeholder='password' name="pass" id="pass" /> */}
+                            <FloatingLabel controlId="floatingPassword" label="Password" className="mb-5 ">
+                                <Form.Control type="password" className="text-start" name="pass" placeholder="Password" onChange={handleOnChangeL} />
+                            </FloatingLabel>
                             {error ? <p className='text-danger text-center'>{error}</p> : ''}
 
                             <button className='btn btn-primary d-block mx-auto my-3 px-5 '>Login </button>
                         </form>
+                        {/* google sign in */}
+                        <p className='fs-5 my-3'>Stay signed in</p>
                         <button className='btn  border border-1 d-block mb-5 mx-auto text-dark' onClick={handleLogin} > <img src={gogo} alt="" height='30' width='30' /> Google Sign In</button>
                     </Container>
 
@@ -215,7 +228,7 @@ export default function Header() {
                 <Offcanvas.Body>
                     <div class="d-flex flex-column  mb-3">
                         <NavLink to='/learn'> <FiBook className='fs-2  text-dark mx-2 mb-2' /><div className="littleFont pb-4"><span className=" ps-3">My </span>Learning</div></NavLink>
-                        <NavLink to='/course-catalogue'><BiSearchAlt2 className='fs-2 mx-2 text-dark ' /> <div className="littleFont pb-3">Explore</div></NavLink>
+                        <NavLink to='/learn'><BiSearchAlt2 className='fs-2 mx-2 text-dark ' /> <div className="littleFont pb-3">Explore</div></NavLink>
                         <NavLink to='/projects'><TiPuzzle className='fs-2 mx-2 text-dark ' /><div className="littleFont pb-3 ">Projects</div></NavLink>
                         <NavLink to='/assessments'><GiBullseye className='fs-2 mx-2 text-dark ' /> <div className="littleFont pb-3">Assesments</div></NavLink>
                     </div>

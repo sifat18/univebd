@@ -97,7 +97,7 @@ const Footer = () => {
                     </Col>
                     <Col xs={12} md={2} className=''>
                         <p className='text-white'>More</p>
-                        <NavLink to='/course-catalogue'> <p className='ashText'>Course Catalog</p></NavLink>
+                        <NavLink to='/learn'> <p className='ashText'>Course Catalog</p></NavLink>
                         <NavLink to='/scholarships'> <p className='ashText'>Scholarships</p></NavLink>
                         {/* <NavLink to='/press'><p className='ashText'>Press</p></NavLink> */}
                         <NavLink to='/contact'><p className='ashText'>Contact Us</p></NavLink>

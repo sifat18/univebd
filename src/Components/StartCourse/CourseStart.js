@@ -5,6 +5,8 @@ import Quiz from '../Common/Quiz'
 import Videos from '../Common/Videos'
 import Header from '../Header/Header'
 import { RiVideoAddLine } from "react-icons/ri";
+import { MdQuiz } from "react-icons/md";
+
 import Footer from '../Footer/Footer'
 
 export default function CourseStart() {
@@ -87,9 +89,10 @@ export default function CourseStart() {
                                     <Accordion.Header>{data.module_name}</Accordion.Header>
                                     <Accordion.Body >
                                         <ul className='nobull courseStartMargin'>
-                                            {data.sub_mod1 && <li onClick={() => data.show_mod && sendVideo(data, 'sub_video1', index, false)}><RiVideoAddLine className='fs-3' /> {data.sub_mod1}</li>}
-                                            {data.sub_mod2 && <li onClick={() => data.show_mod && sendVideo(data, 'sub_video2', index, false)}><RiVideoAddLine className='fs-3' /> {data.sub_mod2}</li>}
-                                            {data.sub_mod3 && <li onClick={() => data.show_mod && sendVideo(data, 'sub_video3', index, true)}> <RiVideoAddLine className='fs-3' /> {data.sub_mod3}</li>}
+                                            {data.sub_mod1 && <li className='my-2' onClick={() => data.show_mod && sendVideo(data, 'sub_video1', index, false)}><RiVideoAddLine className='fs-3' /> {data.sub_mod1}</li>}
+                                            {data.sub_mod2 && <li className='my-2' onClick={() => data.show_mod && sendVideo(data, 'sub_video2', index, false)}><RiVideoAddLine className='fs-3' /> {data.sub_mod2}</li>}
+                                            {data.sub_mod3 && <li className='my-2' onClick={() => data.show_mod && sendVideo(data, 'sub_video3', index, true)}> <RiVideoAddLine className='fs-3' /> {data.sub_mod3}</li>}
+                                            <li className='my-3'><MdQuiz className='fs-3 ' /> Quiz</li>
                                         </ul>
                                     </Accordion.Body>
 
