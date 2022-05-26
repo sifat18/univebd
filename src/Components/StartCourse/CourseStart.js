@@ -11,6 +11,7 @@ import Footer from '../Footer/Footer'
 
 export default function CourseStart() {
     const [course, setcourses] = useState({})
+    const [curIndex, setcurIndex] = useState(0)
     const [video, setVideo] = useState('')
     const [quiz, setQuiz] = useState(false)
     const [show, setShow] = useState(false)
@@ -19,6 +20,7 @@ export default function CourseStart() {
     const [nexMod, setnexMod] = useState(false)
     const { courseID } = useParams()
     const maxModuleIndex = course?.Module?.length - 1
+    // const curIndex = 0
 
     useEffect(() => {
         fetch(`https://fierce-woodland-01411.herokuapp.com/course/${courseID}`).then(res => res.json()).then(data => setcourses(data))
@@ -73,6 +75,12 @@ export default function CourseStart() {
         setShow(false)
 
     }
+    const moduleNavigate = (index,flag) => {
+        setVideo(course.Module[index].sub_video1)
+        setdescription(course.Module[index].sub_description1)
+      flag?setcurIndex(curIndex+1) :setcurIndex(curIndex-1)
+      
+    }
     const nextModule = () => {
         setQuiz(true)
     }
@@ -101,7 +109,7 @@ export default function CourseStart() {
                         </Accordion>
                     </Col>
                     <Col xs={12} md={9} className=''>
-                        {!quiz && <Videos show={show} basic={course.demoLink} link={video} handl2={nextModule} breif={description} />
+                        {!quiz && <Videos show={show} maxMod={maxModuleIndex} basic={course.demoLink} link={video} curIdx={curIndex} handle={moduleNavigate} handl2={nextModule} breif={description} />
                         }
                         {quiz && <Quiz courseData={course} maxMod={maxModuleIndex} handl={nextVideo} nextIndex={nex} nextMod={nexMod} />
                         }
