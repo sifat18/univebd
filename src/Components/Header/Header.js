@@ -10,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 import useAuth from '../Context/useAuth';
 import './header.css'
 import { GiHamburgerMenu } from "react-icons/gi";
+import { MdNavigateNext } from "react-icons/md";
 import { GiPathDistance } from "react-icons/gi";
 import { GiBullseye } from "react-icons/gi";
 import { FiBook } from "react-icons/fi";
@@ -46,7 +47,7 @@ export default function Header() {
         const newRegisterData = { ...registerData };
         newRegisterData[field] = value;
         setregisterData(newRegisterData);
-        // console.log(loginData)
+        console.log(newRegisterData)
 
     }
     const hadlePass = e => {
@@ -98,7 +99,7 @@ export default function Header() {
             {/* NAV BAR */}
             <Navbar sticky="top" fluid collapseOnSelect expand="lg" bg="white" variant="light">
                 <Container fluid>
-                    {user.displayName && <span onClick={handleOn} className='fs-2 pe-3'>  <GiHamburgerMenu /></span>}
+                    {user.displayName && <span onClick={handleOn} className='fs-2 pe-3'>  <MdNavigateNext className='mousepoint'/></span>}
                     <NavLink to='/'> <Navbar.Brand href="#home" className="me-5 ">
                         <img
                             src={logo}
@@ -117,19 +118,7 @@ export default function Header() {
                             <NavLink to='/why-unive'>  <Nav.Link className=" d-md-none text-dark" href="/why-unive">ইউনিভ কেন</Nav.Link></NavLink>
                             <NavLink to='/how-it-works'><Nav.Link className=" d-md-none text-dark" href="/how-it-works">কিভাবে কাজ করে</Nav.Link></NavLink>
 
-                            {/* <NavDropdown title="ইউনিভ কেন" id="navbarScrollingDropdown" >
-                                <NavLink to='/business'>    <NavDropdown.Item href="#action3">Developer team</NavDropdown.Item></NavLink>
-                                <NavLink to='/individual-learner'> <NavDropdown.Item href="#action4">Developers</NavDropdown.Item></NavLink>
-                            </NavDropdown>
-                            <NavDropdown title="কিভাবে কাজ করে" id="navbarScrollingDropdown" >
-                                <NavLink to='/upskill'> <NavDropdown.Item href="#action3">Learning for teams</NavDropdown.Item></NavLink >
-                                <NavLink to='/upskill'><NavDropdown.Item href="#action4">Learning for individuals</NavDropdown.Item></NavLink >
-                                <NavLink to='/onboarding'><NavDropdown.Item href="#action3">Onboarding</NavDropdown.Item></NavLink >
-                                <NavLink to='/upskill'><NavDropdown.Item href="#action4">Assesments</NavDropdown.Item></NavLink >
-                                <NavLink to='/learning-plans'><NavDropdown.Item href="#action3">Personalized learning plans</NavDropdown.Item></NavLink >
-                                <NavLink to='/projects'><NavDropdown.Item href="#action4">Projects</NavDropdown.Item></NavLink >
-                            </NavDropdown> */}
-
+                           
                         </Nav>
                     </Navbar.Collapse>
 
@@ -157,25 +146,41 @@ export default function Header() {
 
             {/* modal register*/}
             <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
-
-                </Modal.Header>
+               
                 <Modal.Body>
                     <Container className='py-2'>
                         {/* register form */}
-                        <h3 className='text-center'>Join Unive for free</h3>
+                        <h3 className='text-center fs-1'>Join Unive for free</h3>
                         <form className='mx-auto  py-3 ' onSubmit={handleRegisterSubmit}>
-                            <label htmlFor="">Username</label>
-                            <input required className='input-group mt-2 mb-3 ' type="text" onChange={handleOnChange} placeholder='name' name="name" id="name" />
-                            <label htmlFor="">Email</label>
-                            <input required className='input-group my-2 mb-3 ' type="email" onChange={handleOnChange} placeholder='email' name="email" id="email" />
-                            <label htmlFor="">Password</label>
-                            <input required className='input-group my-2 mb-3 ' type="password" onChange={handleOnChange} placeholder='password' name="pass" id="pass" />
-                            <label htmlFor="">Confirm Password</label>
-                            <input required className='input-group my-2 mb-5 ' type="password" onBlur={hadlePass} placeholder='re-enter password' name="re-pass" id="pass" />
+                           
+                          <FloatingLabel
+                                controlId="floatingInput"
+                                label="Username"
+                                className="mt-2 mb-5 text-start"
+                            >
+                                <Form.Control type="text" name="name" className="text-start" placeholder="Jane doe" onChange={handleOnChange} />
+                            </FloatingLabel>
+                           {/* ----------- */}
+                              <FloatingLabel
+                                controlId="floatingInput"
+                                label="Email address"
+                                className="mt-2 mb-5 text-start"
+                            >
+                                <Form.Control type="email" className="text-start" placeholder="name@example.com" name="email" onChange={handleOnChange}/>
+                            </FloatingLabel>
+                           
+                           {/* ----------- */}
+                           <FloatingLabel controlId="floatingPassword" label="Password" className="mb-5 ">
+                                <Form.Control type="password" className="text-start"  name="pass" placeholder="Password" onChange={handleOnChange} />
+                            </FloatingLabel>
+                           {/* --------------- */}
+                            <FloatingLabel controlId="floatingPassword" label="Confirm Password" className="mb-5 ">
+                                <Form.Control type="password" className="text-start"  placeholder='re-enter password' name="re-pass" onBlur={hadlePass} />
+                            </FloatingLabel>
+                           {/* ----------- */}
                             {passError ? <p className='text-danger text-center'>{passError}</p> : ''}
 
-                            <button className='btn btn-primary d-block px-5 mx-auto mt-2  mb-5'>Register </button>
+                            <p className='btn btn-primary d-block py-3 px-5 mx-auto mt-2  mb-5'>Register </p>
                         </form>
                     </Container>
 
@@ -183,7 +188,7 @@ export default function Header() {
 
 
             </Modal>
-
+{/* login modal */}
             <Modal show={Lshow} onHide={handleCloseL}>
                 <Modal.Header closeButton>
                     <h2 className='mx-auto ps-5'>Welcome Back</h2>
@@ -193,8 +198,6 @@ export default function Header() {
                         {/* Login form */}
                         <h2 className='text-start fs-3 fw-bold'>Sign in to your account</h2>
                         <form className='mt-3  py-3' onSubmit={handleLoginSubmit}>
-                            {/* <label htmlFor="">Email</label>
-                            <input required className='input-group mt-2 mb-3 ' type="text" onChange={handleOnChangeL} placeholder='email' name="email" id="email" /> */}
                             <FloatingLabel
                                 controlId="floatingInput"
                                 label="Email address"
@@ -204,8 +207,6 @@ export default function Header() {
                             </FloatingLabel>
 
                             {/* ---------------- */}
-                            {/* <label htmlFor="">Password</label>
-                            <input required className='input-group mt-2 mb-5 ' type="password" onChange={handleOnChangeL} placeholder='password' name="pass" id="pass" /> */}
                             <FloatingLabel controlId="floatingPassword" label="Password" className="mb-5 ">
                                 <Form.Control type="password" className="text-start" name="pass" placeholder="Password" onChange={handleOnChangeL} />
                             </FloatingLabel>
