@@ -97,7 +97,7 @@ export default function Header() {
     return (
         <>
             {/* NAV BAR */}
-            <Navbar sticky="top" fluid collapseOnSelect expand="lg" bg="white" variant="light">
+            <Navbar sticky="top" className='my-2' fluid collapseOnSelect expand="lg" bg="white" variant="light">
                 <Container fluid>
                     {user.displayName && <span onClick={handleOn} className='fs-2 pe-3'>  <MdNavigateNext className='mousepoint'/></span>}
                     <NavLink to='/'> <Navbar.Brand href="#home" className="me-5 ">
@@ -135,7 +135,7 @@ export default function Header() {
                             Signed in as: <a href="#login">{user.displayName}</a>
                         </Navbar.Text>}
                         <Nav className="fw-bold">
-                            {user.displayName && <Nav.Link onClick={logOut}>LogOut</Nav.Link>}
+                            {user.displayName && <Nav.Link onClick={logOut}>Log out</Nav.Link>}
                             {!user.displayName && <Nav.Link onClick={handleShowL}>Log In</Nav.Link>}
                             {!user.displayName && <Button onClick={handleShow} variant="btn btn-primary" className="ms-5 bluebtn">Join For free <img src={arrow} alt="arrow" /></Button>}
                         </Nav>
