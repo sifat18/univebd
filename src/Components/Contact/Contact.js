@@ -19,7 +19,7 @@ export default function Contact() {
             </Container>
             {/* pic2 */}
             <Container data-aos="fade-up-right" fluid className='my-5 py-5'>
-                <Container className='w-75 text-center'>
+                <Container className=' text-center'>
                     <img className='img-fluid ' src={conactImage} alt="" />
                 </Container>
             </Container>

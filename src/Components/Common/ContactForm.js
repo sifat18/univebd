@@ -39,8 +39,17 @@ export default function ContactForm() {
                                 <Form.Control type="email" className="text-start" name="user_email" placeholder='আপনার ইমেইল'/>
                             </FloatingLabel>
             </div>
-            <div className='my-3'><label className='d-block text-start'>মেসেজ</label>
-                <textarea className='input-group' name="message" placeholder='আপনার মেসেজটি লিখুন' />
+            <div className='my-3'>
+                {/* <label className='d-block text-start'>মেসেজ</label>
+                <textarea className='input-group' name="message" placeholder='আপনার মেসেজটি লিখুন' /> */}
+            <FloatingLabel controlId="floatingTextarea2" label="আপনার মেসেজটি লিখুন">
+    <Form.Control
+      as="textarea"
+      className='text-start'
+      name="message" placeholder='আপনার মেসেজটি লিখুন'
+      style={{ height: '100px' }}
+    />
+  </FloatingLabel>
             </div>
             <div className="text-end">
                 <input type="submit" className='btn btn-primary px-4' value="সেন্ড করুন" />
