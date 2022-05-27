@@ -7,25 +7,86 @@ import resume from '../images/hr/resume.png'
 import loud from '../images/hr/loud.png'
 import ContactForm from '../Common/ContactForm'
 import Header from '../Header/Header'
-import Footer from '../Footer/Footer'
-
 export default function Maas() {
     return (
         <>
-            <Header />
-            {/* top */}
-            <Container>
-                <Row data-aos="fade-up" className='my-5'>
-                    <Col xs={12} md={7} className='text-start ms-3 mb-3'>
-                        <h2 className='fs-1 '>আপনার প্রতিষ্ঠানের জন্য এমপ্লয়ী খুঁজুন <br /> খুব সহজে ইউনিভ এর মাধ্যমে।</h2>
-                        <h4 className='my-4 mx-1 smallText'>ডিজাইন করুন ইন্টারভিউ প্রিপারেশন কোর্স এবং সম্পূর্ণ রিক্রুটমেন্ট প্রসেস সম্পন্ন করুন আমাদের প্লাটফর্মে।  <br /> শুধুমাত্র যোগ্য ক্যান্ডিডেটদের ইন্টারভিউ নেওয়ার আয়োজন করে ইউনিভ আপনার প্রতিষ্ঠানের প্রোডাক্টিভিটি লস বাঁচিয়ে দেয়। <br /></h4>
-                        <Button className='p-3 mt-3 bluebtn' href="#">ট্রাই করুন ইউনিভ ফর রিক্রুটমেন্ট</Button>
-                    </Col>
-                    <Col xs={12} md={4}>
-                        <img className='img-fluid ' src={hr} alt="" />
-                    </Col>
-                </Row>
+        <Header />
+        {/* top */}
+        <Container>
+            <Row data-aos="fade-up" className='my-5'>
+                <Col xs={12} md={7} className='text-start ms-3 mb-3'>
+                    <h2 className='fs-1 '>আপনার প্রতিষ্ঠানের বা প্রজেক্টের জন্য ম্যানপাওয়ার নিন ইউনিভ থেকে।</h2>
+                    <h4 className='my-4 mx-1 smallText'>দেশে কিংবা বিদেশে যে কোনো ধরনের কাজে লো বা সেমি স্কিলড ম্যানপাওয়ার লাগলে <br />আপনি কোনো রকম ঝামেলা ছাড়াই ম্যানপাওয়ার সার্ভিস নিশ্চিত করুন Unive থেকে।</h4>
+                    <Button className='p-3 mt-3 bluebtn' href="#">আরো জানতে কথা বলুন আমাদের সাথে</Button>
+                </Col>
+                <Col xs={12} md={4}>
+                    <img className='img-fluid ' src={hr} alt="" />
+                </Col>
+            </Row>
 
+        </Container>
+        {/* logos */}
+        <Container data-aos="fade-down" fluid className='middle'>
+            <Container>
+                <h5 className='text-center my-5'>ইউনিভ থেকে বাল্কে ম্যানপাওয়ার নিচ্ছে দেশে ও বিদেশের লিডিং ইন্ডাস্ট্রিস:</h5>
+                <Companies/>
+            </Container>
+        </Container>
+        {/* empower */}
+        <Container data-aos="fade-up" className='text-center my-5'>
+            <h2 className='fs-1'>আপনার প্রজেক্ট বা কাজের জন্য মানানসই ম্যানপাওয়ার বাছাই করুন।</h2>
+            <h5 className='smallText my-4'>আমাদের সুবিশাল ম্যানপাওয়ার এর ডেটাবেস থেকে আপনার কাজ সঠিক ভাবে সম্পন্ন করার জন্য অভিজ্ঞতাসম্পন্ন ম্যানপাওয়ার বেছে নিতে পারেন অন ডিমান্ড বেসিসে।</h5>
+            <Row className='my-5'>
+                <Col xs={12} md={7}>
+                    <img className='img-fluid' src={search} alt="" />
+                </Col>
+                <Col xs={12} md={5}>
+                    <h2 className='fs-1 text-start'>বাছাই করুন যোগ্য লোকবল অতিরিক্ত সময় নষ্ট করা ছাড়া।</h2>
+                    <h5 className='smallText my-4 text-start'>ম্যানপাওয়ার বা লোকবল বাছাই করতে আপনার প্রতিষ্ঠানের যে গুরুত্বপূর্ণ প্রোডাক্টিভ টাইম নষ্ট হচ্ছে তা কমিয়ে আনতে ব্যবহার করতে পারেন ইউনিভ।</h5>
+                </Col>
+            </Row>
+        </Container>
+        <Container data-aos="fade-up-left" className='text-center my-5 middle'>
+            <Row className='my-5'>
+
+                <Col xs={12} md={5}>
+                    <h2 className='fs-1 text-start'>ম্যানপাওয়ার নিন সমগ্র বাংলাদেশ থেকে বাংলাদেশ বা বিশ্বের যেকোনো প্রান্তে কাজ করার জন্য।</h2>
+                    <h5 className='smallText my-4 text-start'>আমাদের ম্যানপাওয়ার বিশ্বের যেকোনো প্রান্তে কাজ করতে সর্বদা প্রস্তুত। প্রত্যেকের পাসপোর্ট এবং নিজ নিজ কাজের স্কিল সার্টিফিকেট আছে যা আপনাকে নিশ্চয়তা দেয় ঠিক সময়ে কাজ সঠিক ভাবে শেষ হয়ে যাওয়ার।</h5>
+                </Col>
+                <Col xs={12} md={7}>
+                    <img className='img-fluid' src={resume} alt="" />
+                </Col>
+            </Row>
+        </Container>
+        <Container data-aos="fade-up-right" className='text-center my-5'>
+            <Row className='my-5'>
+                <Col xs={12} md={7}>
+                    <img className='img-fluid' src={search} alt="" />
+                </Col>
+                <Col xs={12} md={5}>
+                    <h2 className='fs-1 text-start'>ট্রেইনিং ম্যাটেরিয়ালস ঠিক আপনার কোম্পানি বা প্রজেক্ট এর জবের জন্য</h2>
+                    <p className='smallText my-2 text-start'>আমরা নিশ্চিত করবো আপনার কোম্পানী এর ম্যানপাওয়ার চাহিদা অনুসারে কাষ্টমাইজ্ড ট্রেইনিং পাথ যাতে করে বাছাইকৃত লোকবলরা তাদের সেরা পারফরম্যান্স দিতে পারে।</p>
+                    <p className='my-4 text-start'>পরবর্তীতে একই জব রোলের জন্য আপডেটেড ট্রেইনিং ম্যাটেরিয়ালস দিয়ে ম্যানপাওয়ার বাছাই করতে পারবেন খুব সহজেই।</p>
+                </Col>
+            </Row>
+        </Container>
+        <Container data-aos="fade-up-left " className='text-center my-5 middle py-5'>
+            <Row className='my-5'>
+                <Col xs={12} md={5}>
+                    <h2 className='fs-1 text-start'>দক্ষ লোকবল জোগাড় করা আমাদের উপর ছেড়ে দিন।</h2>
+                    <p className='smallText my-2 text-start'>আপনার কাজের জন্য ম্যানপাওয়ার বা লোকবল জোগাড় থেকে শুরু করে সম্পূর্ণ কাজ সমাধা করা আমাদের উপর ছেড়ে দিন যাতে আপনি গুরুত্বপূর্ণ কাজে সময় দিতে পারেন।</p>
+                </Col>
+                <Col xs={12} md={7}>
+                    <img className='img-fluid' src={loud} alt="" />
+                </Col>
+
+            </Row>
+        </Container>
+        {/* contact */}
+        <Container data-aos="fade-up" fluid className='bg-primary text-center py-5'>
+            <h2 className='text-white'>ইউনিভ সম্পর্কে আরও জানতে যোগাযোগ করুন!</h2>
+            <Container className='bg-white bigWidth text-center mx-auto p-5 py-3'>
+                <ContactForm />
             </Container>
             {/* logos */}
             <Container data-aos="fade-down" fluid className='middle'>
