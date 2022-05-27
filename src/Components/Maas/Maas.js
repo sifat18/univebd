@@ -7,105 +7,43 @@ import resume from '../images/hr/resume.png'
 import loud from '../images/hr/loud.png'
 import ContactForm from '../Common/ContactForm'
 import Header from '../Header/Header'
+import Footer from '../Footer/Footer'
 export default function Maas() {
     return (
         <>
-        <Header />
-        {/* top */}
-        <Container>
-            <Row data-aos="fade-up" className='my-5'>
-                <Col xs={12} md={7} className='text-start ms-3 mb-3'>
-                    <h2 className='fs-1 '>আপনার প্রতিষ্ঠানের বা প্রজেক্টের জন্য ম্যানপাওয়ার নিন ইউনিভ থেকে।</h2>
-                    <h4 className='my-4 mx-1 smallText'>দেশে কিংবা বিদেশে যে কোনো ধরনের কাজে লো বা সেমি স্কিলড ম্যানপাওয়ার লাগলে <br />আপনি কোনো রকম ঝামেলা ছাড়াই ম্যানপাওয়ার সার্ভিস নিশ্চিত করুন Unive থেকে।</h4>
-                    <Button className='p-3 mt-3 bluebtn' href="#">আরো জানতে কথা বলুন আমাদের সাথে</Button>
-                </Col>
-                <Col xs={12} md={4}>
-                    <img className='img-fluid ' src={hr} alt="" />
-                </Col>
-            </Row>
-
-        </Container>
-        {/* logos */}
-        <Container data-aos="fade-down" fluid className='middle'>
+            <Header />
+            {/* top */}
             <Container>
-                <h5 className='text-center my-5'>ইউনিভ থেকে বাল্কে ম্যানপাওয়ার নিচ্ছে দেশে ও বিদেশের লিডিং ইন্ডাস্ট্রিস:</h5>
-                <Companies/>
-            </Container>
-        </Container>
-        {/* empower */}
-        <Container data-aos="fade-up" className='text-center my-5'>
-            <h2 className='fs-1'>আপনার প্রজেক্ট বা কাজের জন্য মানানসই ম্যানপাওয়ার বাছাই করুন।</h2>
-            <h5 className='smallText my-4'>আমাদের সুবিশাল ম্যানপাওয়ার এর ডেটাবেস থেকে আপনার কাজ সঠিক ভাবে সম্পন্ন করার জন্য অভিজ্ঞতাসম্পন্ন ম্যানপাওয়ার বেছে নিতে পারেন অন ডিমান্ড বেসিসে।</h5>
-            <Row className='my-5'>
-                <Col xs={12} md={7}>
-                    <img className='img-fluid' src={search} alt="" />
-                </Col>
-                <Col xs={12} md={5}>
-                    <h2 className='fs-1 text-start'>বাছাই করুন যোগ্য লোকবল অতিরিক্ত সময় নষ্ট করা ছাড়া।</h2>
-                    <h5 className='smallText my-4 text-start'>ম্যানপাওয়ার বা লোকবল বাছাই করতে আপনার প্রতিষ্ঠানের যে গুরুত্বপূর্ণ প্রোডাক্টিভ টাইম নষ্ট হচ্ছে তা কমিয়ে আনতে ব্যবহার করতে পারেন ইউনিভ।</h5>
-                </Col>
-            </Row>
-        </Container>
-        <Container data-aos="fade-up-left" className='text-center my-5 middle'>
-            <Row className='my-5'>
+                <Row data-aos="fade-up" className='my-5'>
+                    <Col xs={12} md={7} className='text-start ms-3 mb-3'>
+                        <h2 className='fs-1 '>আপনার প্রতিষ্ঠানের বা প্রজেক্টের জন্য ম্যানপাওয়ার নিন ইউনিভ থেকে।</h2>
+                        <h4 className='my-4 mx-1 smallText'>দেশে কিংবা বিদেশে যে কোনো ধরনের কাজে স্কিলড বা সেমি স্কিলড বা লো স্কিলড ম্যানপাওয়ার লাগলে <br /> আপনি কোনো রকম ঝামেলা ছাড়াই ম্যানপাওয়ার সার্ভিস নিশ্চিত করুন Unive থেকে। <br /></h4>
+                        <Button className='p-3 mt-3 bluebtn' href="#">আরো জানতে কথা বলুন আমাদের সাথে</Button>
+                    </Col>
+                    <Col xs={12} md={4}>
+                        <img className='img-fluid ' src={hr} alt="" />
+                    </Col>
+                </Row>
 
-                <Col xs={12} md={5}>
-                    <h2 className='fs-1 text-start'>ম্যানপাওয়ার নিন সমগ্র বাংলাদেশ থেকে বাংলাদেশ বা বিশ্বের যেকোনো প্রান্তে কাজ করার জন্য।</h2>
-                    <h5 className='smallText my-4 text-start'>আমাদের ম্যানপাওয়ার বিশ্বের যেকোনো প্রান্তে কাজ করতে সর্বদা প্রস্তুত। প্রত্যেকের পাসপোর্ট এবং নিজ নিজ কাজের স্কিল সার্টিফিকেট আছে যা আপনাকে নিশ্চয়তা দেয় ঠিক সময়ে কাজ সঠিক ভাবে শেষ হয়ে যাওয়ার।</h5>
-                </Col>
-                <Col xs={12} md={7}>
-                    <img className='img-fluid' src={resume} alt="" />
-                </Col>
-            </Row>
-        </Container>
-        <Container data-aos="fade-up-right" className='text-center my-5'>
-            <Row className='my-5'>
-                <Col xs={12} md={7}>
-                    <img className='img-fluid' src={search} alt="" />
-                </Col>
-                <Col xs={12} md={5}>
-                    <h2 className='fs-1 text-start'>ট্রেইনিং ম্যাটেরিয়ালস ঠিক আপনার কোম্পানি বা প্রজেক্ট এর জবের জন্য</h2>
-                    <p className='smallText my-2 text-start'>আমরা নিশ্চিত করবো আপনার কোম্পানী এর ম্যানপাওয়ার চাহিদা অনুসারে কাষ্টমাইজ্ড ট্রেইনিং পাথ যাতে করে বাছাইকৃত লোকবলরা তাদের সেরা পারফরম্যান্স দিতে পারে।</p>
-                    <p className='my-4 text-start'>পরবর্তীতে একই জব রোলের জন্য আপডেটেড ট্রেইনিং ম্যাটেরিয়ালস দিয়ে ম্যানপাওয়ার বাছাই করতে পারবেন খুব সহজেই।</p>
-                </Col>
-            </Row>
-        </Container>
-        <Container data-aos="fade-up-left " className='text-center my-5 middle py-5'>
-            <Row className='my-5'>
-                <Col xs={12} md={5}>
-                    <h2 className='fs-1 text-start'>দক্ষ লোকবল জোগাড় করা আমাদের উপর ছেড়ে দিন।</h2>
-                    <p className='smallText my-2 text-start'>আপনার কাজের জন্য ম্যানপাওয়ার বা লোকবল জোগাড় থেকে শুরু করে সম্পূর্ণ কাজ সমাধা করা আমাদের উপর ছেড়ে দিন যাতে আপনি গুরুত্বপূর্ণ কাজে সময় দিতে পারেন।</p>
-                </Col>
-                <Col xs={12} md={7}>
-                    <img className='img-fluid' src={loud} alt="" />
-                </Col>
-
-            </Row>
-        </Container>
-        {/* contact */}
-        <Container data-aos="fade-up" fluid className='bg-primary text-center py-5'>
-            <h2 className='text-white'>ইউনিভ সম্পর্কে আরও জানতে যোগাযোগ করুন!</h2>
-            <Container className='bg-white bigWidth text-center mx-auto p-5 py-3'>
-                <ContactForm />
             </Container>
             {/* logos */}
             <Container data-aos="fade-down" fluid className='middle'>
                 <Container>
-                    <h5 className='text-center my-5'>ইউনিভ এর রিক্রুটমেন্ট প্ল্যাটফর্ম ইউজ করছে দেশের ইন্ডাস্ট্রি লিডিং কোম্পানিরা:</h5>
+                    <h5 className='text-center my-5'>ইউনিভ থেকে বাল্কে ম্যানপাওয়ার নিচ্ছে দেশে ও বিদেশের লিডিং ইন্ডাস্ট্রিস:</h5>
                     <Companies />
                 </Container>
             </Container>
             {/* empower */}
             <Container data-aos="fade-up" className='text-center my-5'>
-                <h2 className='fs-1'>আপনার ক্যান্ডিডেটদের জব রোল এর জন্য প্রস্তুত করুন ইউনিভে।</h2>
-                <h5 className='smallText my-4'>আমাদের রিক্রুটিং প্ল্যান আপনার প্রতিষ্ঠানের জব এর জন্য প্রয়োজনীয় নলেজ এবং প্র্যাক্টিস সম্বলিত কোর্স তৈরি করতে আপনাকে সাহায্য করবে।</h5>
+                <h2 className='fs-1'>আপনার প্রজেক্ট বা কাজের জন্য মানানসই ম্যানপাওয়ার বাছাই করুন।</h2>
+                <h5 className='smallText my-4'>আমাদের সুবিশাল ম্যানপাওয়ার এর ডেটাবেজ থেকে আপনার কাজ সঠিক ভাবে সম্পন্ন করার জন্য অভিজ্ঞতাসম্পন্ন ম্যানপাওয়ার বেছে নিতে পারেন অন ডিমান্ড বেসিসে। </h5>
                 <Row className='my-5'>
                     <Col xs={12} md={7}>
                         <img className='img-fluid' src={search} alt="" />
                     </Col>
                     <Col xs={12} md={5}>
-                        <h2 className='fs-1 text-start'>বাছাই করুন যোগ্য ক্যান্ডিডেট অতিরিক্ত সময় নষ্ট করা ছাড়া।</h2>
-                        <h5 className='smallText my-4 text-start'>প্রার্থী বাছাই করতে আপনার প্রতিষ্ঠানের যে গুরুত্বপূর্ণ প্রোডাক্টিভ টাইম নষ্ট হচ্ছে তা কমিয়ে আনতে ব্যবহার করতে পারেন ইউনিভ।</h5>
+                        <h2 className='fs-1 text-start'>বাছাই করুন যোগ্য লোকবল অতিরিক্ত সময় নষ্ট করা ছাড়া।</h2>
+                        <h5 className='smallText my-4 text-start'>ম্যানপাওয়ার বা লোকবল বাছাই করতে আপনার প্রতিষ্ঠানের যে গুরুত্বপূর্ণ প্রোডাক্টিভ টাইম নষ্ট হচ্ছে তা কমিয়ে আনতে ব্যবহার করতে পারেন ইউনিভ।</h5>
                     </Col>
                 </Row>
             </Container>
@@ -113,8 +51,8 @@ export default function Maas() {
                 <Row className='my-5'>
 
                     <Col xs={12} md={5}>
-                        <h2 className='fs-1 text-start'>বেস্ট ক্যান্ডিডেট বাছাই করুন সমগ্র বাংলাদেশ থেকে</h2>
-                        <h5 className='smallText my-4 text-start'>বেশিরভাগ ক্ষেত্রেই রেফারেন্স এর মাধ্যমে প্রার্থী বাছাইয়ে উঠে আসে না যোগ্য প্রার্থী। এক গবেষণায় দেখা গেছে, যথার্থ রিক্রুটমেন্ট প্রসেসের মাধ্যমে যোগ্য প্রার্থী বাছাই করে আপনার প্রতিষ্ঠানের প্রোডাক্টিভিটি বাড়ানো সম্ভব ৫০% পর্যন্ত! ইউনিভ নিশ্চিত করে আপনি আপনার জব প্লেসমেন্ট এর জন্য সবচেয়ে যোগ্য প্রার্থী নির্বাচিত করছেন।</h5>
+                        <h2 className='fs-1 text-start'>ম্যানপাওয়ার নিন সমগ্র বাংলাদেশ থেকে বাংলাদেশ বা বিশ্বের যেকোনো প্রান্তে কাজ করার জন্য।</h2>
+                        <h5 className='smallText my-4 text-start'>আমাদের ম্যানপাওয়ার বিশ্বের যেকোনো প্রান্তে কাজ করতে সর্বদা প্রস্তুত। প্রত্যেকের পাসপোর্ট এবং নিজ নিজ কাজের স্কিল সার্টিফিকেট আছে যা আপনাকে নিশ্চয়তা দেয় ঠিক সময়ে কাজ সঠিক ভাবে শেষ হয়ে যাওয়ার।</h5>
                     </Col>
                     <Col xs={12} md={7}>
                         <img className='img-fluid' src={resume} alt="" />
@@ -127,17 +65,17 @@ export default function Maas() {
                         <img className='img-fluid' src={search} alt="" />
                     </Col>
                     <Col xs={12} md={5}>
-                        <h2 className='fs-1 text-start'>ট্রেইনিং ম্যাটেরিয়ালস ঠিক আপনার কোম্পানি এর জব রোলটির জন্য</h2>
-                        <p className='smallText my-2 text-start'>আমরা নিশ্চিত করবো আপনার কোম্পানী এর জব রোলের চাহিদা অনুসারে কাষ্টমাইজ্ড ট্রেইনিং পাথ যাতে করে ক্যান্ডিডেট তার সেরা পারফরম্যান্স দিতে পারে।</p>
-                        <p className='my-4 text-start'>পরবর্তীতে একই জব রোলের জন্য আপডেটেড ট্রেইনিং ম্যাটেরিয়ালস দিয়ে ক্যান্ডিডেট বাছাই করতে পারবেন খুব সহজেই।</p>
+                        <h2 className='fs-1 text-start'>ট্রেইনিং ম্যাটেরিয়ালস ঠিক আপনার কোম্পানি বা প্রজেক্ট এর জবের জন্য</h2>
+                        <p className='smallText my-2 text-start'>আমরা নিশ্চিত করবো আপনার কোম্পানী এর ম্যানপাওয়ার চাহিদা অনুসারে কাষ্টমাইজ্ড ট্রেইনিং পাথ যাতে করে বাছাইকৃত লোকবলরা তাদের সেরা পারফরম্যান্স দিতে পারে।</p>
+                        <p className='my-4 text-start'>পরবর্তীতে একই জব রোলের জন্য আপডেটেড ট্রেইনিং ম্যাটেরিয়ালস দিয়ে ম্যানপাওয়ার বাছাই করতে পারবেন খুব সহজেই।</p>
                     </Col>
                 </Row>
             </Container>
             <Container data-aos="fade-up-left " className='text-center my-5 middle py-5'>
                 <Row className='my-5'>
                     <Col xs={12} md={5}>
-                        <h2 className='fs-1 text-start'>দিন বেটার ক্যান্ডিডেট এক্সপেরিয়েন্স!</h2>
-                        <p className='smallText my-2 text-start'>পজিটিভ ইন্টারভিউ এক্সপেরিয়েন্স একজন ক্যান্ডিডেটকে আপনার প্রতিষ্ঠানের প্রতি আরো ইন্টারেস্টেড করে তুলে এবং আপনার প্রতিষ্ঠান বা ব্র্যান্ডের ভ্যালু বৃদ্ধি করে।</p>
+                        <h2 className='fs-1 text-start'>দক্ষ লোকবল জোগাড় করা আমাদের উপর ছেড়ে দিন।</h2>
+                        <p className='smallText my-2 text-start'>আপনার কাজের জন্য ম্যানপাওয়ার বা লোকবল জোগাড় থেকে শুরু করে সম্পূর্ণ কাজ সমাধা করা আমাদের উপর ছেড়ে দিন যাতে আপনি গুরুত্বপূর্ণ কাজে সময় দিতে পারেন।</p>
                     </Col>
                     <Col xs={12} md={7}>
                         <img className='img-fluid' src={loud} alt="" />
@@ -185,11 +123,11 @@ export default function Maas() {
                         </Accordion.Body>
                     </Accordion.Item>
                     {/* <Accordion.Item eventKey="4">
-                    <Accordion.Header>What courses will our candidates get access to?</Accordion.Header>
-                    <Accordion.Body>
-                        Our full library of hundreds of software courses and private access to your company's Curated Path.
-                    </Accordion.Body>
-                </Accordion.Item> */}
+                        <Accordion.Header>What courses will our candidates get access to?</Accordion.Header>
+                        <Accordion.Body>
+                            Our full library of hundreds of software courses and private access to your company's Curated Path.
+                        </Accordion.Body>
+                    </Accordion.Item> */}
                 </Accordion>
             </Container>
             <Container fluid className='middle py-5 text-center'>
