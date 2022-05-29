@@ -12,6 +12,7 @@ const Nopage = () => {
             <Container className='text-center my-5 py-5 '>
                 {/* <img src={pic} alt="" className='img-fluid'  /> */}
                 <h3 className='fw-bold fs-1'>The page you’re looking <br /> for can’t be found.</h3>
+                <NavLink to='/'><p className='my-5 text-decoration-underline'>Go Home</p></NavLink>
 
             </Container>
             <div className="d-md-block d-none mt-5 pt-5">
