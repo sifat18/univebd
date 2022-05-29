@@ -96,7 +96,7 @@ export default function Individual() {
                     <p className=' text-center fs-7 mt-2 ps-2'>নতুন স্কিল যোগ করুন আপনার সিভিতে / স্কিল আপডেট করুন কারেন্ট ইন্ডাস্ট্রি এর জন্যে।</p>
                     <Container className='my-5 mx-2'>
                         <Row xs={1} md={3} className="g-4 bigMargin">
-                            {item.map((id) => (
+                            {item.slice(0,6).map((id) => (
                                 <Col key={id._id}>
                                     <Card className='py-1'>
                                         <Card.Img variant="top" className='img-fluid ' src={id.imageLink} />

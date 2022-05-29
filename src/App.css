@@ -15,3 +15,6 @@ a {
 .littleFont {
   font-size: 0.8rem;
 }
+.invert{
+  transform: rotateY(180deg);
+}
