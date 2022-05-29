@@ -15,6 +15,20 @@ a {
 .littleFont {
   font-size: 0.8rem;
 }
+/* career */
 .invert{
   transform: rotateY(180deg);
+}
+/* header  */
+.side-nav-btn{
+text-align: center;
+cursor: pointer;
+outline: none;
+color: black;
+box-shadow: 0 5px #999;
+}
+
+.side-nav-btn:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }

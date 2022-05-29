@@ -99,7 +99,7 @@ export default function Header() {
             {/* NAV BAR */}
             <Navbar sticky="top" className='my-2' fluid collapseOnSelect expand="lg" bg="white" variant="light">
                 <Container fluid>
-                    {user.displayName && <span onClick={handleOn} className='fs-2 pe-3'>  <MdNavigateNext className='mousepoint'/></span>}
+                    {user.displayName && <span onClick={handleOn} className='me-4  side-nav-btn rounded-circle  border-secondary'>  <MdNavigateNext className='mousepoint fs-2'/></span>}
                     <NavLink to='/'> <Navbar.Brand href="#home" className="me-5 ">
                         <img
                             src={logo}
