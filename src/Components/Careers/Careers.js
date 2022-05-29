@@ -10,7 +10,7 @@ export default function Careers() {
     <><Header />
     {/* main content */}
     <Container>
-<Row className='border rounded ms-3 my-5 bg-white'>
+<Row className='border rounded  my-5 bg-white'>
   <Col xs={12} md={5}>
   <h1 className='mx-4 mt-5 mb-3'>Reshape the Future <br/> of Learning</h1>
   <p className='fs-5 mx-4 my-2'>50+ roles now open in multiple locations</p>
