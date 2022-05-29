@@ -1,6 +1,7 @@
 import React from 'react'
 import {  Card, Col, Row } from 'react-bootstrap'
-import check from '../images/check.png'
+import { BsCheck2Circle } from "react-icons/bs";
+
 export default function PriceCard() {
     return (
         <section className='container mt-5'>
@@ -16,9 +17,9 @@ export default function PriceCard() {
                         <p className='text-decoration-underline'></p>
                         <Card.Body className='text-start mx-auto my-3'>
 
-                            <p><img src={check} alt="" />আনলিমিটেড ট্রেনিং ভিডিও</p>
-                            <p><img src={check} alt="" />১ টি স্কিল অ্যাসেসমেন্ট এর সুযোগ/ মাস</p>
-                            <p><img src={check} alt="" />রেগুলার ওয়েবিনার</p>
+                            <p><BsCheck2Circle className='text-success fs-4 me-2' />আনলিমিটেড ট্রেনিং ভিডিও</p>
+                            <p><BsCheck2Circle className='text-success fs-4 me-2' />১ টি স্কিল অ্যাসেসমেন্ট এর সুযোগ/ মাস</p>
+                            <p><BsCheck2Circle className='text-success fs-4 me-2' />রেগুলার ওয়েবিনার</p>
                         </Card.Body>
                         <Card.Footer className="text-muted">শুরু করুন</Card.Footer>
                     </Card>
@@ -33,11 +34,11 @@ export default function PriceCard() {
                         {/* <Button variant="outline-primary text-center w-50 mx-auto">Get Unlimited</Button> */}
                         <p className='text-decoration-underline'></p>
                         <Card.Body className='text-start mx-auto my-3'>
-                            <p><img src={check} alt="" />লাইফটাইম ট্রেইনিং অ্যাকসেস অ্যান্ড কুইজ</p>
-                            <p><img src={check} alt="" />ট্রেইনিং কম্পলিশন সার্টিফিকেট</p>
-                            <p><img src={check} alt="" />নো লিমিট ইন্টারভিউ আয়োজন</p>
-                            <p><img src={check} alt="" />ইন্টারন্যাশনাল জব প্লেসমেন্ট</p>
-                            <p><img src={check} alt="" />জব সাপোর্ট ২৪/৭</p>
+                            <p><BsCheck2Circle className='text-success fs-4 me-2' />লাইফটাইম ট্রেইনিং অ্যাকসেস অ্যান্ড কুইজ</p>
+                            <p><BsCheck2Circle className='text-success fs-4 me-2' />ট্রেইনিং কম্পলিশন সার্টিফিকেট</p>
+                            <p><BsCheck2Circle className='text-success fs-4 me-2' />নো লিমিট ইন্টারভিউ আয়োজন</p>
+                            <p><BsCheck2Circle className='text-success fs-4 me-2' />ইন্টারন্যাশনাল জব প্লেসমেন্ট</p>
+                            <p><BsCheck2Circle className='text-success fs-4 me-2' />জব সাপোর্ট ২৪/৭</p>
                         </Card.Body>
                         <Card.Footer className="text-muted">শুরু করুন</Card.Footer>
                     </Card>
@@ -52,9 +53,9 @@ export default function PriceCard() {
                         {/* <Button variant="outline-primary text-center w-50 mx-auto">Get Unlimited</Button> */}
                         <p className='text-decoration-underline'></p>
                         <Card.Body className='text-start mx-auto my-3'>
-                            <p><img src={check} alt="" />আনলিমিটেড ট্রেইনিং কন্টেন্ট অ্যাকসেস অ্যান্ড কুইজ</p>
-                            <p><img src={check} alt="" />ট্রেইনিং কম্পলিশন সার্টিফিকেট</p>
-                            <p><img src={check} alt="" />কোর্স/ ট্রেইনিং রিলেটেড ইন্টারভিউ আয়োজন</p>
+                            <p><BsCheck2Circle className='text-success fs-4 me-2' />আনলিমিটেড ট্রেইনিং কন্টেন্ট অ্যাকসেস অ্যান্ড কুইজ</p>
+                            <p><BsCheck2Circle className='text-success fs-4 me-2' />ট্রেইনিং কম্পলিশন সার্টিফিকেট</p>
+                            <p><BsCheck2Circle className='text-success fs-4 me-2' />কোর্স/ ট্রেইনিং রিলেটেড ইন্টারভিউ আয়োজন</p>
                         </Card.Body>
                         <Card.Footer className="text-muted">শুরু করুন</Card.Footer>
                     </Card>

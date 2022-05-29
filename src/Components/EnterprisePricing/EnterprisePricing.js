@@ -4,7 +4,8 @@ import Companies from '../Common/Companies'
 import Demo from '../Common/Demo'
 import Footer from '../Footer/Footer'
 import Header from '../Header/Header'
-import check from '../images/check.png'
+// import check from '../images/check.png'
+import { BsCheck2Circle } from "react-icons/bs";
 
 export default function EnterprisePricing() {
     return (
@@ -35,10 +36,10 @@ export default function EnterprisePricing() {
                                 <p className='text-start my-3'>টীম প্ল্যানে যা যা আছে:</p>
                                 <Card.Body className='text-start mx-auto my-3'>
 
-                                    <p><img src={check} alt="" />টীম সাবস্ক্রিপশন এবং লার্নার অ্যাকসেস</p>
-                                    <p><img src={check} alt="" />আনলিমিটেড অ্যাকসেস টু কোর্সেস</p>
-                                    <p><img src={check} alt="" />পার্সোনালাইজড লার্নিং প্ল্যান</p>
-                                    <p><img src={check} alt="" />কম্প্লিশন সার্টিফিকেটস </p>
+                                    <p><BsCheck2Circle className='text-success fs-4 me-2' />টীম সাবস্ক্রিপশন এবং লার্নার অ্যাকসেস</p>
+                                    <p><BsCheck2Circle className='text-success fs-4 me-2' />আনলিমিটেড অ্যাকসেস টু কোর্সেস</p>
+                                    <p><BsCheck2Circle className='text-success fs-4 me-2' />পার্সোনালাইজড লার্নিং প্ল্যান</p>
+                                    <p><BsCheck2Circle className='text-success fs-4 me-2' />কম্প্লিশন সার্টিফিকেটস </p>
                                 </Card.Body>
                             </Container>
                         </Col>
@@ -54,9 +55,9 @@ export default function EnterprisePricing() {
                                 <Button variant="btn btn-primary text-center w-100 mx-auto">যোগাযোগ করুন</Button>
                                 <p className='text-start my-3'>এন্টারপ্রাইজ প্ল্যানে টীমে যা আছে তা তো থাকছেই সাথে থাকছে:</p>
                                 <Card.Body className='text-start mx-auto my-3'>
-                                    <p><img src={check} alt="" />টীম লার্নিং অ্যানালিটিকস</p>
-                                    <p><img src={check} alt="" />অনবোর্ডিং নতুন টীম মেম্বার</p>
-                                    <p><img src={check} alt="" />ইন্ডিভিজুয়াল এবং টীম ট্র্যাক প্রগ্রেস</p>
+                                    <p><BsCheck2Circle className='text-success fs-4 me-2' />টীম লার্নিং অ্যানালিটিকস</p>
+                                    <p><BsCheck2Circle className='text-success fs-4 me-2' />অনবোর্ডিং নতুন টীম মেম্বার</p>
+                                    <p><BsCheck2Circle className='text-success fs-4 me-2' />ইন্ডিভিজুয়াল এবং টীম ট্র্যাক প্রগ্রেস</p>
                                 </Card.Body>
                             </Container>
 
@@ -74,9 +75,9 @@ export default function EnterprisePricing() {
                                 <Button variant="outline-primary text-center w-100 mx-auto">যোগাযোগ করুন</Button>
                                 <p className='text-start my-3'>আনলিমিটেডে প্ল্যানে টীম এবং এন্টারপ্রাইজ প্ল্যানের সব কিছু তো থাকছেই সাথে থাকছে:</p>
                                 <Card.Body className='text-start mx-auto my-3'>
-                                    <p><img src={check} alt="" />থার্ড পার্টি ইন্টিগ্রেশন</p>
-                                    <p><img src={check} alt="" />কাস্টমাইজড সলিউশন অ্যান্ড ফিচারস</p>
-                                    <p><img src={check} alt="" />প্রতিষ্ঠানের এমপ্লয়ীদের জন্য লাইফস্টাইল অফারস ফ্রম বেস্ট ব্র্যান্ডস</p>
+                                    <p><BsCheck2Circle className='text-success fs-4 me-2' />থার্ড পার্টি ইন্টিগ্রেশন</p>
+                                    <p><BsCheck2Circle className='text-success fs-4 me-2' />কাস্টমাইজড সলিউশন অ্যান্ড ফিচারস</p>
+                                    <p><BsCheck2Circle className='text-success fs-4 me-2' />প্রতিষ্ঠানের এমপ্লয়ীদের জন্য লাইফস্টাইল অফারস ফ্রম বেস্ট ব্র্যান্ডস</p>
                                     <p>আমাদের টীম এর সাথে কথা বলুন আনলিমিটেড প্ল্যান সম্পর্কে বিস্তারিত জানতে। </p>
                                 </Card.Body>
                             </Container>

@@ -2,7 +2,7 @@ import React from 'react'
 import { Button, Col, Container, Row } from 'react-bootstrap'
 import bus from '../images/bus.jpg'
 // import bus2 from '../images/bus2.png'
-import check from '../images/check.png'
+import { BsCheck2Circle } from "react-icons/bs";
 import bus3 from '../images/bus3.png'
 // import ar from '../images/icons8-arrow-.png'
 import bus4 from '../images/bus4.png'
@@ -43,10 +43,10 @@ export default function Business() {
                             <h3 className='text-center'>Introducing Educative Onboarding</h3>
                             <p className='text-start'>The clock is ticking on your team. The average tenure of a software engineer is just 2 years. Help them contribute to code faster and keep them longer by leveraging best practices</p>
                             <div className="text-start">
-                                <p><img src={check} alt="" className='img-fluid ' /> Asynchronous learning</p>
-                                <p><img src={check} alt="" className='img-fluid ' /> Ask for help</p>
-                                <p><img src={check} alt="" className='img-fluid ' /> Organized documentation</p>
-                                <p><img src={check} alt="" className='img-fluid ' /> Upskill your current team</p>
+                                <p><BsCheck2Circle className='text-success fs-4 me-2' /> Asynchronous learning</p>
+                                <p><BsCheck2Circle className='text-success fs-4 me-2' /> Ask for help</p>
+                                <p><BsCheck2Circle className='text-success fs-4 me-2' /> Organized documentation</p>
+                                <p><BsCheck2Circle className='text-success fs-4 me-2' />Upskill your current team</p>
                             </div>
                         </Col>
                     </Row>
@@ -56,9 +56,9 @@ export default function Business() {
                             <p className='text-start'>Access to our world-class catalog of 300 hands-on, interactive courses that help software engineers learn by doing, not watching. Nothing to configure. Explore the new courses added each week</p>
                             <div className="text-start">
 
-                                <p><img src={check} alt="" className='img-fluid ' /> Learn at your own pace</p>
-                                <p><img src={check} alt="" className='img-fluid ' /> Retain more information</p>
-                                <p><img src={check} alt="" className='img-fluid ' /> Practice</p>
+                                <p><BsCheck2Circle className='text-success fs-4 me-2' /> Learn at your own pace</p>
+                                <p><BsCheck2Circle className='text-success fs-4 me-2' />  Retain more information</p>
+                                <p><BsCheck2Circle className='text-success fs-4 me-2' /> Practice</p>
                             </div></Col>
                         <Col xs={12} md={6}>
                             <img className='img-fluid' src={bus4} alt="" />

@@ -3,6 +3,8 @@ import { Button, Card, Col, Container, Row } from 'react-bootstrap'
 import indi from '../images/indi.png'
 import indi2 from '../images/indi2.png'
 // import check from '../images/check.png'
+import { BsCheck2Circle } from "react-icons/bs";
+
 import indi4 from '../images/indi4.webm'
 import indi3 from '../images/indi3.png'
 import st from '../images/steps.png'

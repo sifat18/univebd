@@ -12,7 +12,9 @@ import onb6 from '../../images/onb6.png'
 import onb7 from '../../images/onb7.png'
 import onb8 from '../../images/onb8.png'
 import onb9 from '../../images/onb9.png'
-import check from '../../images/check.png'
+// import check from '../../images/check.png'
+import { BsCheck2Circle } from "react-icons/bs";
+
 import './onboard.css'
 import Companies from '../../Common/Companies'
 import Header from '../../Header/Header'
@@ -74,9 +76,9 @@ export default function Onboarding() {
                             <p>Onboarding engineers doesn't have to be haphazard, unscalable, and time-consuming. Educative helps you code, ship, and scale your teams faster and farther than ever before.</p>
                             <div className="text-start">
 
-                                <p><img src={check} alt="" className='img-fluid ' /> Asynchronous and structured documentation</p>
-                                <p><img src={check} alt="" className='img-fluid ' /> In-browser coding environments</p>
-                                <p><img src={check} alt="" className='img-fluid ' />Track and measure progress</p>
+                                <p><BsCheck2Circle className='text-success fs-4 me-2' /> Asynchronous and structured documentation</p>
+                                <p><BsCheck2Circle className='text-success fs-4 me-2' /> In-browser coding environments</p>
+                                <p><BsCheck2Circle className='text-success fs-4 me-2' />Track and measure progress</p>
                             </div>
                         </Col>
                     </Row>
@@ -88,9 +90,9 @@ export default function Onboarding() {
                             <p>54% of engineers say not offering resources to drive confidence in work is unappealing. Educative offers active-learning opportunities for even the most seasoned developers. Hands-on, interactive training ensures everyone learns exactly what they need.</p>
                             <div className="text-start">
 
-                                <p><img src={check} alt="" className='img-fluid ' /> Learn new technologies</p>
-                                <p><img src={check} alt="" className='img-fluid ' /> Address skill gaps</p>
-                                <p><img src={check} alt="" className='img-fluid ' />Drive confidence in work</p>
+                                <p><BsCheck2Circle className='text-success fs-4 me-2' />Learn new technologies</p>
+                                <p><BsCheck2Circle className='text-success fs-4 me-2' />Address skill gaps</p>
+                                <p><BsCheck2Circle className='text-success fs-4 me-2' />Drive confidence in work</p>
                             </div>
 
                         </Col>
@@ -103,9 +105,9 @@ export default function Onboarding() {
                             <p>74% of the engineers are actively looking for new opportunities and consider opportunity to learn as being an important factor when comparing current to future employers.</p>
                             <div className="text-start">
 
-                                <p><img src={check} alt="" className='img-fluid ' /> Access to 320+ courses for your entire team</p>
-                                <p><img src={check} alt="" className='img-fluid ' /> Text based, interactive coding environments</p>
-                                <p><img src={check} alt="" className='img-fluid ' />Practice while learning with built in assessments</p>
+                                <p><BsCheck2Circle className='text-success fs-4 me-2' />Access to 320+ courses for your entire team</p>
+                                <p><BsCheck2Circle className='text-success fs-4 me-2' /> Text based, interactive coding environments</p>
+                                <p><BsCheck2Circle className='text-success fs-4 me-2' />Practice while learning with built in assessments</p>
                             </div>
                         </Col>
                     </Row>
@@ -127,9 +129,9 @@ export default function Onboarding() {
                             <p className='text-start fs-5'>Engineering teams are like fingerprints - no two are exactly alike. Tailor unique paths for teams so new hires fill their knowledge gaps and ramp on broader technology, your products, and internal processes. Include in your custom plans things like:</p>
                             <div className="text-start">
 
-                                <p><img src={check} alt="" className='img-fluid ' /> Release process</p>
-                                <p><img src={check} alt="" className='img-fluid ' /> Code Libraries</p>
-                                <p><img src={check} alt="" className='img-fluid ' />Team structure</p>
+                                <p><BsCheck2Circle className='text-success fs-4 me-2' /> Release process</p>
+                                <p><BsCheck2Circle className='text-success fs-4 me-2' /> Code Libraries</p>
+                                <p><BsCheck2Circle className='text-success fs-4 me-2' />Team structure</p>
                             </div>
                         </Col>
                     </Row>
