@@ -1,6 +1,10 @@
 import React from 'react'
 import { Accordion, Button, Col, Container, Row } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
+import hr from '../images/hr/hr.png'
+import room from '../images/careers/univome.png'
+import lobby from '../images/careers/univelobby.png'
+import act from '../images/careers/act.jpg'
 import Footer from '../Footer/Footer'
 import Header from '../Header/Header'
 import { BsTrophy } from "react-icons/bs";
@@ -23,7 +27,7 @@ export default function Careers() {
 
 <Row className=' my-5 mx-2'>
 <Col xs={12} md={5}>
-  <img  className='img-fluid' src="https://media.istockphoto.com/photos/businessman-working-on-a-laptop-computer-in-the-office-picture-id1338145486?b=1&k=20&m=1338145486&s=170667a&w=0&h=cW5Q_kLRXijvlAjaK86ijnQOzlouKvVMDUXZ9Ped2vs=" alt=""  />
+  <img  className='img-fluid' src={lobby} alt=""  />
   </Col>
 
   <Col xs={12} md={5} className='bigMargin'>
@@ -44,7 +48,7 @@ export default function Careers() {
 <p>Our people are problem solvers; they think holistically and have bias to actions to deliver results in the shortest time. With extreme ownership, ideas are taken from inception to execution on high standards.</p>
   </Col>
   <Col xs={12} md={5}>
-  <img  className='img-fluid' src="https://img.freepik.com/free-photo/people-business-meeting-high-angle_23-2148911819.jpg?w=2000" alt=""  />
+  <img  className='img-fluid' src={room} alt=""  />
   </Col>
   </Row>
 
@@ -53,7 +57,7 @@ export default function Careers() {
       
 <Row className=' my-5 bigMargin py-5'>
 <Col xs={12} md={5}>
-  <img  className='img-fluid invert ' src="https://ugs.utexas.edu/sites/default/files/hero_images/University_Lecture_Series.jpg" alt=""  />
+  <img  className='img-fluid invert ' src={act} alt=""  />
   </Col>
 
   <Col xs={12} md={5} className='bigMargin text-start'>
