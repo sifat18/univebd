@@ -13,7 +13,7 @@ export default function Careers() {
 <Row className='border rounded  my-5 bg-white'>
   <Col xs={12} md={5}>
   <h1 className='mx-4 mt-5 mb-3'>Reshape the Future <br/> of Learning</h1>
-  <p className='fs-5 mx-4 my-2'>50+ roles now open in multiple locations</p>
+  <p className='fs-5 mx-4 my-2'>10+ roles now open with remote and hybrid job facilities.</p>
   <NavLink to='/'><Button size='lg' className=' mx-4 my-3 bluebtn'>Explore Opportunities</Button></NavLink>
   </Col>
   <Col xs={12} md={6}>
@@ -28,10 +28,9 @@ export default function Careers() {
 
   <Col xs={12} md={5} className='bigMargin'>
   <h3 className=' mt-5'>Come, Grow With Us</h3>
-  <p className='  my-3 '>Growing with Educative is much more than just increasing numbers. Here, personal career development sits at the heart of every initiative. Every day is an opportunity to learn something new and find creative solutions.
+  <p className='  my-3 '>in Unive, We believe continuous learning and growth mindset are the keys to uncap the career potential. If you feel the same then come join with us we are all in to facillitate your career development goals.
 
 </p>
-<p><BsTrophy className='me-3'/> Ranked 573 in Inc. 5000 list of Fastest Growing US Companies</p>
   </Col>
   </Row>
 
@@ -41,8 +40,8 @@ export default function Careers() {
 
   <Col xs={12} md={5} className='me-5'>
   <h3 className=' mt-5'>Inside Unive</h3>
-  <p className='  my-3'>Unive is on a mission to help every developer become more productive and successful.</p>
-<p>Our people are leaders; they think big, dive deep into problems, and deliver results. With extreme ownership, ideas are taken from inception to production on high standards.</p>
+  <p className='  my-3'>Unive is on a mission to help every engineer and technical manpower become more productive and successful.</p>
+<p>Our people are problem solvers; they think holistically and have bias to actions to deliver results in the shortest time. With extreme ownership, ideas are taken from inception to execution on high standards.</p>
   </Col>
   <Col xs={12} md={5}>
   <img  className='img-fluid' src="https://img.freepik.com/free-photo/people-business-meeting-high-angle_23-2148911819.jpg?w=2000" alt=""  />
@@ -58,11 +57,10 @@ export default function Careers() {
   </Col>
 
   <Col xs={12} md={5} className='bigMargin text-start'>
-  <p className=' pt-3  fs-6 '>IN THE LIMELIGHT</p>
+  <p className=' pt-3  fs-6 '>TIme to Act Fast</p>
 
-  <h3 >Going beyond routine learning</h3>
-  <p className='  my-3'>Unive has launched a series of interactive sessions to promote learning in a diverse range of subjects. Dr. Sarmad Abbasi, a renowned academic of mathematics and theoretical computing, led the session and spoke about the theory of ethics as explained by famous philosophers.
-</p>
+  <h3 >Play an active role in proper nation building</h3>
+  <p className='  my-3'>Our country needs the best talents to implement an efficient and effective platform for empowering people. The time was never better. Now it's the time. Let's do it as a team!</p>
   </Col>
   </Row>
     </Container>
@@ -70,20 +68,20 @@ export default function Careers() {
     <Container data-aos="fade-up" className='  my-5'>
                 <Row>
                     <Col xs={12} md={4}>
-                        <h2 className='my-5 mx-auto fs-1 text-start'>কিছু কমন প্রশ্ন</h2>
-                        <p className=' text-center'>আপনার প্রশ্নের উত্তর খুঁজে পাচ্ছেন না? আমাদের সাথে যোগাযোগ করুন</p>
+                        <h2 className='my-5 mx-auto fs-1 text-start'>Frequently Asked Questions</h2>
+                        <p className=' text-center'>Please reach out through mail if you have any further questions</p>
                     </Col>
                     <Col xs={12} md={8}>
                         <Accordion defaultActiveKey={['0', '1']} alwaysOpen >
                             <Accordion.Item eventKey="0" >
-                                <Accordion.Header>এখানে কি কোনো রিভিউ প্রসেস আছে?</Accordion.Header>
+                                <Accordion.Header>Where can i find the job opening posts?</Accordion.Header>
                                 <Accordion.Body>
-                                    জ্বি, এখানে আপনি আর্টিকেল সাবমিট করলে একটি রিভিউ প্রসেস দিয়ে যাবে। আপনি আর্টিকেল সাবমিট করার পর অনতিবিলম্বে আপনার সাথে যোগাযোগ করা হবে।</Accordion.Body>
+                                    Please submit your resume by creating a profile in the unive platform as a job aspirant. Our alogirthm will choose the relevant position for your candidacy. If you seem fit our team will reach you through mail and phone.</Accordion.Body>
                             </Accordion.Item>
                             <Accordion.Item eventKey="1">
-                                <Accordion.Header>আমি কোন টপিক নিয়ে লিখবো?</Accordion.Header>
+                                <Accordion.Header>Is it mandatory to create a profile or can i just submit my resume?</Accordion.Header>
                                 <Accordion.Body>
-                                    আপনি Unive এর টপিক লিস্ট থেকে যেকোনো টপিক নিয়ে লিখতে পারেন কিংবা আমাদের সাজেস্ট করতে পারেন নতুন কোনো টপিক।</Accordion.Body>
+                                    You can just submit your resume but we strongly recommend to create a Job aspirant profile. The algorithm works best with the job aspirant profile to pick out prospective candidates.</Accordion.Body>
                             </Accordion.Item>
                         </Accordion>
                     </Col>
@@ -94,7 +92,7 @@ export default function Careers() {
                 <h2 className=' mt-2 mb-4 fs-2 '>Apply Now!</h2>
                 
                 <Button variant='btn btn-primary' size='lg' href='/home'> Explore Opportunities</Button>
-                <p className=' my-4 smallText text-muted'>If you have any questions, feel free to email us at jobs@unive.work</p>
+                <p className=' my-4 smallText text-muted'>If you have any questions, feel free to email us at jobs@unive.com.bd</p>
             </Container>
     <Footer /></>
   )
