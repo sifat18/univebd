@@ -1,11 +1,16 @@
+import axios from 'axios'
 import React, { useState } from 'react'
-import { Col, Container, FloatingLabel, Form, Row } from 'react-bootstrap'
+import { Button, Modal, Col, Container, FloatingLabel, Form, Row } from 'react-bootstrap'
 import Footer from '../Footer/Footer'
 import Header from '../Header/Header'
 import scholarshipPic from '../images/scholarship/graduation.png'
 
 export default function Scholarships() {
   const [scholarShipData, setScholarShipData] = useState({});
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  const [pdf, setPdf] = useState(null);
   const [choice, setChoice] = useState('Highest Level of Qualification ');
   function handleSelectChange(event) {
     setChoice(event.target.value);
@@ -21,13 +26,30 @@ export default function Scholarships() {
 
   }
   const scholarshipSubmit = (e) => {
+    console.log('hit');
     e.preventDefault();
-    // let Finalcourse = { ...course }
-    // Finalcourse.Module = [...module]
-    // setCourse(Finalcourse)
+    let formData = new FormData();
+    // iterating over the object to transform it into formdata
+    Object.keys(scholarShipData).forEach(key => formData.append(key, scholarShipData[key]));
+    formData.append('pdf', pdf);
+    // checking if form getting the values
+    // for (var value of formData.values()) {
+    //   console.log(value);
+    // }
+    // 
+    fetch('https://fierce-woodland-01411.herokuapp.com/scholarship', {
+      method: 'POST',
+      body: formData
+    })
+      .then(response => response.json())
+      .then(data => {
+        if (data.insertedId) {
+          handleShow()
+        } else {
+          console.error('Error2');
 
-    console.log(scholarShipData)
-    // axios.post(`https://fierce-woodland-01411.herokuapp.com/courses`, course).then(res => res.data ? handleShow() : '')
+        }
+      })
   }
   return (
     <><Header />
@@ -42,8 +64,8 @@ export default function Scholarships() {
           </Col>
           {/* form */}
           <Col xs={12} md={7}>
-            <form className='mx-auto  py-3 ' onSubmit={scholarshipSubmit}>
-
+            <form className='text-center mx-2  py-3 ' onSubmit={scholarshipSubmit}>
+              <h2 className='text-center fw-bold mt-2 mb-5'> Please fill out the Informations</h2>
               <FloatingLabel
                 controlId="floatingInput"
                 label="Full Name"
@@ -88,7 +110,7 @@ export default function Scholarships() {
                   onChange={handleOnChange} />
               </FloatingLabel>
               {/* ------------ */}
-              <FloatingLabel className='my-5 ' controlId="floatingTextarea2" label="Why do you need a scholarship">
+              <FloatingLabel className='mt-5 mb-3' controlId="floatingTextarea2" label="Why do you need a scholarship">
                 <Form.Control
                   name='scholarship_need'
                   as="textarea"
@@ -97,13 +119,28 @@ export default function Scholarships() {
                   style={{ height: '100px' }}
                   onChange={handleOnChange} />
               </FloatingLabel>
-              <p className='btn btn-primary d-block py-3 px-5 mx-auto mt-2  mb-5'>Register </p>
+              <Form.Group controlId="formFile" className="text-start ms-2 mb-3">
+                <Form.Label >CV (if any)</Form.Label>
+                <Form.Control className="text-start" type="file" accept="application/pdf" onChange={e => setPdf(e.target.files[0])} />
+              </Form.Group>
+              <button className='btn btn-primary d-block w-100 mx-auto mt-2 py-3 ms-2 mb-5'>Submit </button>
             </form>
           </Col>
         </Row>
       </Container>
 
       <Footer />
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Thank You</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>We will shortly get in contact with you</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </>
   )
 }

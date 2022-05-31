@@ -176,7 +176,7 @@ export default function Header() {
                             {/* ----------- */}
                             {passError ? <p className='text-danger text-center'>{passError}</p> : ''}
 
-                            <p className='btn btn-primary d-block py-3 px-5 mx-auto mt-2  mb-5'>Register </p>
+                            <p className='btn btn-primary d-block py-3 px-5 mx-auto mt-2  mb-5' >Register </p>
                         </form>
                     </Container>
 
