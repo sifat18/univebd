@@ -89,7 +89,7 @@ function App() {
             <Route path="/maas" element={<Maas />} />
             <Route path="/our-team" element={<OurTeam />} />
             <Route path="/careers" element={<Careers />} />
-            <Route path="/course-catalogue" element={<CourseCatalog />} />
+            <Route path="/course-catalogue/:tag" element={<CourseCatalog />} />
             <Route path="/scholarships" element={<Scholarships />} />
             <Route path="/press" element={<Press />} />
             <Route path="/addcourse" element={<CourseAdd />} />

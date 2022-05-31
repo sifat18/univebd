@@ -42,7 +42,7 @@ export default function Home() {
                 <section className='container mt-5'>
                     <h1 className=''>শিখুন ইন্টারেক্টিভ ভিডিও টিউটোরিয়াল এর মাধ্যমে</h1>
                     <h5 className=' mt-3 smallText ps-2'> সমস্ত ক্যারিয়ার পাথ এবং ট্রেনিং কন্টেন্ট এর পিছনে আছেন ভেটেরান ইন্ডাস্ট্রি ইঞ্জিনিয়ার্স যারা প্রতিনিয়ত ট্রেনিং ম্যাটেরিয়ালস আপডেট করে যাচ্ছেন।</h5>
-                    <h5 className=' text-center smallText'></h5>
+                    {/* <h5 className=' text-center smallText'></h5> */}
                     <div className=" top-video mt-5   ">
                         <video loop="true" className='w-75 h-75' autoplay="autoplay" muted >
                             <source src={b2} type='video/mp4' />
@@ -64,7 +64,7 @@ export default function Home() {
                                 <div className='mt-5 border-end text-start'>
                                     <h2 className='' >সফটওয়্যার এবং আইটি প্রফেশনালদের জন্য</h2>
                                     <p className=''> এই ক্যারিয়ার পাথটি যারা সফটওয়্যার এবং আইটি ইন্ডাস্ট্রি তে ক্যারিয়ার গড়তে চান তাদের জন্য। এই ক্যারিয়ার পাথ আপনাকে দেশে এবং দেশের বাইরে জব মার্কেট ফোকাস করে তৈরি করে গড়ে উঠতে সাহায্য করবে।</p>
-                                    <NavLink to='/learn'><Button variant="outline-secondary">এক্সপ্লোর করুন<img src={ar} alt="" /></Button></NavLink>
+                                    <NavLink to='/course-catalogue/IT'><Button variant="outline-secondary">এক্সপ্লোর করুন<img src={ar} alt="" /></Button></NavLink>
                                 </div>
                             </Col>
                             <Col xs={12} md={6} className='p-0 m-0'>
@@ -72,7 +72,7 @@ export default function Home() {
                                 <div className='mt-5  smallpadding text-start'>
                                     <h2 className=' '>টেকনিক্যাল ইঞ্জিনিয়ারদের জন্য</h2>
                                     <p className=''>ইলেকট্রিক্যাল, মেকানিকাল, সিভিল, কেমিক্যাল কিংবা আর্কিটেকচার ইঞ্জিনিয়ারদের জব মার্কেট এর জন্য গড়ে উঠতে আপনাকে সাহায্য করবে এই ক্যারিয়ার পাথটি।</p>
-                                    <NavLink to='/learn'><Button variant="outline-secondary">এক্সপ্লোর করুন <img src={ar} alt="" /></Button></NavLink>
+                                    <NavLink to='/course-catalogue/technical'><Button variant="outline-secondary">এক্সপ্লোর করুন <img src={ar} alt="" /></Button></NavLink>
 
                                 </div>
                             </Col>

@@ -17,7 +17,7 @@ export default function Upskill() {
                 <section className='text-center '>
                     <h2 className='fs-1 fw-bold'>Upskill Your Team.</h2>
                     <h3 className=' fs-2 mt-3'>Improve Their Code and Career.</h3>
-                    <p className=' mt-5 '>Educative helps engineering managers and their teams learn, practice,<br />and test their coding skills using hands-on, interactive tools right from their internet browser.</p>
+                    <p className=' mt-5 '>Unive helps engineering managers and their teams learn, practice,<br />and test their coding skills using hands-on, interactive tools right from their internet browser.</p>
                     <p className=' '></p>
                     <div className=" mt-3   ">
                         <Button className='p-3 m-3 bluebtn' href="#">Request a demo</Button>
@@ -52,7 +52,7 @@ export default function Upskill() {
                     <Row>
                         <Col xs={12} md={6} className="text-start pt-5">
                             <h1 className='fw-bold'>Custom Learning Paths</h1>
-                            <p className='text-start fs-4 pt-5'>No two engineers are exactly the same, so why is their curriculum? Educative helps you customize their training and paths so each engineer on your team gets exactly what they need and skip what they've already mastered.</p>
+                            <p className='text-start fs-4 pt-5'>No two engineers are exactly the same, so why is their curriculum? Unive helps you customize their training and paths so each engineer on your team gets exactly what they need and skip what they've already mastered.</p>
 
                         </Col>
                         <Col xs={12} md={6}>
@@ -72,7 +72,7 @@ export default function Upskill() {
                     <Row>
                         <Col xs={12} md={6} className="text-start">
                             <h3 className='fw-bold'>Engagement Tracking</h3>
-                            <p className='text-start fs-4 pt-3'>Educative empowers you with insights into your team's learning— who is taking the courses, and more importantly, who is not. Celebrate your team's progress and remind passive participants to accept your invitation to grow, learn and improve using the Educative platform.</p>
+                            <p className='text-start fs-4 pt-3'>Unive empowers you with insights into your team's learning— who is taking the courses, and more importantly, who is not. Celebrate your team's progress and remind passive participants to accept your invitation to grow, learn and improve using the Unive platform.</p>
 
                         </Col>
                         <Col xs={12} md={6}>
