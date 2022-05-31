@@ -1,6 +1,5 @@
 import { Button, Container, FloatingLabel, Form, Modal, Nav, Navbar, Offcanvas, Spinner } from 'react-bootstrap'
 import { NavLink, useLocation } from 'react-router-dom';
-// import logo from '../images/logos/cropped-small-px-e1638453380416.png'
 import gogo from '../images/logos/icons8-google.svg'
 import logo from '../images/logos/logo.png'
 import arrow from '../images/icons8-arrow-24.png'
