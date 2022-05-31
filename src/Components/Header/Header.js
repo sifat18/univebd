@@ -99,7 +99,7 @@ export default function Header() {
             {/* NAV BAR */}
             <Navbar sticky="top" className='my-2' fluid collapseOnSelect expand="lg" bg="white" variant="light">
                 <Container fluid>
-                    {user.displayName && <span onClick={handleOn} className='me-4  side-nav-btn rounded-circle border border-secondary'>  <MdNavigateNext className='mousepoint fs-2'/></span>}
+                    {user.displayName && <span onClick={handleOn} className='me-4  side-nav-btn rounded-circle border-secondary'>  <MdNavigateNext className='mousepoint fs-2' /></span>}
                     <NavLink to='/'> <Navbar.Brand href="#home" className="me-5 ">
                         <img
                             src={logo}
@@ -118,7 +118,7 @@ export default function Header() {
                             <NavLink to='/why-unive'>  <Nav.Link className=" d-md-none text-dark" href="/why-unive">ইউনিভ কেন</Nav.Link></NavLink>
                             <NavLink to='/how-it-works'><Nav.Link className=" d-md-none text-dark" href="/how-it-works">কিভাবে কাজ করে</Nav.Link></NavLink>
 
-                           
+
                         </Nav>
                     </Navbar.Collapse>
 
@@ -146,38 +146,38 @@ export default function Header() {
 
             {/* modal register*/}
             <Modal show={show} onHide={handleClose}>
-               
+
                 <Modal.Body>
                     <Container className='py-2'>
                         {/* register form */}
                         <h3 className='text-center fs-1'>Join Unive for free</h3>
                         <form className='mx-auto  py-3 ' onSubmit={handleRegisterSubmit}>
-                           
-                          <FloatingLabel
+
+                            <FloatingLabel
                                 controlId="floatingInput"
                                 label="Username"
                                 className="mt-2 mb-5 text-start"
                             >
                                 <Form.Control type="text" name="name" className="text-start" placeholder="Jane doe" onChange={handleOnChange} />
                             </FloatingLabel>
-                           {/* ----------- */}
-                              <FloatingLabel
+                            {/* ----------- */}
+                            <FloatingLabel
                                 controlId="floatingInput"
                                 label="Email address"
                                 className="mt-2 mb-5 text-start"
                             >
-                                <Form.Control type="email" className="text-start" placeholder="name@example.com" name="email" onChange={handleOnChange}/>
+                                <Form.Control type="email" className="text-start" placeholder="name@example.com" name="email" onChange={handleOnChange} />
                             </FloatingLabel>
-                           
-                           {/* ----------- */}
-                           <FloatingLabel controlId="floatingPassword" label="Password" className="mb-5 ">
-                                <Form.Control type="password" className="text-start"  name="pass" placeholder="Password" onChange={handleOnChange} />
+
+                            {/* ----------- */}
+                            <FloatingLabel controlId="floatingPassword" label="Password" className="mb-5 ">
+                                <Form.Control type="password" className="text-start" name="pass" placeholder="Password" onChange={handleOnChange} />
                             </FloatingLabel>
-                           {/* --------------- */}
+                            {/* --------------- */}
                             <FloatingLabel controlId="floatingPassword" label="Confirm Password" className="mb-5 ">
-                                <Form.Control type="password" className="text-start"  placeholder='re-enter password' name="re-pass" onBlur={hadlePass} />
+                                <Form.Control type="password" className="text-start" placeholder='re-enter password' name="re-pass" onBlur={hadlePass} />
                             </FloatingLabel>
-                           {/* ----------- */}
+                            {/* ----------- */}
                             {passError ? <p className='text-danger text-center'>{passError}</p> : ''}
 
                             <p className='btn btn-primary d-block py-3 px-5 mx-auto mt-2  mb-5'>Register </p>
@@ -188,7 +188,7 @@ export default function Header() {
 
 
             </Modal>
-{/* login modal */}
+            {/* login modal */}
             <Modal show={Lshow} onHide={handleCloseL}>
                 <Modal.Header closeButton>
                     <h2 className='mx-auto ps-5'>Welcome Back</h2>
