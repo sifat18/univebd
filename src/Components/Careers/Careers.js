@@ -1,13 +1,11 @@
 import React from 'react'
 import { Accordion, Button, Col, Container, Row } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
-import hr from '../images/hr/hr.png'
 import room from '../images/careers/univome.png'
 import lobby from '../images/careers/univelobby.png'
 import act from '../images/careers/act.jpg'
 import Footer from '../Footer/Footer'
 import Header from '../Header/Header'
-import { BsTrophy } from "react-icons/bs";
 
 export default function Careers() {
   return (

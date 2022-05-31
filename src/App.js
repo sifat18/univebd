@@ -4,7 +4,6 @@ import 'aos/dist/aos.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Business from './Components/Business/Business';
-import Footer from './Components/Footer/Footer';
 import Home from './Components/Home/Home';
 import Learn from './Components/Learn/Learn';
 import {

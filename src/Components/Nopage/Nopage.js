@@ -3,7 +3,6 @@ import { Accordion, Container } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
-import pic from '../images/error.png'
 const Nopage = () => {
     return (
         // 404 image

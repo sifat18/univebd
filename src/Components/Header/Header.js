@@ -5,13 +5,10 @@ import gogo from '../images/logos/icons8-google.svg'
 import logo from '../images/logos/logo.png'
 import arrow from '../images/icons8-arrow-24.png'
 import { useState } from 'react';
-import Register from '../Register/Register';
 import { useNavigate } from "react-router-dom";
 import useAuth from '../Context/useAuth';
 import './header.css'
-import { GiHamburgerMenu } from "react-icons/gi";
 import { MdNavigateNext } from "react-icons/md";
-import { GiPathDistance } from "react-icons/gi";
 import { GiBullseye } from "react-icons/gi";
 import { FiBook } from "react-icons/fi";
 import { BiSearchAlt2 } from "react-icons/bi";
