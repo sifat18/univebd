@@ -1,16 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import { Button, Card, Col, Container, Row, Spinner } from 'react-bootstrap';
 import { NavLink, useParams } from 'react-router-dom';
-import useData from '../dataloadHooks/dataload';
+import RestCourses from '../Common/RestCourses';
 import Footer from '../Footer/Footer'
 import Header from '../Header/Header'
 import ar from '../images/icons8-arrow-.png'
 import st from '../images/steps.png'
+import dr from '../images/icons8-down-arrow-40.png'
 
 export default function CourseCatalog() {
-  const [item] = useData();
   const { tag } = useParams()
-  const [course, setCourse] = useState(item)
+  const [course, setCourse] = useState([])
+  const [disp, setdisp] = useState(false)
+
+  const handleShow = () => {
+    setdisp(!disp)
+  }
   // https://fierce-woodland-01411.herokuapp.com
   useEffect(() => {
     fetch(`https://fierce-woodland-01411.herokuapp.com/courses/${tag}`).then(res => res.json()).then(data => setCourse(data))
@@ -25,7 +30,7 @@ export default function CourseCatalog() {
         <h2 className='text-center'>Explore the {tag === 'IT' ? "IT" : "Technical"} Courses</h2>
         <hr className=' w-50 fw-bold  mx-auto' />
         <Row xs={1} md={3} className="g-4 bigMargin">
-          {course.map((id) => (
+          {course.slice(0, 5).map((id) => (
             <Col key={id._id}>
               <Card className='py-1'>
                 <Card.Img variant="top" className='img-fluid ' src={id.imageLink} />
@@ -47,7 +52,11 @@ export default function CourseCatalog() {
               </Card>
             </Col>
           ))}
-        </Row> </Container>
+          <RestCourses show={disp} courses={course.slice(5)} />
+        </Row>
+        <Button className='my-5 px-5 py-3' onClick={handleShow} variant="outline-dark">{!disp ? "show more" : "show Less"} <img src={dr} height={22} alt="" /></Button>
+      </Container>
+
       }
       <Footer /></>
   )

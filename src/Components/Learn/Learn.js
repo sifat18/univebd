@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Button, Card, Col, Container, Row } from 'react-bootstrap'
 import useData from '../dataloadHooks/dataload'
 import ar from '../images/icons8-arrow-.png'
@@ -8,11 +8,21 @@ import { NavLink } from 'react-router-dom'
 import Header from '../Header/Header'
 import useAuth from '../Context/useAuth'
 import Footer from '../Footer/Footer'
+import RestCourses from '../Common/RestCourses'
 export default function Learn() {
     const { user } = useAuth()
 
     const [item] = useData();
-    // console.log(item);
+    const [disp, setdisp] = useState(false)
+    const [disp2, setdisp2] = useState(false)
+
+    const handleShow = () => {
+        setdisp(!disp)
+    }
+
+    const handleShow2 = () => {
+        setdisp2(!disp2)
+    }
     return (
         <>
             <Header />
@@ -24,7 +34,7 @@ export default function Learn() {
                         <p className='fs-4 smallText'>Get started with our free courses</p>
                     </section>
                     <Row xs={1} md={3} className="g-4 bigMargin">
-                        {item.map((id) => (
+                        {item.slice(0, 5).map((id) => (
                             <Col key={id._id}>
                                 <Card className='py-1'>
                                     <Card.Img variant="top" className='img-fluid ' src={id.imageLink} />
@@ -46,8 +56,9 @@ export default function Learn() {
                                 </Card>
                             </Col>
                         ))}
+                        <RestCourses show={disp} courses={item.slice(5)} />
                     </Row>
-                    <Button className='my-5 px-5 py-3' variant="outline-dark">show more <img src={dr} height={22} alt="" /></Button>
+                    <Button className='my-5 px-5 py-3' onClick={handleShow} variant="outline-dark">{!disp ? "show more" : "show Less"} <img src={dr} height={22} alt="" /></Button>
 
                 </Container>
 
@@ -59,7 +70,7 @@ export default function Learn() {
                         <p className='fs-4 ps-3'>Popular Courses For You</p>
                     </section>
                     <Row xs={1} md={3} className="g-4 bigMargin">
-                        {item.map((id) => (
+                        {item.slice(0, 5).map((id) => (
                             <Col key={id._id}>
                                 <Card className='py-1'>
                                     <Card.Img variant="top" className='img-fluid ' src={id.imageLink} />
@@ -81,8 +92,9 @@ export default function Learn() {
                                 </Card>
                             </Col>
                         ))}
+                        <RestCourses show={disp2} courses={item.slice(5)} />
                     </Row>
-                    <Button className='my-5 px-5 py-3' variant="outline-dark">show more <img src={dr} height={22} alt="" /></Button>
+                    <Button className='my-5 px-5 py-3' onClick={handleShow2} variant="outline-dark">{!disp2 ? "show more" : "show Less"} <img src={dr} height={22} alt="" /></Button>
 
                 </Container>
 
