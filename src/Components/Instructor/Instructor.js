@@ -8,6 +8,7 @@ import code from '../images/instructor/code.png'
 import lady from '../images/instructor/chair-lady.png'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
+import axios from 'axios'
 export default function Instructor() {
     const [show, setShow] = useState(false);
   const [pdf, setPdf] = useState(null);
@@ -19,8 +20,19 @@ export default function Instructor() {
     const handleShowT = () => {
         handleClose()
         setShowT(true)
-        }
+        ;}
     const [data, setData] = useState({});
+
+    const [choice, setChoice] = useState('অনুগ্রহপূর্বক সিলেক্ট করুন ');
+  function handleSelectChange(event) {
+    setChoice(event.target.value);
+    handleOnChange(event)
+  }
+    const [choice2, setChoice2] = useState('অনুগ্রহপূর্বক সিলেক্ট করুন ');
+  function handleSelectChange2(event) {
+    setChoice2(event.target.value);
+    handleOnChange(event)
+  }
 
     const handleOnChange = e => {
         const field = e.target.name;
@@ -30,6 +42,11 @@ export default function Instructor() {
         setData(newUser);
         console.log(newUser)
 
+    }
+    const handleSubmit2 = e => {
+        e.preventDefault()
+        console.log(data);
+        axios.post(`https://fierce-woodland-01411.herokuapp.com/instructorForm2`, data).then(res => res.data ? handleShowT() : '')
     }
     const handleSubmit = e => {
         console.log('hit');
@@ -57,7 +74,11 @@ export default function Instructor() {
             }
           })
     }
-
+    const [term, setTerm] = React.useState('ইন্ডিভিজুয়াল কন্ট্রাক্টর');
+    const handleChangeRadio = (event) => {
+        setTerm(event.target.value)
+        handleOnChange(event)
+      }
 
     return (
         <>
@@ -209,47 +230,59 @@ export default function Instructor() {
                     <Col xs={12} md={6}>
                         <img className='img-fluid' src={lady} alt="" />
                     </Col>
-                    <Col xs={12} md={6}>
+                    <Col xs={12} md={6} className='align'>
+                    <form className='w-75 text-center' onSubmit={handleSubmit2}>
                         <Form.Group className="mb-3 text-start">
                             <Form.Label >আপনার আগ্রহের বিষয়*</Form.Label>
-                            <Form.Select >
-                                <option>অনুগ্রহপূর্বক সিলেক্ট করুন</option>
-                                <option>আই টি</option>
-                                <option>ইঞ্জিনিয়ারিং</option>
-                                <option>বিজনেস স্টাডিজ</option>
-                                <option>হিউম্যানেটিজ</option>
-                                <option>নার্সিং</option>
+                            <Form.Select name='interest' onChange={handleSelectChange} value={choice} >
+                                <option value='অনুগ্রহপূর্বক সিলেক্ট করুন'>অনুগ্রহপূর্বক সিলেক্ট করুন</option>
+                                <option value='আই টি'>আই টি</option>
+                                <option value='ইঞ্জিনিয়ারিং'>ইঞ্জিনিয়ারিং</option>
+                                <option value='বিজনেস স্টাডিজ'>বিজনেস স্টাডিজ</option>
+                                <option value='হিউম্যানেটিজ'>হিউম্যানেটিজ</option>
+                                <option value='নার্সিং'>নার্সিং</option>
                             </Form.Select>
-                            <Form.Label>ট্রেইনিং/ কোর্স টপিক*</Form.Label>
-                            <Form.Control type="text" placeholder="" />
-                            <Form.Label>আপনার সিলেক্টেড টপিকটিতে অভিজ্ঞতা নিয়ে লিখুন*</Form.Label>
+                            <Form.Label className='my-3'>ট্রেইনিং/ কোর্স টপিক*</Form.Label>
+                            <Form.Control type="text" placeholder="" className='text-start' name='course' onChange={handleOnChange} />
+                            <Form.Label className='my-3'>আপনার সিলেক্টেড টপিকটিতে অভিজ্ঞতা নিয়ে লিখুন*</Form.Label>
                             <p>উদাহরণস্বরূপ, ১৫ বছর অভিজ্ঞতা ট্রান্সফরমার ট্রাবলশ্যুটিং এ, ১০ বছর অভিজ্ঞতা সফটওয়্যার আর্কিটেকচারে</p>
-                            <Form.Control type="text" placeholder="" />
-                            <p>আপনি কোন পদ্ধতিতে আমাদের সাথে যুক্ত হতে চান?*</p>
+                            <Form.Control type="text" placeholder="" name='experience'  onChange={handleOnChange} className='text-start' />
+                            <p className='my-3'>আপনি কোন পদ্ধতিতে আমাদের সাথে যুক্ত হতে চান?*</p>
                             <Form.Check
                                 inline
-                                label="ইন্ডিভিজুয়াল কন্ট্রাক্টর "
+                                label="ইন্ডিভিজুয়াল কন্ট্রাক্টর"
+                                value="ইন্ডিভিজুয়াল কন্ট্রাক্টর"
                                 name="group1"
                                 type='radio'
+                                checked={term === 'ইন্ডিভিজুয়াল কন্ট্রাক্টর'}
+
                                 id={`inline-radio-1`}
+                                onChange={handleChangeRadio}
                             />
                             <Form.Check
                                 inline
                                 label="রেসিডেন্ট ইনস্ট্রাক্টর"
+                                value="রেসিডেন্ট ইনস্ট্রাক্টর"
                                 name="group1"
                                 type='radio'
+                                checked={term === 'রেসিডেন্ট ইনস্ট্রাক্টর'}
                                 id={`inline-radio'-1`}
+                                onChange={handleChangeRadio}
+
                             />
                             <p></p>
                             <Form.Label >আপনি আমাদের সম্পর্কে কিভাবে জানলেন?*</Form.Label>
-                            <Form.Select >
-                                <option>অনুগ্রহপূর্বক সিলেক্ট করুন</option>
-                                <option>বন্ধু</option>
-                                <option>সোশ্যাল মিডিয়া </option>
-                                <option>নিজে থেকে </option>
+                            <Form.Select name='aboutUsFrom' onChange={handleSelectChange2} value={choice2}>
+                                <option value='অনুগ্রহপূর্বক সিলেক্ট করুন'>অনুগ্রহপূর্বক সিলেক্ট করুন</option>
+                                <option value='বন্ধু'>বন্ধু</option>
+                                <option value='সোশ্যাল মিডিয়া'>সোশ্যাল মিডিয়া </option>
+                                <option value='নিজে থেকে'>নিজে থেকে </option>
                             </Form.Select>
 
                         </Form.Group>
+              <button className='btn btn-primary d-block w-100 mx-auto mt-2 py-3 ms-2 mb-5'>Submit </button>
+
+                        </form>
                     </Col>
                 </Row>
             </Container>

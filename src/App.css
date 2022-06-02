@@ -32,3 +32,7 @@ box-shadow: 0 5px #999;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
+@media (max-width:550px) {
+  .align{
+  margin: 1rem 4rem;
+}}
