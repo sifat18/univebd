@@ -1,5 +1,5 @@
-import React from 'react'
-import { Accordion, Button, Col, Container, Row } from 'react-bootstrap'
+import React, { useState } from 'react'
+import { Accordion, Button, Col, Container, Row,Modal, Form, FloatingLabel } from 'react-bootstrap'
 import Companies from '../Common/Companies'
 import hr from '../images/hr/hr.png'
 import search from '../images/hr/search.png'
@@ -8,7 +8,34 @@ import loud from '../images/hr/loud.png'
 import ContactForm from '../Common/ContactForm'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
+import axios from 'axios'
 export default function Recruiting() {
+    const [show, setShow] = useState(false);
+    const [showT, setShowT] = useState(false);
+    const handleClose = () => {
+        setShow(false);
+        handleShowT()
+    }
+    const handleShow = () => setShow(true);
+    const handleCloseT = () => setShowT(false);
+    const handleShowT = () => setShowT(true);
+    const [data, setData] = useState({});
+
+    const handleOnChange = e => {
+        const field = e.target.name;
+        const value = e.target.value;
+        const newUser = { ...data };
+        newUser[field] = value;
+        setData(newUser);
+        console.log(newUser)
+
+    }
+    const handleSubmit = e => {
+        e.preventDefault()
+        console.log(data);
+        axios.post(`https://fierce-woodland-01411.herokuapp.com/recruit`, data).then(res => res.data ? handleClose() : '')
+
+    }
     return (
         <>
             <Header />
@@ -133,9 +160,62 @@ export default function Recruiting() {
             <Container fluid className='middle py-5 text-center'>
                 <h2 className=' my-2 fs-2 '>রেডী টু স্টার্ট?</h2>
                 <p className=' my-4 smallText text-muted'>আপনি যদি আগ্রহী হন তাহলে যোগাযোগ করুন আমাদের টিম এর সাথে।</p>
-                <Button variant='btn btn-primary' href='/home'> কথা বলুন আমাদের রিপ্রেজেন্টেটিভ এর সাথে</Button>
+                <Button variant='btn btn-primary' onClick={handleShow} > কথা বলুন আমাদের রিপ্রেজেন্টেটিভ এর সাথে</Button>
             </Container>
             <Footer />
+            <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                    <h2 className='mx-auto ps-5'>Fill up the form</h2>
+                </Modal.Header>
+                <Modal.Body>
+                    <Container className='py-2'>
+                        {/* Login form */}
+                        <form className='mt-3  py-3' onSubmit={handleSubmit}>
+                        <FloatingLabel
+                controlId="floatingInput"
+                label="Full Name"
+                className="mt-2 mb-5 text-start"
+              >
+                <Form.Control type="text" name="FullName" className="text-start" placeholder="Jane doe" onChange={handleOnChange} />
+              </FloatingLabel>
+  {/* ----------- */}
+  <FloatingLabel
+                controlId="floatingInput"
+                label="Email address"
+                className="mt-2 mb-5 text-start"
+              >
+                <Form.Control type="email" className="text-start" placeholder="name@example.com" name="email" onChange={handleOnChange} />
+              </FloatingLabel>
+                     {/* ------------- */}
+                     
+              <FloatingLabel
+                controlId="floatingInput"
+                label="Phone Number"
+                className="mt-2 mb-5 text-start"
+              >
+                <Form.Control type="number" name="PhoneNumber" className="text-start" placeholder="01299123" onChange={handleOnChange} />
+              </FloatingLabel>
+              {/*------------  */}
+              <button className='btn btn-primary d-block w-100 mx-auto mt-2 py-3 ms-2 mb-5'>Submit </button>
+                        </form>
+                    </Container>
+
+                </Modal.Body>
+
+
+            </Modal>
+            {/* Thank you */}
+            <Modal show={showT} onHide={handleCloseT}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Thanks for your interest</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>One of our representatives will get back to you asap.</Modal.Body>
+                <Modal.Footer>
+                    <Button variant="success" onClick={handleCloseT}>
+                        Ok!!
+                    </Button>
+                </Modal.Footer>
+            </Modal>
         </>
     )
 }

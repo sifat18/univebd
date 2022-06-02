@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Live Site
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Unive [Educ](https://educ-5542f.web.app/).
 
 ## Available Scripts
 
