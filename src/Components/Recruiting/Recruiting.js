@@ -12,13 +12,13 @@ import axios from 'axios'
 export default function Recruiting() {
     const [show, setShow] = useState(false);
     const [showT, setShowT] = useState(false);
-    const handleClose = () => {
-        setShow(false);
-        handleShowT()
-    }
+    const handleClose = () =>setShow(false);
     const handleShow = () => setShow(true);
     const handleCloseT = () => setShowT(false);
-    const handleShowT = () => setShowT(true);
+    const handleShowT = () => {
+        handleClose()
+        setShowT(true)
+        }
     const [data, setData] = useState({});
 
     const handleOnChange = e => {
