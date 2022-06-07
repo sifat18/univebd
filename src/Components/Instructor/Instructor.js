@@ -1,5 +1,5 @@
-import React from 'react'
-import { Accordion, Button, Col, Container, Form, Row } from 'react-bootstrap'
+import React, { useState } from 'react'
+import { Accordion, Button, Col, Container, Form, Row,FloatingLabel,Modal } from 'react-bootstrap'
 import instruct from '../images/instructor/instruct.png'
 import chair from '../images/instructor/chair.png'
 import phone from '../images/instructor/phone.png'
@@ -8,7 +8,78 @@ import code from '../images/instructor/code.png'
 import lady from '../images/instructor/chair-lady.png'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
+import axios from 'axios'
 export default function Instructor() {
+    const [show, setShow] = useState(false);
+  const [pdf, setPdf] = useState(null);
+
+    const [showT, setShowT] = useState(false);
+    const handleClose = () =>    setShow(false);
+    const handleShow = () => setShow(true);
+    const handleCloseT = () => setShowT(false);
+    const handleShowT = () => {
+        handleClose()
+        setShowT(true)
+        ;}
+    const [data, setData] = useState({});
+
+    const [choice, setChoice] = useState('অনুগ্রহপূর্বক সিলেক্ট করুন ');
+  function handleSelectChange(event) {
+    setChoice(event.target.value);
+    handleOnChange(event)
+  }
+    const [choice2, setChoice2] = useState('অনুগ্রহপূর্বক সিলেক্ট করুন ');
+  function handleSelectChange2(event) {
+    setChoice2(event.target.value);
+    handleOnChange(event)
+  }
+
+    const handleOnChange = e => {
+        const field = e.target.name;
+        const value = e.target.value;
+        const newUser = { ...data };
+        newUser[field] = value;
+        setData(newUser);
+        console.log(newUser)
+
+    }
+    const handleSubmit2 = e => {
+        e.preventDefault()
+        console.log(data);
+        axios.post(`https://fierce-woodland-01411.herokuapp.com/instructorForm2`, data).then(res => res.data ? handleShowT() : '')
+    }
+    const handleSubmit = e => {
+        console.log('hit');
+        e.preventDefault();
+        let formData = new FormData();
+        // iterating over the object to transform it into formdata
+        Object.keys(data).forEach(key => formData.append(key, data[key]));
+        formData.append('pdf', pdf);
+        // checking if form getting the values
+        // for (var value of formData.values()) {
+        //   console.log(value);
+        // }
+        // 
+        fetch('https://fierce-woodland-01411.herokuapp.com/instructor', {
+          method: 'POST',
+          body: formData
+        })
+          .then(response => response.json())
+          .then(data => {
+            if (data.insertedId) {
+              handleShowT()
+            } else {
+              console.error('Error2');
+    
+            }
+          })
+    }
+    const [term, setTerm] = React.useState('ইন্ডিভিজুয়াল কন্ট্রাক্টর');
+    const handleChangeRadio = (event) => {
+        setTerm(event.target.value)
+        handleOnChange(event)
+      }
+
     return (
         <>
             <Header />
@@ -21,7 +92,7 @@ export default function Instructor() {
                         <p className='smallText fw-normal'>আপনার এক্সপেরিয়েন্স এবং এক্সপার্টাইজ শেয়ার করে দক্ষ মানবসম্পদ গড়তে সরাসরি অবদান রাখুন।
                         </p>
                         <p className='smallText fw-normal'> আপনার কোর্স বা ট্রেইনিং থেকে আয়ের সুযোগ তো থাকছেই।</p>
-                        <Button className='p-3 mt-3 bluebtn' href="#">Become an Instructor</Button>
+                        <Button className='p-3 mt-3 bluebtn' onClick={handleShow}>Become an Instructor</Button>
                     </Col>
                     <Col xs={12} md={5} className='my-5'>
                         <img className='img-fluid' src={instruct} alt="" />
@@ -159,51 +230,132 @@ export default function Instructor() {
                     <Col xs={12} md={6}>
                         <img className='img-fluid' src={lady} alt="" />
                     </Col>
-                    <Col xs={12} md={6}>
+                    <Col xs={12} md={6} className='align'>
+                    <form className='w-75 text-center' onSubmit={handleSubmit2}>
                         <Form.Group className="mb-3 text-start">
                             <Form.Label >আপনার আগ্রহের বিষয়*</Form.Label>
-                            <Form.Select >
-                                <option>অনুগ্রহপূর্বক সিলেক্ট করুন</option>
-                                <option>আই টি</option>
-                                <option>ইঞ্জিনিয়ারিং</option>
-                                <option>বিজনেস স্টাডিজ</option>
-                                <option>হিউম্যানেটিজ</option>
-                                <option>নার্সিং</option>
+                            <Form.Select name='interest' onChange={handleSelectChange} value={choice} >
+                                <option value='অনুগ্রহপূর্বক সিলেক্ট করুন'>অনুগ্রহপূর্বক সিলেক্ট করুন</option>
+                                <option value='আই টি'>আই টি</option>
+                                <option value='ইঞ্জিনিয়ারিং'>ইঞ্জিনিয়ারিং</option>
+                                <option value='বিজনেস স্টাডিজ'>বিজনেস স্টাডিজ</option>
+                                <option value='হিউম্যানেটিজ'>হিউম্যানেটিজ</option>
+                                <option value='নার্সিং'>নার্সিং</option>
                             </Form.Select>
-                            <Form.Label>ট্রেইনিং/ কোর্স টপিক*</Form.Label>
-                            <Form.Control type="text" placeholder="" />
-                            <Form.Label>আপনার সিলেক্টেড টপিকটিতে অভিজ্ঞতা নিয়ে লিখুন*</Form.Label>
+                            <Form.Label className='my-3'>ট্রেইনিং/ কোর্স টপিক*</Form.Label>
+                            <Form.Control type="text" placeholder="" className='text-start' name='course' onChange={handleOnChange} />
+                            <Form.Label className='my-3'>আপনার সিলেক্টেড টপিকটিতে অভিজ্ঞতা নিয়ে লিখুন*</Form.Label>
                             <p>উদাহরণস্বরূপ, ১৫ বছর অভিজ্ঞতা ট্রান্সফরমার ট্রাবলশ্যুটিং এ, ১০ বছর অভিজ্ঞতা সফটওয়্যার আর্কিটেকচারে</p>
-                            <Form.Control type="text" placeholder="" />
-                            <p>আপনি কোন পদ্ধতিতে আমাদের সাথে যুক্ত হতে চান?*</p>
+                            <Form.Control type="text" placeholder="" name='experience'  onChange={handleOnChange} className='text-start' />
+                            <p className='my-3'>আপনি কোন পদ্ধতিতে আমাদের সাথে যুক্ত হতে চান?*</p>
                             <Form.Check
                                 inline
-                                label="ইন্ডিভিজুয়াল কন্ট্রাক্টর "
+                                label="ইন্ডিভিজুয়াল কন্ট্রাক্টর"
+                                value="ইন্ডিভিজুয়াল কন্ট্রাক্টর"
                                 name="group1"
                                 type='radio'
+                                checked={term === 'ইন্ডিভিজুয়াল কন্ট্রাক্টর'}
+
                                 id={`inline-radio-1`}
+                                onChange={handleChangeRadio}
                             />
                             <Form.Check
                                 inline
                                 label="রেসিডেন্ট ইনস্ট্রাক্টর"
+                                value="রেসিডেন্ট ইনস্ট্রাক্টর"
                                 name="group1"
                                 type='radio'
+                                checked={term === 'রেসিডেন্ট ইনস্ট্রাক্টর'}
                                 id={`inline-radio'-1`}
+                                onChange={handleChangeRadio}
+
                             />
                             <p></p>
                             <Form.Label >আপনি আমাদের সম্পর্কে কিভাবে জানলেন?*</Form.Label>
-                            <Form.Select >
-                                <option>অনুগ্রহপূর্বক সিলেক্ট করুন</option>
-                                <option>বন্ধু</option>
-                                <option>সোশ্যাল মিডিয়া </option>
-                                <option>নিজে থেকে </option>
+                            <Form.Select name='aboutUsFrom' onChange={handleSelectChange2} value={choice2}>
+                                <option value='অনুগ্রহপূর্বক সিলেক্ট করুন'>অনুগ্রহপূর্বক সিলেক্ট করুন</option>
+                                <option value='বন্ধু'>বন্ধু</option>
+                                <option value='সোশ্যাল মিডিয়া'>সোশ্যাল মিডিয়া </option>
+                                <option value='নিজে থেকে'>নিজে থেকে </option>
                             </Form.Select>
 
                         </Form.Group>
+              <button className='btn btn-primary d-block w-100 mx-auto mt-2 py-3 ms-2 mb-5'>Submit </button>
+
+                        </form>
                     </Col>
                 </Row>
             </Container>
             <Footer />
+            {/* form modal*/}
+            <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                    <h2 className='mx-auto ps-5'>Fill up the form</h2>
+                </Modal.Header>
+                <Modal.Body>
+                    <Container className='py-2'>
+                        {/* Login form */}
+                        <form className='mt-3  py-3' onSubmit={handleSubmit}>
+              <FloatingLabel
+                controlId="floatingInput"
+                label="Full Name"
+                className="mt-2 mb-5 text-start"
+              >
+                <Form.Control type="text" name="FullName" className="text-start" placeholder="Jane doe" onChange={handleOnChange} />
+              </FloatingLabel>
+              {/* ----------- */}
+              <FloatingLabel
+                controlId="floatingInput"
+                label="Email address"
+                className="mt-2 mb-5 text-start"
+              >
+                <Form.Control type="email" className="text-start" placeholder="name@example.com" name="email" onChange={handleOnChange} />
+              </FloatingLabel>
+
+              {/* ----------- */}
+
+              <FloatingLabel
+                controlId="floatingInput"
+                label="Phone Number"
+                className="mt-2 mb-5 text-start"
+              >
+                <Form.Control type="number" name="PhoneNumber" className="text-start" placeholder="01299123" onChange={handleOnChange} />
+              </FloatingLabel>
+              {/* ----------- */}
+              <FloatingLabel
+                controlId="floatingInput"
+                label="Subject you want to teach"
+                className="mt-2 mb-5 text-start"
+              >
+                <Form.Control type="text" name="subject" className="text-start" placeholder="English" onChange={handleOnChange} />
+              </FloatingLabel>
+              
+              {/* ------------ */}
+              
+              <Form.Group controlId="formFile" className="text-start ms-2 mb-3">
+                <Form.Label >CV (if any)</Form.Label>
+                <Form.Control className="text-start" type="file" accept="application/pdf" onChange={e => setPdf(e.target.files[0])} />
+              </Form.Group>
+              <button className='btn btn-primary d-block w-100 mx-auto mt-2 py-3 ms-2 mb-5'>Submit </button>
+                        </form>
+                    </Container>
+
+                </Modal.Body>
+
+
+            </Modal>
+            {/* thansk */}
+            <Modal show={showT} onHide={handleCloseT}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Thank  you</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>We will reach you shortly.</Modal.Body>
+                <Modal.Footer>
+                    <Button variant="success" onClick={handleCloseT}>
+                        Ok!!
+                    </Button>
+                </Modal.Footer>
+            </Modal>
         </>
     )
 }

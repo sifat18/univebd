@@ -1,9 +1,58 @@
-import React from 'react'
-import { Accordion, Button, Col, Container, Row } from 'react-bootstrap'
+import React, { useState } from 'react'
+import { Accordion, Button, Col, Container, FloatingLabel, Form, Modal, Row } from 'react-bootstrap'
 import Footer from '../Footer/Footer'
 import Header from '../Header/Header'
 import contribe from '../images/contribute/contribe.png'
 export default function Contributor() {
+
+    const [show, setShow] = useState(false);
+  const [pdf, setPdf] = useState(null);
+
+    const [showT, setShowT] = useState(false);
+    const handleClose = () =>    setShow(false);
+    const handleShow = () => setShow(true);
+    const handleCloseT = () => setShowT(false);
+    const handleShowT = () => {
+        handleClose()
+        setShowT(true)
+        }
+    const [data, setData] = useState({});
+
+    const handleOnChange = e => {
+        const field = e.target.name;
+        const value = e.target.value;
+        const newUser = { ...data };
+        newUser[field] = value;
+        setData(newUser);
+        console.log(newUser)
+
+    }
+    const handleSubmit = e => {
+        console.log('hit');
+        e.preventDefault();
+        let formData = new FormData();
+        // iterating over the object to transform it into formdata
+        Object.keys(data).forEach(key => formData.append(key, data[key]));
+        formData.append('pdf', pdf);
+        // checking if form getting the values
+        // for (var value of formData.values()) {
+        //   console.log(value);
+        // }
+        // 
+        fetch('https://fierce-woodland-01411.herokuapp.com/contributer', {
+          method: 'POST',
+          body: formData
+        })
+          .then(response => response.json())
+          .then(data => {
+            if (data.insertedId) {
+              handleShowT()
+            } else {
+              console.error('Error2');
+    
+            }
+          })
+    }
     return (
         <>
             <Header />
@@ -13,7 +62,7 @@ export default function Contributor() {
                     <Col xs={12} md={6} className='text-start ps-3 ms-5 '>
                         <h2 className='fs-1 fw-bold'>Unive ব্লগে লিখুন!</h2>
                         <p className='smallText fw-normal'>Unive ব্লগে লিখার মাধ্যমে আপনি বাংলাদেশী ওয়ার্কফোর্সকে আপনার এক্সপার্ট অপিনিয়ন বা ইনসাইট দিয়ে সাহায্য করতে পারেন। আমরা যারা ইন্ডাস্ট্রি এক্সপার্ট আছি  সবাই আমাদের নিজ নিজ ইন্ডাস্ট্রি প্র্যাক্টিস, অবজারভেশন এবং উইজডম যদি সবার মাঝে ছড়িয়ে দেই, সেটা হতে পারে দেশ এবং দেশের মানুষের জন্য আমাদের একটি উপহার। প্রতিনিয়ত মূল্যবান লিখার মাধ্যমে হয়ে উঠুন Unive ইন্ডাস্ট্রি এক্সপার্ট।</p>
-                        <Button className='p-3 mt-3 bluebtn' href="#">Become a Contributor</Button>
+                        <Button className='p-3 mt-3 bluebtn' onClick={handleShow}>Become a Contributor</Button>
                     </Col>
                     <Col xs={12} md={5} className='my-5'>
                         <img className='img-fluid' src={contribe} alt="" />
@@ -138,6 +187,76 @@ export default function Contributor() {
                 </Container>
             </Container>
             <Footer />
+
+             {/* form modal*/}
+             <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                    <h2 className='mx-auto ps-5'>Fill up the form</h2>
+                </Modal.Header>
+                <Modal.Body>
+                    <Container className='py-2'>
+                        {/* Login form */}
+                        <form className='mt-3  py-3' onSubmit={handleSubmit}>
+              <FloatingLabel
+                controlId="floatingInput"
+                label="Full Name"
+                className="mt-2 mb-5 text-start"
+              >
+                <Form.Control type="text" name="FullName" className="text-start" placeholder="Jane doe" onChange={handleOnChange} />
+              </FloatingLabel>
+              {/* ----------- */}
+              <FloatingLabel
+                controlId="floatingInput"
+                label="Email address"
+                className="mt-2 mb-5 text-start"
+              >
+                <Form.Control type="email" className="text-start" placeholder="name@example.com" name="email" onChange={handleOnChange} />
+              </FloatingLabel>
+
+              {/* ----------- */}
+
+              <FloatingLabel
+                controlId="floatingInput"
+                label="Phone Number"
+                className="mt-2 mb-5 text-start"
+              >
+                <Form.Control type="number" name="PhoneNumber" className="text-start" placeholder="01299123" onChange={handleOnChange} />
+              </FloatingLabel>
+              {/* ----------- */}
+              <FloatingLabel
+                controlId="floatingInput"
+                label="The topics you want to write on"
+                className="mt-2 mb-5 text-start"
+              >
+                <Form.Control type="text" name="subject" className="text-start" placeholder="English" onChange={handleOnChange} />
+              </FloatingLabel>
+              
+              {/* ------------ */}
+              
+              <Form.Group controlId="formFile" className="text-start ms-2 mb-3">
+                <Form.Label >CV (if any)</Form.Label>
+                <Form.Control className="text-start" type="file" accept="application/pdf" onChange={e => setPdf(e.target.files[0])} />
+              </Form.Group>
+              <button className='btn btn-primary d-block w-100 mx-auto mt-2 py-3 ms-2 mb-5'>Submit </button>
+                        </form>
+                    </Container>
+
+                </Modal.Body>
+
+
+            </Modal>
+            {/* thansk */}
+            <Modal show={showT} onHide={handleCloseT}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Thank  you</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>We will reach you shortly.</Modal.Body>
+                <Modal.Footer>
+                    <Button variant="success" onClick={handleCloseT}>
+                        Ok!!
+                    </Button>
+                </Modal.Footer>
+            </Modal>
         </>
     )
 }

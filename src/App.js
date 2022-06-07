@@ -81,7 +81,7 @@ function App() {
             <Route path="/assessments" element={<Assessments />} />
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/become-an-unive-instructor" element={<Instructor />} />
-            <Route path="/write-on-edpresso" element={<Contributor />} />
+            <Route path="/become-a-contributor" element={<Contributor />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/enterprise-terms" element={<EnterPriseTerm />} />
             <Route path="/enterprise-price" element={<EnterprisePricing />} />

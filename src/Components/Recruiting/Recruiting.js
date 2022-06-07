@@ -1,5 +1,5 @@
-import React from 'react'
-import { Accordion, Button, Col, Container, Row } from 'react-bootstrap'
+import React, { useState } from 'react'
+import { Accordion, Button, Col, Container, Row,Modal, Form, FloatingLabel } from 'react-bootstrap'
 import Companies from '../Common/Companies'
 import hr from '../images/hr/hr.png'
 import search from '../images/hr/search.png'
@@ -8,7 +8,54 @@ import loud from '../images/hr/loud.png'
 import ContactForm from '../Common/ContactForm'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
+import axios from 'axios'
 export default function Recruiting() {
+    const [show, setShow] = useState(false);
+    const [showR, setShowR] = useState(false);
+    const [showT, setShowT] = useState(false);
+    const handleClose = () =>setShow(false);
+    const handleShow = () => setShow(true);
+    const handleCloseR = () =>setShowR(false);
+    const handleShowR = () => setShowR(true);
+    const handleCloseT = () => setShowT(false);
+    const handleShowT = () => {
+        handleClose()
+        handleCloseR()
+        setShowT(true)
+        }
+    const [data, setData] = useState({});
+    const [data2, setData2] = useState({});
+
+    const handleOnChange = e => {
+        const field = e.target.name;
+        const value = e.target.value;
+        const newUser = { ...data };
+        newUser[field] = value;
+        setData(newUser);
+        console.log(newUser)
+
+    }
+    const handleOnChangeR = e => {
+        const field = e.target.name;
+        const value = e.target.value;
+        const newUser = { ...data2 };
+        newUser[field] = value;
+        setData2(newUser);
+        console.log(newUser)
+
+    }
+    const handleSubmit = e => {
+        e.preventDefault()
+        console.log(data);
+        axios.post(`https://fierce-woodland-01411.herokuapp.com/recruit`, data).then(res => res.data ? handleShowT() : '')
+
+    }
+    const handleSubmitR = e => {
+        e.preventDefault()
+        console.log(data2);
+        axios.post(`https://fierce-woodland-01411.herokuapp.com/orgFrom`, data2).then(res => res.data ? handleShowT() : '')
+
+    }
     return (
         <>
             <Header />
@@ -18,7 +65,7 @@ export default function Recruiting() {
                     <Col xs={12} md={7} className='text-start ms-3 mb-3'>
                         <h2 className='fs-1 '>আপনার প্রতিষ্ঠানের জন্য এমপ্লয়ী খুঁজুন <br /> খুব সহজে ইউনিভ এর মাধ্যমে।</h2>
                         <h4 className='my-4 mx-1 smallText'>ডিজাইন করুন ইন্টারভিউ প্রিপারেশন কোর্স এবং সম্পূর্ণ রিক্রুটমেন্ট প্রসেস সম্পন্ন করুন আমাদের প্লাটফর্মে।  <br /> শুধুমাত্র যোগ্য ক্যান্ডিডেটদের ইন্টারভিউ নেওয়ার আয়োজন করে ইউনিভ আপনার প্রতিষ্ঠানের প্রোডাক্টিভিটি লস বাঁচিয়ে দেয়। <br /></h4>
-                        <Button className='p-3 mt-3 bluebtn' href="#">ট্রাই করুন ইউনিভ ফর রিক্রুটমেন্ট</Button>
+                        <Button className='p-3 mt-3 bluebtn' onClick={handleShowR} >ট্রাই করুন ইউনিভ ফর রিক্রুটমেন্ট</Button>
                     </Col>
                     <Col xs={12} md={4}>
                         <img className='img-fluid ' src={hr} alt="" />
@@ -133,9 +180,130 @@ export default function Recruiting() {
             <Container fluid className='middle py-5 text-center'>
                 <h2 className=' my-2 fs-2 '>রেডী টু স্টার্ট?</h2>
                 <p className=' my-4 smallText text-muted'>আপনি যদি আগ্রহী হন তাহলে যোগাযোগ করুন আমাদের টিম এর সাথে।</p>
-                <Button variant='btn btn-primary' href='/home'> কথা বলুন আমাদের রিপ্রেজেন্টেটিভ এর সাথে</Button>
+                <Button variant='btn btn-primary' onClick={handleShow} > কথা বলুন আমাদের রিপ্রেজেন্টেটিভ এর সাথে</Button>
             </Container>
             <Footer />
+            <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                    <h2 className='mx-auto ps-5'>Fill up the form</h2>
+                </Modal.Header>
+                <Modal.Body>
+                    <Container className='py-2'>
+                        {/* Login form */}
+                        <form className='mt-3  py-3' onSubmit={handleSubmit}>
+                        <FloatingLabel
+                controlId="floatingInput"
+                label="Full Name"
+                className="mt-2 mb-5 text-start"
+              >
+                <Form.Control type="text" name="FullName" className="text-start" placeholder="Jane doe" onChange={handleOnChange} />
+              </FloatingLabel>
+  {/* ----------- */}
+  <FloatingLabel
+                controlId="floatingInput"
+                label="Email address"
+                className="mt-2 mb-5 text-start"
+              >
+                <Form.Control type="email" className="text-start" placeholder="name@example.com" name="email" onChange={handleOnChange} />
+              </FloatingLabel>
+                     {/* ------------- */}
+                     
+              <FloatingLabel
+                controlId="floatingInput"
+                label="Phone Number"
+                className="mt-2 mb-5 text-start"
+              >
+                <Form.Control type="number" name="PhoneNumber" className="text-start" placeholder="01299123" onChange={handleOnChange} />
+              </FloatingLabel>
+              {/*------------  */}
+              <button className='btn btn-primary d-block w-100 mx-auto mt-2 py-3 ms-2 mb-5'>Submit </button>
+                        </form>
+                    </Container>
+
+                </Modal.Body>
+
+
+            </Modal>
+            {/* Thank you */}
+            <Modal show={showT} onHide={handleCloseT}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Thanks for your interest</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>One of our representatives will get back to you asap.</Modal.Body>
+                <Modal.Footer>
+                    <Button variant="success" onClick={handleCloseT}>
+                        Ok!!
+                    </Button>
+                </Modal.Footer>
+            </Modal>
+
+            <Modal show={showR} onHide={handleCloseR}>
+                <Modal.Header closeButton>
+                    <h2 className='mx-auto ps-5'>Fill up the form</h2>
+                </Modal.Header>
+                <Modal.Body>
+                    <Container className='py-2'>
+                        {/* Login form */}
+                        <form className='mt-3  py-3' onSubmit={handleSubmitR}>
+                        <FloatingLabel
+                controlId="floatingInput"
+                label="Organization Name"
+                className="mt-2 mb-5 text-start"
+              >
+                <Form.Control type="text" name="organization" className="text-start" placeholder="Jane doe" onChange={handleOnChangeR} />
+              </FloatingLabel>
+                        <FloatingLabel
+                controlId="floatingInput"
+                label="Full Name"
+                className="mt-2 mb-5 text-start"
+              >
+                <Form.Control type="text" name="FullName" className="text-start" placeholder="Jane doe" onChange={handleOnChangeR} />
+              </FloatingLabel>
+  {/* ----------- */}
+  <FloatingLabel
+                controlId="floatingInput"
+                label="Email address"
+                className="mt-2 mb-5 text-start"
+              >
+                <Form.Control type="email" className="text-start" placeholder="name@example.com" name="email" onChange={handleOnChangeR} />
+              </FloatingLabel>
+                     {/* ------------- */}
+                     
+              <FloatingLabel
+                controlId="floatingInput"
+                label="Phone Number"
+                className="mt-2 mb-5 text-start"
+              >
+                <Form.Control type="number" name="PhoneNumber" className="text-start" placeholder="01299123" onChange={handleOnChangeR} />
+              </FloatingLabel>
+              {/*------------  */}
+              <FloatingLabel className='my-5' controlId="floatingTextarea2" label="The type of candidates you are looking to recruit">
+                <Form.Control
+                  name='candidateRequirement'
+                  className='text-start'
+                  as="textarea"
+                  placeholder="The type of candidates you are looking to recruit"
+                  style={{ height: '100px' }}
+                  onChange={handleOnChangeR} />
+              </FloatingLabel>
+              {/* ------------ */}
+              <FloatingLabel className='mt-5 mb-3' controlId="floatingTextarea2" label="Additional Information">
+                <Form.Control
+                  name='additional_information'
+                  as="textarea"
+                  className='text-start'
+                  placeholder="Additional Information"
+                  style={{ height: '100px' }}
+                  onChange={handleOnChangeR} />
+              </FloatingLabel>
+              <button className='btn btn-primary d-block w-100 mx-auto mt-2 py-3 ms-2 mb-5'>Submit </button>
+                        </form>
+                    </Container>
+
+                </Modal.Body>
+
+
+            </Modal>
         </>
     )
 }
