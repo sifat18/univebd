@@ -30,6 +30,8 @@ export default function Edit() {
         console.log(newCourse)
 
     }
+    const { register, handleSubmit } = useForm();
+    const onSubmit = data => console.log(data);
     // const [module, setModule] = useState([
     //     { module_name: '', module_description: '', sub_mod1: '', sub_mod2: '', sub_mod3: '', sub_video1: '', sub_video2: '', sub_video3: '', sub_description1: '', sub_description2: '', sub_description3: '', q1: '', q2: '', q3: '', q4: '', q5: '', qA1: '', qA2: '', qA3: '', qA4: '', qA5: '', qOP11: '', qOP12: '', qOP13: '', qOP14: '', qOP21: '', qOP22: '', qOP23: '', qOP24: '', qOP31: '', qOP32: '', qOP33: '', qOP34: '', qOP41: '', qOP42: '', qOP43: '', qOP44: '', qOP51: '', qOP52: '', qOP53: '', qOP54: '', show_mod: true }
     // ])
@@ -46,21 +48,22 @@ export default function Edit() {
     return (
         <>  <Header />
             <Container fluid className=''>
-                <form onSubmit={submit} >
+                <form onSubmit={handleSubmit(onSubmit)}>
                     {/* basic info starts here */}
 
                     <Row className='bg-secondary pb-3'>
                         <h3 className="my-3 py-3 text-light text-center">Basic Course Information</h3>
                         <Col xs={12} md={3} className='courseFormpad' >
-                            <input
+                            {/* <input
                                 name='coursename'
                                 placeholder='Course_Name'
                                 className=''
                                 onChange={handleOnChange}
-                                value={course?.coursename} />
+                                value={course?.coursename} /> */}
+                            <input required placeholder='name' defaultValue={course?.coursename} className='reservation w-100' {...register("coursename")} />
                         </Col>
                         <Col xs={12} md={3} className='courseFormpad'>
-                            <textarea
+                            {/* <textarea
                                 name='about'
                                 placeholder='About_course'
                                 rows='5'
@@ -68,23 +71,26 @@ export default function Edit() {
                                 className=''
                                 value={course?.about}
                                 onChange={handleOnChange}
-                            />
+                            /> */}
+                            <textarea rows='4' required placeholder='description' defaultValue={course?.about} className='reservation w-100'{...register("about")} />
                         </Col>
                         <Col xs={12} md={3} className='courseFormpad'>
-                            <input
+                            {/* <input
                                 name='imageLink'
                                 placeholder='Image_Link'
                                 className=''
                                 value={course?.imageLink}
-                                onChange={handleOnChange} />
+                                onChange={handleOnChange} /> */}
+                            <input required placeholder='name' defaultValue={course?.imageLink} className='reservation w-100' {...register("imageLink")} />
                         </Col>
                         <Col xs={12} md={3} className='courseFormpad'>
-                            <input
+                            {/* <input
                                 name='demoLink'
                                 placeholder='Demo_Link'
                                 className=''
                                 value={course?.demoLink}
-                                onChange={handleOnChange} />
+                                onChange={handleOnChange} /> */}
+                            <input required placeholder='name' defaultValue={course?.demoLink} className='reservation w-100' {...register("demoLink")} />
                         </Col>
                     </Row>
                     {/* basic ends here */}
@@ -98,21 +104,24 @@ export default function Edit() {
                                     <h3 className="my-2 mx-2 text-light ">Course Modules {index + 1}</h3>
                                 </Col>
                                 <Col xs={12} md={4} className='text-center pt-2'>
-                                    <input
+                                    {/* <input
                                         name='module_name'
                                         placeholder='Module_name'
                                         value={input.module_name}
-                                        onChange={event => handleOnChangeL(index, event)} />
+                                        onChange={event => handleOnChangeL(index, event)} /> */}
+                                    <input required placeholder='name' defaultValue={input.module_name} className='reservation w-100' {...register("module_name")} />
                                 </Col>
                                 <Col xs={12} md={4} className='text-center pt-2'>
-                                    <textarea
+                                    {/* <textarea
                                         name='module_description'
                                         placeholder='About_mdoule'
                                         rows='5'
                                         cols='80'
                                         className='mx-5'
                                         value={input.module_description}
-                                        onChange={event => handleOnChangeL(index, event)} />
+                                        onChange={event => handleOnChangeL(index, event)} /> */}
+
+                                    <textarea required rows='4' placeholder='name' defaultValue={input.module_description} className='reservation w-100' {...register("module_description")} />
                                 </Col>
                             </Row>
 
@@ -123,32 +132,35 @@ export default function Edit() {
 
                                 <Col className='courseFormpad'>
                                     <p className='text-light ps-3'>sub module name</p>
-                                    <input
+                                    {/* <input
                                         name='sub_mod1'
                                         placeholder='sub_module_name'
                                         value={input.sub_mod1}
-                                        onChange={event => handleOnChangeL(index, event)} />
+                                        onChange={event => handleOnChangeL(index, event)} /> */}
+                                    <input required placeholder='name' defaultValue={input.sub_mod1} className='reservation w-100' {...register("sub_mod1")} />
                                 </Col>
                                 <Col className='courseFormpad'>
                                     <p className='text-light ps-3'>sub module description</p>
 
-                                    <textarea
+                                    {/* <textarea
                                         name='sub_description1'
                                         placeholder='About_submdoule'
                                         rows='3'
                                         cols='30'
                                         className=''
                                         value={input.sub_description1}
-                                        onChange={event => handleOnChangeL(index, event)} />
+                                        onChange={event => handleOnChangeL(index, event)} /> */}
+                                    <textarea required rows='4' placeholder='name' defaultValue={input.sub_description1} className='reservation w-100' {...register("sub_description1")} />
                                 </Col>
                                 <Col className='courseFormpad'>
                                     <p className='text-light ps-3'>sub module video</p>
-                                    <input
+                                    {/* <input
                                         name='sub_video1'
                                         placeholder='Module_Video'
                                         className=''
                                         value={input.sub_video1}
-                                        onChange={event => handleOnChangeL(index, event)} />
+                                        onChange={event => handleOnChangeL(index, event)} /> */}
+                                    <input required placeholder='name' defaultValue={input.sub_video1} className='reservation w-100' {...register("sub_video1")} />
                                 </Col>
                             </Row>
 
@@ -158,15 +170,16 @@ export default function Edit() {
 
                                 <Col className='courseFormpad'>
                                     <p className='text-light ps-3'>sub module name</p>
-                                    <input
+                                    {/* <input
                                         name='sub_mod2'
                                         placeholder='sub_module_name'
                                         value={input.sub_mod2}
-                                        onChange={event => handleOnChangeL(index, event)} />
+                                        onChange={event => handleOnChangeL(index, event)} /> */}
+                                    <input required placeholder='name' defaultValue={input.sub_mod2} className='reservation w-100' {...register("sub_mod2")} />
                                 </Col>
                                 <Col className='courseFormpad'>
                                     <p className='text-light ps-3'>sub module description</p>
-
+                                    {/* 
                                     <textarea
                                         name='sub_description2'
                                         placeholder='About_submdoule'
@@ -174,16 +187,18 @@ export default function Edit() {
                                         cols='30'
                                         className=''
                                         value={input.sub_description2}
-                                        onChange={event => handleOnChangeL(index, event)} />
+                                        onChange={event => handleOnChangeL(index, event)} /> */}
+                                    <textarea required rows='4' placeholder='name' defaultValue={input.sub_description2} className='reservation w-100' {...register("sub_description2")} />
                                 </Col>
                                 <Col className='courseFormpad'>
                                     <p className='text-light ps-3'>sub module video</p>
-                                    <input
+                                    {/* <input
                                         name='sub_video2'
                                         placeholder='Module_Video'
                                         className=''
                                         value={input.sub_video2}
-                                        onChange={event => handleOnChangeL(index, event)} />
+                                        onChange={event => handleOnChangeL(index, event)} /> */}
+                                    <input required placeholder='name' defaultValue={input.sub_video2} className='reservation w-100' {...register("sub_video2")} />
                                 </Col>
                             </Row>
                             {/* sub module 3  */}
@@ -192,32 +207,35 @@ export default function Edit() {
 
                                 <Col className='courseFormpad'>
                                     <p className='text-light ps-3'>sub module name</p>
-                                    <input
+                                    {/* <input
                                         name='sub_mod3'
                                         placeholder='sub_module_name'
                                         value={input.sub_mod3}
-                                        onChange={event => handleOnChangeL(index, event)} />
+                                        onChange={event => handleOnChangeL(index, event)} /> */}
+                                    <input required placeholder='name' defaultValue={input.sub_mod3} className='reservation w-100' {...register("sub_mod3")} />
                                 </Col>
                                 <Col className='courseFormpad'>
                                     <p className='text-light ps-3'>sub module description</p>
 
-                                    <textarea
+                                    {/* <textarea
                                         name='sub_description3'
                                         placeholder='About_submdoule'
                                         rows='3'
                                         cols='30'
                                         className=''
                                         value={input.sub_description3}
-                                        onChange={event => handleOnChangeL(index, event)} />
+                                        onChange={event => handleOnChangeL(index, event)} /> */}
+                                    <textarea required rows='4' placeholder='name' defaultValue={input.sub_description3} className='reservation w-100' {...register("sub_description3")} />
                                 </Col>
                                 <Col className='courseFormpad'>
                                     <p className='text-light ps-3'>sub module video</p>
-                                    <input
+                                    {/* <input
                                         name='sub_video3'
                                         placeholder='Module_Video'
                                         className=''
                                         value={input.sub_video3}
-                                        onChange={event => handleOnChangeL(index, event)} />
+                                        onChange={event => handleOnChangeL(index, event)} /> */}
+                                    <input required placeholder='name' defaultValue={input.sub_video3} className='reservation w-100' {...register("sub_video3")} />
                                 </Col>
                             </Row>
                             {/* add quiz */}
