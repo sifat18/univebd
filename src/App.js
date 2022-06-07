@@ -51,6 +51,7 @@ import AddInstructor from './Components/Board/AddInstructor/AddInstructor';
 import Admin from './Components/Board/AddAdmin/Admin';
 import Maas from './Components/Maas/Maas';
 import CourseAdd from './Components/Addcourse/CourseAdd';
+import Edit from './Components/CourseEdit/Edit';
 function App() {
   useEffect(() => {
     AOS.init();
@@ -93,6 +94,7 @@ function App() {
             <Route path="/scholarships" element={<Scholarships />} />
             <Route path="/press" element={<Press />} />
             <Route path="/addcourse" element={<CourseAdd />} />
+            <Route path="/edit/:id" element={<Edit />} />
             <Route path="/learn/:courseID" element={<Overview />} />
             <Route path="/learn/start/:courseID" element={<PrivateRoute><CourseStart /></PrivateRoute>} />
             <Route path="/dashboard" element={<AdminRoute><Board /></AdminRoute>} >
