@@ -42,10 +42,10 @@ export default function Overview() {
                             <h1 className='my-5'>{courses.coursename}</h1>
                             {/* quiz video bars */}
                             <div className="d-flex justify-content-start flex-wrap ">
-                                <div class="p-2 bd-highlight border-secondary border mb-2 px-2 px-3"><MdOutlinePlayLesson className=' fs-4 me-2' />14 lessons</div>
-                                <div class="p-2 bd-highlight border-secondary border mb-2 mx-3 px-2 px-3"><MdOutlineSlowMotionVideo className=' fs-4 me-2' />8 videos</div>
-                                <div class="p-2 bd-highlight border-secondary border px-2 px-3"><MdOutlineQuiz className=' fs-4 me-2' />2 quizes</div>
-                                <div class="p-2 bd-highlight border-secondary border px-2 px-3 mx-3"><BsTropicalStorm className=' fs-4 me-2' />5 illustrations</div>
+                                <div class="p-2 bd-highlight border-secondary border mb-2 px-2 px-3"><MdOutlinePlayLesson className=' fs-4 me-2' />{courses.total_modules || 1} lessons</div>
+                                <div class="p-2 bd-highlight border-secondary border mb-2 mx-3 px-2 px-3"><MdOutlineSlowMotionVideo className=' fs-4 me-2' />{courses.course_length || 4} hrs</div>
+                                <div class="p-2 bd-highlight border-secondary border px-2 px-3"><MdOutlineQuiz className=' fs-4 me-2' />{courses.total_quizes || 1} quizes</div>
+                                <div class="p-2 bd-highlight border-secondary border px-2 px-3 mx-3"><BsTropicalStorm className=' fs-4 me-2' />{courses.course_level || 'beginner'} level</div>
                             </div>
                             {/* responsive display start btn */}
                             <div className=" my-3 d-block d-md-none">
