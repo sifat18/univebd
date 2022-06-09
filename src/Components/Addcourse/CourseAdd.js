@@ -88,8 +88,42 @@ export default function CourseAdd() {
                         </Col>
                     </Row>
                     {/* basic ends here */}
-
-
+                    {/* summary */}
+                    <h3 className="my-3 py-3 text-dark text-center"> Course Summary</h3>
+                    <Row className='bg-secondary  py-5'>
+                        <Col xs={12} md={3} className='courseFormpad' >
+                            <input
+                                name='total_modules'
+                                placeholder='total_modules'
+                                className=''
+                                onChange={handleOnChangeL}
+                            />
+                        </Col>
+                        <Col xs={12} md={3} className='courseFormpad' >
+                            <input
+                                name='total_quizes'
+                                placeholder='total_quizes'
+                                className=''
+                                onChange={handleOnChangeL}
+                            />
+                        </Col>
+                        <Col xs={12} md={3} className='courseFormpad' >
+                            <input
+                                name='course_length'
+                                placeholder='course_length'
+                                className=''
+                                onChange={handleOnChangeL}
+                            />
+                        </Col>
+                        <Col xs={12} md={3} className='courseFormpad' >
+                            <input
+                                name='course_level'
+                                placeholder='course_level'
+                                className=''
+                                onChange={handleOnChangeL}
+                            />
+                        </Col>
+                    </Row>
                     {module.map((input, index) => (
                         //    {/* module start here */}
                         <div className="my-5 ps-5 bg-secondary  py-2" key={index}>
@@ -104,13 +138,13 @@ export default function CourseAdd() {
                                         value={input.module_name}
                                         onChange={event => handleFormChange(index, event)} />
                                 </Col>
-                                <Col xs={12} md={4} className='text-center pt-2'>
+                                <Col xs={12} md={3} className='text-center   pt-2'>
                                     <textarea
                                         name='module_description'
                                         placeholder='About_mdoule'
                                         rows='5'
-                                        cols='80'
-                                        className='mx-5'
+                                        cols='30'
+                                        className='me-3'
                                         value={input.module_description}
                                         onChange={event => handleFormChange(index, event)} />
                                 </Col>

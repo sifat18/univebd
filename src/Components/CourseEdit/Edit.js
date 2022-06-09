@@ -60,7 +60,7 @@ export default function Edit() {
                                 className=''
                                 onChange={handleOnChange}
                                 value={course?.coursename} /> */}
-                            <input required placeholder='name' defaultValue={course?.coursename} className='reservation  ' {...register("coursename")} />
+                            <input required defaultValue={course?.coursename} className='reservation  ' {...register("coursename")} />
                         </Col>
                         <Col xs={12} md={3} className='courseFormpad'>
                             {/* <textarea
@@ -72,7 +72,7 @@ export default function Edit() {
                                 value={course?.about}
                                 onChange={handleOnChange}
                             /> */}
-                            <textarea rows='4' required placeholder='description' defaultValue={course?.about} className='reservation  '{...register("about")} />
+                            <textarea rows='4' required defaultValue={course?.about} className='reservation  '{...register("about")} />
                         </Col>
                         <Col xs={12} md={3} className='courseFormpad'>
                             {/* <input
@@ -81,7 +81,7 @@ export default function Edit() {
                                 className=''
                                 value={course?.imageLink}
                                 onChange={handleOnChange} /> */}
-                            <input required placeholder='name' defaultValue={course?.imageLink} className='reservation  ' {...register("imageLink")} />
+                            <input required defaultValue={course?.imageLink} className='reservation  ' {...register("imageLink")} />
                         </Col>
                         <Col xs={12} md={3} className='courseFormpad'>
                             {/* <input
@@ -90,7 +90,7 @@ export default function Edit() {
                                 className=''
                                 value={course?.demoLink}
                                 onChange={handleOnChange} /> */}
-                            <input required placeholder='name' defaultValue={course?.demoLink} className='reservation  ' {...register("demoLink")} />
+                            <input required defaultValue={course?.demoLink} className='reservation  ' {...register("demoLink")} />
                         </Col>
                     </Row>
                     {/* basic ends here */}
@@ -110,7 +110,7 @@ export default function Edit() {
                                         placeholder='Module_name'
                                         value={input.module_name}
                                         onChange={event => handleOnChangeL(index, event)} /> */}
-                                    <input required placeholder='name' defaultValue={input.module_name} className='reservation  ' {...register("module_name")} />
+                                    <input required defaultValue={input.module_name} className='reservation  ' {...register("module_name")} />
                                 </Col>
                                 <Col xs={12} md={4} className='text-center pt-2'>
                                     {/* <textarea
@@ -122,7 +122,7 @@ export default function Edit() {
                                         value={input.module_description}
                                         onChange={event => handleOnChangeL(index, event)} /> */}
 
-                                    <textarea required rows='4' placeholder='name' defaultValue={input.module_description} className='reservation  ' {...register("module_description")} />
+                                    <textarea required rows='4' defaultValue={input.module_description} className='reservation  ' {...register("module_description")} />
                                 </Col>
                             </Row>
 
@@ -138,7 +138,7 @@ export default function Edit() {
                                         placeholder='sub_module_name'
                                         value={input.sub_mod1}
                                         onChange={event => handleOnChangeL(index, event)} /> */}
-                                    <input required placeholder='name' defaultValue={input.sub_mod1} className='reservation  ' {...register("sub_mod1")} />
+                                    <input required defaultValue={input.sub_mod1} className='reservation  ' {...register("sub_mod1")} />
                                 </Col>
                                 <Col className='courseFormpad'>
                                     <p className='text-light ps-3'>sub module description</p>
@@ -151,7 +151,7 @@ export default function Edit() {
                                         className=''
                                         value={input.sub_description1}
                                         onChange={event => handleOnChangeL(index, event)} /> */}
-                                    <textarea required rows='4' placeholder='name' defaultValue={input.sub_description1} className='reservation  ' {...register("sub_description1")} />
+                                    <textarea required rows='4' defaultValue={input.sub_description1} className='reservation  ' {...register("sub_description1")} />
                                 </Col>
                                 <Col className='courseFormpad'>
                                     <p className='text-light ps-3'>sub module video</p>
@@ -161,7 +161,7 @@ export default function Edit() {
                                         className=''
                                         value={input.sub_video1}
                                         onChange={event => handleOnChangeL(index, event)} /> */}
-                                    <input required placeholder='name' defaultValue={input.sub_video1} className='reservation  ' {...register("sub_video1")} />
+                                    <input required defaultValue={input.sub_video1} className='reservation  ' {...register("sub_video1")} />
                                 </Col>
                             </Row>
 
@@ -176,7 +176,7 @@ export default function Edit() {
                                         placeholder='sub_module_name'
                                         value={input.sub_mod2}
                                         onChange={event => handleOnChangeL(index, event)} /> */}
-                                    <input required placeholder='name' defaultValue={input.sub_mod2} className='reservation  ' {...register("sub_mod2")} />
+                                    <input required defaultValue={input.sub_mod2} className='reservation  ' {...register("sub_mod2")} />
                                 </Col>
                                 <Col className='courseFormpad'>
                                     <p className='text-light ps-3'>sub module description</p>
@@ -189,7 +189,7 @@ export default function Edit() {
                                         className=''
                                         value={input.sub_description2}
                                         onChange={event => handleOnChangeL(index, event)} /> */}
-                                    <textarea required rows='4' placeholder='name' defaultValue={input.sub_description2} className='reservation  ' {...register("sub_description2")} />
+                                    <textarea required rows='4' defaultValue={input.sub_description2} className='reservation  ' {...register("sub_description2")} />
                                 </Col>
                                 <Col className='courseFormpad'>
                                     <p className='text-light ps-3'>sub module video</p>
@@ -199,7 +199,7 @@ export default function Edit() {
                                         className=''
                                         value={input.sub_video2}
                                         onChange={event => handleOnChangeL(index, event)} /> */}
-                                    <input required placeholder='name' defaultValue={input.sub_video2} className='reservation  ' {...register("sub_video2")} />
+                                    <input required defaultValue={input.sub_video2} className='reservation  ' {...register("sub_video2")} />
                                 </Col>
                             </Row>
                             {/* sub module 3  */}
@@ -213,7 +213,7 @@ export default function Edit() {
                                         placeholder='sub_module_name'
                                         value={input.sub_mod3}
                                         onChange={event => handleOnChangeL(index, event)} /> */}
-                                    <input required placeholder='name' defaultValue={input.sub_mod3} className='reservation  ' {...register("sub_mod3")} />
+                                    <input required defaultValue={input.sub_mod3} className='reservation  ' {...register("sub_mod3")} />
                                 </Col>
                                 <Col className='courseFormpad'>
                                     <p className='text-light ps-3'>sub module description</p>
@@ -226,7 +226,7 @@ export default function Edit() {
                                         className=''
                                         value={input.sub_description3}
                                         onChange={event => handleOnChangeL(index, event)} /> */}
-                                    <textarea required rows='4' placeholder='name' defaultValue={input.sub_description3} className='reservation  ' {...register("sub_description3")} />
+                                    <textarea required rows='4' defaultValue={input.sub_description3} className='reservation  ' {...register("sub_description3")} />
                                 </Col>
                                 <Col className='courseFormpad'>
                                     <p className='text-light ps-3'>sub module video</p>
@@ -236,7 +236,7 @@ export default function Edit() {
                                         className=''
                                         value={input.sub_video3}
                                         onChange={event => handleOnChangeL(index, event)} /> */}
-                                    <input required placeholder='name' defaultValue={input.sub_video3} className='reservation ' {...register("sub_video3")} />
+                                    <input required defaultValue={input.sub_video3} className='reservation ' {...register("sub_video3")} />
                                 </Col>
                             </Row>
                             {/* add quiz */}
@@ -252,7 +252,7 @@ export default function Edit() {
                                             className='mb-3'
                                             value={input.q1}
                                             onChange={event => handleOnChangeL(index, event)} /> */}
-                                        <input required placeholder='name' defaultValue={input.q1} className='reservation my-3' {...register("q1")} />
+                                        <input required defaultValue={input.q1} className='reservation my-3' {...register("q1")} />
                                         <p className='text-light pt-3 ps-3'>Answer 1</p>
                                         {/* <input
                                             name='qA1'
@@ -260,7 +260,7 @@ export default function Edit() {
                                             className='mb-3'
                                             value={input.qA1}
                                             onChange={event => handleOnChangeL(index, event)} /> */}
-                                        <input required placeholder='name' defaultValue={input.qA1} className='reservation ' {...register("qA1")} />
+                                        <input required defaultValue={input.qA1} className='reservation ' {...register("qA1")} />
                                         <p className='text-light pt-3 ps-3'>Choice 1</p>
                                         {/* <input
                                             name='qOP11'
@@ -268,7 +268,7 @@ export default function Edit() {
                                             className='mb-3'
                                             value={input.qOP11}
                                             onChange={event => handleOnChangeL(index, event)} /> */}
-                                        <input required placeholder='name' defaultValue={input.qOP11} className='reservation ' {...register("qOP11")} />
+                                        <input required defaultValue={input.qOP11} className='reservation ' {...register("qOP11")} />
                                         <p className='text-light pt-3 ps-3'>Choice 2</p>
                                         {/* <input
                                             name='qOP12'
@@ -276,7 +276,7 @@ export default function Edit() {
                                             className=''
                                             value={input.qOP12}
                                             onChange={event => handleOnChangeL(index, event)} /> */}
-                                        <input required placeholder='name' defaultValue={input.qOP12} className='reservation ' {...register("qOP12")} />
+                                        <input required defaultValue={input.qOP12} className='reservation ' {...register("qOP12")} />
 
                                         <p className='text-light pt-3 ps-3'>Choice 3</p>
                                         {/* <input
@@ -285,7 +285,7 @@ export default function Edit() {
                                             className='mb-3'
                                             value={input.qOP13}
                                             onChange={event => handleOnChangeL(index, event)} /> */}
-                                        <input required placeholder='name' defaultValue={input.qOP13} className='reservation' {...register("qOP13")} />
+                                        <input required defaultValue={input.qOP13} className='reservation' {...register("qOP13")} />
 
                                         <p className='text-light pt-3 ps-3'>Choice 4</p>
                                         {/* <input
@@ -294,7 +294,7 @@ export default function Edit() {
                                             className='mb-3'
                                             value={input.qOP14}
                                             onChange={event => handleOnChangeL(index, event)} /> */}
-                                        <input required placeholder='name' defaultValue={input.qOP14} className='reservation ' {...register("qOP14")} />
+                                        <input required defaultValue={input.qOP14} className='reservation ' {...register("qOP14")} />
                                     </div>
 
 
@@ -310,7 +310,7 @@ export default function Edit() {
                                             className='mb-3'
                                             value={input.q2}
                                             onChange={event => handleOnChangeL(index, event)} /> */}
-                                        <input required placeholder='name' defaultValue={input.q2} className='reservation my-3' {...register("q2")} />
+                                        <input required defaultValue={input.q2} className='reservation my-3' {...register("q2")} />
                                         <p className='text-light pt-3 ps-3'>Answer 2</p>
                                         {/* <input
                                             name='qA2'
@@ -318,7 +318,7 @@ export default function Edit() {
                                             className='mb-3'
                                             value={input.qA2}
                                             onChange={event => handleOnChangeL(index, event)} /> */}
-                                        <input required placeholder='name' defaultValue={input.qA2} className='reservation ' {...register("qA2")} />
+                                        <input required defaultValue={input.qA2} className='reservation ' {...register("qA2")} />
                                         <p className='text-light pt-3 ps-3'>Choice 1</p>
                                         {/* <input
                                             name='qOP21'
@@ -326,7 +326,7 @@ export default function Edit() {
                                             className='mb-3'
                                             value={input.qOP21}
                                             onChange={event => handleOnChangeL(index, event)} /> */}
-                                        <input required placeholder='name' defaultValue={input.qOP21} className='reservation ' {...register("qOP21")} />
+                                        <input required defaultValue={input.qOP21} className='reservation ' {...register("qOP21")} />
                                         <p className='text-light pt-3 ps-3'>Choice 2</p>
                                         {/* <input
                                             name='qOP22'
@@ -334,7 +334,7 @@ export default function Edit() {
                                             className='mb-3'
                                             value={input.qOP22}
                                             onChange={event => handleOnChangeL(index, event)} /> */}
-                                        <input required placeholder='name' defaultValue={input.qOP22} className='reservation ' {...register("qOP22")} />
+                                        <input required defaultValue={input.qOP22} className='reservation ' {...register("qOP22")} />
                                         <p className='text-light pt-3 ps-3'>Choice 3</p>
                                         {/* <input
                                             name='qOP23'
@@ -342,7 +342,7 @@ export default function Edit() {
                                             className=''
                                             value={input.qOP23}
                                             onChange={event => handleOnChangeL(index, event)} /> */}
-                                        <input required placeholder='name' defaultValue={input.qOP23} className='reservation ' {...register("qOP23")} />
+                                        <input required defaultValue={input.qOP23} className='reservation ' {...register("qOP23")} />
 
                                         <p className='text-light pt-3 ps-3'>Choice 4</p>
                                         {/* <input
@@ -351,7 +351,7 @@ export default function Edit() {
                                             className='mb-3'
                                             value={input.qOP24}
                                             onChange={event => handleOnChangeL(index, event)} /> */}
-                                        <input required placeholder='name' defaultValue={input.qOP24} className='reservation ' {...register("qOP24")} />
+                                        <input required defaultValue={input.qOP24} className='reservation ' {...register("qOP24")} />
                                     </div>
 
                                 </Col>
@@ -365,7 +365,7 @@ export default function Edit() {
                                             value={input.q3}
                                             onChange={event => handleOnChangeL(index, event)} /> */}
 
-                                        <input required placeholder='name' defaultValue={input.q3} className='reservation my-3' {...register("q3")} />
+                                        <input required defaultValue={input.q3} className='reservation my-3' {...register("q3")} />
                                         <p className='text-light pt-3 ps-3'>Answer 3</p>
                                         {/* <input
                                             name='qA3'
@@ -373,7 +373,7 @@ export default function Edit() {
                                             className=''
                                             value={input.qA3}
                                             onChange={event => handleOnChangeL(index, event)} /> */}
-                                        <input required placeholder='name' defaultValue={input.qA3} className='reservation ' {...register("qA3")} />
+                                        <input required defaultValue={input.qA3} className='reservation ' {...register("qA3")} />
                                         <p className='text-light pt-3 ps-3'>Choice 1</p>
                                         {/* <input
                                             name='qOP31'
@@ -381,7 +381,7 @@ export default function Edit() {
                                             className='mb-3'
                                             value={input.qOP31}
                                             onChange={event => handleOnChangeL(index, event)} /> */}
-                                        <input required placeholder='name' defaultValue={input.qOP31} className='reservation ' {...register("qOP31")} />
+                                        <input required defaultValue={input.qOP31} className='reservation ' {...register("qOP31")} />
                                         <p className='text-light pt-3 ps-3'>Choice 2</p>
                                         {/* <input
                                             name='qOP32'
@@ -389,7 +389,7 @@ export default function Edit() {
                                             className=''
                                             value={input.qOP32}
                                             onChange={event => handleOnChangeL(index, event)} /> */}
-                                        <input required placeholder='name' defaultValue={input.qOP32} className='reservation ' {...register("qOP32")} />
+                                        <input required defaultValue={input.qOP32} className='reservation ' {...register("qOP32")} />
                                         <p className='text-light pt-3 ps-3'>Choice 3</p>
                                         {/* <input
                                             name='qOP33'
@@ -397,7 +397,7 @@ export default function Edit() {
                                             className=''
                                             value={input.qOP33}
                                             onChange={event => handleOnChangeL(index, event)} /> */}
-                                        <input required placeholder='name' defaultValue={input.qOP33} className='reservation ' {...register("qOP33")} />
+                                        <input required defaultValue={input.qOP33} className='reservation ' {...register("qOP33")} />
                                         <p className='text-light pt-3 ps-3'>Choice 4</p>
                                         {/* <input
                                             name='qOP34'
@@ -405,7 +405,7 @@ export default function Edit() {
                                             className='mb-3'
                                             value={input.qOP34}
                                             onChange={event => handleOnChangeL(index, event)} /> */}
-                                        <input required placeholder='name' defaultValue={input.qOP34} className='reservation ' {...register("qOP34")} />
+                                        <input required defaultValue={input.qOP34} className='reservation ' {...register("qOP34")} />
                                     </div>
                                 </Col>
                                 <Col xs={12} >
@@ -418,7 +418,7 @@ export default function Edit() {
                                             className=''
                                             value={input.q4}
                                             onChange={event => handleOnChangeL(index, event)} /> */}
-                                        <input required placeholder='name' defaultValue={input.q4} className='reservation my-3' {...register("q4")} />
+                                        <input required defaultValue={input.q4} className='reservation my-3' {...register("q4")} />
 
                                         <p className='text-light pt-3 ps-3'>Answer 4</p>
                                         {/* <input
@@ -427,7 +427,7 @@ export default function Edit() {
                                             className=''
                                             value={input.qA4}
                                             onChange={event => handleOnChangeL(index, event)} /> */}
-                                        <input required placeholder='name' defaultValue={input.qA4} className='reservation' {...register("qA4")} />
+                                        <input required defaultValue={input.qA4} className='reservation' {...register("qA4")} />
                                         <p className='text-light pt-3 ps-3'>Choice 1</p>
                                         {/* <input
                                             name='qOP41'
@@ -435,7 +435,7 @@ export default function Edit() {
                                             className='mb-3'
                                             value={input.qOP41}
                                             onChange={event => handleOnChangeL(index, event)} /> */}
-                                        <input required placeholder='name' defaultValue={input.qOP41} className='reservation ' {...register("qOP41")} />
+                                        <input required defaultValue={input.qOP41} className='reservation ' {...register("qOP41")} />
                                         <p className='text-light pt-3 ps-3'>Choice 2</p>
                                         {/* <input
                                             name='qOP42'
@@ -443,7 +443,7 @@ export default function Edit() {
                                             className='mb-3'
                                             value={input.qOP42}
                                             onChange={event => handleOnChangeL(index, event)} /> */}
-                                        <input required placeholder='name' defaultValue={input.qOP42} className='reservation ' {...register("qOP42")} />
+                                        <input required defaultValue={input.qOP42} className='reservation ' {...register("qOP42")} />
                                         <p className='text-light pt-3 ps-3'>Choice 3</p>
                                         {/* <input
                                             name='qOP43'
@@ -451,7 +451,7 @@ export default function Edit() {
                                             className=''
                                             value={input.qOP43}
                                             onChange={event => handleOnChangeL(index, event)} /> */}
-                                        <input required placeholder='name' defaultValue={input.qOP43} className='reservation ' {...register("qOP43")} />
+                                        <input required defaultValue={input.qOP43} className='reservation ' {...register("qOP43")} />
                                         <p className='text-light pt-3 ps-3'>Choice 4</p>
                                         {/* <input
                                             name='qOP44'
@@ -459,7 +459,7 @@ export default function Edit() {
                                             className='mb-3'
                                             value={input.qOP44}
                                             onChange={event => handleOnChangeL(index, event)} /> */}
-                                        <input required placeholder='name' defaultValue={input.qOP44} className='reservation ' {...register("qOP44")} />
+                                        <input required defaultValue={input.qOP44} className='reservation ' {...register("qOP44")} />
                                     </div>
                                 </Col>
                                 <Col xs={12} >
@@ -472,7 +472,7 @@ export default function Edit() {
                                             className=''
                                             value={input.q5}
                                             onChange={event => handleOnChangeL(index, event)} /> */}
-                                        <input required placeholder='name' defaultValue={input.q5} className='reservation my-3' {...register("q5")} />
+                                        <input required defaultValue={input.q5} className='reservation my-3' {...register("q5")} />
                                         <p className='text-light pt-3 ps-3'>Answer 5</p>
                                         {/* <input
                                             name='qA5'
@@ -480,7 +480,7 @@ export default function Edit() {
                                             className=''
                                             value={input.qA5}
                                             onChange={event => handleOnChangeL(index, event)} /> */}
-                                        <input required placeholder='name' defaultValue={input.qA5} className='reservation ' {...register("qA5")} />
+                                        <input required defaultValue={input.qA5} className='reservation ' {...register("qA5")} />
                                         <p className='text-light pt-3 ps-3'>Choice 1</p>
                                         {/* <input
                                             name='qOP51'
@@ -488,7 +488,7 @@ export default function Edit() {
                                             className='mb-3'
                                             value={input.qOP51}
                                             onChange={event => handleOnChangeL(index, event)} /> */}
-                                        <input required placeholder='name' defaultValue={input.qOP51} className='reservation ' {...register("qOP51")} />
+                                        <input required defaultValue={input.qOP51} className='reservation ' {...register("qOP51")} />
                                         <p className='text-light pt-3 ps-3'>Choice 2</p>
                                         {/* <input
                                             name='qOP52'
@@ -496,7 +496,7 @@ export default function Edit() {
                                             className='mb-3'
                                             value={input.qOP52}
                                             onChange={event => handleOnChangeL(index, event)} /> */}
-                                        <input required placeholder='name' defaultValue={input.qOP52} className='reservation ' {...register("qOP52")} />
+                                        <input required defaultValue={input.qOP52} className='reservation ' {...register("qOP52")} />
                                         <p className='text-light pt-3 ps-3'>Choice 3</p>
                                         {/* <input
                                             name='qOP53'
@@ -504,7 +504,7 @@ export default function Edit() {
                                             className=''
                                             value={input.qOP53}
                                             onChange={event => handleOnChangeL(index, event)} /> */}
-                                        <input required placeholder='name' defaultValue={input.qOP53} className='reservation ' {...register("qOP53")} />
+                                        <input required defaultValue={input.qOP53} className='reservation ' {...register("qOP53")} />
                                         <p className='text-light pt-3 ps-3'>Choice 4</p>
                                         {/* <input
                                             name='qOP54'
@@ -512,7 +512,7 @@ export default function Edit() {
                                             className=''
                                             value={input.qOP54}
                                             onChange={event => handleOnChangeL(index, event)} /> */}
-                                        <input required placeholder='name' defaultValue={input.qOP54} className='reservation ' {...register("qOP54")} />
+                                        <input required defaultValue={input.qOP54} className='reservation ' {...register("qOP54")} />
                                     </div>
                                 </Col>
                                 {/* </div> */}

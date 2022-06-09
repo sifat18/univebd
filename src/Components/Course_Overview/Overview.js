@@ -53,11 +53,11 @@ export default function Overview() {
                                     <Card.Body className='mx-auto mt-4' >
                                         <NavLink to={`/learn/start/${courses._id}`}><Button className='bluebtn btn py-2 px-5'>Start learning </Button></NavLink>
                                     </Card.Body>
-                                    <hr className='bg-secondary' />
+                                    {/* <hr className='bg-secondary' />
                                     <Card.Body>
                                         <p><AiOutlineFieldTime className='fs-4' /> Est. 2h to complete</p>
                                         <p><CgBorderStyleDotted className='fs-4' /> Beginner</p>
-                                    </Card.Body>
+                                    </Card.Body> */}
                                 </Card>
                             </div>
                             {/* overview */}
@@ -120,11 +120,11 @@ export default function Overview() {
                                 <Card.Body className='mx-auto mt-4' sticky>
                                     <NavLink to={`/learn/start/${courses._id}`}><Button className='bluebtn btn py-2 px-5'>Start learning </Button></NavLink>
                                 </Card.Body>
-                                <hr className='bg-secondary' />
+                                {/* <hr className='bg-secondary' />
                                 <Card.Body>
                                     <p><AiOutlineFieldTime className='fs-4' /> Est. 2h to complete</p>
                                     <p><CgBorderStyleDotted className='fs-4' /> Beginner</p>
-                                </Card.Body>
+                                </Card.Body> */}
                             </Card>
                         </Col>
                     </Row>
