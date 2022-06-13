@@ -28,6 +28,7 @@ export default function CourseStart() {
     // console.log(course);
 
     const sendVideo = (data, video, idx = 0, unlock = false) => {
+        setQuiz(false)
         switch (video) {
             case 'sub_video1':
                 setVideo(data.sub_video1)
@@ -75,11 +76,11 @@ export default function CourseStart() {
         setShow(false)
 
     }
-    const moduleNavigate = (index,flag) => {
+    const moduleNavigate = (index, flag) => {
         setVideo(course.Module[index].sub_video1)
         setdescription(course.Module[index].sub_description1)
-      flag?setcurIndex(curIndex+1) :setcurIndex(curIndex-1)
-      
+        flag ? setcurIndex(curIndex + 1) : setcurIndex(curIndex - 1)
+
     }
     const nextModule = () => {
         setQuiz(true)

@@ -1,0 +1,36 @@
+[debug] [2022-06-09T15:20:15.304Z] ----------------------------------------------------------------------
+[debug] [2022-06-09T15:20:15.316Z] Command:       D:\NodeJS\node.exe C:\Users\ASUS\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-06-09T15:20:15.316Z] CLI Version:   10.6.0
+[debug] [2022-06-09T15:20:15.317Z] Platform:      win32
+[debug] [2022-06-09T15:20:15.317Z] Node Version:  v14.16.0
+[debug] [2022-06-09T15:20:15.466Z] Time:          Thu Jun 09 2022 21:20:15 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-06-09T15:20:15.466Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-06-09T15:20:15.503Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2022-06-09T15:20:15.769Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-06-09T15:20:15.769Z] > authorizing via signed-in user (tal283118@gmail.com)
+[debug] [2022-06-09T15:20:15.769Z] [iam] checking project educ-5542f for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-06-09T15:20:15.770Z] > refreshing access token with scopes: []
+[debug] [2022-06-09T15:20:15.770Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-06-09T15:20:18.375Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","date":"Thu, 09 Jun 2022 15:20:18 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","expires":"Mon, 01 Jan 1990 00:00:00 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-06-09T15:20:18.445Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/educ-5542f:testIamPermissions [none]
+[debug] [2022-06-09T15:20:18.445Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/educ-5542f:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-06-09T15:20:19.095Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2022-06-09T15:20:19.095Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2022-06-09T15:20:22.464Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/educ-5542f:testIamPermissions 200
+[debug] [2022-06-09T15:20:22.464Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/educ-5542f:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-06-09T15:20:22.465Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/educ-5542f [none]
+[debug] [2022-06-09T15:20:25.947Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/educ-5542f 200
+[debug] [2022-06-09T15:20:25.947Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/educ-5542f {"projectId":"educ-5542f","projectNumber":"265249371778","displayName":"educ","name":"projects/educ-5542f","resources":{"hostingSite":"educ-5542f"},"state":"ACTIVE"}
+[info] 
+[info] === Deploying to 'educ-5542f'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2022-06-09T15:20:25.951Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/educ-5542f [none]
+[debug] [2022-06-09T15:20:40.886Z] Failed to make request to https://firebase.googleapis.com/v1beta1/projects/educ-5542f
+[debug] [2022-06-09T15:20:51.986Z] FirebaseError: Failed to make request to https://firebase.googleapis.com/v1beta1/projects/educ-5542f
+    at RetryOperation._fn (C:\Users\ASUS\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:240:31)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+[error] 
+[error] Error: Failed to get Firebase project educ-5542f. Please make sure the project exists and your account has permission to access it.
