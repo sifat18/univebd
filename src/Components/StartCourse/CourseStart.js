@@ -13,6 +13,8 @@ export default function CourseStart() {
     const [course, setcourses] = useState({})
     const [curIndex, setcurIndex] = useState(0)
     const [video, setVideo] = useState('')
+    const [nextV, setNV] = useState('')
+    const [preV, setPV] = useState('')
     const [quiz, setQuiz] = useState(false)
     const [show, setShow] = useState(false)
     const [description, setdescription] = useState('')
@@ -29,34 +31,46 @@ export default function CourseStart() {
 
     const sendVideo = (data, video, idx = 0, unlock = false) => {
         setQuiz(false)
+        setcurIndex(idx)
         switch (video) {
             case 'sub_video1':
+                setPV('')
                 setVideo(data.sub_video1)
                 setdescription(data.sub_description1)
                 if (!data.sub_mod2 && !data.sub_mod3) {
                     setShow(true)
                     setnex(idx + 1)
                     setnexMod(true)
+                    setNV('')
                 } else {
                     setnex(idx)
                     setnexMod(unlock)
                     setShow(false)
+                    setNV('sub_video2')
                 }
                 break;
             case 'sub_video2':
+                setPV('sub_video1')
+
                 setVideo(data.sub_video2)
                 setdescription(data.sub_description2)
                 if (!data.sub_mod3) {
                     setShow(true)
                     setnex(idx + 1)
                     setnexMod(true)
+                    setNV('')
+
                 } else {
                     setnex(idx)
                     setnexMod(unlock)
                     setShow(false)
+                    setNV('sub_video3')
                 }
                 break;
             case 'sub_video3':
+                setNV('')
+                setPV('sub_video2')
+
                 setVideo(data.sub_video3)
                 setdescription(data.sub_description3)
                 setShow(true)
@@ -76,12 +90,18 @@ export default function CourseStart() {
         setShow(false)
 
     }
-    const moduleNavigate = (index, flag) => {
-        setVideo(course.Module[index].sub_video1)
-        setdescription(course.Module[index].sub_description1)
-        flag ? setcurIndex(curIndex + 1) : setcurIndex(curIndex - 1)
+    // const moduleNavigate = (index, flag) => {
+    //     setVideo(course.Module[index].sub_video1)
+    //     setdescription(course.Module[index].sub_description1)
+    //     flag ? setcurIndex(curIndex + 1) : setcurIndex(curIndex - 1)
 
+    // }
+
+    // back and forth video switching in the same model
+    const videoNavigate = (inde, vid) => {
+        sendVideo(course.Module[inde], vid, inde, true)
     }
+    // enable quiz option
     const nextModule = () => {
         setQuiz(true)
     }
@@ -110,7 +130,7 @@ export default function CourseStart() {
                         </Accordion>
                     </Col>
                     <Col xs={12} md={9} className=''>
-                        {!quiz && <Videos show={show} maxMod={maxModuleIndex} basic={course.demoLink} link={video} curIdx={curIndex} handle={moduleNavigate} handl2={nextModule} breif={description} />
+                        {!quiz && <Videos show={show} basic={course.demoLink} link={video} curIdx={curIndex} handl2={nextModule} breif={description} videoControl={videoNavigate} nexVideo={nextV} preVideo={preV} />
                         }
                         {quiz && <Quiz courseData={course} maxMod={maxModuleIndex} handl={nextVideo} nextIndex={nex} nextMod={nexMod} />
                         }
