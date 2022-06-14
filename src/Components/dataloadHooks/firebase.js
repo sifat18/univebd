@@ -52,7 +52,7 @@ const useFirebase = () => {
         signInWithPopup(auth, provider)
             .then((result) => {
                 const user = result.user;
-                // saveUser(user.email, user.displayName, 'PUT');
+                saveUser(user.email, user.displayName, 'PUT');
                 seterror('');
                 const destination = location?.state?.from || '/learn';
                 history(destination);
@@ -99,6 +99,7 @@ const useFirebase = () => {
 
 
     useEffect(() => {
+        setisLoading(true)
         console.log('start');
         fetch(`https://fierce-woodland-01411.herokuapp.com/user/${user.email}`)
             .then(res => res.json())
@@ -106,7 +107,10 @@ const useFirebase = () => {
                 console.log(data);
                 setAdmin(data.admin)
                 setTutor(data.tutor)
+                setisLoading(false)
+
             })
+
     }, [user.email])
 
     // signoUT
@@ -122,6 +126,7 @@ const useFirebase = () => {
     }
 
     const saveUser = (email, displayName, method) => {
+        setisLoading(true)
         const userData = { email, displayName };
         fetch('https://fierce-woodland-01411.herokuapp.com/user', {
             method: method,
@@ -131,6 +136,8 @@ const useFirebase = () => {
             body: JSON.stringify(userData)
         })
             .then()
+        setisLoading(false)
+
     }
     // const saveUser = (email, displayName, method, route) => {
     //     let Email = email

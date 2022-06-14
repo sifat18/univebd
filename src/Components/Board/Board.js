@@ -8,12 +8,8 @@ export default function Board() {
     return (
         <>
             <Container fluid>
-                <Row>
-                    <Boardhead />
-                </Row>
-                <Row>
-                    <Outlet />
-                </Row>
+                <Boardhead />
+                <Outlet />
             </Container>
             <Footer />
         </>

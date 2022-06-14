@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 const PrivateRoute = ({ children, ...rest }) => {
     const { user, isLoading } = useAuth()
+    console.log(user.email)
     let location = useLocation();
 
     if (isLoading) {
