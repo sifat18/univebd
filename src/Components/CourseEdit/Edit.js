@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { useForm } from "react-hook-form";
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer';
 import axios from 'axios';
@@ -9,6 +8,12 @@ export default function Edit() {
     const [course, setCourse] = useState({});
     const { id } = useParams()
     // let id = '628bc15e47e402f188798c67'
+    const [show, setShow] = useState(false);
+    const handleClose = () => {
+        setShow(false)
+        window.location.reload(true);
+    };
+    const handleShow = () => setShow(true);
     useEffect(() => {
         fetch(`https://fierce-woodland-01411.herokuapp.com/course/${id}`).then(res => res.json()).then(data => setCourse(data))
     }, [id])
@@ -30,19 +35,15 @@ export default function Edit() {
         console.log(newCourse)
 
     }
-    const { register, handleSubmit } = useForm();
-    const onSubmit = data => console.log(data);
-    // const [module, setModule] = useState([
-    //     { module_name: '', module_description: '', sub_mod1: '', sub_mod2: '', sub_mod3: '', sub_video1: '', sub_video2: '', sub_video3: '', sub_description1: '', sub_description2: '', sub_description3: '', q1: '', q2: '', q3: '', q4: '', q5: '', qA1: '', qA2: '', qA3: '', qA4: '', qA5: '', qOP11: '', qOP12: '', qOP13: '', qOP14: '', qOP21: '', qOP22: '', qOP23: '', qOP24: '', qOP31: '', qOP32: '', qOP33: '', qOP34: '', qOP41: '', qOP42: '', qOP43: '', qOP44: '', qOP51: '', qOP52: '', qOP53: '', qOP54: '', show_mod: true }
-    // ])
+
     const submit = (e) => {
         e.preventDefault();
         let Finalcourse = { ...course }
         // Finalcourse.Module = [...module]
-        // setCourse(Finalcourse)
+        // setCourse(Finalcourse)  https://fierce-woodland-01411.herokuapp.com/
 
         console.log(Finalcourse)
-        // axios.post(`https://fierce-woodland-01411.herokuapp.com/courses`, Finalcourse).then(res => res.data ? handleShow() : '')
+        axios.put(`http://localhost:7000/courses/edit/${id}`, Finalcourse).then(res => res.data ? handleShow() : '')
 
     }
     return (
@@ -60,7 +61,7 @@ export default function Edit() {
                                 className=''
                                 onChange={handleOnChange}
                                 defaultValue={course?.coursename} />
-                            {/* <input required defaultValue={course?.coursename} className='reservation  ' {...register("coursename")} /> */}
+
                         </Col>
                         <Col xs={12} md={3} className='courseFormpad'>
                             <textarea
@@ -72,7 +73,7 @@ export default function Edit() {
                                 defaultValue={course?.about}
                                 onChange={handleOnChange}
                             />
-                            {/* <textarea rows='4' required defaultValue={course?.about} className='reservation  '{...register("about")} /> */}
+
                         </Col>
                         <Col xs={12} md={3} className='courseFormpad'>
                             <FormControl
@@ -82,7 +83,7 @@ export default function Edit() {
                                 className=''
                                 defaultValue={course?.imageLink}
                                 onChange={handleOnChange} />
-                            {/* <input required defaultValue={course?.imageLink} className='reservation  ' {...register("imageLink")} /> */}
+
                         </Col>
                         <Col xs={12} md={3} className='courseFormpad'>
                             <FormControl
@@ -92,19 +93,73 @@ export default function Edit() {
                                 className=''
                                 defaultValue={course?.demoLink}
                                 onChange={handleOnChange} />
-                            {/* <input required defaultValue={course?.demoLink} className='reservation  ' {...register("demoLink")} /> */}
+
                         </Col>
                     </Row>
                     {/* basic ends here */}
 
+                    <h3 className="my-3 py-3 text-dark text-center"> Course Summary</h3>
+                    <Row className='bg-secondary  py-3'>
+                        <Col xs={12} md={3} className='courseFormpad' >
+                            <FormControl
+                                type='text'
+                                name='total_modules'
+                                placeholder='total_modules'
+                                className=''
+                                defaultValue={course?.total_modules}
+                                onChange={handleOnChange}
+                            />
+                        </Col>
+                        <Col xs={12} md={3} className='courseFormpad' >
+                            <FormControl
+                                type='text'
+                                name='total_quizes'
+                                placeholder='total_quizes'
+                                className=''
+                                defaultValue={course?.total_quizes}
+                                onChange={handleOnChange}
+                            />
+                        </Col>
+                        <Col xs={12} md={3} className='courseFormpad' >
+                            <FormControl
+                                type='text'
+                                name='course_length'
+                                placeholder='course_length'
+                                className=''
+                                defaultValue={course?.course_length}
+                                onChange={handleOnChange}
+                            />
+                        </Col>
+                        <Col xs={12} md={3} className='courseFormpad' >
+                            <FormControl
+                                type='text'
+                                name='course_level'
+                                placeholder='course_level'
+                                className=''
+                                defaultValue={course?.course_level}
+                                onChange={handleOnChange}
+                            />
+                        </Col>
+                        <Col xs={12} md={3} className='courseFormpad mt-3' >
+                            <FormControl
+                                type='text'
+                                name='tag'
+                                placeholder='tag'
+                                className=''
+                                defaultValue={course?.tag}
+                                onChange={handleOnChange}
+                            />
+                        </Col>
+                    </Row>
+                    {/* summary ends */}
 
                     {course?.Module?.map((input, index) => (
                         //    {/* module start here */}
 
-                        <div className="my-5 ps-5 bg-secondary  py-2" key={index}>
+                        <Row className="my-5  bg-secondary  py-2" key={index}>
                             <Row>
                                 <Col xs={12} md={4} className='text-center pt-2'>
-                                    <h3 className="my-2 mx-2 text-light ">Course Modules {index + 1}</h3>
+                                    <h3 className="my-2  text-light ">Course Modules {index + 1}</h3>
                                 </Col>
                                 <Col xs={12} md={4} className='text-center pt-2'>
                                     <FormControl
@@ -121,7 +176,7 @@ export default function Edit() {
                                         placeholder='About_mdoule'
                                         rows='5'
                                         cols='80'
-                                        className='mx-5 form-control'
+                                        className=' form-control'
                                         defaultValue={input.module_description}
                                         onChange={event => handleOnChangeL(index, event)} />
                                 </Col>
@@ -140,7 +195,7 @@ export default function Edit() {
                                         placeholder='sub_module_name'
                                         defaultValue={input.sub_mod1}
                                         onChange={event => handleOnChangeL(index, event)} />
-                                    {/* <input required defaultValue={input.sub_mod1} className='reservation  ' {...register("sub_mod1")} /> */}
+
                                 </Col>
                                 <Col className='courseFormpad'>
                                     <p className='text-light ps-3'>sub module description</p>
@@ -164,7 +219,7 @@ export default function Edit() {
                                         className=''
                                         defaultValue={input.sub_video1}
                                         onChange={event => handleOnChangeL(index, event)} />
-                                    {/* <input required defaultValue={input.sub_video1} className='reservation  ' {...register("sub_video1")} /> */}
+
                                 </Col>
                             </Row>
 
@@ -180,7 +235,7 @@ export default function Edit() {
                                         placeholder='sub_module_name'
                                         defaultValue={input.sub_mod2}
                                         onChange={event => handleOnChangeL(index, event)} />
-                                    {/* <input required defaultValue={input.sub_mod2} className='reservation  ' {...register("sub_mod2")} /> */}
+
                                 </Col>
                                 <Col className='courseFormpad'>
                                     <p className='text-light ps-3'>sub module description</p>
@@ -193,7 +248,7 @@ export default function Edit() {
                                         className='form-control'
                                         defaultValue={input.sub_description2}
                                         onChange={event => handleOnChangeL(index, event)} />
-                                    {/* <textarea required rows='4' defaultdefaultValue={input.sub_description2} className='reservation  ' {...register("sub_description2")} /> */}
+
                                 </Col>
                                 <Col className='courseFormpad'>
                                     <p className='text-light ps-3'>sub module video</p>
@@ -219,7 +274,7 @@ export default function Edit() {
                                         placeholder='sub_module_name'
                                         defaultValue={input.sub_mod3}
                                         onChange={event => handleOnChangeL(index, event)} />
-                                    {/* <input required defaultdefaultValue={input.sub_mod3} className='reservation  ' {...register("sub_mod3")} /> */}
+
                                 </Col>
                                 <Col className='courseFormpad'>
                                     <p className='text-light ps-3'>sub module description</p>
@@ -243,7 +298,7 @@ export default function Edit() {
                                         className=''
                                         defaultValue={input.sub_video3}
                                         onChange={event => handleOnChangeL(index, event)} />
-                                    {/* <input required defaultdefaultValue={input.sub_video3} className='reservation ' {...register("sub_video3")} /> */}
+
                                 </Col>
                             </Row>
                             {/* add quiz */}
@@ -327,7 +382,7 @@ export default function Edit() {
                                             className='mb-3'
                                             defaultValue={input.qA2}
                                             onChange={event => handleOnChangeL(index, event)} />
-                                        <input required defaultdefaultValue={input.qA2} className='reservation ' {...register("qA2")} />
+
                                         <p className='text-light pt-3 ps-3'>Choice 1</p>
                                         <FormControl
                                             type='text'
@@ -527,7 +582,7 @@ export default function Edit() {
                                 {/* </div> */}
 
                             </Row>
-                        </div>
+                        </Row>
                     ))}
                     <div className="my-5 d-flex justify-content-around">
                         {/* <input className='reservation   bg-danger text-bg' type="submit" /> */}
@@ -538,6 +593,18 @@ export default function Edit() {
                 </form>
 
             </Container>
+
+            <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Course Added</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>edited!!</Modal.Body>
+                <Modal.Footer>
+                    <Button variant="success" onClick={handleClose}>
+                        Ok!!
+                    </Button>
+                </Modal.Footer>
+            </Modal>
             <Footer />
         </>
     )

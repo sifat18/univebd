@@ -90,7 +90,7 @@ export default function CourseAdd() {
                     {/* basic ends here */}
                     {/* summary */}
                     <h3 className="my-3 py-3 text-dark text-center"> Course Summary</h3>
-                    <Row className='bg-secondary  py-5'>
+                    <Row className='bg-secondary  py-3'>
                         <Col xs={12} md={3} className='courseFormpad' >
                             <input
                                 name='total_modules'
@@ -119,6 +119,14 @@ export default function CourseAdd() {
                             <input
                                 name='course_level'
                                 placeholder='course_level'
+                                className=''
+                                onChange={handleOnChangeL}
+                            />
+                        </Col>
+                        <Col xs={12} md={3} className='courseFormpad mt-3' >
+                            <input
+                                name='tag'
+                                placeholder='tag'
                                 className=''
                                 onChange={handleOnChangeL}
                             />
