@@ -16,6 +16,7 @@ import logo12 from '../images/logos/BTI.png'
 import logo13 from '../images/logos/citygroup.png'
 import logo14 from '../images/logos/ConcordGrouplogo.png'
 import logo15 from '../images/logos/ConfidenceGrouplogo.png'
+import logo16 from '../images/logos/akij.png'
 import logo17 from '../images/logos/Edisongroup.png'
 import logo18 from '../images/logos/Energypac.png'
 import logo19 from '../images/logos/EskayefBangladesh.png'
@@ -137,9 +138,9 @@ export default function Companies() {
                 <div className='  text-center'>
                     <img className='img-fluid mx-auto my-auto ' src={logo15} alt="" height='150' width='150' />
                 </div>
-                {/* <div className='  text-center'>
+                <div className='  text-center'>
                     <img className='img-fluid mx-auto my-auto ' src={logo16} alt="" height='150' width='150' />
-                </div> */}
+                </div>
                 <div className='  text-center'>
                     <img className='img-fluid mx-auto my-auto ' src={logo17} alt="" height='150' width='150' />
                 </div>
