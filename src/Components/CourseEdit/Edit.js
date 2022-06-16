@@ -48,7 +48,7 @@ export default function Edit() {
     }
     return (
         <>  <Header />
-            <Container fluid className=''>
+            <section fluid className=''>
                 <form onSubmit={submit}>
                     {/* basic info starts here */}
 
@@ -592,7 +592,7 @@ export default function Edit() {
                     </div>
                 </form>
 
-            </Container>
+            </section>
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
@@ -605,7 +605,6 @@ export default function Edit() {
                     </Button>
                 </Modal.Footer>
             </Modal>
-            <Footer />
         </>
     )
 }
