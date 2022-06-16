@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
-import { Container, Modal, Button, Row, Col } from 'react-bootstrap';
+import { Container as div, Modal, Button, Row, Col, Container } from 'react-bootstrap';
 import './addcourse.css'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer';
@@ -47,8 +47,8 @@ export default function CourseAdd() {
     }
     return (
         <>
-            <Header />
-            <Container fluid className=''>
+            
+            <section>
                 <form onSubmit={submit} >
                     {/* basic info starts here */}
 
@@ -134,7 +134,7 @@ export default function CourseAdd() {
                     </Row>
                     {module.map((input, index) => (
                         //    {/* module start here */}
-                        <div className="my-5 ps-5 bg-secondary  py-2" key={index}>
+                        <Row className="my-5 ps-5 bg-secondary  py-2" key={index}>
                             <Row>
                                 <Col xs={12} md={4} className='text-center pt-2'>
                                     <h3 className="my-2 mx-2 text-light ">Course Modules {index + 1}</h3>
@@ -512,7 +512,7 @@ export default function CourseAdd() {
                                 {/* </div> */}
 
                             </Row>
-                        </div>
+                        </Row>
                     ))}
                     <div className="my-5 d-flex justify-content-around">
                         <Button variant='success' onClick={submit}>Submit</Button>
@@ -520,7 +520,7 @@ export default function CourseAdd() {
                     </div>
                 </form>
 
-            </Container>
+            </section>
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>Course Added</Modal.Title>

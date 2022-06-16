@@ -23,7 +23,7 @@ export default function Boardhead() {
     }
     return (
         <>
-            <Navbar sticky="top" fluid collapseOnSelect expand="lg" bg="white" variant="light">
+            <Navbar  fluid collapseOnSelect expand="lg" bg="white" variant="light">
                 <Container fluid>
                     {/* {user.displayName && <span onClick={'handleOn'} className='fs-2 pe-3'>  <GiHamburgerMenu /></span>} */}
                     <NavLink to='/'> <Navbar.Brand href="#home" className="me-5 ">

@@ -10,7 +10,7 @@ import useAuth from '../Context/useAuth'
 import Footer from '../Footer/Footer'
 import RestCourses from '../Common/RestCourses'
 export default function Learn() {
-    const { user } = useAuth()
+    const { user,admin } = useAuth()
 
     const [item] = useData();
     const [disp, setdisp] = useState(false)
@@ -44,19 +44,21 @@ export default function Learn() {
                                         <Card.Text>{id.about.slice(0, 100)}              </Card.Text>
                                     </Card.Body>
                                     <Row>
-                                        <Col xs={6}>
+                                        <Col xs={admin?4:6}>
                                             <p><img src={st} alt="" height={25} /></p>
                                             <p className='fs-7'>Beginner</p>
                                         </Col>
-                                        <Col xs={6}>
-                                            <NavLink to={`/learn/${id._id}`}> <Button className='p-3' variant="outline-dark">preview <img src={ar} alt="" /></Button></NavLink>
+                                        <Col xs={admin?8:6} className='d-flex justify-content-around'>
+                                            <NavLink to={`/learn/${id._id}`}> <Button className='p-2' variant="outline-dark">Preview <img src={ar} alt="" /></Button></NavLink>
+                                            {admin && <NavLink to={`/edit/${id._id}`}> <Button className='p-2' variant="outline-success">Edit Course <img src={'ar'} alt="" /></Button></NavLink>}
+                                            
 
                                         </Col>
                                     </Row>
                                 </Card>
                             </Col>
                         ))}
-                        <RestCourses show={disp} courses={item.slice(5)} />
+                        <RestCourses show={disp} admin={admin} courses={item.slice(5)} />
                     </Row>
                     <Button className='my-5 px-5 py-3' onClick={handleShow} variant="outline-dark">{!disp ? "show more" : "show Less"} <img src={dr} height={22} alt="" /></Button>
 
@@ -80,19 +82,20 @@ export default function Learn() {
                                         <Card.Text>{id.about.slice(0, 100)}              </Card.Text>
                                     </Card.Body>
                                     <Row>
-                                        <Col xs={6}>
+                                    <Col xs={admin?4:6}>
                                             <p><img src={st} alt="" height={25} /></p>
                                             <p className='fs-7'>Beginner</p>
                                         </Col>
-                                        <Col xs={6}>
-                                            <NavLink to={`/learn/${id._id}`}><Button className='p-3' variant="outline-dark">preview <img src={ar} alt="" /></Button></NavLink>
+                                        <Col xs={admin?8:6} className='d-flex justify-content-around'>
+                                            <NavLink to={`/learn/${id._id}`}> <Button className='p-2' variant="outline-dark">Preview <img src={ar} alt="" /></Button></NavLink>
+                                            {admin && <NavLink to={`/edit/${id._id}`}> <Button className='p-2' variant="outline-success">Edit Course <img src={'ar'} alt="" /></Button></NavLink>}
 
                                         </Col>
                                     </Row>
                                 </Card>
                             </Col>
                         ))}
-                        <RestCourses show={disp2} courses={item.slice(5)} />
+                        <RestCourses show={disp2} admin={admin} courses={item.slice(5)} />
                     </Row>
                     <Button className='my-5 px-5 py-3' onClick={handleShow2} variant="outline-dark">{!disp2 ? "show more" : "show Less"} <img src={dr} height={22} alt="" /></Button>
 

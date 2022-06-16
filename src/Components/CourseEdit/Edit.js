@@ -43,7 +43,7 @@ export default function Edit() {
         // setCourse(Finalcourse)  https://fierce-woodland-01411.herokuapp.com/
 
         console.log(Finalcourse)
-        axios.put(`http://localhost:7000/courses/edit/${id}`, Finalcourse).then(res => res.data ? handleShow() : '')
+        axios.put(`https://fierce-woodland-01411.herokuapp.com/courses/edit/${id}`, Finalcourse).then(res => res.data ? handleShow() : '')
 
     }
     return (
@@ -596,9 +596,9 @@ export default function Edit() {
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Course Added</Modal.Title>
+                    <Modal.Title>Successful</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>edited!!</Modal.Body>
+                <Modal.Body>Course edited!!</Modal.Body>
                 <Modal.Footer>
                     <Button variant="success" onClick={handleClose}>
                         Ok!!
