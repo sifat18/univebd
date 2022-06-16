@@ -48,7 +48,7 @@ export default function Home() {
                             <source src={b2} type='video/mp4' />
                         </video> */}
                          <Ratio aspectRatio="16x9">
-                        <iframe  src="https://www.youtube.com/embed/viHILXVY_eU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                         <iframe  src="https://www.youtube.com/embed/viHILXVY_eU?controls=0;start=2&end=57" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </Ratio>
                     </div>
 
