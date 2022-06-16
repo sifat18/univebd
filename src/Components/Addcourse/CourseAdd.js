@@ -532,7 +532,6 @@ export default function CourseAdd() {
                     </Button>
                 </Modal.Footer>
             </Modal>
-            <Footer />
         </>
     )
 }

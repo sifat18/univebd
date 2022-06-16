@@ -47,7 +47,7 @@ export default function Edit() {
 
     }
     return (
-        <>  <Header />
+        <>  
             <section fluid className=''>
                 <form onSubmit={submit}>
                     {/* basic info starts here */}
