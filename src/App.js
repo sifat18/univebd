@@ -100,7 +100,7 @@ function App() {
               <Route path="/dashboard" element={<Welcome />} />
               <Route path="adadmin" element={<AdminRoute><Admin /></AdminRoute>} />
               <Route path="adtutor" element={<AdminRoute><AddInstructor /></AdminRoute>} />
-              <Route path="/dashboard/edit/:id" element={<AdminRoute><Edit /></AdminRoute>} />
+              <Route path="edit/:id" element={<AdminRoute><Edit /></AdminRoute>} />
               <Route path="addcourse" element={<AdminRoute><CourseAdd /></AdminRoute>} />
 
 

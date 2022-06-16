@@ -24,7 +24,7 @@ export default function RestCourses({ show, courses,admin }) {
                             </Col>
                             <Col xs={admin?8:6} className='d-flex justify-content-around'>
                                             <NavLink to={`/learn/${id._id}`}> <Button className='p-2' variant="outline-dark">Preview <img src={ar} alt="" /></Button></NavLink>
-                                            {admin && <NavLink to={`/edit/${id._id}`}> <Button className='p-2' variant="outline-success">Edit Course <img src={'ar'} alt="" /></Button></NavLink>}
+                                            {admin && <NavLink to={`/dashboard/edit/${id._id}`}> <Button className='p-2' variant="outline-success">Edit Course <img src={'ar'} alt="" /></Button></NavLink>}
 
                             </Col>
                         </Row>
