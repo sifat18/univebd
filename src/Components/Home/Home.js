@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Col, Container, Row } from 'react-bootstrap'
+import { Button, Col, Container, Ratio, Row } from 'react-bootstrap'
 import './home.css'
 import home from '../images/home.png'
 import b2 from '../images/b2.mp4'
@@ -44,9 +44,12 @@ export default function Home() {
                     <h5 className=' mt-3 smallText ps-2'> সমস্ত ক্যারিয়ার পাথ এবং ট্রেনিং কন্টেন্ট এর পিছনে আছেন ভেটেরান ইন্ডাস্ট্রি ইঞ্জিনিয়ার্স যারা প্রতিনিয়ত ট্রেনিং ম্যাটেরিয়ালস আপডেট করে যাচ্ছেন।</h5>
                     {/* <h5 className=' text-center smallText'></h5> */}
                     <div className=" top-video mt-5   ">
-                        <video loop="true" className='w-75 h-75' autoplay="autoplay" muted >
+                        {/* <video loop="true" className='w-75 h-75' autoplay="autoplay" muted >
                             <source src={b2} type='video/mp4' />
-                        </video>
+                        </video> */}
+                         <Ratio aspectRatio="16x9">
+                        <iframe  src="https://www.youtube.com/embed/viHILXVY_eU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </Ratio>
                     </div>
 
                 </section>
