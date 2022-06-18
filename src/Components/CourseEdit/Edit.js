@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react'
-import Header from '../Header/Header'
-import Footer from '../Footer/Footer';
-import axios from 'axios';
-import { Container, Modal, Button, Row, Col, FormControl } from 'react-bootstrap';
+import axios from "axios";
+import { useEffect, useState } from 'react';
+import { Button, Col, FormControl, Modal, Row } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
+
 export default function Edit() {
     const [course, setCourse] = useState({});
-    const { id } = useParams()
+    const [module, setModule] = useState([]);
+            const { id } = useParams()
     // let id = '628bc15e47e402f188798c67'
     const [show, setShow] = useState(false);
     const handleClose = () => {
@@ -15,17 +15,20 @@ export default function Edit() {
     };
     const handleShow = () => setShow(true);
     useEffect(() => {
-        fetch(`https://fierce-woodland-01411.herokuapp.com/course/${id}`).then(res => res.json()).then(data => setCourse(data))
+        fetch(`https://fierce-woodland-01411.herokuapp.com/course/${id}`).then(res => res.json()).then(data => {
+            setCourse(data)
+            setModule(data.Module)
+        })
     }, [id])
+    // console.log(module)
+    // changing module values 
     const handleOnChangeL = (index, e) => {
-        const field = e.target.name;
-        const value = e.target.value;
-        const newCourse = { ...course };
-        newCourse.Module[index][field] = value;
-        setCourse(newCourse);
-        console.log(newCourse)
+        let data = [...module];
+        data[index][e.target.name] = e.target.value;
+        setModule(data);
 
     }
+    // changing general information not in a loop
     const handleOnChange = e => {
         const field = e.target.name;
         const value = e.target.value;
@@ -35,12 +38,61 @@ export default function Edit() {
         console.log(newCourse)
 
     }
-
+// adding new module array
+       const addFields = () => {
+         let newModule = {
+           module_name: "",
+           module_description: "",
+           sub_mod1: "",
+           sub_mod2: "",
+           sub_mod3: "",
+           sub_video1: "",
+           sub_video2: "",
+           sub_video3: "",
+           sub_description1: "",
+           sub_description2: "",
+           sub_description3: "",
+           q1: "",
+           q2: "",
+           q3: "",
+           q4: "",
+           q5: "",
+           qA1: "",
+           qA2: "",
+           qA3: "",
+           qA4: "",
+           qA5: "",
+           qOP11: "",
+           qOP12: "",
+           qOP13: "",
+           qOP14: "",
+           qOP21: "",
+           qOP22: "",
+           qOP23: "",
+           qOP24: "",
+           qOP31: "",
+           qOP32: "",
+           qOP33: "",
+           qOP34: "",
+           qOP41: "",
+           qOP42: "",
+           qOP43: "",
+           qOP44: "",
+           qOP51: "",
+           qOP52: "",
+           qOP53: "",
+           qOP54: "",
+           show_mod: true,
+         };
+         setModule([...module, newModule]);
+    };
+    // sending the edited data to db
     const submit = (e) => {
         e.preventDefault();
         let Finalcourse = { ...course }
-        // Finalcourse.Module = [...module]
-        // setCourse(Finalcourse)  https://fierce-woodland-01411.herokuapp.com/
+        delete Finalcourse.Module;
+        Finalcourse.Module = [...module]
+        setCourse(Finalcourse)  //https://fierce-woodland-01411.herokuapp.com/
 
         console.log(Finalcourse)
         axios.put(`https://fierce-woodland-01411.herokuapp.com/courses/edit/${id}`, Finalcourse).then(res => res.data ? handleShow() : '')
@@ -153,7 +205,7 @@ export default function Edit() {
                     </Row>
                     {/* summary ends */}
 
-                    {course?.Module?.map((input, index) => (
+                    {module?.map((input, index) => (
                         //    {/* module start here */}
 
                         <Row className="my-5  bg-secondary  py-2" key={index}>
@@ -588,7 +640,7 @@ export default function Edit() {
                         {/* <input className='reservation   bg-danger text-bg' type="submit" /> */}
 
                         <Button variant='success' onClick={submit}>Submit</Button>
-                        {/* <Button variant='warning' onClick={addFields}>Add Module..</Button> */}
+                        <Button variant='warning' onClick={addFields}>Add Module..</Button>
                     </div>
                 </form>
 

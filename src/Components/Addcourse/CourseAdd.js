@@ -1,9 +1,8 @@
-import { useState } from 'react';
 import axios from 'axios';
-import { Container as div, Modal, Button, Row, Col, Container } from 'react-bootstrap';
-import './addcourse.css'
-import Header from '../Header/Header'
-import Footer from '../Footer/Footer';
+import { useState } from 'react';
+import { Button, Col, Modal, Row } from 'react-bootstrap';
+import './addcourse.css';
+
 
 export default function CourseAdd() {
     const [show, setShow] = useState(false);
