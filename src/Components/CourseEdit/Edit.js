@@ -104,7 +104,7 @@ export default function Edit() {
                 <form onSubmit={submit}>
                     {/* basic info starts here */}
 
-                    <Row className='bg-secondary pb-3'>
+                    <Row className='formBg pb-3'>
                         <h3 className="my-3 py-3 text-light text-center">Basic Course Information</h3>
                         <Col xs={12} md={3} className='courseFormpad' >
                             <FormControl type="text"
@@ -151,7 +151,7 @@ export default function Edit() {
                     {/* basic ends here */}
 
                     <h3 className="my-3 py-3 text-dark text-center"> Course Summary</h3>
-                    <Row className='bg-secondary  py-3'>
+                    <Row className='formBg  py-3'>
                         <Col xs={12} md={3} className='courseFormpad' >
                             <FormControl
                                 type='text'
@@ -208,7 +208,7 @@ export default function Edit() {
                     {module?.map((input, index) => (
                         //    {/* module start here */}
 
-                        <Row className="my-5  bg-secondary  py-2" key={index}>
+                        <Row className="my-5  formBg  py-2" key={index}>
                             <Row>
                                 <Col xs={12} md={4} className='text-center pt-2'>
                                     <h3 className="my-2  text-light ">Course Modules {index + 1}</h3>
