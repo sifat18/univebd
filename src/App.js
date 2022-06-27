@@ -94,16 +94,15 @@ function App() {
             <Route path="/course-catalogue/:tag" element={<CourseCatalog />} />
             <Route path="/scholarships" element={<Scholarships />} />
             <Route path="/press" element={<Press />} />
-            <Route path="/addcourse" element={<CourseAdd />} />
-            <Route path="/edit/:id" element={<Edit />} />
             <Route path="/learn/:courseID" element={<Overview />} />
             <Route path="/learn/start/:courseID" element={<PrivateRoute><CourseStart /></PrivateRoute>} />
             <Route path="/dashboard" element={<PrivateRoute><Board /></PrivateRoute>} >
               <Route path="/dashboard" element={<Welcome />} />
-              <Route path="dashboard" element={<AdminRoute><Admin /></AdminRoute>} />
               <Route path="adadmin" element={<AdminRoute><Admin /></AdminRoute>} />
-
               <Route path="adtutor" element={<AdminRoute><AddInstructor /></AdminRoute>} />
+              <Route path="edit/:id" element={<AdminRoute><Edit /></AdminRoute>} />
+              <Route path="addcourse" element={<AdminRoute><CourseAdd /></AdminRoute>} />
+
 
             </Route>
             <Route path="*" element={<Nopage />} />

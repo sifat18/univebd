@@ -8,6 +8,9 @@ import { useNavigate } from "react-router-dom";
 import useAuth from '../Context/useAuth';
 import './header.css'
 import { MdNavigateNext } from "react-icons/md";
+import { MdBookmarkAdd } from "react-icons/md";
+import { AiOutlineUserAdd } from "react-icons/ai";
+import { RiAdminLine } from "react-icons/ri";
 import { GiBullseye } from "react-icons/gi";
 import { FiBook } from "react-icons/fi";
 import { BiSearchAlt2 } from "react-icons/bi";
@@ -33,7 +36,7 @@ export default function Header() {
     const [passError, setpassError] = useState('');
     const [LoginData, setLoginData] = useState({});
     const history = useNavigate();
-    const { createUser, signGoogle, emailPass, error, user, isLoading, logOut } = useAuth();
+    const { createUser, signGoogle, emailPass, error, user, isLoading, logOut,admin } = useAuth();
     const location = useLocation();
 
     let repassword;
@@ -228,6 +231,9 @@ export default function Header() {
                         <NavLink to='/learn'><BiSearchAlt2 className='fs-2 mx-2 text-dark ' /> <div className="littleFont pb-3">Explore</div></NavLink>
                         <NavLink to='/projects'><TiPuzzle className='fs-2 mx-2 text-dark ' /><div className="littleFont pb-3 ">Projects</div></NavLink>
                         <NavLink to='/assessments'><GiBullseye className='fs-2 mx-2 text-dark ' /> <div className="littleFont pb-3">Assesments</div></NavLink>
+                        {admin && <NavLink to='/dashboard/addcourse'><MdBookmarkAdd className='fs-2 mx-2 text-dark ' /> <div className="littleFont pb-3">Add Course</div></NavLink>}
+                        {admin && <NavLink to='/dashboard/adadmin'><RiAdminLine className='fs-2 mx-2 text-dark ' /> <div className="littleFont pb-3">Add Admin</div></NavLink>}
+                        {admin && <NavLink to='/dashboard/adtutor'><AiOutlineUserAdd className='fs-2 mx-2 text-dark ' /> <div className="littleFont pb-3">Add Tutor</div></NavLink>}
                     </div>
                 </Offcanvas.Body>
             </Offcanvas>

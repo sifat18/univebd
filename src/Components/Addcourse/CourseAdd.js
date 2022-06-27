@@ -1,9 +1,8 @@
-import { useState } from 'react';
 import axios from 'axios';
-import { Container, Modal, Button, Row, Col } from 'react-bootstrap';
-import './addcourse.css'
-import Header from '../Header/Header'
-import Footer from '../Footer/Footer';
+import { useState } from 'react';
+import { Button, Col, Modal, Row } from 'react-bootstrap';
+import './addcourse.css';
+
 
 export default function CourseAdd() {
     const [show, setShow] = useState(false);
@@ -47,12 +46,12 @@ export default function CourseAdd() {
     }
     return (
         <>
-            <Header />
-            <Container fluid className=''>
+            
+            <section>
                 <form onSubmit={submit} >
                     {/* basic info starts here */}
 
-                    <Row className='bg-secondary pb-3'>
+                    <Row className='formBg pb-3'>
                         <h3 className="my-3 py-3 text-light text-center">Basic Course Information</h3>
                         <Col xs={12} md={3} className='courseFormpad' >
                             <input
@@ -90,7 +89,7 @@ export default function CourseAdd() {
                     {/* basic ends here */}
                     {/* summary */}
                     <h3 className="my-3 py-3 text-dark text-center"> Course Summary</h3>
-                    <Row className='bg-secondary  py-3'>
+                    <Row className='formBg  py-3'>
                         <Col xs={12} md={3} className='courseFormpad' >
                             <input
                                 name='total_modules'
@@ -134,7 +133,7 @@ export default function CourseAdd() {
                     </Row>
                     {module.map((input, index) => (
                         //    {/* module start here */}
-                        <div className="my-5 ps-5 bg-secondary  py-2" key={index}>
+                        <Row className="my-5 ps-5 formBg  py-2" key={index}>
                             <Row>
                                 <Col xs={12} md={4} className='text-center pt-2'>
                                     <h3 className="my-2 mx-2 text-light ">Course Modules {index + 1}</h3>
@@ -512,7 +511,7 @@ export default function CourseAdd() {
                                 {/* </div> */}
 
                             </Row>
-                        </div>
+                        </Row>
                     ))}
                     <div className="my-5 d-flex justify-content-around">
                         <Button variant='success' onClick={submit}>Submit</Button>
@@ -520,7 +519,7 @@ export default function CourseAdd() {
                     </div>
                 </form>
 
-            </Container>
+            </section>
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>Course Added</Modal.Title>
@@ -532,7 +531,6 @@ export default function CourseAdd() {
                     </Button>
                 </Modal.Footer>
             </Modal>
-            <Footer />
         </>
     )
 }
