@@ -53,6 +53,7 @@ import Maas from './Components/Maas/Maas';
 import CourseAdd from './Components/Addcourse/CourseAdd';
 import Edit from './Components/CourseEdit/Edit';
 import Welcome from './Components/Board/Welcome';
+import Dashboard from './views/dashboard/Dashboard';
 function App() {
   useEffect(() => {
     AOS.init();
@@ -96,14 +97,13 @@ function App() {
             <Route path="/press" element={<Press />} />
             <Route path="/learn/:courseID" element={<Overview />} />
             <Route path="/learn/start/:courseID" element={<PrivateRoute><CourseStart /></PrivateRoute>} />
-            <Route path="/dashboard" element={<PrivateRoute><Board /></PrivateRoute>} >
-              <Route path="/dashboard" element={<Welcome />} />
+            {/* <Route path="/dashb" element={<Board />} /> */}
+            <Route path="/dashboard" element={<Board />} >
+              <Route path="" element={<Dashboard />} />
               <Route path="adadmin" element={<AdminRoute><Admin /></AdminRoute>} />
               <Route path="adtutor" element={<AdminRoute><AddInstructor /></AdminRoute>} />
               <Route path="edit/:id" element={<AdminRoute><Edit /></AdminRoute>} />
               <Route path="addcourse" element={<AdminRoute><CourseAdd /></AdminRoute>} />
-
-
             </Route>
             <Route path="*" element={<Nopage />} />
           </Routes>
