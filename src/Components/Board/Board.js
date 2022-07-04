@@ -8,6 +8,8 @@ import AppSidebar from './AppSidebar/AppSidebar'
 // import Boardhead from './BoardHead/Boardhead'
 import { Provider } from 'react-redux'
 import store from '../../store'
+import AppHeader from './Apphead/AppHeader'
+import AppFooter from './AppFooter/AppFooter'
 export default function Board() {
     return (
         <Provider store={store}>
@@ -19,13 +21,12 @@ export default function Board() {
             <div>
                 <AppSidebar />
                 <div className="wrapper d-flex flex-column min-vh-100 bg-light">
-                    {/* <AppHeader /> */}
+                    <AppHeader />
                     <div className="body flex-grow-1 px-3">
-                        {/* <AppContent /> */}
                         <Outlet />
                     </div>
 
-                    {/* <AppFooter /> */}
+                    <AppFooter />
                 </div>
             </div>
         </Provider>
