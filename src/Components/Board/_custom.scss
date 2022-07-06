@@ -1,1 +1,62 @@
 // Here you can add other styles
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+.App {
+    text-align: center;
+  }
+  
+  a {
+    text-decoration: none;
+    color: darkgrey;
+  }
+  
+  .ss {
+    width: 100px;
+    background-color: rgb(240, 238, 238);
+  }
+  
+  .littleFont {
+    font-size: 0.8rem;
+  }
+  /* career */
+  .invert{
+    transform: rotateY(180deg);
+  }
+  /* header  */
+  .side-nav-btn{
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: black;
+  box-shadow: 0 5px #999;
+  }
+  
+  .side-nav-btn:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+  @media (max-width:550px) {
+    .align{
+    margin: 1rem 4rem;
+  }}
+/* footer styles */
+.footer {
+    background-color: rgba(11, 7, 37, 0.9);
+    min-height: 310px;
+    color: floralwhite;
+    position: relative;
+    padding-top: 20px;
+}
+
+@media (max-width:700px) {
+    .social {
+        margin-bottom: 50px;
+    }
+    .words{
+        font-size: 0.7rem;
+    }
+    .ashText{
+        color:darkgrey
+    }
+
+}

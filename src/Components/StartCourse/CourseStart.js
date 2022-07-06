@@ -8,6 +8,7 @@ import { RiVideoAddLine } from "react-icons/ri";
 import { MdQuiz } from "react-icons/md";
 import './start.css'
 import Footer from '../Footer/Footer'
+import NewQuiz from '../Common/NewQuiz'
 
 export default function CourseStart() {
     const [course, setcourses] = useState({})
@@ -132,7 +133,9 @@ export default function CourseStart() {
                     <Col xs={12} md={9} className=''>
                         {!quiz && <Videos show={show} basic={course.demoLink} link={video} curIdx={curIndex} handl2={nextModule} breif={description} videoControl={videoNavigate} nexVideo={nextV} preVideo={preV} />
                         }
-                        {quiz && <Quiz courseData={course} maxMod={maxModuleIndex} handl={nextVideo} nextIndex={nex} nextMod={nexMod} />
+                        {/* {quiz && <Quiz courseData={course} maxMod={maxModuleIndex} handl={nextVideo} nextIndex={nex} nextMod={nexMod} />
+                        } */}
+                        {quiz && <NewQuiz courseData={course} nextIndex={nex} />
                         }
                     </Col>
                     <Col xs={12} className='border-end border-dark d-block d-md-none'>
