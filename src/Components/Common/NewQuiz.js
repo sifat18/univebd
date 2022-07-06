@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Loader from './Loader';
+import Questions from './Questions';
 import StartQuiz from './StartQuiz';
 
 export default function NewQuiz({courseData,nextIndex}) {
@@ -120,6 +121,9 @@ if(Qtype==='boolean'){
        {loading && <Loader />}
        {!loading && !isQuizStarted && !isQuizCompleted && (
         <StartQuiz results={result} startQuiz={startQuiz} numOfQuestions={totalQuestion}/>
+      )}
+       {!loading && isQuizStarted && (
+        <Questions data={data} countdownTime={countdownTime} endQuiz={endQuiz} />
       )}
     
     </>

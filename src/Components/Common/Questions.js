@@ -1,21 +1,11 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import {
-  Container,
-  Segment,
-  Item,
-  Divider,
-  Button,
-  Icon,
-  Message,
-  Menu,
-  Header
-} from 'semantic-ui-react';
+
 import he from 'he';
 
-import Countdown from '../Countdown';
-import { getLetter } from '../../utils';
-
+// import { getLetter } from '../../utils';
+import Countdown from './Countdown';
+Countdown
 const Questions = ({ data, countdownTime, endQuiz }) => {
   const [questionIndex, setQuestionIndex] = useState(0);
   const [correctAnswers, setCorrectAnswers] = useState(0);
