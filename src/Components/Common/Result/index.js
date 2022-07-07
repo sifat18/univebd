@@ -1,22 +1,17 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import Stats from './Stats';
 import QNA from './QNA';
-import { Container, ListGroup, Button, Nav } from 'react-bootstrap';
+import { Container, Nav } from 'react-bootstrap';
 
 const Result = ({ totalQuestions,
   correctAnswers,
   timeTaken,
   questionsAndAnswers,
-}) => {
+  nextMod, nextIndex, maxMod, handl }) => {
 
   const [activeTab, setActiveTab] = useState('1');
 
-  const handleTabClick = (e) => {
-    e.preventDefault()
-    console.log(e)
-    setActiveTab(e.target.outerText);
-  };
+
   const handleSelect = (eventKey) => setActiveTab(eventKey);
   return (
     <Container>
@@ -29,18 +24,7 @@ const Result = ({ totalQuestions,
         </Nav.Item>
 
       </Nav>
-      {/* <ListGroup >
-        <ListGroup.Item
-          name="Stats"
-          action
-          onClick={(e) => handleTabClick(e)}
-        >Stats</ListGroup.Item>
-        <ListGroup.Item
-          name="QNA"
-          action
-          onClick={(e) => handleTabClick(e)}
-        >QNA</ListGroup.Item>
-      </ListGroup> */}
+
       {activeTab === '1' && (
         <Stats
           totalQuestions={totalQuestions}
@@ -51,6 +35,9 @@ const Result = ({ totalQuestions,
       )}
       {activeTab === '2' && <QNA questionsAndAnswers={questionsAndAnswers} />}
       <br />
+      {nextIndex <= maxMod && nextMod &&
+        <p className='btn btn-info text-white w-50 d-block mt-3 mx-auto' onClick={() => handl(nextIndex, nextMod)}> Go to Next Module</p>
+      }
     </Container>
   );
 };

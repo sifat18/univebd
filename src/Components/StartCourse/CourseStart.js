@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Accordion, Col, Container, Row } from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
-import Quiz from '../Common/Quiz'
+// import Quiz from '../Common/Quiz'
 import Videos from '../Common/Videos'
 import Header from '../Header/Header'
 import { RiVideoAddLine } from "react-icons/ri";
@@ -133,9 +133,7 @@ export default function CourseStart() {
                     <Col xs={12} md={9} className=''>
                         {!quiz && <Videos show={show} basic={course.demoLink} link={video} curIdx={curIndex} handl2={nextModule} breif={description} videoControl={videoNavigate} nexVideo={nextV} preVideo={preV} />
                         }
-                        {/* {quiz && <Quiz courseData={course} maxMod={maxModuleIndex} handl={nextVideo} nextIndex={nex} nextMod={nexMod} />
-                        } */}
-                        {quiz && <NewQuiz courseData={course} nextIndex={nex} />
+                        {quiz && <NewQuiz courseData={course} nextIndex={nex} maxMod={maxModuleIndex} handl={nextVideo} nextMod={nexMod} />
                         }
                     </Col>
                     <Col xs={12} className='border-end border-dark d-block d-md-none'>
