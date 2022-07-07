@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Button, Popup } from 'semantic-ui-react';
-import Swal from 'sweetalert2';
+// import { Button, Popup } from 'semantic-ui-react';
+import { Button, ButtonGroup, OverlayTrigger, Tooltip } from 'react-bootstrap';
 
-import { timeConverter } from '../../utils';
+import Swal from 'sweetalert2';
+import timeConverter from './timeConverter';
+
 
 const Countdown = ({ countdownTime, timeOver, setTimeTaken }) => {
   const totalTime = countdownTime * 1000;
@@ -37,23 +39,35 @@ const Countdown = ({ countdownTime, timeOver, setTimeTaken }) => {
   }, [timerTime]);
 
   return (
-    <Button.Group size="massive" basic floated="right">
-      <Popup
-        content="Hours"
-        trigger={<Button active>{hours}</Button>}
-        position="bottom left"
-      />
-      <Popup
-        content="Minutes"
-        trigger={<Button active>{minutes}</Button>}
-        position="bottom left"
-      />
-      <Popup
-        content="Seconds"
-        trigger={<Button active>{seconds}</Button>}
-        position="bottom left"
-      />
-    </Button.Group>
+    <>
+      <ButtonGroup aria-label="Basic example">
+        <OverlayTrigger
+          placement="bottom"
+          overlay={<Tooltip id="button-tooltip-2">hours</Tooltip>}
+        >
+          {({ ref, ...triggerHandler }) => (
+            <Button variant="light"   {...triggerHandler}>{hours}</Button>
+          )}
+        </OverlayTrigger>
+        <OverlayTrigger
+          placement="bottom"
+          overlay={<Tooltip id="button-tooltip-2">minitues</Tooltip>}
+        >
+          {({ ref, ...triggerHandler }) => (
+            <Button variant="light"  {...triggerHandler}>{minutes}</Button>
+          )}
+        </OverlayTrigger>
+        <OverlayTrigger
+          placement="bottom"
+          overlay={<Tooltip id="button-tooltip-2">seconds</Tooltip>}
+        >
+          {({ ref, ...triggerHandler }) => (
+            <Button variant="light"  {...triggerHandler}>{seconds}</Button>
+          )}
+        </OverlayTrigger>
+      </ButtonGroup>
+
+    </>
   );
 };
 

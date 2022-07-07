@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import he from 'he';
-
-// import { getLetter } from '../../utils';
 import Countdown from './Countdown';
-Countdown
+import getLetter from './getLetter';
+import { ListGroup, Toast, Button } from 'react-bootstrap';
 const Questions = ({ data, countdownTime, endQuiz }) => {
   const [questionIndex, setQuestionIndex] = useState(0);
   const [correctAnswers, setCorrectAnswers] = useState(0);
@@ -13,8 +12,9 @@ const Questions = ({ data, countdownTime, endQuiz }) => {
   const [questionsAndAnswers, setQuestionsAndAnswers] = useState([]);
   const [timeTaken, setTimeTaken] = useState(null);
 
-  const handleItemClick = (e, { name }) => {
-    setUserSlectedAns(name);
+  const handleItemClick = (e) => {
+    // e.preventDefault()
+    setUserSlectedAns(e.target.name);
   };
 
   const handleNext = () => {
@@ -56,81 +56,53 @@ const Questions = ({ data, countdownTime, endQuiz }) => {
   };
 
   return (
-    <Item.Header>
-      <Container>
-        <Segment>
-          <Item.Group divided>
-            <Item>
-              <Item.Content>
-                <Item.Extra>
-                  <Header as="h1" block floated="left">
-                    <Icon name="info circle" />
-                    <Header.Content>
-                      {`Question No.${questionIndex + 1} of ${data.length}`}
-                    </Header.Content>
-                  </Header>
-                  <Countdown
-                    countdownTime={countdownTime}
-                    timeOver={timeOver}
-                    setTimeTaken={setTimeTaken}
-                  />
-                </Item.Extra>
-                <br />
-                <Item.Meta>
-                  <Message size="huge" floating>
-                    <b>{`Q. ${he.decode(data[questionIndex].question)}`}</b>
-                  </Message>
-                  <br />
-                  <Item.Description>
-                    <h3>Please choose one of the following answers:</h3>
-                  </Item.Description>
-                  <Divider />
-                  <Menu vertical fluid size="massive">
-                    {data[questionIndex].options.map((option, i) => {
-                      const letter = getLetter(i);
-                      const decodedOption = he.decode(option);
+    <>
+      <Toast>
+        <Toast.Header>
+          {`Question No.${questionIndex + 1} of ${data.length}`}
+          <strong className="me-auto"></strong>
+          <Countdown
+            countdownTime={countdownTime}
+            timeOver={timeOver}
+            setTimeTaken={setTimeTaken}
+          />
+        </Toast.Header>
+        <Toast.Body>
+          <b>{`Q. ${he.decode(data[questionIndex].question)}`}</b>
+          <hr />
+          <h3>Please choose one of the following answers:</h3>
 
-                      return (
-                        <Menu.Item
-                          key={decodedOption}
-                          name={decodedOption}
-                          active={userSlectedAns === decodedOption}
-                          onClick={handleItemClick}
-                        >
-                          <b style={{ marginRight: '8px' }}>{letter}</b>
-                          {decodedOption}
-                        </Menu.Item>
-                      );
-                    })}
-                  </Menu>
-                </Item.Meta>
-                <Divider />
-                <Item.Extra>
-                  <Button
-                    primary
-                    content="Next"
-                    onClick={handleNext}
-                    floated="right"
-                    size="big"
-                    icon="right chevron"
-                    labelPosition="right"
-                    disabled={!userSlectedAns}
-                  />
-                </Item.Extra>
-              </Item.Content>
-            </Item>
-          </Item.Group>
-        </Segment>
-        <br />
-      </Container>
-    </Item.Header>
+          <ListGroup>
+            {data[questionIndex].options.map((option, i) => {
+              const letter = getLetter(i);
+              const decodedOption = he.decode(option);
+              return (
+                <ListGroup.Item action key={decodedOption}
+                  name={decodedOption}
+                  active={userSlectedAns === decodedOption}
+                  onClick={(e) => handleItemClick(e)}>
+                  <b style={{ marginRight: '8px' }}>{letter}</b>
+                  {decodedOption}
+
+                </ListGroup.Item>
+              );
+            })}
+          </ListGroup>
+        </Toast.Body>
+      </Toast>
+      <Button
+        primary
+        content="Next"
+        onClick={handleNext}
+        floated="right"
+        size="big"
+        icon="right chevron"
+        labelPosition="right"
+        disabled={!userSlectedAns}
+      />
+    </>
+
   );
-};
-
-Quiz.propTypes = {
-  data: PropTypes.array.isRequired,
-  countdownTime: PropTypes.number.isRequired,
-  endQuiz: PropTypes.func.isRequired
 };
 
 export default Questions;
