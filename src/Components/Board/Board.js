@@ -10,6 +10,7 @@ import { Provider } from 'react-redux'
 import store from '../../store'
 import AppHeader from './Apphead/AppHeader'
 import AppFooter from './AppFooter/AppFooter'
+import Footer from '../Footer/Footer'
 export default function Board() {
     return (
         <Provider store={store}>
@@ -26,7 +27,7 @@ export default function Board() {
                         <Outlet />
                     </div>
 
-                    <AppFooter />
+                    <Footer />
                 </div>
             </div>
         </Provider>

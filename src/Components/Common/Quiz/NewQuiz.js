@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
+import Result from '../Result';
 import Loader from './Loader';
 import Questions from './Questions';
-import Result from './Result';
 import StartQuiz from './StartQuiz';
 
 export default function NewQuiz({ courseData, nextMod, nextIndex, maxMod, handl }) {

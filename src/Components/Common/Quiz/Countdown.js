@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Button, ButtonGroup, OverlayTrigger, Tooltip } from 'react-bootstrap';
 
 import Swal from 'sweetalert2';
-import timeConverter from './timeConverter';
+import timeConverter from '../timeConverter';
 
 
 const Countdown = ({ countdownTime, timeOver, setTimeTaken }) => {

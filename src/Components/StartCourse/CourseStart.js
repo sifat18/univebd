@@ -1,15 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { Accordion, Col, Container, Row } from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
-// import Quiz from '../Common/Quiz'
 import Videos from '../Common/Videos'
 import Header from '../Header/Header'
 import { RiVideoAddLine } from "react-icons/ri";
 import { MdQuiz } from "react-icons/md";
 import './start.css'
 import Footer from '../Footer/Footer'
-import NewQuiz from '../Common/NewQuiz'
-
+import NewQuiz from '../Common/Quiz/NewQuiz'
 export default function CourseStart() {
     const [course, setcourses] = useState({})
     const [curIndex, setcurIndex] = useState(0)

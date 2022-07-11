@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
-import { Button, Container, Toast } from 'react-bootstrap';
+import { Button, Container, } from 'react-bootstrap';
 import Offline from './Offline';
-import shuffle from './shuffle';
 
 export default function StartQuiz({ startQuiz, numOfQuestions, results }) {
   const [countdownTime, setCountdownTime] = useState({

@@ -54,42 +54,44 @@ import CourseAdd from './Components/Addcourse/CourseAdd';
 import Edit from './Components/CourseEdit/Edit';
 // import Welcome from './Components/Board/Welcome';
 import Dashboard from './views/dashboard/Dashboard';
-import Colors from './views/theme/colors/Colors';
-import Typography from './views/theme/typography/Typography';
-import Cards from './views/base/cards/Cards';
-import Accordion from './views/base/accordion/Accordion';
-import Breadcrumbs from './views/base/breadcrumbs/Breadcrumbs';
-import Carousels from './views/base/carousels/Carousels';
-import Collapses from './views/base/collapses/Collapses';
-import ListGroups from './views/base/list-groups/ListGroups';
-import Navs from './views/base/navs/Navs';
-import Paginations from './views/base/paginations/Paginations';
-import Placeholders from './views/base/placeholders/Placeholders';
-import Popovers from './views/base/popovers/Popovers';
-import Spinners from './/views/base/spinners/Spinners';
-import Progress from './views/base/progress/Progress';
-import Tables from './views/base/tables/Tables';
-import Tooltips from './views/base/tooltips/Tooltips';
-import Buttons from './views/buttons/buttons/Buttons';
-import Dropdowns from './views/buttons/dropdowns/Dropdowns';
-import ButtonGroups from './views/buttons/button-groups/ButtonGroups';
-import Charts from './views/charts/Charts';
-import FormControl from './views/forms/form-control/FormControl';
-import Select from './views/forms/select/Select';
-import ChecksRadios from './views/forms/checks-radios/ChecksRadios';
-import Range from './views/forms/range/Range';
-import InputGroup from './views/forms/input-group/InputGroup';
-import FloatingLabels from './views/forms/floating-labels/FloatingLabels';
-import Layout from './views/forms/layout/Layout';
-import Validation from './views/forms/validation/Validation';
-import CoreUIIcons from './views/icons/coreui-icons/CoreUIIcons';
-import Flags from './views/icons/flags/Flags';
-import Brands from './views/icons/brands/Brands';
-import Alerts from './views/notifications/alerts/Alerts';
-import Badges from './views/notifications/badges/Badges';
-import Modals from './views/notifications/modals/Modals';
-import Toasts from './views/notifications/toasts/Toasts';
-import Widgets from './views/widgets/Widgets';
+import MyCourses from './Components/Board/UserRoutes/MyCourses';
+import ProfileUpdate from './Components/Board/UserRoutes/Profile_Update';
+// import Colors from './views/theme/colors/Colors';
+// import Typography from './views/theme/typography/Typography';
+// import Cards from './views/base/cards/Cards';
+// import Accordion from './views/base/accordion/Accordion';
+// import Breadcrumbs from './views/base/breadcrumbs/Breadcrumbs';
+// import Carousels from './views/base/carousels/Carousels';
+// import Collapses from './views/base/collapses/Collapses';
+// import ListGroups from './views/base/list-groups/ListGroups';
+// import Navs from './views/base/navs/Navs';
+// import Paginations from './views/base/paginations/Paginations';
+// import Placeholders from './views/base/placeholders/Placeholders';
+// import Popovers from './views/base/popovers/Popovers';
+// import Spinners from './/views/base/spinners/Spinners';
+// import Progress from './views/base/progress/Progress';
+// import Tables from './views/base/tables/Tables';
+// import Tooltips from './views/base/tooltips/Tooltips';
+// import Buttons from './views/buttons/buttons/Buttons';
+// import Dropdowns from './views/buttons/dropdowns/Dropdowns';
+// import ButtonGroups from './views/buttons/button-groups/ButtonGroups';
+// import Charts from './views/charts/Charts';
+// import FormControl from './views/forms/form-control/FormControl';
+// import Select from './views/forms/select/Select';
+// import ChecksRadios from './views/forms/checks-radios/ChecksRadios';
+// import Range from './views/forms/range/Range';
+// import InputGroup from './views/forms/input-group/InputGroup';
+// import FloatingLabels from './views/forms/floating-labels/FloatingLabels';
+// import Layout from './views/forms/layout/Layout';
+// import Validation from './views/forms/validation/Validation';
+// import CoreUIIcons from './views/icons/coreui-icons/CoreUIIcons';
+// import Flags from './views/icons/flags/Flags';
+// import Brands from './views/icons/brands/Brands';
+// import Alerts from './views/notifications/alerts/Alerts';
+// import Badges from './views/notifications/badges/Badges';
+// import Modals from './views/notifications/modals/Modals';
+// import Toasts from './views/notifications/toasts/Toasts';
+// import Widgets from './views/widgets/Widgets';
 function App() {
   useEffect(() => {
     AOS.init();
@@ -136,7 +138,9 @@ function App() {
             {/* <Route path="/dashb" element={<Board />} /> */}
             <Route path="/dashboard" element={<Board />} >
               <Route path="" element={<Dashboard />} />
-              <Route path="theme" element={<Colors />} />
+              <Route path="update_profile" element={<ProfileUpdate />} />
+              <Route path="mycourses" element={<MyCourses />} />
+              {/* <Route path="theme" element={<Colors />} />
               <Route path="theme/colors" element={<Colors />} />
               <Route path="theme/typography" element={<Typography />} />
               <Route path="base" element={<Cards />} />
@@ -177,7 +181,7 @@ function App() {
               <Route path="notifications/alerts" element={<Alerts />} />
               <Route path="notifications/modals" element={<Modals />} />
               <Route path="notifications/toasts" element={<Toasts />} />
-              <Route path="widgets" element={<Widgets />} />
+              <Route path="widgets" element={<Widgets />} /> */}
               <Route path="adadmin" element={<AdminRoute><Admin /></AdminRoute>} />
               <Route path="adtutor" element={<AdminRoute><AddInstructor /></AdminRoute>} />
               <Route path="edit/:id" element={<AdminRoute><Edit /></AdminRoute>} />

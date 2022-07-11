@@ -15,6 +15,7 @@ import { GiBullseye } from "react-icons/gi";
 import { FiBook } from "react-icons/fi";
 import { BiSearchAlt2 } from "react-icons/bi";
 import { TiPuzzle } from "react-icons/ti";
+import { MdOutlineDashboardCustomize } from "react-icons/md";
 
 export default function Header() {
     const [show, setShow] = useState(false);
@@ -36,7 +37,7 @@ export default function Header() {
     const [passError, setpassError] = useState('');
     const [LoginData, setLoginData] = useState({});
     const history = useNavigate();
-    const { createUser, signGoogle, emailPass, error, user, isLoading, logOut,admin } = useAuth();
+    const { createUser, signGoogle, emailPass, error, user, isLoading, logOut, admin } = useAuth();
     const location = useLocation();
 
     let repassword;
@@ -227,13 +228,14 @@ export default function Header() {
             <Offcanvas className='ss' show={showOff} onHide={handleOff}>
                 <Offcanvas.Body>
                     <div class="d-flex flex-column  mb-3">
-                        <NavLink to='/learn'> <FiBook className='fs-2  text-dark mx-2 mb-2' /><div className="littleFont pb-4"><span className=" ps-3">My </span>Learning</div></NavLink>
+                        <NavLink to='/dashboard/mycourses'> <FiBook className='fs-2  text-dark mx-2 mb-2' /><div className="littleFont pb-4"><span className=" ps-3">My </span>Learning</div></NavLink>
                         <NavLink to='/learn'><BiSearchAlt2 className='fs-2 mx-2 text-dark ' /> <div className="littleFont pb-3">Explore</div></NavLink>
                         <NavLink to='/projects'><TiPuzzle className='fs-2 mx-2 text-dark ' /><div className="littleFont pb-3 ">Projects</div></NavLink>
                         <NavLink to='/assessments'><GiBullseye className='fs-2 mx-2 text-dark ' /> <div className="littleFont pb-3">Assesments</div></NavLink>
                         {admin && <NavLink to='/dashboard/addcourse'><MdBookmarkAdd className='fs-2 mx-2 text-dark ' /> <div className="littleFont pb-3">Add Course</div></NavLink>}
                         {admin && <NavLink to='/dashboard/adadmin'><RiAdminLine className='fs-2 mx-2 text-dark ' /> <div className="littleFont pb-3">Add Admin</div></NavLink>}
                         {admin && <NavLink to='/dashboard/adtutor'><AiOutlineUserAdd className='fs-2 mx-2 text-dark ' /> <div className="littleFont pb-3">Add Tutor</div></NavLink>}
+                        {user.email && <NavLink to='/dashboard'><MdOutlineDashboardCustomize className='fs-2 mx-2 text-dark ' /> <div className="littleFont pb-3">Dashboard</div></NavLink>}
                     </div>
                 </Offcanvas.Body>
             </Offcanvas>

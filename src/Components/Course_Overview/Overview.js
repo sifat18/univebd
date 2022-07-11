@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { Accordion, Button, Card, Col, Container, Row } from 'react-bootstrap'
+import { Accordion, Button, Card, Col, Container, Modal, Row } from 'react-bootstrap'
 import { NavLink, useParams } from "react-router-dom";
 import Read from '../Common/Read';
 import { MdOutlineQuiz } from "react-icons/md";
 import { MdOutlineSlowMotionVideo } from "react-icons/md";
 import { MdOutlinePlayLesson } from "react-icons/md";
 import { BsTropicalStorm } from "react-icons/bs";
-import { AiOutlineFieldTime } from "react-icons/ai";
-import { CgBorderStyleDotted } from "react-icons/cg";
 import { RiVideoAddLine } from "react-icons/ri";
 import { MdQuiz } from "react-icons/md";
 
@@ -16,8 +14,12 @@ import Companies from '../Common/Companies';
 import Header from '../Header/Header';
 import './over.css'
 import Footer from '../Footer/Footer';
+import useAuth from '../Context/useAuth';
+import axios from 'axios';
 export default function Overview() {
-
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
     const [courses, setcourses] = useState({})
     const { courseID } = useParams()
     // single data load based on id
@@ -28,7 +30,16 @@ export default function Overview() {
     const contentShow = () => {
         setArr(!arr)
     }
+    const { user } = useAuth()
 
+    const orderData = e => {
+        e.preventDefault();
+        const data = { email: user.email }
+        data.course = courses;
+        // data.orderStatus = 'Pending';
+        axios.post('https://fierce-woodland-01411.herokuapp.com/order', data).then(res => res.data.insertedId ? handleShow() : '')
+
+    }
     return (
         <>
             <Header />
@@ -51,7 +62,8 @@ export default function Overview() {
                             <div className=" my-3 d-block d-md-none">
                                 <Card >
                                     <Card.Body className='mx-auto mt-4' >
-                                        <NavLink to={`/learn/start/${courses._id}`}><Button className='bluebtn btn py-2 px-5'>Start learning </Button></NavLink>
+                                        {/* <NavLink to={`/learn/start/${courses._id}`}><Button className='bluebtn btn py-2 px-5'>Start learning </Button></NavLink> */}
+                                        <Button onClick={(e) => orderData(e)} className='bluebtn btn py-2 px-5'>Start learning </Button>
                                     </Card.Body>
                                     {/* <hr className='bg-secondary' />
                                     <Card.Body>
@@ -118,7 +130,8 @@ export default function Overview() {
                             <Card style={{ width: '18rem' }} >
                                 <Card.Img variant="top" src={courses?.imageLink} />
                                 <Card.Body className='mx-auto mt-4' sticky>
-                                    <NavLink to={`/learn/start/${courses._id}`}><Button className='bluebtn btn py-2 px-5'>Start learning </Button></NavLink>
+                                    {/* <NavLink to={`/learn/start/${courses._id}`}><Button className='bluebtn btn py-2 px-5'>Start learning </Button></NavLink> */}
+                                    <Button onClick={(e) => orderData(e)} className='bluebtn btn py-2 px-5'>Start learning </Button>
                                 </Card.Body>
                                 {/* <hr className='bg-secondary' />
                                 <Card.Body>
@@ -158,6 +171,19 @@ export default function Overview() {
                 </Row>
             </Container>
             <Footer />
+
+            {/* modal after submit form */}
+            <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Successful</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>Course has been added.To start course go to dashboard</Modal.Body>
+                <Modal.Footer>
+                    <Button variant="success" onClick={handleClose}>
+                        Thank You!
+                    </Button>
+                </Modal.Footer>
+            </Modal>
         </>
     )
 }
