@@ -6,7 +6,9 @@ import StartQuiz from './StartQuiz';
 
 export default function NewQuiz({ courseData, nextMod, nextIndex, maxMod, handl }) {
   // incorrect_answers[],option[],type: "multiple",question:,correct_answer:
-  const { q1, q2, q3, q4, q5, qA1, qA2, qA3, qA4, qA5, qOP11, qOP12, qOP13, qOP14, qOP21, qOP22, qOP23, qOP24, qOP31, qOP32, qOP33, qOP34, qOP41, qOP42, qOP43, qOP44, qOP51, qOP52, qOP53, qOP54, Qtype } = courseData.Module[nextIndex - 1]
+  const { q1, q2, q3, q4, q5, qA1, qA2, qA3, qA4, qA5, qOP11, qOP12, qOP13, qOP14, qOP21, qOP22, qOP23, qOP24, qOP31, qOP32, qOP33, qOP34, qOP41, qOP42, qOP43, qOP44, qOP51, qOP52, qOP53, qOP54, Qtype } = courseData.Module[nextIndex - 1];
+  const { total_modules, total_quizes, modComplete } = courseData;
+
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState(null);
   const [countdownTime, setCountdownTime] = useState(null);
@@ -132,7 +134,7 @@ export default function NewQuiz({ courseData, nextMod, nextIndex, maxMod, handl 
         <Questions data={data} countdownTime={countdownTime} endQuiz={endQuiz} />
       )}
       {!loading && isQuizCompleted && (
-        <Result {...resultData} nextMod={nextMod} nextIndex={nextIndex} maxMod={maxMod} handl={handl} />
+        <Result {...resultData} nextMod={nextMod} nextIndex={nextIndex} maxMod={maxMod} handl={handl} total_modules={total_modules} total_quizes={total_quizes} modComplete={modComplete} id={courseData._id} />
       )}
     </>
   )

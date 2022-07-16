@@ -32,7 +32,7 @@ export default function MyCourses() {
 
                                 <Col xs={12} className='d-flex justify-content-around'>
                                     {/* <NavLink to={`/learn/${id?.course?._id}`}> <Button className='p-2 ms-4' variant="outline-dark">Preview <img src={'ar'} alt="" /></Button></NavLink> */}
-                                    <p className='w-50'>Course Progress {id?.course?.progress || 0}% <Line percent={id?.course?.progress || 0} trailWidth={4} strokeWidth={4} strokeColor="#267D39" /></p>
+                                    <p className='w-50'>Course Progress {id?.course?.progress}% <Line percent={id?.course?.progress} trailWidth={4} strokeWidth={4} strokeColor="#267D39" /></p>
 
                                     <NavLink to={`/learn/start/${id?.course?._id}`}> <Button className='p-2 ' variant="outline-success">Start Course <img src={'ar'} alt="" /></Button></NavLink>
 
