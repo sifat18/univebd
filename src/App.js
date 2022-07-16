@@ -56,6 +56,7 @@ import Edit from './Components/CourseEdit/Edit';
 import Dashboard from './views/dashboard/Dashboard';
 import MyCourses from './Components/Board/UserRoutes/MyCourses';
 import ProfileUpdate from './Components/Board/UserRoutes/Profile_Update';
+import Candidate from './Components/Board/Candidates/Candidate';
 // import Colors from './views/theme/colors/Colors';
 // import Typography from './views/theme/typography/Typography';
 // import Cards from './views/base/cards/Cards';
@@ -140,6 +141,7 @@ function App() {
               <Route path="" element={<Dashboard />} />
               <Route path="update_profile" element={<ProfileUpdate />} />
               <Route path="mycourses" element={<MyCourses />} />
+              <Route path="candidates" element={<Candidate />} />
               {/* <Route path="theme" element={<Colors />} />
               <Route path="theme/colors" element={<Colors />} />
               <Route path="theme/typography" element={<Typography />} />

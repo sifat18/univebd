@@ -46,7 +46,7 @@ export default function CourseAdd() {
     }
     return (
         <>
-            
+
             <section>
                 <form onSubmit={submit} >
                     {/* basic info starts here */}
@@ -265,8 +265,8 @@ export default function CourseAdd() {
                             <Row className='gx-5 mx-auto my-3 py-3'>
                                 <h2 className='text-light'>Add Quizes</h2>
                                 {/* quiz 1 */}
-                                <Col xs={12} >
-                                    <div className='dflex'>
+                                <Col  >
+                                    <div className=''>
                                         <p className='text-light pt-3 ps-3'> Question 1</p>
                                         <input
                                             name='q1'
@@ -315,8 +315,8 @@ export default function CourseAdd() {
 
 
                                 </Col >
-                                <Col xs={12} >
-                                    <div className='dflex'>
+                                <Col  >
+                                    <div className=''>
 
 
                                         <p className='text-light pt-3 ps-3'> Question 2</p>
@@ -365,8 +365,8 @@ export default function CourseAdd() {
                                     </div>
 
                                 </Col>
-                                <Col xs={12}>
-                                    <div className='dflex'>
+                                <Col>
+                                    <div className=''>
                                         <p className='text-light pt-3 ps-3'> Question 3 </p>
                                         <input
                                             name='q3'
@@ -412,9 +412,9 @@ export default function CourseAdd() {
                                             onChange={event => handleFormChange(index, event)} />
                                     </div>
                                 </Col>
-                                <Col xs={12} >
+                                <Col  >
 
-                                    <div className='dflex'>
+                                    <div className=''>
                                         <p className='text-light pt-3 ps-3'>Question 4 </p>
                                         <input
                                             name='q4'
@@ -460,9 +460,9 @@ export default function CourseAdd() {
                                             onChange={event => handleFormChange(index, event)} />
                                     </div>
                                 </Col>
-                                <Col xs={12} >
+                                <Col xs={6} >
 
-                                    <div className='dflex'>
+                                    <div className=''>
                                         <p className='text-light pt-3 ps-3'> Question 5</p>
                                         <input
                                             name='q5'

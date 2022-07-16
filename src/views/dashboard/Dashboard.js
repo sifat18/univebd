@@ -53,8 +53,12 @@ import avatar6 from '../../assets/images/avatars/6.jpg'
 
 import WidgetsBrand from '../widgets/WidgetsBrand'
 import WidgetsDropdown from '../widgets/WidgetsDropdown'
+import { useState, useEffect } from 'react'
+import { Table } from 'react-bootstrap'
+import useAuth from '../../Components/Context/useAuth'
 
 const Dashboard = () => {
+const {admin}=useAuth()
   const random = (min, max) => Math.floor(Math.random() * (max - min + 1) + min)
 
   const progressExample = [
@@ -178,10 +182,15 @@ const Dashboard = () => {
     },
   ]
 
+  const [user, setUser] = useState([])
+  useEffect(() => {
+    fetch(`https://fierce-woodland-01411.herokuapp.com/users`).then(res => res.json()).then(data => setUser(data))
+  }, [])
+
   return (
     <>
-      <WidgetsDropdown />
-      <CCard className="mb-4">
+      {/* <WidgetsDropdown /> */}
+      {/* <CCard className="mb-4">
         <CCardBody>
           <CRow>
             <CCol sm={5}>
@@ -306,14 +315,14 @@ const Dashboard = () => {
             ))}
           </CRow>
         </CCardFooter>
-      </CCard>
+      </CCard> */}
 
       <WidgetsBrand withCharts />
 
       <CRow>
         <CCol xs>
           <CCard className="mb-4">
-            <CCardHeader>Traffic {' & '} Sales</CCardHeader>
+            {/* <CCardHeader>Traffic {' & '} Sales</CCardHeader> */}
             <CCardBody>
               <CRow>
                 <CCol xs={12} md={6} xl={6}>
@@ -333,7 +342,7 @@ const Dashboard = () => {
                   </CRow>
 
                   <hr className="mt-0" />
-                  {progressGroupExample1.map((item, index) => (
+                  {/* {progressGroupExample1.map((item, index) => (
                     <div className="progress-group mb-4" key={index}>
                       <div className="progress-group-prepend">
                         <span className="text-medium-emphasis small">{item.title}</span>
@@ -343,27 +352,7 @@ const Dashboard = () => {
                         <CProgress thin color="danger" value={item.value2} />
                       </div>
                     </div>
-                  ))}
-                </CCol>
-
-                <CCol xs={12} md={6} xl={6}>
-                  <CRow>
-                    <CCol sm={6}>
-                      <div className="border-start border-start-4 border-start-warning py-1 px-3 mb-3">
-                        <div className="text-medium-emphasis small">Pageviews</div>
-                        <div className="fs-5 fw-semibold">78,623</div>
-                      </div>
-                    </CCol>
-                    <CCol sm={6}>
-                      <div className="border-start border-start-4 border-start-success py-1 px-3 mb-3">
-                        <div className="text-medium-emphasis small">Organic</div>
-                        <div className="fs-5 fw-semibold">49,123</div>
-                      </div>
-                    </CCol>
-                  </CRow>
-
-                  <hr className="mt-0" />
-
+                  ))} */}
                   {progressGroupExample2.map((item, index) => (
                     <div className="progress-group mb-4" key={index}>
                       <div className="progress-group-header">
@@ -376,10 +365,31 @@ const Dashboard = () => {
                       </div>
                     </div>
                   ))}
+                </CCol>
 
-                  <div className="mb-5"></div>
+                {/* <CCol xs={12} md={6} xl={6}>
+                  {/* <CRow>
+                    <CCol sm={6}>
+                      <div className="border-start border-start-4 border-start-warning py-1 px-3 mb-3">
+                        <div className="text-medium-emphasis small">Pageviews</div>
+                        <div className="fs-5 fw-semibold">78,623</div>
+                      </div>
+                    </CCol>
+                    <CCol sm={6}>
+                      <div className="border-start border-start-4 border-start-success py-1 px-3 mb-3">
+                        <div className="text-medium-emphasis small">Organic</div>
+                        <div className="fs-5 fw-semibold">49,123</div>
+                      </div>
+                    </CCol>
+                  </CRow> */}
 
-                  {progressGroupExample3.map((item, index) => (
+                <hr className="mt-0" />
+
+
+
+                <div className="mb-5"></div>
+
+                {/* {progressGroupExample3.map((item, index) => (
                     <div className="progress-group" key={index}>
                       <div className="progress-group-header">
                         <CIcon className="me-2" icon={item.icon} size="lg" />
@@ -393,13 +403,13 @@ const Dashboard = () => {
                         <CProgress thin color="success" value={item.percent} />
                       </div>
                     </div>
-                  ))}
-                </CCol>
+                  ))} */}
+                {/* </CCol>  */}
               </CRow>
 
               <br />
 
-              <CTable align="middle" className="mb-0 border" hover responsive>
+              {/* <CTable align="middle" className="mb-0 border" hover responsive>
                 <CTableHead color="light">
                   <CTableRow>
                     <CTableHeaderCell className="text-center">
@@ -449,7 +459,29 @@ const Dashboard = () => {
                     </CTableRow>
                   ))}
                 </CTableBody>
-              </CTable>
+              </CTable> */}
+{admin &&
+    <Table striped bordered hover resonsive>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Role</th>
+        </tr>
+      </thead>
+      <tbody>
+        {user.map((m,idx)=>(
+        <tr key={idx}>
+          <td>{idx+1}</td>
+          <td>{m.displayName}</td>
+          <td>{m.email}</td>
+          <td>{m.role}</td>
+        </tr>
+        ))}
+      </tbody>
+    </Table>
+}
             </CCardBody>
           </CCard>
         </CCol>

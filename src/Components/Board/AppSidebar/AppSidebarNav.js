@@ -53,6 +53,12 @@ export const AppSidebarNav = () => {
       to: '/dashboard/addcourse',
       icon: <CIcon icon={cilPencil} customClassName="nav-icon" />,
     },
+    {
+      component: CNavItem,
+      name: 'Available Candidates',
+      to: '/dashboard/candidates',
+      icon: <CIcon icon={cilPencil} customClassName="nav-icon" />,
+    },
   ]
   const _nav = [
     {
@@ -358,7 +364,7 @@ export const AppSidebarNav = () => {
 
       {admin && admin_nav &&
         admin_nav.map((item, index) => (item.items ? navGroup(item, index) : navItem(item, index)))}
-      {_nav &&
+      {!admin && _nav &&
         _nav.map((item, index) => (item.items ? navGroup(item, index) : navItem(item, index)))}
     </React.Fragment>
   )

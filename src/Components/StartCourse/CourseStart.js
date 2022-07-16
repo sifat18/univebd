@@ -8,7 +8,9 @@ import { MdQuiz } from "react-icons/md";
 import './start.css'
 import Footer from '../Footer/Footer'
 import NewQuiz from '../Common/Quiz/NewQuiz'
+import useAuth from '../Context/useAuth'
 export default function CourseStart() {
+    const { user } = useAuth()
     const [course, setcourses] = useState({})
     const [curIndex, setcurIndex] = useState(0)
     const [video, setVideo] = useState('')
@@ -22,10 +24,10 @@ export default function CourseStart() {
     const { courseID } = useParams()
     const maxModuleIndex = course?.Module?.length - 1
     // const curIndex = 0
-
+    // https://fierce-woodland-01411.herokuapp.com/course/${courseID}
     useEffect(() => {
-        fetch(`https://fierce-woodland-01411.herokuapp.com/course/${courseID}`).then(res => res.json()).then(data => setcourses(data))
-    }, [courseID])
+        fetch(`https://fierce-woodland-01411.herokuapp.com/mycourse?_id=${courseID}&email=${user.email}`).then(res => res.json()).then(data => setcourses(data))
+    }, [courseID, user.email])
     // console.log(course);
 
     const sendVideo = (data, video, idx = 0, unlock = false) => {
