@@ -57,42 +57,7 @@ import Dashboard from './views/dashboard/Dashboard';
 import MyCourses from './Components/Board/UserRoutes/MyCourses';
 import ProfileUpdate from './Components/Board/UserRoutes/Profile_Update';
 import Candidate from './Components/Board/Candidates/Candidate';
-// import Colors from './views/theme/colors/Colors';
-// import Typography from './views/theme/typography/Typography';
-// import Cards from './views/base/cards/Cards';
-// import Accordion from './views/base/accordion/Accordion';
-// import Breadcrumbs from './views/base/breadcrumbs/Breadcrumbs';
-// import Carousels from './views/base/carousels/Carousels';
-// import Collapses from './views/base/collapses/Collapses';
-// import ListGroups from './views/base/list-groups/ListGroups';
-// import Navs from './views/base/navs/Navs';
-// import Paginations from './views/base/paginations/Paginations';
-// import Placeholders from './views/base/placeholders/Placeholders';
-// import Popovers from './views/base/popovers/Popovers';
-// import Spinners from './/views/base/spinners/Spinners';
-// import Progress from './views/base/progress/Progress';
-// import Tables from './views/base/tables/Tables';
-// import Tooltips from './views/base/tooltips/Tooltips';
-// import Buttons from './views/buttons/buttons/Buttons';
-// import Dropdowns from './views/buttons/dropdowns/Dropdowns';
-// import ButtonGroups from './views/buttons/button-groups/ButtonGroups';
-// import Charts from './views/charts/Charts';
-// import FormControl from './views/forms/form-control/FormControl';
-// import Select from './views/forms/select/Select';
-// import ChecksRadios from './views/forms/checks-radios/ChecksRadios';
-// import Range from './views/forms/range/Range';
-// import InputGroup from './views/forms/input-group/InputGroup';
-// import FloatingLabels from './views/forms/floating-labels/FloatingLabels';
-// import Layout from './views/forms/layout/Layout';
-// import Validation from './views/forms/validation/Validation';
-// import CoreUIIcons from './views/icons/coreui-icons/CoreUIIcons';
-// import Flags from './views/icons/flags/Flags';
-// import Brands from './views/icons/brands/Brands';
-// import Alerts from './views/notifications/alerts/Alerts';
-// import Badges from './views/notifications/badges/Badges';
-// import Modals from './views/notifications/modals/Modals';
-// import Toasts from './views/notifications/toasts/Toasts';
-// import Widgets from './views/widgets/Widgets';
+
 function App() {
   useEffect(() => {
     AOS.init();
@@ -141,49 +106,8 @@ function App() {
               <Route path="" element={<Dashboard />} />
               <Route path="update_profile" element={<ProfileUpdate />} />
               <Route path="mycourses" element={<MyCourses />} />
-              <Route path="candidates" element={<Candidate />} />
-              {/* <Route path="theme" element={<Colors />} />
-              <Route path="theme/colors" element={<Colors />} />
-              <Route path="theme/typography" element={<Typography />} />
-              <Route path="base" element={<Cards />} />
-              <Route path="base/accordion" element={<Accordion />} />
-              <Route path="base/breadcrumbs" element={<Breadcrumbs />} />
-              <Route path="base/cards" element={<Cards />} />
-              <Route path="base/carousels" element={<Carousels />} />
-              <Route path="base/collapses" element={<Collapses />} />
-              <Route path="base/list-groups" element={<ListGroups />} />
-              <Route path="base/navs" element={<Navs />} />
-              <Route path="base/paginations" element={<Paginations />} />
-              <Route path="base/placeholders" element={<Placeholders />} />
-              <Route path="base/progress" element={<Progress />} />
-              <Route path="base/spinners" element={<Spinners />} />
-              <Route path="base/popovers" element={<Popovers />} />
-              <Route path="base/tables" element={<Tables />} />
-              <Route path="base/tooltips" element={<Tooltips />} />
-              <Route path="buttons" element={<Buttons />} />
-              <Route path="buttons/buttons" element={<Buttons />} />
-              <Route path="buttons/dropdowns" element={<Dropdowns />} />
-              <Route path="buttons/button-groups" element={<ButtonGroups />} />
-              <Route path="charts" element={<Charts />} />
-              <Route path="forms" element={<FormControl />} />
-              <Route path="forms/form-control" element={<FormControl />} />
-              <Route path="forms/select" element={<Select />} />
-              <Route path="forms/checks-radios" element={<ChecksRadios />} />
-              <Route path="forms/range" element={<Range />} />
-              <Route path="forms/input-group" element={<InputGroup />} />
-              <Route path="forms/floating-labels" element={<FloatingLabels />} />
-              <Route path="forms/layout" element={<Layout />} />
-              <Route path="forms/validation" element={<Validation />} />
-              <Route path="icons" element={<CoreUIIcons />} />
-              <Route path="icons/coreui-icons" element={<CoreUIIcons />} />
-              <Route path="icons/flags" element={<Flags />} />
-              <Route path="icons/brands" element={<Brands />} />
-              <Route path="notifications/badges" element={<Badges />} />
-              <Route path="notifications" element={<Alerts />} />
-              <Route path="notifications/alerts" element={<Alerts />} />
-              <Route path="notifications/modals" element={<Modals />} />
-              <Route path="notifications/toasts" element={<Toasts />} />
-              <Route path="widgets" element={<Widgets />} /> */}
+              <Route path="candidates" element={<AdminRoute><Candidate /></AdminRoute>} />
+            
               <Route path="adadmin" element={<AdminRoute><Admin /></AdminRoute>} />
               <Route path="adtutor" element={<AdminRoute><AddInstructor /></AdminRoute>} />
               <Route path="edit/:id" element={<AdminRoute><Edit /></AdminRoute>} />
