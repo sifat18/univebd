@@ -1,7 +1,6 @@
 import React from 'react'
 import 'core-js'
 import './style.scss'
-import { Container, Row } from 'react-bootstrap'
 import { Outlet } from 'react-router-dom'
 // import Footer from '../Footer/Footer'
 import AppSidebar from './AppSidebar/AppSidebar'
@@ -9,7 +8,6 @@ import AppSidebar from './AppSidebar/AppSidebar'
 import { Provider } from 'react-redux'
 import store from '../../store'
 import AppHeader from './Apphead/AppHeader'
-import AppFooter from './AppFooter/AppFooter'
 import Footer from '../Footer/Footer'
 export default function Board() {
     return (
