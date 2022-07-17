@@ -102,10 +102,10 @@ function App() {
             <Route path="/learn/:courseID" element={<Overview />} />
             <Route path="/learn/start/:courseID" element={<PrivateRoute><CourseStart /></PrivateRoute>} />
             {/* <Route path="/dashb" element={<Board />} /> */}
-            <Route path="/dashboard" element={<Board />} >
-              <Route path="" element={<Dashboard />} />
-              <Route path="update_profile" element={<ProfileUpdate />} />
-              <Route path="mycourses" element={<MyCourses />} />
+            <Route path="/dashboard" element={<PrivateRoute><Board /></PrivateRoute>} >
+              <Route path="" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
+              <Route path="update_profile" element={<PrivateRoute><ProfileUpdate /></PrivateRoute>} />
+              <Route path="mycourses" element={<PrivateRoute><MyCourses /></PrivateRoute>} />
               <Route path="candidates" element={<AdminRoute><Candidate /></AdminRoute>} />
             
               <Route path="adadmin" element={<AdminRoute><Admin /></AdminRoute>} />

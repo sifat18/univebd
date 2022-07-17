@@ -9,19 +9,22 @@ const Result = ({ totalQuestions,
   correctAnswers,
   timeTaken,
   questionsAndAnswers,
-  nextMod, nextIndex, maxMod, handl, total_modules, total_quizes, modComplete, id }) => {
+  nextMod, nextIndex, maxMod, handl, total_modules, total_quizes, modComplete, id,mod_complete,index }) => {
   const { user } = useAuth()
   const [activeTab, setActiveTab] = useState('1');
 
   // 
   const progressUpdate = (e) => {
     e.preventDefault();
-    if (modComplete < total_modules) {
-      const update = { email: user.email, id: id, mod: modComplete + 1, progress: 100 * (modComplete + 1) / total_modules }
+    console.log(index,modComplete)
+    if (modComplete < total_modules && !mod_complete) {
+      const update = { index:index, email: user.email, id: id, mod: modComplete + 1, progress: 100 * (modComplete + 1) / total_modules }
       axios.put(`https://fierce-woodland-01411.herokuapp.com/orderUpdate`, update).then(res => {
         if (res.data.modifiedCount) {
+
           handl(nextIndex, nextMod)
         }
+        console.log(res.data)
       })
       // 
     }
