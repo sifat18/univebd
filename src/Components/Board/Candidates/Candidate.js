@@ -33,9 +33,9 @@ Candidate() {
 
     return (
         <Container>
-            <Table>
+            <Table  resonsive className='my-5 '>
                 <tr>
-                    <td><input type="text" placeholder='...enter position' onChange={(e)=>setPosition(e.target.value)}/></td>
+                    <td><input type="text" className='border 'placeholder='...enter position' onChange={(e)=>setPosition(e.target.value)}/></td>
                     {/* <td><input type="text" placeholder='...enter skill' onChange={(e)=>setSl(e.target.value)}/></td> */}
                     <td><Button onClick={handsearch}>search</Button></td>
 
