@@ -5,16 +5,16 @@ import PropTypes from 'prop-types'
 import { CBadge } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
 import {
-  cilBell,
-  cilCalculator,
-  cilChartPie,
-  cilCursor,
   cilDrop,
-  cilNotes,
+  // cilBell,
+  // cilCalculator,
+  // cilChartPie,
+  // cilCursor,
+  // cilNotes,
   cilPencil,
-  cilPuzzle,
-  cilSpeedometer,
-  cilStar,
+  // cilPuzzle,
+  // cilSpeedometer,
+  // cilStar,
 } from '@coreui/icons'
 import { CNavGroup, CNavItem, CNavTitle } from '@coreui/react'
 import useAuth from '../../Context/useAuth'

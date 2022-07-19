@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { Container, Modal, Button } from 'react-bootstrap';
-import Footer from '../../Footer/Footer';
 const AddInstructor = () => {
     const [email, setEmail] = useState('');
     const [show, setShow] = useState(false);

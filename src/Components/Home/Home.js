@@ -2,7 +2,6 @@ import React from 'react'
 import { Button, Col, Container, Ratio, Row } from 'react-bootstrap'
 import './home.css'
 import home from '../images/home.png'
-import b2 from '../images/b2.mp4'
 
 import bot from '../images/bot.jpg'
 import bot2 from '../images/bot2.jpg'

@@ -1,29 +1,46 @@
 import React, { useState } from 'react';
 import Stats from './Stats';
 import QNA from './QNA';
-import { Container, Nav } from 'react-bootstrap';
+import { Button, Container, Modal, Nav } from 'react-bootstrap';
 import axios from 'axios';
 import useAuth from '../../Context/useAuth';
+import calculateScore from './calculateScore';
 
 const Result = ({ totalQuestions,
   correctAnswers,
   timeTaken,
   questionsAndAnswers,
-  nextMod, nextIndex, maxMod, handl, total_modules, total_quizes, modComplete, id }) => {
-  const { user } = useAuth()
+  nextMod, nextIndex, maxMod, handl, total_modules, total_quizes, modComplete, id,mod_complete,index }) => {
+  // getting user 
+    const { user } = useAuth()
+    // tab change
   const [activeTab, setActiveTab] = useState('1');
-
-  // 
+//  calculate score
+  const score = calculateScore(totalQuestions, correctAnswers);
+// modal
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  //progress update update
   const progressUpdate = (e) => {
     e.preventDefault();
-    if (modComplete < total_modules) {
-      const update = { email: user.email, id: id, mod: modComplete + 1, progress: 100 * (modComplete + 1) / total_modules }
+    // console.log(score>66,score)
+    if (modComplete < total_modules && !mod_complete && score>60) {
+      // sending update info to backend
+      const update = { index:index, email: user.email, id: id, mod: modComplete + 1, progress: 100 * (modComplete + 1) / total_modules }
       axios.put(`https://fierce-woodland-01411.herokuapp.com/orderUpdate`, update).then(res => {
         if (res.data.modifiedCount) {
+// move to next module 
           handl(nextIndex, nextMod)
         }
+        console.log(res.data)
+        handleShow()
+
       })
       // 
+    }else{
+      // if not pass or passed previously
+handleShow()
     }
   }
 
@@ -53,6 +70,27 @@ const Result = ({ totalQuestions,
       {nextIndex <= maxMod && nextMod &&
         <p className='btn btn-info text-white w-50 d-block mt-3 mx-auto' onClick={(e) => progressUpdate(e)}> Go to Next Module</p>
       }
+
+
+{/* modal */}
+<Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                {score<60 &&  <h2 className='mx-auto ps-5'>OOOPS!!! You Failed</h2>}
+                {score &&  <h2 className='mx-auto ps-5'>you already progressed</h2>}
+
+                </Modal.Header>
+                <Modal.Body>
+{score<60 &&<p className="text-center"> Score Atleast 60% to progress the course</p>    }                
+{score &&<p className="text-center"> you already completed this </p>    }                
+                </Modal.Body>
+                <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+         
+        </Modal.Footer>
+
+            </Modal>
     </Container>
   );
 };
