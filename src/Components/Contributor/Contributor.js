@@ -6,16 +6,16 @@ import contribe from '../images/contribute/contribe.png'
 export default function Contributor() {
 
     const [show, setShow] = useState(false);
-  const [pdf, setPdf] = useState(null);
+    const [pdf, setPdf] = useState(null);
 
     const [showT, setShowT] = useState(false);
-    const handleClose = () =>    setShow(false);
+    const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const handleCloseT = () => setShowT(false);
     const handleShowT = () => {
         handleClose()
         setShowT(true)
-        }
+    }
     const [data, setData] = useState({});
 
     const handleOnChange = e => {
@@ -39,19 +39,20 @@ export default function Contributor() {
         //   console.log(value);
         // }
         // 
-        fetch('https://fierce-woodland-01411.herokuapp.com/contributer', {
-          method: 'POST',
-          body: formData
+        // https://fierce-woodland-01411.herokuapp.com
+        fetch('http://localhost:7000/contributer', {
+            method: 'POST',
+            body: formData
         })
-          .then(response => response.json())
-          .then(data => {
-            if (data.insertedId) {
-              handleShowT()
-            } else {
-              console.error('Error2');
-    
-            }
-          })
+            .then(response => response.json())
+            .then(data => {
+                if (data.insertedId) {
+                    handleShowT()
+                } else {
+                    console.error('Error2');
+
+                }
+            })
     }
     return (
         <>
@@ -188,8 +189,8 @@ export default function Contributor() {
             </Container>
             <Footer />
 
-             {/* form modal*/}
-             <Modal show={show} onHide={handleClose}>
+            {/* form modal*/}
+            <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <h2 className='mx-auto ps-5'>Fill up the form</h2>
                 </Modal.Header>
@@ -197,47 +198,47 @@ export default function Contributor() {
                     <Container className='py-2'>
                         {/* Login form */}
                         <form className='mt-3  py-3' onSubmit={handleSubmit}>
-              <FloatingLabel
-                controlId="floatingInput"
-                label="Full Name"
-                className="mt-2 mb-5 text-start"
-              >
-                <Form.Control type="text" name="FullName" className="text-start" placeholder="Jane doe" onChange={handleOnChange} />
-              </FloatingLabel>
-              {/* ----------- */}
-              <FloatingLabel
-                controlId="floatingInput"
-                label="Email address"
-                className="mt-2 mb-5 text-start"
-              >
-                <Form.Control type="email" className="text-start" placeholder="name@example.com" name="email" onChange={handleOnChange} />
-              </FloatingLabel>
+                            <FloatingLabel
+                                controlId="floatingInput"
+                                label="Full Name"
+                                className="mt-2 mb-5 text-start"
+                            >
+                                <Form.Control type="text" name="FullName" className="text-start" placeholder="Jane doe" onChange={handleOnChange} />
+                            </FloatingLabel>
+                            {/* ----------- */}
+                            <FloatingLabel
+                                controlId="floatingInput"
+                                label="Email address"
+                                className="mt-2 mb-5 text-start"
+                            >
+                                <Form.Control type="email" className="text-start" placeholder="name@example.com" name="email" onChange={handleOnChange} />
+                            </FloatingLabel>
 
-              {/* ----------- */}
+                            {/* ----------- */}
 
-              <FloatingLabel
-                controlId="floatingInput"
-                label="Phone Number"
-                className="mt-2 mb-5 text-start"
-              >
-                <Form.Control type="number" name="PhoneNumber" className="text-start" placeholder="01299123" onChange={handleOnChange} />
-              </FloatingLabel>
-              {/* ----------- */}
-              <FloatingLabel
-                controlId="floatingInput"
-                label="The topics you want to write on"
-                className="mt-2 mb-5 text-start"
-              >
-                <Form.Control type="text" name="subject" className="text-start" placeholder="English" onChange={handleOnChange} />
-              </FloatingLabel>
-              
-              {/* ------------ */}
-              
-              <Form.Group controlId="formFile" className="text-start ms-2 mb-3">
-                <Form.Label >CV (if any)</Form.Label>
-                <Form.Control className="text-start" type="file" accept="application/pdf" onChange={e => setPdf(e.target.files[0])} />
-              </Form.Group>
-              <button className='btn btn-primary d-block w-100 mx-auto mt-2 py-3 ms-2 mb-5'>Submit </button>
+                            <FloatingLabel
+                                controlId="floatingInput"
+                                label="Phone Number"
+                                className="mt-2 mb-5 text-start"
+                            >
+                                <Form.Control type="number" name="PhoneNumber" className="text-start" placeholder="01299123" onChange={handleOnChange} />
+                            </FloatingLabel>
+                            {/* ----------- */}
+                            <FloatingLabel
+                                controlId="floatingInput"
+                                label="The topics you want to write on"
+                                className="mt-2 mb-5 text-start"
+                            >
+                                <Form.Control type="text" name="subject" className="text-start" placeholder="English" onChange={handleOnChange} />
+                            </FloatingLabel>
+
+                            {/* ------------ */}
+
+                            <Form.Group controlId="formFile" className="text-start ms-2 mb-3">
+                                <Form.Label >CV (if any)</Form.Label>
+                                <Form.Control className="text-start" type="file" accept="application/pdf" onChange={e => setPdf(e.target.files[0])} />
+                            </Form.Group>
+                            <button className='btn btn-primary d-block w-100 mx-auto mt-2 py-3 ms-2 mb-5'>Submit </button>
                         </form>
                     </Container>
 

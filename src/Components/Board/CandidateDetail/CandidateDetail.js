@@ -5,9 +5,9 @@ import { useParams } from 'react-router-dom'
 export default function CandidateDetail() {
     const [details, setDetails] = useState({})
     const { id } = useParams()
-
+    // https://fierce-woodland-01411.herokuapp.com
     useEffect(() => {
-        fetch(`https://fierce-woodland-01411.herokuapp.com/candidate/${id}`).then(res => res.json()).then(data => setDetails(data))
+        fetch(`http://lcoalhost:7000/candidate/${id}`).then(res => res.json()).then(data => setDetails(data))
     }, [id])
     return (
         <>

@@ -1,7 +1,7 @@
 import React from 'react'
 
 import {
-  
+
   CCard,
   CCardBody,
   CCol,
@@ -59,7 +59,7 @@ import { Table } from 'react-bootstrap'
 import useAuth from '../../Components/Context/useAuth'
 
 const Dashboard = () => {
-const {admin}=useAuth()
+  const { admin } = useAuth()
   const random = (min, max) => Math.floor(Math.random() * (max - min + 1) + min)
 
   // const progressExample = [
@@ -185,7 +185,7 @@ const {admin}=useAuth()
 
   const [user, setUser] = useState([])
   useEffect(() => {
-    fetch(`https://fierce-woodland-01411.herokuapp.com/users`).then(res => res.json()).then(data => setUser(data))
+    fetch(`http://localhost:7000/users`).then(res => res.json()).then(data => setUser(data))
   }, [])
 
   return (
@@ -461,28 +461,28 @@ const {admin}=useAuth()
                   ))}
                 </CTableBody>
               </CTable> */}
-{admin &&
-    <Table striped bordered hover resonsive>
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Role</th>
-        </tr>
-      </thead>
-      <tbody>
-        {user.map((m,idx)=>(
-        <tr key={idx}>
-          <td>{idx+1}</td>
-          <td>{m.displayName}</td>
-          <td>{m.email}</td>
-          <td>{m.role}</td>
-        </tr>
-        ))}
-      </tbody>
-    </Table>
-}
+              {admin &&
+                <Table striped bordered hover resonsive>
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Name</th>
+                      <th>Email</th>
+                      <th>Role</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {user.map((m, idx) => (
+                      <tr key={idx}>
+                        <td>{idx + 1}</td>
+                        <td>{m.displayName}</td>
+                        <td>{m.email}</td>
+                        <td>{m.role}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </Table>
+              }
             </CCardBody>
           </CCard>
         </CCol>

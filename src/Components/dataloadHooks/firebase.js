@@ -101,7 +101,8 @@ const useFirebase = () => {
     useEffect(() => {
         setisLoading(true)
         console.log('start');
-        fetch(`https://fierce-woodland-01411.herokuapp.com/user/${user.email}`)
+        // fierce-woodland-01411.herokuapp.com
+        fetch(`http://localhost:7000/user/${user.email}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -128,7 +129,7 @@ const useFirebase = () => {
     const saveUser = (email, displayName, method) => {
         setisLoading(true)
         const userData = { email, displayName };
-        fetch('https://fierce-woodland-01411.herokuapp.com/user', {
+        fetch('http://localhost:7000/user', {
             method: method,
             headers: {
                 'content-type': 'application/json'

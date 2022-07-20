@@ -6,16 +6,17 @@ import { useParams } from 'react-router-dom';
 export default function Edit() {
     const [course, setCourse] = useState({});
     const [module, setModule] = useState([]);
-            const { id } = useParams()
+    const { id } = useParams()
     // let id = '628bc15e47e402f188798c67'
     const [show, setShow] = useState(false);
     const handleClose = () => {
         setShow(false)
         window.location.reload(true);
     };
+    // fierce-woodland-01411.herokuapp.com
     const handleShow = () => setShow(true);
     useEffect(() => {
-        fetch(`https://fierce-woodland-01411.herokuapp.com/course/${id}`).then(res => res.json()).then(data => {
+        fetch(`http://localhost:7000/course/${id}`).then(res => res.json()).then(data => {
             setCourse(data)
             setModule(data.Module)
         })
@@ -38,53 +39,53 @@ export default function Edit() {
         console.log(newCourse)
 
     }
-// adding new module array
-       const addFields = () => {
-         let newModule = {
-           module_name: "",
-           module_description: "",
-           sub_mod1: "",
-           sub_mod2: "",
-           sub_mod3: "",
-           sub_video1: "",
-           sub_video2: "",
-           sub_video3: "",
-           sub_description1: "",
-           sub_description2: "",
-           sub_description3: "",
-           q1: "",
-           q2: "",
-           q3: "",
-           q4: "",
-           q5: "",
-           qA1: "",
-           qA2: "",
-           qA3: "",
-           qA4: "",
-           qA5: "",
-           qOP11: "",
-           qOP12: "",
-           qOP13: "",
-           qOP14: "",
-           qOP21: "",
-           qOP22: "",
-           qOP23: "",
-           qOP24: "",
-           qOP31: "",
-           qOP32: "",
-           qOP33: "",
-           qOP34: "",
-           qOP41: "",
-           qOP42: "",
-           qOP43: "",
-           qOP44: "",
-           qOP51: "",
-           qOP52: "",
-           qOP53: "",
-           qOP54: "",
-           show_mod: true,
-         };
-         setModule([...module, newModule]);
+    // adding new module array
+    const addFields = () => {
+        let newModule = {
+            module_name: "",
+            module_description: "",
+            sub_mod1: "",
+            sub_mod2: "",
+            sub_mod3: "",
+            sub_video1: "",
+            sub_video2: "",
+            sub_video3: "",
+            sub_description1: "",
+            sub_description2: "",
+            sub_description3: "",
+            q1: "",
+            q2: "",
+            q3: "",
+            q4: "",
+            q5: "",
+            qA1: "",
+            qA2: "",
+            qA3: "",
+            qA4: "",
+            qA5: "",
+            qOP11: "",
+            qOP12: "",
+            qOP13: "",
+            qOP14: "",
+            qOP21: "",
+            qOP22: "",
+            qOP23: "",
+            qOP24: "",
+            qOP31: "",
+            qOP32: "",
+            qOP33: "",
+            qOP34: "",
+            qOP41: "",
+            qOP42: "",
+            qOP43: "",
+            qOP44: "",
+            qOP51: "",
+            qOP52: "",
+            qOP53: "",
+            qOP54: "",
+            show_mod: true,
+        };
+        setModule([...module, newModule]);
     };
     // sending the edited data to db
     const submit = (e) => {
@@ -95,11 +96,11 @@ export default function Edit() {
         setCourse(Finalcourse)  //https://fierce-woodland-01411.herokuapp.com/
 
         console.log(Finalcourse)
-        axios.put(`https://fierce-woodland-01411.herokuapp.com/courses/edit/${id}`, Finalcourse).then(res => res.data ? handleShow() : '')
+        axios.put(`http://localhost:7000/courses/edit/${id}`, Finalcourse).then(res => res.data ? handleShow() : '')
 
     }
     return (
-        <>  
+        <>
             <section fluid className=''>
                 <form onSubmit={submit}>
                     {/* basic info starts here */}

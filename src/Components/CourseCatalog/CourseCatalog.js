@@ -18,7 +18,7 @@ export default function CourseCatalog() {
   }
   // https://fierce-woodland-01411.herokuapp.com
   useEffect(() => {
-    fetch(`https://fierce-woodland-01411.herokuapp.com/courses/${tag}`).then(res => res.json()).then(data => setCourse(data))
+    fetch(`http://localhost:7000/courses/${tag}`).then(res => res.json()).then(data => setCourse(data))
   }, [tag])
 
 

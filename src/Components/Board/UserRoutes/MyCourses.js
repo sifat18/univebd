@@ -6,9 +6,9 @@ import { Line } from 'rc-progress';
 export default function MyCourses() {
     const { user } = useAuth()
     const [course, setcourse] = useState([])
-
+    // https://fierce-woodland-01411.herokuapp.com
     useEffect(() => {
-        fetch(`https://fierce-woodland-01411.herokuapp.com/order/${user.email}`).then(res => res.json()).then(data => setcourse(data)
+        fetch(`http://localhost:7000/order/${user.email}`).then(res => res.json()).then(data => setcourse(data)
         )
     }, [user.email])
     console.log(course)

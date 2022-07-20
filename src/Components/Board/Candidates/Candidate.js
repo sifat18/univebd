@@ -10,8 +10,9 @@ export default function
     const [sl, setSl] = useState('')
     const [email, setEmail] = useState('')
     const [skills, setSkills] = useState([])
+    // https://fierce-woodland-01411.herokuapp.com
     useEffect(() => {
-        fetch(`https://fierce-woodland-01411.herokuapp.com/resume`).then(res => res.json()).then(data => {
+        fetch(`http://lcoalhost:7000/resume`).then(res => res.json()).then(data => {
             setUser(data)
             setFilterData(data)
             data.map((m, idx) => (

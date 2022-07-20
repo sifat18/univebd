@@ -15,8 +15,8 @@ const Admin = () => {
     // setting the admin role in db
     const handleAddAdmin = e => {
         e.preventDefault()
-        // const user = { email };
-        axios.put(`https://fierce-woodland-01411.herokuapp.com/admin/${email}`).then(res => res.data.modifiedCount ? handleShow() : '')
+        // const user = { email };fierce-woodland-01411.herokuapp.com
+        axios.put(`http://localhost:7000/admin/${email}`).then(res => res.data.modifiedCount ? handleShow() : '')
 
     }
 
