@@ -12,7 +12,7 @@ export default function
     const [skills, setSkills] = useState([])
     // https://fierce-woodland-01411.herokuapp.com
     useEffect(() => {
-        fetch(`http://lcoalhost:7000/resume`).then(res => res.json()).then(data => {
+        fetch(`http://lcoalhost:7000/api/resume`).then(res => res.json()).then(data => {
             setUser(data)
             setFilterData(data)
             data.map((m, idx) => (

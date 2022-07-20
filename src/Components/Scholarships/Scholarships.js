@@ -37,7 +37,7 @@ export default function Scholarships() {
     //   console.log(value);
     // }
     // 
-    fetch('http://localhost:7000/scholarship', {
+    fetch('http://localhost:7000/api/scholarship', {
       method: 'POST',
       body: formData
     })

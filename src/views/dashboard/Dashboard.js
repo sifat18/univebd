@@ -185,7 +185,7 @@ const Dashboard = () => {
 
   const [user, setUser] = useState([])
   useEffect(() => {
-    fetch(`http://localhost:7000/users`).then(res => res.json()).then(data => setUser(data))
+    fetch(`http://localhost:7000/api/users`).then(res => res.json()).then(data => setUser(data))
   }, [])
 
   return (

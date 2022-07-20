@@ -102,7 +102,7 @@ const useFirebase = () => {
         setisLoading(true)
         console.log('start');
         // fierce-woodland-01411.herokuapp.com
-        fetch(`http://localhost:7000/user/${user.email}`)
+        fetch(`http://localhost:7000/api/user/${user.email}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -129,7 +129,7 @@ const useFirebase = () => {
     const saveUser = (email, displayName, method) => {
         setisLoading(true)
         const userData = { email, displayName };
-        fetch('http://localhost:7000/user', {
+        fetch('http://localhost:7000/api/user', {
             method: method,
             headers: {
                 'content-type': 'application/json'

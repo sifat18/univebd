@@ -61,7 +61,7 @@ export default function Instructor() {
         //   console.log(value);
         // }
         // 
-        fetch('http://localhost:7000/instructor', {
+        fetch('http://localhost:7000/api/instructor', {
             method: 'POST',
             body: formData
         })
