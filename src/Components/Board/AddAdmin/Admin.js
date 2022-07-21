@@ -16,7 +16,7 @@ const Admin = () => {
     const handleAddAdmin = e => {
         e.preventDefault()
         // const user = { email };fierce-woodland-01411.herokuapp.com
-        axios.put(`http://localhost:7000/admin/${email}`).then(res => res.data.modifiedCount ? handleShow() : '')
+        axios.put(`http://fierce-woodland-01411.herokuapp.com/api/admin/${email}`).then(res => res.data.modifiedCount ? handleShow() : '')
 
     }
 

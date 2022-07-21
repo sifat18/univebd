@@ -16,7 +16,7 @@ export default function Edit() {
     // fierce-woodland-01411.herokuapp.com
     const handleShow = () => setShow(true);
     useEffect(() => {
-        fetch(`http://localhost:7000/api/course/${id}`).then(res => res.json()).then(data => {
+        fetch(`https://fierce-woodland-01411.herokuapp.com/api/course/${id}`).then(res => res.json()).then(data => {
             setCourse(data)
             setModule(data.Module)
         })

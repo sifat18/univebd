@@ -61,7 +61,7 @@ export default function Instructor() {
         //   console.log(value);
         // }
         // 
-        fetch('http://localhost:7000/api/instructor', {
+        fetch('https://fierce-woodland-01411.herokuapp.com/api/instructor', {
             method: 'POST',
             body: formData
         })

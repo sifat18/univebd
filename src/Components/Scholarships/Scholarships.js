@@ -37,7 +37,7 @@ export default function Scholarships() {
     //   console.log(value);
     // }
     // 
-    fetch('http://localhost:7000/api/scholarship', {
+    fetch('https://fierce-woodland-01411.herokuapp.com/api/scholarship', {
       method: 'POST',
       body: formData
     })

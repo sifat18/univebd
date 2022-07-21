@@ -1,3 +1,4 @@
+import axios from "axios";
 import { getAuth, createUserWithEmailAndPassword, GoogleAuthProvider, getIdToken, signInWithPopup, signInWithEmailAndPassword, onAuthStateChanged, updateProfile, signOut } from "firebase/auth";
 import { useEffect, useState } from "react";
 import initFirebase from "../../Firebase/firebase.init";
@@ -10,6 +11,7 @@ const useFirebase = () => {
     const [token, setoken] = useState('')
     const [admin, setAdmin] = useState(false);
     const [tutor, setTutor] = useState(false);
+    const [active, setActive] = useState(true);
 
     const [isLoading, setisLoading] = useState(true)
 
@@ -29,6 +31,7 @@ const useFirebase = () => {
                 setName(name)
                 history('/learn');
                 // ...
+                activeStatus(email,active)
             })
             .catch((error) => {
                 seterror(error.message);
@@ -56,9 +59,12 @@ const useFirebase = () => {
                 seterror('');
                 const destination = location?.state?.from || '/learn';
                 history(destination);
+                activeStatus(user.email,active)
             }).catch((error) => {
                 seterror(error.message);
-            }).finally(() => setisLoading(false));
+            }).finally(() => {setisLoading(false)
+                console.log('first')
+                });
     }
 
     // email pass sign in
@@ -73,10 +79,12 @@ const useFirebase = () => {
                 const destination = location?.state?.from || '/learn';
                 history(destination);
                 // ...
+                activeStatus(email,active)
             })
             .catch((error) => {
                 seterror(error.message);
-            }).finally(() => setisLoading(false));
+            }).finally(() => {setisLoading(false)
+                });
     }
     // authchange
     useEffect(() => {
@@ -102,7 +110,7 @@ const useFirebase = () => {
         setisLoading(true)
         console.log('start');
         // fierce-woodland-01411.herokuapp.com
-        fetch(`http://localhost:7000/api/user/${user.email}`)
+        fetch(`https://fierce-woodland-01411.herokuapp.com/api/user/${user.email}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -117,7 +125,7 @@ const useFirebase = () => {
     // signoUT
     const logOut = () => {
         setisLoading(true)
-
+        activeStatus(user.email,!active)
         signOut(auth).then(() => {
             setuser({})
             setisLoading(false)
@@ -125,11 +133,11 @@ const useFirebase = () => {
             // An error happened.
         });
     }
-
+// git remote add origin https://github.com/univebd/univedb.git
     const saveUser = (email, displayName, method) => {
         setisLoading(true)
         const userData = { email, displayName };
-        fetch('http://localhost:7000/api/user', {
+        fetch('https://fierce-woodland-01411.herokuapp.com/api/user', {
             method: method,
             headers: {
                 'content-type': 'application/json'
@@ -137,6 +145,23 @@ const useFirebase = () => {
             body: JSON.stringify(userData)
         })
             .then()
+        setisLoading(false)
+
+    }
+    // active
+    const activeStatus=(email,status)=>{
+        setisLoading(true)
+console.log('in')
+const userData = { email, status };
+
+fetch('https://fierce-woodland-01411.herokuapp.com/api/active', {
+    method: "PUT",
+    headers: {
+        'content-type': 'application/json'
+    },
+    body: JSON.stringify(userData)
+})
+    .then(console.log('paisi'))
         setisLoading(false)
 
     }
