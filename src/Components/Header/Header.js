@@ -180,7 +180,7 @@ export default function Header() {
                             {/* ----------- */}
                             {passError ? <p className='text-danger text-center'>{passError}</p> : ''}
 
-                            <p className='btn btn-primary d-block py-3 px-5 mx-auto mt-2  mb-5' >Register </p>
+                            <button className='btn btn-primary d-block py-3 px-5 mx-auto mt-2  mb-5' >Register </button>
                         </form>
                     </Container>
 
