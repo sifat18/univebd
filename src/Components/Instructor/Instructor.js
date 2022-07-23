@@ -61,7 +61,7 @@ export default function Instructor() {
         //   console.log(value);
         // }
         // 
-        fetch('https://fierce-woodland-01411.herokuapp.com/api/instructor', {
+        fetch('http://unive.site/api/instructor', {
             method: 'POST',
             body: formData
         })

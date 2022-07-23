@@ -25,7 +25,7 @@ export default function Overview() {
     // single data load based on id
     // https://fierce-woodland-01411.herokuapp.com
     useEffect(() => {
-        fetch(`https://fierce-woodland-01411.herokuapp.com/api/course/${courseID}`).then(res => res.json()).then(data => setcourses(data))
+        fetch(`http://unive.site/api/course/${courseID}`).then(res => res.json()).then(data => setcourses(data))
     }, [courseID])
     const [arr, setArr] = useState(true)
     const contentShow = () => {

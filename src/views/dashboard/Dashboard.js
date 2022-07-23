@@ -185,7 +185,7 @@ const Dashboard = () => {
 
   const [user, setUser] = useState([])
   useEffect(() => {
-    fetch(`https://fierce-woodland-01411.herokuapp.com/api/users`).then(res => res.json()).then(data => setUser(data))
+    fetch(`http://unive.site/api/users`).then(res => res.json()).then(data => setUser(data))
   }, [])
 
   return (
