@@ -61,7 +61,7 @@ const Footer = () => {
                             <Col xs={12} className='d-none d-md-block' >
                                 <p className='text-white'>Contribute</p>
                                 <NavLink to='/become-an-unive-instructor'><p className='ashText'>Become an instructor</p></NavLink>
-                                <NavLink to='/write-on-edpresso'><p className='ashText'>Become a Contributor</p></NavLink>
+                                <NavLink to='/become-a-contributor'><p className='ashText'>Become a Contributor</p></NavLink>
                             </Col>
                         </Row>
 
