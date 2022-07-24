@@ -11,7 +11,7 @@ const useFirebase = () => {
     const [token, setoken] = useState('')
     const [admin, setAdmin] = useState(false);
     const [tutor, setTutor] = useState(false);
-    const [active, setActive] = useState(true);
+    const [active, setActive] = useState(false);
 
     const [isLoading, setisLoading] = useState(true)
 
@@ -31,7 +31,7 @@ const useFirebase = () => {
                 setName(name)
                 history('/learn');
                 // ...
-                activeStatus(email, active)
+                activeStatus(email)
             })
             .catch((error) => {
                 seterror(error.message);
@@ -59,7 +59,7 @@ const useFirebase = () => {
                 seterror('');
                 const destination = location?.state?.from || '/learn';
                 history(destination);
-                activeStatus(user.email, active)
+                activeStatus(user.email)
             }).catch((error) => {
                 seterror(error.message);
             }).finally(() => {
@@ -80,7 +80,7 @@ const useFirebase = () => {
                 const destination = location?.state?.from || '/learn';
                 history(destination);
                 // ...
-                activeStatus(email, active)
+                activeStatus(email)
             })
             .catch((error) => {
                 seterror(error.message);
@@ -127,7 +127,8 @@ const useFirebase = () => {
     // signoUT
     const logOut = () => {
         setisLoading(true)
-        activeStatus(user.email, !active)
+        console.log('logging')
+        activeStatus(user.email,false)
         signOut(auth).then(() => {
             setuser({})
             setisLoading(false)
@@ -151,7 +152,7 @@ const useFirebase = () => {
 
     }
     // active
-    const activeStatus = (email, status) => {
+    const activeStatus = (email, status=true) => {
         setisLoading(true)
         console.log('in')
         const userData = { email, status };
@@ -163,7 +164,7 @@ const useFirebase = () => {
             },
             body: JSON.stringify(userData)
         })
-            .then(console.log('paisi'))
+            .then(console.log('res'))
         setisLoading(false)
 
     }
