@@ -4,7 +4,7 @@ Unive [Educ](https://educ-5542f.web.app/).
 
 ## Available Scripts
 
-another live site - unive.site
+
 
 ### `npm start`
 
