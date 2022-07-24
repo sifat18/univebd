@@ -4,7 +4,7 @@ Unive [Educ](https://educ-5542f.web.app/).
 
 ## Available Scripts
 
-In the project directory, you can run:
+another live site - unive.site
 
 ### `npm start`
 
