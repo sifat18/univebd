@@ -1,13 +1,40 @@
-import React from 'react'
-import { Accordion, Button, Card, Col, Container, Row } from 'react-bootstrap'
+import React, { useState } from 'react'
+import { Accordion, Button, Card, Col, Container, FloatingLabel, Form, Modal, Row } from 'react-bootstrap'
 import Companies from '../Common/Companies'
 import Demo from '../Common/Demo'
 import Footer from '../Footer/Footer'
 import Header from '../Header/Header'
 // import check from '../images/check.png'
 import { BsCheck2Circle } from "react-icons/bs";
+import axios from 'axios'
 
 export default function EnterprisePricing() {
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+    const [data, setData] = useState({});
+
+    const [showT, setShowT] = useState(false);
+    const handleCloseT = () => setShowT(false);
+    const handleShowT = () => {
+        handleClose()
+        setShowT(true)
+    }
+    const handleOnChange = e => {
+        const field = e.target.name;
+        const value = e.target.value;
+        const newUser = { ...data };
+        newUser[field] = value;
+        setData(newUser);
+        console.log(newUser)
+
+    }
+    const handleSubmit = e => {
+        e.preventDefault()
+        console.log(data);
+        axios.post(`http://unive.site/api/enterprice`, data).then(res => res.data ? handleShowT() : '')
+
+    }
     return (
         <>
             <Header />
@@ -32,7 +59,7 @@ export default function EnterprisePricing() {
                                 <h4 className='text-primary fs-2'>$11.<span className='text-primary fs-4'>66</span><span className='text-dark'>/per month</span></h4>
                                 <p>discounted price for </p>
                                 <p className='fs-5'> $139 billed annually</p> */}
-                                <Button variant="outline-primary text-center w-100 mx-auto">যোগাযোগ করুন</Button>
+                                <Button variant="outline-primary text-center w-100 mx-auto" onClick={handleShow}>যোগাযোগ করুন</Button>
                                 <p className='text-start my-3'>টীম প্ল্যানে যা যা আছে:</p>
                                 <Card.Body className='text-start mx-auto my-3'>
 
@@ -52,7 +79,7 @@ export default function EnterprisePricing() {
                                 <h4 className='text-primary fs-2'>$11.<span className='text-primary fs-4'>66</span><span className='text-dark'>/per month</span></h4>
                                 <p>discounted price for </p>
                                 <p className='fs-5'> $139 billed annually</p> */}
-                                <Button variant="btn btn-primary text-center w-100 mx-auto">যোগাযোগ করুন</Button>
+                                <Button variant="btn btn-primary text-center w-100 mx-auto" onClick={handleShow}>যোগাযোগ করুন</Button>
                                 <p className='text-start my-3'>এন্টারপ্রাইজ প্ল্যানে টীমে যা আছে তা তো থাকছেই সাথে থাকছে:</p>
                                 <Card.Body className='text-start mx-auto my-3'>
                                     <p><BsCheck2Circle className='text-success fs-4 me-2' />টীম লার্নিং অ্যানালিটিকস</p>
@@ -72,7 +99,7 @@ export default function EnterprisePricing() {
                             <h4 className='text-primary fs-2'>$11.<span className='text-primary fs-4'>66</span><span className='text-dark'>/per month</span></h4>
                             <p>discounted price for </p>
                             <p className='fs-5'> $139 billed annually</p> */}
-                                <Button variant="outline-primary text-center w-100 mx-auto">যোগাযোগ করুন</Button>
+                                <Button variant="outline-primary text-center w-100 mx-auto" onClick={handleShow}>যোগাযোগ করুন</Button>
                                 <p className='text-start my-3'>আনলিমিটেডে প্ল্যানে টীম এবং এন্টারপ্রাইজ প্ল্যানের সব কিছু তো থাকছেই সাথে থাকছে:</p>
                                 <Card.Body className='text-start mx-auto my-3'>
                                     <p><BsCheck2Circle className='text-success fs-4 me-2' />থার্ড পার্টি ইন্টিগ্রেশন</p>
@@ -123,6 +150,70 @@ export default function EnterprisePricing() {
                 <Demo />
             </Container>
             <Footer />
+
+            {/* form */}
+            <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                    <h2 className='mx-auto ps-5'>Fill up the form</h2>
+                </Modal.Header>
+                <Modal.Body>
+                    <Container className='py-2'>
+                        {/* Login form */}
+                        <form className='mt-3  py-3' onSubmit={handleSubmit}>
+                            <FloatingLabel
+                                controlId="floatingInput"
+                                label="Contact Person Name"
+                                className="mt-2 mb-5 text-start"
+                            >
+                                <Form.Control type="text" name="FullName" className="text-start" placeholder="contact person" onChange={handleOnChange} />
+                            </FloatingLabel>
+                            {/* --------- */}
+                            <FloatingLabel
+                                controlId="floatingInput"
+                                label="Company Name"
+                                className="mt-2 mb-5 text-start"
+                            >
+                                <Form.Control type="text" name="Company" className="text-start" placeholder="xyz" onChange={handleOnChange} />
+                            </FloatingLabel>
+                            {/* ----------- */}
+                            <FloatingLabel
+                                controlId="floatingInput"
+                                label="Email address"
+                                className="mt-2 mb-5 text-start"
+                            >
+                                <Form.Control type="email" className="text-start" placeholder="name@example.com" name="email" onChange={handleOnChange} />
+                            </FloatingLabel>
+                            {/* ------------- */}
+
+                            <FloatingLabel
+                                controlId="floatingInput"
+                                label="Phone Number"
+                                className="mt-2 mb-5 text-start"
+                            >
+                                <Form.Control type="number" name="PhoneNumber" className="text-start" placeholder="01299123" onChange={handleOnChange} />
+                            </FloatingLabel>
+                            {/*------------  */}
+                            <button className='btn btn-primary d-block w-100 mx-auto mt-2 py-3 ms-2 mb-5'>Submit </button>
+                        </form>
+                    </Container>
+
+                </Modal.Body>
+
+
+            </Modal>
+            {/* thanks modal */}
+            <Modal show={showT} onHide={handleCloseT}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Thanks for your interest</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>One of our representatives will get back to you asap.</Modal.Body>
+                <Modal.Footer>
+                    <Button variant="success" onClick={handleCloseT}>
+                        Ok!!
+                    </Button>
+                </Modal.Footer>
+            </Modal>
+
         </>
     )
 }
