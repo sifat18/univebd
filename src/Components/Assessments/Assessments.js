@@ -9,7 +9,9 @@ export default function Assessments() {
     const [item] = useData();
     return (
         <>
+
             <Header />
+
             <Container data-aos="fade-up-right" fluid className='bg-primary mb-5 py-5'>
                 <Container className='text-light'>
                     <Row>
@@ -37,7 +39,7 @@ export default function Assessments() {
                                 <Col xs={12} md={8}>
                                     <h5 className='fs-5'>অ্যাসেসমেন্ট</h5>
                                     <h2 className='my-2 text-start fs-4'>{id.coursename}</h2>
-                                    <NavLink to={`/learn/${id._id}`}> <Button variant='btn btn-outline-primary py-2 px-5 d-block my-5 me-3 ms-auto'> Preview</Button></NavLink>
+                                    <NavLink to={`/learn/${id.coursename}`}> <Button variant='btn btn-outline-primary py-2 px-5 d-block my-5 me-3 ms-auto'> Preview</Button></NavLink>
 
                                 </Col>
 
@@ -53,7 +55,7 @@ export default function Assessments() {
                                 <Col xs={12} md={8}>
                                     <h5 className='fs-5'>অ্যাসেসমেন্ট</h5>
                                     <h2 className='my-2 text-start fs-4'>{id.coursename}</h2>
-                                    <NavLink to={`/learn/${id._id}`}>  <Button variant='btn btn-outline-primary py-2 px-5 d-block my-5 me-3 ms-auto'> Preview</Button></NavLink>
+                                    <NavLink to={`/learn/${id.coursename}`}>  <Button variant='btn btn-outline-primary py-2 px-5 d-block my-5 me-3 ms-auto'> Preview</Button></NavLink>
 
                                 </Col>
 

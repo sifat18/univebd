@@ -6,7 +6,10 @@ import PriceCard from '../../Common/PriceCard'
 import Footer from '../../Footer/Footer'
 import Header from '../../Header/Header'
 import unlimited from '../../images/unlimited.png'
-
+import train from '../../images/unlimited/5187419.jpg'
+import train2 from '../../images/unlimited/8294.jpg'
+import dream from '../../images/unlimited/pale-job-search.png'
+import cancel from '../../images/unlimited/jaconda-planning-1.png'
 
 export default function Unlimited() {
     return (
@@ -36,17 +39,17 @@ export default function Unlimited() {
             <Container data-aos="fade-up" >
                 <Row className='gx-5'>
                     <Col xs={12} md={4} className='text-center mb-3 '>
-                        <img src="" alt="someimage" />
-                        <h3>জব ফোকাসড ট্রেইনিং</h3>
+                        <img src={train} alt="someimage" className='img-fluid' />
+                        <h3 className='pt-2'>জব ফোকাসড ট্রেইনিং</h3>
                         <p>প্রতিটি ট্রেইনিং ম্যাটেরিয়ালস কারেন্ট ডিমান্ডিং জবস এর উপর ফোকাস করে তৈরি করা। ট্রেইনিং করে নিজেকে এগিয়ে রাখুন জব রোলের জন্য। সাধারণত এমপ্লয়ার তাকেই নেয় যে জব সম্পর্কে ভালো আইডিয়া রাখে</p>
                     </Col>
                     <Col xs={12} md={4} className='text-center mb-3'>
-                        <img src="" alt="someimage" />
+                        <img src={dream} alt="someimage" className='img-fluid' />
                         <h3>ল্যান্ড ইন ইউর ড্রিম জব</h3>
                         <p>ট্রেইনিং বা অ্যাসেসমেন্ট এ ভালো ফলাফল করে ল্যান্ড করুন আপনার ড্রিম জবে। ভালো ফলাফল করা আপনার দায়িত্ব, বাদবাকি আমাদের।</p>
                     </Col>
                     <Col xs={12} md={4} className='text-center '>
-                        <img src="" alt="someimage" />
+                        <img src={cancel} alt="someimage" className='img-fluid' />
                         <h3>যেকোনো সময় ক্যান্সেল করুন আপনার প্ল্যান</h3>
                         <p>আপনার যদি ভালো না লাগে যেকোনো সময় ক্যান্সেল করুন আপনার প্ল্যান। যে ট্রেইনিং আপনি কিনছেন বা শেষ করেছেন তার অ্যাকসেস এবং সার্টিফিকেশন তো থাকছেই সবসময়। </p>
                     </Col>

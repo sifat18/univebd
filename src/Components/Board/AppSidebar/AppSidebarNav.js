@@ -16,7 +16,8 @@ import {
   // cilSpeedometer,
   // cilStar,
 } from '@coreui/icons'
-import { CNavGroup, CNavItem, CNavTitle } from '@coreui/react'
+import { CNavItem, CNavTitle } from '@coreui/react'
+// import { CNavGroup, CNavItem, CNavTitle } from '@coreui/react'
 import useAuth from '../../Context/useAuth'
 import { RiMapPinUserLine } from 'react-icons/ri'
 
@@ -28,7 +29,7 @@ export const AppSidebarNav = () => {
       component: CNavItem,
       name: user.displayName,
       to: '/dashboard',
-      icon: <RiMapPinUserLine customClassName="nav-icon" />,
+      icon: <RiMapPinUserLine customClassName="nav-icon text-dark" />,
 
     },
     {
@@ -39,25 +40,25 @@ export const AppSidebarNav = () => {
       component: CNavItem,
       name: 'Make New Admin',
       to: '/dashboard/adadmin',
-      icon: <CIcon icon={cilPencil} customClassName="nav-icon" />,
+      icon: <CIcon icon={cilPencil} customClassName="nav-icon text-dark" />,
     },
     {
       component: CNavItem,
       name: 'Make New Tutor',
       to: '/dashboard/adtutor',
-      icon: <CIcon icon={cilPencil} customClassName="nav-icon" />,
+      icon: <CIcon icon={cilPencil} customClassName="nav-icon text-dark" />,
     },
     {
       component: CNavItem,
       name: 'Create New Course',
       to: '/dashboard/addcourse',
-      icon: <CIcon icon={cilPencil} customClassName="nav-icon" />,
+      icon: <CIcon icon={cilPencil} customClassName="nav-icon text-dark" />,
     },
     {
       component: CNavItem,
       name: 'Available Candidates',
       to: '/dashboard/candidates',
-      icon: <CIcon icon={cilPencil} customClassName="nav-icon" />,
+      icon: <CIcon icon={cilPencil} customClassName="nav-icon text-dark" />,
     },
   ]
   const _nav = [
@@ -65,7 +66,7 @@ export const AppSidebarNav = () => {
       component: CNavItem,
       name: user.displayName,
       to: '/dashboard',
-      icon: <RiMapPinUserLine customClassName="nav-icon" />,
+      icon: <RiMapPinUserLine customClassName="nav-icon text-dark" />,
 
     },
     {
@@ -76,13 +77,13 @@ export const AppSidebarNav = () => {
       component: CNavItem,
       name: 'Profile Setting',
       to: `/dashboard/update_profile`,
-      icon: <CIcon icon={cilDrop} customClassName="nav-icon" />,
+      icon: <CIcon icon={cilDrop} customClassName="nav-icon text-dark" />,
     },
     {
       component: CNavItem,
       name: 'My Courses',
       to: `/dashboard/mycourses`,
-      icon: <CIcon icon={cilPencil} customClassName="nav-icon" />,
+      icon: <CIcon icon={cilPencil} customClassName="nav-icon text-dark" />,
     },
     // {
     //   component: CNavTitle,
@@ -317,7 +318,7 @@ export const AppSidebarNav = () => {
         {icon && icon}
         {name && name}
         {badge && (
-          <CBadge color={badge.color} className="ms-auto">
+          <CBadge className="ms-auto text-dark">
             {badge.text}
           </CBadge>
         )}
@@ -329,7 +330,7 @@ export const AppSidebarNav = () => {
     const { component, name, badge, icon, ...rest } = item
     const Component = component
     return (
-      <Component
+      <Component className='text-dark'
         {...(rest.to &&
           !rest.items && {
           component: NavLink,

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
-import { CSidebar,  CSidebarNav, CSidebarToggler } from '@coreui/react'
+import { CSidebar, CSidebarNav, CSidebarToggler } from '@coreui/react'
 
 import { AppSidebarNav } from './AppSidebarNav'
 // import { logoNegative } from '../../../assets/brand/logo-negative'
@@ -20,6 +20,7 @@ const AppSidebar = () => {
 
   return (
     <CSidebar
+      className='bg-white text-dark'
       position="fixed"
       unfoldable={unfoldable}
       visible={sidebarShow}

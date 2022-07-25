@@ -56,7 +56,7 @@ export default function Blogs() {
                                         <p className='fs-7'>Beginner</p>
                                     </Col>
                                     <Col xs={6} className='py-3'>
-                                        <NavLink to={`/learn/${id._id}`}>  <Button className=' w-100 h-100' variant="warning">Get Started <img src='{ar}' alt="" /></Button></NavLink>
+                                        <NavLink to={`/learn/${id.coursename}`}>  <Button className=' w-100 h-100' variant="warning">Get Started <img src='{ar}' alt="" /></Button></NavLink>
 
                                     </Col>
                                 </Row>

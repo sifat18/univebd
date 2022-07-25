@@ -67,11 +67,11 @@ export default function Overview() {
                                     <Card.Body className='mx-auto mt-4' >
                                         {/* <NavLink to={`/learn/start/${courses._id}`}><Button className='bluebtn btn py-2 px-5'>Start learning </Button></NavLink> */}
                                         {!user.email &&
-                                        <Button onClick={(e) => orderData(e)} className='bluebtn btn py-2 px-5'>Start learning </Button>}
+                                            <Button onClick={(e) => orderData(e)} className='bluebtn btn py-2 px-5'>Start learning </Button>}
                                         {!user.email &&
-                                       <OverlayTrigger trigger="click" placement="right" overlay={popover}>
-                                       <Button variant="success">Click me to see</Button>
-                                     </OverlayTrigger>}
+                                            <OverlayTrigger trigger="click" placement="right" overlay={popover}>
+                                                <Button variant="success">Click me to see</Button>
+                                            </OverlayTrigger>}
                                     </Card.Body>
                                     {/* <hr className='bg-secondary' />
                                     <Card.Body>
@@ -141,10 +141,10 @@ export default function Overview() {
                                     {/* <NavLink to={`/learn/start/${courses._id}`}><Button className='bluebtn btn py-2 px-5'>Start learning </Button></NavLink> */}
                                     {user.email &&
                                         <Button onClick={(e) => orderData(e)} className='bluebtn btn py-2 px-5'>Start learning </Button>}
-                                        {!user.email &&
-                                       <OverlayTrigger trigger="click" placement="right" overlay={popover}>
-                                       <Button className='bluebtn' >Start learning</Button>
-                                     </OverlayTrigger>}
+                                    {!user.email &&
+                                        <OverlayTrigger trigger="click" placement="right" overlay={popover}>
+                                            <Button className='bluebtn' >Start learning</Button>
+                                        </OverlayTrigger>}
                                 </Card.Body>
                                 {/* <hr className='bg-secondary' />
                                 <Card.Body>
@@ -197,16 +197,16 @@ export default function Overview() {
                     </Button>
                 </Modal.Footer>
             </Modal>
-       
+
         </>
     )
 }
 
 const popover = (
     <Popover id="popover-basic">
-      {/* <Popover.Header as="h3">Popover right</Popover.Header> */}
-      <Popover.Body>
-Log in to start learning 
-      </Popover.Body>
+        {/* <Popover.Header as="h3">Popover right</Popover.Header> */}
+        <Popover.Body>
+            Log in to start learning
+        </Popover.Body>
     </Popover>
-  );
+);

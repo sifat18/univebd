@@ -185,7 +185,7 @@ export default function Instructor() {
                         </div>
                     </Col>
                 </Row>
-                <Button className='p-3 mt-3' href="#">Become an Instructor</Button>
+                <Button className='p-3 mt-3' onClick={handleShow}>Become an Instructor</Button>
 
             </Container>
             {/* faq */}

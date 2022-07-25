@@ -3,7 +3,7 @@ import { createStore } from 'redux'
 const initialState = {
   sidebarShow: true,
 }
-
+// dashboard styles and movement info
 const changeState = (state = initialState, { type, ...rest }) => {
   switch (type) {
     case 'set':

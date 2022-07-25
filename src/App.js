@@ -64,10 +64,12 @@ function App() {
     AOS.init();
   }, [])
   return (
+    //Authprovider wraps the contents BrowserRouter and distributes the user info from that is stored in it  
     <Authprovider>
       <BrowserRouter>
+        {/* ScrollToTop moves to the top of page during switching pages */}
         <ScrollToTop>
-          {/* <Header /> */}
+          {/* route definitions and resulting page components */}
           <Routes>
             <Route path="/" element={<Home />} />
 

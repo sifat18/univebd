@@ -45,7 +45,7 @@ export default function CourseCatalog() {
                     <p className='fs-7'>Beginner</p>
                   </Col>
                   <Col xs={6}>
-                    <NavLink to={`/learn/${id._id}`}> <Button className='p-3' variant="outline-dark">preview <img src={ar} alt="" /></Button></NavLink>
+                    <NavLink to={`/learn/${id.coursename}`}> <Button className='p-3' variant="outline-dark">preview <img src={ar} alt="" /></Button></NavLink>
 
                   </Col>
                 </Row>

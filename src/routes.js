@@ -10,7 +10,7 @@ const Candidate = React.lazy(() => import('./Components/Board/Candidates/Candida
 // user
 const MyCourses = React.lazy(() => import('./Components/Board/UserRoutes/MyCourses'))
 const ProfileUpdate = React.lazy(() => import('./Components/Board/UserRoutes/Profile_Update'))
-
+// defines the info for displaying in breadcrumb
 const routes = [
     { path: '/', exact: true, name: 'Home' },
     { path: '/dashboard', name: 'Dashboard', element: Dashboard },

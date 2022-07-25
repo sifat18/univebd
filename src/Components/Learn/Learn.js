@@ -10,7 +10,7 @@ import useAuth from '../Context/useAuth'
 import Footer from '../Footer/Footer'
 import RestCourses from '../Common/RestCourses'
 export default function Learn() {
-    const { user,admin } = useAuth()
+    const { user, admin } = useAuth()
 
     const [item] = useData();
     const [disp, setdisp] = useState(false)
@@ -44,14 +44,14 @@ export default function Learn() {
                                         <Card.Text>{id.about.slice(0, 100)}              </Card.Text>
                                     </Card.Body>
                                     <Row>
-                                        <Col xs={admin?4:6}>
+                                        <Col xs={admin ? 4 : 6}>
                                             <p><img src={st} alt="" height={25} /></p>
                                             <p className='fs-7'>Beginner</p>
                                         </Col>
-                                        <Col xs={admin?8:6} className='d-flex justify-content-around'>
-                                            <NavLink to={`/learn/${id._id}`}> <Button className='p-2' variant="outline-dark">Preview <img src={ar} alt="" /></Button></NavLink>
+                                        <Col xs={admin ? 8 : 6} className='d-flex justify-content-around'>
+                                            <NavLink to={`/learn/${id.coursename}`}> <Button className='p-2' variant="outline-dark">Preview <img src={ar} alt="" /></Button></NavLink>
                                             {admin && <NavLink to={`/dashboard/edit/${id._id}`}> <Button className='p-2' variant="outline-success">Edit Course <img src={'ar'} alt="" /></Button></NavLink>}
-                                            
+
 
                                         </Col>
                                     </Row>
@@ -82,13 +82,13 @@ export default function Learn() {
                                         <Card.Text>{id.about.slice(0, 100)}              </Card.Text>
                                     </Card.Body>
                                     <Row>
-                                    <Col xs={admin?4:6}>
+                                        <Col xs={admin ? 4 : 6}>
                                             <p><img src={st} alt="" height={25} /></p>
                                             <p className='fs-7'>Beginner</p>
                                         </Col>
-                                        <Col xs={admin?8:6} className='d-flex justify-content-around'>
-                                            <NavLink to={`/learn/${id._id}`}> <Button className='p-2' variant="outline-dark">Preview <img src={ar} alt="" /></Button></NavLink>
-                                            {admin && <NavLink to={`/dashboard/edit/${id._id}`}> <Button className='p-2' variant="outline-success">Edit Course <img src={'ar'} alt="" /></Button></NavLink>}
+                                        <Col xs={admin ? 8 : 6} className='d-flex justify-content-around'>
+                                            <NavLink to={`/learn/${id.coursename}`}> <Button className='p-2' variant="outline-dark">Preview <img src={ar} alt="" /></Button></NavLink>
+                                            {admin && <NavLink to={`/dashboard/edit/${id.coursename}`}> <Button className='p-2' variant="outline-success">Edit Course <img src={'ar'} alt="" /></Button></NavLink>}
 
                                         </Col>
                                     </Row>
@@ -104,7 +104,7 @@ export default function Learn() {
             </Container>
             <Container className='text-center py-5'>
                 <h3>Take your skills to the next level.</h3>
-                <Button className=' my-2 text-center' variant="primary">Explore all courses and paths </Button>
+                <NavLink to='/learn'>  <Button className=' my-2 text-center' variant="primary">Explore all courses and paths </Button></NavLink>
 
             </Container>
             <Footer />

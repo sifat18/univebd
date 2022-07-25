@@ -5,25 +5,30 @@ import './addcourse.css';
 
 
 export default function CourseAdd() {
+    // modal display state initialize
     const [show, setShow] = useState(false);
+    //    modal close 
     const handleClose = () => {
         setShow(false)
         window.location.reload(true);
     };
     const handleShow = () => setShow(true);
-
+    // module information initialization
     const [module, setModule] = useState([
         { module_name: '', module_description: '', sub_mod1: '', sub_mod2: '', sub_mod3: '', sub_video1: '', sub_video2: '', sub_video3: '', sub_description1: '', sub_description2: '', sub_description3: '', q1: '', q2: '', q3: '', q4: '', q5: '', qA1: '', qA2: '', qA3: '', qA4: '', qA5: '', qOP11: '', qOP12: '', qOP13: '', qOP14: '', qOP21: '', qOP22: '', qOP23: '', qOP24: '', qOP31: '', qOP32: '', qOP33: '', qOP34: '', qOP41: '', qOP42: '', qOP43: '', qOP44: '', qOP51: '', qOP52: '', qOP53: '', qOP54: '', show_mod: true, mod_complete: false }
     ])
+    // storing module info 
     const handleFormChange = (index, event) => {
         let data = [...module];
         data[index][event.target.name] = event.target.value;
         setModule(data)
     }
+    // adding new empty module 
     const addFields = () => {
         let newModule = { module_name: '', module_description: '', sub_mod1: '', sub_mod2: '', sub_mod3: '', sub_video1: '', sub_video2: '', sub_video3: '', sub_description1: '', sub_description2: '', sub_description3: '', q1: '', q2: '', q3: '', q4: '', q5: '', qA1: '', qA2: '', qA3: '', qA4: '', qA5: '', qOP11: '', qOP12: '', qOP13: '', qOP14: '', qOP21: '', qOP22: '', qOP23: '', qOP24: '', qOP31: '', qOP32: '', qOP33: '', qOP34: '', qOP41: '', qOP42: '', qOP43: '', qOP44: '', qOP51: '', qOP52: '', qOP53: '', qOP54: '', show_mod: true, mod_complete: false }
         setModule([...module, newModule])
     }
+    // send the data to database
     const submit = (e) => {
         e.preventDefault();
         let Finalcourse = { ...course }
@@ -35,6 +40,7 @@ export default function CourseAdd() {
 
     }
     const [course, setCourse] = useState({});
+    // stores the general info that is outside the loop
     const handleOnChangeL = e => {
         const field = e.target.name;
         const value = e.target.value;
@@ -315,6 +321,7 @@ export default function CourseAdd() {
 
 
                                 </Col >
+                                {/* quiz-2 */}
                                 <Col  >
                                     <div className=''>
 
@@ -365,6 +372,7 @@ export default function CourseAdd() {
                                     </div>
 
                                 </Col>
+                                {/* quiz-3 */}
                                 <Col>
                                     <div className=''>
                                         <p className='text-light pt-3 ps-3'> Question 3 </p>
@@ -412,6 +420,7 @@ export default function CourseAdd() {
                                             onChange={event => handleFormChange(index, event)} />
                                     </div>
                                 </Col>
+                                {/* quiz-4 */}
                                 <Col  >
 
                                     <div className=''>
@@ -460,6 +469,7 @@ export default function CourseAdd() {
                                             onChange={event => handleFormChange(index, event)} />
                                     </div>
                                 </Col>
+                                {/* quiz-5 */}
                                 <Col xs={6} >
 
                                     <div className=''>
@@ -514,12 +524,14 @@ export default function CourseAdd() {
                         </Row>
                     ))}
                     <div className="my-5 d-flex justify-content-around">
+                        {/* buttong for sumbmitting and addning new modules */}
                         <Button variant='success' onClick={submit}>Submit</Button>
                         <Button variant='warning' onClick={addFields}>Add Module..</Button>
                     </div>
                 </form>
 
             </section>
+            {/* display modal upon submission */}
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>Course Added</Modal.Title>
