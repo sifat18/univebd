@@ -27,12 +27,12 @@ export default function Overview() {
     // single data load based on id
     // https://fierce-woodland-01411.herokuapp.com
     useEffect(() => {
-        fetch(`http://unive.site/api/course/${courseID}`).then(res => res.json()).then(data => setcourses(data))
+        fetch(`http://localhost:7000/api/course/${courseID}`).then(res => res.json()).then(data => setcourses(data))
     }, [courseID])
     const [arr, setArr] = useState(true)
-    const contentShow = () => {
-        setArr(!arr)
-    }
+    // const contentShow = () => {
+    //     setArr(!arr)
+    // }
     const { user } = useAuth()
 
     const orderData = e => {
@@ -112,7 +112,7 @@ export default function Overview() {
                             <Row className='my-5'>
                                 <div className='my-3 d-flex justify-content-between'>
                                     <h3>Course Content</h3>
-                                    <Button onClick={contentShow} variant='btn btn-outline-info'>{arr ? 'Hide All Content' : 'Show All Content'}</Button>
+                                    {/* <Button onClick={contentShow} variant='btn btn-outline-info'>{arr ? 'Hide All Content' : 'Show All Content'}</Button> */}
                                 </div>
                                 {/* accordion start */}
                                 <Accordion defaultActiveKey={['0', '1', '2', '3', '4']} alwaysOpen flush>
@@ -120,7 +120,8 @@ export default function Overview() {
                                         <Accordion.Item eventKey={'' + index} key={index} >
 
                                             <Accordion.Header>{data.module_name}</Accordion.Header>
-                                            <Accordion.Body className={arr ? 'd-block' : 'd-none'}>
+                                            {/* <Accordion.Body className={arr ? 'd-block' : 'd-none'}> */}
+                                            <Accordion.Body >
                                                 <ul className='nobull'>
                                                     {data.sub_mod1 && <li><RiVideoAddLine /> {data.sub_mod1}</li>}
                                                     {data.sub_mod2 && <li><RiVideoAddLine /> {data.sub_mod2}</li>}

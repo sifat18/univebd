@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Accordion, Button, Col, Container, Row,Modal, Form, FloatingLabel } from 'react-bootstrap'
+import { Accordion, Button, Col, Container, Row, Modal, Form, FloatingLabel } from 'react-bootstrap'
 import Companies from '../Common/Companies'
 import hr from '../images/hr/hr.png'
 import search from '../images/hr/search.png'
@@ -11,18 +11,21 @@ import Footer from '../Footer/Footer'
 import axios from 'axios'
 export default function Recruiting() {
     const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
     const [showR, setShowR] = useState(false);
     const [showT, setShowT] = useState(false);
-    const handleClose = () =>setShow(false);
-    const handleShow = () => setShow(true);
-    const handleCloseR = () =>setShowR(false);
-    const handleShowR = () => setShowR(true);
     const handleCloseT = () => setShowT(false);
     const handleShowT = () => {
         handleClose()
         handleCloseR()
         setShowT(true)
-        }
+    }
+
+    const handleCloseR = () => setShowR(false);
+    const handleShowR = () => setShowR(true);
+
     const [data, setData] = useState({});
     const [data2, setData2] = useState({});
 
@@ -183,6 +186,7 @@ export default function Recruiting() {
                 <Button variant='btn btn-primary' onClick={handleShow} > কথা বলুন আমাদের রিপ্রেজেন্টেটিভ এর সাথে</Button>
             </Container>
             <Footer />
+            {/* last button pop up */}
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <h2 className='mx-auto ps-5'>Fill up the form</h2>
@@ -191,32 +195,32 @@ export default function Recruiting() {
                     <Container className='py-2'>
                         {/* Login form */}
                         <form className='mt-3  py-3' onSubmit={handleSubmit}>
-                        <FloatingLabel
-                controlId="floatingInput"
-                label="Full Name"
-                className="mt-2 mb-5 text-start"
-              >
-                <Form.Control type="text" name="FullName" className="text-start" placeholder="Jane doe" onChange={handleOnChange} />
-              </FloatingLabel>
-  {/* ----------- */}
-  <FloatingLabel
-                controlId="floatingInput"
-                label="Email address"
-                className="mt-2 mb-5 text-start"
-              >
-                <Form.Control type="email" className="text-start" placeholder="name@example.com" name="email" onChange={handleOnChange} />
-              </FloatingLabel>
-                     {/* ------------- */}
-                     
-              <FloatingLabel
-                controlId="floatingInput"
-                label="Phone Number"
-                className="mt-2 mb-5 text-start"
-              >
-                <Form.Control type="number" name="PhoneNumber" className="text-start" placeholder="01299123" onChange={handleOnChange} />
-              </FloatingLabel>
-              {/*------------  */}
-              <button className='btn btn-primary d-block w-100 mx-auto mt-2 py-3 ms-2 mb-5'>Submit </button>
+                            <FloatingLabel
+                                controlId="floatingInput"
+                                label="Full Name"
+                                className="mt-2 mb-5 text-start"
+                            >
+                                <Form.Control type="text" name="FullName" className="text-start" placeholder="Jane doe" onChange={handleOnChange} />
+                            </FloatingLabel>
+                            {/* ----------- */}
+                            <FloatingLabel
+                                controlId="floatingInput"
+                                label="Email address"
+                                className="mt-2 mb-5 text-start"
+                            >
+                                <Form.Control type="email" className="text-start" placeholder="name@example.com" name="email" onChange={handleOnChange} />
+                            </FloatingLabel>
+                            {/* ------------- */}
+
+                            <FloatingLabel
+                                controlId="floatingInput"
+                                label="Phone Number"
+                                className="mt-2 mb-5 text-start"
+                            >
+                                <Form.Control type="number" name="PhoneNumber" className="text-start" placeholder="01299123" onChange={handleOnChange} />
+                            </FloatingLabel>
+                            {/*------------  */}
+                            <button className='btn btn-primary d-block w-100 mx-auto mt-2 py-3 ms-2 mb-5'>Submit </button>
                         </form>
                     </Container>
 
@@ -243,60 +247,60 @@ export default function Recruiting() {
                 </Modal.Header>
                 <Modal.Body>
                     <Container className='py-2'>
-                        {/* Login form */}
+
                         <form className='mt-3  py-3' onSubmit={handleSubmitR}>
-                        <FloatingLabel
-                controlId="floatingInput"
-                label="Organization Name"
-                className="mt-2 mb-5 text-start"
-              >
-                <Form.Control type="text" name="organization" className="text-start" placeholder="Jane doe" onChange={handleOnChangeR} />
-              </FloatingLabel>
-                        <FloatingLabel
-                controlId="floatingInput"
-                label="Full Name"
-                className="mt-2 mb-5 text-start"
-              >
-                <Form.Control type="text" name="FullName" className="text-start" placeholder="Jane doe" onChange={handleOnChangeR} />
-              </FloatingLabel>
-  {/* ----------- */}
-  <FloatingLabel
-                controlId="floatingInput"
-                label="Email address"
-                className="mt-2 mb-5 text-start"
-              >
-                <Form.Control type="email" className="text-start" placeholder="name@example.com" name="email" onChange={handleOnChangeR} />
-              </FloatingLabel>
-                     {/* ------------- */}
-                     
-              <FloatingLabel
-                controlId="floatingInput"
-                label="Phone Number"
-                className="mt-2 mb-5 text-start"
-              >
-                <Form.Control type="number" name="PhoneNumber" className="text-start" placeholder="01299123" onChange={handleOnChangeR} />
-              </FloatingLabel>
-              {/*------------  */}
-              <FloatingLabel className='my-5' controlId="floatingTextarea2" label="The type of candidates you are looking to recruit">
-                <Form.Control
-                  name='candidateRequirement'
-                  className='text-start'
-                  as="textarea"
-                  placeholder="The type of candidates you are looking to recruit"
-                  style={{ height: '100px' }}
-                  onChange={handleOnChangeR} />
-              </FloatingLabel>
-              {/* ------------ */}
-              <FloatingLabel className='mt-5 mb-3' controlId="floatingTextarea2" label="Additional Information">
-                <Form.Control
-                  name='additional_information'
-                  as="textarea"
-                  className='text-start'
-                  placeholder="Additional Information"
-                  style={{ height: '100px' }}
-                  onChange={handleOnChangeR} />
-              </FloatingLabel>
-              <button className='btn btn-primary d-block w-100 mx-auto mt-2 py-3 ms-2 mb-5'>Submit </button>
+                            <FloatingLabel
+                                controlId="floatingInput"
+                                label="Organization Name"
+                                className="mt-2 mb-5 text-start"
+                            >
+                                <Form.Control type="text" name="organization" className="text-start" placeholder="Jane doe" onChange={handleOnChangeR} />
+                            </FloatingLabel>
+                            <FloatingLabel
+                                controlId="floatingInput"
+                                label="Full Name"
+                                className="mt-2 mb-5 text-start"
+                            >
+                                <Form.Control type="text" name="FullName" className="text-start" placeholder="Jane doe" onChange={handleOnChangeR} />
+                            </FloatingLabel>
+                            {/* ----------- */}
+                            <FloatingLabel
+                                controlId="floatingInput"
+                                label="Email address"
+                                className="mt-2 mb-5 text-start"
+                            >
+                                <Form.Control type="email" className="text-start" placeholder="name@example.com" name="email" onChange={handleOnChangeR} />
+                            </FloatingLabel>
+                            {/* ------------- */}
+
+                            <FloatingLabel
+                                controlId="floatingInput"
+                                label="Phone Number"
+                                className="mt-2 mb-5 text-start"
+                            >
+                                <Form.Control type="number" name="PhoneNumber" className="text-start" placeholder="01299123" onChange={handleOnChangeR} />
+                            </FloatingLabel>
+                            {/*------------  */}
+                            <FloatingLabel className='my-5' controlId="floatingTextarea2" label="The type of candidates you are looking to recruit">
+                                <Form.Control
+                                    name='candidateRequirement'
+                                    className='text-start'
+                                    as="textarea"
+                                    placeholder="The type of candidates you are looking to recruit"
+                                    style={{ height: '100px' }}
+                                    onChange={handleOnChangeR} />
+                            </FloatingLabel>
+                            {/* ------------ */}
+                            <FloatingLabel className='mt-5 mb-3' controlId="floatingTextarea2" label="Additional Information">
+                                <Form.Control
+                                    name='additional_information'
+                                    as="textarea"
+                                    className='text-start'
+                                    placeholder="Additional Information"
+                                    style={{ height: '100px' }}
+                                    onChange={handleOnChangeR} />
+                            </FloatingLabel>
+                            <button className='btn btn-primary d-block w-100 mx-auto mt-2 py-3 ms-2 mb-5'>Submit </button>
                         </form>
                     </Container>
 
