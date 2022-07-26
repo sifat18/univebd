@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useReducer, useState } from 'react'
 import { Accordion, Col, Container, Row } from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
 import Videos from '../Common/Videos'
@@ -11,7 +11,70 @@ import NewQuiz from '../Common/Quiz/NewQuiz'
 import useAuth from '../Context/useAuth'
 export default function CourseStart() {
     const { user } = useAuth()
-    const [course, setcourses] = useState({})
+    const initialState={
+        course:{},
+        curIndex:0,
+        nex:0,
+        nexMod:false,
+        show:false,
+        video:'',
+        nextV:'',
+        prev:'',
+        quiz:false,
+        show:false,
+        description:'',
+        maxModuleIndex:0,
+    
+    }
+    const reducer=(state,action)=>{
+        switch(action.type){
+            case 'setData':
+                return {course: {...state.course,...action.value},maxModuleIndex:state.course?.Module?.length - 1 };
+            case 'sub_video1':
+
+                return {
+                    curIndex: action.idx,
+                    quiz:false,
+                    preV:'',
+                    video:action.video,
+                    description:action.description,
+
+                };
+                case 'sub_video2':
+
+                    return {
+                        curIndex: action.idx,
+                        quiz:false,
+                        preV:action.prev,
+                        video:action.video,
+                        description:action.description,
+    
+                    };
+                    case 'sub_video3':
+
+                        return {
+                            curIndex: action.idx,
+                            quiz:false,
+                            preV:action.prev,
+                            video:action.video,
+                            description:action.description,
+        
+                        };
+            case 'setDetails':
+                return{
+                    show:action.show,
+                    nex:action.nex,
+                    nextV:action.nextV,
+                    nexMod:action.nexMod
+
+                }
+        }
+    
+    }
+const [state, dispatch] = useReducer(reducer, initialState)
+
+
+    // const [course, setcourses] = useState({})
     const [curIndex, setcurIndex] = useState(0)
     const [video, setVideo] = useState('')
     const [nextV, setNV] = useState('')
@@ -22,28 +85,61 @@ export default function CourseStart() {
     const [nex, setnex] = useState(0)
     const [nexMod, setnexMod] = useState(false)
     const { courseID } = useParams()
-    const maxModuleIndex = course?.Module?.length - 1
+    // const maxModuleIndex = state.course?.Module?.length - 1
+
+    
+  
     // const curIndex = 0
     // https://fierce-woodland-01411.herokuapp.com/course/${courseID}
     useEffect(() => {
-        fetch(`http://unive.site/api/mycourse?_id=${courseID}&email=${user.email}`).then(res => res.json()).then(data => setcourses(data))
+        fetch(`http://unive.site/api/mycourse?_id=${courseID}&email=${user.email}`).then(res => res.json()).then(data => {
+            // setcourses(data)
+    dispatch({
+        type:'setData',
+        value:data
+    })
+    })
     }, [courseID, user.email])
     // console.log(course);
+    console.log(state.course)
 
     const sendVideo = (data, video, idx = 0, unlock = false) => {
         setQuiz(false)
+
         setcurIndex(idx)
         switch (video) {
             case 'sub_video1':
+                dispatch({
+                    type:'sub_video1',
+                    idx:idx,
+                    video:data.sub_video1,
+                    description:data.sub_description1,
+
+                })
                 setPV('')
                 setVideo(data.sub_video1)
                 setdescription(data.sub_description1)
                 if (!data.sub_mod2 && !data.sub_mod3) {
+                    dispatch({
+                        type:'setDetails',
+                        show:true,
+                        nex:idx+1,
+                        nexMod:true,
+                        nextV:'',
+                    })
+
                     setShow(true)
                     setnex(idx + 1)
                     setnexMod(true)
                     setNV('')
                 } else {
+                    dispatch({
+                        type:'setDetails',
+                        show:false,
+                        nex:idx,
+                        nexMod:unlock,
+                        nextV:'sub_video2',
+                    })
                     setnex(idx)
                     setnexMod(unlock)
                     setShow(false)
@@ -52,16 +148,39 @@ export default function CourseStart() {
                 break;
             case 'sub_video2':
                 setPV('sub_video1')
+                dispatch({
+                    type:'sub_video2',
+                    idx:idx+1,
+                    video:data.sub_video2,
+                    description:data.sub_description2,
+                    prev: 'sub_video2',
+
+                })
 
                 setVideo(data.sub_video2)
                 setdescription(data.sub_description2)
-                if (!data.sub_mod3) {
+                if (!data.sub_mod3)
+                 {
+                    dispatch({
+                        type:'setDetails',
+                        show:true,
+                        nex:idx+1,
+                        nexMod:true,
+                        nextV:'',
+                    })
                     setShow(true)
                     setnex(idx + 1)
                     setnexMod(true)
                     setNV('')
 
                 } else {
+                    dispatch({
+                        type:'setDetails',
+                        show:false,
+                        nex:idx,
+                        nexMod:unlock,
+                        nextV:'sub_video3',
+                    })
                     setnex(idx)
                     setnexMod(unlock)
                     setShow(false)
@@ -71,7 +190,21 @@ export default function CourseStart() {
             case 'sub_video3':
                 setNV('')
                 setPV('sub_video2')
+                dispatch({
+                    type:'sub_video3',
+                    // idx:idx+1,
+                    video:data.sub_video3,
+                    description:data.sub_description3,
+                    prev: 'sub_video2',
 
+                })
+                dispatch({
+                    type:'setDetails',
+                    show:true,
+                    nex:idx+1,
+                    nexMod:unlock,
+                    nextV:'',
+                })
                 setVideo(data.sub_video3)
                 setdescription(data.sub_description3)
                 setShow(true)
@@ -83,9 +216,9 @@ export default function CourseStart() {
 
     }
     const nextVideo = (index, lock) => {
-        course.Module[index].show_mod = lock
-        setVideo(course.Module[index].sub_video1)
-        setdescription(course.Module[index].sub_description1)
+        state.course.Module[index].show_mod = lock
+        setVideo(state.course.Module[index].sub_video1)
+        setdescription(state.course.Module[index].sub_description1)
         setnexMod(false)
         setQuiz(false)
         setShow(false)
@@ -100,7 +233,7 @@ export default function CourseStart() {
 
     // back and forth video switching in the same model
     const videoNavigate = (inde, vid) => {
-        sendVideo(course.Module[inde], vid, inde, true)
+        sendVideo(state.course.Module[inde], vid, inde, true)
     }
     // enable quiz option
     const nextModule = () => {
@@ -113,7 +246,7 @@ export default function CourseStart() {
                 <Row>
                     <Col md={2} className='border-end border-dark d-none d-md-block'>
                         <Accordion defaultActiveKey={['0']} alwaysOpen flush>
-                            {course?.Module?.map((data, index) => (
+                            {state.course?.Module?.map((data, index) => (
                                 <Accordion.Item eventKey={'' + index} key={index} >
 
                                     <Accordion.Header>{data.module_name}</Accordion.Header>
@@ -131,14 +264,14 @@ export default function CourseStart() {
                         </Accordion>
                     </Col>
                     <Col xs={12} md={9} className=''>
-                        {!quiz && <Videos show={show} basic={course.demoLink} link={video} curIdx={curIndex} handl2={nextModule} breif={description} videoControl={videoNavigate} nexVideo={nextV} preVideo={preV} />
+                        {!quiz && <Videos show={show} basic={state.course.demoLink} link={video} curIdx={curIndex} handl2={nextModule} breif={description} videoControl={videoNavigate} nexVideo={nextV} preVideo={preV} />
                         }
-                        {quiz && <NewQuiz courseData={course} nextIndex={nex} maxMod={maxModuleIndex} handl={nextVideo} nextMod={nexMod} />
+                        {quiz && <NewQuiz courseData={state.course} nextIndex={nex} maxMod={state.maxModuleIndex} handl={nextVideo} nextMod={nexMod} />
                         }
                     </Col>
                     <Col xs={12} className='border-end border-dark d-block d-md-none'>
                         <Accordion defaultActiveKey={['0']} alwaysOpen flush>
-                            {course?.Module?.map((data, index) => (
+                            {state.course?.Module?.map((data, index) => (
                                 <Accordion.Item eventKey={'' + index} key={index} >
 
                                     <Accordion.Header>{data.module_name}</Accordion.Header>

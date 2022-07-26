@@ -52,8 +52,8 @@ export default function Learn() {
                         <p className='fs-4 ps-3'>Popular Courses For You</p>
                     </section>
                     <Row xs={1} md={3} className="g-4 bigMargin">
-                        {item.slice(5, 10).map((id) => (
-                          <CourseCard id={id}/>
+                        {item.slice(0, 5).map((id) => (
+                            <CourseCard id={id}/>
                         ))}
                         <RestCourses show={disp2} admin={admin} courses={item.slice(5)} />
                     </Row>
