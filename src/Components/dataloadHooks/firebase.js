@@ -1,5 +1,4 @@
-import axios from "axios";
-import { getAuth, createUserWithEmailAndPassword, GoogleAuthProvider, getIdToken, signInWithPopup, signInWithEmailAndPassword, onAuthStateChanged, updateProfile, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, getIdToken, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { useEffect, useState } from "react";
 import initFirebase from "../../Firebase/firebase.init";
 
@@ -19,11 +18,14 @@ const useFirebase = () => {
 
     const provider = new GoogleAuthProvider();
     // create user
-    const createUser = (name, email, password, history) => {
+    const createUser = async(name, email, password, history) => {
         setisLoading(true)
-        createUserWithEmailAndPassword(auth, email, password)
+        console.log(name, email, password, history)
+
+      await  createUserWithEmailAndPassword (auth, email, password)
             .then((userCredential) => {
                 // Signed in
+                console.log('first')
                 seterror('');
                 const newUser = { email, displayName: name };
                 setuser(newUser);
@@ -31,7 +33,7 @@ const useFirebase = () => {
                 setName(name)
                 history('/learn');
                 // ...
-                activeStatus(email)
+                // activeStatus(email)
             })
             .catch((error) => {
                 seterror(error.message);
@@ -69,9 +71,9 @@ const useFirebase = () => {
     }
 
     // email pass sign in
-    const emailPass = (email, password, location, history) => {
+    const emailPass = async(email, password, location, history) => {
         setisLoading(true)
-        signInWithEmailAndPassword(auth, email, password)
+        await signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 // Signed in
                 seterror('')

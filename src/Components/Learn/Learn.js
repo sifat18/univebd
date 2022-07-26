@@ -1,14 +1,14 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Button, Card, Col, Container, Row } from 'react-bootstrap'
-import useData from '../dataloadHooks/dataload'
-import ar from '../images/icons8-arrow-.png'
-import st from '../images/steps.png'
-import dr from '../images/icons8-down-arrow-40.png'
 import { NavLink } from 'react-router-dom'
-import Header from '../Header/Header'
-import useAuth from '../Context/useAuth'
-import Footer from '../Footer/Footer'
 import RestCourses from '../Common/RestCourses'
+import useAuth from '../Context/useAuth'
+import useData from '../dataloadHooks/dataload'
+import Footer from '../Footer/Footer'
+import Header from '../Header/Header'
+import ar from '../images/icons8-arrow-.png'
+import dr from '../images/icons8-down-arrow-40.png'
+import st from '../images/steps.png'
 export default function Learn() {
     const { user, admin } = useAuth()
 
@@ -50,7 +50,7 @@ export default function Learn() {
                                         </Col>
                                         <Col xs={admin ? 8 : 6} className='d-flex justify-content-around'>
                                             <NavLink to={`/learn/${id.coursename}`}> <Button className='p-2' variant="outline-dark">Preview <img src={ar} alt="" /></Button></NavLink>
-                                            {admin && <NavLink to={`/dashboard/edit/${id._id}`}> <Button className='p-2' variant="outline-success">Edit Course <img src={'ar'} alt="" /></Button></NavLink>}
+                                            {admin && <NavLink to={`/dashboard/edit/${id.coursename}`}> <Button className='p-2' variant="outline-success">Edit Course <img src={'ar'} alt="" /></Button></NavLink>}
 
 
                                         </Col>

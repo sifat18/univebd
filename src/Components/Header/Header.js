@@ -1,21 +1,18 @@
-import { Button, Container, FloatingLabel, Form, Modal, Nav, Navbar, Offcanvas, Spinner } from 'react-bootstrap'
-import { NavLink, useLocation } from 'react-router-dom';
-import gogo from '../images/logos/icons8-google.svg'
-import logo from '../images/logos/logo.png'
-import arrow from '../images/icons8-arrow-24.png'
 import { useState } from 'react';
-import { useNavigate } from "react-router-dom";
-import useAuth from '../Context/useAuth';
-import './header.css'
-import { MdNavigateNext } from "react-icons/md";
-import { MdBookmarkAdd } from "react-icons/md";
+import { Button, Container, FloatingLabel, Form, Modal, Nav, Navbar, Offcanvas, Spinner } from 'react-bootstrap';
 import { AiOutlineUserAdd } from "react-icons/ai";
-import { RiAdminLine } from "react-icons/ri";
-import { GiBullseye } from "react-icons/gi";
-import { FiBook } from "react-icons/fi";
 import { BiSearchAlt2 } from "react-icons/bi";
+import { FiBook } from "react-icons/fi";
+import { GiBullseye } from "react-icons/gi";
+import { MdBookmarkAdd, MdNavigateNext, MdOutlineDashboardCustomize } from "react-icons/md";
+import { RiAdminLine } from "react-icons/ri";
 import { TiPuzzle } from "react-icons/ti";
-import { MdOutlineDashboardCustomize } from "react-icons/md";
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
+import useAuth from '../Context/useAuth';
+import arrow from '../images/icons8-arrow-24.png';
+import gogo from '../images/logos/icons8-google.svg';
+import logo from '../images/logos/logo.png';
+import './header.css';
 
 export default function Header() {
     const [show, setShow] = useState(false);
@@ -212,7 +209,7 @@ export default function Header() {
                             </FloatingLabel>
                             {error ? <p className='text-danger text-center'>{error}</p> : ''}
 
-                            <p className='btn btn-primary d-block mx-auto my-3 py-3 px-5 '>Login </p>
+                            <button className='btn btn-primary d-block mx-auto my-3 py-3 px-5 '>Login </button>
                         </form>
                         {/* google sign in */}
                         <p className='fs-5 my-3'>Stay signed in</p>
