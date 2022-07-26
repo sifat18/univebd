@@ -72,7 +72,7 @@ function App() {
           {/* route definitions and resulting page components */}
           <Routes>
             <Route path="/" element={<Home />} />
-
+{/* educ-5542f.firebaseapp.com */}
             <Route path="/why-unive" element={<Univewhy />} />
             <Route path="/how-it-works" element={<HowItworks />} />
             <Route path="/contact" element={<Contact />} />
