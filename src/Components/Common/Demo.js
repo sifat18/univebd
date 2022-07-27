@@ -26,7 +26,7 @@ export default function Demo() {
     const handleSubmit = e => {
         e.preventDefault()
         console.log(data);
-        axios.post(`http://unive.site/api/demo`, data).then(res => res.data ? handleShowT() : '')
+        axios.post(`https://unive.site/api/demo`, data).then(res => res.data ? handleShowT() : '')
 
     }
     return (

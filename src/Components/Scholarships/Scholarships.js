@@ -37,7 +37,7 @@ export default function Scholarships() {
     //   console.log(value);
     // }
     // 
-    fetch('http://unive.site/api/scholarship', {
+    fetch('https://unive.site/api/scholarship', {
       method: 'POST',
       body: formData
     })

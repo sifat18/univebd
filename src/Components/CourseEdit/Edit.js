@@ -16,7 +16,7 @@ export default function Edit() {
     // fierce-woodland-01411.herokuapp.com
     const handleShow = () => setShow(true);
     useEffect(() => {
-        fetch(`http://unive.site/api/course/${id}`).then(res => res.json()).then(data => {
+        fetch(`https://unive.site/api/course/${id}`).then(res => res.json()).then(data => {
             setCourse(data)
             setModule(data.Module)
         })
@@ -96,7 +96,7 @@ export default function Edit() {
         setCourse(Finalcourse)  //https://fierce-woodland-01411.herokuapp.com/
 
         console.log(Finalcourse)
-        axios.put(`http://localhost:7000/courses/edit/${id}`, Finalcourse).then(res => res.data ? handleShow() : '')
+        axios.put(`https://unive.site/courses/edit/${id}`, Finalcourse).then(res => res.data ? handleShow() : '')
 
     }
     return (

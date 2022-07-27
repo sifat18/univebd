@@ -8,7 +8,7 @@ export default function MyCourses() {
     const [course, setcourse] = useState([])
     // https://fierce-woodland-01411.herokuapp.com
     useEffect(() => {
-        fetch(`http://unive.site/api/order/${user.email}`).then(res => res.json()).then(data => setcourse(data)
+        fetch(`https://unive.site/api/order/${user.email}`).then(res => res.json()).then(data => setcourse(data)
         )
     }, [user.email])
     console.log(course)

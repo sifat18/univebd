@@ -185,7 +185,7 @@ const Dashboard = () => {
 
   const [user, setUser] = useState([])
   useEffect(() => {
-    fetch(`http://unive.site/api/users`).then(res => res.json()).then(data => setUser(data))
+    fetch(`https://unive.site/api/users`).then(res => res.json()).then(data => setUser(data))
   }, [])
 
   return (

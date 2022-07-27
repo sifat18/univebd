@@ -110,7 +110,7 @@ export default function CourseStart() {
     // const curIndex = 0
     // https://fierce-woodland-01411.herokuapp.com/course/${courseID}
     useEffect(() => {
-        fetch(`http://unive.site/api/mycourse?_id=${courseID}&email=${user.email}`).then(res => res.json()).then(data => {
+        fetch(`https://unive.site/api/mycourse?_id=${courseID}&email=${user.email}`).then(res => res.json()).then(data => {
             setcourses(data)
             // dispatch({
             //     type: 'setData',

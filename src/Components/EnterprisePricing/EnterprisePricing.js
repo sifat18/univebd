@@ -32,7 +32,7 @@ export default function EnterprisePricing() {
     const handleSubmit = e => {
         e.preventDefault()
         console.log(data);
-        axios.post(`http://unive.site/api/enterprice`, data).then(res => res.data ? handleShowT() : '')
+        axios.post(`https://unive.site/api/enterprice`, data).then(res => res.data ? handleShowT() : '')
 
     }
     return (

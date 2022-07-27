@@ -19,7 +19,7 @@ export default function CourseCatalog() {
   }
   // https://fierce-woodland-01411.herokuapp.com
   useEffect(() => {
-    fetch(`http://unive.site/api/courses/${tag}`).then(res => res.json()).then(data => setCourse(data))
+    fetch(`https://unive.site/api/courses/${tag}`).then(res => res.json()).then(data => setCourse(data))
   }, [tag])
 
 
@@ -32,7 +32,7 @@ export default function CourseCatalog() {
         <hr className=' w-50 fw-bold  mx-auto' />
         <Row xs={1} md={3} className="g-4 bigMargin">
           {course.slice(0, 5).map((id) => (
-           <CourseCard id={id}/>
+            <CourseCard id={id} />
           ))}
           <RestCourses show={disp} courses={course.slice(5)} />
         </Row>

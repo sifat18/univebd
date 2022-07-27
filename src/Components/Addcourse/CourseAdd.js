@@ -36,7 +36,7 @@ export default function CourseAdd() {
         setCourse(Finalcourse)
         // https://fierce-woodland-01411.herokuapp.com
         console.log(Finalcourse)
-        axios.post(`http://localhost:7000/courses`, Finalcourse).then(res => res.data ? handleShow() : '')
+        axios.post(`https://unive.site/api/courses`, Finalcourse).then(res => res.data ? handleShow() : '')
 
     }
     const [course, setCourse] = useState({});

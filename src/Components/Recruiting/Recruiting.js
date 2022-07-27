@@ -50,13 +50,13 @@ export default function Recruiting() {
     const handleSubmit = e => {
         e.preventDefault()
         console.log(data);
-        axios.post(`https://fierce-woodland-01411.herokuapp.com/recruit`, data).then(res => res.data ? handleShowT() : '')
+        axios.post(`https://unive.site/api/recruit`, data).then(res => res.data ? handleShowT() : '')
 
     }
     const handleSubmitR = e => {
         e.preventDefault()
         console.log(data2);
-        axios.post(`https://fierce-woodland-01411.herokuapp.com/orgFrom`, data2).then(res => res.data ? handleShowT() : '')
+        axios.post(`https://unive.site/api/orgFrom`, data2).then(res => res.data ? handleShowT() : '')
 
     }
     return (

@@ -28,7 +28,7 @@ const Result = ({ totalQuestions,
     if (modComplete < total_modules && !mod_complete && score > 60) {
       // sending update info to backend
       const update = { index: index, email: user.email, id: id, mod: modComplete + 1, progress: 100 * (modComplete + 1) / total_modules }
-      axios.put(`http://unive.site/api/orderUpdate`, update).then(res => {
+      axios.put(`https://unive.site/api/orderUpdate`, update).then(res => {
         if (res.data.modifiedCount) {
           // move to next module 
           handl(nextIndex, nextMod)

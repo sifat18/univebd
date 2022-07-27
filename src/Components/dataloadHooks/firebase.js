@@ -18,11 +18,11 @@ const useFirebase = () => {
 
     const provider = new GoogleAuthProvider();
     // create user
-    const createUser = async(name, email, password, history) => {
+    const createUser = async (name, email, password, history) => {
         setisLoading(true)
         console.log(name, email, password, history)
 
-      await  createUserWithEmailAndPassword (auth, email, password)
+        await createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 // Signed in
                 console.log('first')
@@ -71,7 +71,7 @@ const useFirebase = () => {
     }
 
     // email pass sign in
-    const emailPass = async(email, password, location, history) => {
+    const emailPass = async (email, password, location, history) => {
         setisLoading(true)
         await signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
@@ -114,7 +114,7 @@ const useFirebase = () => {
         setisLoading(true)
         console.log('start');
         // fierce-woodland-01411.herokuapp.com
-        fetch(`http://unive.site/api/user/${user.email}`)
+        fetch(`https://unive.site/api/user/${user.email}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -130,7 +130,7 @@ const useFirebase = () => {
     const logOut = () => {
         setisLoading(true)
         console.log('logging')
-        activeStatus(user.email,false)
+        activeStatus(user.email, false)
         signOut(auth).then(() => {
             setuser({})
             setisLoading(false)
@@ -142,7 +142,7 @@ const useFirebase = () => {
     const saveUser = (email, displayName, method) => {
         setisLoading(true)
         const userData = { email, displayName };
-        fetch('http://unive.site/api/user', {
+        fetch('https://unive.site/api/user', {
             method: method,
             headers: {
                 'content-type': 'application/json'
@@ -154,12 +154,12 @@ const useFirebase = () => {
 
     }
     // active
-    const activeStatus = (email, status=true) => {
+    const activeStatus = (email, status = true) => {
         setisLoading(true)
         console.log('in')
         const userData = { email, status };
 
-        fetch('http://unive.site/api/active', {
+        fetch('https://unive.site/api/active', {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'
