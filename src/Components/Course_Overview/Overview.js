@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Accordion, Button, Card, Col, Container, Modal, Row } from 'react-bootstrap'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Popover from 'react-bootstrap/Popover';
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink, useNavigate, useParams } from "react-router-dom";
 import Read from '../Common/Read';
 import { MdOutlineQuiz } from "react-icons/md";
 import { MdOutlineSlowMotionVideo } from "react-icons/md";
@@ -18,10 +18,18 @@ import './over.css'
 import Footer from '../Footer/Footer';
 import useAuth from '../Context/useAuth';
 import axios from 'axios';
+
 export default function Overview() {
+    const navigate = useNavigate()
     const [show, setShow] = useState(false);
-    const handleClose = () => setShow(false);
+    const handleClose = () => {
+        setShow(false);
+        navigate('/dashboard/mycourses')
+    }
     const handleShow = () => setShow(true);
+    const [showF, setShowF] = useState(false);
+    const handleCloseF = () => setShowF(false);
+    const handleShowF = () => setShowF(true);
     const [courses, setcourses] = useState({})
     const { courseID } = useParams()
     // single data load based on id
@@ -40,7 +48,7 @@ export default function Overview() {
         const data = { email: user.email }
         data.course = courses;
         // data.orderStatus = 'Pending';
-        axios.post('http://unive.site/api/order', data).then(res => res.data.insertedId ? handleShow() : '')
+        axios.post('http://localhost:7000/api/order', data).then(res => res.data.insertedId ? handleShow() : handleShowF())
 
     }
     return (
@@ -194,6 +202,18 @@ export default function Overview() {
                 <Modal.Body>Course has been added.To start course go to dashboard</Modal.Body>
                 <Modal.Footer>
                     <Button variant="success" onClick={handleClose}>
+                        Thank You!
+                    </Button>
+                </Modal.Footer>
+            </Modal>
+            {/* already has course */}
+            <Modal show={showF} onHide={handleCloseF}>
+                <Modal.Header closeButton>
+                    <Modal.Title>OOPPS</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>You have already added this course</Modal.Body>
+                <Modal.Footer>
+                    <Button variant="success" onClick={handleCloseF}>
                         Thank You!
                     </Button>
                 </Modal.Footer>

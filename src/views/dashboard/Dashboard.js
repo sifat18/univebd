@@ -19,8 +19,8 @@ import {
   // CTableHeaderCell,
   // CTableRow,
 } from '@coreui/react'
-import { CChartLine } from '@coreui/react-chartjs'
-import { getStyle, } from '@coreui/utils'
+// import { CChartLine } from '@coreui/react-chartjs'
+// import { getStyle, } from '@coreui/utils'
 import CIcon from '@coreui/icons-react'
 import {
   // cibCcAmex,
@@ -52,15 +52,15 @@ import {
 // import avatar5 from '../../assets/images/avatars/5.jpg'
 // import avatar6 from '../../assets/images/avatars/6.jpg'
 
-import WidgetsBrand from '../widgets/WidgetsBrand'
-import WidgetsDropdown from '../widgets/WidgetsDropdown'
+// import WidgetsBrand from '../widgets/WidgetsBrand'
+// import WidgetsDropdown from '../widgets/WidgetsDropdown'
 import { useState, useEffect } from 'react'
 import { Table } from 'react-bootstrap'
 import useAuth from '../../Components/Context/useAuth'
 
 const Dashboard = () => {
   const { admin } = useAuth()
-  const random = (min, max) => Math.floor(Math.random() * (max - min + 1) + min)
+  // const random = (min, max) => Math.floor(Math.random() * (max - min + 1) + min)
 
   // const progressExample = [
   //   { title: 'Visits', value: '29.703 Users', percent: 40, color: 'success' },
@@ -80,10 +80,10 @@ const Dashboard = () => {
   //   { title: 'Sunday', value1: 9, value2: 69 },
   // ]
 
-  const progressGroupExample2 = [
-    { title: 'Male', icon: cilUser, value: 53 },
-    { title: 'Female', icon: cilUserFemale, value: 43 },
-  ]
+  // const progressGroupExample2 = [
+  //   { title: 'Male', icon: cilUser, value: 53 },
+  //   { title: 'Female', icon: cilUserFemale, value: 43 },
+  // ]
 
   // const progressGroupExample3 = [
   //   { title: 'Organic Search', icon: cibGoogle, percent: 56, value: '191,235' },
@@ -318,7 +318,7 @@ const Dashboard = () => {
         </CCardFooter>
       </CCard> */}
 
-      <WidgetsBrand withCharts />
+      {/* <WidgetsBrand withCharts /> */}
 
       <CRow>
         <CCol xs>
@@ -327,7 +327,7 @@ const Dashboard = () => {
             <CCardBody>
               <CRow>
                 <CCol xs={12} md={6} xl={6}>
-                  <CRow>
+                  {/* <CRow>
                     <CCol sm={6}>
                       <div className="border-start border-start-4 border-start-info py-1 px-3">
                         <div className="text-medium-emphasis small">New Clients</div>
@@ -340,9 +340,9 @@ const Dashboard = () => {
                         <div className="fs-5 fw-semibold">22,643</div>
                       </div>
                     </CCol>
-                  </CRow>
+                  </CRow> */}
 
-                  <hr className="mt-0" />
+                  {/* <hr className="mt-0" /> */}
                   {/* {progressGroupExample1.map((item, index) => (
                     <div className="progress-group mb-4" key={index}>
                       <div className="progress-group-prepend">
@@ -354,7 +354,7 @@ const Dashboard = () => {
                       </div>
                     </div>
                   ))} */}
-                  {progressGroupExample2.map((item, index) => (
+                  {/* {progressGroupExample2.map((item, index) => (
                     <div className="progress-group mb-4" key={index}>
                       <div className="progress-group-header">
                         <CIcon className="me-2" icon={item.icon} size="lg" />
@@ -365,7 +365,7 @@ const Dashboard = () => {
                         <CProgress thin color="warning" value={item.value} />
                       </div>
                     </div>
-                  ))}
+                  ))} */}
                 </CCol>
 
                 {/* <CCol xs={12} md={6} xl={6}>

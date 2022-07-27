@@ -10,14 +10,14 @@ const Result = ({ totalQuestions,
   correctAnswers,
   timeTaken,
   questionsAndAnswers,
-  nextMod, nextIndex, maxMod, handl, total_modules, total_quizes, modComplete, id,mod_complete,index }) => {
+  nextMod, nextIndex, maxMod, handl, total_modules, total_quizes, modComplete, id, mod_complete, index }) => {
   // getting user 
-    const { user } = useAuth()
-    // tab change
+  const { user } = useAuth()
+  // tab change
   const [activeTab, setActiveTab] = useState('1');
-//  calculate score
+  //  calculate score
   const score = calculateScore(totalQuestions, correctAnswers);
-// modal
+  // modal
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -25,12 +25,12 @@ const Result = ({ totalQuestions,
   const progressUpdate = (e) => {
     e.preventDefault();
     // console.log(score>66,score)
-    if (modComplete < total_modules && !mod_complete && score>60) {
+    if (modComplete < total_modules && !mod_complete && score > 60) {
       // sending update info to backend
-      const update = { index:index, email: user.email, id: id, mod: modComplete + 1, progress: 100 * (modComplete + 1) / total_modules }
-      axios.put(`https://fierce-woodland-01411.herokuapp.com/orderUpdate`, update).then(res => {
+      const update = { index: index, email: user.email, id: id, mod: modComplete + 1, progress: 100 * (modComplete + 1) / total_modules }
+      axios.put(`http://unive.site/api/orderUpdate`, update).then(res => {
         if (res.data.modifiedCount) {
-// move to next module 
+          // move to next module 
           handl(nextIndex, nextMod)
         }
         console.log(res.data)
@@ -38,9 +38,9 @@ const Result = ({ totalQuestions,
 
       })
       // 
-    }else{
+    } else {
       // if not pass or passed previously
-handleShow()
+      handleShow()
     }
   }
 
@@ -72,25 +72,25 @@ handleShow()
       }
 
 
-{/* modal */}
-<Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
-                {score<60 &&  <h2 className='mx-auto ps-5'>OOOPS!!! You Failed</h2>}
-                {score &&  <h2 className='mx-auto ps-5'>you already progressed</h2>}
+      {/* modal */}
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          {score < 60 && <h2 className='mx-auto ps-5'>OOOPS!!! You Failed</h2>}
+          {score && <h2 className='mx-auto ps-5'>you already progressed</h2>}
 
-                </Modal.Header>
-                <Modal.Body>
-{score<60 &&<p className="text-center"> Score Atleast 60% to progress the course</p>    }                
-{score &&<p className="text-center"> you already completed this </p>    }                
-                </Modal.Body>
-                <Modal.Footer>
+        </Modal.Header>
+        <Modal.Body>
+          {score < 60 && <p className="text-center"> Score Atleast 60% to progress the course</p>}
+          {score && <p className="text-center"> you already completed this </p>}
+        </Modal.Body>
+        <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-         
+
         </Modal.Footer>
 
-            </Modal>
+      </Modal>
     </Container>
   );
 };
