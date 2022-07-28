@@ -19,8 +19,14 @@ export default function Contact() {
             </Container>
             {/* pic2 */}
             <Container data-aos="fade-up-right" fluid className='my-5 py-5'>
-                <Container className=' text-center'>
-                    <img className='img-fluid ' src={conactImage} alt="" />
+                <Container className=' text-center my-3'>
+                   <p className='fs-2 fw-bold'>যোগাযোগের ঠিকানা</p>
+<p className='text-primary fs-3 fw-bold'>ইউনিভ</p>                   
+<p className='fs-3 fw-bold'>লেভেল ৪ ভিশন ২০২১ টাওয়ার ৪৯</p>                   
+<p className='fs-3 fw-bold'>কারওয়ান বাজার বাণিজ্যিক এলাকা ধাকা-১২১৫,বাংলাদেশ</p>                   
+<p className='fs-3'> <span className=' fw-bold'>ইমেইল:</span>  contact@unive.work</p>                   
+<p className='fs-3'> <span className=' fw-bold'> যোগাযোগঃ :</span> 8801881997646, 8801886997646</p>                   
+<p className='fs-3'> <span className=' fw-bold'> Website:</span> www.unive.work</p>                   
                 </Container>
             </Container>
             <Footer />
