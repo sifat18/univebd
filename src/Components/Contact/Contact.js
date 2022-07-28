@@ -25,7 +25,7 @@ export default function Contact() {
 <p className='fs-3 fw-bold'>লেভেল ৪, ভিশন ২০২১ টাওয়ার </p>                   
 <p className='fs-3 fw-bold'>কারওয়ান বাজার বাণিজ্যিক এলাকা, ঢাকা-১২১৫, বাংলাদেশ</p>                   
 <p className='fs-3'> <span className=' fw-bold'>ইমেইল:</span>  contact@unive.work</p>                   
-<p className='fs-3'> <span className=' fw-bold'> যোগাযোগঃ :</span> 8801881997646, 8801886997646</p>                   
+<p className='fs-3'> <span className=' fw-bold'> যোগাযোগঃ </span> 8801881997646, 8801886997646</p>                   
 <p className='fs-3'> <span className=' fw-bold'> Website:</span> www.unive.work</p>                   
                 </Container>
             </Container>
