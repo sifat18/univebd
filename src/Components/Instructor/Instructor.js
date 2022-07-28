@@ -225,7 +225,7 @@ export default function Instructor() {
                 </Accordion>
             </Container>
             {/* instructor form */}
-            <Container fluid className='middle py-5 text-center'>
+            {/* <Container fluid className='middle py-5 text-center'>
                 <h2 className='text-center'>Unive ইনস্ট্রাক্টর হিসেবে যোগদান করুন</h2>
                 <Row className='my-5'>
                     <Col xs={12} md={6}>
@@ -286,7 +286,7 @@ export default function Instructor() {
                         </form>
                     </Col>
                 </Row>
-            </Container>
+            </Container> */}
             <Footer />
             {/* form modal*/}
             <Modal show={show} onHide={handleClose}>

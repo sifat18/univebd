@@ -36,18 +36,18 @@ const Footer = () => {
                                 <NavLink to='/assessments '><p className='ashText'>Unive Skill Assessments</p></NavLink>
                             </Col>
                             <Col xs={3} md={12} className='d-none d-md-block text-white'>
-                                <p className='text-white'>Pricing</p>
-                                <NavLink to='/unlimited '> <p className='ashText'>For Individuals</p></NavLink>
-                                <NavLink to='/enterprise-price '> <p className='ashText'>For Enterprise</p></NavLink>
+                                <p className='text-white'>Plans</p>
+                                <NavLink to='/individual '> <p className='ashText'>For Individuals</p></NavLink>
+                                <NavLink to='/enterprise-plans '> <p className='ashText'>For Enterprise</p></NavLink>
                                 <NavLink to='/maas '><p className='ashText'>For Manpower as a Service</p></NavLink>
                             </Col>
                         </Row>
 
                     </Col>
                     <Col xs={5} md={12} className='d-block d-md-none text-white'>
-                        <p className='text-white'>Pricing</p>
-                        <NavLink to='/unlimited '> <p className='ashText'>For Individuals</p></NavLink>
-                        <NavLink to='/enterprise-price '> <p className='ashText'>  For Enterprise</p></NavLink>
+                        <p className='text-white'>Plans</p>
+                        <NavLink to='/individual '> <p className='ashText'>For Individuals</p></NavLink>
+                        <NavLink to='/enterprise-plans '> <p className='ashText'>  For Enterprise</p></NavLink>
                         <p className='ashText'>For Manpower as a Service</p>
                     </Col>
 

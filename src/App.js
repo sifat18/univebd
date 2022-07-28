@@ -85,7 +85,7 @@ function App() {
             <Route path="/learning-plans" element={<LearningPlan />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/paths" element={<Paths />} />
-            <Route path="/unlimited" element={<Unlimited />} />
+            <Route path="/individual" element={<Unlimited />} />
             <Route path="/recruiting" element={<Recruiting />} />
             <Route path="/assessments" element={<Assessments />} />
             <Route path="/blogs" element={<Blogs />} />
@@ -93,7 +93,7 @@ function App() {
             <Route path="/become-a-contributor" element={<Contributor />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/enterprise-terms" element={<EnterPriseTerm />} />
-            <Route path="/enterprise-price" element={<EnterprisePricing />} />
+            <Route path="/enterprise-plans" element={<EnterprisePricing />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/FAQ" element={<FAQ />} />
             <Route path="/maas" element={<Maas />} />
