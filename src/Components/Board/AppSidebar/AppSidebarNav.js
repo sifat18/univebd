@@ -50,6 +50,12 @@ export const AppSidebarNav = () => {
     },
     {
       component: CNavItem,
+      name: 'Make New Employer',
+      to: '/dashboard/ademployer',
+      icon: <CIcon icon={cilPencil} customClassName="nav-icon text-dark" />,
+    },
+    {
+      component: CNavItem,
       name: 'Create New Course',
       to: '/dashboard/addcourse',
       icon: <CIcon icon={cilPencil} customClassName="nav-icon text-dark" />,

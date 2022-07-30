@@ -58,6 +58,7 @@ import MyCourses from './Components/Board/UserRoutes/MyCourses';
 import ProfileUpdate from './Components/Board/UserRoutes/Profile_Update';
 import Candidate from './Components/Board/Candidates/Candidate';
 import CandidateDetail from './Components/Board/CandidateDetail/CandidateDetail';
+import AddEmployer from './Components/Board/AddEmployer/AddEmployer';
 
 function App() {
   useEffect(() => {
@@ -113,6 +114,7 @@ function App() {
               <Route path="candidate/detail/:id" element={<AdminRoute><CandidateDetail /></AdminRoute>} />
 
               <Route path="adadmin" element={<AdminRoute><Admin /></AdminRoute>} />
+              <Route path="ademployer" element={<AdminRoute><AddEmployer /></AdminRoute>} />
               <Route path="adtutor" element={<AdminRoute><AddInstructor /></AdminRoute>} />
               <Route path="edit/:id" element={<AdminRoute><Edit /></AdminRoute>} />
               <Route path="addcourse" element={<AdminRoute><CourseAdd /></AdminRoute>} />
