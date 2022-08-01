@@ -55,7 +55,7 @@ import {
 // import WidgetsBrand from '../widgets/WidgetsBrand'
 // import WidgetsDropdown from '../widgets/WidgetsDropdown'
 import { useState, useEffect } from 'react'
-import { Table } from 'react-bootstrap'
+import { Container, Table } from 'react-bootstrap'
 import useAuth from '../../Components/Context/useAuth'
 
 const Dashboard = () => {
@@ -183,11 +183,15 @@ const Dashboard = () => {
   //   },
   // ]
 
-  const [user, setUser] = useState([])
+  const [users, setUser] = useState([])
+  const [totalUser, setTotalUser] = useState(0)
   useEffect(() => {
-    fetch(`https://unive.site/api/users`).then(res => res.json()).then(data => setUser(data))
+    fetch(`https://unive.site/api/users`).then(res => res.json()).then(data => {
+      setUser(data)
+      setTotalUser(data.length)
+    })
   }, [])
-
+  const activeUserTotal = users.filter(per => per.active !== false)
   return (
     <>
       {/* <WidgetsDropdown /> */}
@@ -461,6 +465,10 @@ const Dashboard = () => {
                   ))}
                 </CTableBody>
               </CTable> */}
+              {admin && <Container>
+                <p>Total user: {totalUser}</p>
+                <p>Total active user: {activeUserTotal.length}</p>
+              </Container>}
               {admin &&
                 <Table striped bordered hover resonsive>
                   <thead>
@@ -472,7 +480,7 @@ const Dashboard = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {user.map((m, idx) => (
+                    {users.map((m, idx) => (
                       <tr key={idx}>
                         <td>{idx + 1}</td>
                         <td>{m.displayName}</td>
