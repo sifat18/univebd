@@ -22,7 +22,7 @@ import useAuth from '../../Context/useAuth'
 import { RiMapPinUserLine } from 'react-icons/ri'
 
 export const AppSidebarNav = () => {
-  const { user, admin,employer } = useAuth()
+  const { user, admin, employer } = useAuth()
   const location = useLocation()
   const admin_nav = [
     {
@@ -32,7 +32,7 @@ export const AppSidebarNav = () => {
       icon: <RiMapPinUserLine customClassName="nav-icon text-dark" />,
 
     },
-    
+
     {
       component: CNavTitle,
       name: 'Navigate',
@@ -55,7 +55,7 @@ export const AppSidebarNav = () => {
       to: '/dashboard/ademployer',
       icon: <CIcon icon={cilPencil} customClassName="nav-icon text-dark" />,
     },
-   
+
     {
       component: CNavItem,
       name: 'Create New Course',
@@ -93,7 +93,7 @@ export const AppSidebarNav = () => {
       to: '/dashboard/employer_profile',
       icon: <CIcon icon={cilPencil} customClassName="nav-icon text-dark" />,
     },
-    
+
   ]
   const _nav = [
     {
@@ -401,7 +401,7 @@ export const AppSidebarNav = () => {
         admin_nav.map((item, index) => (item.items ? navGroup(item, index) : navItem(item, index)))}
       {employer &&
         employer_nav.map((item, index) => (item.items ? navGroup(item, index) : navItem(item, index)))}
-      {!admin && _nav &&
+      {!admin && !employer &&
         _nav.map((item, index) => (item.items ? navGroup(item, index) : navItem(item, index)))}
     </React.Fragment>
   )
