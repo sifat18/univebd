@@ -88,26 +88,26 @@ const Instructor = React.lazy(() => import("./Components/Instructor/Instructor")
 const EnterPriseTerm = React.lazy(() => import("./Components/EnterPriseTerm/EnterPriseTerm"));
 const Terms = React.lazy(() => import("./Components/Terms/Terms"));
 const EnterprisePricing = React.lazy(() => import("./Components/EnterprisePricing/EnterprisePricing"));
-const FAQ =React.lazy(() => import ('./Components/FAQ/FAQ'));
-const OurTeam =React.lazy(() => import ('./Components/OurTeam/OurTeam'));
-const Careers =React.lazy(() => import ('./Components/Careers/Careers'));
-const CourseCatalog =React.lazy(() => import ('./Components/CourseCatalog/CourseCatalog'));
-const Scholarships =React.lazy(() => import ('./Components/Scholarships/Scholarships'));
-const Press =React.lazy(() => import ('./Components/Press/Press'));
-const Overview =React.lazy(() => import ('./Components/Course_Overview/Overview'));
-const CourseStart =React.lazy(() => import ('./Components/StartCourse/CourseStart'));
-const Board =React.lazy(() => import ('./Components/Board/Board'));
-const AddInstructor =React.lazy(() => import ('./Components/Board/AddInstructor/AddInstructor'));
-const Maas =React.lazy(() => import ('./Components/Maas/Maas'));
-const CourseAdd =React.lazy(() => import ('./Components/Addcourse/CourseAdd'));
-const Dashboard =React.lazy(() => import ('./views/dashboard/Dashboard'));
-const MyCourses =React.lazy(() => import ('./Components/Board/UserRoutes/MyCourses'));
-const Edit =React.lazy(() => import ('./Components/CourseEdit/Edit'));
-const ProfileUpdate =React.lazy(() => import ('./Components/Board/UserRoutes/Profile_Update'));
-const Candidate =React.lazy(() => import ('./Components/Board/Candidates/Candidate'));
-const CandidateDetail =React.lazy(() => import ('./Components/Board/CandidateDetail/CandidateDetail'));
-const AddEmployer =React.lazy(() => import ('./Components/Board/AddEmployer/AddEmployer'));
-const EmployerProfile =React.lazy(() => import ('./Components/Board/EmployerPAges/EmployerProfile'));
+const FAQ = React.lazy(() => import('./Components/FAQ/FAQ'));
+const OurTeam = React.lazy(() => import('./Components/OurTeam/OurTeam'));
+const Careers = React.lazy(() => import('./Components/Careers/Careers'));
+const CourseCatalog = React.lazy(() => import('./Components/CourseCatalog/CourseCatalog'));
+const Scholarships = React.lazy(() => import('./Components/Scholarships/Scholarships'));
+const Press = React.lazy(() => import('./Components/Press/Press'));
+const Overview = React.lazy(() => import('./Components/Course_Overview/Overview'));
+const CourseStart = React.lazy(() => import('./Components/StartCourse/CourseStart'));
+const Board = React.lazy(() => import('./Components/Board/Board'));
+const AddInstructor = React.lazy(() => import('./Components/Board/AddInstructor/AddInstructor'));
+const Maas = React.lazy(() => import('./Components/Maas/Maas'));
+const CourseAdd = React.lazy(() => import('./Components/Addcourse/CourseAdd'));
+const Dashboard = React.lazy(() => import('./views/dashboard/Dashboard'));
+const MyCourses = React.lazy(() => import('./Components/Board/UserRoutes/MyCourses'));
+const Edit = React.lazy(() => import('./Components/CourseEdit/Edit'));
+const ProfileUpdate = React.lazy(() => import('./Components/Board/UserRoutes/Profile_Update'));
+const Candidate = React.lazy(() => import('./Components/Board/Candidates/Candidate'));
+const CandidateDetail = React.lazy(() => import('./Components/Board/CandidateDetail/CandidateDetail'));
+const AddEmployer = React.lazy(() => import('./Components/Board/AddEmployer/AddEmployer'));
+const EmployerProfile = React.lazy(() => import('./Components/Board/EmployerPAges/EmployerProfile'));
 
 const loading = (
   <div className="pt-3 text-center">
@@ -120,68 +120,68 @@ function App() {
   }, [])
   return (
     <Suspense fallback={loading}>
-    {/* //Authprovider wraps the contents BrowserRouter and distributes the user info from that is stored in it   */}
-    <Authprovider>
-      <BrowserRouter>
-        {/* ScrollToTop moves to the top of page during switching pages */}
-        <ScrollToTop>
-          {/* route definitions and resulting page components */}
-          <Routes>
-            <Route path="/" name='Home' element={<Home />} />
-{/* educ-5542f.firebaseapp.com */}
-            <Route path="/why-unive" element={<Univewhy />} />
-            <Route path="/how-it-works" element={<HowItworks />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/business" element={<Business />} />
-            <Route path="/enterprise" element={<Enterprise />} />
-            <Route path="/learn" element={<Learn />} />
-            <Route path="/individual-learner" element={<Individual />} />
-            <Route path="/upskill" element={<Upskill />} />
-            <Route path="/onboarding" element={<Onboarding />} />
-            <Route path="/learning-plans" element={<LearningPlan />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/paths" element={<Paths />} />
-            <Route path="/individual" element={<Unlimited />} />
-            <Route path="/recruiting" element={<Recruiting />} />
-            <Route path="/assessments" element={<Assessments />} />
-            <Route path="/blogs" element={<Blogs />} />
-            <Route path="/become-an-unive-instructor" element={<Instructor />} />
-            <Route path="/become-a-contributor" element={<Contributor />} />
-            <Route path="/privacy" element={<Privacy />} />
-            <Route path="/enterprise-terms" element={<EnterPriseTerm />} />
-            <Route path="/enterprise-plans" element={<EnterprisePricing />} />
-            <Route path="/terms" element={<Terms />} />
-            <Route path="/FAQ" element={<FAQ />} />
-            <Route path="/maas" element={<Maas />} />
-            <Route path="/our-team" element={<OurTeam />} />
-            <Route path="/careers" element={<Careers />} />
-            <Route path="/course-catalogue/:tag" element={<CourseCatalog />} />
-            <Route path="/scholarships" element={<Scholarships />} />
-            <Route path="/press" element={<Press />} />
-            <Route path="/learn/:courseID" element={<Overview />} />
-            <Route path="/learn/start/:courseID" element={<PrivateRoute><CourseStart /></PrivateRoute>} />
-            <Route path="/dashboard" element={<PrivateRoute><Board /></PrivateRoute>} >
-              <Route path="" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
-              <Route path="employer_profile" element={<EmployRoute><EmployerProfile/></EmployRoute>} />
-              <Route path="update_profile" element={<PrivateRoute><ProfileUpdate /></PrivateRoute>} />
-              <Route path="mycourses" element={<PrivateRoute><MyCourses /></PrivateRoute>} />
-              <Route path="candidates" element={<AdminRoute><Candidate /></AdminRoute>} />
-              <Route path="candidate/detail/:id" element={<AdminRoute><CandidateDetail /></AdminRoute>} />
+      {/* //Authprovider wraps the contents BrowserRouter and distributes the user info from that is stored in it   */}
+      <Authprovider>
+        <BrowserRouter>
+          {/* ScrollToTop moves to the top of page during switching pages */}
+          <ScrollToTop>
+            {/* route definitions and resulting page components */}
+            <Routes>
+              <Route path="/" element={<Home />} />
+              {/* educ-5542f.firebaseapp.com */}
+              <Route path="/why-unive" element={<Univewhy />} />
+              <Route path="/how-it-works" element={<HowItworks />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/business" element={<Business />} />
+              <Route path="/enterprise" element={<Enterprise />} />
+              <Route path="/learn" element={<Learn />} />
+              <Route path="/individual-learner" element={<Individual />} />
+              <Route path="/upskill" element={<Upskill />} />
+              <Route path="/onboarding" element={<Onboarding />} />
+              <Route path="/learning-plans" element={<LearningPlan />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/paths" element={<Paths />} />
+              <Route path="/individual" element={<Unlimited />} />
+              <Route path="/recruiting" element={<Recruiting />} />
+              <Route path="/assessments" element={<Assessments />} />
+              <Route path="/blogs" element={<Blogs />} />
+              <Route path="/become-an-unive-instructor" element={<Instructor />} />
+              <Route path="/become-a-contributor" element={<Contributor />} />
+              <Route path="/privacy" element={<Privacy />} />
+              <Route path="/enterprise-terms" element={<EnterPriseTerm />} />
+              <Route path="/enterprise-plans" element={<EnterprisePricing />} />
+              <Route path="/terms" element={<Terms />} />
+              <Route path="/FAQ" element={<FAQ />} />
+              <Route path="/maas" element={<Maas />} />
+              <Route path="/our-team" element={<OurTeam />} />
+              <Route path="/careers" element={<Careers />} />
+              <Route path="/course-catalogue/:tag" element={<CourseCatalog />} />
+              <Route path="/scholarships" element={<Scholarships />} />
+              <Route path="/press" element={<Press />} />
+              <Route path="/learn/:courseID" element={<Overview />} />
+              <Route path="/learn/start/:courseID" element={<PrivateRoute><CourseStart /></PrivateRoute>} />
+              <Route path="/dashboard" element={<PrivateRoute><Board /></PrivateRoute>} >
+                <Route path="" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
+                <Route path="employer_profile" element={<EmployRoute><EmployerProfile /></EmployRoute>} />
+                <Route path="update_profile" element={<PrivateRoute><ProfileUpdate /></PrivateRoute>} />
+                <Route path="mycourses" element={<PrivateRoute><MyCourses /></PrivateRoute>} />
+                <Route path="candidates" element={<AdminRoute><Candidate /></AdminRoute>} />
+                <Route path="candidate/detail/:id" element={<AdminRoute><CandidateDetail /></AdminRoute>} />
 
-              <Route path="adadmin" element={<AdminRoute><Admin /></AdminRoute>} />
-              <Route path="ademployer" element={<AdminRoute><AddEmployer /></AdminRoute>} />
-              <Route path="adtutor" element={<AdminRoute><AddInstructor /></AdminRoute>} />
-              <Route path="edit/:id" element={<AdminRoute><Edit /></AdminRoute>} />
-              <Route path="addcourse" element={<AdminRoute><CourseAdd /></AdminRoute>} />
-            </Route>
-            <Route path="*" element={<Nopage />} />
-          </Routes>
+                <Route path="adadmin" element={<AdminRoute><Admin /></AdminRoute>} />
+                <Route path="ademployer" element={<AdminRoute><AddEmployer /></AdminRoute>} />
+                <Route path="adtutor" element={<AdminRoute><AddInstructor /></AdminRoute>} />
+                <Route path="edit/:id" element={<AdminRoute><Edit /></AdminRoute>} />
+                <Route path="addcourse" element={<AdminRoute><CourseAdd /></AdminRoute>} />
+              </Route>
+              <Route path="*" element={<Nopage />} />
+            </Routes>
 
-        </ScrollToTop>
-      </BrowserRouter>
+          </ScrollToTop>
+        </BrowserRouter>
 
 
-    </Authprovider >
+      </Authprovider >
     </Suspense>
   );
 }
