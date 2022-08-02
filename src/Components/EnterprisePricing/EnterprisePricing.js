@@ -1,12 +1,14 @@
-import React, { useState } from 'react'
+import React, { Suspense, useState } from 'react'
 import { Accordion, Button, Card, Col, Container, FloatingLabel, Form, Modal, Row } from 'react-bootstrap'
-import Companies from '../Common/Companies'
-import Demo from '../Common/Demo'
+// import Companies from '../Common/Companies'
+// import Demo from '../Common/Demo'
 import Footer from '../Footer/Footer'
 import Header from '../Header/Header'
 // import check from '../images/check.png'
 import { BsCheck2Circle } from "react-icons/bs";
 import axios from 'axios'
+const Demo = React.lazy(() => import("../Common/Demo"));
+const Companies = React.lazy(() => import("../Common/Companies"));
 
 export default function EnterprisePricing() {
     const [show, setShow] = useState(false);
@@ -146,9 +148,11 @@ export default function EnterprisePricing() {
                     </Accordion>
                 </Container>
             </Container>
+            <Suspense>
             <Container fluid data-aos="fade-down" className='middle my-5 py-5'>
                 <Demo />
             </Container>
+            </Suspense>
             <Footer />
 
             {/* form */}

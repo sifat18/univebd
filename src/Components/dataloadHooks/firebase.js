@@ -10,6 +10,7 @@ const useFirebase = () => {
     const [token, setoken] = useState('')
     const [admin, setAdmin] = useState(false);
     const [tutor, setTutor] = useState(false);
+    const [employer, setEmployer] = useState(false);
     const [active, setActive] = useState(false);
 
     const [isLoading, setisLoading] = useState(true)
@@ -160,6 +161,7 @@ if(email2){
                 console.log(data);
                 setAdmin(data.admin)
                 setTutor(data.tutor)
+                setEmployer(data.employer)
                 setisLoading(false)
 
             })

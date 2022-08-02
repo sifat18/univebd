@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import { Button, Col, Container, Row } from 'react-bootstrap'
 import top from '../images/enterprise/top.png'
 import row1 from '../images/enterprise/row1.png'
@@ -12,11 +12,16 @@ import row42 from '../images/enterprise/row-4-2.png'
 // import check from '../images/check.png'
 
 import Companies from '../Common/Companies'
-import ReviewCard from '../Common/ReviewCard'
-import Demo from '../Common/Demo'
-import Resources from '../Common/Resources'
+// import ReviewCard from '../Common/ReviewCard'
+// import Demo from '../Common/Demo'
+// import Resources from '../Common/Resources'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
+const Demo = React.lazy(() => import("../Common/Demo"));
+const ReviewCard = React.lazy(() => import("../Common/ReviewCard"));
+const Resources = React.lazy(() => import("../Common/Resources"));
+
+
 export default function Enterprise() {
     return (
         <>
@@ -127,9 +132,12 @@ export default function Enterprise() {
                     </Col>
                 </Row>
             </Container>
+            <Suspense> 
+
             {/* review */}
             <Container fluid className='text-center py-5 '>
                 <h2 className='my-5'>ইনটুইটিভ লার্নিং প্ল্যাটফর্ম আপনার প্রতিষ্ঠানের  জন্য যা আপনার এমপ্লয়ীরা ভালবাসবেই</h2>
+                
                 <ReviewCard />
 
             </Container >
@@ -138,8 +146,11 @@ export default function Enterprise() {
                 <Resources />
 
             </Container >
+            </Suspense>
             {/* demo */}
+            <Suspense>   
             <Demo />
+              </Suspense>
             <Footer />
         </>
     )

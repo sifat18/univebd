@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import 'core-js'
 import './style.scss'
 import { Outlet } from 'react-router-dom'
@@ -7,8 +7,10 @@ import AppSidebar from './AppSidebar/AppSidebar'
 // import Boardhead from './BoardHead/Boardhead'
 import { Provider } from 'react-redux'
 import store from '../../store'
-import AppHeader from './Apphead/AppHeader'
+// import AppHeader from './Apphead/AppHeader'
 import Footer from '../Footer/Footer'
+const AppHeader = React.lazy(() => import("./Apphead/AppHeader"));
+
 export default function Board() {
     return (
         <Provider store={store}>
@@ -18,15 +20,18 @@ export default function Board() {
             </Container>
             <Footer /> */}
             <div>
+            <Suspense>
                 <AppSidebar />
                 <div className="wrapper d-flex flex-column min-vh-100 bg-light">
                     <AppHeader />
                     <div className="body flex-grow-1 px-3">
                         <Outlet />
                     </div>
+                    
 
                     <Footer />
                 </div>
+                </Suspense>
             </div>
         </Provider>
     )

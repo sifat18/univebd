@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import { Button, Col, Container, Row } from 'react-bootstrap'
 import bus from '../images/bus.jpg'
 // import bus2 from '../images/bus2.png'
@@ -6,15 +6,21 @@ import { BsCheck2Circle } from "react-icons/bs";
 import bus3 from '../images/bus3.png'
 // import ar from '../images/icons8-arrow-.png'
 import bus4 from '../images/bus4.png'
-import Demo from '../Common/Demo'
-import Companies from '../Common/Companies'
-import ReviewCard from '../Common/ReviewCard'
-import Resources from '../Common/Resources'
+// import Demo from '../Common/Demo'
+// import Companies from '../Common/Companies'
+// import ReviewCard from '../Common/ReviewCard'
+// import Resources from '../Common/Resources'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
+const Demo = React.lazy(() => import("../Common/Demo"));
+const Companies = React.lazy(() => import("../Common/Companies"));
+const ReviewCard = React.lazy(() => import("../Common/ReviewCard"));
+const Resources = React.lazy(() => import("../Common/Resources"));
+
 export default function Business() {
     return (
         <>
+        <Suspense>
             <Header />
             {/* top part */}
             <Container className='my-5'>
@@ -82,6 +88,7 @@ export default function Business() {
             </Container>
             <Demo />
             <Footer />
+            </Suspense>
         </>
     )
 }

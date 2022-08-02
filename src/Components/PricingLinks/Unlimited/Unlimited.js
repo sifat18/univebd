@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
-import Companies from '../../Common/Companies'
-import Demo from '../../Common/Demo'
-import PriceCard from '../../Common/PriceCard'
+// import Companies from '../../Common/Companies'
+// import Demo from '../../Common/Demo'
+// import PriceCard from '../../Common/PriceCard'
 import Footer from '../../Footer/Footer'
 import Header from '../../Header/Header'
 import unlimited from '../../images/unlimited.png'
@@ -10,6 +10,9 @@ import train from '../../images/unlimited/5187419.jpg'
 import train2 from '../../images/unlimited/8294.jpg'
 import dream from '../../images/unlimited/pale-job-search.png'
 import cancel from '../../images/unlimited/jaconda-planning-1.png'
+const Demo = React.lazy(() => import("../../Common/Demo"));
+const PriceCard = React.lazy(() => import("../../Common/PriceCard"));
+const Companies = React.lazy(() => import("../../Common/Companies"));
 
 export default function Unlimited() {
     return (
@@ -25,7 +28,7 @@ export default function Unlimited() {
 
                 </section>
             </Container>
-
+<Suspense>
             <Container fluid data-aos="fade-up-left" className='middle text-center my-5 py-5'>
                 <PriceCard />
                 {/* <p className='my-5'> <a href='/home'> explore for your team</a></p> */}
@@ -66,9 +69,11 @@ export default function Unlimited() {
 
             </Container>
             {/* demo */}
+            x
             <Container data-aos="fade-down" fluid className='middle my-5 py-5'>
                 <Demo />
             </Container>
+            </Suspense>
             <Footer />
         </>
     )
