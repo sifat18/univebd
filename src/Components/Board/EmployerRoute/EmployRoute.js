@@ -1,9 +1,9 @@
 import React from 'react';
 import { Spinner } from 'react-bootstrap';
 import { Navigate, useLocation } from 'react-router-dom';
-import useAuth from '../Context/useAuth';
+import useAuth from '../../Context/useAuth';
 
-const AdminRoute = ({ children, ...rest }) => {
+const EmployRoute = ({ children, ...rest }) => {
     // getting user info
     const { user, employer, admin, isLoading } = useAuth();
     const location = useLocation();
@@ -21,4 +21,4 @@ const AdminRoute = ({ children, ...rest }) => {
 
 };
 
-export default AdminRoute;
+export default EmployRoute;
