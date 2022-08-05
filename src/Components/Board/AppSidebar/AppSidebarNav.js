@@ -9,17 +9,18 @@ import {
   // cilBell,
   // cilCalculator,
   // cilChartPie,
-  // cilCursor,
+  cilCursor,
   // cilNotes,
   cilPencil,
   // cilPuzzle,
   // cilSpeedometer,
   // cilStar,
 } from '@coreui/icons'
-import { CNavItem, CNavTitle } from '@coreui/react'
-// import { CNavGroup, CNavItem, CNavTitle } from '@coreui/react'
+// import { CNavItem, CNavTitle } from '@coreui/react'
+import { CNavGroup, CNavItem, CNavTitle } from '@coreui/react'
 import useAuth from '../../Context/useAuth'
 import { RiMapPinUserLine } from 'react-icons/ri'
+import { Container } from 'react-bootstrap'
 
 export const AppSidebarNav = () => {
   const { user, admin, employer } = useAuth()
@@ -36,43 +37,71 @@ export const AppSidebarNav = () => {
     {
       component: CNavTitle,
       name: 'Navigate',
-    },
-    {
-      component: CNavItem,
-      name: 'Make New Admin',
-      to: '/dashboard/adadmin',
-      icon: <CIcon icon={cilPencil} customClassName="nav-icon text-dark" />,
-    },
-    {
-      component: CNavItem,
-      name: 'Make New Tutor',
-      to: '/dashboard/adtutor',
-      icon: <CIcon icon={cilPencil} customClassName="nav-icon text-dark" />,
-    },
-    {
-      component: CNavItem,
-      name: 'Make New Employer',
-      to: '/dashboard/ademployer',
-      icon: <CIcon icon={cilPencil} customClassName="nav-icon text-dark" />,
-    },
+    }, {
+      component: CNavGroup,
+      name: 'Admin Routes',
+      to: '/dashboard',
+      icon: <CIcon icon={cilCursor} customClassName="nav-icon text-dark" />,
+      items: [
 
-    {
-      component: CNavItem,
-      name: 'Create New Course',
-      to: '/dashboard/addcourse',
-      icon: <CIcon icon={cilPencil} customClassName="nav-icon text-dark" />,
+        {
+          component: CNavItem,
+          name: 'Make New Admin',
+          to: '/dashboard/adadmin',
+          icon: <CIcon icon={cilPencil} customClassName="nav-icon text-dark" />,
+        },
+        {
+          component: CNavItem,
+          name: 'Make New Tutor',
+          to: '/dashboard/adtutor',
+          icon: <CIcon icon={cilPencil} customClassName="nav-icon text-dark" />,
+        },
+        {
+          component: CNavItem,
+          name: 'Make New Employer',
+          to: '/dashboard/ademployer',
+          icon: <CIcon icon={cilPencil} customClassName="nav-icon text-dark" />,
+        },
+
+        {
+          component: CNavItem,
+          name: 'Create New Course',
+          to: '/dashboard/addcourse',
+          icon: <CIcon icon={cilPencil} customClassName="nav-icon text-dark" />,
+        },
+        {
+          component: CNavItem,
+          name: 'Available Candidates',
+          to: '/dashboard/candidates',
+          icon: <CIcon icon={cilPencil} customClassName="nav-icon text-dark" />,
+        },
+        {
+          component: CNavItem,
+          name: 'Create Employer Profile',
+          to: '/dashboard/employer_profile',
+          icon: <CIcon icon={cilPencil} customClassName="nav-icon text-dark" />,
+        },
+      ]
     },
     {
-      component: CNavItem,
-      name: 'Available Candidates',
-      to: '/dashboard/candidates',
-      icon: <CIcon icon={cilPencil} customClassName="nav-icon text-dark" />,
-    },
-    {
-      component: CNavItem,
-      name: 'Create Employer Profile',
-      to: '/dashboard/employer_profile',
-      icon: <CIcon icon={cilPencil} customClassName="nav-icon text-dark" />,
+      component: CNavGroup,
+      name: 'User Routes',
+      to: '/dashboard',
+      icon: <CIcon icon={cilCursor} customClassName="nav-icon text-dark" />,
+      items: [
+        {
+          component: CNavItem,
+          name: 'Profile Setting',
+          to: `/dashboard/update_profile`,
+          icon: <CIcon icon={cilDrop} customClassName="nav-icon text-dark" />,
+        },
+        {
+          component: CNavItem,
+          name: 'My Courses',
+          to: `/dashboard/mycourses`,
+          icon: <CIcon icon={cilPencil} customClassName="nav-icon text-dark" />,
+        },
+      ],
     },
   ]
   const employer_nav = [
@@ -349,13 +378,15 @@ export const AppSidebarNav = () => {
   const navLink = (name, icon, badge) => {
     return (
       <>
-        {icon && icon}
-        {name && name}
-        {badge && (
-          <CBadge className="ms-auto text-dark">
-            {badge.text}
-          </CBadge>
-        )}
+        <Container className="text-dark bg-white">
+          {icon && icon}
+          {name && name}
+          {badge && (
+            <CBadge className="ms-auto text-dark">
+              {badge.text}
+            </CBadge>
+          )}
+        </Container>
       </>
     )
   }
@@ -380,7 +411,7 @@ export const AppSidebarNav = () => {
     const { component, name, icon, to, ...rest } = item
     const Component = component
     return (
-      <Component
+      <Component className='text-dark bg-white'
         idx={String(index)}
         key={index}
         toggler={navLink(name, icon)}
