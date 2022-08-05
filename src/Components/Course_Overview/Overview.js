@@ -35,7 +35,7 @@ export default function Overview() {
     // single data load based on id
     // https://fierce-woodland-01411.herokuapp.com
     useEffect(() => {
-        fetch(`https://unive.site/api/course/${courseID}`).then(res => res.json()).then(data => setcourses(data))
+        fetch(`https://fierce-woodland-01411.herokuapp.com/api/course/${courseID}`).then(res => res.json()).then(data => setcourses(data))
     }, [courseID])
     // const [arr, setArr] = useState(true)
     // const contentShow = () => {
@@ -48,7 +48,7 @@ export default function Overview() {
         const data = { email: user.email }
         data.course = courses;
         // data.orderStatus = 'Pending';
-        axios.post('https://unive.site/api/order', data).then(res => res.data.insertedId ? handleShow() : handleShowF())
+        axios.post('https://fierce-woodland-01411.herokuapp.com/api/order', data).then(res => res.data.insertedId ? handleShow() : handleShowF())
 
     }
     return (

@@ -47,7 +47,7 @@ export default function Instructor() {
     const handleSubmit2 = e => {
         e.preventDefault()
         console.log(data);
-        axios.post(`https://unive.site/api/instructorForm2`, data).then(res => res.data ? handleShowT() : '')
+        axios.post(`https://fierce-woodland-01411.herokuapp.com/api/instructorForm2`, data).then(res => res.data ? handleShowT() : '')
     }
     const handleSubmit = e => {
         console.log('hit');
@@ -61,7 +61,7 @@ export default function Instructor() {
         //   console.log(value);
         // }
         // 
-        fetch('https://unive.site/api/instructor', {
+        fetch('https://fierce-woodland-01411.herokuapp.com/api/instructor', {
             method: 'POST',
             body: formData
         })

@@ -34,7 +34,7 @@ export default function EnterprisePricing() {
     const handleSubmit = e => {
         e.preventDefault()
         console.log(data);
-        axios.post(`https://unive.site/api/enterprice`, data).then(res => res.data ? handleShowT() : '')
+        axios.post(`https://fierce-woodland-01411.herokuapp.com/api/enterprice`, data).then(res => res.data ? handleShowT() : '')
 
     }
     return (
@@ -149,9 +149,9 @@ export default function EnterprisePricing() {
                 </Container>
             </Container>
             <Suspense>
-            <Container fluid data-aos="fade-down" className='middle my-5 py-5'>
-                <Demo />
-            </Container>
+                <Container fluid data-aos="fade-down" className='middle my-5 py-5'>
+                    <Demo />
+                </Container>
             </Suspense>
             <Footer />
 

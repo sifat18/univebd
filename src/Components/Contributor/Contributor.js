@@ -40,7 +40,7 @@ export default function Contributor() {
         // }
         // 
         // https://fierce-woodland-01411.herokuapp.com
-        fetch('https://unive.site/api/contributer', {
+        fetch('https://fierce-woodland-01411.herokuapp.com/api/contributer', {
             method: 'POST',
             body: formData
         })

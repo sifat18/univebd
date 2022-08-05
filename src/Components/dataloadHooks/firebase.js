@@ -156,7 +156,7 @@ const useFirebase = () => {
         setisLoading(true)
         console.log('start');
         // fierce-woodland-01411.herokuapp.com
-        fetch(`https://unive.site/api/user/${user.email}`)
+        fetch(`https://fierce-woodland-01411.herokuapp.com/api/user/${user.email}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -185,7 +185,7 @@ const useFirebase = () => {
     const saveUser = (email, displayName, method) => {
         setisLoading(true)
         const userData = { email, displayName };
-        fetch('https://unive.site/api/user', {
+        fetch('https://fierce-woodland-01411.herokuapp.com/api/user', {
             method: method,
             headers: {
                 'content-type': 'application/json'
@@ -202,7 +202,7 @@ const useFirebase = () => {
         console.log('in')
         const userData = { email, status };
 
-        fetch('https://unive.site/api/active', {
+        fetch('https://fierce-woodland-01411.herokuapp.com/api/active', {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'

@@ -16,7 +16,7 @@ const AddInstructor = () => {
         e.preventDefault()
         // const user = { email };
         console.log(email)
-        axios.put(`https://unive.site/api/tutor/${email}`).then(res => res.data.modifiedCount ? handleShow() : '')
+        axios.put(`https://fierce-woodland-01411.herokuapp.com/api/tutor/${email}`).then(res => res.data.modifiedCount ? handleShow() : '')
 
     }
 

@@ -7,7 +7,7 @@ export default function CandidateDetail() {
     const { id } = useParams()
     // https://fierce-woodland-01411.herokuapp.com
     useEffect(() => {
-        fetch(`https://unive.site/api/candidate/${id}`).then(res => res.json()).then(data => setDetails(data))
+        fetch(`https://fierce-woodland-01411.herokuapp.com/api/candidate/${id}`).then(res => res.json()).then(data => setDetails(data))
     }, [id])
     return (
         <>

@@ -186,7 +186,7 @@ const Dashboard = () => {
   const [users, setUser] = useState([])
   const [totalUser, setTotalUser] = useState(0)
   useEffect(() => {
-    fetch(`https://unive.site/api/users`).then(res => res.json()).then(data => {
+    fetch(`https://fierce-woodland-01411.herokuapp.com/api/users`).then(res => res.json()).then(data => {
       setUser(data)
       setTotalUser(data.length)
     })

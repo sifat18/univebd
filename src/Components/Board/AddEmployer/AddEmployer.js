@@ -16,7 +16,7 @@ export default function AddEmployer() {
     const handleAddEmployer = e => {
         e.preventDefault()
         // const user = { email };fierce-woodland-01411.herokuapp.com
-        axios.put(`https://unive.site/api/employer/${email}`).then(res => res.data.modifiedCount ? handleShow() : '')
+        axios.put(`https://fierce-woodland-01411.herokuapp.com/api/employer/${email}`).then(res => res.data.modifiedCount ? handleShow() : '')
 
     }
     return (
