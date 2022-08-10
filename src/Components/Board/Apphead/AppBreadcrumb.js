@@ -1,6 +1,7 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom'
-
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Tooltip from 'react-bootstrap/Tooltip';
 import routes from '../../../routes'
 
 import { CBreadcrumb, CBreadcrumbItem } from '@coreui/react'
@@ -33,7 +34,18 @@ const AppBreadcrumb = () => {
 
   return (
     <CBreadcrumb className="m-0 ms-2">
-      <CBreadcrumbItem href="/">Home</CBreadcrumbItem>
+      <CBreadcrumbItem href="/" className=''>
+      <OverlayTrigger
+          key='top'
+          placement='top'
+          overlay={
+            <Tooltip id={`tooltip-top`}>
+Switch Back to Website View            </Tooltip>
+          }
+        >
+          <span>Home</span>
+        </OverlayTrigger>
+      </CBreadcrumbItem>
       {breadcrumbs.map((breadcrumb, index) => {
         return (
           <CBreadcrumbItem
