@@ -177,7 +177,7 @@ export default function EnterprisePricing() {
                                 label="Company Name"
                                 className="mt-2 mb-5 text-start"
                             >
-                                <Form.Control type="text" name="Company" className="text-start" placeholder="xyz" onChange={handleOnChange} />
+                                <Form.Control type="text" name="company" className="text-start" placeholder="xyz" onChange={handleOnChange} />
                             </FloatingLabel>
                             {/* ----------- */}
                             <FloatingLabel

@@ -50,13 +50,13 @@ export default function Recruiting() {
     const handleSubmit = e => {
         e.preventDefault()
         console.log(data);
-        axios.post(`https://fierce-woodland-01411.herokuapp.com/api/recruit`, data).then(res => res.data ? handleShowT() : '')
+        axios.post(`https://fierce-woodland-01411.herokuapp.com/api/representative`, data).then(res => res.data ? handleShowT() : '')
 
     }
     const handleSubmitR = e => {
         e.preventDefault()
         console.log(data2);
-        axios.post(`https://fierce-woodland-01411.herokuapp.com/api/orgFrom`, data2).then(res => res.data ? handleShowT() : '')
+        axios.post(`https://fierce-woodland-01411.herokuapp.com/api/unive_recruitement`, data2).then(res => res.data ? handleShowT() : '')
 
     }
     return (
@@ -193,7 +193,7 @@ export default function Recruiting() {
                 </Modal.Header>
                 <Modal.Body>
                     <Container className='py-2'>
-                        {/* Login form */}
+                        {/* talk with representation */}
                         <form className='mt-3  py-3' onSubmit={handleSubmit}>
                             <FloatingLabel
                                 controlId="floatingInput"
@@ -240,7 +240,7 @@ export default function Recruiting() {
                     </Button>
                 </Modal.Footer>
             </Modal>
-
+{/* unive for recruitment form */}
             <Modal show={showR} onHide={handleCloseR}>
                 <Modal.Header closeButton>
                     <h2 className='mx-auto ps-5'>Fill up the form</h2>
@@ -254,7 +254,7 @@ export default function Recruiting() {
                                 label="Organization Name"
                                 className="mt-2 mb-5 text-start"
                             >
-                                <Form.Control type="text" name="organization" className="text-start" placeholder="Jane doe" onChange={handleOnChangeR} />
+                                <Form.Control type="text" name="company" className="text-start" placeholder="Jane doe" onChange={handleOnChangeR} />
                             </FloatingLabel>
                             <FloatingLabel
                                 controlId="floatingInput"

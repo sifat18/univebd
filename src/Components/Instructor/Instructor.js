@@ -44,11 +44,11 @@ export default function Instructor() {
         console.log(newUser)
 
     }
-    const handleSubmit2 = e => {
-        e.preventDefault()
-        console.log(data);
-        axios.post(`https://fierce-woodland-01411.herokuapp.com/api/instructorForm2`, data).then(res => res.data ? handleShowT() : '')
-    }
+    // const handleSubmit2 = e => {
+    //     e.preventDefault()
+    //     console.log(data);
+    //     axios.post(`https://fierce-woodland-01411.herokuapp.com/api/instructorForm2`, data).then(res => res.data ? handleShowT() : '')
+    // }
     const handleSubmit = e => {
         console.log('hit');
         e.preventDefault();

@@ -152,7 +152,7 @@ export default function Contributor() {
             {/* sign up btn */}
             <Container fluid data-aos="fade-up-left" className='middle py-5'>
                 <h2 className='text-center fs-1 fw-bold my-5'>এখনি লিখা শুরু করুন!</h2>
-                <Button variant='btn btn-primary mx-auto d-block'>লিখুন</Button>
+                <Button onClick={handleShow} variant='btn btn-primary mx-auto d-block'>লিখুন</Button>
             </Container>
             {/* Faq */}
             <Container data-aos="fade-up" className='  my-5'>

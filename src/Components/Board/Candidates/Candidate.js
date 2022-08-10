@@ -9,15 +9,11 @@ export default function
     const [position, setPosition] = useState('')
     const [sl, setSl] = useState('')
     const [email, setEmail] = useState('')
-    const [skills, setSkills] = useState([])
     // https://fierce-woodland-01411.herokuapp.com
     useEffect(() => {
         fetch(`https://fierce-woodland-01411.herokuapp.com/api/resume`).then(res => res.json()).then(data => {
             setUser(data)
             setFilterData(data)
-            data.map((m, idx) => (
-                setSkills([...skills, ...m.skills.frameworks, ...m.skills.databases, ...m.skills.technologies, ...m.skills.tools])
-            ))
         })
     }, [])
 

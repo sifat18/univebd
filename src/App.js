@@ -104,6 +104,7 @@ const Dashboard = React.lazy(() => import('./views/dashboard/Dashboard'));
 const MyCourses = React.lazy(() => import('./Components/Board/UserRoutes/MyCourses'));
 const Edit = React.lazy(() => import('./Components/CourseEdit/Edit'));
 const ProfileUpdate = React.lazy(() => import('./Components/Board/UserRoutes/Profile_Update'));
+const FormsAll = React.lazy(() => import('./Components/Board/Forms/AllForms'));
 const Candidate = React.lazy(() => import('./Components/Board/Candidates/Candidate'));
 const CandidateDetail = React.lazy(() => import('./Components/Board/CandidateDetail/CandidateDetail'));
 const AddEmployer = React.lazy(() => import('./Components/Board/AddEmployer/AddEmployer'));
@@ -173,6 +174,7 @@ function App() {
                 <Route path="adtutor" element={<AdminRoute><AddInstructor /></AdminRoute>} />
                 <Route path="edit/:id" element={<AdminRoute><Edit /></AdminRoute>} />
                 <Route path="addcourse" element={<AdminRoute><CourseAdd /></AdminRoute>} />
+                <Route path="form_management" element={<AdminRoute><FormsAll /></AdminRoute>} />
               </Route>
               <Route path="*" element={<Nopage />} />
             </Routes>

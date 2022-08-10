@@ -77,6 +77,12 @@ export const AppSidebarNav = () => {
         },
         {
           component: CNavItem,
+          name: 'Form Management',
+          to: '/dashboard/form_management',
+          icon: <CIcon icon={cilPencil} customClassName="nav-icon text-dark" />,
+        },
+        {
+          component: CNavItem,
           name: 'Create Employer Profile',
           to: '/dashboard/employer_profile',
           icon: <CIcon icon={cilPencil} customClassName="nav-icon text-dark" />,
