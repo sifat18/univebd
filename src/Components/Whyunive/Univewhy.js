@@ -35,13 +35,13 @@ export default function Univewhy() {
             {/* gif1 */}
             <Container fluid className=' mt-5'>
                 <Row>
-                    <Col className='my-auto'>
+                    <Col xs={12} md={6} className='my-auto order-1 order-md-2'>
                         <Container>
             <h2 className='text-center '>
             সম্পূর্ণ বাংলায় টেকনিক্যাল বিষয় শিখুন
             </h2>   </Container>
             </Col>
-            <Col>
+            <Col xs={12} md={6} className=' order-2 order-md-1'>
                 <Container data-aos="fade-right" className='w-75 text-center'>
                     <img className='img-fluid ' src={gif1} alt="" />
                 </Container>
@@ -51,13 +51,13 @@ export default function Univewhy() {
             {/* gif2 */}
             <Container fluid className=' '>
             <Row>
-            <Col>
+            <Col xs={12} md={6} className='order-md-1 order-2 '>
                 <Container data-aos="fade-right" className='w-75 text-center'>
                     <img className='img-fluid ' src={gif2} alt="" />
                 </Container>
                 </Col>
                
-                    <Col className='my-auto'>
+                    <Col xs={12} md={6} className='my-auto order-md-2 order-1 '>
                     <Container>
             <h2 className='text-center '>
             নিজের স্কিল যাচাই করতে স্কিল টেস্ট করুন
@@ -69,7 +69,7 @@ export default function Univewhy() {
             {/* gif3 */}
             <Container fluid className=' '>
             <Row>
-                    <Col className='my-auto'>
+                    <Col  xs={12} md={6} className='my-auto order-md-2 order-1 '>
                 <Container>
 
             <h2 className='text-center '>
@@ -78,7 +78,7 @@ export default function Univewhy() {
             </Container>
 
             </Col>
-            <Col>
+            <Col  xs={12} md={6} className='order-md-1 order-2 '>
 
                 <Container data-aos="fade-right" className='w-75 text-center'>
                     <img className='img-fluid ' src={gif3} alt="" />
@@ -89,12 +89,12 @@ export default function Univewhy() {
             {/* gif4 */}
             <Container fluid className='mt-5 '>
                 <Row>
-                   <Col>
+                   <Col  xs={12} md={6} className='order-md-1 order-2'  >
                 <Container data-aos="fade-right" className='w-75 text-center'>
                     <img className='img-fluid ' src={gif4} alt="" />
                 </Container>
                 </Col>
-                <Col className='my-auto'>
+                <Col  xs={12} md={6} className='order-md-2 order-1' >
                 <Container>
 
             <h2 className='text-center pt-5'>
@@ -108,7 +108,7 @@ export default function Univewhy() {
             {/* gif5 */}
             <Container fluid className=' '>
                 <Row>
-                    <Col className='my-auto'>
+                    <Col xs={12} md={6} className='my-auto order-md-2 order-1' >
                     <Container>
 
             <h2 className='text-center '>
@@ -118,7 +118,7 @@ export default function Univewhy() {
             </Container>
 
             </Col>
-            <Col>
+            <Col xs={12} md={6} className='order-md-1 order-2' >
                 <Container data-aos="fade-right" className='w-75 text-center'>
                     <img className='img-fluid ' src={gif5} alt="" />
                 </Container>
@@ -127,12 +127,12 @@ export default function Univewhy() {
             {/* gif6 */}
             <Container fluid className=' '>
                 <Row>
-                   <Col>
+                   <Col xs={12} md={6} className='order-md-1 order-2' >
                 <Container data-aos="fade-right" className='w-75 text-center'>
                     <img className='img-fluid ' src={gif6} alt="" />
                 </Container>
                 </Col>
-                <Col className='my-auto'>
+                <Col xs={12} md={6} className='my-auto order-md-2 order-1' >
                 <Container>
 
             <h2 className='text-center '>
@@ -146,7 +146,7 @@ export default function Univewhy() {
             {/* gif7 */}
             <Container fluid className=' '>
                 <Row>
-                    <Col className='my-auto'>
+                    <Col xs={12} md={6} className='my-auto'>
                     <Container>
 
             <h2 className='text-center pt-5'>
@@ -154,7 +154,7 @@ export default function Univewhy() {
             </h2>  
             </Container>
              </Col>
-            <Col>
+            <Col xs={12} md={6}>
                 <Container data-aos="fade-right" className='w-75 text-center'>
                     <img className='img-fluid ' src={gif7} alt="" />
                 </Container>
@@ -165,12 +165,12 @@ export default function Univewhy() {
             <Container fluid className=' '>
            <Row>
             
-            <Col>  
+            <Col xs={12} md={6} className=' order-md-1 order-2'>  
                 <Container data-aos="fade-right" className='w-100 text-center'>
                     <img className='img-fluid ' src={gif8} alt="" />
                 </Container>
                 </Col>
-                <Col className='my-auto'>
+                <Col  xs={12} md={6} className='my-auto order-md-2 order-1'>
                 <Container>
 
              <h2 className='text-center pt-5'>

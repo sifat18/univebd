@@ -34,12 +34,12 @@ export default function HowItworks() {
             <Container data-aos="fade-up-left" fluid className=' my-5'>
              <Row>
                 
-                <Col>
+                <Col xs={12} md={6}>
                 <Container className=' text-center'>
                     <img className='img-fluid ' src={gif1} alt="" />
                 </Container>
                 </Col>
-                <Col className='my-auto'>
+                <Col xs={12} md={6} className='my-auto'>
 <Container>
                 <h2 className='text-center'>এক ক্লিকেই কোর্স শুরু করুন</h2>
                 </Container>
@@ -50,10 +50,10 @@ export default function HowItworks() {
             {/* gif2 */}
             <Container data-aos="fade-up-left" fluid className=' my-5'>
              <Row>
-                <Col className='my-auto'><Container>
+                <Col xs={12} md={6} className='my-auto order-md-2 order-1'><Container>
                 <h2 className='text-center'>কোর্স প্রোগ্রেস সেভ করে রাখতে ইমেইল বা ফোন নাম্বার দিয়ে লগইন করুন </h2>
                 </Container></Col>
-                <Col>
+                <Col xs={12} md={6} classname='order-md-2 order-1'>
                  <Container className='  text-center'>
                     <img className='img-fluid ' src={gif2} alt="" />
                 </Container>
@@ -63,12 +63,12 @@ export default function HowItworks() {
             {/* gif3 */}
             <Container data-aos="fade-up-left" fluid className=' my-5'>
                 <Row>
-                <Col>
+                <Col xs={12} md={6}>
                 <Container className='w-50  text-center'>
                     <img className='img-fluid ' src={gif3} alt="" />
                 </Container>
                 </Col>
-<Col className='my-auto'><Container>
+<Col xs={12} md={6} className='my-auto'><Container>
                 <h2 className='text-center'>সকল কোর্স ছোট ছোট সহজবোধ্য লার্নিং মডিউলে বিভক্ত।
  </h2></Container></Col>
  
@@ -78,12 +78,14 @@ export default function HowItworks() {
             {/* gif4 */}
             <Container data-aos="fade-up-left" fluid className=' my-5'>
                 <Row>
-                    <Col className='my-auto'><Container>
+                    <Col xs={12} md={6} className='my-auto order-md-1 order-2'><Container>
                 <h2 className='text-center'>আপনার কোর্স পারফরম্যান্স বা স্কিল অ্যাসেসমেন্ট এর উপরে <br/>লিডারবোর্ডে স্থান করে জিতে নিন আকর্ষণীয় পুরস্কার।</h2>
                 </Container></Col>
+                <Col xs={12} md={6} className='order-md-2 order-1'>
                                 <Container className='w-50  text-center'>
                     <img className='img-fluid ' src={gif4} alt="" />
                 </Container>
+                </Col>
                 </Row>
                 
             </Container>
@@ -91,12 +93,12 @@ export default function HowItworks() {
             <Container data-aos="fade-up-left" fluid className=' my-5'>
               <Row>
                 
- <Col>
+ <Col xs={12} md={6}>
                 <Container className='w-50  text-center'>
                     <img className='img-fluid ' src={gif5} alt="" />
                 </Container>
                 </Col>
-                <Col className='my-auto'><Container>
+                <Col xs={12} md={6} className='my-auto'><Container>
                 <h2 className='text-center'>কোর্স সম্পন্ন করার পর আপনার লাইফটাইম ইউনিক <br/>Unive সার্টিফিকেট লিংক শেয়ার করুন এম্প্লয়ারদের সাথে।
 
 
@@ -107,10 +109,10 @@ export default function HowItworks() {
             {/* gif6 */}
             <Container data-aos="fade-up-left" fluid className=' my-5'>
                 <Row>
-                    <Col className='my-auto'><Container>
+                    <Col xs={12} md={6} className='my-auto order-md-1 order-2'><Container>
                 <h2 className='text-center'>আপনি যে কোর্স এ পাশ করেছেন সেই কোর্স রিলেটেড ইন্ডাস্ট্রি <br />সার্ভারে জয়নের মাধ্যমে যেকোনো সাহায্য বা জব সার্কুলার এর অ্যাকসেস পান নিমিষেই।
  </h2></Container></Col>
- <Col>
+ <Col xs={12} md={6} className='order-md-2 order-1'>
                 <Container className='  text-center'>
                     <img className='img-fluid ' src={gif6} alt="" />
                 </Container></Col>
@@ -120,24 +122,24 @@ export default function HowItworks() {
             {/* gif7 */}
             <Container data-aos="fade-up-left" fluid className=' my-5'>
           <Row>
- <Col>
+ <Col xs={12} md={6}>
                 <Container className='  text-center'>
                     <img className='img-fluid ' src={gif7} alt="" />
                 </Container>
                 </Col>      
-                <Col className='my-auto'><Container>
+                <Col xs={12} md={6} className='my-auto'><Container>
                 <h2 className='text-center'>কোর্সের যেকোনো কনফিউশন বা জিজ্ঞাসা দ্রুততম সময়ে সমাধান করুন <br/>ইন্ডাস্ট্রি রিসোর্স পারসনদের কাছ থেকে।
  </h2></Container></Col>    </Row>
             </Container>
             {/* gif8 */}
             <Container data-aos="fade-up-left" fluid className=' my-5'>
             <Row>
-                <Col className='my-auto'><Container>
+                <Col xs={12} md={6} className='my-auto order-md-1 order-2'><Container>
                 <h2 className='text-center'>আপনার টেকনিক্যাল জবের যে কোনও প্রবলেমে ইন্ডাস্ট্রি এক্সপার্টদের মতামত <br/>এবং সাজেশন নিতে ব্যবহার করুন  Unive Premium.
 
  </h2>
  </Container></Col>
- <Col>
+ <Col xs={12} md={6} className='order-md-2 order-1 '>
                 <Container className='  text-center'>
                     <img className='img-fluid ' src={gif8} alt="" />
                 </Container>
@@ -180,7 +182,7 @@ export default function HowItworks() {
                     <img className='img-fluid ' src={pic7} alt="" />
                 </Container>
             </Container> */} 
-            */
+            
 
 
             {/* pic9 */}
