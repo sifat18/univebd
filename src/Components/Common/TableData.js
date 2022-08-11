@@ -21,6 +21,8 @@ export default function TableData({tableData,choice}) {
           {choice==="scholarship"  &&<th>Platform learn</th>}
           {choice==="recruitement"  &&<th>Candidate Requirement</th>}
           {choice==="recruitement"  &&<th>Additional_information</th>}
+          <th>Status</th>
+
         </tr>
       </thead>
       <tbody>
@@ -38,6 +40,7 @@ export default function TableData({tableData,choice}) {
                         {choice==="scholarship"  &&<td>{m.edu_qualification}</td>}
           {choice==="scholarship"  &&<td>{m.scholarship_need}</td>}
           {choice==="scholarship"  &&<td>{m.platform_learn}</td>}
+          <td className={m.status==="pending" && 'text-danger'}>{m.status}</td>
                       </tr>
                     ))}
       </tbody>

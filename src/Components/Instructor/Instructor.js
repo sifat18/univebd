@@ -269,7 +269,6 @@ export default function Instructor() {
                                     checked={term === 'রেসিডেন্ট ইনস্ট্রাক্টর'}
                                     id={`inline-radio'-1`}
                                     onChange={handleChangeRadio}
-
                                 />
                                 <p></p>
                                 <Form.Label >আপনি আমাদের সম্পর্কে কিভাবে জানলেন?*</Form.Label>
@@ -279,10 +278,8 @@ export default function Instructor() {
                                     <option value='সোশ্যাল মিডিয়া'>সোশ্যাল মিডিয়া </option>
                                     <option value='নিজে থেকে'>নিজে থেকে </option>
                                 </Form.Select>
-
                             </Form.Group>
                             <button className='btn btn-primary d-block w-100 mx-auto mt-2 py-3 ms-2 mb-5'>Submit </button>
-
                         </form>
                     </Col>
                 </Row>
