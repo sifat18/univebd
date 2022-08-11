@@ -27,13 +27,13 @@ export default function Univewhy() {
                 কেন আপনার ক্যারিয়ার গঠনে ইউনিভ ব্যবহার করবেন?
             </h2>
             {/* pic1 */}
-            <Container fluid className='middle mt-5'>
+            {/* <Container fluid className='middle mt-5'>
                 <Container data-aos="fade-right" className='w-75 text-center'>
                     <img className='img-fluid ' src={pic1} alt="" />
                 </Container>
-            </Container>
+            </Container> */}
             {/* gif1 */}
-            <Container fluid className='middle mt-5'>
+            <Container fluid className=' mt-5'>
             <h2 className='text-center pt-5'>
             সম্পূর্ণ বাংলায় টেকনিক্যাল বিষয় শিখুন
             </h2>   
@@ -42,7 +42,7 @@ export default function Univewhy() {
                 </Container>
             </Container>
             {/* gif2 */}
-            <Container fluid className='middle '>
+            <Container fluid className=' '>
             <h2 className='text-center pt-5'>
             নিজের স্কিল যাচাই করতে স্কিল টেস্ট করুন
             </h2>   
@@ -51,7 +51,7 @@ export default function Univewhy() {
                 </Container>
             </Container>
             {/* gif3 */}
-            <Container fluid className='middle '>
+            <Container fluid className=' '>
             <h2 className='text-center pt-5'>
             স্কিল টেস্টে ভালো ফলাফল করে পেতে পারেন <br/> নিশ্চিত জব অফার দেশের প্রথম সারির কোম্পানি থেকে।
             </h2>   
@@ -60,7 +60,7 @@ export default function Univewhy() {
                 </Container>
             </Container>
             {/* gif4 */}
-            <Container fluid className='middle '>
+            <Container fluid className=' '>
             <h2 className='text-center pt-5'>
             স্কিল টেস্ট, প্রয়োজনীয় ভাষাগত যোগ্যতা এবং পাসপোর্ট প্রস্তুত থাকলে পেতে পারেন জব <br/> অফার বিশ্বের যেকোনো প্রান্ত থেকে।
             </h2>   
@@ -69,7 +69,7 @@ export default function Univewhy() {
                 </Container>
             </Container>
             {/* gif5 */}
-            <Container fluid className='middle '>
+            <Container fluid className=' '>
             <h2 className='text-center pt-5'>
             সফলভাবে কোর্স সম্পন্ন করে ইউনিভ অ্যাফিলিয়েটেড কোম্পানি তে চাকরির সুযোগ।
 
@@ -79,7 +79,7 @@ export default function Univewhy() {
                 </Container>
             </Container>
             {/* gif6 */}
-            <Container fluid className='middle '>
+            <Container fluid className=' '>
             <h2 className='text-center pt-5'>
             Unive এর সম্পূর্ণ অটোমেটেড বাছাই প্রক্রিয়ায় প্রার্থী <br/>বাছাই করুন অতিরিক্ত সময় নষ্ট করা ছাড়াই।
             </h2>   
@@ -88,7 +88,7 @@ export default function Univewhy() {
                 </Container>
             </Container>
             {/* gif7 */}
-            <Container fluid className='middle '>
+            <Container fluid className=' '>
             <h2 className='text-center pt-5'>
             Unive ইন্টারভিউ টেস্ট এর মাধ্যমে অনলাইনে ইন্টারভিউ এর মাঝেই নিয়ে নিন <br/>প্রার্থীদের কারিগরি ও অন্যান্য প্রয়োজনীয় টেস্ট।
             </h2>   
@@ -97,7 +97,7 @@ export default function Univewhy() {
                 </Container>
             </Container>
             {/* gif8 */}
-            <Container fluid className='middle '>
+            <Container fluid className=' '>
             <h2 className='text-center pt-5'>
             Unive এর মাধ্যমে বাছাইকৃত প্রার্থীদের জব অনবোর্ডিং করে <br/>প্রোডাক্টিভিটি নিশ্চিত করুন দ্রুততম সময়ে।
 
@@ -107,7 +107,7 @@ export default function Univewhy() {
                 </Container>
             </Container>
             {/* gif9 */}
-            <Container fluid className='middle '>
+            <Container fluid className=' '>
             <h2 className='text-center pt-5'>
             ভালো ফলাফল অর্জনকারীদের জন্য অফলাইনে ব্যবহারিক কাজ শেখার সুযোগ
 
@@ -117,47 +117,47 @@ export default function Univewhy() {
                 </Container>
             </Container>
             {/* pic2 */}
-            <Container fluid data-aos="fade-left" className='my-2'>
+            {/* <Container fluid data-aos="fade-left" className='my-2'>
                 <Container className='w-75 text-center'>
                     <img className='img-fluid ' src={pic2} alt="" />
                 </Container>
-            </Container>
+            </Container> */}
             {/* pic3 */}
-            <Container fluid data-aos="fade-right" className='middle my-5 py-5'>
+            {/* <Container fluid data-aos="fade-right" className='middle my-5 py-5'>
                 <Container className='w-75 text-center'>
                     <img className='img-fluid ' src={pic3} alt="" />
                 </Container>
-            </Container>
+            </Container> */}
             {/* pic4 */}
-            <Container fluid data-aos="fade-left" className='my-5 py-5'>
+            {/* <Container fluid data-aos="fade-left" className='my-5 py-5'>
                 <Container className='w-75 text-center'>
                     <img className='img-fluid ' src={pic4} alt="" />
                 </Container>
-            </Container>
+            </Container> */}
             {/* pic5 */}
-            <Container fluid data-aos="fade-right" className='middle my-5 py-5' >
+            {/* <Container fluid data-aos="fade-right" className='middle my-5 py-5' >
                 <Container className='w-75 text-center'>
                     <img className='img-fluid ' src={pic5} alt="" />
                 </Container>
-            </Container>
+            </Container> */}
             {/* pic6 */}
-            <Container fluid data-aos="fade-left " className='my-5 py-5'>
+            {/* <Container fluid data-aos="fade-left " className='my-5 py-5'>
                 <Container className='w-75 text-center py-5'>
                     <img className='img-fluid ' src={pic6} alt="" />
                 </Container>
-            </Container>
+            </Container> */}
             {/* pic7 */}
-            <Container fluid data-aos="fade-up" className='middle my-5 py-5'>
+            {/* <Container fluid data-aos="fade-up" className='middle my-5 py-5'>
                 <Container className='w-75 text-center'>
                     <img className='img-fluid ' src={pic7} alt="" />
                 </Container>
-            </Container>
+            </Container> */}
             {/* pic8 */}
-            <Container fluid data-aos="fade-down" className='my-5 py-5'>
+            {/* <Container fluid data-aos="fade-down" className='my-5 py-5'>
                 <Container className='w-75 text-center'>
                     <img className='img-fluid ' src={pic8} alt="" />
                 </Container>
-            </Container>
+            </Container> */}
             {/* pic9 */}
             {/* <Container fluid className='middle'>
                 <Container className='w-75 text-center'>
