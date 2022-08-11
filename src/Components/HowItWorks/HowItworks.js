@@ -104,29 +104,29 @@ export default function HowItworks() {
                 </Container>
             </Container>
             {/* pic3 */}
-            <Container fluid data-aos="fade-up" className=' my-5 py-5'>
+            {/* <Container fluid data-aos="fade-up" className=' my-5 py-5'>
                 <Container className='w-75 text-center'>
                     <img className='img-fluid ' src={pic3} alt="" />
                 </Container>
-            </Container>
+            </Container> */}
             {/* pic4 */}
-            <Container fluid data-aos="fade-up-left" className='my-5 py-5'>
+            {/* <Container fluid data-aos="fade-up-left" className='my-5 py-5'>
                 <Container className='w-75 text-center'>
                     <img className='img-fluid ' src={pic4} alt="" />
                 </Container>
-            </Container>
+            </Container> */}
             {/* pic5 */}
-            <Container fluid data-aos="fade-up-right" className=' my-5 py-5' >
+            {/* <Container fluid data-aos="fade-up-right" className=' my-5 py-5' >
                 <Container className='w-75 text-center'>
                     <img className='img-fluid ' src={pic5} alt="" />
                 </Container>
-            </Container>
+            </Container> */}
             {/* pic6 */}
-            <Container fluid data-aos="fade-down" className='my-5 py-5'>
+            {/* <Container fluid data-aos="fade-down" className='my-5 py-5'>
                 <Container className='w-75 text-center py-5'>
                     <img className='img-fluid ' src={pic6} alt="" />
                 </Container>
-            </Container>
+            </Container> */}
             {/* pic7 */}
             {/* {<Container fluid data-aos="fade-up" className='middle my-5 py-5'>
                 <Container className='w-75 text-center'>
