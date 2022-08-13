@@ -199,7 +199,15 @@ export default function Univewhy() {
             {/* gif9 */}
             <Container fluid className=' '>
                 <Row>
-                    <Col xs={12} md={6} className='my-auto'>
+                    
+            <Col xs={12} md={6} className='order-md-1 order-2'>  
+            <Ratio aspectRatio="16x9">
+            <video loop="true" autoplay="autoplay" muted >
+                    <source src={vid9} type='video/mp4' />
+                </video>
+      </Ratio>
+                </Col>
+                <Col xs={12} md={6} className='my-auto order-md-2 order-1'>
                     <Container>
 
             <h2 className='text-center '>
@@ -209,13 +217,6 @@ export default function Univewhy() {
             </Container>
 
             </Col>
-            <Col xs={12} md={6}>  
-            <Ratio aspectRatio="16x9">
-            <video loop="true" autoplay="autoplay" muted >
-                    <source src={vid9} type='video/mp4' />
-                </video>
-      </Ratio>
-                </Col>
                 </Row>
             </Container>
             {/* pic2 */}
