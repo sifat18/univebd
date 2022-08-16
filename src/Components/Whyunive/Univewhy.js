@@ -26,13 +26,13 @@ export default function Univewhy() {
             {/* gif1 */}
             <Container fluid className=' mt-5'>
                 <Row>
-                    <Col xs={12} md={6} className='my-auto order-1 order-md-2'>
+                    <Col data-aos="fade-up" xs={12} md={6} className='my-auto order-1 order-md-2'>
                         <Container>
             <h2 className='text-center '>
             সম্পূর্ণ বাংলায় টেকনিক্যাল বিষয় শিখুন
             </h2>   </Container>
             </Col>
-            <Col xs={12} md={6} className=' order-2 order-md-1'>
+            <Col data-aos="fade-right" xs={12} md={6} className=' order-2 order-md-1'>
             <Ratio aspectRatio="16x9">
             <video loop="true" autoplay="autoplay" muted >
                     <source src={vid1} type='video/mp4' />
@@ -47,7 +47,7 @@ export default function Univewhy() {
             {/* gif2 */}
             <Container fluid className=' '>
             <Row>
-            <Col xs={12} md={6} className=' my-auto'>
+            <Col data-aos="fade-left" xs={12} md={6} className=' my-auto'>
                     {/* <img className='img-fluid ' src={gif2} alt="" /> */}
                     <Container>
             <h2 className='text-center '>
@@ -56,7 +56,7 @@ export default function Univewhy() {
             </Container>
                 </Col>
                
-                    <Col xs={12} md={6} className=' '>
+                    <Col data-aos="fade-down" xs={12} md={6} className=' '>
                     <Ratio aspectRatio="16x9">
             <video loop="true" autoplay="autoplay" muted >
                     <source src={vid2} type='video/mp4' />
@@ -69,7 +69,7 @@ export default function Univewhy() {
             {/* gif3 */}
             <Container fluid className=' '>
             <Row>
-                    <Col  xs={12} md={6} className='my-auto order-md-2 order-1 '>
+                    <Col data-aos="fade-up-right" xs={12} md={6} className='my-auto order-md-2 order-1 '>
                 <Container>
 
             <h2 className='text-center '>
@@ -78,7 +78,7 @@ export default function Univewhy() {
             </Container>
 
             </Col>
-            <Col  xs={12} md={6} className='order-md-1 order-2 '>
+            <Col data-aos="fade-down-left" xs={12} md={6} className='order-md-1 order-2 '>
 
             <Ratio aspectRatio="16x9">
             <video loop="true" autoplay="autoplay" muted >
@@ -91,7 +91,7 @@ export default function Univewhy() {
             {/* gif4 */}
             <Container fluid className='mt-5 '>
                 <Row>
-                   <Col  xs={12} md={6} className=' my-auto'  >
+                   <Col data-aos="fade-up" xs={12} md={6} className=' my-auto'  >
                    <Container>
 
             <h2 className='text-center pt-5'>
@@ -99,7 +99,7 @@ export default function Univewhy() {
             </h2>   
             </Container>
                 </Col>
-                <Col  xs={12} md={6} className='' >
+                <Col  data-aos="fade-right"xs={12} md={6} className='' >
                
                 <Ratio aspectRatio="16x9">
             <video loop="true" autoplay="autoplay" muted >
@@ -112,7 +112,7 @@ export default function Univewhy() {
             {/* gif5 */}
             <Container fluid className=' '>
                 <Row>
-                    <Col xs={12} md={6} className='my-auto order-md-2 order-1' >
+                    <Col data-aos="fade-down" xs={12} md={6} className='my-auto order-md-2 order-1' >
                     <Container>
 
             <h2 className='text-center '>
@@ -122,7 +122,7 @@ export default function Univewhy() {
             </Container>
 
             </Col>
-            <Col xs={12} md={6} className='order-md-1 order-2' >
+            <Col data-aos="fade-left"xs={12} md={6} className='order-md-1 order-2' >
                
             <Ratio aspectRatio="16x9">
             <video loop="true" autoplay="autoplay" muted >
@@ -135,7 +135,7 @@ export default function Univewhy() {
             <Container fluid className=' '>
                 <Row>
                  
-                <Col xs={12} md={6} className='my-auto ' >
+                <Col data-aos="fade-down" xs={12} md={6} className='my-auto ' >
                 <Container>
 
             <h2 className='text-center '>
@@ -144,7 +144,7 @@ export default function Univewhy() {
             </Container>
 
             </Col>
-            <Col xs={12} md={6} className='' >
+            <Col data-aos="fade-right" xs={12} md={6} className='' >
                    <Ratio aspectRatio="16x9">
             <video loop="true" autoplay="autoplay" muted >
                     <source src={vid6} type='video/mp4' />
@@ -156,14 +156,14 @@ export default function Univewhy() {
             {/* gif7 */}
             <Container fluid className=' '>
                 <Row>
-                <Col xs={12} md={6} className=' order-md-1 order-2'>
+                <Col data-aos="fade-up" xs={12} md={6} className=' order-md-1 order-2'>
             <Ratio aspectRatio="16x9">
             <video loop="true" autoplay="autoplay" muted >
                     <source src={vid7} type='video/mp4' />
                 </video>
       </Ratio>
                 </Col>
-                    <Col xs={12} md={6} className='my-auto order-md-2 order-1'>
+                    <Col data-aos="fade-left" xs={12} md={6} className='my-auto order-md-2 order-1'>
                     <Container>
 
             <h2 className='text-center pt-5'>
@@ -177,7 +177,7 @@ export default function Univewhy() {
             {/* gif8 */}
             <Container fluid className=' '>
            <Row>       
-                <Col  xs={12} md={6} className='my-auto'>
+                <Col data-aos="fade-down-left" xs={12} md={6} className='my-auto'>
                 <Container>
 
              <h2 className='text-center pt-5'>
@@ -186,7 +186,7 @@ export default function Univewhy() {
             </h2>
             </Container>
              </Col>
-             <Col xs={12} md={6} className=' '>  
+             <Col data-aos="fade-up" xs={12} md={6} className=' '>  
             <Ratio aspectRatio="16x9">
             <video loop="true" autoplay="autoplay" muted >
                     <source src={vid8} type='video/mp4' />
@@ -200,14 +200,14 @@ export default function Univewhy() {
             <Container fluid className=' '>
                 <Row>
                     
-            <Col xs={12} md={6} className='order-md-1 order-2'>  
+            <Col data-aos="fade-down" xs={12} md={6} className='order-md-1 order-2'>  
             <Ratio aspectRatio="16x9">
             <video loop="true" autoplay="autoplay" muted >
                     <source src={vid9} type='video/mp4' />
                 </video>
       </Ratio>
                 </Col>
-                <Col xs={12} md={6} className='my-auto order-md-2 order-1'>
+                <Col data-aos="fade-up" xs={12} md={6} className='my-auto order-md-2 order-1'>
                     <Container>
 
             <h2 className='text-center '>
