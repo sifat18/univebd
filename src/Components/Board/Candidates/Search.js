@@ -64,6 +64,8 @@ const Hit = ({ hit }) => (
   <tbody>
           <tr>
               <td>
+              <Highlight attribute={hit.basics.name} hit={hit} className="card-title" />
+                <p><img src={hit.basics.image} alt="" className="img-fluid" width='100' height='100'/></p>
                <p> {hit.basics.name}</p>
                <p> {hit.basics.email}</p>
               
@@ -88,7 +90,7 @@ const Content = () => (
         <Stats />{" "}
       </div>
       <div className="">
-        <SortBy defaultRefinement="profile" items={[{ value: "" }]} />
+        <SortBy defaultRefinement="profile" items={[{ value: "Most" }]} />
       </div>
     </div>
     <Hits hitComponent={Hit} />
