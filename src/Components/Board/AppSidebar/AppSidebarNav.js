@@ -384,7 +384,7 @@ export const AppSidebarNav = () => {
   const navLink = (name, icon, badge) => {
     return (
       <>
-        <Container className="text-dark bg-white">
+        <Container className="text-dark ">
           {icon && icon}
           {name && name}
           {badge && (
@@ -401,7 +401,7 @@ export const AppSidebarNav = () => {
     const { component, name, badge, icon, ...rest } = item
     const Component = component
     return (
-      <Component className='text-dark'
+      <Component className='text-dark ashHover ms-1 '
         {...(rest.to &&
           !rest.items && {
           component: NavLink,
@@ -417,7 +417,7 @@ export const AppSidebarNav = () => {
     const { component, name, icon, to, ...rest } = item
     const Component = component
     return (
-      <Component className='text-dark bg-white'
+      <Component className='text-dark ashHover'
         idx={String(index)}
         key={index}
         toggler={navLink(name, icon)}
