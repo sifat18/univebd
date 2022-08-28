@@ -1,6 +1,6 @@
 import React from "react";
 import algoliasearch from "algoliasearch";
-import { Table } from 'react-bootstrap';
+import { Table, Row, Col } from 'react-bootstrap';
 
 import {
   InstantSearch,
@@ -64,18 +64,61 @@ const Hit = ({ hit }) => (
   <tbody>
           <tr>
               <td>
-              <Highlight attribute={hit.basics.name} hit={hit} className="card-title" />
+                <Row>
+                  <Col xs={5}>
                 <p><img src={hit.basics.image} alt="" className="img-fluid" width='100' height='100'/></p>
-               <p> {hit.basics.name}</p>
-               <p> {hit.basics.email}</p>
-              
-              </td>
-              <td>
-                {hit.skills.general_skills.map(id=>(
-                  
-                  <p>{id.name}</p>
+                <p className="">Name: {hit.basics.name}</p>
+               <p>Email: {hit.basics.email}</p>
+               <p className="">Relevant Experience: {hit.basics.relExp}</p>
+               <p className="">Experience: {hit.basics.totalExp}</p> </Col>
+               <Col xs={6} className=''>
+               <p>Role: {hit.basics.label}</p>
+                              <p className="">Previous Employers : {hit.work.map(id=>(
+                  <ul>
+                  <li> {id.name} : {id.position}</li>
+                
+                </ul>
                 ))
-                }</td>
+                }
+                </p>
+                <p className="">Education : {hit.education.map(id=>(
+                  <ul>
+                  <li> {id.institution} : {id.studyType}-{id.area}-{id.score}</li>
+                
+                </ul>
+                ))
+                }
+                </p>
+               </Col>
+               </Row>
+              </td>
+              <td> 
+                <p>General Skills: {hit.skills.general_skills.map(id=>(
+                  
+                  <span> {id.name} </span>
+                ))
+                }
+
+                </p>
+                <p>Softwares Skills: {hit.skills.softwares.map(id=>(
+                  
+                  <span> {id.name} </span>
+                ))
+                }
+                </p>
+                <p>Technical Skills: {hit.skills.technical_skills.map(id=>(
+                  
+                  <span> {id.name} </span>
+                ))
+                }
+                </p>
+                <p>Tools: {hit.skills.tools.map(id=>(
+                  
+                  <span> {id.name} </span>
+                ))
+                }
+                </p>
+                </td>
               
           </tr>
     
@@ -84,14 +127,14 @@ const Hit = ({ hit }) => (
 );
 const Content = () => (
   <main>
-    <div className="information">
+    <div className="">
       <div className="stats">
         {" "}
-        <Stats />{" "}
+        {/* <Stats />{" "} */}
       </div>
-      <div className="">
+      {/* <div className="">
         <SortBy defaultRefinement="profile" items={[{ value: "Most" }]} />
-      </div>
+      </div> */}
     </div>
     <Hits hitComponent={Hit} />
     <div>
