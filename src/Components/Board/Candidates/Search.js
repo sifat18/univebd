@@ -21,7 +21,7 @@ function Search() {
   return (
     <InstantSearch searchClient={searchClient} indexName="profile">
       <Header />
-      <div className="body-content">
+      <div className="">
         <Content />
       </div>
     </InstantSearch>
@@ -30,7 +30,7 @@ function Search() {
 const Header = () => (
   <header className="header">
     <SearchBox
-      className="search-bar"
+      className=""
       translations={{ placeholder: "Search for profile" }}
     />
   </header>
@@ -57,8 +57,8 @@ const Hit = ({ hit }) => (
   <Table striped bordered hover resonsive>
   <thead>
       <tr>
-          <th>Basics</th>
-          <th>skills</th>
+          <th className="text-center">Basic Information</th>
+          <th className="text-center">Skill Information</th>
       </tr>
   </thead>
   <tbody>
@@ -67,23 +67,23 @@ const Hit = ({ hit }) => (
                 <Row>
                   <Col xs={5}>
                 <p><img src={hit.basics.image} alt="" className="img-fluid" width='100' height='100'/></p>
-                <p className="">Name: {hit.basics.name}</p>
-               <p>Email: {hit.basics.email}</p>
-               <p className="">Relevant Experience: {hit.basics.relExp}</p>
-               <p className="">Experience: {hit.basics.totalExp}</p> </Col>
+                <p className=""><span className='fw-bold'>Name:</span> {hit.basics.name}</p>
+               <p><span className='fw-bold'>Email:</span> {hit.basics.email}</p>
+               <p className=""><span className='fw-bold'>Relevant Experience:</span> {hit.basics.relExp}</p>
+               <p className=""><span className='fw-bold'>Experience:</span> {hit.basics.totalExp}</p> </Col>
                <Col xs={6} className=''>
-               <p>Role: {hit.basics.label}</p>
-                              <p className="">Previous Employers : {hit.work.map(id=>(
+               <p><span className='fw-bold'>Role:</span> {hit.basics.label}</p>
+               <p className=""><span className='fw-bold'>Previous Employers :</span> {hit.work.map(id=>(
                   <ul>
-                  <li> {id.name} : {id.position}</li>
+                  <li className="circle"> {id.name} : {id.position}</li>
                 
                 </ul>
                 ))
                 }
                 </p>
-                <p className="">Education : {hit.education.map(id=>(
+                <p className=""><span className='fw-bold'>Education:</span> {hit.education.map(id=>(
                   <ul>
-                  <li> {id.institution} : {id.studyType}-{id.area}-{id.score}</li>
+                  <li className="circle"> {id.institution} : {id.studyType}-{id.area}-{id.score}</li>
                 
                 </ul>
                 ))
@@ -93,26 +93,26 @@ const Hit = ({ hit }) => (
                </Row>
               </td>
               <td> 
-                <p>General Skills: {hit.skills.general_skills.map(id=>(
+                <p><span className='fw-bold'>General Skills:</span> {hit.skills.general_skills.map(id=>(
                   
                   <span> {id.name} </span>
                 ))
                 }
 
                 </p>
-                <p>Softwares Skills: {hit.skills.softwares.map(id=>(
+                <p><span className='fw-bold'>Softwares Skills:</span> {hit.skills.softwares.map(id=>(
                   
                   <span> {id.name} </span>
                 ))
                 }
                 </p>
-                <p>Technical Skills: {hit.skills.technical_skills.map(id=>(
+                <p><span className='fw-bold'>Technical Skills:</span> {hit.skills.technical_skills.map(id=>(
                   
                   <span> {id.name} </span>
                 ))
                 }
                 </p>
-                <p>Tools: {hit.skills.tools.map(id=>(
+                <p><span className='fw-bold'>Tools:</span> {hit.skills.tools.map(id=>(
                   
                   <span> {id.name} </span>
                 ))
@@ -130,7 +130,7 @@ const Content = () => (
     <div className="">
       <div className="stats">
         {" "}
-        {/* <Stats />{" "} */}
+        <Stats />{" "}
       </div>
       {/* <div className="">
         <SortBy defaultRefinement="profile" items={[{ value: "Most" }]} />

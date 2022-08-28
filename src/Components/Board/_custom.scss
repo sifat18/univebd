@@ -20,8 +20,25 @@ a {
 .ashHover:hover {
   background-color: rgba(121, 113, 113, 0.541);
 }
-
-
+.information {
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-around;
+  font-size: 11px;
+}
+.ais-Pagination-list {
+  display: flex;
+  justify-content: center;
+}
+.ais-Pagination-item {
+  margin: 5px;
+}
+li {
+  list-style-type: none;
+}
+.circle{
+  list-style-type: disc;
+}
 .littleFont {
   font-size: 0.8rem;
 }
