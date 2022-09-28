@@ -96,7 +96,7 @@ export default function Edit() {
         setCourse(Finalcourse)  //https://fierce-woodland-01411.herokuapp.com/
 
         console.log(Finalcourse)
-        axios.put(`https://fierce-woodland-01411.herokuapp.com/courses/edit/${id}`, Finalcourse).then(res => res.data ? handleShow() : '')
+        axios.put(`https://fierce-woodland-01411.herokuapp.com/api/courses/edit/${id}`, Finalcourse).then(res => res.data ? handleShow() : '')
 
     }
     return (
@@ -106,7 +106,7 @@ export default function Edit() {
                     {/* basic info starts here */}
 
                     <Row className='formBg pb-3'>
-                        <h3 className="my-3 py-3 text-light text-center">Basic Course Information</h3>
+                        <h3 className="my-3 py-3 text-dark text-center">Basic Course Information</h3>
                         <Col xs={12} md={3} className='courseFormpad' >
                             <FormControl type="text"
                                 name='coursename'
@@ -212,7 +212,7 @@ export default function Edit() {
                         <Row className="my-5  formBg  py-2" key={index}>
                             <Row>
                                 <Col xs={12} md={4} className='text-center pt-2'>
-                                    <h3 className="my-2  text-light ">Course Modules {index + 1}</h3>
+                                    <h3 className="my-2  text-dark ">Course Modules {index + 1}</h3>
                                 </Col>
                                 <Col xs={12} md={4} className='text-center pt-2'>
                                     <FormControl
@@ -238,10 +238,10 @@ export default function Edit() {
                             {/* sub module stats here */}
                             {/* sub module 1 */}
                             <Row>
-                                <h2 className='text-light mt-5 text-center'>sub module 1</h2>
+                                <h2 className='text-dark mt-5 text-center'>Sub-Module-1</h2>
 
                                 <Col className='courseFormpad'>
-                                    <p className='text-light ps-3'>sub module name</p>
+                                    <p className='text-dark ps-3'>Sub-Module-Name</p>
                                     <FormControl
                                         type='text'
                                         name='sub_mod1'
@@ -251,7 +251,7 @@ export default function Edit() {
 
                                 </Col>
                                 <Col className='courseFormpad'>
-                                    <p className='text-light ps-3'>sub module description</p>
+                                    <p className='text-dark ps-3'>Sub-Module-Description</p>
 
                                     <textarea
                                         name='sub_description1'
@@ -264,7 +264,7 @@ export default function Edit() {
 
                                 </Col>
                                 <Col className='courseFormpad'>
-                                    <p className='text-light ps-3'>sub module video</p>
+                                    <p className='text-dark ps-3'>Sub-Module-Video</p>
                                     <FormControl
                                         type='text'
                                         name='sub_video1'
@@ -278,10 +278,10 @@ export default function Edit() {
 
                             {/* sub module 2 */}
                             <Row>
-                                <h2 className='text-light mt-5 text-center'>sub module 2</h2>
+                                <h2 className='text-dark mt-5 text-center'>Sub-Module-2</h2>
 
                                 <Col className='courseFormpad'>
-                                    <p className='text-light ps-3'>sub module name</p>
+                                    <p className='text-dark ps-3'>Sub-Module-Name</p>
                                     <FormControl
                                         type='text'
                                         name='sub_mod2'
@@ -291,7 +291,7 @@ export default function Edit() {
 
                                 </Col>
                                 <Col className='courseFormpad'>
-                                    <p className='text-light ps-3'>sub module description</p>
+                                    <p className='text-dark ps-3'>Sub-Module-Description</p>
 
                                     <textarea
                                         name='sub_description2'
@@ -304,7 +304,7 @@ export default function Edit() {
 
                                 </Col>
                                 <Col className='courseFormpad'>
-                                    <p className='text-light ps-3'>sub module video</p>
+                                    <p className='text-dark ps-3'>Sub-Module-Video</p>
                                     <FormControl
                                         type='text'
                                         name='sub_video2'
@@ -317,10 +317,10 @@ export default function Edit() {
                             </Row>
                             {/* sub module 3  */}
                             <Row>
-                                <h2 className='text-light mt-5 text-center'>sub module 3</h2>
+                                <h2 className='text-dark mt-5 text-center'>Sub-Module-3</h2>
 
                                 <Col className='courseFormpad'>
-                                    <p className='text-light ps-3'>sub module name</p>
+                                    <p className='text-dark ps-3'>Sub-Module-Name</p>
                                     <FormControl
                                         type='text'
                                         name='sub_mod3'
@@ -330,7 +330,7 @@ export default function Edit() {
 
                                 </Col>
                                 <Col className='courseFormpad'>
-                                    <p className='text-light ps-3'>sub module description</p>
+                                    <p className='text-dark ps-3'>Sub-Module-Description</p>
 
                                     <textarea
                                         name='sub_description3'
@@ -343,7 +343,7 @@ export default function Edit() {
 
                                 </Col>
                                 <Col className='courseFormpad'>
-                                    <p className='text-light ps-3'>sub module video</p>
+                                    <p className='text-dark ps-3'>Sub-Module-Video</p>
                                     <FormControl
                                         type='text'
                                         name='sub_video3'
@@ -356,11 +356,11 @@ export default function Edit() {
                             </Row>
                             {/* add quiz */}
                             <Row className='gx-5 mx-auto my-3 py-3'>
-                                <h2 className='text-light'>Add Quizzes</h2>
+                                <h2 className='text-dark'>Add Quizzes</h2>
                                 {/* quiz 1 */}
                                 <Col >
                                     <div className=''>
-                                        <p className='text-light pt-3 ps-3'> Question 1</p>
+                                        <p className='text-dark pt-3 ps-3'> Question 1</p>
                                         <FormControl
                                             type='text'
                                             name='q1'
@@ -369,7 +369,7 @@ export default function Edit() {
                                             defaultValue={input.q1}
                                             onChange={event => handleOnChangeL(index, event)} />
 
-                                        <p className='text-light pt-3 ps-3'>Answer 1</p>
+                                        <p className='text-dark pt-3 ps-3'>Answer 1</p>
                                         <FormControl
                                             type='text'
                                             name='qA1'
@@ -378,12 +378,12 @@ export default function Edit() {
                                             defaultValue={input.qA1}
                                             onChange={event => handleOnChangeL(index, event)} />
 
-                                        <p className='text-light pt-3 ps-3'>Choice 1</p>
+                                        <p className='text-dark pt-3 ps-3'>Choice 1</p>
                                         <FormControl
                                             type='text' name='qOP11' placeholder='choice' className='mb-3'
                                             defaultValue={input.qOP11}
                                             onChange={event => handleOnChangeL(index, event)} />
-                                        <p className='text-light pt-3 ps-3'>Choice 2</p>
+                                        <p className='text-dark pt-3 ps-3'>Choice 2</p>
 
                                         <FormControl
                                             type='text'
@@ -393,7 +393,7 @@ export default function Edit() {
                                             defaultValue={input.qOP12}
                                             onChange={event => handleOnChangeL(index, event)} />
 
-                                        <p className='text-light pt-3 ps-3'>Choice 3</p>
+                                        <p className='text-dark pt-3 ps-3'>Choice 3</p>
                                         <FormControl
                                             type='text'
                                             name='qOP13'
@@ -402,7 +402,7 @@ export default function Edit() {
                                             defaultValue={input.qOP13}
                                             onChange={event => handleOnChangeL(index, event)} />
 
-                                        <p className='text-light pt-3 ps-3'>Choice 4</p>
+                                        <p className='text-dark pt-3 ps-3'>Choice 4</p>
                                         <FormControl
                                             type='text'
 
@@ -419,7 +419,7 @@ export default function Edit() {
                                     <div className=''>
 
 
-                                        <p className='text-light pt-3 ps-3'> Question 2</p>
+                                        <p className='text-dark pt-3 ps-3'> Question 2</p>
                                         <FormControl
                                             type='text'
                                             name='q2'
@@ -427,7 +427,7 @@ export default function Edit() {
                                             className='mb-3'
                                             defaultValue={input.q2}
                                             onChange={event => handleOnChangeL(index, event)} />
-                                        <p className='text-light pt-3 ps-3'>Answer 2</p>
+                                        <p className='text-dark pt-3 ps-3'>Answer 2</p>
                                         <FormControl
                                             type='text'
                                             name='qA2'
@@ -436,7 +436,7 @@ export default function Edit() {
                                             defaultValue={input.qA2}
                                             onChange={event => handleOnChangeL(index, event)} />
 
-                                        <p className='text-light pt-3 ps-3'>Choice 1</p>
+                                        <p className='text-dark pt-3 ps-3'>Choice 1</p>
                                         <FormControl
                                             type='text'
                                             name='qOP21'
@@ -444,7 +444,7 @@ export default function Edit() {
                                             className='mb-3'
                                             defaultValue={input.qOP21}
                                             onChange={event => handleOnChangeL(index, event)} />
-                                        <p className='text-light pt-3 ps-3'>Choice 2</p>
+                                        <p className='text-dark pt-3 ps-3'>Choice 2</p>
                                         <FormControl
                                             type='text'
                                             name='qOP22'
@@ -452,7 +452,7 @@ export default function Edit() {
                                             className='mb-3'
                                             defaultValue={input.qOP22}
                                             onChange={event => handleOnChangeL(index, event)} />
-                                        <p className='text-light pt-3 ps-3'>Choice 3</p>
+                                        <p className='text-dark pt-3 ps-3'>Choice 3</p>
                                         <FormControl
                                             type='text'
                                             name='qOP23'
@@ -461,7 +461,7 @@ export default function Edit() {
                                             defaultValue={input.qOP23}
                                             onChange={event => handleOnChangeL(index, event)} />
 
-                                        <p className='text-light pt-3 ps-3'>Choice 4</p>
+                                        <p className='text-dark pt-3 ps-3'>Choice 4</p>
                                         <FormControl
                                             type='text'
                                             name='qOP24'
@@ -474,7 +474,7 @@ export default function Edit() {
                                 </Col>
                                 <Col >
                                     <div className=''>
-                                        <p className='text-light pt-3 ps-3'> Question 3 </p>
+                                        <p className='text-dark pt-3 ps-3'> Question 3 </p>
                                         <FormControl
                                             type='text'
                                             name='q3'
@@ -483,7 +483,7 @@ export default function Edit() {
                                             defaultValue={input.q3}
                                             onChange={event => handleOnChangeL(index, event)} />
 
-                                        <p className='text-light pt-3 ps-3'>Answer 3</p>
+                                        <p className='text-dark pt-3 ps-3'>Answer 3</p>
                                         <FormControl
                                             type='text'
                                             name='qA3'
@@ -491,7 +491,7 @@ export default function Edit() {
                                             className=''
                                             defaultValue={input.qA3}
                                             onChange={event => handleOnChangeL(index, event)} />
-                                        <p className='text-light pt-3 ps-3'>Choice 1</p>
+                                        <p className='text-dark pt-3 ps-3'>Choice 1</p>
                                         <FormControl
                                             type='text'
                                             name='qOP31'
@@ -499,7 +499,7 @@ export default function Edit() {
                                             className='mb-3'
                                             defaultValue={input.qOP31}
                                             onChange={event => handleOnChangeL(index, event)} />
-                                        <p className='text-light pt-3 ps-3'>Choice 2</p>
+                                        <p className='text-dark pt-3 ps-3'>Choice 2</p>
                                         <FormControl
                                             type='text'
                                             name='qOP32'
@@ -507,7 +507,7 @@ export default function Edit() {
                                             className=''
                                             defaultValue={input.qOP32}
                                             onChange={event => handleOnChangeL(index, event)} />
-                                        <p className='text-light pt-3 ps-3'>Choice 3</p>
+                                        <p className='text-dark pt-3 ps-3'>Choice 3</p>
                                         <FormControl
                                             type='text'
                                             name='qOP33'
@@ -515,7 +515,7 @@ export default function Edit() {
                                             className=''
                                             defaultValue={input.qOP33}
                                             onChange={event => handleOnChangeL(index, event)} />
-                                        <p className='text-light pt-3 ps-3'>Choice 4</p>
+                                        <p className='text-dark pt-3 ps-3'>Choice 4</p>
                                         <FormControl
                                             type='text'
                                             name='qOP34'
@@ -528,7 +528,7 @@ export default function Edit() {
                                 <Col  >
 
                                     <div className=''>
-                                        <p className='text-light pt-3 ps-3'>Question 4 </p>
+                                        <p className='text-dark pt-3 ps-3'>Question 4 </p>
                                         <FormControl
                                             type='text'
                                             name='q4'
@@ -537,7 +537,7 @@ export default function Edit() {
                                             defaultValue={input.q4}
                                             onChange={event => handleOnChangeL(index, event)} />
 
-                                        <p className='text-light pt-3 ps-3'>Answer 4</p>
+                                        <p className='text-dark pt-3 ps-3'>Answer 4</p>
                                         <FormControl
                                             type='text'
                                             name='qA4'
@@ -545,7 +545,7 @@ export default function Edit() {
                                             className=''
                                             defaultValue={input.qA4}
                                             onChange={event => handleOnChangeL(index, event)} />
-                                        <p className='text-light pt-3 ps-3'>Choice 1</p>
+                                        <p className='text-dark pt-3 ps-3'>Choice 1</p>
                                         <FormControl
                                             type='text'
                                             name='qOP41'
@@ -553,7 +553,7 @@ export default function Edit() {
                                             className='mb-3'
                                             defaultValue={input.qOP41}
                                             onChange={event => handleOnChangeL(index, event)} />
-                                        <p className='text-light pt-3 ps-3'>Choice 2</p>
+                                        <p className='text-dark pt-3 ps-3'>Choice 2</p>
                                         <FormControl
                                             type='text'
                                             name='qOP42'
@@ -561,7 +561,7 @@ export default function Edit() {
                                             className='mb-3'
                                             defaultValue={input.qOP42}
                                             onChange={event => handleOnChangeL(index, event)} />
-                                        <p className='text-light pt-3 ps-3'>Choice 3</p>
+                                        <p className='text-dark pt-3 ps-3'>Choice 3</p>
                                         <FormControl
                                             type='text'
                                             name='qOP43'
@@ -569,7 +569,7 @@ export default function Edit() {
                                             className=''
                                             defaultValue={input.qOP43}
                                             onChange={event => handleOnChangeL(index, event)} />
-                                        <p className='text-light pt-3 ps-3'>Choice 4</p>
+                                        <p className='text-dark pt-3 ps-3'>Choice 4</p>
                                         <FormControl
                                             type='text'
                                             name='qOP44'
@@ -582,7 +582,7 @@ export default function Edit() {
                                 <Col  >
 
                                     <div >
-                                        <p className='text-light pt-3 ps-3'> Question 5</p>
+                                        <p className='text-dark pt-3 ps-3'> Question 5</p>
                                         <FormControl
                                             type='text'
                                             name='q5'
@@ -590,7 +590,7 @@ export default function Edit() {
                                             className=''
                                             defaultValue={input.q5}
                                             onChange={event => handleOnChangeL(index, event)} />
-                                        <p className='text-light pt-3 ps-3'>Answer 5</p>
+                                        <p className='text-dark pt-3 ps-3'>Answer 5</p>
                                         <FormControl
                                             type='text'
                                             name='qA5'
@@ -598,7 +598,7 @@ export default function Edit() {
                                             className=''
                                             defaultValue={input.qA5}
                                             onChange={event => handleOnChangeL(index, event)} />
-                                        <p className='text-light pt-3 ps-3'>Choice 1</p>
+                                        <p className='text-dark pt-3 ps-3'>Choice 1</p>
                                         <FormControl
                                             type='text'
                                             name='qOP51'
@@ -606,7 +606,7 @@ export default function Edit() {
                                             className='mb-3'
                                             defaultValue={input.qOP51}
                                             onChange={event => handleOnChangeL(index, event)} />
-                                        <p className='text-light pt-3 ps-3'>Choice 2</p>
+                                        <p className='text-dark pt-3 ps-3'>Choice 2</p>
                                         <FormControl
                                             type='text'
                                             name='qOP52'
@@ -614,7 +614,7 @@ export default function Edit() {
                                             className='mb-3'
                                             defaultValue={input.qOP52}
                                             onChange={event => handleOnChangeL(index, event)} />
-                                        <p className='text-light pt-3 ps-3'>Choice 3</p>
+                                        <p className='text-dark pt-3 ps-3'>Choice 3</p>
                                         <FormControl
                                             type='text'
                                             name='qOP53'
@@ -622,7 +622,7 @@ export default function Edit() {
                                             className=''
                                             defaultValue={input.qOP53}
                                             onChange={event => handleOnChangeL(index, event)} />
-                                        <p className='text-light pt-3 ps-3'>Choice 4</p>
+                                        <p className='text-dark pt-3 ps-3'>Choice 4</p>
                                         <FormControl
                                             type='text'
                                             name='qOP54'
