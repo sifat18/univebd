@@ -1,9 +1,5 @@
-# Live Site
-
-Unive [Educ](https://educ-5542f.web.app/).
-
 ## Available Scripts
-Unive [unive](http://unive.site/).
+Unive [unive](http://unive.com.bd/).
 
 
 ### `npm start`
