@@ -80,7 +80,7 @@ const Result = ({ totalQuestions,
         </Modal.Header>
         <Modal.Body>
           {score < 60 && !mod_complete && <p className="text-center"> Score Atleast 60% to progress the course</p>}
-          {score && mod_complete &&<p className="text-center"> You already completed this although you passed last time </p>}
+          {score < 60 && mod_complete &&<p className="text-center"> You already completed this although you passed last time </p>}
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
