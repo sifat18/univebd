@@ -59,6 +59,12 @@ export const AppSidebarNav = () => {
 
         {
           component: CNavItem,
+          name: 'Add New Course',
+          to: '/dashboard/addcourse',
+          icon: <BsFillInboxFill customClassName="nav-icon text-dark" />,
+        },
+        {
+          component: CNavItem,
           name: 'Restore Course',
           to: '/dashboard/deletedCourses',
           icon: <BsFillInboxFill customClassName="nav-icon text-dark" />,

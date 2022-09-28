@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Button, Card, Col, Container, Row } from 'react-bootstrap'
+import { Button, Container, Row } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
 import CourseCard from '../Common/CourseCard'
 import RestCourses from '../Common/RestCourses'
@@ -7,9 +7,7 @@ import useAuth from '../Context/useAuth'
 import useData from '../dataloadHooks/dataload'
 import Footer from '../Footer/Footer'
 import Header from '../Header/Header'
-import ar from '../images/icons8-arrow-.png'
 import dr from '../images/icons8-down-arrow-40.png'
-import st from '../images/steps.png'
 export default function Learn() {
     const { user, admin } = useAuth()
 
@@ -36,7 +34,7 @@ export default function Learn() {
                     </section>
                     <Row xs={1} md={3} className="g-4 bigMargin">
                         {item.slice(0, 5).map((id) => (
-                         <CourseCard id={id}/>
+                         <CourseCard id={id} key={id._id} admin={admin}/>
                         ))}
                         <RestCourses show={disp} admin={admin} courses={item.slice(5)} />
                     </Row>
@@ -53,7 +51,7 @@ export default function Learn() {
                     </section>
                     <Row xs={1} md={3} className="g-4 bigMargin">
                         {item.slice(0, 5).map((id) => (
-                            <CourseCard id={id}/>
+                           <CourseCard id={id} key={id._id} admin={admin}/>
                         ))}
                         <RestCourses show={disp2} admin={admin} courses={item.slice(5)} />
                     </Row>

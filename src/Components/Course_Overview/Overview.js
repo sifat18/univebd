@@ -1,23 +1,20 @@
-import React, { useEffect, useState } from 'react'
-import { Accordion, Button, Card, Col, Container, Modal, Row } from 'react-bootstrap'
+import { useEffect, useState } from 'react';
+import { Accordion, Alert, Button, Card, Col, Container, Modal, Row } from 'react-bootstrap';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Popover from 'react-bootstrap/Popover';
+import { BsTropicalStorm } from "react-icons/bs";
+import { MdOutlinePlayLesson, MdOutlineQuiz, MdOutlineSlowMotionVideo, MdQuiz } from "react-icons/md";
+import { RiVideoAddLine } from "react-icons/ri";
 import { NavLink, useNavigate, useParams } from "react-router-dom";
 import Read from '../Common/Read';
-import { MdOutlineQuiz } from "react-icons/md";
-import { MdOutlineSlowMotionVideo } from "react-icons/md";
-import { MdOutlinePlayLesson } from "react-icons/md";
-import { BsTropicalStorm } from "react-icons/bs";
-import { RiVideoAddLine } from "react-icons/ri";
-import { MdQuiz } from "react-icons/md";
 
+import axios from 'axios';
 import { MdPersonPin } from "react-icons/md";
 import Companies from '../Common/Companies';
-import Header from '../Header/Header';
-import './over.css'
-import Footer from '../Footer/Footer';
 import useAuth from '../Context/useAuth';
-import axios from 'axios';
+import Footer from '../Footer/Footer';
+import Header from '../Header/Header';
+import './over.css';
 
 export default function Overview() {
     const navigate = useNavigate()
@@ -54,6 +51,9 @@ export default function Overview() {
     return (
         <>
             <Header />
+            <Alert className='my-3 text-center' variant='danger'>
+          Coming soon
+        </Alert>
             {courses &&
                 <Container className='my-5 contentpadding hor'>
                     <Row className='gx-5'>
@@ -74,11 +74,11 @@ export default function Overview() {
                                 <Card >
                                     <Card.Body className='mx-auto mt-4' >
                                         {/* <NavLink to={`/learn/start/${courses._id}`}><Button className='bluebtn btn py-2 px-5'>Start learning </Button></NavLink> */}
-                                        {!user.email &&
+                                        {user.email &&
                                             <Button onClick={(e) => orderData(e)} className='bluebtn btn py-2 px-5'>Start learning </Button>}
                                         {!user.email &&
                                             <OverlayTrigger trigger="click" placement="right" overlay={popover}>
-                                                <Button variant="success">Click me to see</Button>
+                                                <Button variant="success">Start Learning</Button>
                                             </OverlayTrigger>}
                                     </Card.Body>
                                     {/* <hr className='bg-secondary' />
@@ -152,7 +152,7 @@ export default function Overview() {
                                         <Button onClick={(e) => orderData(e)} className='bluebtn btn py-2 px-5'>Start learning </Button>}
                                     {!user.email &&
                                         <OverlayTrigger trigger="click" placement="right" overlay={popover}>
-                                            <Button className='bluebtn' >Start learning</Button>
+                                            <Button className='bluebtn' >Sign in to start learning</Button>
                                         </OverlayTrigger>}
                                 </Card.Body>
                                 {/* <hr className='bg-secondary' />

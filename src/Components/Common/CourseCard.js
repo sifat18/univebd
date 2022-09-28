@@ -1,5 +1,6 @@
-import React from 'react'
-import { Button,Card, Col, Row } from 'react-bootstrap'
+import axios from 'axios'
+
+import { Button, Card, Col, Row } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
 import useAuth from '../Context/useAuth'
 import ar from '../images/icons8-arrow-.png'
@@ -7,6 +8,17 @@ import st from '../images/steps.png'
 
 export default function CourseCard({id}) {
     const { user, admin } = useAuth()
+
+    const deleteCourse = (id) => {
+        const {_id,...rest}=id
+        console.log(rest)
+        axios.delete(`https://fierce-woodland-01411.herokuapp.com/api/course/${id.coursename}`).then(res => {
+            if (res.data.acknowledged) {
+                axios.post(`https://fierce-woodland-01411.herokuapp.com/api/deletedcourses`, rest).then(res => res.data ? window.location.reload(true):console.log('erro at delete'))
+                //;
+            }
+        })
+    }
     return (
         <Col key={id._id}>
         <Card className='py-1'>
@@ -27,6 +39,7 @@ export default function CourseCard({id}) {
 
                 </Col>
             </Row>
+            {admin &&  <Card.Footer className="text-muted"><Button className='p-2' variant="outline-danger" onClick={()=>deleteCourse(id)}>Delete Course <img src={'ar'} alt="" /></Button></Card.Footer>}
         </Card>
     </Col>
     )
