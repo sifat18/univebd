@@ -1,49 +1,12 @@
-import React from 'react'
+import dashhome from '../../Components/images/dash/dashhome.svg'
 
 import {
 
   CCard,
   CCardBody,
-  CCol,
-  CProgress,
-  CRow,
-  // CCardFooter,
-  // CCardHeader,
-  // CAvatar,
-  // CButton,
-  // CButtonGroup,
-  // CTable,
-  // CTableBody,
-  // CTableDataCell,
-  // CTableHead,
-  // CTableHeaderCell,
-  // CTableRow,
+  CCol, CRow
 } from '@coreui/react'
 // import { CChartLine } from '@coreui/react-chartjs'
-// import { getStyle, } from '@coreui/utils'
-import CIcon from '@coreui/icons-react'
-import {
-  // cibCcAmex,
-  // cibCcApplePay,
-  // cibCcMastercard,
-  // cibCcPaypal,
-  // cibCcStripe,
-  // cibCcVisa,
-  // cibGoogle,
-  // cibFacebook,
-  // cibLinkedin,
-  // cifBr,
-  // cifEs,
-  // cifFr,
-  // cifIn,
-  // cifPl,
-  // cifUs,
-  // cibTwitter,
-  // cilCloudDownload,
-  // cilPeople,
-  cilUser,
-  cilUserFemale,
-} from '@coreui/icons'
 
 // import avatar1 from '../../assets/images/avatars/1.jpg'
 // import avatar2 from '../../assets/images/avatars/2.jpg'
@@ -54,8 +17,9 @@ import {
 
 // import WidgetsBrand from '../widgets/WidgetsBrand'
 // import WidgetsDropdown from '../widgets/WidgetsDropdown'
-import { useState, useEffect } from 'react'
-import { Container, Table } from 'react-bootstrap'
+import { useEffect, useState } from 'react'
+import { Container, Row, Table } from 'react-bootstrap'
+
 import useAuth from '../../Components/Context/useAuth'
 
 const Dashboard = () => {
@@ -388,11 +352,20 @@ const Dashboard = () => {
                     </CCol>
                   </CRow> */}
 
-                <hr className="mt-0" />
+                {/* <hr className="mt-0" /> */}
 
 
 
-                <div className="mb-5"></div>
+                {!admin && <div className="mb-5">
+                  <Container>
+                    <Row className='text-center'>
+                      <p className='fs-3 fw-bold'>You have not published any courses or answers yet.</p>
+<img src={dashhome} className='img-fluid' alt=''/>
+<p className='fs-3 fw-bold mt-3'>Earn passive income teaching what you love</p>
+<p className='fs-4 '>Easy-to-use tools let you create awesome courses and answers with interactivity built right in.</p>
+                    </Row>
+                  </Container>
+                </div>}
 
                 {/* {progressGroupExample3.map((item, index) => (
                     <div className="progress-group" key={index}>

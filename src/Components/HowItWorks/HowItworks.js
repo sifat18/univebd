@@ -4,9 +4,9 @@ import Header from '../Header/Header'
 import vid5 from '../images/How-It-works/certificate.mp4'
 import vid3 from '../images/How-It-works/certificate2.mp4'
 import vid7 from '../images/How-It-works/communicate-with-customer.mp4'
-import vid1 from '../images/How-It-works/mouse-click.mp4'
 import vid8 from '../images/How-It-works/premium-gold.mp4'
 import vid2 from '../images/How-It-works/step-progressbar.mp4'
+import vid1 from '../images/How-It-works/study.mp4'
 import vid6 from '../images/How-It-works/support-centre.mp4'
 import vid4 from '../images/How-It-works/trophy.mp4'
 export default function HowItworks() {
@@ -29,7 +29,7 @@ export default function HowItworks() {
                 </Col>
                 <Col data-aos="fade-right" xs={12} md={6} className='my-auto'>
 <Container>
-                <h2 className='text-center'>এক ক্লিকেই কোর্স শুরু করুন</h2>
+                <h2 className='text-center'>ফ্রি তে কোর্স শুরু করুন।</h2>
                 </Container>
                 </Col>
 

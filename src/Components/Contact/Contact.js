@@ -2,7 +2,6 @@ import { Container } from 'react-bootstrap'
 import ContactForm from '../Common/ContactForm'
 import Footer from '../Footer/Footer'
 import Header from '../Header/Header'
-import conactImage from '../images/Contact/contact.png'
 export default function Contact() {
 
 
@@ -26,7 +25,7 @@ export default function Contact() {
 <p className='fs-3 fw-bold'>কারওয়ান বাজার বাণিজ্যিক এলাকা, ঢাকা-১২১৫, বাংলাদেশ</p>                   
 <p className='fs-3'> <span className=' fw-bold'>ইমেইল:</span>  contact@unive.work</p>                   
 <p className='fs-3'> <span className=' fw-bold'> যোগাযোগঃ </span> 8801881997646, 8801886997646</p>                   
-<p className='fs-3'> <span className=' fw-bold'> Website:</span> www.unive.work</p>                   
+<p className='fs-3'> <span className=' fw-bold'> Website:</span> www.unive.com.bd </p>                   
                 </Container>
             </Container>
             <Footer />
