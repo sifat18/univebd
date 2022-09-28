@@ -1,33 +1,20 @@
+import PropTypes from 'prop-types'
 import React from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
-import PropTypes from 'prop-types'
 
 import { CBadge } from '@coreui/react'
-import CIcon from '@coreui/icons-react'
-import {
-  cilDrop,
-  // cilBell,
-  // cilCalculator,
-  // cilChartPie,
-  cilCursor,
-  // cilNotes,
-  cilPencil,
-  // cilPuzzle,
-  // cilSpeedometer,
-  // cilStar,
-} from '@coreui/icons'
 // import { CNavItem, CNavTitle } from '@coreui/react'
 import { CNavGroup, CNavItem, CNavTitle } from '@coreui/react'
-import useAuth from '../../Context/useAuth'
-import { RiAdminLine, RiMapPinUserLine } from 'react-icons/ri'
 import { Container } from 'react-bootstrap'
-import { MdOutlineAdminPanelSettings, MdOutlineComputer } from 'react-icons/md'
-import { FaChalkboardTeacher } from 'react-icons/fa'
-import { IoCreateOutline } from 'react-icons/io5'
-import { BsFillInboxFill, BsPersonBadge, BsPersonCheck } from 'react-icons/bs'
-import { GrFormFolder } from 'react-icons/gr'
 import { BiUserCircle } from 'react-icons/bi'
+import { BsFillInboxFill, BsPersonBadge, BsPersonCheck } from 'react-icons/bs'
+import { FaChalkboardTeacher } from 'react-icons/fa'
+import { GrFormFolder } from 'react-icons/gr'
 import { ImProfile } from 'react-icons/im'
+import { IoCreateOutline } from 'react-icons/io5'
+import { MdOutlineAdminPanelSettings, MdOutlineComputer } from 'react-icons/md'
+import { RiAdminLine, RiMapPinUserLine } from 'react-icons/ri'
+import useAuth from '../../Context/useAuth'
 
 export const AppSidebarNav = () => {
   const { user, admin, employer } = useAuth()
@@ -35,7 +22,7 @@ export const AppSidebarNav = () => {
   const admin_nav = [
     {
       component: CNavItem,
-      name: user.displayName,
+      name: 'Dashboard',
       to: '/dashboard',
       icon: <RiMapPinUserLine customClassName="nav-icon text-dark" />,
 
@@ -120,7 +107,7 @@ export const AppSidebarNav = () => {
   const employer_nav = [
     {
       component: CNavItem,
-      name: user.displayName,
+      name: 'Dashboard',
       to: '/dashboard',
       icon: <RiMapPinUserLine customClassName="nav-icon text-dark" />,
 
@@ -146,7 +133,7 @@ export const AppSidebarNav = () => {
   const _nav = [
     {
       component: CNavItem,
-      name: user.displayName,
+      name: 'Dashboard',
       to: '/dashboard',
       icon: <RiMapPinUserLine customClassName="nav-icon text-dark" />,
 

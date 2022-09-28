@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import Stats from './Stats';
-import QNA from './QNA';
-import { Button, Container, Modal, Nav } from 'react-bootstrap';
 import axios from 'axios';
+import { useState } from 'react';
+import { Button, Container, Modal, Nav } from 'react-bootstrap';
 import useAuth from '../../Context/useAuth';
 import calculateScore from './calculateScore';
+import QNA from './QNA';
+import Stats from './Stats';
 
 const Result = ({ totalQuestions,
   correctAnswers,
@@ -75,13 +75,12 @@ const Result = ({ totalQuestions,
       {/* modal */}
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          {score < 60 && <h2 className='mx-auto ps-5'>OOOPS!!! You Failed</h2>}
-          {score && <h2 className='mx-auto ps-5'>you already progressed</h2>}
-
+        {score < 60 && !mod_complete &&<h2 className='mx-auto ps-5'>OOOPS!!! You Failed</h2>}
+          {score < 60 && mod_complete && <h2 className='mx-auto ps-5'>you already progressed</h2>}
         </Modal.Header>
         <Modal.Body>
-          {score < 60 && <p className="text-center"> Score Atleast 60% to progress the course</p>}
-          {score && <p className="text-center"> you already completed this </p>}
+          {score < 60 && !mod_complete && <p className="text-center"> Score Atleast 60% to progress the course</p>}
+          {score && mod_complete &&<p className="text-center"> You already completed this although you passed last time </p>}
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>

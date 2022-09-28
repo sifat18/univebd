@@ -356,7 +356,7 @@ export default function Edit() {
                             </Row>
                             {/* add quiz */}
                             <Row className='gx-5 mx-auto my-3 py-3'>
-                                <h2 className='text-light'>Add Quizes</h2>
+                                <h2 className='text-light'>Add Quizzes</h2>
                                 {/* quiz 1 */}
                                 <Col >
                                     <div className=''>
