@@ -1,25 +1,23 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import React, { Component, Suspense } from 'react'
 import AOS from 'aos';
-import './App.css'
 import 'aos/dist/aos.css';
-import "slick-carousel/slick/slick.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { Suspense, useEffect } from 'react';
 import "slick-carousel/slick/slick-theme.css";
-import { useEffect } from 'react';
+import "slick-carousel/slick/slick.css";
+import './App.css';
 // import Home from './Components/Home/Home';
 // import Learn from './Components/Learn/Learn';
 import {
-  BrowserRouter,
-  Routes,
-  Route,
+  BrowserRouter, Route, Routes
 } from "react-router-dom";
-import Nopage from './Components/Nopage/Nopage';
-import Authprovider from './Components/AuthProvider/Authprovider';
-import ScrollToTop from './Components/Common/ScrollToTop';
-import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import AdminRoute from './Components/AdminRoute/AdminRoute';
+import Authprovider from './Components/AuthProvider/Authprovider';
 import Admin from './Components/Board/AddAdmin/Admin';
+import Restore from './Components/Board/DeletedCourses/Restore';
 import EmployRoute from './Components/Board/EmployerRoute/EmployRoute';
+import ScrollToTop from './Components/Common/ScrollToTop';
+import Nopage from './Components/Nopage/Nopage';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 // import EmployerProfile from './Components/Board/EmployerPAges/EmployerProfile';
 
 // import Individual from './Components/Developer/Individual';
@@ -169,6 +167,7 @@ function App() {
                 <Route path="mycourses" element={<PrivateRoute><MyCourses /></PrivateRoute>} />
                 <Route path="candidates" element={<AdminRoute><Search /></AdminRoute>} />
                 <Route path="candidate/detail/:id" element={<AdminRoute><CandidateDetail /></AdminRoute>} />
+                <Route path="deletedCourses" element={<AdminRoute><Restore /></AdminRoute>} />
 
                 <Route path="adadmin" element={<AdminRoute><Admin /></AdminRoute>} />
                 <Route path="ademployer" element={<AdminRoute><AddEmployer /></AdminRoute>} />

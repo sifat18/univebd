@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react'
-import { Button, Card, Col, Container, Row } from 'react-bootstrap'
-import { NavLink } from 'react-router-dom'
-import useAuth from '../../Context/useAuth'
 import { Line } from 'rc-progress';
+import { useEffect, useState } from 'react';
+import { Button, Card, Col, Container, Row } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
+import useAuth from '../../Context/useAuth';
 export default function MyCourses() {
     const { user } = useAuth()
     const [course, setcourse] = useState([])
@@ -34,7 +34,7 @@ export default function MyCourses() {
                                     {/* <NavLink to={`/learn/${id?.course?._id}`}> <Button className='p-2 ms-4' variant="outline-dark">Preview <img src={'ar'} alt="" /></Button></NavLink> */}
                                     <p className='w-50'>Course Progress {id?.course?.progress}% <Line percent={id?.course?.progress} trailWidth={4} strokeWidth={4} strokeColor="#267D39" /></p>
 
-                                    <NavLink to={`/learn/start/${id?.course?._id}`}> <Button className='p-2 ' variant="outline-success">Start Course <img src={'ar'} alt="" /></Button></NavLink>
+                                    <NavLink to={`/learn/start/${id?.course?._id}`}> <Button className='p-2 ' variant="outline-success">Resume Course <img src={'ar'} alt="" /></Button></NavLink>
 
 
                                 </Col>
