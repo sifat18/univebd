@@ -19,10 +19,14 @@ import './over.css';
 export default function Overview() {
     const navigate = useNavigate()
     const [show, setShow] = useState(false);
-    const handleClose = () => {
+    const handleClose = (flag) => {
         setShow(false);
-        navigate('/dashboard/mycourses')
+// if true navigate
+        if(flag){
+            window.open('/dashboard/mycourses','_blank')
+        // navigate('/dashboard/mycourses')
     }
+}
     const handleShow = () => setShow(true);
     const [showF, setShowF] = useState(false);
     const handleCloseF = () => setShowF(false);
@@ -194,14 +198,17 @@ export default function Overview() {
             </Container>
             <Footer />
 
-            {/* modal after submit form */}
-            <Modal show={show} onHide={handleClose}>
+      {/* modal after submit form */}
+      <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>Successful</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>Course has been added.To start course go to dashboard</Modal.Body>
+                <Modal.Body>ধন্যবাদ কোর্সে রেজিস্ট্রেশন করার জন্য! কোর্স টি লাইভ হওয়া মাত্রই আমরা আপনাকে ইমেইল এর মাধ্যমে জানিয়ে দিবো!</Modal.Body>
                 <Modal.Footer>
-                    <Button variant="success" onClick={handleClose}>
+                    <Button variant="success" onClick={()=>handleClose(true)}>
+                        Visit My Courses
+                    </Button>
+                    <Button variant="info" onClick={()=>handleClose(false)}>
                         Thank You!
                     </Button>
                 </Modal.Footer>
