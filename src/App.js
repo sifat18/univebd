@@ -19,6 +19,7 @@ import ScrollToTop from './Components/Common/ScrollToTop';
 import Nopage from './Components/Nopage/Nopage';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import JobPost from './Components/Board/EmployerPAges/JobPost/JobPost';
+import JobBrowsing from './Components/JobBrowsing/JobBrowsing';
 // import EmployerProfile from './Components/Board/EmployerPAges/EmployerProfile';
 
 // import Individual from './Components/Developer/Individual';
@@ -146,6 +147,7 @@ function App() {
               <Route path="/recruiting" element={<Recruiting />} />
               <Route path="/assessments" element={<Assessments />} />
               <Route path="/blogs" element={<Blogs />} />
+              <Route path="/job_browse" element={<JobBrowsing />} />
               <Route path="/become-an-unive-instructor" element={<Instructor />} />
               <Route path="/become-a-contributor" element={<Contributor />} />
               <Route path="/privacy" element={<Privacy />} />
