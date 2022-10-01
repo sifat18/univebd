@@ -2,8 +2,13 @@ import axios from 'axios';
 import './jobpost.css';
 import { useState } from 'react'
 import { Button, Container, FloatingLabel, Form, Modal } from 'react-bootstrap'
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import moment from 'moment/moment';
 
 export default function JobPost() {
+    const [startDate, setStartDate] = useState(new Date());
+    const [endDate, setEndDate] = useState(new Date());
 
     const [skills, setSkills] = useState([]);
     const [data, setData] = useState({});
@@ -22,9 +27,11 @@ export default function JobPost() {
     const handleSubmit = e => {
         e.preventDefault()
         data.skills=skills
+        data.startDate=moment(startDate).format('L') 
+        data.endDate=moment(endDate).format('L') 
         console.log(data);
 
-        // axios.post(`https://fierce-woodland-01411.herokuapp.com/api/employerProfile`, data).then(res => res.data ? handleShowT() : '')
+        axios.post(`https://fierce-woodland-01411.herokuapp.com/api/jobpost`, data).then(res => res.data ? handleShowT() : '')
 
     }   
     const handlekeyDown=(e)=>{
@@ -48,26 +55,79 @@ e.target.value=''
                     label="Organization Name"
                     className="mt-2 mb-5 text-start"
                 >
-                    <Form.Control type="text" name="organization" className="text-start" placeholder="xyz" onChange={handleOnChange} />
+                    <Form.Control required type="text" name="organization" className="text-start" placeholder="xyz" onChange={handleOnChange} />
                 </FloatingLabel>
                 {/* ----------- */}
+            
                 <FloatingLabel
                     controlId="floatingInput"
                     label="Email address"
                     className="mt-2 mb-5 text-start"
                 >
-                    <Form.Control type="email" className="text-start" placeholder="name@example.com" name="email" onChange={handleOnChange} />
+                    <Form.Control type="email" required className="text-start" placeholder="name@example.com" name="email" onChange={handleOnChange} />
                 </FloatingLabel>
-                {/* ------------- */}
+                {/* ------ */}
+                 
+                {/* ------phone------- */}
 
                 <FloatingLabel
                     controlId="floatingInput"
                     label="Phone Number"
                     className="mt-2 mb-5 text-start"
                 >
-                    <Form.Control type="number" name="PhoneNumber" className="text-start" placeholder="01299123" onChange={handleOnChange} />
+                    <Form.Control type="number" required name="PhoneNumber" className="text-start" placeholder="01299123" onChange={handleOnChange} />
                 </FloatingLabel>
-                {/*------------  */}
+                 
+                {/* ------position------- */}
+
+                <FloatingLabel
+                    controlId="floatingInput"
+                    label="Position"
+                    className="mt-2 mb-5 text-start"
+                >
+                    <Form.Control type="text" required name="position" className="text-start" placeholder="Project Manager" onChange={handleOnChange} />
+                </FloatingLabel>
+                   {/* -----------------age--------------------- */}
+  <div className='d-flex'>
+  <FloatingLabel
+                    controlId="floatingInput"
+                    label="Minimum Age"
+                    className="mt-2 mb-5 text-start w-50 "
+                >
+                     <Form.Control type="number" required className="text-start" placeholder="22" name="min_age" onChange={handleOnChange} />
+                     
+                     </FloatingLabel>
+  <FloatingLabel
+                    controlId="floatingInput"
+                    label="Maximum Age"
+                    className="mt-2 mb-5 text-start w-50"
+                >
+                     <Form.Control type="number" required className="text-start" placeholder="50" name="max_age" onChange={handleOnChange} />
+                     
+                     </FloatingLabel>
+                     </div>
+               
+    {/* -----------------salary--------------------- */}
+  <div className='d-flex'>
+  <FloatingLabel
+                    controlId="floatingInput"
+                    label="Minimum Salary"
+                    className="mt-2 mb-5 text-start w-50 "
+                >
+                     <Form.Control type="number" required className="text-start" placeholder="20000" name="min_salary" onChange={handleOnChange} />
+                     
+                     </FloatingLabel>
+  <FloatingLabel
+                    controlId="floatingInput"
+                    label="Maximum Salary"
+                    className="mt-2 mb-5 text-start w-50"
+                >
+                     <Form.Control type="number" required className="text-start" placeholder="50000" name="max_salary" onChange={handleOnChange} />
+                     
+                     </FloatingLabel>
+                     </div>
+                      {/*-------skill-----  */}
+
                 <FloatingLabel
                     controlId="floatingInput"
                     label="Add a skills"
@@ -75,12 +135,12 @@ e.target.value=''
                 >
                 {/* <div className='tag-container'> */}
        
-  <Form.Control onKeyDown={handlekeyDown} type="text" className="text-start" placeholder="xyz"  />
+  <Form.Control onKeyDown={handlekeyDown}  type="text" className="text-start" placeholder="xyz"  />
     {/* <input   /> */}
     {skills.length >0 &&
   <div className='skills-container pt-2'>
     {skills.map((skill,index)=>(
-<div className='skill-item '>
+<div key={index} className='skill-item '>
     <span className='text'> {skill}</span>
     <span className='close' onClick={()=>removeSkill(index)}>x</span>
 </div>
@@ -88,25 +148,36 @@ e.target.value=''
     </div>
     }
     </FloatingLabel>
+    {/* ------------------------------ */}
     <FloatingLabel controlId="floatingTextarea2" label="Job Description">
     <Form.Control
       as="textarea"
+      required
+      onChange={handleOnChange}
       className='text-start'
-      name="message" placeholder='আপনার মেসেজটি লিখুন'
+      name="jd" placeholder='Job Description'
       style={{ height: '100px' }}
     />
   </FloatingLabel>
+  {/* ---------apply date */}
+  <div className='d-flex '>
+    <p className='w-100'>start date
+  <DatePicker className='w-100' required selected={startDate} onChange={(date) => setStartDate(date)} />
+  </p>
+  <p className='w-100'>end date
+  <DatePicker className='w-100' required selected={endDate} onChange={(date) => setEndDate(date)} />
+  </p></div>
     <button className='btn btn-primary d-block w-100 mx-auto mt-2 py-3 ms-2 mb-5'>Submit </button>
             </form>
             {/* modal */}
             <Modal show={showT} onHide={handleCloseT}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Thanks for your interest</Modal.Title>
+                    <Modal.Title>Job Post Collected Successfully</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>One of our representatives will get back to you asap.</Modal.Body>
+                <Modal.Body>It Will be published soon.</Modal.Body>
                 <Modal.Footer>
                     <Button variant="success" onClick={handleCloseT}>
-                        Ok!!
+                        close!!
                     </Button>
                 </Modal.Footer>
             </Modal>
