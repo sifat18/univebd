@@ -87,6 +87,12 @@ export const AppSidebarNav = () => {
           to: '/dashboard/employer_profile',
           icon: <IoCreateOutline customClassName="nav-icon text-dark" />,
         },
+        {
+          component: CNavItem,
+          name: 'Post Job',
+          to: '/dashboard/employer_jobpost',
+          icon: <IoCreateOutline customClassName="nav-icon text-dark" />,
+        },
       ]
     },
     {
@@ -133,6 +139,12 @@ export const AppSidebarNav = () => {
       name: 'Available Candidates',
       to: '/dashboard/candidates',
       icon: <BsPersonBadge customClassName="nav-icon text-dark" />,
+    },
+    {
+      component: CNavItem,
+      name: 'Post Job',
+      to: '/dashboard/employer_jobpost',
+      icon: <IoCreateOutline customClassName="nav-icon text-dark" />,
     },
 
   ]

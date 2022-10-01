@@ -18,6 +18,7 @@ import EmployRoute from './Components/Board/EmployerRoute/EmployRoute';
 import ScrollToTop from './Components/Common/ScrollToTop';
 import Nopage from './Components/Nopage/Nopage';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import JobPost from './Components/Board/EmployerPAges/JobPost/JobPost';
 // import EmployerProfile from './Components/Board/EmployerPAges/EmployerProfile';
 
 // import Individual from './Components/Developer/Individual';
@@ -107,7 +108,7 @@ const FormsAll = React.lazy(() => import('./Components/Board/Forms/AllForms'));
 const CandidateDetail = React.lazy(() => import('./Components/Board/CandidateDetail/CandidateDetail'));
 const Search = React.lazy(() => import('./Components/Board/Candidates/Search'));
 const AddEmployer = React.lazy(() => import('./Components/Board/AddEmployer/AddEmployer'));
-const EmployerProfile = React.lazy(() => import('./Components/Board/EmployerPAges/EmployerProfile'));
+const EmployerProfile = React.lazy(() => import('./Components/Board/EmployerPAges/profile/EmployerProfile'));
 
 const loading = (
   <div className="pt-3 text-center">
@@ -163,6 +164,7 @@ function App() {
               <Route path="/dashboard" element={<PrivateRoute><Board /></PrivateRoute>} >
                 <Route path="" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
                 <Route path="employer_profile" element={<EmployRoute><EmployerProfile /></EmployRoute>} />
+                <Route path="employer_jobpost" element={<JobPost />} />
                 <Route path="update_profile" element={<PrivateRoute><ProfileUpdate /></PrivateRoute>} />
                 <Route path="mycourses" element={<PrivateRoute><MyCourses /></PrivateRoute>} />
                 <Route path="candidates" element={<AdminRoute><Search /></AdminRoute>} />
