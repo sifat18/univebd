@@ -87,6 +87,15 @@ e.target.value=''
                 >
                     <Form.Control type="text" required name="position" className="text-start" placeholder="Project Manager" onChange={handleOnChange} />
                 </FloatingLabel>
+                {/* ------experienece------- */}
+
+                <FloatingLabel
+                    controlId="floatingInput"
+                    label="experience"
+                    className="mt-2 mb-5 text-start"
+                >
+                    <Form.Control type="number" required name="experience" className="text-start" placeholder="2" onChange={handleOnChange} />
+                </FloatingLabel>
                    {/* -----------------age--------------------- */}
   <div className='d-flex'>
   <FloatingLabel
