@@ -20,18 +20,22 @@ console.log('asd',jobs)
 if(jobs.length<1){
 content=(<p className='text-center mt-5'>No Jobs Available</p>)
 }else{
-  content=(<div className='w-100 d-flex justify-content-center align-items-center'>
+  content=(<Row xs={1} md={2} className="">
   {jobs.map((job,index)=>(
       <JobPost key={index} job={job}/>
   ))}
-  </div>)
+  </Row>
+  )
 }
 
 return (
     <>
     <Header/>
        <Container fluid className='job-bg'>
-       <Container data-aos="fade-left" className='bg-job d-flex flex-column justify-content-center align-items-center   '>
+        <Container>
+       {content}
+       </Container>
+       {/* <Container data-aos="fade-left" className='bg-job d-flex flex-column justify-content-center align-items-center   '>
        <Ratio aspectRatio="16x9">
             <video loop="true" autoplay="autoplay" muted >
                     <source src={vid4} type='video/mp4' />
@@ -42,12 +46,12 @@ return (
                 {/* <h2 data-aos="fade-right" className='text-bg text-white'>Are you stressed about your career?</h2>
                 <p data-aos="fade-up" className='text-white fs-4 '>We are here to help you grow </p>
                 <p data-aos="fade-down" className='text-white fs-4 '>It's an all in one platform where you can learn and find your dream job</p> */}
-            </Container>
+            {/* </Container> */} 
       </Container>
       {/* <Container fluid className='job-bg'>
     
         </Container>   */}
-{content}
+
 
     </>
   )

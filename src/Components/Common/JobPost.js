@@ -1,10 +1,13 @@
 import React from 'react'
 import { Card, Col, Container, Row } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom';
-
+import Badge from 'react-bootstrap/Badge';
+import moment from 'moment';
 export default function JobPost({job}) {
   return (
-            <Card body className='w-50 mt-5' >
+    <Col>
+            <Card body className='rounded mt-5' >
+            {moment().startOf(job.startDate).fromNow()<'72 hours ago' && <Badge bg="primary">New</Badge>}
               <p className='text-center fs-5 fw-bold text-uppercase'>Apply for {job.position}</p>
               <Container className='d-flex justify-content-between'>
               <div>
@@ -20,6 +23,6 @@ export default function JobPost({job}) {
               </div>
               </Container>
               </Card>
-            
+              </Col>
   )
 }
