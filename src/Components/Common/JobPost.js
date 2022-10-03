@@ -1,26 +1,34 @@
-import React from 'react'
-import { Card, Col, Container, Row } from 'react-bootstrap'
-import { NavLink } from 'react-router-dom';
-import Badge from 'react-bootstrap/Badge';
 import moment from 'moment';
+import { Card, Col, Container } from 'react-bootstrap';
+import Badge from 'react-bootstrap/Badge';
+import { NavLink } from 'react-router-dom';
 export default function JobPost({job}) {
+  const {startDate}=job
+ 
   return (
     <Col>
-            <Card body className='rounded mt-5' >
-            {moment().startOf(job.startDate).fromNow()<'72 hours ago' && <Badge bg="primary">New</Badge>}
-              <p className='text-center fs-5 fw-bold text-uppercase'>Apply for {job.position}</p>
-              <Container className='d-flex justify-content-between'>
-              <div>
-              <p>Organization: {job.organization}</p> 
-              <p>Salary Range: {job.min_salary}-{job.max_salary} BDT</p> 
-              <p>Skills: {job.skills.join(', ')} </p> 
-              <p>Experience Requirement: {job.experience} years </p> 
-              <p>Application Duration: {job.startDate}-{job.endDate}</p> 
-              </div>
-              <div className='d-flex justify-content-center align-items-center'>
-              <NavLink to={`/job_browse/${job._id}`} className='py-1 px-2 bg-success rounded text-white'><Card.Link className='py-1 px-2 bg-success rounded text-white'>Details</Card.Link></NavLink>
-              <NavLink to={`/job_browse/${job._id}`} className='py-1 px-2 bg-danger rounded text-white'><Card.Link className='py-1 px-2 bg-success rounded text-white bg-danger'>Apply</Card.Link></NavLink>
-              </div>
+            <Card body className='rounded mt-5 card-shadow' >
+            {moment.duration(moment(new Date()).diff(moment(startDate))).asHours()<=72 && <Badge bg="primary">New</Badge>}
+              <p className='text-center fs-5 fw-bold text-uppercase'>Looking For {job.position}</p>
+              <Container className=''>
+              <section className='d-flex  w-50 justify-content-between align-items-center'>
+                <div className=''>
+                <p><span className='fw-bold fs-3'>৳</span> {job.min_salary}-{job.max_salary} <div></div><span className='text-muted'>Salary Range</span></p>
+                
+                </div>
+                <div>
+                <p>{job.experience} years <br/><span className='text-muted'>Experience</span></p>
+                </div>
+                  </section>
+              <section className='mt-3 mb-4'>
+              <p>{job.jd.slice(0,100)+'....'}</p>
+              <div  className='mb-3'>
+              {job.skills.map((skill,index)=>(
+    <span key={index} className='text skill-item me-2 '> {skill}</span>
+))}    </div>
+              </section>
+              <NavLink to={`/job_browse/${job._id}`} className='py-1  px-2 bg-success rounded text-white'><Card.Link className='py-1 px-2  bg-success rounded text-white'>View Details</Card.Link></NavLink>
+              
               </Container>
               </Card>
               </Col>

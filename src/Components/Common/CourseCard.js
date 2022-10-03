@@ -21,7 +21,7 @@ export default function CourseCard({id}) {
     }
     return (
         <Col key={id._id}>
-        <Card className='py-1'>
+        <Card className='py-1 card-shadow'>
             <Card.Img variant="top" className='img-fluid ' src={id.imageLink} />
             <Card.Body className='text-start'>
                 <p>Unive</p>
