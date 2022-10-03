@@ -26,3 +26,9 @@
   /* background-color: rgba(0, 0, 0, 0.7); */
   /* background-blend-mode: darken,luminosity; */
 }
+.header-job {
+  background-color: rgb(231, 250, 245);
+}
+.header-job-col {
+  background-color: rgb(20, 37, 29);
+}
