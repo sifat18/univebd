@@ -2,9 +2,7 @@ import { useEffect } from 'react'
 import './jobbrowse.css'
 
 import { useState } from 'react'
-import { Col, Container, Row } from 'react-bootstrap'
-import { AiTwotoneStar } from 'react-icons/ai'
-import { BsStarHalf } from 'react-icons/bs'
+import { Container, Row } from 'react-bootstrap'
 import Companies from '../Common/Companies'
 import JobPost from '../Common/JobPost'
 import Footer from '../Footer/Footer'
@@ -34,7 +32,12 @@ return (
 
        <Container fluid className='job-bg'>
        <Container>
-        <section>
+        <h2 className='my-4 text-center fw-bold my-5'> Browse  Available Jobs</h2>
+       {content}
+       </Container>
+     
+       <Container>
+        {/* <section>
       <Row className='my-5 header-job  rounded d-flex justify-content-around'>
 <Col xs={12} md={6} className='py-5  ps-5 rounded'>
   <h2 className='fs-1 fw-bold'>Find the Best Available Jobs Near You</h2>
@@ -48,15 +51,11 @@ return (
 )) } <span span className='text-warning'><BsStarHalf/></span></h2>
 </Col>
       </Row>
-      </section>
+      </section> */}
     </Container>
-    <hr className='d-flex'/>
+    <hr className=' mt-5'/>
     <div className='text-center fs-3'>Trusted By</div> <Companies className='my-5'/>
     <hr/>
-       <Container>
-        <h2 className='my-4 text-center fw-bold'> Browse  Available Jobs</h2>
-       {content}
-       </Container>
       
       </Container>
       <Footer/>

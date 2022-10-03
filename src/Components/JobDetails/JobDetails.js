@@ -53,8 +53,8 @@ export default function JobDetails() {
 <p>Phone: {post.PhoneNumber} - {post.email}</p>
 </div>
 <p className='fw-bold ' >Application Deadline-{post.startDate} - {post.endDate}</p>
-{/* <Button onClick={(e) => applyJob(e)} className='bluebtn btn py-2 px-5'>Apply for the job </Button> */}
-<p onClick={(e) => applyJob(e)} className=' btn py-2 px-5 apply-hover'>Apply for the job </p>
+<Button onClick={(e) => applyJob(e)} className='bluebtn apply hover btn py-2 px-5'>Apply for the job </Button>
+{/* <p onClick={(e) => applyJob(e)} className=' btn-primary variant="primary" text-white py-2 px-5 '>Apply for the job </p> */}
 
 </section>
 <hr/>
