@@ -28,6 +28,7 @@
 }
 .header-job {
   background-color: rgb(231, 250, 245);
+  /* max-width: 700px; */
 }
 .header-job-col {
   background-color: rgb(20, 37, 29);
