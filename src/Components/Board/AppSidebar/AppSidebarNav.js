@@ -113,6 +113,12 @@ export const AppSidebarNav = () => {
           to: `/dashboard/mycourses`,
           icon: <MdOutlineComputer  customClassName="nav-icon text-dark" />,
         },
+        {
+          component: CNavItem,
+          name: 'My Jobs',
+          to: `/dashboard/myjobs`,
+          icon: <MdOutlineComputer  customClassName="nav-icon text-dark" />,
+        },
       ],
     },
   ]
@@ -171,6 +177,12 @@ export const AppSidebarNav = () => {
       name: 'My Courses',
       to: `/dashboard/mycourses`,
       icon: <MdOutlineComputer customClassName="nav-icon text-dark" />,
+    },
+    {
+      component: CNavItem,
+      name: 'My Jobs',
+      to: `/dashboard/myjobs`,
+      icon: <MdOutlineComputer  customClassName="nav-icon text-dark" />,
     },
    
   ]

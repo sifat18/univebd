@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react'
-import { Button, Container, Modal } from 'react-bootstrap'
-import { useParams } from 'react-router-dom';
-import useAuth from '../Context/useAuth';
-import { useNavigate } from 'react-router-dom';
-import Header from '../Header/Header';
 import axios from 'axios';
-
+import { useEffect, useState } from 'react';
+import { Button, Container, Modal } from 'react-bootstrap';
+import { useNavigate, useParams } from 'react-router-dom';
+import useAuth from '../Context/useAuth';
+import Footer from '../Footer/Footer';
+import Header from '../Header/Header';
+import './jobdetails.css';
 export default function JobDetails() {
     const [post, setPost] = useState({});
     const navigate = useNavigate()
@@ -14,7 +14,7 @@ export default function JobDetails() {
         setShow(false);
 // if true navigate
         if(flag){
-            window.open('/dashboard/mycourses','_blank')
+            window.open('/dashboard/myjobs','_blank')
         // navigate('/dashboard/mycourses')
     }
 }
@@ -33,7 +33,7 @@ export default function JobDetails() {
 
     const applyJob = e => {
         e.preventDefault();
-        const data = { email: 'a@a.com' }
+        const data = { email: user.email }
         data.jobData = post;
         // data.orderStatus = 'Pending';
         console.log(data)
@@ -43,36 +43,43 @@ export default function JobDetails() {
   return (
     <>
     <Header/>
-    <Container fluid className='bg-secondary'>
-    <Container className='mt-5 bg-light ps-5'>
-<h3 className='text-success pt-5 '> Job Circular for {post.position}</h3>
-<p>Application Deadline-{post.startDate} - {post.endDate}</p>
-
+    {/* <Container fluid className='bg-secondary'> */}
+    <Container className='my-5 '>
+<h1 className='text-success fs-1 pt-5 mb-5'> Job Circular for {post.position}</h1>
+<hr/>
+<section className='d-flex justify-content-between align-items-center '>
+<div>
 <h5 className='fw-bold'>Company {post.organization}</h5>
 <p>Phone: {post.PhoneNumber} - {post.email}</p>
-<h5 className='fw-bold'>Job Context </h5>
-<p className='w-50 fs-5 text-left'>{post.jd}</p>
-<h5 className='fw-bold'>Experience Requirements </h5>
-<p className='w-50 fs-5 text-left'>{post.experience} years</p>
-<h5 className='fw-bold'>Skills Requirements </h5>
-<p className='w-50 fs-5 text-left'>{post?.skills?.join(', ')}</p>
-<h5 className='fw-bold'>Expected Salary </h5>
-<p className='w-50 fs-5 text-left'>{post.min_salary}-{post.max_salary} BDT</p>
-<h5 className='fw-bold'>Age Requirements </h5>
-<p className='w-50 fs-5 text-left'>{post.min_age}-{post.max_age} years</p>
-<h5 className='fw-bold'>Expected Salary </h5>
-<p className='w-50 fs-5 text-left'>{post.min_salary}-{post.max_salary} BDT</p>
-<Button onClick={(e) => applyJob(e)} className='bluebtn btn py-2 px-5'>Start learning </Button>
+</div>
+<p className='fw-bold ' >Application Deadline-{post.startDate} - {post.endDate}</p>
+{/* <Button onClick={(e) => applyJob(e)} className='bluebtn btn py-2 px-5'>Apply for the job </Button> */}
+<p onClick={(e) => applyJob(e)} className=' btn py-2 px-5 apply-hover'>Apply for the job </p>
+
+</section>
+<hr/>
+<h5 className='fw-bold fs-6 '>Job Context </h5>
+<p className='w-50 text-left fs-6'>{post.jd}</p>
+<h5 className='fw-bold fs-6'>Experience Requirements </h5>
+<p className='w-50 fs-6 text-left'>{post.experience} years</p>
+<h5 className='fw-bold fs-6'>Skills Requirements </h5>
+<p className='w-50 fs-6 text-left'>{post?.skills?.join(', ')}</p>
+<h5 className='fw-bold fs-6'>Expected Salary </h5>
+<p className='w-50 fs-6 text-left'>{post.min_salary}-{post.max_salary} BDT</p>
+<h5 className='fw-bold fs-6'>Age Requirements </h5>
+<p className='w-50 fs-6 text-left'>{post.min_age}-{post.max_age} years</p>
+<h5 className='fw-bold fs-6'>Expected Salary </h5>
+<p className='w-50 fs-6 text-left'>{post.min_salary}-{post.max_salary} BDT</p>
     </Container>
        {/* modal after submit form */}
        <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>Successful</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>ধন্যবাদ কোর্সে রেজিস্ট্রেশন করার জন্য! কোর্স টি লাইভ হওয়া মাত্রই আমরা আপনাকে ইমেইল এর মাধ্যমে জানিয়ে দিবো!</Modal.Body>
+                <Modal.Body>Your application for the position of {post.postion} is successful.</Modal.Body>
                 <Modal.Footer>
                     <Button variant="success" onClick={()=>handleClose(true)}>
-                        Visit My Courses
+                        Visit My Appilcations
                     </Button>
                     <Button variant="info" onClick={()=>handleClose(false)}>
                         Thank You!
@@ -84,14 +91,15 @@ export default function JobDetails() {
                 <Modal.Header closeButton>
                     <Modal.Title>OOPPS</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>You have already added this course</Modal.Body>
+                <Modal.Body>You have already applied for this job</Modal.Body>
                 <Modal.Footer>
                     <Button variant="success" onClick={handleCloseF}>
                         Thank You!
                     </Button>
                 </Modal.Footer>
             </Modal>
-    </Container>
+    {/* </Container> */}
+    <Footer/>
     </>
      )
 }

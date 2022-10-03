@@ -14,13 +14,14 @@ import AdminRoute from './Components/AdminRoute/AdminRoute';
 import Authprovider from './Components/AuthProvider/Authprovider';
 import Admin from './Components/Board/AddAdmin/Admin';
 import Restore from './Components/Board/DeletedCourses/Restore';
-import EmployRoute from './Components/Board/EmployerRoute/EmployRoute';
-import ScrollToTop from './Components/Common/ScrollToTop';
-import Nopage from './Components/Nopage/Nopage';
-import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import JobPost from './Components/Board/EmployerPAges/JobPost/JobPost';
+import EmployRoute from './Components/Board/EmployerRoute/EmployRoute';
+import MyJobs from './Components/Board/UserRoutes/MyJobs';
+import ScrollToTop from './Components/Common/ScrollToTop';
 import JobBrowsing from './Components/JobBrowsing/JobBrowsing';
 import JobDetails from './Components/JobDetails/JobDetails';
+import Nopage from './Components/Nopage/Nopage';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 // import EmployerProfile from './Components/Board/EmployerPAges/EmployerProfile';
 
 // import Individual from './Components/Developer/Individual';
@@ -171,6 +172,7 @@ function App() {
                 <Route path="employer_jobpost" element={<JobPost />} />
                 <Route path="update_profile" element={<PrivateRoute><ProfileUpdate /></PrivateRoute>} />
                 <Route path="mycourses" element={<PrivateRoute><MyCourses /></PrivateRoute>} />
+                <Route path="myjobs" element={<PrivateRoute><MyJobs /></PrivateRoute>} />
                 <Route path="candidates" element={<AdminRoute><Search /></AdminRoute>} />
                 <Route path="candidate/detail/:id" element={<AdminRoute><CandidateDetail /></AdminRoute>} />
                 <Route path="deletedCourses" element={<AdminRoute><Restore /></AdminRoute>} />

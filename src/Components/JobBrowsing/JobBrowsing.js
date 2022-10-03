@@ -4,6 +4,7 @@ import './jobbrowse.css'
 import { useState } from 'react'
 import { Container, Row } from 'react-bootstrap'
 import JobPost from '../Common/JobPost'
+import Footer from '../Footer/Footer'
 import Header from './../Header/Header'
 export default function JobBrowsing() {
   const [jobs, setJobs] = useState([])
@@ -32,7 +33,7 @@ return (
        </Container>
       
       </Container>
-      
+      <Footer/>
 
     </>
   )
