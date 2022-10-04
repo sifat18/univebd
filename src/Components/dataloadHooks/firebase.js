@@ -79,6 +79,7 @@ const useFirebase = () => {
             })
             .catch((error) => {
                 seterror(error.message);
+                console.log(error.message)
                 // ..
             }).finally(() => {
                 setisLoading(false)

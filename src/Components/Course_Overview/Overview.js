@@ -15,10 +15,14 @@ import useAuth from '../Context/useAuth';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import './over.css';
+import LoginModal from '../Common/LoginModal';
 
 export default function Overview() {
     const navigate = useNavigate()
     const [show, setShow] = useState(false);
+    const [Lshow, setLShow] = useState(false);
+    const handleCloseL = () => setLShow(false);
+    const handleShowL = () => setLShow(true);
     const handleClose = (flag) => {
         setShow(false);
 // if true navigate
@@ -80,10 +84,7 @@ export default function Overview() {
                                         {/* <NavLink to={`/learn/start/${courses._id}`}><Button className='bluebtn btn py-2 px-5'>Start learning </Button></NavLink> */}
                                         {user.email &&
                                             <Button onClick={(e) => orderData(e)} className='bluebtn btn py-2 px-5'>Start learning </Button>}
-                                        {!user.email &&
-                                            <OverlayTrigger trigger="click" placement="right" overlay={popover}>
-                                                <Button variant="success">Start Learning</Button>
-                                            </OverlayTrigger>}
+                                        {!user.email && <Button variant="success" onClick={handleShowL}>Start Learning</Button>}
                                     </Card.Body>
                                     {/* <hr className='bg-secondary' />
                                     <Card.Body>
@@ -155,9 +156,7 @@ export default function Overview() {
                                     {user.email &&
                                         <Button onClick={(e) => orderData(e)} className='bluebtn btn py-2 px-5'>Start learning </Button>}
                                     {!user.email &&
-                                        <OverlayTrigger trigger="click" placement="right" overlay={popover}>
-                                            <Button className='bluebtn' >Sign in to start learning</Button>
-                                        </OverlayTrigger>}
+                                            <Button className='bluebtn' onClick={handleShowL}>Sign in to start learning</Button>}
                                 </Card.Body>
                                 {/* <hr className='bg-secondary' />
                                 <Card.Body>
@@ -226,15 +225,16 @@ export default function Overview() {
                 </Modal.Footer>
             </Modal>
 
+            <LoginModal Lshow={Lshow} handleCloseL={handleCloseL}/>
         </>
     )
 }
 
-const popover = (
-    <Popover id="popover-basic">
-        {/* <Popover.Header as="h3">Popover right</Popover.Header> */}
-        <Popover.Body>
-            Log in to start learning
-        </Popover.Body>
-    </Popover>
-);
+// const popover = (
+//     <Popover id="popover-basic">
+//         {/* <Popover.Header as="h3">Popover right</Popover.Header> */}
+//         <Popover.Body>
+//             Log in to start learning
+//         </Popover.Body>
+//     </Popover>
+// );
