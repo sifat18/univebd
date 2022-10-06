@@ -110,10 +110,10 @@ e.target.value=''
 
                <FloatingLabel
                    controlId="floatingInput"
-                   label="experience"
+                   label="Experience"
                    className="mt-2 mb-5 text-start"
                >
-                   <Form.Control type="number" value={data?.experience} required name="experience" className="text-start" placeholder="2" onChange={handleOnChange} />
+                   <Form.Control type="text" value={data?.experience} required name="experience" className="text-start"  onChange={handleOnChange} />
                </FloatingLabel>
                   {/* -----------------age--------------------- */}
  <div className='d-flex'>
@@ -158,7 +158,7 @@ e.target.value=''
 
                <FloatingLabel
                    controlId="floatingInput"
-                   label="Add a skills"
+                   label="Edit Required Skills [Press Enter After Each Skill]"
                    className="mt-2 mb-5 text-start "
                >
                {/* <div className='tag-container'> */}

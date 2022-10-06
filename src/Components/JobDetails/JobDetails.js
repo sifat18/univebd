@@ -3,6 +3,17 @@ import { useEffect, useState } from 'react';
 import { Button, Container, Modal } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
 import LoginModal from '../Common/LoginModal';
+
+import { FaCommentsDollar } from 'react-icons/fa';
+import { GiSkills } from 'react-icons/gi';
+import { MdWork } from 'react-icons/md';
+import { MdPhoneCallback } from 'react-icons/md';
+import { MdOutlineDateRange } from 'react-icons/md';
+import { MdEmail } from 'react-icons/md';
+import { BsPersonCheckFill } from 'react-icons/bs';
+import { BsBuilding } from 'react-icons/bs';
+import { SiSkillshare } from 'react-icons/si';
+
 import useAuth from '../Context/useAuth';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
@@ -59,26 +70,40 @@ const handleClose = (flag) => {
 <hr/>
 <section className='d-flex justify-content-between align-items-center '>
 <div>
-<h5 className='fw-bold'>Company {post.organization}</h5>
-<p>Phone: {post.PhoneNumber} - {post.email}</p>
+<h5 className='fw-bold'> <BsBuilding className='fs-4'/> <span className='text-primary'>Company</span> {post.organization}</h5>
+<p><MdPhoneCallback className='fs-4'/> Phone: {post.PhoneNumber} <MdEmail className='fs-4'/> {post.email}</p>
 </div>
-<p className='fw-bold ' >Application Deadline-{post.startDate} - {post.endDate}</p>
+<p className='fw-bold ' ><MdOutlineDateRange className='fs-4'/> Application Deadline-{post.startDate} - {post.endDate}</p>
 {!user.email && <Button className='bluebtn' onClick={handleShowL}>Sign in to Apply</Button>}
 {user.email && <Button onClick={(e) => applyJob(e)} className='bluebtn apply hover btn py-2 px-5'>Apply for the job </Button>}
 {/* <p onClick={(e) => applyJob(e)} className=' btn-primary variant="primary" text-white py-2 px-5 '>Apply for the job </p> */}
 
 </section>
 <hr/>
-<h5 className='fw-bold fs-6 '>Job Context </h5>
+<h5 className='fw-bold fs-6 '> <MdWork className='fs-4'/> Job Context </h5>
 <p className='w-50 text-left fs-6'>{post.jd}</p>
-<h5 className='fw-bold fs-6'>Experience Requirements </h5>
-<p className='w-50 fs-6 text-left'>{post.experience} years</p>
-<h5 className='fw-bold fs-6'>Skills Requirements </h5>
+<hr/>
+<section className='d-flex justify-content-between'>
+<div >
+<h5 className='fw-bold fs-6'> <BsPersonCheckFill className='fs-4' /> Age Requirements </h5>
+<p className=' fs-6 text-center'>{post.min_age}-{post.max_age} years</p>
+{/* <hr/> */}
+</div>
+<div>
+<h5 className='fw-bold fs-6'> <GiSkills className='fs-4'/> Experience Requirements </h5>
+<p className=' fs-6 text-center'>{post.experience} years</p>
+{/* <hr/> */}
+</div>
+<div className=''>
+<h5 className='fw-bold fs-6'> <FaCommentsDollar className='fs-4'/> Expected Salary </h5>
+<p className=' fs-6 text-end'>{post.min_salary}-{post.max_salary} BDT</p>
+{/* <hr/> */}
+</div>
+</section>
+<hr/>
+<h5 className='fw-bold fs-6'><SiSkillshare className='fs-4'/> Skills Requirements </h5>
 <p className='w-50 fs-6 text-left'>{post?.skills?.join(', ')}</p>
-<h5 className='fw-bold fs-6'>Expected Salary </h5>
-<p className='w-50 fs-6 text-left'>{post.min_salary}-{post.max_salary} BDT</p>
-<h5 className='fw-bold fs-6'>Age Requirements </h5>
-<p className='w-50 fs-6 text-left'>{post.min_age}-{post.max_age} years</p>
+<hr/>
 
     </Container>
        {/* modal after submit form */}

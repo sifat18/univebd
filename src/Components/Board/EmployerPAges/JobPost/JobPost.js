@@ -1,19 +1,29 @@
 import axios from 'axios';
 import './jobpost.css';
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { Button, Container, FloatingLabel, Form, Modal } from 'react-bootstrap'
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import moment from 'moment/moment';
 import useAuth from '../../../Context/useAuth';
+import { useNavigate } from 'react-router-dom';
 
 export default function JobPost() {
     // setting date variables 
+    const navigate = useNavigate()
+    const formRef = useRef(null);
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
 //    modal display
     const [showT, setShowT] = useState(false);
-    const handleCloseT = () => setShowT(false);
+    const handleCloseT = () => {
+              setShowT(false)
+              formRef.current.reset();
+              setStartDate(new Date())
+              setEndDate(new Date())
+              setSkills([])
+            //   window.open('/dashboard/employer_jobpost')
+        };
     const handleShowT = () => setShowT(true)
 // looping skills
     const [skills, setSkills] = useState([]);
@@ -28,6 +38,7 @@ export default function JobPost() {
         const newUser = { ...data };
         newUser[field] = value;
         setData(newUser);
+        
         console.log(newUser)
 
     }
@@ -55,7 +66,7 @@ e.target.value=''
     return (
         <Container className='py-2'>
             {/* Login form */}
-            <form className='mt-3  py-3' onSubmit={handleSubmit}>
+            <form ref={formRef} className='mt-3  py-3' onSubmit={handleSubmit}>
                
                 {/* --------- */}
                 <FloatingLabel
@@ -99,10 +110,10 @@ e.target.value=''
 
                 <FloatingLabel
                     controlId="floatingInput"
-                    label="experience"
+                    label="Experience"
                     className="mt-2 mb-5 text-start"
                 >
-                    <Form.Control type="number" required name="experience" className="text-start" placeholder="2" onChange={handleOnChange} />
+                    <Form.Control type="text" required name="experience" className="text-start"  onChange={handleOnChange} />
                 </FloatingLabel>
                    {/* -----------------age--------------------- */}
   <div className='d-flex'>
@@ -147,7 +158,7 @@ e.target.value=''
 
                 <FloatingLabel
                     controlId="floatingInput"
-                    label="Add a skills"
+                    label="Add Required Skills [Press Enter After Each Skill]"
                     className="mt-2 mb-5 text-start "
                 >
                 {/* <div className='tag-container'> */}
