@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Button, Container, Modal } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
+import LoginModal from '../Common/LoginModal';
 import useAuth from '../Context/useAuth';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
@@ -9,8 +10,15 @@ import './jobdetails.css';
 export default function JobDetails() {
     const [post, setPost] = useState({});
     const navigate = useNavigate()
-    const [show, setShow] = useState(false);
-    const handleClose = (flag) => {
+    
+    // for login
+    const [Lshow, setLShow] = useState(false);
+    const handleCloseL = () => setLShow(false);
+    const handleShowL = () => setLShow(true);
+// ------
+// after apply modal
+const [show, setShow] = useState(false);
+const handleClose = (flag) => {
         setShow(false);
 // if true navigate
         if(flag){
@@ -19,9 +27,11 @@ export default function JobDetails() {
     }
 }
     const handleShow = () => setShow(true);
+    // if the course is available or not
     const [showF, setShowF] = useState(false);
     const handleCloseF = () => setShowF(false);
     const handleShowF = () => setShowF(true);
+    // ---
     const { id } = useParams()
     useEffect(() => {
         fetch(`https://fierce-woodland-01411.herokuapp.com/api/jobpost/${id}`).then(res => res.json()).then(data => {
@@ -30,7 +40,7 @@ export default function JobDetails() {
     }, [id])
  
     const { user } = useAuth()
-
+// applying function
     const applyJob = e => {
         e.preventDefault();
         const data = { email: user.email }
@@ -53,7 +63,8 @@ export default function JobDetails() {
 <p>Phone: {post.PhoneNumber} - {post.email}</p>
 </div>
 <p className='fw-bold ' >Application Deadline-{post.startDate} - {post.endDate}</p>
-<Button onClick={(e) => applyJob(e)} className='bluebtn apply hover btn py-2 px-5'>Apply for the job </Button>
+{!user.email && <Button className='bluebtn' onClick={handleShowL}>Sign in to Apply</Button>}
+{user.email && <Button onClick={(e) => applyJob(e)} className='bluebtn apply hover btn py-2 px-5'>Apply for the job </Button>}
 {/* <p onClick={(e) => applyJob(e)} className=' btn-primary variant="primary" text-white py-2 px-5 '>Apply for the job </p> */}
 
 </section>
@@ -86,7 +97,7 @@ export default function JobDetails() {
                     </Button>
                 </Modal.Footer>
             </Modal>
-            {/* already has course */}
+            {/* already has job */}
             <Modal show={showF} onHide={handleCloseF}>
                 <Modal.Header closeButton>
                     <Modal.Title>OOPPS</Modal.Title>
@@ -100,6 +111,7 @@ export default function JobDetails() {
             </Modal>
     {/* </Container> */}
     <Footer/>
+    <LoginModal Lshow={Lshow} handleCloseL={handleCloseL}/>
     </>
      )
 }

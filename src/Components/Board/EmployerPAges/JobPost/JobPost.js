@@ -9,11 +9,11 @@ import moment from 'moment/moment';
 export default function JobPost() {
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
+    const [showT, setShowT] = useState(false);
 
     const [skills, setSkills] = useState([]);
     const [data, setData] = useState({});
-    const [showT, setShowT] = useState(false);
-    const handleCloseT = () => setShowT(false);
+  const handleCloseT = () => setShowT(false);
     const handleShowT = () => setShowT(true)
     const handleOnChange = e => {
         const field = e.target.name;
