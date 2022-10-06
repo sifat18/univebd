@@ -5,16 +5,23 @@ import { Button, Container, FloatingLabel, Form, Modal } from 'react-bootstrap'
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import moment from 'moment/moment';
+import useAuth from '../../../Context/useAuth';
 
 export default function JobPost() {
+    // setting date variables 
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
+//    modal display
     const [showT, setShowT] = useState(false);
-
-    const [skills, setSkills] = useState([]);
-    const [data, setData] = useState({});
-  const handleCloseT = () => setShowT(false);
+    const handleCloseT = () => setShowT(false);
     const handleShowT = () => setShowT(true)
+// looping skills
+    const [skills, setSkills] = useState([]);
+    // storing form data
+    const [data, setData] = useState({});
+
+    const {user}=useAuth()
+
     const handleOnChange = e => {
         const field = e.target.name;
         const value = e.target.value;
@@ -26,6 +33,7 @@ export default function JobPost() {
     }
     const handleSubmit = e => {
         e.preventDefault()
+        data.jobCreator=user.email
         data.skills=skills
         data.startDate=moment(startDate).format('L') 
         data.endDate=moment(endDate).format('L') 

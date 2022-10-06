@@ -22,6 +22,7 @@ import JobBrowsing from './Components/JobBrowsing/JobBrowsing';
 import JobDetails from './Components/JobDetails/JobDetails';
 import Nopage from './Components/Nopage/Nopage';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import JobEdit from './Components/Board/EmployerPAges/JobEdit/JobEdit';
 // import EmployerProfile from './Components/Board/EmployerPAges/EmployerProfile';
 
 // import Individual from './Components/Developer/Individual';
@@ -181,6 +182,7 @@ function App() {
                 <Route path="ademployer" element={<AdminRoute><AddEmployer /></AdminRoute>} />
                 <Route path="adtutor" element={<AdminRoute><AddInstructor /></AdminRoute>} />
                 <Route path="edit/:id" element={<AdminRoute><Edit /></AdminRoute>} />
+                <Route path="edit_job/:id" element={<AdminRoute><JobEdit /></AdminRoute>} />
                 <Route path="addcourse" element={<AdminRoute><CourseAdd /></AdminRoute>} />
                 <Route path="form_management" element={<AdminRoute><FormsAll /></AdminRoute>} />
               </Route>

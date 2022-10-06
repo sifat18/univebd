@@ -1,10 +1,12 @@
 import moment from 'moment';
-import { Card, Col, Container } from 'react-bootstrap';
+import { Card, Col, Container, Button } from 'react-bootstrap';
 import Badge from 'react-bootstrap/Badge';
 import { NavLink } from 'react-router-dom';
+import useAuth from './../Context/useAuth';
 export default function JobPost({job}) {
   const {startDate}=job
  
+  const {user,admin}=useAuth()
   return (
     <Col>
             <Card body className='rounded mt-5 card-shadow' >
@@ -27,8 +29,10 @@ export default function JobPost({job}) {
     <span key={index} className='text skill-item mt-2 me-2 '> {skill}</span>
 ))}    </div>
               </section>
-              <NavLink to={`/job_browse/${job._id}`} className='py-1  px-2 bg-success rounded text-white'><Card.Link className='py-1 px-2  bg-success rounded text-white'>View Details</Card.Link></NavLink>
-              
+              <div className='d-flex justify-content-around'>
+              <NavLink to={`/job_browse/${job._id}`} className='p-2 bg-success rounded text-white'><Card.Link className='py-1 px-2  bg-success rounded text-white'>View Details</Card.Link></NavLink>
+              {admin && <NavLink to={`/dashboard/edit_job/${job._id}`}> <Button className='p-2' variant="outline-success">Edit JobPost <img src={'ar'} alt="" /></Button></NavLink>}
+              </div>
               </Container>
               </Card>
               </Col>

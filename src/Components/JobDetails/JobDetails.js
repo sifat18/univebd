@@ -79,8 +79,7 @@ const handleClose = (flag) => {
 <p className='w-50 fs-6 text-left'>{post.min_salary}-{post.max_salary} BDT</p>
 <h5 className='fw-bold fs-6'>Age Requirements </h5>
 <p className='w-50 fs-6 text-left'>{post.min_age}-{post.max_age} years</p>
-<h5 className='fw-bold fs-6'>Expected Salary </h5>
-<p className='w-50 fs-6 text-left'>{post.min_salary}-{post.max_salary} BDT</p>
+
     </Container>
        {/* modal after submit form */}
        <Modal show={show} onHide={handleClose}>
