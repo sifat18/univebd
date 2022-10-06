@@ -111,7 +111,7 @@ export default function Header() {
                         <Nav className="fw-bold d-none d-md-block ">
                             <NavLink to='/learn'><Nav.Link className=" d-inline mx-5 text-dark" href="#course">কোর্সসমুহ</Nav.Link></NavLink >
                             <NavLink to='/contact'><Nav.Link className=" d-inline mx-5 text-dark" href="/contact">যোগাযোগ</Nav.Link></NavLink >
-                            <NavLink to='/job_browse'><Nav.Link className=" d-inline mx-5 text-dark" href="/contact">jobs</Nav.Link></NavLink >
+                            {/* <NavLink to='/job_browse'><Nav.Link className=" d-inline mx-5 text-dark" href="/contact">jobs</Nav.Link></NavLink > */}
                         </Nav>
                         <Nav className="fw-bold d-md-none ">
                             <NavLink to='/learn'><Nav.Link className="text-dark " href="#course">কোর্সসমুহ</Nav.Link></NavLink >

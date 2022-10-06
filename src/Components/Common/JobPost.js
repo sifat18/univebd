@@ -3,10 +3,15 @@ import { Card, Col, Container, Button } from 'react-bootstrap';
 import Badge from 'react-bootstrap/Badge';
 import { NavLink } from 'react-router-dom';
 import useAuth from './../Context/useAuth';
+import axios from 'axios';
 export default function JobPost({job}) {
   const {startDate}=job
  
   const {user,admin}=useAuth()
+
+  const deleteJob=(id)=>{
+    axios.delete(`https://fierce-woodland-01411.herokuapp.com/api/delete_job/${id}`).then(res=>res.data.acknowledged? window.location.reload(true):console.log('error at delete'))
+  }
   return (
     <Col>
             <Card body className='rounded mt-5 card-shadow' >
@@ -31,7 +36,8 @@ export default function JobPost({job}) {
               </section>
               <div className='d-flex justify-content-around'>
               <NavLink to={`/job_browse/${job._id}`} className='p-2 bg-success rounded text-white'><Card.Link className='py-1 px-2  bg-success rounded text-white'>View Details</Card.Link></NavLink>
-              {admin && <NavLink to={`/dashboard/edit_job/${job._id}`}> <Button className='p-2' variant="outline-success">Edit JobPost <img src={'ar'} alt="" /></Button></NavLink>}
+              {admin && <NavLink to={`/dashboard/edit_job/${job._id}`}> <Button className='p-2' variant="outline-secondary">Edit JobPost <img src={'ar'} alt="" /></Button></NavLink>}
+              {admin && <Button className='p-2' variant="outline-danger" onClick={()=>deleteJob(job._id)}>Delete JobPost <img src={'ar'} alt="" /></Button>}
               </div>
               </Container>
               </Card>
