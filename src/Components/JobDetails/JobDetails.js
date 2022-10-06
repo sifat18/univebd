@@ -81,7 +81,7 @@ const handleClose = (flag) => {
 </section>
 <hr/>
 <h5 className='fw-bold fs-6 '> <MdWork className='fs-4'/> Job Context </h5>
-<p className='w-50 text-left fs-6'>{post.jd}</p>
+<p className=' text-left fs-6'>{post.jd}</p>
 <hr/>
 <section className='d-flex justify-content-between'>
 <div >

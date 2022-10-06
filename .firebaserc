@@ -1,7 +1,8 @@
 {
   "projects": {
     "default": "univebd365",
-    "educe": "educ-5542f"
+    "educe": "educ-5542f",
+    "educ": "educ-5542f"
   },
   "targets": {},
   "etags": {}
