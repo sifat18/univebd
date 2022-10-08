@@ -101,8 +101,10 @@ const handleClose = (flag) => {
 </div>
 </section>
 <hr/>
-<h5 className='fw-bold fs-6'><SiSkillshare className='fs-4'/> Skills Requirements </h5>
-<p className='w-50 fs-6 text-left'>{post?.skills?.join(', ')}</p>
+<h5 className='fw-bold fs-6'><SiSkillshare className='fs-1'/> Skills Requirements </h5>
+<p className='w-50 fs-6 text-left'>{post.skills.map((skill,index)=>(
+    <span key={index} className='text skill-item mt-2 me-2 '> {skill}</span>
+))} </p>
 <hr/>
 
     </Container>
