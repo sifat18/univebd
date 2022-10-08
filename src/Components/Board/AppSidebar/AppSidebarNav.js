@@ -97,6 +97,38 @@ export const AppSidebarNav = () => {
     },
     {
       component: CNavGroup,
+      name: 'Employer Routes',
+      to: '/dashboard',
+      icon: <BiUserCircle  customClassName="nav-icon text-dark" />,
+      items: [
+        {
+          component: CNavItem,
+          name: 'Create Employer Profile',
+          to: '/dashboard/ademployer',
+          icon: <BsPersonCheck customClassName="nav-icon text-dark" />,
+        },
+        {
+          component: CNavItem,
+          name: 'Available Candidates',
+          to: '/dashboard/candidates',
+          icon: <BsPersonBadge customClassName="nav-icon text-dark" />,
+        },
+        {
+          component: CNavItem,
+          name: 'Post Job',
+          to: '/dashboard/employer_jobpost',
+          icon: <IoCreateOutline customClassName="nav-icon text-dark" />,
+        },
+        {
+          component: CNavItem,
+          name: 'Course Delete Form ',
+          to: '/dashboard/delete_request_form',
+          icon: <IoCreateOutline customClassName="nav-icon text-dark" />,
+        },
+      ],
+    },
+    {
+      component: CNavGroup,
       name: 'User Routes',
       to: '/dashboard',
       icon: <BiUserCircle  customClassName="nav-icon text-dark" />,
@@ -150,6 +182,12 @@ export const AppSidebarNav = () => {
       component: CNavItem,
       name: 'Post Job',
       to: '/dashboard/employer_jobpost',
+      icon: <IoCreateOutline customClassName="nav-icon text-dark" />,
+    },
+    {
+      component: CNavItem,
+      name: 'Course Delete Form ',
+      to: '/dashboard/delete_request_form',
       icon: <IoCreateOutline customClassName="nav-icon text-dark" />,
     },
 

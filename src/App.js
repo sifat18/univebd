@@ -23,6 +23,7 @@ import JobDetails from './Components/JobDetails/JobDetails';
 import Nopage from './Components/Nopage/Nopage';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import JobEdit from './Components/Board/EmployerPAges/JobEdit/JobEdit';
+import DeleteForm from './Components/Board/EmployerPAges/CourseDeleteRequest/DeleteForm';
 // import EmployerProfile from './Components/Board/EmployerPAges/EmployerProfile';
 
 // import Individual from './Components/Developer/Individual';
@@ -175,6 +176,7 @@ function App() {
                 <Route path="mycourses" element={<PrivateRoute><MyCourses /></PrivateRoute>} />
                 <Route path="myjobs" element={<PrivateRoute><MyJobs /></PrivateRoute>} />
                 <Route path="candidates" element={<AdminRoute><Search /></AdminRoute>} />
+                <Route path="delete_request_form" element={<AdminRoute><DeleteForm /></AdminRoute>} />
                 <Route path="candidate/detail/:id" element={<AdminRoute><CandidateDetail /></AdminRoute>} />
                 <Route path="deletedCourses" element={<AdminRoute><Restore /></AdminRoute>} />
 

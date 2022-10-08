@@ -20,7 +20,7 @@ export default function Assessments() {
                             <h2 className='fs-1 mb-4'>আপনার স্কিল গ্যাপ খুঁজে বের করুন</h2>
                             <p className='smallText'>অ্যাসেসমেন্টের মাধ্যমে যে বিষয় গুলোতে আপনার স্কিল গ্যাপ আছে কিংবা ইমপ্রুভ এর সুযোগ আছে তা চিহ্নিত করতে পারবেন।</p>
                             <p className='smallText'>Unive সেই বিষয় গুলোতে ইমপ্রুভ করার জন্যে আপনাকে পার্সোনালাইজড সাজেশন এবং ট্রেইনিং ম্যাটেরিয়ালস ডিজাইন করে দিবে।<br />  এছাড়া কোনো অ্যাসেসমেন্ট এ এক্সেপশনাল ফলাফলের প্রেক্ষিতে জব প্লেসমেন্ট এর সুযোগ তো আছেই। </p>
-                            <NavLink to='/job_browse'><Button variant-primary className='bluebtn bg-primary ' >ট্রাই করুন ইউনিভ জবস</Button></NavLink>
+                            <NavLink to='/job_browse'><Button  variant="light" className='text-primary' >ট্রাই করুন ইউনিভ জবস</Button></NavLink>
                         </Col>
                         <Col xs={12} md={4} >
                             <img src={top} alt="" className='img-fluid' />

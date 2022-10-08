@@ -4,6 +4,7 @@ import TableData from '../../Common/TableData'
 
 export default function AllForms() {
     const [contributer, setContributer] = useState([])
+    const [courseDelete, setCourseDelete] = useState([])
     const [instructor, setInstructor] = useState([])
     const [recruitement, setRecruitement] = useState([])
     const [representative, setRepresentative] = useState([])
@@ -19,6 +20,7 @@ export default function AllForms() {
         fetch('https://fierce-woodland-01411.herokuapp.com/api/demo').then(res => res.json()).then(data => setDemo(data))
         fetch('https://fierce-woodland-01411.herokuapp.com/api/enterprice').then(res => res.json()).then(data => setEnterprice(data))
         fetch('https://fierce-woodland-01411.herokuapp.com/api/scholarship').then(res => res.json()).then(data => setScholarship(data))
+        fetch('https://fierce-woodland-01411.herokuapp.com/api/course_delete').then(res => res.json()).then(data => setCourseDelete(data))
     }, [])
     const [choice, setChoice] = useState('choose form data ');
     const [tableData, settableData] = useState([]);
@@ -50,6 +52,9 @@ switch(data){
   case 'scholarship':
     settableData(scholarship)
     break;
+  case 'courseDelete':
+    settableData(courseDelete)
+    break;
   default: settableData([])
 }
     }
@@ -65,6 +70,7 @@ switch(data){
                 <option value="demo">for demo</option>
                 <option value="enterprice">enterprise plan request</option>
                 <option value="scholarship">for scholarship</option>
+                <option value="courseDelete">course delete request</option>
               </Form.Select>
       </Container>
 

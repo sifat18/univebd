@@ -12,7 +12,7 @@ import { MdOutlineDateRange } from 'react-icons/md';
 import { MdEmail } from 'react-icons/md';
 import { BsPersonCheckFill } from 'react-icons/bs';
 import { BsBuilding } from 'react-icons/bs';
-import { SiSkillshare } from 'react-icons/si';
+import { MdBuildCircle } from 'react-icons/md';
 
 import useAuth from '../Context/useAuth';
 import Footer from '../Footer/Footer';
@@ -101,8 +101,8 @@ const handleClose = (flag) => {
 </div>
 </section>
 <hr/>
-<h5 className='fw-bold fs-6'><SiSkillshare className='fs-1'/> Skills Requirements </h5>
-<p className='w-50 fs-6 text-left'>{post.skills.map((skill,index)=>(
+<h5 className='fw-bold fs-6'><MdBuildCircle className='fs-4 text-secondary'/> Skills Requirements </h5>
+<p className='w-50 fs-6 text-left'>{post?.skills?.length>0 && post?.skills?.map((skill,index)=>(
     <span key={index} className='text skill-item mt-2 me-2 '> {skill}</span>
 ))} </p>
 <hr/>

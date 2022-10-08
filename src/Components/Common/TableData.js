@@ -1,36 +1,51 @@
 import React from 'react'
-import { Table,Form } from 'react-bootstrap'
+import { Table,Form,Button,Modal } from 'react-bootstrap'
 import { useState } from 'react';
-import { axios } from 'axios';
+import axios  from 'axios';
 
 export default function TableData({tableData,choice}) {
-  // const [status, setStatus] = useState('Change Status ');
-  function handleSelectChange(event,id,choice) {
+  const [show, setShow] = useState(false);
+const handleClose = () =>  setShow(false);
+    const handleShow = () => setShow(true);
+  
+  function handleSelectChange(event,id) {
     // setStatus(event.target.value);
-    console.log(event.target.value)
+    console.log(event.target.value,id,choice)
+    let status
 
     switch(choice){
       case 'contributer':
-        axios.put(`https://fierce-woodland-01411.herokuapp.com/api/contributer/edit/${id}?choice=${event.target.value}`).then(res => res.data ? console.log('dsane') : '')
+        status=event.target.value
+        axios.put(`https://fierce-woodland-01411.herokuapp.com/api/contributer/edit/${id}`,{status}).then(res => res.data ? handleShow() : '')
         break;
       case 'instructor':
+        status=event.target.value
         console.log('instructor')
-        axios.put(`https://fierce-woodland-01411.herokuapp.com/api/instructor/edit/${id}?choice=${event.target.value}`).then(res => res.data ? console.log('dsane') : '')
+        axios.put(`https://fierce-woodland-01411.herokuapp.com/api/instructor/edit/${id}`,{status}).then(res => res.data ?handleShow() : '')
         break;
       case 'recruitement':
-        axios.put(`https://fierce-woodland-01411.herokuapp.com/api/unive_recruitement/edit/${id}?choice=${event.target.value}`).then(res => res.data ? console.log('dsane') : '')
+        status=event.target.value
+        axios.put(`https://fierce-woodland-01411.herokuapp.com/api/unive_recruitement/edit/${id}`,{status}).then(res => res.data ? handleShow() : '')
         break;
       case 'representative':
-        axios.put(`https://fierce-woodland-01411.herokuapp.com/api/representative/edit/${id}?choice=${event.target.value}`).then(res => res.data ? console.log('dsane') : '')
+        status=event.target.value
+        axios.put(`https://fierce-woodland-01411.herokuapp.com/api/representative/edit/${id}`,{status}).then(res => res.data ?handleShow() : '')
         break;
       case 'demo':
-        axios.put(`https://fierce-woodland-01411.herokuapp.com/api/demo/edit/${id}?choice=${event.target.value}`).then(res => res.data ? console.log('dsane') : '')
+        status=event.target.value
+        axios.put(`https://fierce-woodland-01411.herokuapp.com/api/demo/edit/${id}`,{status}).then(res => res.data ?handleShow() : '')
         break;
       case 'enterprice':
-        axios.put(`https://fierce-woodland-01411.herokuapp.com/api/enterprice/edit/${id}?choice=${event.target.value}`).then(res => res.data ? console.log('dsane') : '')
+        status=event.target.value
+        axios.put(`https://fierce-woodland-01411.herokuapp.com/api/enterprice/edit/${id}`,{status}).then(res => res.data ? handleShow() : '')
         break;
       case 'scholarship':
-        axios.put(`https://fierce-woodland-01411.herokuapp.com/api/scholarship/edit/${id}?choice=${event.target.value}`).then(res => res.data ? console.log('dsane') : '')
+        status=event.target.value
+        axios.put(`https://fierce-woodland-01411.herokuapp.com/api/scholarship/edit/${id}`,{status}).then(res => res.data ? handleShow() : '')
+        break;
+      case 'courseDelete':
+        status=event.target.value
+        axios.put(`https://fierce-woodland-01411.herokuapp.com/api/course_delete/edit/${id}`,{status}).then(res => res.data ? handleShow() : '')
         break;
       default: 
     }
@@ -43,7 +58,7 @@ export default function TableData({tableData,choice}) {
         <tr>
           <th>#</th>
           <th>Name</th>
-       { choice!=="representative" && choice!=="instructor" && choice!=="scholarship" && choice!=="contributer"  && <th>Organization name</th>}
+       { choice!=="representative" && choice!=="instructor" && choice!=="scholarship" && choice!=="contributer" && choice!=="courseDelete"  && <th>Organization name</th>}
           <th>Email</th>
           <th>Phone</th>
           {choice==="instructor"  && <th>Subject</th>}
@@ -53,6 +68,7 @@ export default function TableData({tableData,choice}) {
           {choice==="scholarship"  &&<th>Platform learn</th>}
           {choice==="recruitement"  &&<th>Candidate Requirement</th>}
           {choice==="recruitement"  &&<th>Additional_information</th>}
+          {choice==="courseDelete"  &&<th>course to deleted</th>}
           <th>Status</th>
           <th>Status Change</th>
 
@@ -63,9 +79,11 @@ export default function TableData({tableData,choice}) {
                       <tr key={idx}>
                         <td>{idx + 1}</td>
                         <td>{m.FullName}</td>
-       { choice!=="representative" && choice!=="instructor" && choice!=="scholarship"  && choice!=="contributer"  && <td>{m.company}</td>}
+       { choice!=="representative" && choice!=="instructor" && choice!=="scholarship"  && choice!=="contributer" &&choice!=="courseDelete"  && <td>{m.company}</td>}
                         <td>{m.email}</td>
                         <td>{m.PhoneNumber}</td>
+          {choice==="courseDelete"  &&<th>{m.course}</th>}
+
                         {choice==="instructor"  && <td>{m.subject}</td>}
                         {choice==="contributer"  && <td>{m.subject}</td>}
                         {choice==="recruitement"  && <td>{m.candidateRequirement}</td>}
@@ -73,9 +91,9 @@ export default function TableData({tableData,choice}) {
                         {choice==="scholarship"  &&<td>{m.edu_qualification}</td>}
           {choice==="scholarship"  &&<td>{m.scholarship_need}</td>}
           {choice==="scholarship"  &&<td>{m.platform_learn}</td>}
-          <td className={m.status==="pending" && 'text-danger'}>{m.status}</td>
+          <td className={m.status==="pending" ? 'text-danger':'text-success'}>{m.status}</td>
           <td>
-            <Form.Select className='ms-2' aria-label="Type of Form:" name='form_type' onChange={handleSelectChange} >
+            <Form.Select className='ms-2' aria-label="Type of Form:" name='form_type' onChange={(e)=>handleSelectChange(e,m._id)} >
                 <option>Choose status</option>
                 <option value="pending">pending</option>
                 <option value="Reviewed">Reviewed</option>
@@ -84,6 +102,19 @@ export default function TableData({tableData,choice}) {
                     ))}
       </tbody>
     </Table>
+       {/* modal after submit form */}
+       <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Successful</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>Form Status change is successful.</Modal.Body>
+                <Modal.Footer>
+        
+                    <Button variant="info" onClick={handleClose}>
+                        Thank You!
+                    </Button>
+                </Modal.Footer>
+            </Modal>
     </div>
   )
 }
