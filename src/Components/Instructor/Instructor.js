@@ -1,14 +1,12 @@
 import React, { useState } from 'react'
-import { Accordion, Button, Col, Container, Form, Row, FloatingLabel, Modal } from 'react-bootstrap'
-import instruct from '../images/instructor/instruct.png'
+import { Accordion, Button, Col, Container, FloatingLabel, Form, Modal, Row } from 'react-bootstrap'
+import Footer from '../Footer/Footer'
+import Header from '../Header/Header'
 import chair from '../images/instructor/chair.png'
+import code from '../images/instructor/code.png'
+import instruct from '../images/instructor/instruct.png'
 import phone from '../images/instructor/phone.png'
 import ppl from '../images/instructor/ppl.png'
-import code from '../images/instructor/code.png'
-import lady from '../images/instructor/chair-lady.png'
-import Header from '../Header/Header'
-import Footer from '../Footer/Footer'
-import axios from 'axios'
 export default function Instructor() {
     const [show, setShow] = useState(false);
     const [pdf, setPdf] = useState(null);
@@ -212,78 +210,9 @@ export default function Instructor() {
 
                         </Accordion.Body>
                     </Accordion.Item>
-                    {/* <Accordion.Item eventKey="3">
-                        <Accordion.Header>Can we check which candidates use the Path?</Accordion.Header>
-                        <Accordion.Body>
-                            Educative Authors are experts in their technical subject matter and want to share their knowledge with others. In addition, Educative Authors write well and clearly — most have experience teaching others. Using the powerful interactive tools in the Educative platform, our Authors create organized and engaging courses that deliver successful learning outcomes.</Accordion.Body>
-                    </Accordion.Item>
-                    <Accordion.Item eventKey="4">
-                        <Accordion.Header>I think I have some ideas, but don't know where to start. Can you help?</Accordion.Header>
-                        <Accordion.Body>
-                            Sure thing! Our team would be glad to help you think through possibilities. We’re always interested in courses on the following topics: Cybersecurity, cloud computing, cloud cert, APIs, front end, and back end, as well as others. After you complete the Educative Author Form, we’ll contact you and can schedule a call.</Accordion.Body>
-                    </Accordion.Item> */}
                 </Accordion>
             </Container>
-            {/* instructor form */}
-            {/* <Container fluid className='middle py-5 text-center'>
-                <h2 className='text-center'>Unive ইনস্ট্রাক্টর হিসেবে যোগদান করুন</h2>
-                <Row className='my-5'>
-                    <Col xs={12} md={6}>
-                        <img className='img-fluid' src={lady} alt="" />
-                    </Col>
-                    <Col xs={12} md={6} className='align'>
-                        <form className='w-75 text-center' onSubmit={handleSubmit2}>
-                            <Form.Group className="mb-3 text-start">
-                                <Form.Label >আপনার আগ্রহের বিষয়*</Form.Label>
-                                <Form.Select name='interest' onChange={handleSelectChange} value={choice} >
-                                    <option value='অনুগ্রহপূর্বক সিলেক্ট করুন'>অনুগ্রহপূর্বক সিলেক্ট করুন</option>
-                                    <option value='আই টি'>আই টি</option>
-                                    <option value='ইঞ্জিনিয়ারিং'>ইঞ্জিনিয়ারিং</option>
-                                    <option value='বিজনেস স্টাডিজ'>বিজনেস স্টাডিজ</option>
-                                    <option value='হিউম্যানেটিজ'>হিউম্যানেটিজ</option>
-                                    <option value='নার্সিং'>নার্সিং</option>
-                                </Form.Select>
-                                <Form.Label className='my-3'>ট্রেইনিং/ কোর্স টপিক*</Form.Label>
-                                <Form.Control type="text" placeholder="" className='text-start' name='course' onChange={handleOnChange} />
-                                <Form.Label className='my-3'>আপনার সিলেক্টেড টপিকটিতে অভিজ্ঞতা নিয়ে লিখুন*</Form.Label>
-                                <p>উদাহরণস্বরূপ, ১৫ বছর অভিজ্ঞতা ট্রান্সফরমার ট্রাবলশ্যুটিং এ, ১০ বছর অভিজ্ঞতা সফটওয়্যার আর্কিটেকচারে</p>
-                                <Form.Control type="text" placeholder="" name='experience' onChange={handleOnChange} className='text-start' />
-                                <p className='my-3'>আপনি কোন পদ্ধতিতে আমাদের সাথে যুক্ত হতে চান?*</p>
-                                <Form.Check
-                                    inline
-                                    label="ইন্ডিভিজুয়াল কন্ট্রাক্টর"
-                                    value="ইন্ডিভিজুয়াল কন্ট্রাক্টর"
-                                    name="group1"
-                                    type='radio'
-                                    checked={term === 'ইন্ডিভিজুয়াল কন্ট্রাক্টর'}
-
-                                    id={`inline-radio-1`}
-                                    onChange={handleChangeRadio}
-                                />
-                                <Form.Check
-                                    inline
-                                    label="রেসিডেন্ট ইনস্ট্রাক্টর"
-                                    value="রেসিডেন্ট ইনস্ট্রাক্টর"
-                                    name="group1"
-                                    type='radio'
-                                    checked={term === 'রেসিডেন্ট ইনস্ট্রাক্টর'}
-                                    id={`inline-radio'-1`}
-                                    onChange={handleChangeRadio}
-                                />
-                                <p></p>
-                                <Form.Label >আপনি আমাদের সম্পর্কে কিভাবে জানলেন?*</Form.Label>
-                                <Form.Select name='aboutUsFrom' onChange={handleSelectChange2} value={choice2}>
-                                    <option value='অনুগ্রহপূর্বক সিলেক্ট করুন'>অনুগ্রহপূর্বক সিলেক্ট করুন</option>
-                                    <option value='বন্ধু'>বন্ধু</option>
-                                    <option value='সোশ্যাল মিডিয়া'>সোশ্যাল মিডিয়া </option>
-                                    <option value='নিজে থেকে'>নিজে থেকে </option>
-                                </Form.Select>
-                            </Form.Group>
-                            <button className='btn btn-primary d-block w-100 mx-auto mt-2 py-3 ms-2 mb-5'>Submit </button>
-                        </form>
-                    </Col>
-                </Row>
-            </Container> */}
+           
             <Footer />
             {/* form modal*/}
             <Modal show={show} onHide={handleClose}>

@@ -1,9 +1,9 @@
+import axios from 'axios';
 import moment from 'moment';
-import { Card, Col, Container, Button } from 'react-bootstrap';
+import { Button, Card, Col, Container } from 'react-bootstrap';
 import Badge from 'react-bootstrap/Badge';
 import { NavLink } from 'react-router-dom';
 import useAuth from './../Context/useAuth';
-import axios from 'axios';
 export default function JobPost({job}) {
   const {startDate}=job
  
