@@ -1,14 +1,14 @@
 import { useState } from 'react';
-import { Button, Container, FloatingLabel, Form, Modal, Nav, Navbar, Offcanvas, Spinner } from 'react-bootstrap';
+import { Button, Container, FloatingLabel, Form, Modal } from 'react-bootstrap';
+import { useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../Context/useAuth';
 import gogo from '../images/logos/icons8-google.svg';
-import { useNavigate, useLocation } from 'react-router-dom';
 export default function LoginModal({Lshow,handleCloseL}) {
     // const [Lshow, setLShow] = useState(false);
     // const handleCloseL = () => setLShow(false);
     // const handleShowL = () => setLShow(true);
     const [LoginData, setLoginData] = useState({});
-    const { signGoogle, emailPass, error, user, isLoading, logOut, admin } = useAuth();
+    const { signGoogle, emailPass, error, user, isLoading, logOut, admin,resetPass } = useAuth();
     const history = useNavigate();
     const location = useLocation();
 
@@ -31,6 +31,9 @@ export default function LoginModal({Lshow,handleCloseL}) {
         emailPass(LoginData.email, LoginData.pass, location, history)
         handleCloseL()
 
+    }
+    const handleRest=()=>{
+        resetPass(LoginData.email)
     }
 
   return (
@@ -55,6 +58,7 @@ export default function LoginModal({Lshow,handleCloseL}) {
                   <FloatingLabel controlId="floatingPassword" label="Password" className="mb-5 ">
                       <Form.Control type="password" className="text-start" name="pass" placeholder="Password" onChange={handleOnChangeL} />
                   </FloatingLabel>
+                  <Button variant='link' onClick={handleRest}>reset password</Button>
                   {error ? <p className='text-danger text-center'>{error}</p> : ''}
 
                   <button className='btn btn-primary d-block mx-auto my-3 py-3 px-5 '>Login </button>

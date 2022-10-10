@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, sendSignInLinkToEmail, getAuth, getIdToken, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, getIdToken, GoogleAuthProvider, onAuthStateChanged, sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { useEffect, useState } from "react";
 import initFirebase from "../../Firebase/firebase.init";
 
@@ -33,21 +33,21 @@ const useFirebase = () => {
         },
         dynamicLinkDomain: 'https://unive.site'
     };
-    const verify = async email => {
-        await sendSignInLinkToEmail(auth, email, actionCodeSettings)
-            .then(() => {
-                // The link was successfully sent. Inform the user.
-                // Save the email locally so you don't need to ask the user for it again
-                // if they open the link on the same device.
-                window.localStorage.setItem('emailForSignIn', email);
-                // ...
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                // ...
-            });
-    }
+    // const verify = async email => {
+    //     await sendSignInLinkToEmail(auth, email, actionCodeSettings)
+    //         .then(() => {
+    //             // The link was successfully sent. Inform the user.
+    //             // Save the email locally so you don't need to ask the user for it again
+    //             // if they open the link on the same device.
+    //             window.localStorage.setItem('emailForSignIn', email);
+    //             // ...
+    //         })
+    //         .catch((error) => {
+    //             const errorCode = error.code;
+    //             const errorMessage = error.message;
+    //             // ...
+    //         });
+    // }
 
     const provider = new GoogleAuthProvider();
     // create user
@@ -76,6 +76,7 @@ const useFirebase = () => {
                 // }
                 // ...
                 // activeStatus(email)
+                verifyEmail()
             })
             .catch((error) => {
                 seterror(error.message);
@@ -85,6 +86,20 @@ const useFirebase = () => {
                 setisLoading(false)
             });
     };
+const verifyEmail=()=>{
+    sendEmailVerification(auth.currentUser)
+  .then(() =>console.log('email sent'))    // Email verification sent!
+
+}
+const resetPass=(email)=>{
+    sendPasswordResetEmail(auth, email)
+  .then(() => {
+    console.log('sentt')
+    // Password reset email sent!
+    // ..
+  })
+
+}
 
     // updateProfile
     const setName = (name) => {
@@ -241,7 +256,8 @@ const useFirebase = () => {
         admin,
         token,
         tutor,
-        employer
+        employer,
+        resetPass,
 
     }
 
