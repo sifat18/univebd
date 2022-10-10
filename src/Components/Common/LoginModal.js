@@ -58,7 +58,7 @@ export default function LoginModal({Lshow,handleCloseL}) {
                   <FloatingLabel controlId="floatingPassword" label="Password" className="mb-5 ">
                       <Form.Control type="password" className="text-start" name="pass" placeholder="Password" onChange={handleOnChangeL} />
                   </FloatingLabel>
-                  <Button variant='link' onClick={handleRest}>reset password</Button>
+                  <Button variant='link' onClick={handleRest}>Reset/Forget? password</Button>
                   {error ? <p className='text-danger text-center'>{error}</p> : ''}
 
                   <button className='btn btn-primary d-block mx-auto my-3 py-3 px-5 '>Login </button>
