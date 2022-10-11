@@ -17,7 +17,7 @@ import { RiAdminLine, RiMapPinUserLine } from 'react-icons/ri'
 import useAuth from '../../Context/useAuth'
 
 export const AppSidebarNav = () => {
-  const { user, admin, employer } = useAuth()
+  const { user, admin, employer,tutor } = useAuth()
   const location = useLocation()
   const admin_nav = [
     {
@@ -121,10 +121,43 @@ export const AppSidebarNav = () => {
         },
         {
           component: CNavItem,
+          name: 'Applied list',
+          to: '/dashboard/posted_jobs',
+          icon: <IoCreateOutline customClassName="nav-icon text-dark" />,
+        },
+        {
+          component: CNavItem,
+          name: 'Posted Jobs ',
+          to: '/dashboard/delete_request_form',
+          icon: <IoCreateOutline customClassName="nav-icon text-dark" />,
+        },
+      ],
+    },
+    {
+      component: CNavGroup,
+      name: 'Tutor Routes',
+      to: '/dashboard',
+      icon: <BiUserCircle  customClassName="nav-icon text-dark" />,
+      items: [
+        {
+          component: CNavItem,
+          name: 'Create Tutor Profile',
+          to: '/dashboard/tutor_profile',
+          icon: <IoCreateOutline customClassName="nav-icon text-dark" />,
+        },
+        {
+          component: CNavItem,
+          name: 'Add New Course',
+          to: '/dashboard/addcourse',
+          icon: <BsFillInboxFill customClassName="nav-icon text-dark" />,
+        },
+        {
+          component: CNavItem,
           name: 'Course Delete Form ',
           to: '/dashboard/delete_request_form',
           icon: <IoCreateOutline customClassName="nav-icon text-dark" />,
         },
+    
       ],
     },
     {
@@ -183,6 +216,38 @@ export const AppSidebarNav = () => {
       name: 'Post Job',
       to: '/dashboard/employer_jobpost',
       icon: <IoCreateOutline customClassName="nav-icon text-dark" />,
+    },
+    {
+      component: CNavItem,
+      name: 'Course Delete Form ',
+      to: '/dashboard/delete_request_form',
+      icon: <IoCreateOutline customClassName="nav-icon text-dark" />,
+    },
+
+  ]
+  const tutor_nav = [
+    {
+      component: CNavItem,
+      name: 'Dashboard',
+      to: '/dashboard',
+      icon: <RiMapPinUserLine customClassName="nav-icon text-dark" />,
+
+    },
+    {
+      component: CNavTitle,
+      name: 'Navigate',
+    },
+    {
+      component: CNavItem,
+      name: 'Create Tutor Profile',
+      to: '/dashboard/tutor_profile',
+      icon: <IoCreateOutline customClassName="nav-icon text-dark" />,
+    },
+    {
+      component: CNavItem,
+      name: 'Add New Course',
+      to: '/dashboard/addcourse',
+      icon: <BsFillInboxFill customClassName="nav-icon text-dark" />,
     },
     {
       component: CNavItem,
@@ -283,6 +348,8 @@ export const AppSidebarNav = () => {
         employer_nav.map((item, index) => (item.items ? navGroup(item, index) : navItem(item, index)))}
       {!admin && !employer &&
         _nav.map((item, index) => (item.items ? navGroup(item, index) : navItem(item, index)))}
+      {tutor &&
+        tutor_nav.map((item, index) => (item.items ? navGroup(item, index) : navItem(item, index)))}
     </React.Fragment>
   )
 }

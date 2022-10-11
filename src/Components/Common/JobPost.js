@@ -4,7 +4,7 @@ import { Button, Card, Col, Container } from 'react-bootstrap';
 import Badge from 'react-bootstrap/Badge';
 import { NavLink } from 'react-router-dom';
 import useAuth from './../Context/useAuth';
-export default function JobPost({job}) {
+export default function JobPost({job,show=true}) {
   const {startDate}=job
  
   const {user,admin}=useAuth()
@@ -34,11 +34,12 @@ export default function JobPost({job}) {
     <span key={index} className='text skill-item mt-2 me-2 '> {skill}</span>
 ))}    </div>
               </section>
+              {show &&
               <div className='d-flex justify-content-around'>
               <NavLink to={`/job_browse/${job._id}`} className='p-2 bg-success rounded text-white'><Card.Link className='py-1 px-2  bg-success rounded text-white'>View Details</Card.Link></NavLink>
               {admin && <NavLink to={`/dashboard/edit_job/${job._id}`}> <Button className='p-2' variant="outline-secondary">Edit JobPost <img src={'ar'} alt="" /></Button></NavLink>}
               {admin && <Button className='p-2' variant="outline-danger" onClick={()=>deleteJob(job._id)}>Delete JobPost <img src={'ar'} alt="" /></Button>}
-              </div>
+              </div>}
               </Container>
               </Card>
               </Col>

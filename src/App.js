@@ -14,16 +14,18 @@ import AdminRoute from './Components/AdminRoute/AdminRoute';
 import Authprovider from './Components/AuthProvider/Authprovider';
 import Admin from './Components/Board/AddAdmin/Admin';
 import Restore from './Components/Board/DeletedCourses/Restore';
+import DeleteForm from './Components/Board/EmployerPAges/CourseDeleteRequest/DeleteForm';
+import JobEdit from './Components/Board/EmployerPAges/JobEdit/JobEdit';
 import JobPost from './Components/Board/EmployerPAges/JobPost/JobPost';
 import EmployRoute from './Components/Board/EmployerRoute/EmployRoute';
+import TutorProfile from './Components/Board/TutorRoutes/TutorProfile';
 import MyJobs from './Components/Board/UserRoutes/MyJobs';
+import AppliedCandidates from './Components/Common/AppliedCandidates';
 import ScrollToTop from './Components/Common/ScrollToTop';
 import JobBrowsing from './Components/JobBrowsing/JobBrowsing';
 import JobDetails from './Components/JobDetails/JobDetails';
 import Nopage from './Components/Nopage/Nopage';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
-import JobEdit from './Components/Board/EmployerPAges/JobEdit/JobEdit';
-import DeleteForm from './Components/Board/EmployerPAges/CourseDeleteRequest/DeleteForm';
 // import EmployerProfile from './Components/Board/EmployerPAges/EmployerProfile';
 
 // import Individual from './Components/Developer/Individual';
@@ -171,6 +173,7 @@ function App() {
               <Route path="/dashboard" element={<PrivateRoute><Board /></PrivateRoute>} >
                 <Route path="" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
                 <Route path="employer_profile" element={<EmployRoute><EmployerProfile /></EmployRoute>} />
+                <Route path="tutor_profile" element={<EmployRoute><TutorProfile /></EmployRoute>} />
                 <Route path="employer_jobpost" element={<JobPost />} />
                 <Route path="update_profile" element={<PrivateRoute><ProfileUpdate /></PrivateRoute>} />
                 <Route path="mycourses" element={<PrivateRoute><MyCourses /></PrivateRoute>} />
@@ -184,6 +187,7 @@ function App() {
                 <Route path="ademployer" element={<AdminRoute><AddEmployer /></AdminRoute>} />
                 <Route path="adtutor" element={<AdminRoute><AddInstructor /></AdminRoute>} />
                 <Route path="edit/:id" element={<AdminRoute><Edit /></AdminRoute>} />
+                <Route path="posted_jobs" element={<PrivateRoute><AppliedCandidates /></PrivateRoute>} />
                 <Route path="edit_job/:id" element={<AdminRoute><JobEdit /></AdminRoute>} />
                 <Route path="addcourse" element={<AdminRoute><CourseAdd /></AdminRoute>} />
                 <Route path="form_management" element={<AdminRoute><FormsAll /></AdminRoute>} />
