@@ -59,7 +59,6 @@ export default function AppliedCandidates() {
                         <td>{idx + 1}</td>
                         <td>{m.email}</td>
                         <td>{m.jobData.position}</td>
-                        {console.log("data:application/pdf;base64,"+m.pdf)}
                         <td><Button variant='primary' onClick={()=>handleView(m.pdf)}> View Resume</Button> </td>
                         {/* <td><SinglePagePdf pdf={"data:application/pdf;base64,"+m.pdf}/></td> */}
                         </tr>
