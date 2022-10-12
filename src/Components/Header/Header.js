@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Button, Container, FloatingLabel, Form, Modal, Nav, Navbar, Offcanvas, Spinner } from 'react-bootstrap';
+import { Button, Container, Nav, Navbar, Offcanvas, Spinner } from 'react-bootstrap';
 import { AiOutlineUserAdd } from "react-icons/ai";
 import { BiSearchAlt2 } from "react-icons/bi";
 import { FiBook } from "react-icons/fi";
@@ -12,7 +12,6 @@ import LoginModal from '../Common/LoginModal';
 import RegisterModal from '../Common/RegisterModal';
 import useAuth from '../Context/useAuth';
 import arrow from '../images/icons8-arrow-24.png';
-import gogo from '../images/logos/icons8-google.svg';
 import logo from '../images/logos/logo.png';
 import './header.css';
 
@@ -139,7 +138,7 @@ export default function Header() {
             <Offcanvas className='ss' show={showOff} onHide={handleOff}>
                 <Offcanvas.Body>
                     <div class="d-flex flex-column  mb-3">
-                        <NavLink to='/dashboard/mycourses'> <FiBook className='fs-2  text-dark mx-2 mb-2' /><div className="littleFont pb-4"><span className=" ps-3">My </span>Learning</div></NavLink>
+                        <NavLink to='/dashboard/mycourses'> <FiBook className='fs-2  text-dark mx-2 mb-2' /><div className="littleFont pb-4"><span className=" ps-3">My </span>Dashboard</div></NavLink>
                         <NavLink to='/learn'><BiSearchAlt2 className='fs-2 mx-2 text-dark ' /> <div className="littleFont pb-3">Explore</div></NavLink>
                         <NavLink to='/projects'><TiPuzzle className='fs-2 mx-2 text-dark ' /><div className="littleFont pb-3 ">Projects</div></NavLink>
                         <NavLink to='/assessments'><GiBullseye className='fs-2 mx-2 text-dark ' /> <div className="littleFont pb-3">Assesments</div></NavLink>

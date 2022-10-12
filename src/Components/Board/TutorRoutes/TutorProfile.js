@@ -29,20 +29,13 @@ export default function TutorProfile() {
             <form className='mt-3  py-3' onSubmit={handleSubmit}>
                 <FloatingLabel
                     controlId="floatingInput"
-                    label="Contact Person Name"
+                    label="Name"
                     className="mt-2 mb-5 text-start"
                 >
-                    <Form.Control type="text" name="contact" className="text-start" placeholder="Jane doe" onChange={handleOnChange} />
+                    <Form.Control type="text" name="name" className="text-start" placeholder="Jane doe" onChange={handleOnChange} />
                 </FloatingLabel>
                 {/* --------- */}
-                <FloatingLabel
-                    controlId="floatingInput"
-                    label="Educational Institute"
-                    className="mt-2 mb-5 text-start"
-                >
-                    <Form.Control type="text" name="organization" className="text-start" placeholder="xyz" onChange={handleOnChange} />
-                </FloatingLabel>
-                {/* ----------- */}
+              
                 <FloatingLabel
                     controlId="floatingInput"
                     label="Email address"
@@ -60,6 +53,24 @@ export default function TutorProfile() {
                     <Form.Control type="number" name="PhoneNumber" className="text-start" placeholder="01299123" onChange={handleOnChange} />
                 </FloatingLabel>
                 {/*------------  */}
+                <FloatingLabel
+                    controlId="floatingInput"
+                    label="Topic"
+                    className="mt-2 mb-5 text-start"
+                >
+                    <Form.Control type="text" name="topic" className="text-start" placeholder="xyz" onChange={handleOnChange} />
+                </FloatingLabel>
+                {/* ----------- */}
+                <Form.Group controlId="formFile" className="mb-3">
+        <Form.Label>Default file input example</Form.Label>
+        <Form.Control type="file" />
+      </Form.Group>
+                {/* ----------- */}
+
+      <Form.Group controlId="formFile" className="mb-3">
+        <Form.Label>Default file input example</Form.Label>
+        <Form.Control type="file" />
+      </Form.Group>
                 <button className='btn btn-primary d-block w-100 mx-auto mt-2 py-3 ms-2 mb-5'>Submit </button>
             </form>
             {/* modal */}
