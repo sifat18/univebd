@@ -9,8 +9,10 @@ import useAuth from '../../../Context/useAuth';
 import { useNavigate } from 'react-router-dom';
 
 export default function JobPost() {
+    const imageStorageKey='a3a4f59a1a4c29023ff43f75bd8f551d'
     // setting date variables 
     const navigate = useNavigate()
+    const [imgLink, setImgLink] = useState(null);
     const formRef = useRef(null);
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
@@ -32,6 +34,21 @@ export default function JobPost() {
 
     const {user}=useAuth()
 
+    const generateImageLink = img => {
+        const formData = new FormData();
+        formData.append('image', img);
+        const url = `https://api.imgbb.com/1/upload?key=${imageStorageKey}`;
+        fetch(url, {
+            method: 'POST',
+            body: formData
+        })
+        .then(res=>res.json())
+        .then(result =>{
+            if(result.success){
+                const imgURL = result.data.url;
+                setImgLink(imgURL)
+    }})} 
+
     const handleOnChange = e => {
         const field = e.target.name;
         const value = e.target.value;
@@ -46,6 +63,7 @@ export default function JobPost() {
         e.preventDefault()
         data.jobCreator=user.email
         data.skills=skills
+        data.imgLink=imgLink
         data.startDate=moment(startDate).format('L') 
         data.endDate=moment(endDate).format('L') 
         console.log(data);
@@ -195,6 +213,10 @@ e.target.value=''
   <p className='w-100'>end date
   <DatePicker className='w-100' required selected={endDate} onChange={(date) => setEndDate(date)} />
   </p></div>
+  <Form.Group controlId="formFile" className="mb-3">
+        <Form.Label>Company logo </Form.Label>
+        <Form.Control type="file" onChange={e => generateImageLink(e.target.files[0])}/>
+      </Form.Group>
     <button className='btn btn-primary d-block w-100 mx-auto mt-2 py-3 ms-2 mb-5'>Submit </button>
             </form>
             {/* modal */}
