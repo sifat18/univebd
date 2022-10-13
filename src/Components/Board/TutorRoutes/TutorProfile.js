@@ -51,7 +51,22 @@ export default function TutorProfile() {
         Object.keys(data).forEach(key => formData.append(key, data[key]));
         formData.append('pdf', pdf);
 
-        axios.post(`https://fierce-woodland-01411.herokuapp.com/api/tutorProfile`, formData).then(res => res.data ? handleShowT() : '')
+
+        fetch('https://fierce-woodland-01411.herokuapp.com/api/tutorProfile', {
+            method: 'POST',
+            body: formData
+          })
+            .then(response => response.json())
+            .then(data => {
+              if (data) {
+                handleShowT()
+              } else {
+                console.error('Error2');
+      
+              }
+            })
+
+        // axios.post(`https://fierce-woodland-01411.herokuapp.com/api/tutorProfile`, formData).then(res => res.data ? handleShowT() : '')
 
     }
     return (
