@@ -1,10 +1,27 @@
 import axios from 'axios';
 import { useState } from 'react';
-import { Button, Col, Modal, Row } from 'react-bootstrap';
+import { Button, Col, Modal, Row, Form } from 'react-bootstrap';
 import './addcourse.css';
 
 
 export default function CourseAdd() {
+    const [imgLink, setImgLink] = useState(null);
+    const imageStorageKey='a3a4f59a1a4c29023ff43f75bd8f551d'
+   
+    const generateImageLink = img => {
+        const formData = new FormData();
+        formData.append('image', img);
+        const url = `https://api.imgbb.com/1/upload?key=${imageStorageKey}`;
+        fetch(url, {
+            method: 'POST',
+            body: formData
+        })
+        .then(res=>res.json())
+        .then(result =>{
+            if(result.success){
+                const imgURL = result.data.url;
+                setImgLink(imgURL)
+    }})} 
     // modal display state initialize
     const [show, setShow] = useState(false);
     //    modal close 
@@ -12,6 +29,7 @@ export default function CourseAdd() {
         setShow(false)
         window.location.reload(true);
     };
+
     const handleShow = () => setShow(true);
     // module information initialization
     const [module, setModule] = useState([
@@ -32,6 +50,7 @@ export default function CourseAdd() {
     const submit = (e) => {
         e.preventDefault();
         let Finalcourse = { ...course }
+        Finalcourse.imageLink=imgLink
         Finalcourse.Module = [...module]
         setCourse(Finalcourse)
         // https://fierce-woodland-01411.herokuapp.com
@@ -59,15 +78,51 @@ export default function CourseAdd() {
 
                     <Row className='formBg pb-3'>
                         <h3 className="my-3 py-3 text-light text-center">Basic Course Information</h3>
-                        <Col xs={12} md={3} className='courseFormpad' >
+                        <div className='d-md-flex '>
+    <p className='w-100 text-white'>Course_Name
+    <input
+                                name='coursename'
+                                placeholder='Course_Name'
+                                className='border border-secondary w-100 courseFormpad'
+                                onChange={handleOnChangeL}
+                            />
+  </p>
+  <p className='w-100 text-white'>Demo_Link
+    <input
+                                name='demoLink'
+                                placeholder='Demo_Link'
+                                className='border border-secondary w-100 courseFormpad'
+                                onChange={handleOnChangeL} />
+  </p>
+  </div>
+  <Row>
+  <div className='d-md-flex '>
+  <p className='w-100 text-white'>About_course
+    <textarea
+                                name='about'
+                                placeholder='About_course'
+                                rows='70'
+                                cols='50'
+                                className='border border-secondary w-100'
+                                onChange={handleOnChangeL}
+                            />
+  </p>
+      <Form.Group controlId="formFile" className="ms-2 mb-3 w-100">
+        <Form.Label className='ms-3 text-white'>Course logo </Form.Label>
+        <Form.Control type="file" onChange={e => generateImageLink(e.target.files[0])}/>
+      </Form.Group>
+   
+  </div>
+  </Row>
+                        {/* <Col xs={12} md={3} className='courseFormpad' >
                             <input
                                 name='coursename'
                                 placeholder='Course_Name'
                                 className=''
                                 onChange={handleOnChangeL}
                             />
-                        </Col>
-                        <Col xs={12} md={3} className='courseFormpad'>
+                        </Col> */}
+                        {/* <Col xs={12} md={3} className='courseFormpad'>
                             <textarea
                                 name='about'
                                 placeholder='About_course'
@@ -76,8 +131,8 @@ export default function CourseAdd() {
                                 className=''
                                 onChange={handleOnChangeL}
                             />
-                        </Col>
-                        <Col xs={12} md={3} className='courseFormpad'>
+                        </Col> */}
+                        {/* <Col xs={12} md={3} className='courseFormpad'>
                             <input
                                 name='imageLink'
                                 placeholder='Image_Link'
@@ -90,7 +145,7 @@ export default function CourseAdd() {
                                 placeholder='Demo_Link'
                                 className=''
                                 onChange={handleOnChangeL} />
-                        </Col>
+                        </Col> */}
                     </Row>
                     {/* basic ends here */}
                     {/* summary */}
@@ -139,19 +194,37 @@ export default function CourseAdd() {
                     </Row>
                     {module.map((input, index) => (
                         //    {/* module start here */}
-                        <Row className="my-5 ps-5 formBg  py-2" key={index}>
+                        <Row className="my-5  formBg  py-2" key={index}>
                             <Row>
-                                <Col xs={12} md={4} className='text-center pt-2'>
-                                    <h3 className="my-2 mx-2 text-light ">Course Modules {index + 1}</h3>
-                                </Col>
-                                <Col xs={12} md={4} className='text-center pt-2'>
+                                    <h3 className="my-2 mx-2 text-light text-center">Course Module {index + 1}</h3>
+                                <div className='d-md-flex '>
+    <p className='w-100 text-white'>Module_name
+    <input
+                                        name='module_name'
+                                        placeholder='Module_name'
+                                        className='border border-secondary w-100 courseFormpad'
+                                        value={input.module_name}
+                                        onChange={event => handleFormChange(index, event)} />
+  </p>
+  <p className='w-100 text-white'>About_Mdoule
+  <textarea
+                                        name='module_description'
+                                        placeholder='About_mdoule'
+                                        rows='70'
+                                        cols='50'
+                                        className='border border-secondary w-100'
+                                        value={input.module_description}
+                                        onChange={event => handleFormChange(index, event)} />
+  </p>
+  </div>
+                                {/* <Col xs={12} md={4} className='text-center pt-2'>
                                     <input
                                         name='module_name'
                                         placeholder='Module_name'
                                         value={input.module_name}
                                         onChange={event => handleFormChange(index, event)} />
-                                </Col>
-                                <Col xs={12} md={3} className='text-center   pt-2'>
+                                </Col> */}
+                                {/* <Col xs={12} md={3} className='text-center   pt-2'>
                                     <textarea
                                         name='module_description'
                                         placeholder='About_mdoule'
@@ -160,23 +233,51 @@ export default function CourseAdd() {
                                         className='me-3'
                                         value={input.module_description}
                                         onChange={event => handleFormChange(index, event)} />
-                                </Col>
+                                </Col> */}
                             </Row>
 
                             {/* sub module stats here */}
                             {/* sub module 1 */}
                             <Row>
-                                <h2 className='text-light mt-5 text-center'>sub module 1</h2>
+                                <h2 className='text-light mt-5 text-center'>Sub Module 1</h2>
+                                <div className='d-md-flex '>
+    <p className='w-100 text-white'>Sub_Module_Name
+    <input
+                                        name='sub_mod1'
+                                        placeholder='sub_module_name'
+                                        className='border border-secondary w-100 courseFormpad'
+                                        value={input.sub_mod1}
+                                        onChange={event => handleFormChange(index, event)} />
 
-                                <Col className='courseFormpad'>
+  </p>
+  <p className='w-100 text-white'>Sub_Module_Video
+  <input
+                                        name='sub_video1'
+                                        placeholder='Module_Video'
+                                        className='border border-secondary w-100 courseFormpad'
+                                        value={input.sub_video1}
+                                        onChange={event => handleFormChange(index, event)} />
+  </p>
+  </div>
+  <p className='text-light ps-3'>Sub_Module_Description</p>
+
+                                    <textarea
+                                        name='sub_description1'
+                                        placeholder='About_submdoule'
+                                        rows='15'
+                                        cols='30'
+                                        className='border border-secondary w-100 courseFormpad'
+                                        value={input.sub_description1}
+                                        onChange={event => handleFormChange(index, event)} />
+                                {/* <Col className='courseFormpad'>
                                     <p className='text-light ps-3'>sub module name</p>
                                     <input
                                         name='sub_mod1'
                                         placeholder='sub_module_name'
                                         value={input.sub_mod1}
                                         onChange={event => handleFormChange(index, event)} />
-                                </Col>
-                                <Col className='courseFormpad'>
+                                </Col> */}
+                                {/* <Col className='courseFormpad'>
                                     <p className='text-light ps-3'>sub module description</p>
 
                                     <textarea
@@ -187,8 +288,8 @@ export default function CourseAdd() {
                                         className=''
                                         value={input.sub_description1}
                                         onChange={event => handleFormChange(index, event)} />
-                                </Col>
-                                <Col className='courseFormpad'>
+                                </Col> */}
+                                {/* <Col className='courseFormpad'>
                                     <p className='text-light ps-3'>sub module video</p>
                                     <input
                                         name='sub_video1'
@@ -196,34 +297,61 @@ export default function CourseAdd() {
                                         className=''
                                         value={input.sub_video1}
                                         onChange={event => handleFormChange(index, event)} />
-                                </Col>
+                                </Col> */}
                             </Row>
 
                             {/* sub module 2 */}
                             <Row>
-                                <h2 className='text-light mt-5 text-center'>sub module 2</h2>
+                                <h2 className='text-light mt-5 text-center'>Sub Module 2</h2>
+                                <div className='d-md-flex '>
+    <p className='w-100 text-white'>Sub_Module_Name
+    <input
+                                        name='sub_mod2'
+                                        placeholder='sub_module_name'
+                                        className='border border-secondary w-100 courseFormpad'
+                                        value={input.sub_mod2}
+                                        onChange={event => handleFormChange(index, event)} />
+  </p>
+  <p className='w-100 text-white'>Sub_Module_Video
+  <input
+                                        name='sub_video2'
+                                        placeholder='Module_Video'
+                                        className='border border-secondary w-100 courseFormpad'
+                                        value={input.sub_video2}
+                                        onChange={event => handleFormChange(index, event)} />
+  </p>
+  </div>
+  <p className='text-light ps-3'>Sub_Module_Description</p>
 
-                                <Col className='courseFormpad'>
+                                    <textarea
+                                        name='sub_description2'
+                                        placeholder='About_submdoule'
+                                        value={input.sub_description2}
+                                        rows='15'
+                                        cols='30'
+                                        className='border border-secondary w-100 courseFormpad'
+                                        onChange={event => handleFormChange(index, event)} />
+                                {/* <Col className='courseFormpad'>
                                     <p className='text-light ps-3'>sub module name</p>
                                     <input
                                         name='sub_mod2'
                                         placeholder='sub_module_name'
                                         value={input.sub_mod2}
                                         onChange={event => handleFormChange(index, event)} />
-                                </Col>
-                                <Col className='courseFormpad'>
+                                </Col> */}
+                                {/* <Col className='courseFormpad'>
                                     <p className='text-light ps-3'>sub module description</p>
 
                                     <textarea
                                         name='sub_description2'
                                         placeholder='About_submdoule'
+                                        value={input.sub_description2}
                                         rows='3'
                                         cols='30'
                                         className=''
-                                        value={input.sub_description2}
                                         onChange={event => handleFormChange(index, event)} />
-                                </Col>
-                                <Col className='courseFormpad'>
+                                </Col> */}
+                                {/* <Col className='courseFormpad'>
                                     <p className='text-light ps-3'>sub module video</p>
                                     <input
                                         name='sub_video2'
@@ -231,13 +359,41 @@ export default function CourseAdd() {
                                         className=''
                                         value={input.sub_video2}
                                         onChange={event => handleFormChange(index, event)} />
-                                </Col>
+                                </Col> */}
                             </Row>
                             {/* sub module 3  */}
                             <Row>
-                                <h2 className='text-light mt-5 text-center'>sub module 3</h2>
+                                <h2 className='text-light mt-5 text-center'>Sub Module 3</h2>
+                                <div className='d-md-flex '>
+    <p className='w-100 text-white'>Sub_Module_Name
+    <input
+                                        name='sub_mod3'
+                                        placeholder='Sub_Module_Name'
+                                        className='border border-secondary w-100 courseFormpad'
+                                        value={input.sub_mod3}
+                                        onChange={event => handleFormChange(index, event)} />
+  </p>
+  <p className='w-100 text-white'>Sub_Module_Video
+  <input
+                                        name='sub_video3'
+                                        placeholder='Module_Video'
+                                        className='border border-secondary w-100 courseFormpad'
 
-                                <Col className='courseFormpad'>
+                                        value={input.sub_video3}
+                                        onChange={event => handleFormChange(index, event)} />
+  </p>
+  </div>
+  <p className='text-light ps-3'>Sub_Module_Description</p>
+
+                                    <textarea
+                                       name='sub_description3'
+                                       placeholder='About_submdoule'
+                                       value={input.sub_description3}
+                                        rows='15'
+                                        cols='30'
+                                        className='border border-secondary w-100 courseFormpad'
+                                        onChange={event => handleFormChange(index, event)} />
+                                {/* <Col className='courseFormpad'>
                                     <p className='text-light ps-3'>sub module name</p>
                                     <input
                                         name='sub_mod3'
@@ -251,10 +407,10 @@ export default function CourseAdd() {
                                     <textarea
                                         name='sub_description3'
                                         placeholder='About_submdoule'
+                                        value={input.sub_description3}
                                         rows='3'
                                         cols='30'
                                         className=''
-                                        value={input.sub_description3}
                                         onChange={event => handleFormChange(index, event)} />
                                 </Col>
                                 <Col className='courseFormpad'>
@@ -265,13 +421,70 @@ export default function CourseAdd() {
                                         className=''
                                         value={input.sub_video3}
                                         onChange={event => handleFormChange(index, event)} />
-                                </Col>
+                                </Col> */}
                             </Row>
                             {/* add quiz */}
                             <Row className='gx-5 mx-auto my-3 py-3'>
-                                <h2 className='text-light'>Add Quizzes</h2>
+                                <h2 className='text-light text-center'>Add Quizzes</h2>
                                 {/* quiz 1 */}
-                                <Col  >
+                                <div className='d-md-flex '>
+    <p className='w-100 text-white'>Question 1
+    <input
+                                            name='q1'
+                                            placeholder='Question 1'
+                                        className='border border-secondary w-100 courseFormpad'
+                                            value={input.q1}
+                                            onChange={event => handleFormChange(index, event)} />
+
+  </p>
+  <p className='w-100 text-white'>Answer 1
+  <input
+                                            name='qA1'
+                                            placeholder='Answer 1'
+                                            className='border border-secondary w-100 courseFormpad'
+                                            value={input.qA1}
+                                            onChange={event => handleFormChange(index, event)} />
+  </p>
+  </div>
+  <div className='d-md-flex '>
+    <p className='w-100 text-white'>Choice 1
+    <input
+                                            name='qOP11'
+                                            placeholder='choice 1'
+                                            className='border border-secondary w-100 courseFormpad'
+                                            value={input.qOP11}
+                                            onChange={event => handleFormChange(index, event)} />
+
+  </p>
+  <p className='w-100 text-white'>Choice 2
+  <input
+                                            name='qOP12'
+                                            placeholder='choice 2'
+                                            className='border border-secondary w-100 courseFormpad'
+                                            value={input.qOP12}
+                                            onChange={event => handleFormChange(index, event)} />
+  </p>
+  </div>
+  <div className='d-md-flex '>
+    <p className='w-100 text-white'>Choice 3
+    <input
+                                            name='qOP13'
+                                            placeholder='choice 3'
+                                            className='border border-secondary w-100 courseFormpad'
+                                            value={input.qOP13}
+                                            onChange={event => handleFormChange(index, event)} />
+
+  </p>
+  <p className='w-100 text-white'>Choice 4
+  <input
+                                            name='qOP14'
+                                            placeholder='choice 4'
+                                            className='border border-secondary w-100 courseFormpad'
+                                            value={input.qOP14}
+                                            onChange={event => handleFormChange(index, event)} />
+  </p>
+  </div>
+   {/* <Col  >
                                     <div className=''>
                                         <p className='text-light pt-3 ps-3'> Question 1</p>
                                         <input
@@ -320,9 +533,67 @@ export default function CourseAdd() {
                                     </div>
 
 
-                                </Col >
+                                </Col > */}
                                 {/* quiz-2 */}
-                                <Col  >
+                                <div className='d-md-flex '>
+    <p className='w-100 text-white'>Question 2
+    <input
+                                            name='q2'
+                                            placeholder='Question 2'
+                                            className='border border-secondary w-100 courseFormpad'
+                                            value={input.q2}
+                                            onChange={event => handleFormChange(index, event)} />
+
+  </p>
+  <p className='w-100 text-white'>Answer 2
+  <input
+                                            name='qA2'
+                                            placeholder='Answer 2'
+                                            className='border border-secondary w-100 courseFormpad'
+                                            value={input.qA2}
+                                            onChange={event => handleFormChange(index, event)} />
+  </p>
+  </div>
+  <div className='d-md-flex '>
+    <p className='w-100 text-white'>Choice 1
+    <input
+                                            name='qOP21'
+                                            placeholder='choice 1'
+                                            className='border border-secondary w-100 courseFormpad'
+                                            value={input.qOP21}
+                                            onChange={event => handleFormChange(index, event)} />
+
+  </p>
+  <p className='w-100 text-white'>Choice 2
+  <input
+                                            name='qOP22'
+                                            placeholder='choice 2'
+                                            className='border border-secondary w-100 courseFormpad'
+                                            value={input.qOP22}
+                                            onChange={event => handleFormChange(index, event)} />
+
+  </p>
+  </div>
+  <div className='d-md-flex'>
+    <p className='w-100 text-white'>Choice 3
+          <input
+              name='qOP23'
+              placeholder='choice 3'
+              className='border border-secondary w-100 courseFormpad'
+           value={input.qOP23}
+              onChange={event => handleFormChange(index, event)} />
+
+  </p>
+  <p className='w-100 text-white'>Choice 4
+  <input
+           name='qOP24'
+           placeholder='choice 4'
+           className='border border-secondary w-100 courseFormpad'
+           value={input.qOP24}
+           onChange={event => handleFormChange(index, event)} />
+  </p>
+  </div>
+                                {/* <Col  >
                                     <div className=''>
 
 
@@ -371,9 +642,67 @@ export default function CourseAdd() {
                                             onChange={event => handleFormChange(index, event)} />
                                     </div>
 
-                                </Col>
+                                </Col> */}
                                 {/* quiz-3 */}
-                                <Col>
+                                <div className='d-md-flex '>
+    <p className='w-100 text-white'>Question 3
+    <input
+                                            name='q3'
+                                            placeholder='Question 3'
+                                            className='border border-secondary w-100 courseFormpad'
+                                            value={input.q3}
+                                            onChange={event => handleFormChange(index, event)} />  
+
+  </p>
+  <p className='w-100 text-white'>Answer 3
+  <input
+                                            name='qA3'
+                                            placeholder='Answer 3'
+                                            className='border border-secondary w-100 courseFormpad'
+                                            value={input.qA3}
+                                            onChange={event => handleFormChange(index, event)} />
+  </p>
+  </div>
+  <div className='d-md-flex'>
+    <p className='w-100 text-white'>Choice 1
+    <input
+                                            name='qOP31'
+                                            placeholder='choice'
+                                            className='border border-secondary w-100 courseFormpad'
+                                            value={input.qOP31}
+                                            onChange={event => handleFormChange(index, event)} />
+
+  </p>
+  <p className='w-100 text-white'>Choice 2
+  <input
+                                            name='qOP32'
+                                            placeholder='choice'
+                                            className='border border-secondary w-100 courseFormpad'
+                                            value={input.qOP32}
+                                            onChange={event => handleFormChange(index, event)} />
+
+  </p>
+  </div>
+  <div className='d-md-flex'>
+    <p className='w-100 text-white'>Choice 3
+    <input
+                name='qOP33'
+                placeholder='choice'
+                className='border border-secondary w-100 courseFormpad'
+                value={input.qOP33}
+                onChange={event => handleFormChange(index, event)} />
+
+  </p>
+  <p className='w-100 text-white'>Choice 4
+  <input
+          name='qOP34'
+          placeholder='choice'
+          className='border border-secondary w-100 courseFormpad'
+          value={input.qOP34}
+          onChange={event => handleFormChange(index, event)} />
+  </p>
+  </div>
+                                {/* <Col>
                                     <div className=''>
                                         <p className='text-light pt-3 ps-3'> Question 3 </p>
                                         <input
@@ -419,9 +748,67 @@ export default function CourseAdd() {
                                             value={input.qOP34}
                                             onChange={event => handleFormChange(index, event)} />
                                     </div>
-                                </Col>
+                                </Col> */}
                                 {/* quiz-4 */}
-                                <Col  >
+                                <div className='d-md-flex'>
+    <p className='w-100 text-white'>Question 4
+    <input
+            name='q4'
+            placeholder='Question'
+            className='border border-secondary w-100 courseFormpad'
+            value={input.q4}
+            onChange={event => handleFormChange(index, event)} />
+
+  </p>
+  <p className='w-100 text-white'>Answer 4
+  <input
+          name='qA4'
+          placeholder='Answer'
+          className='border border-secondary w-100 courseFormpad'
+          value={input.qA4}
+          onChange={event => handleFormChange(index, event)} />
+  </p>
+  </div>
+  <div className='d-md-flex'>
+    <p className='w-100 text-white'>Choice 1
+    <input
+        name='qOP41'
+        placeholder='choice'
+        className='border border-secondary w-100 courseFormpad'
+        value={input.qOP41}
+        onChange={event => handleFormChange(index, event)} />
+
+  </p>
+  <p className='w-100 text-white'>Choice 2
+  <input
+         name='qOP42'
+         placeholder='choice'
+         className='border border-secondary w-100 courseFormpad'
+         value={input.qOP42}
+         onChange={event => handleFormChange(index, event)} />
+
+  </p>
+  </div>
+  <div className='d-md-flex'>
+    <p className='w-100 text-white'>Choice 3
+    <input
+            name='qOP43'
+            placeholder='choice'
+            className='border border-secondary w-100 courseFormpad'
+            value={input.qOP43}
+            onChange={event => handleFormChange(index, event)} />
+
+  </p>
+  <p className='w-100 text-white'>Choice 4
+  <input
+         name='qOP44'
+         placeholder='choice'
+         className='border border-secondary w-100 courseFormpad'
+         value={input.qOP44}
+         onChange={event => handleFormChange(index, event)} />
+  </p>
+  </div>
+                                {/* <Col  >
 
                                     <div className=''>
                                         <p className='text-light pt-3 ps-3'>Question 4 </p>
@@ -468,9 +855,67 @@ export default function CourseAdd() {
                                             value={input.qOP44}
                                             onChange={event => handleFormChange(index, event)} />
                                     </div>
-                                </Col>
+                                </Col> */}
                                 {/* quiz-5 */}
-                                <Col xs={6} >
+                                <div className='d-md-flex'>
+    <p className='w-100 text-white'>Question 5
+    <input
+           name='q5'
+           placeholder='Question'
+           className='border border-secondary w-100 courseFormpad'
+           value={input.q5}
+           onChange={event => handleFormChange(index, event)} />
+
+  </p>
+  <p className='w-100 text-white'>Answer 5
+  <input
+        name='qA5'
+        placeholder='Answer'
+        className='border border-secondary w-100 courseFormpad'
+        value={input.qA5}
+        onChange={event => handleFormChange(index, event)} />
+  </p>
+  </div>
+  <div className='d-md-flex'>
+    <p className='w-100 text-white'>Choice 1
+    <input
+            name='qOP51'
+            placeholder='choice'
+            className='border border-secondary w-100 courseFormpad'
+            value={input.qOP51}
+            onChange={event => handleFormChange(index, event)} />
+
+  </p>
+  <p className='w-100 text-white'>Choice 2
+  <input
+        name='qOP52'
+        placeholder='choice'
+        className='border border-secondary w-100 courseFormpad'
+        value={input.qOP52}
+        onChange={event => handleFormChange(index, event)} />
+
+  </p>
+  </div>
+  <div className='d-md-flex'>
+    <p className='w-100 text-white'>Choice 3
+    <input
+            name='qOP53'
+            placeholder='choice'
+            className='border border-secondary w-100 courseFormpad'
+            value={input.qOP53}
+            onChange={event => handleFormChange(index, event)} />
+
+  </p>
+  <p className='w-100 text-white'>Choice 4
+  <input
+         name='qOP54'
+         placeholder='choice'
+         className='border border-secondary w-100 courseFormpad'
+         value={input.qOP54}
+         onChange={event => handleFormChange(index, event)} />
+  </p>
+  </div>
+                                {/* <Col xs={6} >
 
                                     <div className=''>
                                         <p className='text-light pt-3 ps-3'> Question 5</p>
@@ -517,7 +962,7 @@ export default function CourseAdd() {
                                             value={input.qOP54}
                                             onChange={event => handleFormChange(index, event)} />
                                     </div>
-                                </Col>
+                                </Col> */}
                                 {/* </div> */}
 
                             </Row>
