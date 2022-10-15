@@ -292,11 +292,11 @@ export const AppSidebarNav = () => {
   const navLink = (name, icon, badge) => {
     return (
       <>
-        <Container className="ashHover">
+        <Container className="sideblack">
           {icon && <span className='fs-4 mleft'> {icon}</span>}
           {name && name}
           {badge && (
-            <CBadge className="ms-auto  ashHover">
+            <CBadge className="ms-auto  ">
               {badge.text}
             </CBadge>
           )}
@@ -309,7 +309,7 @@ export const AppSidebarNav = () => {
     const { component, name, badge, icon, ...rest } = item
     const Component = component
     return (
-      <Component className=' ashHover'
+      <Component className='ashHover '
         {...(rest.to &&
           !rest.items && {
           component: NavLink,
@@ -321,7 +321,6 @@ export const AppSidebarNav = () => {
       </Component>
     )
   }
-  {console.log(user)}
   const navGroup = (item, index) => {
     const { component, name, icon, to, ...rest } = item
     const Component = component

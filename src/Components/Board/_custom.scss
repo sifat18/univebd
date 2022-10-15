@@ -19,10 +19,15 @@ a {
 .ashHover {
   background-color: white;
   color: black;
-
+}
+.sideblack {
+  color: black;
+}
+.sideblack:hover {
+  color: white;
 }
 .ashHover:hover {
-  background-color: rgb(65,105,225);
+  background-color: rgb(65, 105, 225);
   color: white;
 }
 .mleft {
