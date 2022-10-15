@@ -289,12 +289,12 @@ const Dashboard = () => {
       {/* <WidgetsBrand withCharts /> */}
 
       <CRow>
-        <CCol xs>
+        {/* <CCol xs> */}
           <CCard className="mb-4">
             {/* <CCardHeader>Traffic {' & '} Sales</CCardHeader> */}
-            <CCardBody>
-              <CRow>
-                <CCol xs={12} md={6} xl={6}>
+            {/* <CCardBody> */}
+              {/* <CRow> */}
+                {/* <CCol xs={12} md={6} xl={6}> */}
                   {/* <CRow>
                     <CCol sm={6}>
                       <div className="border-start border-start-4 border-start-info py-1 px-3">
@@ -334,7 +334,7 @@ const Dashboard = () => {
                       </div>
                     </div>
                   ))} */}
-                </CCol>
+                {/* </CCol> */}
 
                 {/* <CCol xs={12} md={6} xl={6}>
                   {/* <CRow>
@@ -383,7 +383,7 @@ const Dashboard = () => {
                     </div>
                   ))} */}
                 {/* </CCol>  */}
-              </CRow>
+              {/* </CRow> */}
 
               <br />
 
@@ -464,9 +464,9 @@ const Dashboard = () => {
                   </tbody>
                 </Table>
               }
-            </CCardBody>
+            {/* </CCardBody> */}
           </CCard>
-        </CCol>
+        {/* </CCol> */}
       </CRow>
     </>
   )

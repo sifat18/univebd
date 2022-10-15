@@ -24,7 +24,7 @@ export const AppSidebarNav = () => {
       component: CNavItem,
       name: 'Dashboard',
       to: '/dashboard',
-      icon: <RiMapPinUserLine customClassName="nav-icon text-dark" />,
+      icon: <RiMapPinUserLine customClassName=" text-dark" />,
 
     },
 
@@ -35,14 +35,14 @@ export const AppSidebarNav = () => {
       component: CNavGroup,
       name: ' Admin Routes',
       to: '/dashboard',
-      icon: <MdOutlineAdminPanelSettings  customClassName="nav-icon fs-2 text-dark" />,
+      icon: <MdOutlineAdminPanelSettings  customClassName="nav-icon fs-2 ashHover" />,
       items: [
 
         {
           component: CNavItem,
           name: ' Make New Admin',
           to: '/dashboard/adadmin',
-          icon: <RiAdminLine customClassName="nav-icon  text-dark" />,
+          icon: <RiAdminLine customClassName="nav-icon " />,
         },
         {
           component: CNavItem,
@@ -292,11 +292,11 @@ export const AppSidebarNav = () => {
   const navLink = (name, icon, badge) => {
     return (
       <>
-        <Container className="text-dark ">
+        <Container className="ashHover">
           {icon && <span className='fs-4 mleft'> {icon}</span>}
           {name && name}
           {badge && (
-            <CBadge className="ms-auto  text-dark">
+            <CBadge className="ms-auto  ashHover">
               {badge.text}
             </CBadge>
           )}
@@ -309,7 +309,7 @@ export const AppSidebarNav = () => {
     const { component, name, badge, icon, ...rest } = item
     const Component = component
     return (
-      <Component className='text-dark  ashHover'
+      <Component className=' ashHover'
         {...(rest.to &&
           !rest.items && {
           component: NavLink,
@@ -321,11 +321,12 @@ export const AppSidebarNav = () => {
       </Component>
     )
   }
+  {console.log(user)}
   const navGroup = (item, index) => {
     const { component, name, icon, to, ...rest } = item
     const Component = component
     return (
-      <Component className='text-dark ashHover'
+      <Component className='ashHover'
         idx={String(index)}
         key={index}
         toggler={navLink(name, icon)}

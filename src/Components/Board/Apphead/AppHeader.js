@@ -66,7 +66,7 @@ const AppHeader = () => {
         </CHeaderNav> */}
          {/* user name */}
          <CHeaderNav className="ms-3">
-        {user.displayImage ? <CAvatar src={user.displayImage} size="md" /> : <BsPersonCircle className='fs-3 me-2' />} { user.displayName}
+        {user.photoURL ? <img src={user.photoURL} alt='avatar' width={25} heigth={25} className='img-fluid rounded-circle'/> : <BsPersonCircle className='fs-3 me-2' />} { user.displayName}
           {/* <AppHeaderDropdown /> */}
         </CHeaderNav>
       </CContainer>
@@ -77,5 +77,4 @@ const AppHeader = () => {
     </CHeader>
   )
 }
-
 export default AppHeader

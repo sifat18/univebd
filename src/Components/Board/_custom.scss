@@ -18,9 +18,12 @@ a {
 }
 .ashHover {
   background-color: white;
+  color: black;
+
 }
 .ashHover:hover {
-  background-color: rgba(121, 113, 113, 0.541);
+  background-color: rgb(65,105,225);
+  color: white;
 }
 .mleft {
   margin-left: -1.7rem;
