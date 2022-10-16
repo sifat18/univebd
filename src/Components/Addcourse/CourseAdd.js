@@ -79,28 +79,28 @@ export default function CourseAdd() {
                     <Row className='formBg pb-3'>
                         <h3 className="my-3 py-3 text-light text-center">Basic Course Information</h3>
                         <div className='d-md-flex '>
-    <p className='w-100 text-white'>Course_Name
+    <p className='w-100 text-white'>Course Name
     <input
                                 name='coursename'
-                                placeholder='Course_Name'
+                                placeholder='Course Name'
                                 className='border border-secondary w-100 courseFormpad'
                                 onChange={handleOnChangeL}
                             />
   </p>
-  <p className='w-100 text-white'>Demo_Link
+  <p className='w-100 text-white'>Demo Link
     <input
                                 name='demoLink'
-                                placeholder='Demo_Link'
+                                placeholder='Demo Link'
                                 className='border border-secondary w-100 courseFormpad'
                                 onChange={handleOnChangeL} />
   </p>
   </div>
   <Row>
   <div className='d-md-flex '>
-  <p className='w-100 text-white'>About_course
+  <p className='w-100 text-white'>About course
     <textarea
                                 name='about'
-                                placeholder='About_course'
+                                placeholder='About Course'
                                 rows='70'
                                 cols='50'
                                 className='border border-secondary w-100'
@@ -154,7 +154,7 @@ export default function CourseAdd() {
                         <Col xs={12} md={3} className='courseFormpad' >
                             <input
                                 name='total_modules'
-                                placeholder='total_modules'
+                                placeholder='Total Modules'
                                 className=''
                                 onChange={handleOnChangeL}
                             />
@@ -162,7 +162,7 @@ export default function CourseAdd() {
                         <Col xs={12} md={3} className='courseFormpad' >
                             <input
                                 name='total_quizes'
-                                placeholder='total_quizes'
+                                placeholder='Total Quizes'
                                 className=''
                                 onChange={handleOnChangeL}
                             />
@@ -170,7 +170,7 @@ export default function CourseAdd() {
                         <Col xs={12} md={3} className='courseFormpad' >
                             <input
                                 name='course_length'
-                                placeholder='course_length'
+                                placeholder='Course Length'
                                 className=''
                                 onChange={handleOnChangeL}
                             />
@@ -178,7 +178,7 @@ export default function CourseAdd() {
                         <Col xs={12} md={3} className='courseFormpad' >
                             <input
                                 name='course_level'
-                                placeholder='course_level'
+                                placeholder='Course Level'
                                 className=''
                                 onChange={handleOnChangeL}
                             />
@@ -186,7 +186,7 @@ export default function CourseAdd() {
                         <Col xs={12} md={3} className='courseFormpad mt-3' >
                             <input
                                 name='tag'
-                                placeholder='tag'
+                                placeholder='Tag'
                                 className=''
                                 onChange={handleOnChangeL}
                             />
@@ -198,18 +198,18 @@ export default function CourseAdd() {
                             <Row>
                                     <h3 className="my-2 mx-2 text-light text-center">Course Module {index + 1}</h3>
                                 <div className='d-md-flex '>
-    <p className='w-100 text-white'>Module_name
+    <p className='w-100 text-white'>Module Name
     <input
                                         name='module_name'
-                                        placeholder='Module_name'
+                                        placeholder='Module Name'
                                         className='border border-secondary w-100 courseFormpad'
                                         value={input.module_name}
                                         onChange={event => handleFormChange(index, event)} />
   </p>
-  <p className='w-100 text-white'>About_Mdoule
+  <p className='w-100 text-white'>About Mdoule
   <textarea
                                         name='module_description'
-                                        placeholder='About_mdoule'
+                                        placeholder='About Mdoule'
                                         rows='70'
                                         cols='50'
                                         className='border border-secondary w-100'
@@ -241,19 +241,19 @@ export default function CourseAdd() {
                             <Row>
                                 <h2 className='text-light mt-5 text-center'>Sub Module 1</h2>
                                 <div className='d-md-flex '>
-    <p className='w-100 text-white'>Sub_Module_Name
+    <p className='w-100 text-white'>Sub Module Name
     <input
                                         name='sub_mod1'
-                                        placeholder='sub_module_name'
+                                        placeholder='Sub Module Name'
                                         className='border border-secondary w-100 courseFormpad'
                                         value={input.sub_mod1}
                                         onChange={event => handleFormChange(index, event)} />
 
   </p>
-  <p className='w-100 text-white'>Sub_Module_Video
+  <p className='w-100 text-white'>Sub Module Video
   <input
                                         name='sub_video1'
-                                        placeholder='Module_Video'
+                                        placeholder='Module Video'
                                         className='border border-secondary w-100 courseFormpad'
                                         value={input.sub_video1}
                                         onChange={event => handleFormChange(index, event)} />
@@ -263,7 +263,7 @@ export default function CourseAdd() {
 
                                     <textarea
                                         name='sub_description1'
-                                        placeholder='About_submdoule'
+                                        placeholder='About Submdoule'
                                         rows='15'
                                         cols='30'
                                         className='border border-secondary w-100 courseFormpad'
@@ -304,28 +304,28 @@ export default function CourseAdd() {
                             <Row>
                                 <h2 className='text-light mt-5 text-center'>Sub Module 2</h2>
                                 <div className='d-md-flex '>
-    <p className='w-100 text-white'>Sub_Module_Name
+    <p className='w-100 text-white'>Sub Module Name
     <input
                                         name='sub_mod2'
-                                        placeholder='sub_module_name'
+                                        placeholder='Sub Module Name'
                                         className='border border-secondary w-100 courseFormpad'
                                         value={input.sub_mod2}
                                         onChange={event => handleFormChange(index, event)} />
   </p>
-  <p className='w-100 text-white'>Sub_Module_Video
+  <p className='w-100 text-white'>Sub Module Video
   <input
                                         name='sub_video2'
-                                        placeholder='Module_Video'
+                                        placeholder='Module Video'
                                         className='border border-secondary w-100 courseFormpad'
                                         value={input.sub_video2}
                                         onChange={event => handleFormChange(index, event)} />
   </p>
   </div>
-  <p className='text-light ps-3'>Sub_Module_Description</p>
+  <p className='text-light ps-3'>Sub Module Description</p>
 
                                     <textarea
                                         name='sub_description2'
-                                        placeholder='About_submdoule'
+                                        placeholder='About Submdoule'
                                         value={input.sub_description2}
                                         rows='15'
                                         cols='30'
@@ -365,29 +365,29 @@ export default function CourseAdd() {
                             <Row>
                                 <h2 className='text-light mt-5 text-center'>Sub Module 3</h2>
                                 <div className='d-md-flex '>
-    <p className='w-100 text-white'>Sub_Module_Name
+    <p className='w-100 text-white'>Sub Module Name
     <input
                                         name='sub_mod3'
-                                        placeholder='Sub_Module_Name'
+                                        placeholder='Sub Module Name'
                                         className='border border-secondary w-100 courseFormpad'
                                         value={input.sub_mod3}
                                         onChange={event => handleFormChange(index, event)} />
   </p>
-  <p className='w-100 text-white'>Sub_Module_Video
+  <p className='w-100 text-white'>Sub Module Video
   <input
                                         name='sub_video3'
-                                        placeholder='Module_Video'
+                                        placeholder='Module Video'
                                         className='border border-secondary w-100 courseFormpad'
 
                                         value={input.sub_video3}
                                         onChange={event => handleFormChange(index, event)} />
   </p>
   </div>
-  <p className='text-light ps-3'>Sub_Module_Description</p>
+  <p className='text-light ps-3'>Sub Module Description</p>
 
                                     <textarea
                                        name='sub_description3'
-                                       placeholder='About_submdoule'
+                                       placeholder='About Submdoule'
                                        value={input.sub_description3}
                                         rows='15'
                                         cols='30'
