@@ -1,8 +1,15 @@
+import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { Button, Container, Row, Table } from 'react-bootstrap';
+import { Modal,Button, Container, Form, Row, Table } from 'react-bootstrap';
 import JobPost from './JobPost';
 import SinglePagePdf from './SinglePagePdf';
 export default function AppliedCandidates() {
+  const [show, setShow] = useState(false);
+  const handleClose = () =>  setShow(false);
+  const handleShow = () => setShow(true);
+    
+    
+      
     const [jobs, setJobs] = useState([])
     const [showT, setShowT] = useState(false);
     const [pdf, setPdf] = useState(null);
@@ -30,6 +37,15 @@ export default function AppliedCandidates() {
       </Row>
       )
     }
+
+    function handleSelectChange(event,id) {
+      // setStatus(event.target.value);
+      console.log(event.target.value,id,)
+      let status
+  
+          status=event.target.value
+          axios.patch(`https://fierce-woodland-01411.herokuapp.com/api/jobApply/edit/${id}`,{status}).then(res => res.data ? handleShow() : '')
+      }
   return (
     <>
     {showT && <Container className='text-center'>
@@ -51,7 +67,8 @@ export default function AppliedCandidates() {
           <th>email</th>
           <th>Applied for</th>
           <th>Resume Pdf</th>
-          </tr>
+          <th>Status</th>
+          <th>Status Change</th> </tr>
       </thead>
       <tbody>
       {jobs.map((m, idx) => (
@@ -60,12 +77,34 @@ export default function AppliedCandidates() {
                         <td>{m.email}</td>
                         <td>{m.jobData.position}</td>
                         <td><Button variant='primary' onClick={()=>handleView(m.pdf)}> View Resume</Button> </td>
-                        {/* <td><SinglePagePdf pdf={"data:application/pdf;base64,"+m.pdf}/></td> */}
-                        </tr>
+                        <td>{m.status}</td>
+          <td>
+            <Form.Select className='ms-2' aria-label="Type of Form:" name='form_type' onChange={(e)=>handleSelectChange(e,m._id)} >
+                <option>Choose status</option>
+                <option value="pending">Pending</option>
+                <option value="Reviewed">Reviewed</option>
+                <option value="Shortlisted">Shortlisted</option>
+                <option value="Nominated for Test">Nominated for Test</option>
+                <option value="Nominated for Interview">Nominated for Interview</option>
+                <option value="Selected">Selected</option>
+              </Form.Select></td>
+                      </tr>
+                    
                     ))}
       </tbody>
       </Table>
-      
+      <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Successful</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>Candidate Status change is successful.</Modal.Body>
+                <Modal.Footer>
+        
+                    <Button variant="info" onClick={handleClose}>
+                        Thank You!
+                    </Button>
+                </Modal.Footer>
+            </Modal>
    </>
   )
 }

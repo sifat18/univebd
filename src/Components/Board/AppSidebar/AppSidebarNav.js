@@ -354,6 +354,3 @@ export const AppSidebarNav = () => {
   )
 }
 
-AppSidebarNav.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.any).isRequired,
-}
