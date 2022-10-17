@@ -1,17 +1,17 @@
-import axios from 'axios';
 // import './jobpost.css';
+import axios from 'axios';
 import moment from 'moment/moment';
 import { useEffect, useState } from 'react';
 import { Button, Container, FloatingLabel, Form, Modal } from 'react-bootstrap';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useParams } from 'react-router-dom';
-import useAuth from '../../../Context/useAuth';
 
 export default function JobEdit() {
   const [data, setData] = useState({});
   const [skills, setSkills] = useState([]);
   const imageStorageKey='a3a4f59a1a4c29023ff43f75bd8f551d'
+  const [error, setError] = useState(null);
 
    // setting date variables 
    const [startDate, setStartDate] = useState('');
@@ -27,9 +27,15 @@ export default function JobEdit() {
       })
   }, [id])
 
-  const generateImageLink = img => {
+  const generateImageLink = e => {
+            console.log(e.target.files[0])
+    if (e.target.files[0].size > 500000){
+        setError('size  exceded')
+        e.target.value=null
+}else{
+    setError('')
     const formData = new FormData();
-    formData.append('image', img);
+    formData.append('image', e.target.files[0]);
     const url = `https://api.imgbb.com/1/upload?key=${imageStorageKey}`;
     fetch(url, {
         method: 'POST',
@@ -39,8 +45,12 @@ export default function JobEdit() {
     .then(result =>{
         if(result.success){
             const imgURL = result.data.url;
+            console.log(imgURL)
             setImgLink(imgURL)
-}})} 
+        }})  
+}
+   
+} 
 //    modal display
    const [showT, setShowT] = useState(false);
    const handleCloseT = () => setShowT(false);
@@ -48,7 +58,6 @@ export default function JobEdit() {
 // looping skills
    // storing form data
 
-   const {user}=useAuth()
 
    const handleOnChange = e => {
        const field = e.target.name;
@@ -62,10 +71,10 @@ export default function JobEdit() {
    const handleSubmit = e => {
        e.preventDefault()
        data.skills=skills
-       data.imgLink=imgLink || data.imgLink
        data.startDate=moment(startDate).format('L') 
        data.endDate=moment(endDate).format('L') 
-       console.log(data);
+       data.imgLink=imgLink || data?.imgLink
+       console.log(imgLink);
        axios.put(`https://fierce-woodland-01411.herokuapp.com/api/jobpost/edit/${id}`, data).then(res => res.data ? handleShowT() : '')
 
    }   
@@ -214,8 +223,9 @@ e.target.value=''
  </p></div>
  <Form.Group controlId="formFile" className="mb-3">
         <Form.Label>Company logo </Form.Label>
-        <Form.Control type="file" onChange={e => generateImageLink(e.target.files[0])}/>
+        <Form.Control type="file" onChange={e => generateImageLink(e)}/>
       </Form.Group>
+      {error && <p className='text-danger'>{error}</p>}
   
            </form>
            <button onClick={(e)=>handleSubmit(e)} className='btn btn-primary d-block w-100 mx-auto mt-2 py-3 ms-2 mb-5'>Submit </button>
