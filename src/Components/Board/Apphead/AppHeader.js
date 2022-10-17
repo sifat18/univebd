@@ -1,5 +1,5 @@
 import {
-  CAvatar, CContainer,
+  CContainer,
   CHeader,
   CHeaderBrand, CHeaderNav,
   CHeaderToggler, CNavItem, CNavLink
@@ -40,40 +40,16 @@ const AppHeader = () => {
             <img src={logo} height={38} alt="Logo" />
             </CNavLink>
           </CNavItem>
-          {/* <CNavItem>
-            <CNavLink href="#">Users</CNavLink>
-          </CNavItem>
-          <CNavItem>
-            <CNavLink href="#">Settings</CNavLink>
-          </CNavItem> */}
+     
         </CHeaderNav>
-        {/* <CHeaderNav>
-          <CNavItem>
-            <CNavLink href="#">
-              <CIcon icon={cilBell} size="lg" />
-            </CNavLink>
-          </CNavItem>
-          <CNavItem>
-            <CNavLink href="#">
-              <CIcon icon={cilList} size="lg" />
-            </CNavLink>
-          </CNavItem>
-          <CNavItem>
-            <CNavLink href="#">
-              <CIcon icon={cilEnvelopeOpen} size="lg" />
-            </CNavLink>
-          </CNavItem>
-        </CHeaderNav> */}
+      
          {/* user name */}
          <CHeaderNav className="ms-3">
-        {user.photoURL ? <img src={user.photoURL} alt='avatar' width={25} heigth={25} className='img-fluid rounded-circle'/> : <BsPersonCircle className='fs-3 me-2' />} { user.displayName}
+        {user.photoURL ? <img src={user.photoURL} alt='avatar' width={25} heigth={25} className='img-fluid rounded-circle me-2'/> : <BsPersonCircle className='fs-3 me-2' />} { user.displayName}
           {/* <AppHeaderDropdown /> */}
         </CHeaderNav>
       </CContainer>
-      {/* <CHeaderDivider /> */}
-      {/* <CContainer fluid>
-        <AppBreadcrumb />
-      </CContainer> */}
+     
     </CHeader>
   )
 }

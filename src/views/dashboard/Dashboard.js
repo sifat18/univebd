@@ -1,10 +1,8 @@
-import dashhome from '../../Components/images/dash/dashhome.svg'
+import './dash.css'
 
 import {
 
-  CCard,
-  CCardBody,
-  CCol, CRow
+  CCard, CRow
 } from '@coreui/react'
 // import { CChartLine } from '@coreui/react-chartjs'
 
@@ -18,12 +16,12 @@ import {
 // import WidgetsBrand from '../widgets/WidgetsBrand'
 // import WidgetsDropdown from '../widgets/WidgetsDropdown'
 import { useEffect, useState } from 'react'
-import { Container, Row, Table } from 'react-bootstrap'
-
+import { Container, Table } from 'react-bootstrap'
+import { HiOutlineMinus } from 'react-icons/hi'
 import useAuth from '../../Components/Context/useAuth'
 
 const Dashboard = () => {
-  const { admin } = useAuth()
+  const { user,admin } = useAuth()
   // const random = (min, max) => Math.floor(Math.random() * (max - min + 1) + min)
 
   // const progressExample = [
@@ -353,10 +351,19 @@ const Dashboard = () => {
                   </CRow> */}
 
                 {/* <hr className="mt-0" /> */}
+<Container fluid className='bg-secondary '>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#f3f4f5" fill-opacity="0.5" d="M0,224L40,202.7C80,181,160,139,240,149.3C320,160,400,224,480,245.3C560,267,640,245,720,218.7C800,192,880,160,960,154.7C1040,149,1120,171,1200,165.3C1280,160,1360,128,1400,112L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>            
+                </Container>
+                <Container className=''>
+                <img src={user.photoURL} alt='user pic' className='img-fluid user-pic mb-5 rounded-circle'/>
 
-
-
-                {!admin && <div className="mb-5">
+             
+                </Container>
+                <section className='bg-black '>
+<h5 className='text-center ms-4 pt-5'>Complete your profile to become a Unive Superstar</h5>
+ <p className='text-center fs-3 ms-3'>Basic  <HiOutlineMinus className='sv-hieght'/> <HiOutlineMinus className='sv-hieght'/> <HiOutlineMinus className='sv-hieght'/> <HiOutlineMinus className='sv-hieght'/> <HiOutlineMinus className='sv-hieght'/></p>
+                </section>
+                {/* {!admin && <div className="mb-5">
                   <Container>
                     <Row className='text-center'>
                       <p className='fs-3 fw-bold'>You have not published any courses or answers yet.</p>
@@ -365,79 +372,10 @@ const Dashboard = () => {
 <p className='fs-4 '>Easy-to-use tools let you create awesome courses and answers with interactivity built right in.</p>
                     </Row>
                   </Container>
-                </div>}
+                </div>} */}
 
-                {/* {progressGroupExample3.map((item, index) => (
-                    <div className="progress-group" key={index}>
-                      <div className="progress-group-header">
-                        <CIcon className="me-2" icon={item.icon} size="lg" />
-                        <span>{item.title}</span>
-                        <span className="ms-auto fw-semibold">
-                          {item.value}{' '}
-                          <span className="text-medium-emphasis small">({item.percent}%)</span>
-                        </span>
-                      </div>
-                      <div className="progress-group-bars">
-                        <CProgress thin color="success" value={item.percent} />
-                      </div>
-                    </div>
-                  ))} */}
-                {/* </CCol>  */}
-              {/* </CRow> */}
-
+             
               <br />
-
-              {/* <CTable align="middle" className="mb-0 border" hover responsive>
-                <CTableHead color="light">
-                  <CTableRow>
-                    <CTableHeaderCell className="text-center">
-                      <CIcon icon={cilPeople} />
-                    </CTableHeaderCell>
-                    <CTableHeaderCell>User</CTableHeaderCell>
-                    <CTableHeaderCell className="text-center">Country</CTableHeaderCell>
-                    <CTableHeaderCell>Usage</CTableHeaderCell>
-                    <CTableHeaderCell className="text-center">Payment Method</CTableHeaderCell>
-                    <CTableHeaderCell>Activity</CTableHeaderCell>
-                  </CTableRow>
-                </CTableHead>
-                <CTableBody>
-                  {tableExample.map((item, index) => (
-                    <CTableRow v-for="item in tableItems" key={index}>
-                      <CTableDataCell className="text-center">
-                        <CAvatar size="md" src={item.avatar.src} status={item.avatar.status} />
-                      </CTableDataCell>
-                      <CTableDataCell>
-                        <div>{item.user.name}</div>
-                        <div className="small text-medium-emphasis">
-                          <span>{item.user.new ? 'New' : 'Recurring'}</span> | Registered:{' '}
-                          {item.user.registered}
-                        </div>
-                      </CTableDataCell>
-                      <CTableDataCell className="text-center">
-                        <CIcon size="xl" icon={item.country.flag} title={item.country.name} />
-                      </CTableDataCell>
-                      <CTableDataCell>
-                        <div className="clearfix">
-                          <div className="float-start">
-                            <strong>{item.usage.value}%</strong>
-                          </div>
-                          <div className="float-end">
-                            <small className="text-medium-emphasis">{item.usage.period}</small>
-                          </div>
-                        </div>
-                        <CProgress thin color={item.usage.color} value={item.usage.value} />
-                      </CTableDataCell>
-                      <CTableDataCell className="text-center">
-                        <CIcon size="xl" icon={item.payment.icon} />
-                      </CTableDataCell>
-                      <CTableDataCell>
-                        <div className="small text-medium-emphasis">Last login</div>
-                        <strong>{item.activity}</strong>
-                      </CTableDataCell>
-                    </CTableRow>
-                  ))}
-                </CTableBody>
-              </CTable> */}
               {admin && <Container>
                 <p>Total user: {totalUser}</p>
                 <p>Total active user: {activeUserTotal.length}</p>

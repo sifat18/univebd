@@ -22,7 +22,17 @@ export default function JobDetails() {
     const navigate = useNavigate()
     const { user } = useAuth()
     const [pdf, setPdf] = useState(null);
+    const [error, setError] = useState(null);
     
+    const pdfChecker = e => {
+        if (e.target.files[0].type !== "application/pdf" || e.target.files[0].size > 2000000){
+            setError('not a pdf or size is exceded')
+            e.target.value=null
+    }else{
+        setError('')
+       setPdf(e.target.files[0])
+    }}
+
     // for login
     const [Lshow, setLShow] = useState(false);
     const handleCloseL = () => setLShow(false);
@@ -181,9 +191,10 @@ const handleClose = (flag) => {
                         {/* Login form */}
                         <form className='mt-3  py-3' onSubmit={handleSubmit}>
                         
-                            <Form.Group controlId="formFile" className="text-start ms-2 mb-3">
+                            <Form.Group controlId="formFile"  className="text-start ms-2 mb-3">
                                 <Form.Label >CV (if any)</Form.Label>
-                                <Form.Control className="text-start" type="file" accept="application/pdf" onChange={e => setPdf(e.target.files[0])} />
+                                <Form.Control className="text-start" type="file" required accept="application/pdf"  onChange={e => pdfChecker(e)} />
+                                {error && <p className='text-danger'>{error}</p>}
                             </Form.Group>
                             <button className='btn btn-primary d-block w-100 mx-auto mt-2 py-3 ms-2 mb-5'>Submit </button>
                         </form>

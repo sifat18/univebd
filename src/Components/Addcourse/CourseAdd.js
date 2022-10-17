@@ -222,35 +222,7 @@ export default function CourseAdd() {
                                         className='border border-secondary w-100 courseFormpad'
                                         value={input.sub_description1}
                                         onChange={event => handleFormChange(index, event)} />
-                                {/* <Col className='courseFormpad'>
-                                    <p className='text-light ps-3'>sub module name</p>
-                                    <input
-                                        name='sub_mod1'
-                                        placeholder='sub_module_name'
-                                        value={input.sub_mod1}
-                                        onChange={event => handleFormChange(index, event)} />
-                                </Col> */}
-                                {/* <Col className='courseFormpad'>
-                                    <p className='text-light ps-3'>sub module description</p>
-
-                                    <textarea
-                                        name='sub_description1'
-                                        placeholder='About_submdoule'
-                                        rows='3'
-                                        cols='30'
-                                        className=''
-                                        value={input.sub_description1}
-                                        onChange={event => handleFormChange(index, event)} />
-                                </Col> */}
-                                {/* <Col className='courseFormpad'>
-                                    <p className='text-light ps-3'>sub module video</p>
-                                    <input
-                                        name='sub_video1'
-                                        placeholder='Module_Video'
-                                        className=''
-                                        value={input.sub_video1}
-                                        onChange={event => handleFormChange(index, event)} />
-                                </Col> */}
+                               
                             </Row>
 
                             {/* sub module 2 */}
