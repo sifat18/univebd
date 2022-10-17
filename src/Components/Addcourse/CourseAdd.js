@@ -114,38 +114,7 @@ export default function CourseAdd() {
    
   </div>
   </Row>
-                        {/* <Col xs={12} md={3} className='courseFormpad' >
-                            <input
-                                name='coursename'
-                                placeholder='Course_Name'
-                                className=''
-                                onChange={handleOnChangeL}
-                            />
-                        </Col> */}
-                        {/* <Col xs={12} md={3} className='courseFormpad'>
-                            <textarea
-                                name='about'
-                                placeholder='About_course'
-                                rows='5'
-                                cols='40'
-                                className=''
-                                onChange={handleOnChangeL}
-                            />
-                        </Col> */}
-                        {/* <Col xs={12} md={3} className='courseFormpad'>
-                            <input
-                                name='imageLink'
-                                placeholder='Image_Link'
-                                className=''
-                                onChange={handleOnChangeL} />
-                        </Col>
-                        <Col xs={12} md={3} className='courseFormpad'>
-                            <input
-                                name='demoLink'
-                                placeholder='Demo_Link'
-                                className=''
-                                onChange={handleOnChangeL} />
-                        </Col> */}
+                        
                     </Row>
                     {/* basic ends here */}
                     {/* summary */}
@@ -217,23 +186,7 @@ export default function CourseAdd() {
                                         onChange={event => handleFormChange(index, event)} />
   </p>
   </div>
-                                {/* <Col xs={12} md={4} className='text-center pt-2'>
-                                    <input
-                                        name='module_name'
-                                        placeholder='Module_name'
-                                        value={input.module_name}
-                                        onChange={event => handleFormChange(index, event)} />
-                                </Col> */}
-                                {/* <Col xs={12} md={3} className='text-center   pt-2'>
-                                    <textarea
-                                        name='module_description'
-                                        placeholder='About_mdoule'
-                                        rows='5'
-                                        cols='30'
-                                        className='me-3'
-                                        value={input.module_description}
-                                        onChange={event => handleFormChange(index, event)} />
-                                </Col> */}
+                               
                             </Row>
 
                             {/* sub module stats here */}
@@ -259,7 +212,7 @@ export default function CourseAdd() {
                                         onChange={event => handleFormChange(index, event)} />
   </p>
   </div>
-  <p className='text-light ps-3'>Sub_Module_Description</p>
+  <p className='text-light ps-3'>Sub Module Description</p>
 
                                     <textarea
                                         name='sub_description1'

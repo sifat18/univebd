@@ -1,21 +1,23 @@
 import axios from 'axios';
 // import './jobpost.css';
-import { useEffect, useState } from 'react'
-import { Button, Container, FloatingLabel, Form, Modal } from 'react-bootstrap'
+import moment from 'moment/moment';
+import { useEffect, useState } from 'react';
+import { Button, Container, FloatingLabel, Form, Modal } from 'react-bootstrap';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import moment from 'moment/moment';
-import useAuth from '../../../Context/useAuth';
 import { useParams } from 'react-router-dom';
+import useAuth from '../../../Context/useAuth';
 
 export default function JobEdit() {
   const [data, setData] = useState({});
   const [skills, setSkills] = useState([]);
+  const imageStorageKey='a3a4f59a1a4c29023ff43f75bd8f551d'
 
    // setting date variables 
    const [startDate, setStartDate] = useState('');
    const [endDate, setEndDate] = useState('');
   const { id } = useParams()
+  const [imgLink, setImgLink] = useState(null);
   useEffect(() => {
       fetch(`https://fierce-woodland-01411.herokuapp.com/api/jobpost/${id}`).then(res => res.json()).then(data => {
         setData(data)
@@ -25,7 +27,20 @@ export default function JobEdit() {
       })
   }, [id])
 
-
+  const generateImageLink = img => {
+    const formData = new FormData();
+    formData.append('image', img);
+    const url = `https://api.imgbb.com/1/upload?key=${imageStorageKey}`;
+    fetch(url, {
+        method: 'POST',
+        body: formData
+    })
+    .then(res=>res.json())
+    .then(result =>{
+        if(result.success){
+            const imgURL = result.data.url;
+            setImgLink(imgURL)
+}})} 
 //    modal display
    const [showT, setShowT] = useState(false);
    const handleCloseT = () => setShowT(false);
@@ -47,6 +62,7 @@ export default function JobEdit() {
    const handleSubmit = e => {
        e.preventDefault()
        data.skills=skills
+       data.imgLink=imgLink || data.imgLink
        data.startDate=moment(startDate).format('L') 
        data.endDate=moment(endDate).format('L') 
        console.log(data);
@@ -196,6 +212,10 @@ e.target.value=''
  <p className='w-100'>end date
  <DatePicker className='w-100' required  selected={endDate} onChange={(date) => setEndDate(date)} />
  </p></div>
+ <Form.Group controlId="formFile" className="mb-3">
+        <Form.Label>Company logo </Form.Label>
+        <Form.Control type="file" onChange={e => generateImageLink(e.target.files[0])}/>
+      </Form.Group>
   
            </form>
            <button onClick={(e)=>handleSubmit(e)} className='btn btn-primary d-block w-100 mx-auto mt-2 py-3 ms-2 mb-5'>Submit </button>

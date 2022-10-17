@@ -1,7 +1,7 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import { Container, Modal, Button, Table } from 'react-bootstrap';
-import './admin.css'
+import { useEffect, useState } from 'react';
+import { Button, Container, Modal, Table } from 'react-bootstrap';
+import './admin.css';
 const Admin = () => {
     const [email, setEmail] = useState('');
     const [show, setShow] = useState(false);
@@ -40,7 +40,6 @@ const Admin = () => {
             <Table striped bordered hover resonsive>
                   <thead>
                     <tr>
-                      <th>#</th>
                       <th>Name</th>
                       <th>Email</th>
                       <th>Role</th>
@@ -50,7 +49,6 @@ const Admin = () => {
                     {users.map((m, idx) => (
                         m.role==="admin" &&
                       <tr key={idx}>
-                        <td>{idx + 1}</td>
                         <td>{m.displayName}</td>
                         <td>{m.email}</td>
                         <td>{m.role}</td>

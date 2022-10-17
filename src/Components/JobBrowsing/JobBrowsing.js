@@ -32,7 +32,7 @@ return (
 
        <Container fluid className='job-bg'>
        <Container>
-        <h2 className='my-4 text-center fw-bold my-5'> Browse  Available Jobs</h2>
+        <h2 className=' text-center fw-bold '> Browse  Available Jobs</h2>
        {content}
        </Container>
      

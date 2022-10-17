@@ -16,22 +16,22 @@ export default function JobPost({job,show=true}) {
     <Col>
             <Card body className='rounded mt-5 card-shadow' >
             {moment.duration(moment(new Date()).diff(moment(startDate))).asHours()<=72 && <Badge bg="primary">New</Badge>}
-              <p className='text-center fs-5 fw-bold text-uppercase'>Looking For {job.position}</p>
+              <p className='text-center fs-6 fw-bold text-uppercase'>{job.imgLink &&<img src={job.imgLink} alt='logo ' className='img-fluid  me-3 pb-2' width={35} heigth={35}/>}Looking For {job.position}</p>
               <Container className=''>
               <section className='d-flex  w-75 text-center justify-content-between align-items-center'>
                 <div className=''>
-                <p><span className='fw-bold fs-3'>৳</span> {job.min_salary}-{job.max_salary} <div></div><span className='text-muted'>Salary Range</span></p>
+                <p><span className='fw-bold fs-5'>৳</span> {job.min_salary}-{job.max_salary} <div></div><span className='text-muted'>Salary Range</span></p>
                 
                 </div>
-                <div className='mt-2'>
+                <div className=''>
                 <p>{job.experience} years <br/><span className='text-muted'>Experience</span></p>
                 </div>
                   </section>
-              <section className='mt-3 mb-4'>
+              <section className=''>
               <p>{job.jd.slice(0,100)+'....'}</p>
-              <div  className='mb-3'>
+              <div  className='mb-2'>
               {job.skills.map((skill,index)=>(
-    <span key={index} className='text skill-item mt-2 me-2 '> {skill}</span>
+    <span key={index} className='text skill-item mt-1 me-2 '> {skill}</span>
 ))}    </div>
               </section>
               {show &&

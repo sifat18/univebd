@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { Modal,Button, Container, Form, Row, Table } from 'react-bootstrap';
+import { Button, Container, Form, Modal, Row, Table } from 'react-bootstrap';
 import JobPost from './JobPost';
 import SinglePagePdf from './SinglePagePdf';
 export default function AppliedCandidates() {
@@ -67,7 +67,6 @@ export default function AppliedCandidates() {
           <th>email</th>
           <th>Applied for</th>
           <th>Resume Pdf</th>
-          <th>Status</th>
           <th>Status Change</th> </tr>
       </thead>
       <tbody>
@@ -77,9 +76,8 @@ export default function AppliedCandidates() {
                         <td>{m.email}</td>
                         <td>{m.jobData.position}</td>
                         <td><Button variant='primary' onClick={()=>handleView(m.pdf)}> View Resume</Button> </td>
-                        <td>{m.status}</td>
           <td>
-            <Form.Select className='ms-2' aria-label="Type of Form:" name='form_type' onChange={(e)=>handleSelectChange(e,m._id)} >
+            <Form.Select defaultValue={m.status} className='ms-2' aria-label="Type of Form:" name='form_type' onChange={(e)=>handleSelectChange(e,m._id)} >
                 <option>Choose status</option>
                 <option value="pending">Pending</option>
                 <option value="Reviewed">Reviewed</option>

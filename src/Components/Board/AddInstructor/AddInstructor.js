@@ -1,6 +1,6 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import { Table,Container, Modal, Button } from 'react-bootstrap';
+import { useEffect, useState } from 'react';
+import { Button, Container, Modal, Table } from 'react-bootstrap';
 const AddInstructor = () => {
     const [email, setEmail] = useState('');
     const [show, setShow] = useState(false);
@@ -38,7 +38,6 @@ const AddInstructor = () => {
                 <Table striped bordered hover resonsive>
                   <thead>
                     <tr>
-                      <th>#</th>
                       <th>Name</th>
                       <th>Email</th>
                       <th>Role</th>
@@ -48,7 +47,6 @@ const AddInstructor = () => {
                     {users.map((m, idx) => (
                         m.role==="tutor" &&
                       <tr key={idx}>
-                        <td>{idx + 1}</td>
                         <td>{m.displayName}</td>
                         <td>{m.email}</td>
                         <td>{m.role}</td>

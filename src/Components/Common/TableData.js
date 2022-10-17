@@ -1,7 +1,6 @@
-import React from 'react'
-import { Table,Form,Button,Modal } from 'react-bootstrap'
+import axios from 'axios';
 import { useState } from 'react';
-import axios  from 'axios';
+import { Button, Form, Modal, Table } from 'react-bootstrap';
 
 export default function TableData({tableData,choice}) {
   const [show, setShow] = useState(false);
@@ -69,7 +68,6 @@ const handleClose = () =>  setShow(false);
           {choice==="recruitement"  &&<th>Candidate Requirement</th>}
           {choice==="recruitement"  &&<th>Additional_information</th>}
           {choice==="courseDelete"  &&<th>course to deleted</th>}
-          <th>Status</th>
           <th>Status Change</th>
 
         </tr>
@@ -91,9 +89,8 @@ const handleClose = () =>  setShow(false);
                         {choice==="scholarship"  &&<td>{m.edu_qualification}</td>}
           {choice==="scholarship"  &&<td>{m.scholarship_need}</td>}
           {choice==="scholarship"  &&<td>{m.platform_learn}</td>}
-          <td className={m.status==="pending" ? 'text-danger':'text-success'}>{m.status}</td>
           <td>
-            <Form.Select className='ms-2' aria-label="Type of Form:" name='form_type' onChange={(e)=>handleSelectChange(e,m._id)} >
+            <Form.Select defaultValue={m.status} className='ms-2' aria-label="Type of Form:" name='form_type' onChange={(e)=>handleSelectChange(e,m._id)} >
                 <option>Choose status</option>
                 <option value="pending">pending</option>
                 <option value="Reviewed">Reviewed</option>

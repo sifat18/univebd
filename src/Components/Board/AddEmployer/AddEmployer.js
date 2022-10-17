@@ -1,6 +1,6 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
-import { Table,Container, Modal, Button } from 'react-bootstrap';
+import { useEffect, useState } from 'react';
+import { Button, Container, Modal, Table } from 'react-bootstrap';
 
 export default function AddEmployer() {
     const [email, setEmail] = useState('');
@@ -36,7 +36,6 @@ export default function AddEmployer() {
             <Table striped bordered hover resonsive>
                   <thead>
                     <tr>
-                      <th>#</th>
                       <th>Name</th>
                       <th>Email</th>
                       <th>Role</th>
@@ -46,7 +45,6 @@ export default function AddEmployer() {
                     {users.map((m, idx) => (
                         m.role==="employer" &&
                       <tr key={idx}>
-                        <td>{idx + 1}</td>
                         <td>{m.displayName}</td>
                         <td>{m.email}</td>
                         <td>{m.role}</td>
