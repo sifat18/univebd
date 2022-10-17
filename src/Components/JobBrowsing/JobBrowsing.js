@@ -18,7 +18,7 @@ console.log('asd',jobs)
 if(jobs.length<1){
 content=(<p className='text-center mt-5'>No Jobs Available</p>)
 }else{
-  content=(<Row xs={1} md={2} className="">
+  content=(<Row xs={1} md={3} className="">
   {jobs.reverse().map((job,index)=>(
       <JobPost key={index} job={job}/>
   ))}

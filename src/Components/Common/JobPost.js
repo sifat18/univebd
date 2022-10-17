@@ -30,8 +30,8 @@ export default function JobPost({job,show=true}) {
               <section className=''>
               <p>{job.jd.slice(0,100)+'....'}</p>
               <div  className='mb-2'>
-              {job.skills.map((skill,index)=>(
-    <span key={index} className='text skill-item mt-1 me-2 '> {skill}</span>
+              {job.skills.slice(0,3).map((skill,index)=>(
+    <span key={index} className='text w-100 text-center skill-item mt-1 me-2 '> {skill}</span>
 ))}    </div>
               </section>
               {show &&

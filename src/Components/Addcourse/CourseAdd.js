@@ -256,35 +256,7 @@ export default function CourseAdd() {
                                         cols='30'
                                         className='border border-secondary w-100 courseFormpad'
                                         onChange={event => handleFormChange(index, event)} />
-                                {/* <Col className='courseFormpad'>
-                                    <p className='text-light ps-3'>sub module name</p>
-                                    <input
-                                        name='sub_mod2'
-                                        placeholder='sub_module_name'
-                                        value={input.sub_mod2}
-                                        onChange={event => handleFormChange(index, event)} />
-                                </Col> */}
-                                {/* <Col className='courseFormpad'>
-                                    <p className='text-light ps-3'>sub module description</p>
-
-                                    <textarea
-                                        name='sub_description2'
-                                        placeholder='About_submdoule'
-                                        value={input.sub_description2}
-                                        rows='3'
-                                        cols='30'
-                                        className=''
-                                        onChange={event => handleFormChange(index, event)} />
-                                </Col> */}
-                                {/* <Col className='courseFormpad'>
-                                    <p className='text-light ps-3'>sub module video</p>
-                                    <input
-                                        name='sub_video2'
-                                        placeholder='Module_Video'
-                                        className=''
-                                        value={input.sub_video2}
-                                        onChange={event => handleFormChange(index, event)} />
-                                </Col> */}
+                              
                             </Row>
                             {/* sub module 3  */}
                             <Row>
@@ -318,41 +290,14 @@ export default function CourseAdd() {
                                         cols='30'
                                         className='border border-secondary w-100 courseFormpad'
                                         onChange={event => handleFormChange(index, event)} />
-                                {/* <Col className='courseFormpad'>
-                                    <p className='text-light ps-3'>sub module name</p>
-                                    <input
-                                        name='sub_mod3'
-                                        placeholder='sub_module_name'
-                                        value={input.sub_mod3}
-                                        onChange={event => handleFormChange(index, event)} />
-                                </Col>
-                                <Col className='courseFormpad'>
-                                    <p className='text-light ps-3'>sub module description</p>
-
-                                    <textarea
-                                        name='sub_description3'
-                                        placeholder='About_submdoule'
-                                        value={input.sub_description3}
-                                        rows='3'
-                                        cols='30'
-                                        className=''
-                                        onChange={event => handleFormChange(index, event)} />
-                                </Col>
-                                <Col className='courseFormpad'>
-                                    <p className='text-light ps-3'>sub module video</p>
-                                    <input
-                                        name='sub_video3'
-                                        placeholder='Module_Video'
-                                        className=''
-                                        value={input.sub_video3}
-                                        onChange={event => handleFormChange(index, event)} />
-                                </Col> */}
+                             
                             </Row>
                             {/* add quiz */}
                             <Row className='gx-5 mx-auto my-3 py-3'>
                                 <h2 className='text-light text-center'>Add Quizzes</h2>
                                 {/* quiz 1 */}
-                                <div className='d-md-flex '>
+                                <div className='d-md-flex  '>
+<div className='d-md-flex flex-column w-100 '>
     <p className='w-100 text-white'>Question 1
     <input
                                             name='q1'
@@ -371,27 +316,20 @@ export default function CourseAdd() {
                                             onChange={event => handleFormChange(index, event)} />
   </p>
   </div>
-  <div className='d-md-flex '>
-    <p className='w-100 text-white'>Choice 1
+  <div>
     <input
                                             name='qOP11'
                                             placeholder='choice 1'
-                                            className='border border-secondary w-100 courseFormpad'
+                                            className='border border-secondary mt-4 w-100 courseFormpad'
                                             value={input.qOP11}
                                             onChange={event => handleFormChange(index, event)} />
 
-  </p>
-  <p className='w-100 text-white'>Choice 2
   <input
                                             name='qOP12'
                                             placeholder='choice 2'
                                             className='border border-secondary w-100 courseFormpad'
                                             value={input.qOP12}
                                             onChange={event => handleFormChange(index, event)} />
-  </p>
-  </div>
-  <div className='d-md-flex '>
-    <p className='w-100 text-white'>Choice 3
     <input
                                             name='qOP13'
                                             placeholder='choice 3'
@@ -399,69 +337,21 @@ export default function CourseAdd() {
                                             value={input.qOP13}
                                             onChange={event => handleFormChange(index, event)} />
 
-  </p>
-  <p className='w-100 text-white'>Choice 4
   <input
                                             name='qOP14'
                                             placeholder='choice 4'
                                             className='border border-secondary w-100 courseFormpad'
                                             value={input.qOP14}
                                             onChange={event => handleFormChange(index, event)} />
-  </p>
   </div>
-   {/* <Col  >
-                                    <div className=''>
-                                        <p className='text-light pt-3 ps-3'> Question 1</p>
-                                        <input
-                                            name='q1'
-                                            placeholder='Question'
-                                            className='mb-3'
-                                            value={input.q1}
-                                            onChange={event => handleFormChange(index, event)} />
-
-                                        <p className='text-light pt-3 ps-3'>Answer 1</p>
-                                        <input
-                                            name='qA1'
-                                            placeholder='Answer'
-                                            className='mb-3'
-                                            value={input.qA1}
-                                            onChange={event => handleFormChange(index, event)} />
-                                        <p className='text-light pt-3 ps-3'>Choice 1</p>
-                                        <input
-                                            name='qOP11'
-                                            placeholder='choice'
-                                            className='mb-3'
-                                            value={input.qOP11}
-                                            onChange={event => handleFormChange(index, event)} />
-                                        <p className='text-light pt-3 ps-3'>Choice 2</p>
-                                        <input
-                                            name='qOP12'
-                                            placeholder='choice'
-                                            className=''
-                                            value={input.qOP12}
-                                            onChange={event => handleFormChange(index, event)} />
-                                        <p className='text-light pt-3 ps-3'>Choice 3</p>
-                                        <input
-                                            name='qOP13'
-                                            placeholder='choice'
-                                            className='mb-3'
-                                            value={input.qOP13}
-                                            onChange={event => handleFormChange(index, event)} />
-                                        <p className='text-light pt-3 ps-3'>Choice 4</p>
-                                        <input
-                                            name='qOP14'
-                                            placeholder='choice'
-                                            className='mb-3'
-                                            value={input.qOP14}
-                                            onChange={event => handleFormChange(index, event)} />
-
-                                    </div>
-
-
-                                </Col > */}
+  
+  </div>
+ 
+   
                                 {/* quiz-2 */}
-                                <div className='d-md-flex '>
-    <p className='w-100 text-white'>Question 2
+                                <div className='d-md-flex mt-5'>
+                                <div className='d-md-flex flex-column w-100 '>
+                                <p className='w-100 text-white'>Question 2
     <input
                                             name='q2'
                                             placeholder='Question 2'
@@ -479,98 +369,42 @@ export default function CourseAdd() {
                                             onChange={event => handleFormChange(index, event)} />
   </p>
   </div>
-  <div className='d-md-flex '>
-    <p className='w-100 text-white'>Choice 1
-    <input
+  <div className='mt-4'>
+  <input
                                             name='qOP21'
                                             placeholder='choice 1'
                                             className='border border-secondary w-100 courseFormpad'
                                             value={input.qOP21}
                                             onChange={event => handleFormChange(index, event)} />
 
-  </p>
-  <p className='w-100 text-white'>Choice 2
-  <input
+<input
                                             name='qOP22'
                                             placeholder='choice 2'
                                             className='border border-secondary w-100 courseFormpad'
                                             value={input.qOP22}
                                             onChange={event => handleFormChange(index, event)} />
 
-  </p>
-  </div>
-  <div className='d-md-flex'>
-    <p className='w-100 text-white'>Choice 3
-          <input
+<input
               name='qOP23'
               placeholder='choice 3'
               className='border border-secondary w-100 courseFormpad'
            value={input.qOP23}
               onChange={event => handleFormChange(index, event)} />
 
-  </p>
-  <p className='w-100 text-white'>Choice 4
-  <input
+<input
            name='qOP24'
            placeholder='choice 4'
            className='border border-secondary w-100 courseFormpad'
            value={input.qOP24}
            onChange={event => handleFormChange(index, event)} />
-  </p>
   </div>
-                                {/* <Col  >
-                                    <div className=''>
-
-
-                                        <p className='text-light pt-3 ps-3'> Question 2</p>
-                                        <input
-                                            name='q2'
-                                            placeholder='Question'
-                                            className='mb-3'
-                                            value={input.q2}
-                                            onChange={event => handleFormChange(index, event)} />
-
-                                        <p className='text-light pt-3 ps-3'>Answer 2</p>
-                                        <input
-                                            name='qA2'
-                                            placeholder='Answer'
-                                            className='mb-3'
-                                            value={input.qA2}
-                                            onChange={event => handleFormChange(index, event)} />
-                                        <p className='text-light pt-3 ps-3'>Choice 1</p>
-                                        <input
-                                            name='qOP21'
-                                            placeholder='choice'
-                                            className='mb-3'
-                                            value={input.qOP21}
-                                            onChange={event => handleFormChange(index, event)} />
-                                        <p className='text-light pt-3 ps-3'>Choice 2</p>
-                                        <input
-                                            name='qOP22'
-                                            placeholder='choice'
-                                            className='mb-3'
-                                            value={input.qOP22}
-                                            onChange={event => handleFormChange(index, event)} />
-                                        <p className='text-light pt-3 ps-3'>Choice 3</p>
-                                        <input
-                                            name='qOP23'
-                                            placeholder='choice'
-                                            className=''
-                                            value={input.qOP23}
-                                            onChange={event => handleFormChange(index, event)} />
-                                        <p className='text-light pt-3 ps-3'>Choice 4</p>
-                                        <input
-                                            name='qOP24'
-                                            placeholder='choice'
-                                            className='mb-3'
-                                            value={input.qOP24}
-                                            onChange={event => handleFormChange(index, event)} />
-                                    </div>
-
-                                </Col> */}
+   
+  </div>
+              
                                 {/* quiz-3 */}
-                                <div className='d-md-flex '>
-    <p className='w-100 text-white'>Question 3
+                                <div className='d-md-flex mt-5'>
+                                <div className='d-md-flex flex-column w-100 '>
+                                <p className='w-100 text-white'>Question 3
     <input
                                             name='q3'
                                             placeholder='Question 3'
@@ -588,95 +422,46 @@ export default function CourseAdd() {
                                             onChange={event => handleFormChange(index, event)} />
   </p>
   </div>
-  <div className='d-md-flex'>
-    <p className='w-100 text-white'>Choice 1
-    <input
+  <div className='mt-4'>
+  <input
                                             name='qOP31'
                                             placeholder='choice'
                                             className='border border-secondary w-100 courseFormpad'
                                             value={input.qOP31}
                                             onChange={event => handleFormChange(index, event)} />
 
-  </p>
-  <p className='w-100 text-white'>Choice 2
-  <input
+
+<input
                                             name='qOP32'
                                             placeholder='choice'
                                             className='border border-secondary w-100 courseFormpad'
                                             value={input.qOP32}
                                             onChange={event => handleFormChange(index, event)} />
 
-  </p>
-  </div>
-  <div className='d-md-flex'>
-    <p className='w-100 text-white'>Choice 3
-    <input
+<input
                 name='qOP33'
                 placeholder='choice'
                 className='border border-secondary w-100 courseFormpad'
                 value={input.qOP33}
                 onChange={event => handleFormChange(index, event)} />
 
-  </p>
-  <p className='w-100 text-white'>Choice 4
-  <input
+
+<input
           name='qOP34'
           placeholder='choice'
           className='border border-secondary w-100 courseFormpad'
           value={input.qOP34}
           onChange={event => handleFormChange(index, event)} />
-  </p>
   </div>
-                                {/* <Col>
-                                    <div className=''>
-                                        <p className='text-light pt-3 ps-3'> Question 3 </p>
-                                        <input
-                                            name='q3'
-                                            placeholder='Question'
-                                            className=''
-                                            value={input.q3}
-                                            onChange={event => handleFormChange(index, event)} />
+   
+   
+  </div>
 
-                                        <p className='text-light pt-3 ps-3'>Answer 3</p>
-                                        <input
-                                            name='qA3'
-                                            placeholder='Answer'
-                                            className=''
-                                            value={input.qA3}
-                                            onChange={event => handleFormChange(index, event)} />
-                                        <p className='text-light pt-3 ps-3'>Choice 1</p>
-                                        <input
-                                            name='qOP31'
-                                            placeholder='choice'
-                                            className='mb-3'
-                                            value={input.qOP31}
-                                            onChange={event => handleFormChange(index, event)} />
-                                        <p className='text-light pt-3 ps-3'>Choice 2</p>
-                                        <input
-                                            name='qOP32'
-                                            placeholder='choice'
-                                            className=''
-                                            value={input.qOP32}
-                                            onChange={event => handleFormChange(index, event)} />
-                                        <p className='text-light pt-3 ps-3'>Choice 3</p>
-                                        <input
-                                            name='qOP33'
-                                            placeholder='choice'
-                                            className=''
-                                            value={input.qOP33}
-                                            onChange={event => handleFormChange(index, event)} />
-                                        <p className='text-light pt-3 ps-3'>Choice 4</p>
-                                        <input
-                                            name='qOP34'
-                                            placeholder='choice'
-                                            className='mb-3'
-                                            value={input.qOP34}
-                                            onChange={event => handleFormChange(index, event)} />
-                                    </div>
-                                </Col> */}
+                               
                                 {/* quiz-4 */}
-                                <div className='d-md-flex'>
-    <p className='w-100 text-white'>Question 4
+                                <div className='d-md-flex mt-5'>
+                                <div className='d-md-flex flex-column w-100 '>
+                                <p className='w-100 text-white'>Question 4
     <input
             name='q4'
             placeholder='Question'
@@ -694,104 +479,53 @@ export default function CourseAdd() {
           onChange={event => handleFormChange(index, event)} />
   </p>
   </div>
-  <div className='d-md-flex'>
-    <p className='w-100 text-white'>Choice 1
-    <input
+  <div className='mt-4'>
+  <input
         name='qOP41'
         placeholder='choice'
         className='border border-secondary w-100 courseFormpad'
         value={input.qOP41}
         onChange={event => handleFormChange(index, event)} />
 
-  </p>
-  <p className='w-100 text-white'>Choice 2
-  <input
+
+<input
          name='qOP42'
          placeholder='choice'
          className='border border-secondary w-100 courseFormpad'
          value={input.qOP42}
          onChange={event => handleFormChange(index, event)} />
 
-  </p>
-  </div>
-  <div className='d-md-flex'>
-    <p className='w-100 text-white'>Choice 3
-    <input
+<input
             name='qOP43'
             placeholder='choice'
             className='border border-secondary w-100 courseFormpad'
             value={input.qOP43}
             onChange={event => handleFormChange(index, event)} />
 
-  </p>
-  <p className='w-100 text-white'>Choice 4
-  <input
+
+<input
          name='qOP44'
          placeholder='choice'
          className='border border-secondary w-100 courseFormpad'
          value={input.qOP44}
          onChange={event => handleFormChange(index, event)} />
-  </p>
   </div>
-                                {/* <Col  >
-
-                                    <div className=''>
-                                        <p className='text-light pt-3 ps-3'>Question 4 </p>
-                                        <input
-                                            name='q4'
-                                            placeholder='Question'
-                                            className=''
-                                            value={input.q4}
-                                            onChange={event => handleFormChange(index, event)} />
-
-                                        <p className='text-light pt-3 ps-3'>Answer 4</p>
-                                        <input
-                                            name='qA4'
-                                            placeholder='Answer'
-                                            className=''
-                                            value={input.qA4}
-                                            onChange={event => handleFormChange(index, event)} />
-                                        <p className='text-light pt-3 ps-3'>Choice 1</p>
-                                        <input
-                                            name='qOP41'
-                                            placeholder='choice'
-                                            className='mb-3'
-                                            value={input.qOP41}
-                                            onChange={event => handleFormChange(index, event)} />
-                                        <p className='text-light pt-3 ps-3'>Choice 2</p>
-                                        <input
-                                            name='qOP42'
-                                            placeholder='choice'
-                                            className='mb-3'
-                                            value={input.qOP42}
-                                            onChange={event => handleFormChange(index, event)} />
-                                        <p className='text-light pt-3 ps-3'>Choice 3</p>
-                                        <input
-                                            name='qOP43'
-                                            placeholder='choice'
-                                            className=''
-                                            value={input.qOP43}
-                                            onChange={event => handleFormChange(index, event)} />
-                                        <p className='text-light pt-3 ps-3'>Choice 4</p>
-                                        <input
-                                            name='qOP44'
-                                            placeholder='choice'
-                                            className='mb-3'
-                                            value={input.qOP44}
-                                            onChange={event => handleFormChange(index, event)} />
-                                    </div>
-                                </Col> */}
+   
+   
+  </div>
+ 
+                             
                                 {/* quiz-5 */}
-                                <div className='d-md-flex'>
-    <p className='w-100 text-white'>Question 5
+                                <div className='d-md-flex mt-5'>
+                                <div className='d-md-flex flex-column w-100 '>
+                                <p className='w-100 text-white'>Question 5
     <input
            name='q5'
            placeholder='Question'
            className='border border-secondary w-100 courseFormpad'
            value={input.q5}
            onChange={event => handleFormChange(index, event)} />
-
-  </p>
+</p>
   <p className='w-100 text-white'>Answer 5
   <input
         name='qA5'
@@ -801,94 +535,43 @@ export default function CourseAdd() {
         onChange={event => handleFormChange(index, event)} />
   </p>
   </div>
-  <div className='d-md-flex'>
-    <p className='w-100 text-white'>Choice 1
-    <input
+  <div className='mt-4'>
+  <input
             name='qOP51'
             placeholder='choice'
             className='border border-secondary w-100 courseFormpad'
             value={input.qOP51}
             onChange={event => handleFormChange(index, event)} />
 
-  </p>
-  <p className='w-100 text-white'>Choice 2
-  <input
+
+
+<input
         name='qOP52'
         placeholder='choice'
         className='border border-secondary w-100 courseFormpad'
         value={input.qOP52}
         onChange={event => handleFormChange(index, event)} />
 
-  </p>
-  </div>
-  <div className='d-md-flex'>
-    <p className='w-100 text-white'>Choice 3
-    <input
+<input
             name='qOP53'
             placeholder='choice'
             className='border border-secondary w-100 courseFormpad'
             value={input.qOP53}
             onChange={event => handleFormChange(index, event)} />
 
-  </p>
-  <p className='w-100 text-white'>Choice 4
+
   <input
          name='qOP54'
          placeholder='choice'
          className='border border-secondary w-100 courseFormpad'
          value={input.qOP54}
          onChange={event => handleFormChange(index, event)} />
-  </p>
   </div>
-                                {/* <Col xs={6} >
-
-                                    <div className=''>
-                                        <p className='text-light pt-3 ps-3'> Question 5</p>
-                                        <input
-                                            name='q5'
-                                            placeholder='Question'
-                                            className=''
-                                            value={input.q5}
-                                            onChange={event => handleFormChange(index, event)} />
-
-                                        <p className='text-light pt-3 ps-3'>Answer 5</p>
-                                        <input
-                                            name='qA5'
-                                            placeholder='Answer'
-                                            className=''
-                                            value={input.qA5}
-                                            onChange={event => handleFormChange(index, event)} />
-                                        <p className='text-light pt-3 ps-3'>Choice 1</p>
-                                        <input
-                                            name='qOP51'
-                                            placeholder='choice'
-                                            className='mb-3'
-                                            value={input.qOP51}
-                                            onChange={event => handleFormChange(index, event)} />
-                                        <p className='text-light pt-3 ps-3'>Choice 2</p>
-                                        <input
-                                            name='qOP52'
-                                            placeholder='choice'
-                                            className='mb-3'
-                                            value={input.qOP52}
-                                            onChange={event => handleFormChange(index, event)} />
-                                        <p className='text-light pt-3 ps-3'>Choice 3</p>
-                                        <input
-                                            name='qOP53'
-                                            placeholder='choice'
-                                            className=''
-                                            value={input.qOP53}
-                                            onChange={event => handleFormChange(index, event)} />
-                                        <p className='text-light pt-3 ps-3'>Choice 4</p>
-                                        <input
-                                            name='qOP54'
-                                            placeholder='choice'
-                                            className=''
-                                            value={input.qOP54}
-                                            onChange={event => handleFormChange(index, event)} />
-                                    </div>
-                                </Col> */}
-                                {/* </div> */}
+   
+   
+  </div>
+  
+                             
 
                             </Row>
                         </Row>
