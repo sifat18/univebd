@@ -6,15 +6,7 @@ import {
 } from '@coreui/react'
 // import { CChartLine } from '@coreui/react-chartjs'
 
-// import avatar1 from '../../assets/images/avatars/1.jpg'
-// import avatar2 from '../../assets/images/avatars/2.jpg'
-// import avatar3 from '../../assets/images/avatars/3.jpg'
-// import avatar4 from '../../assets/images/avatars/4.jpg'
-// import avatar5 from '../../assets/images/avatars/5.jpg'
-// import avatar6 from '../../assets/images/avatars/6.jpg'
 
-// import WidgetsBrand from '../widgets/WidgetsBrand'
-// import WidgetsDropdown from '../widgets/WidgetsDropdown'
 import { useEffect, useState } from 'react'
 import pic1 from '../../Components/images/icons8-multiply-16.png'
 import { Col, Container, Dropdown, Form, Row, Table } from 'react-bootstrap'
@@ -22,6 +14,8 @@ import { HiOutlineMinus } from 'react-icons/hi'
 import { AiTwotoneStar } from 'react-icons/ai'
 import { BsPencilSquare } from 'react-icons/bs'
 import { ImCross } from 'react-icons/im'
+import { FcCheckmark } from 'react-icons/fc'
+import { IoChatboxEllipsesOutline } from 'react-icons/io5'
 import useAuth from '../../Components/Context/useAuth'
 
 const Dashboard = () => {
@@ -83,15 +77,15 @@ const Dashboard = () => {
       <ImCross className='text-warning me-2'/> Dropdown Button
       </Dropdown.Toggle>
 
-      <Dropdown.Menu>
-        <Dropdown.Item href="#/action-1" className='border border-dark'> <div><h2>Action</h2>
-        <p>asdasdasd</p>
+      <Dropdown.Menu className='w-75 border-0'>
+        <Dropdown.Item href="#/action-1" className='border border-dark '> <div><h5><ImCross className='text-warning me-2 fs-6'/> Closed to offers</h5>
+        <p className='text-wrap'>You're not looking and don’t want to hear about new opportunities. Your Jobs profile will be hidden to employers.</p>
         </div></Dropdown.Item>
-        <Dropdown.Item href="#/action-1" className='border border-dark'> <div><h2>Action</h2>
-        <p>asdasdasd</p>
+        <Dropdown.Item href="#/action-1" className='border border-dark disabled'> <div><h5> <FcCheckmark className='fs-4 me-2'/>Open to offers</h5>
+        <p className='text-wrap'>You're not looking but open to hear about new opportunities. Your Jobs profile will be visible to employers.</p>
         </div></Dropdown.Item>
-        <Dropdown.Item href="#/action-1" className='border border-dark'> <div><h2>Action</h2>
-        <p>asdasdasd</p>
+        <Dropdown.Item href="#/action-1" className='border border-dark disabled'> <div><h5><IoChatboxEllipsesOutline/> Ready to Interview</h5>
+        <p className='text-wrap'>You're actively looking for a new job and ready to interview. Your Jobs profile will be visible to employers.</p>
         </div></Dropdown.Item>
         
       </Dropdown.Menu>
