@@ -14,7 +14,6 @@ useEffect(() => {
     fetch('https://fierce-woodland-01411.herokuapp.com/api/jobpost').then(res=>res.json()).then(data=>setJobs(data))
 }, [])
 let content=''
-console.log('asd',jobs)
 if(jobs.length<1){
 content=(<p className='text-center mt-5'>No Jobs Available</p>)
 }else{
@@ -32,7 +31,7 @@ return (
 
        <Container fluid className='job-bg'>
        <Container>
-        <h2 className=' text-center fw-bold '> Browse  Available Jobs</h2>
+        <h2 className=' text-center fw-bold '> Jobs</h2>
        {content}
        </Container>
      

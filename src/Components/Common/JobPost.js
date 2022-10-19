@@ -16,29 +16,30 @@ export default function JobPost({job,show=true}) {
     <Col>
             <Card body className='rounded mt-5 card-shadow' >
             {moment.duration(moment(new Date()).diff(moment(startDate))).asHours()<=72 && <Badge bg="primary">New</Badge>}
-              <p className='text-center fs-6 fw-bold text-uppercase'>{job.imgLink &&<img src={job.imgLink} alt='logo ' className='img-fluid  me-3 pb-2' width={35} heigth={35}/>}Looking For {job.position}</p>
+              <p className='text-center fw-bold text-uppercase jobText'>{job.imgLink &&<img src={job.imgLink} alt='logo ' className='img-fluid  me-3 pb-2' width={35} heigth={35}/>}Looking For {job.position}</p>
               <Container className=''>
-              <section className='d-flex  w-75 text-center justify-content-between align-items-center'>
+              <section className='d-flex jobText text-center justify-content-between align-items-center'>
                 <div className=''>
-                <p><span className='fw-bold fs-5'>৳</span> {job.min_salary}-{job.max_salary} <div></div><span className='text-muted'>Salary Range</span></p>
+                <p><span className='fw-bold jobText'>৳</span> {job.min_salary}-{job.max_salary} <div></div><span className='text-muted'>Salary Range</span></p>
                 
                 </div>
-                <div className=''>
+                <div className='jobText'>
                 <p>{job.experience} years <br/><span className='text-muted'>Experience</span></p>
                 </div>
                   </section>
-              <section className=''>
+              <section className='jobText'>
               <p>{job.jd.slice(0,100)+'....'}</p>
-              <div  className='mb-2'>
+              <div  className='d-flex mb-2 justify-content-between'>
               {job.skills.slice(0,3).map((skill,index)=>(
-    <span key={index} className='text w-100 text-center skill-item mt-1 me-2 '> {skill}</span>
+    <span key={index} className=' ms-1 text-center skill-item rounded m p-1 '> {skill}</span>
 ))}    </div>
               </section>
               {show &&
               <div className='d-flex justify-content-around'>
-              <NavLink to={`/job_browse/${job._id}`} className='p-2 bg-success rounded text-white'><Card.Link className='py-1 px-2  bg-success rounded text-white'>View Details</Card.Link></NavLink>
-              {admin && <NavLink to={`/dashboard/edit_job/${job._id}`}> <Button className='p-2' variant="outline-secondary">Edit JobPost <img src={'ar'} alt="" /></Button></NavLink>}
-              {admin && <Button className='p-2' variant="outline-danger" onClick={()=>deleteJob(job._id)}>Delete JobPost <img src={'ar'} alt="" /></Button>}
+              {/* <NavLink to={`/job_browse/${job._id}`} className='p-2 bg-success text-center rounded text-white'><Card.Link className='py-1 px-2  bg-success rounded text-center text-white'>View Details</Card.Link></NavLink> */}
+              <NavLink to={`/job_browse/${job._id}`}> <Button className='p-2 viewDetails jobText' >View Details <img src={'ar'} alt="" /></Button></NavLink>
+              {admin && <NavLink to={`/dashboard/edit_job/${job._id}`}> <Button className='p-2 jobText' variant="outline-secondary">Edit Post <img src={'ar'} alt="" /></Button></NavLink>}
+              {admin && <Button className='p-2 jobText' variant="outline-danger" onClick={()=>deleteJob(job._id)}>Delete Post <img src={'ar'} alt="" /></Button>}
               </div>}
               </Container>
               </Card>

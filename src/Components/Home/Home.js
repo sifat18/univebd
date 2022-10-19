@@ -21,7 +21,7 @@ export default function Home() {
             <Suspense>
                 <Header />
                 {/* top part */}
-                <Container data-aos="fade-right" className='my-5'>
+                <Container data-aos="fade-right" className='my-5 '>
                     <section className='text-center '>
                         <h2 className=''>অনলাইনে ইন্ডাস্ট্রি ফোকাসড আইটি এবং টেকনিক্যাল স্কিল শিখুন এবং আয় করুন।​</h2>
                         <h5 className=' mt-3 smallText '>সমস্ত প্রোগ্রাম ইন্ডাস্ট্রি প্র্যাক্টিস ফোকাসড এবং আপ টু ডেট। ​</h5>

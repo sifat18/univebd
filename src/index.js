@@ -5,7 +5,7 @@ import 'react-app-polyfill/stable';
 import App from './App';
 
 ReactDOM.render(
-  <div>
+  <div className='bgcolor'>
     <App />
   </div>,
   document.getElementById('root')
