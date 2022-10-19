@@ -11,7 +11,7 @@ const CardStyle = {
     border: "1px solid black",
     // padding: "20px",
     margin: "20px",
-    height: "300px"
+    height: "310px"
   };
 export default function CourseCard({id}) {
     const { user, admin } = useAuth()
@@ -32,17 +32,17 @@ export default function CourseCard({id}) {
       <Card
         style={CardStyle}
         onMouseEnter={() => setIsFlipped((prev) => !prev)}
-        className="CardFront card-shadow border-0"
+        className="CardFront card-shadow border-0 "
       >
         <Card.Img variant="top" className='img-fluid ' src={id.imageLink} />
-        <p className='jobText text-start ms-2'>Unive</p>
-                <Card.Title className='jobText fw-bold text-center text-decoration-underline'>{id.coursename}</Card.Title>
+        <p className='jobText text-start text-primary  ms-2 '>Unive</p>
+                <Card.Title className='jobText  fw-bold text-center text-decoration-underline'>{id.coursename}</Card.Title>
       </Card>
       <Card
         style={CardStyle}
         onMouseLeave={() => setIsFlipped((prev) => !prev)}
         className="CardBack card-shadow border-0" >
-    <Card.Body className='text-start'>
+    <Card.Body className='text-start '>
                 <p className='jobText '>Unive</p>
                 <Card.Title className='jobText fw-bold'>{id.coursename}</Card.Title>
                 <Card.Text className='jobText'>{id.about.slice(0, 100)+'...'}              </Card.Text>
