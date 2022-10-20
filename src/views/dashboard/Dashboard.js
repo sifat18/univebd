@@ -17,6 +17,7 @@ import { ImCross } from 'react-icons/im'
 import { FcCheckmark } from 'react-icons/fc'
 import { IoChatboxEllipsesOutline } from 'react-icons/io5'
 import useAuth from '../../Components/Context/useAuth'
+import { NavLink } from 'react-router-dom'
 
 const Dashboard = () => {
   const { user,admin } = useAuth()
@@ -62,7 +63,7 @@ const Dashboard = () => {
   <Col xs={12} md={6} className=''>
     <div className=" d-flex justify-content-between align-items-center ">
     <h6 className='ms-3'>About</h6>
-    <BsPencilSquare className=' d-block my-2 fs-3 border py-1  '/>
+   <NavLink to={`/dashboard/profile/${user.displayName}/edit`}> <BsPencilSquare className=' d-block my-2 fs-3 border py-1  '/></NavLink>
     </div>
     <div className='text-center mx-5 mt-5 mb-5 py-4 borderDotted text-secondary d-flex justify-content-center align-items-center'>
     <div className=''>Tell others about yourself</div>
