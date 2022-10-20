@@ -74,7 +74,7 @@ const Dashboard = () => {
     <div className="w-75 mt-3">
     <Dropdown className=''>
       <Dropdown.Toggle variant="white" id="dropdown-basic" className='border border-dark '>
-      <ImCross className='text-warning me-2'/> Dropdown Button
+      <ImCross className='text-warning me-2'/> Closed to offers
       </Dropdown.Toggle>
 
       <Dropdown.Menu className='w-75 border-0'>

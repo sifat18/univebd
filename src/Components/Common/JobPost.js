@@ -37,7 +37,7 @@ export default function JobPost({job,show=true}) {
               {show &&
               <div className='d-flex justify-content-around'>
               {/* <NavLink to={`/job_browse/${job._id}`} className='p-2 bg-success text-center rounded text-white'><Card.Link className='py-1 px-2  bg-success rounded text-center text-white'>View Details</Card.Link></NavLink> */}
-              <NavLink to={`/job_browse/${job._id}`}> <Button className='p-2 viewDetails jobText' >View Details <img src={'ar'} alt="" /></Button></NavLink>
+              <NavLink to={`/jobs/${job._id}`}> <Button className='p-2 viewDetails jobText' >View Details <img src={'ar'} alt="" /></Button></NavLink>
               {admin && <NavLink to={`/dashboard/edit_job/${job._id}`}> <Button className='p-2 jobText' variant="outline-secondary">Edit Post <img src={'ar'} alt="" /></Button></NavLink>}
               {admin && <Button className='p-2 jobText' variant="outline-danger" onClick={()=>deleteJob(job._id)}>Delete Post <img src={'ar'} alt="" /></Button>}
               </div>}

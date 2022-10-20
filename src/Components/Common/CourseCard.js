@@ -32,11 +32,11 @@ export default function CourseCard({id}) {
       <Card
         style={CardStyle}
         onMouseEnter={() => setIsFlipped((prev) => !prev)}
-        className="CardFront card-shadow border-0 "
+        className="CardFront card-shadow border-0  "
       >
         <Card.Img variant="top" className='img-fluid ' src={id.imageLink} />
         <p className='jobText text-start text-primary  ms-2 '>Unive</p>
-                <Card.Title className='jobText  fw-bold text-center text-decoration-underline'>{id.coursename}</Card.Title>
+                <p className='jobText  fw-bold text-center text-decoration-underline'>{id.coursename}</p>
       </Card>
       <Card
         style={CardStyle}
@@ -50,7 +50,7 @@ export default function CourseCard({id}) {
             <Row>
                 <Col xs={admin ? 4 : 6}>
                     <p><img src={st} alt="" height={25} /></p>
-                    <p className='fs-7 jobText'>Beginner</p>
+                    <p className=' jobText'>Beginner</p>
                 </Col>
                 <Col xs={admin ? 8 : 6} className='d-flex justify-content-around'>
                     <NavLink to={`/learn/${id.coursename}`}> <Button className='p-1 jobText' variant="outline-dark">Preview <img src={ar} alt="" /></Button></NavLink>

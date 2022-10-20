@@ -5,6 +5,7 @@ import React, { Suspense, useEffect } from 'react';
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import './App.css';
+
 // import Home from './Components/Home/Home';
 // import Learn from './Components/Learn/Learn';
 import {
@@ -26,50 +27,7 @@ import JobBrowsing from './Components/JobBrowsing/JobBrowsing';
 import JobDetails from './Components/JobDetails/JobDetails';
 import Nopage from './Components/Nopage/Nopage';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
-// import EmployerProfile from './Components/Board/EmployerPAges/EmployerProfile';
-
-// import Individual from './Components/Developer/Individual';
-// import Upskill from './Components/ProductsPages/Upskill/Upskill';
-// import Onboarding from './Components/ProductsPages/Onboarding/Onboarding';
-// import LearningPlan from './Components/ProductsPages/LearningPlan/LearningPlan';
-// import Projects from './Components/ProductsPages/Projects/Projects';
-// import Paths from './Components/Paths/Paths';
-// import Unlimited from './Components/PricingLinks/Unlimited/Unlimited';
-// import Univewhy from './Components/Whyunive/Univewhy';
-// import HowItworks from './Components/HowItWorks/HowItworks';
-// import Contact from './Components/Contact/Contact';
-// import Business from './Components/Business/Business';
-
-// import Recruiting from './Components/Recruiting/Recruiting';
-// import Assessments from './Components/Assessments/Assessments';
-// import Blogs from './Components/Blogs/Blogs';
-// import Instructor from './Components/Instructor/Instructor';
-// import Contributor from './Components/Contributor/Contributor';
-// import Enterprise from './Components/Enterprise/Enterprise';
-// import Privacy from './Components/Privacy/Privacy';
-// import EnterPriseTerm from './Components/EnterPriseTerm/EnterPriseTerm';
-// import Terms from './Components/Terms/Terms';
-// import EnterprisePricing from './Components/EnterprisePricing/EnterprisePricing';
-// import FAQ from './Components/FAQ/FAQ';
-// import OurTeam from './Components/OurTeam/OurTeam';
-// import Careers from './Components/Careers/Careers';
-// import CourseCatalog from './Components/CourseCatalog/CourseCatalog';
-// import Scholarships from './Components/Scholarships/Scholarships';
-// import Press from './Components/Press/Press';
-// import Overview from './Components/Course_Overview/Overview';
-// import CourseStart from './Components/StartCourse/CourseStart';
-// import Board from './Components/Board/Board';
-// import AddInstructor from './Components/Board/AddInstructor/AddInstructor';
-// import Maas from './Components/Maas/Maas';
-// import CourseAdd from './Components/Addcourse/CourseAdd';
-// import Edit from './Components/CourseEdit/Edit';
-// import Welcome from './Components/Board/Welcome';
-// import Dashboard from './views/dashboard/Dashboard';
-// import MyCourses from './Components/Board/UserRoutes/MyCourses';
-// import ProfileUpdate from './Components/Board/UserRoutes/Profile_Update';
-// import Candidate from './Components/Board/Candidates/Candidate';
-// import CandidateDetail from './Components/Board/CandidateDetail/CandidateDetail';
-// import AddEmployer from './Components/Board/AddEmployer/AddEmployer';
+import ProfileEdit from './Components/Common/ProfileEdit';
 
 const Home = React.lazy(() => import("./Components/Home/Home"));
 const Learn = React.lazy(() => import("./Components/Learn/Learn"));
@@ -153,8 +111,8 @@ function App() {
               <Route path="/recruiting" element={<Recruiting />} />
               <Route path="/assessments" element={<Assessments />} />
               <Route path="/blogs" element={<Blogs />} />
-              <Route path="/job_browse" element={<JobBrowsing />} />
-              <Route path="/job_browse/:id" element={<JobDetails />} />
+              <Route path="/jobs" element={<JobBrowsing />} />
+              <Route path="/jobs/:id" element={<JobDetails />} />
               <Route path="/become-an-unive-instructor" element={<Instructor />} />
               <Route path="/become-a-contributor" element={<Contributor />} />
               <Route path="/privacy" element={<Privacy />} />
@@ -172,6 +130,7 @@ function App() {
               <Route path="/learn/start/:courseID" element={<PrivateRoute><CourseStart /></PrivateRoute>} />
               <Route path="/dashboard" element={<PrivateRoute><Board /></PrivateRoute>} >
                 <Route path="" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
+                <Route path="profile/:user/edit" element={<ProfileEdit />} />
                 <Route path="employer_profile" element={<EmployRoute><EmployerProfile /></EmployRoute>} />
                 <Route path="tutor_profile" element={<EmployRoute><TutorProfile /></EmployRoute>} />
                 <Route path="employer_jobpost" element={<JobPost />} />

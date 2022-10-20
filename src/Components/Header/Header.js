@@ -13,6 +13,7 @@ import RegisterModal from '../Common/RegisterModal';
 import useAuth from '../Context/useAuth';
 import arrow from '../images/icons8-arrow-24.png';
 import logo from '../images/logos/logo.png';
+import logo1 from '../images/logos/unive_logo.svg';
 import './header.css';
 
 export default function Header() {
@@ -81,12 +82,12 @@ export default function Header() {
     return (
         <>
             {/* NAV BAR */}
-            <Navbar sticky="top" className='my-2 bgcolor' fluid collapseOnSelect expand="lg" bg='light' variant="light">
+            <Navbar sticky="top" className='mb-2 bgcolor' fluid collapseOnSelect expand="lg" bg='light' variant="light">
                 <Container fluid>
                     {user.displayName && <span onClick={handleOn} className='me-4  side-nav-btn rounded-circle border-secondary'>  <MdNavigateNext className='mousepoint fs-2' /></span>}
                     <NavLink to='/'> <Navbar.Brand href="#home" className="me-5 ">
                         <img
-                            src={logo}
+                            src={logo1}
                             width="100"
                             height=""
                             className="d-inline-block align-top img-fluid"

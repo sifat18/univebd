@@ -8,7 +8,8 @@ import { BsPersonCircle } from 'react-icons/bs';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import logo from '../../images/logos/logo.png';
+// import logo from '../../images/logos/logo.png';
+import logo from '../../images/logos/unive_logo.svg';
 import useAuth from './../../Context/useAuth';
 
 import { cilMenu } from '@coreui/icons';
