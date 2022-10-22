@@ -1,6 +1,7 @@
 import React from "react";
 import algoliasearch from "algoliasearch";
 import { Table, Row, Col } from 'react-bootstrap';
+// algolia components 
 
 import {
   InstantSearch,
@@ -11,7 +12,7 @@ import {
   SortBy,
   Pagination
 } from "react-instantsearch-dom";
-
+// algolia api keys 
 const searchClient = algoliasearch(
   "GOL61V6C9Y",
   "84297386717db9cb147b2f18e8db4dd7"
@@ -19,6 +20,7 @@ const searchClient = algoliasearch(
 
 function Search() {
   return (
+    // setting the api
     <InstantSearch searchClient={searchClient} indexName="profile">
       <Header />
       <div className="">
@@ -27,6 +29,7 @@ function Search() {
     </InstantSearch>
   );
 }
+// search
 const Header = () => (
   <header className="header">
     <SearchBox
@@ -35,25 +38,9 @@ const Header = () => (
     />
   </header>
 );
+// matched data display
 const Hit = ({ hit }) => (
-  // <a href={"/"}>
-  //   <div className="card">
-  //     {hit.name}
-  //     <div className="card-image">
-  //       {hit.basics.email}
-  //       {/* <img src={hit.image} alt={hit.name} className="image" /> */}
-  //     </div>
-  //     <div className="card-contents">
-  //       {/* <Highlight attribute="title" hit={hit} className="card-title" /> */}
-  //       {/* <Highlight attribute="year" hit={hit} className="card-year" /> */}
-  //       {/* <div className="card-rating">Rating: {hit.rating}</div> */}
-  //       <div className="card-genre">
-  //         {hit.name}
-  //         {/* <span>{hit.genre[0]}</span> <span>{hit.genre[1]}</span>{" "} */}
-  //       </div>
-  //     </div>
-  //   </div>
-  // </a>
+ 
   <Table striped bordered hover resonsive>
   <thead>
       <tr>
@@ -125,6 +112,7 @@ const Hit = ({ hit }) => (
   </tbody>
 </Table>
 );
+// main container
 const Content = () => (
   <main>
     <div className="">
@@ -132,9 +120,7 @@ const Content = () => (
         {" "}
         <Stats />{" "}
       </div>
-      {/* <div className="">
-        <SortBy defaultRefinement="profile" items={[{ value: "Most" }]} />
-      </div> */}
+    
     </div>
     <Hits hitComponent={Hit} />
     <div>

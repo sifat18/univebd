@@ -2,11 +2,15 @@ import axios from 'axios';
 import { useState } from 'react';
 import { Button, Container, FloatingLabel, Form, Modal } from 'react-bootstrap';
 export default function TutorProfile() {
+    // api key imgbb
+    const imageStorageKey='a3a4f59a1a4c29023ff43f75bd8f551d'
+
+    //   local states
     const [data, setData] = useState({});
     const [imgLink, setImgLink] = useState(null);
     const [pdf, setPdf] = useState(null);
     const [error, setError] = useState(null);
-    const imageStorageKey='a3a4f59a1a4c29023ff43f75bd8f551d'
+    // modal display function and variable
     const [showT, setShowT] = useState(false);
     const handleCloseT = () => setShowT(false);
     const handleShowT = () => setShowT(true)
@@ -25,7 +29,7 @@ export default function TutorProfile() {
                 const imgURL = result.data.url;
                 setImgLink(imgURL)
     }})}
-
+// function to check if the file type and size 
     const pdfChecker = e => {
         if (e.target.files[0].type !== "application/pdf" || e.target.files[0].size > 2000000){
             setError('not a pdf or size is exceded')
@@ -34,7 +38,7 @@ export default function TutorProfile() {
         setError('')
        setPdf(e.target.files[0])
     }}
-
+// handle input field changes
     const handleOnChange = e => {
         const field = e.target.name;
         const value = e.target.value;
@@ -44,6 +48,8 @@ export default function TutorProfile() {
         console.log(newUser)
 
     }
+// submit form data
+
     const handleSubmit = e => {
         e.preventDefault();
         let formData = new FormData(); 
@@ -71,8 +77,9 @@ export default function TutorProfile() {
     }
     return (
         <Container className='py-2'>
-            {/* Login form */}
+            {/*  form */}
             <form className='mt-3  py-3' onSubmit={handleSubmit}>
+        {/*Name  */}
                 <FloatingLabel
                     controlId="floatingInput"
                     label="Name"
@@ -80,7 +87,7 @@ export default function TutorProfile() {
                 >
                     <Form.Control type="text" name="name" className="text-start" placeholder="Jane doe" onChange={handleOnChange} />
                 </FloatingLabel>
-                {/* --------- */}
+                {/* -----Email---- */}
               
                 <FloatingLabel
                     controlId="floatingInput"
@@ -89,7 +96,7 @@ export default function TutorProfile() {
                 >
                     <Form.Control type="email" className="text-start" placeholder="name@example.com" name="email" onChange={handleOnChange} />
                 </FloatingLabel>
-                {/* ------------- */}
+                {/* -----Phone-------- */}
 
                 <FloatingLabel
                     controlId="floatingInput"
@@ -98,7 +105,7 @@ export default function TutorProfile() {
                 >
                     <Form.Control type="number" name="PhoneNumber" className="text-start" placeholder="01299123" onChange={handleOnChange} />
                 </FloatingLabel>
-                {/*------------  */}
+                {/*------Topic------  */}
                 <FloatingLabel
                     controlId="floatingInput"
                     label="Topic"
@@ -106,12 +113,12 @@ export default function TutorProfile() {
                 >
                     <Form.Control type="text" name="topic" className="text-start" placeholder="xyz" onChange={handleOnChange} />
                 </FloatingLabel>
-                {/* ----------- */}
+                {/* -----img------ */}
                 <Form.Group controlId="formFile" className="mb-3">
         <Form.Label>Profile Picture </Form.Label>
         <Form.Control type="file" onChange={e => generateImageLink(e.target.files[0])}/>
       </Form.Group>
-                {/* ----------- */}
+                {/* -----pdf------ */}
 
       <Form.Group controlId="formFile" className="mb-3">
         <Form.Label>CV</Form.Label>

@@ -12,6 +12,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 export default function ProfileEdit() {
     const [data, setData] = useState({});
+    // function to handle common  input field changes
     const handleOnChange = e => {
         const field = e.target.name;
         const value = e.target.value;
@@ -21,42 +22,67 @@ export default function ProfileEdit() {
         console.log(newUser)
 
     }
+    // local variable to store skills
     const [skills, setSkills] = useState([]);
 
+    // form references to clear the fields on submission
     const formRef = useRef(null);
     const formRef2 = useRef(null);
     const formRef3 = useRef(null);
+
+    // selection option local variables
     const [type, setType] = useState('permanent');
     const [level, setLevel] = useState('Junior');
     const [industry, setIndustry] = useState('');
     const [size, setSize] = useState('');
+    const [degree, setDegree] = useState('');
+    // function handle the variable change type
     function handleSelectChange(event) {
         setType(event.target.value);
       }
+    // function handle the variable change level
+
     function handleSelectChange2(event) {
         setLevel(event.target.value);
       }
+    // function handle the variable change industry
+
     function handleSelectChange3(event) {
         setIndustry(event.target.value);
       }
+    // function handle the variable change size
+
     function handleSelectChange4(event) {
         setSize(event.target.value);
       }
+    //   start and end date variables 
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
+    // modal display variable for education section
     const [showE, setShowE] = useState(false);
+//  function to close the education modal
     const handleCloseE = () =>{setShowE(false)
         formRef2.current.reset();
         setStartDate(new Date())
         setEndDate(new Date())
     }
+//  function to open the education modal
     const handleShowE = () => setShowE(true);
+
+    // modal display variable for work section
     const [show, setShow] = useState(false);
+//  function to close the education modal
+  
     const handleClose = () =>{setShow(false)
         formRef.current.reset();
         setStartDate(new Date())
         setEndDate(new Date())
     }
+//  function to open the education modal
+
+    const handleShow = () => setShow(true);
+
+    // function to add skills
     const handlekeyDown=(e)=>{
         if(e.key!=="Enter") return
         const value=e.target.value
@@ -64,15 +90,20 @@ export default function ProfileEdit() {
         setSkills([...skills,value])
         e.target.value=''
         }
+    // function to remove skills
+
         const removeSkill=(item)=>{
             setSkills(skills.filter((el,i)=> i!==item))
         }
-    const handleShow = () => setShow(true);
+        // multiple work data storage variable
     const [workDataArray, setWorkDataArray] = useState([]);
+                // single work data storage variable
     const [workData, setWorkData] = useState({});
-    const [eduDataArray, setEduDataArray] = useState([]);
-    const [eduData, setEduData] = useState({});
-
+        // multiple education data storage variable
+        const [eduDataArray, setEduDataArray] = useState([]);
+        // single education data storage variable
+        const [eduData, setEduData] = useState({});
+// function to submit single work to multiple work variable
     const workSubmit=(e)=>{
 e.preventDefault()
 let newWork={...workData}
@@ -84,9 +115,12 @@ console.log([...workDataArray,newWork])
 
 handleClose()
     }
+// function to submit single education to multiple education variable
+
     const eduSubmit=(e)=>{
 e.preventDefault()
 let newEdu={...eduData}
+newEdu.degree=degree
 newEdu.startDate=moment(startDate).format('L') 
 newEdu.endDate=moment(endDate).format('L') 
 setEduDataArray([...eduDataArray,newEdu])
@@ -95,6 +129,7 @@ console.log([...eduDataArray,newEdu])
 
 handleCloseE()
     }
+// function to submit single work to single work variable
     const handleOnChangeWork = e => {
         const field = e.target.name;
         const value = e.target.value;
@@ -105,6 +140,7 @@ handleCloseE()
         console.log(newData)
 
     }
+// function to submit single education to single education variable
     const handleOnChangeEdu = e => {
         const field = e.target.name;
         const value = e.target.value;
@@ -115,6 +151,7 @@ handleCloseE()
         console.log(newData)
 
     }
+    // fuction to submit the whole form data
     const handleSubmit = e => {
         e.preventDefault()
         let newData={...data};
@@ -130,10 +167,13 @@ handleCloseE()
         // axios.post(`https://fierce-woodland-01411.herokuapp.com/api/employerProfile`, data).then(res => res.data ? handleShowT() : '')
 
     }
+    // local variables to define the display
     const [about, setAbout] = useState(true)
     const [work, setWork] = useState(false)
     const [education, setEducation] = useState(false)
     const [job, setJob] = useState(false)
+
+    // function to handle display changes on tab
     const getAll = data => {
         console.log(data);
         switch(data){
@@ -171,6 +211,7 @@ handleCloseE()
   return (
     <>
     <Container fluid className='bg-white py-3'>
+        {/* navigation tab */}
          <Nav justify variant="tabs" defaultActiveKey="#about">
                         <Nav.Item>
                             <Nav.Link href="#about" onClick={() => getAll('about')}>About</Nav.Link>
@@ -189,11 +230,15 @@ handleCloseE()
                     </Nav>
 
 <section className='my-2'>
+    {/* common data form */}
 <Container className='bg-white'>  <form ref={formRef3} className='mt-3  py-3' onSubmit={handleSubmit}>
+    {/* about section */}
 {about && <section>
+    {/* left side  */}
                <GrChat/> 
                <p className='fs-6 fw-bold'>About you</p>
 <p> Tell others a bit more about you and your passion.</p>
+  {/* ---------------first name */}
   <Form.Label className='fw-bold'>First Name</Form.Label>
                 <FloatingLabel
                     controlId="floatingInput"
@@ -202,7 +247,7 @@ handleCloseE()
                 >
                     <Form.Control type="text" name="first_name" className="text-start" placeholder="Jane doe" onChange={handleOnChange} />
                 </FloatingLabel>
-                {/* --------- */}
+                {/* ------Last name--- */}
                 <Form.Label className='fw-bold'>Last Name</Form.Label>
                 <FloatingLabel
                     controlId="floatingInput"
@@ -211,7 +256,7 @@ handleCloseE()
                 >
                     <Form.Control type="text" name="last_name" className="text-start" placeholder="xyz" onChange={handleOnChange} />
                 </FloatingLabel>
-                {/* ----------- */}
+                {/* ----User name------- */}
                 <Form.Label className='fw-bold'>Username</Form.Label>
                 <FloatingLabel
                     controlId="floatingInput"
@@ -220,7 +265,7 @@ handleCloseE()
                 >
                     <Form.Control type="text" name="username" className="text-start" placeholder='janedow' onChange={handleOnChange} />
                 </FloatingLabel>
-                {/* ------------- */}
+                {/* ----Bio--------- */}
                 <Form.Label className='fw-bold'>Bio</Form.Label>
 
                 <FloatingLabel controlId="floatingTextarea2" label="bio">
@@ -234,7 +279,7 @@ handleCloseE()
     />
                 </FloatingLabel>
 
-                {/* ------------- */}
+                {/* ------Current role------- */}
 
                 <Form.Label className='fw-bold'>Current Role</Form.Label>
                 <FloatingLabel
@@ -244,8 +289,7 @@ handleCloseE()
                 >
                     <Form.Control type="text" name="Current_Role" className="text-start" placeholder="Student" onChange={handleOnChange} />
                 </FloatingLabel>
-                {/*------------  */}
-                
+                {/*------Employer------  */}
                 <Form.Label className='fw-bold'>Employer</Form.Label>
                 <FloatingLabel
                     controlId="floatingInput"
@@ -254,11 +298,21 @@ handleCloseE()
                 >
                     <Form.Control type="text" name="employer" className="text-start" placeholder="Student" onChange={handleOnChange} />
                 </FloatingLabel>
+                {/* -----domain */}
+                <Form.Label className='fw-bold'>Domain of Expertise</Form.Label>
+               <FloatingLabel
+                   controlId="floatingInput"
+                   label="Domain of Expertise"
+                   className="mt-2 mb-3 text-start"
+               >
+                   <Form.Control required type="text" name="domain" className="text-start" placeholder="Site Engineer" onChange={handleOnChange} />
+               </FloatingLabel>
                 <hr />
-                {/*------------  */}
+                {/*-----Social-------  */}
                 <SiZwave />
                <p className='fs-6 fw-bold'>Social Profiles</p>
 <p> Link your social profile(s) to show off your work.</p>
+{/* ---------linkedin */}
                 <Form.Label className='fw-bold'>LinkedIn
 </Form.Label>
                 <FloatingLabel
@@ -268,7 +322,7 @@ handleCloseE()
                 >
                     <Form.Control type="text" name="LinkedIn" className="text-start" placeholder="Student" onChange={handleOnChange} />
                 </FloatingLabel>
-                {/* ---------------- */}
+                {/* -------Website--------- */}
                 <Form.Label className='fw-bold'>Website
 </Form.Label>
                 <FloatingLabel
@@ -279,37 +333,43 @@ handleCloseE()
                     <Form.Control type="text" name="website" className="text-start" placeholder="Student" onChange={handleOnChange} />
                 </FloatingLabel>
                 </section>}
+    {/* work section */}
                 
                 {work && <section className='bg-white'> 
                 <MdOutlineWork/> 
                 <div className="d-flex justify-content-between align-items-center">
                <p className='fs-6 fw-bold pt-2'>Work Experience</p>
+{/* button to add work exp */}
                    <Button onClick={handleShow} variant="outline-primary" className='w-75 border p-2' size="lg">
         Add Experience
       </Button>
                </div>
             </section>
-            }    
+            }
+                {/* education part */}
                 {education && <section className='bg-white'> 
                 <FaUserGraduate/> 
                 <div className="d-flex justify-content-between align-items-center">
                <p className='fs-6 fw-bold pt-2'>Education</p>
-                   <Button onClick={handleShowE} variant="outline-primary" className='w-75 border p-2' size="lg">
+{/* button to add education exp */}
+<Button onClick={handleShowE} variant="outline-primary" className='w-75 border p-2' size="lg">
         Add Education
       </Button>
                </div>
             </section>
             }    
+            {/* job */}
                 {job && <section className='bg-white'> 
                 <Row>
+                    {/* job left side */}
                     <Col  xs={12} md={3}>
-                    <BsBuilding className=' fs-4'/>
-                    <p className='fw-bold fs-5'>Company Information</p>
-                    <p>What type of company would you like to work at?</p>
+                    <MdOutlineWork className=' fs-4'/>
+                    <p className='fw-bold fs-5'>Job information</p>
+                    <p>What does your ideal job look like?</p>
                     </Col>
                     <Col xs={12} md={8}>
                
-               {/* --------- */}
+               {/* ----Role----- */}
                <Form.Label className='fw-bold'>Role Title</Form.Label>
                <FloatingLabel
                    controlId="floatingInput"
@@ -318,22 +378,17 @@ handleCloseE()
                >
                    <Form.Control required type="text" name="role" className="text-start" placeholder="Site Engineer" onChange={handleOnChange} />
                </FloatingLabel>
-               <Form.Label className='fw-bold'>Domain of Expertise</Form.Label>
-               <FloatingLabel
-                   controlId="floatingInput"
-                   label="Domain of Expertise"
-                   className="mt-2 mb-3 text-start"
-               >
-                   <Form.Control required type="text" name="domain" className="text-start" placeholder="Site Engineer" onChange={handleOnChange} />
-               </FloatingLabel>
-               {/* ----------- */}
+             
+               {/* -----Type of job------ */}
                <Form.Label className='fw-bold'>Type of job</Form.Label>
               
                <Form.Select className='mb-2' aria-label="Type of Form:"  onChange={handleSelectChange} value={type}>
                 <option value="permanent">Permanent</option>
-                <option value="contractor">Contractor</option>
+                <option value="contractual">Contractual</option>
+                <option value="part time">Part Time</option>
+                <option value="internship">Internship</option>
               </Form.Select>
-               {/* ------ */}
+               {/* ---Level of seniority--- */}
                <Form.Label className='fw-bold'>Seniority level</Form.Label>
               
               <Form.Select className='mb-2' aria-label="Type of Form:"  onChange={handleSelectChange2} value={level}>
@@ -381,15 +436,16 @@ handleCloseE()
                     </Col>
                     </Row>
  <hr />
+ {/* company info */}
  <Row>
                     <Col  xs={12} md={3}>
                     <BsBuilding className=' fs-4'/>
-                    <p className='fw-bold fs-5'>Job information</p>
-                    <p>What does your ideal job look like?</p>
+                    <p className='fw-bold fs-5'>Company Information</p>
+                    <p>What type of company would you like to work at?</p>
                     </Col>
                     <Col xs={12} md={8}>
                
-               {/* --------- */}
+               {/* ----Industry----- */}
                
                <Form.Label className='fw-bold'>Industry</Form.Label>
               
@@ -421,6 +477,7 @@ handleCloseE()
                 <option value="Research">Research</option>
 
               </Form.Select>
+            {/* --------size--- */}
                <Form.Label className='fw-bold'>Company Size</Form.Label>
               
                <Form.Select className='mb-2' aria-label="Type of Form:"  onChange={handleSelectChange4} value={size}>
@@ -437,25 +494,27 @@ handleCloseE()
             </section>
          
          }    
+         {/* display form submit btn when job section displays */}
   {job &&  <button className='btn btn-primary d-block w-100 mx-auto mt-2 py-3 ms-2 mb-5'>Submit </button>}
-                          
-                
-                
+                                      
+                {/* end of common form */}
                 </form>
             </Container>
-            
+            {/*  end of form container*/}
 
 </section>
     </Container>
-{/* for work */}
+{/* modal for work */}
     <Modal show={show} onHide={handleClose}>
+          {/* modal header */}
                 <Modal.Header closeButton>
                     <Modal.Title> Add your Work Experience</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
+                    {/* form reference */}
               <form ref={formRef} className='py-2' onSubmit={workSubmit}>
                
-                {/* --------- */}
+                {/* ------Role--- */}
                 <Form.Label className='fw-bold'>Role Title</Form.Label>
                 <FloatingLabel
                     controlId="floatingInput"
@@ -464,7 +523,7 @@ handleCloseE()
                 >
                     <Form.Control required type="text" name="role" className="text-start" placeholder="Site Engineer" onChange={handleOnChangeWork} />
                 </FloatingLabel>
-                {/* ----------- */}
+                {/* ----Employer------- */}
                 <Form.Label className='fw-bold'>Employer</Form.Label>
             
                 <FloatingLabel
@@ -474,7 +533,7 @@ handleCloseE()
                 >
                     <Form.Control type="text" required className="text-start" placeholder="Employer" name="employer" onChange={handleOnChangeWork} />
                 </FloatingLabel>
-                {/* ------ */}
+                {/* ---Employer Url--- */}
                 <Form.Label className='fw-bold'>Employer Url</Form.Label>
             
             <FloatingLabel
@@ -505,6 +564,7 @@ handleCloseE()
   </p></div>
   <hr />
   <div className="d-flex justify-content-between">
+    {/* modal submission or cancel */}
   <Button variant="secondary" onClick={handleClose}>
                         Cancel!!
                     </Button>
@@ -514,58 +574,74 @@ handleCloseE()
                   
                     </div>
             </form>
-              
+              {/* end of work form */}
                 </Modal.Body>
           
             </Modal>
+              {/* end of work modal */}
+
 {/* for education */}
     <Modal show={showE} onHide={handleCloseE}>
                 <Modal.Header closeButton>
                     <Modal.Title> Add Education</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
+                    {/* form reference */}
               <form ref={formRef2} className='py-2' onSubmit={eduSubmit}>
                
-                {/* --------- */}
+                {/* -----Degree---- */}
                 <Form.Label className='fw-bold'>Degree</Form.Label>
-                <FloatingLabel
-                    controlId="floatingInput"
-                    label="Degree"
-                    className="mt-2 mb-3 text-start"
-                >
-                    <Form.Control required type="text" name="degree" className="text-start" placeholder="Degree" onChange={handleOnChangeEdu} />
-                </FloatingLabel>
-                {/* ----------- */}
-                <Form.Label className='fw-bold'>Major</Form.Label>
+              
+               <Form.Select className='mb-2' aria-label="Type of Form:"  onChange={handleSelectChange4} value={degree}>
+                <option></option>
+                <option value="psc">PSC</option>
+                <option value="jsc">JSC</option>
+                <option value="ssc">SSC</option>
+                <option value="hsc">HSC</option>
+                <option value="diploma">Diploma</option>
+                <option value="bsc">BSC</option>
+                <option value="honors">Honors</option>
+                <option value="masters">Masters</option>
+                <option value="pgd">PGD</option>
+                <option value="phd">PHD</option>
+                <option value="vocational training">Vocational Training</option>
+                <option value="online training">Online Training</option>
+                <option value="others">Others</option>
+              </Form.Select>
+                {/* ----Area--Concentration----- */}
+                <Form.Label className='fw-bold'>Area of Concentration</Form.Label>
             
                 <FloatingLabel
                     controlId="floatingInput"
-                    label="Major"
+                    label="Area of Concentration"
                     className="mt-2 mb-3 text-start"
                 >
-                    <Form.Control type="text" required className="text-start" placeholder="Major" name="major" onChange={handleOnChangeEdu} />
+                    <Form.Control type="text" required className="text-start" placeholder="Area of Concentration" name="area_of_concentration" onChange={handleOnChangeEdu} />
                 </FloatingLabel>
-                {/* ------ */}
-                <Form.Label className='fw-bold'>School Name</Form.Label>
+                {/* ---Institution--- */}
+                <Form.Label className='fw-bold'>Institution Name</Form.Label>
             
             <FloatingLabel
                 controlId="floatingInput"
-                label="School Name"
+                label="Institution Name"
                 className="mt-2 mb-3 text-start"
             >
-                <Form.Control type="text" required className="text-start" placeholder="school" name="school" onChange={handleOnChangeEdu} />
+                <Form.Control type="text" required className="text-start" placeholder="Institution" name="institution" onChange={handleOnChangeEdu} />
             </FloatingLabel>  
                 {/* ------Industry------- */}
                  
   {/* ---------apply date */}
   <div className='d-flex '>
-    <p className='w-100'>Completion date
+    <p className='w-100'>Start date
   <DatePicker className='w-100' required selected={startDate} onChange={(date) => setStartDate(date)} />
   </p>
+  {/* ---------End date */}
+
   <p className='w-100'>End date
   <DatePicker className='w-100' required selected={endDate} onChange={(date) => setEndDate(date)} />
   </p></div>
   <hr />
+  {/* form submission section */}
   <div className="d-flex justify-content-between">
   <Button variant="secondary" onClick={handleCloseE}>
                         Cancel!!
@@ -576,10 +652,12 @@ handleCloseE()
                   
                     </div>
             </form>
-              
+              {/* end of education form */}
                 </Modal.Body>
           
             </Modal>
+              {/* end of education modal */}
+
     </>
     
   )

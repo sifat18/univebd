@@ -3,17 +3,20 @@ import React, { useState } from 'react'
 import { Button, Col, Container, FloatingLabel, Form, Modal, Row } from 'react-bootstrap'
 import './style.css'
 export default function Demo() {
+//    modal display function and state
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    const [data, setData] = useState({});
-
+//    modal2 display function and state
     const [showT, setShowT] = useState(false);
     const handleCloseT = () => setShowT(false);
     const handleShowT = () => {
         handleClose()
         setShowT(true)
     }
+// local state
+    const [data, setData] = useState({});
+// form input field changes handle
     const handleOnChange = e => {
         const field = e.target.name;
         const value = e.target.value;
@@ -23,6 +26,7 @@ export default function Demo() {
         console.log(newUser)
 
     }
+    // submition function
     const handleSubmit = e => {
         e.preventDefault()
         console.log(data);
@@ -41,7 +45,7 @@ export default function Demo() {
 
                 </Col>
             </Row>
-
+{/* modal 1 */}
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <h2 className='mx-auto ps-5'>Fill up the form</h2>

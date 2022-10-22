@@ -13,7 +13,7 @@ export default function RegisterModal({show,handleClose,error,handleRegisterSubm
                         {/* register form */}
                         <h3 className='text-center fs-1'>Join Unive for free</h3>
                         <form className='mx-auto  py-3 ' onSubmit={handleRegisterSubmit}>
-
+{/* Username */}
                             <FloatingLabel
                                 controlId="floatingInput"
                                 label="Username"
@@ -21,7 +21,7 @@ export default function RegisterModal({show,handleClose,error,handleRegisterSubm
                             >
                                 <Form.Control type="text" name="name" className="text-start" placeholder="Jane doe" onChange={handleOnChange} />
                             </FloatingLabel>
-                            {/* ----------- */}
+                            {/* -----Email------ */}
                             <FloatingLabel
                                 controlId="floatingInput"
                                 label="Email address"
@@ -30,7 +30,7 @@ export default function RegisterModal({show,handleClose,error,handleRegisterSubm
                             <Form.Control type="email" className="text-start" placeholder="name@example.com" name="email" onChange={handleOnChange} />
                             </FloatingLabel>
 
-                            {/* ----------- */}
+                            {/* -----password------ */}
                             <FloatingLabel controlId="floatingPassword" label="Password" className="mb-5 ">
                                 <Form.Control type="password" className="text-start" name="pass" placeholder="Password" onChange={handleOnChange} />
                             </FloatingLabel>

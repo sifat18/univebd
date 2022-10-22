@@ -6,6 +6,7 @@ import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import top from '../images/assesment/top.png'
 export default function Assessments() {
+//   loading course data
     const [item] = useData();
     return (
         <>
@@ -13,6 +14,7 @@ export default function Assessments() {
             <Header />
 
             <Container data-aos="fade-up-right" fluid className='bg-primary mb-5 py-5'>
+         {/* top part  */}
                 <Container className='text-light'>
                     <Row>
                         <Col xs={12} md={8}>
@@ -27,10 +29,13 @@ export default function Assessments() {
                         </Col>
                     </Row>
                 </Container>
+         {/* top part  end*/}
+
             </Container>
 
             <Container data-aos="fade-up-left">
                 <Row className='g-4'>
+          {/* course card left side */}
                     <Col xs={6}>
                         {item.slice(0, item.length / 2).map((id) => (
                             <Row key={id._id} xs={1} className="g-3 my-3 border">
@@ -47,7 +52,8 @@ export default function Assessments() {
                             </Row>
                         ))}
                     </Col>
-                    <Col xs={6}>
+          {/* course card right side */}
+          <Col xs={6}>
                         {item.slice(item.length / 2, item.length).map((id) => (
                             <Row key={id._id} xs={1} className="g-3 my-3 border">
                                 <Col xs={12} md={4} className='border-end'>
@@ -64,6 +70,7 @@ export default function Assessments() {
                         ))}
                     </Col>
                 </Row>
+                {/* course section ends */}
             </Container>
             <Footer />
         </>

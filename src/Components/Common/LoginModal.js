@@ -11,7 +11,7 @@ export default function LoginModal({Lshow,handleCloseL}) {
     const { signGoogle, emailPass, error, user, isLoading, logOut, admin,resetPass } = useAuth();
     const history = useNavigate();
     const location = useLocation();
-
+// login form field changes handle
     const handleOnChangeL = e => {
         const field = e.target.name;
         const value = e.target.value;
@@ -21,10 +21,13 @@ export default function LoginModal({Lshow,handleCloseL}) {
         console.log(newLoginData)
 
     }
+// google sign in method
+
     const handleLogin = () => {
         signGoogle(location, history)
         handleCloseL()
     }
+    // email pass login
     const handleLoginSubmit = e => {
         e.preventDefault()
         console.log(LoginData);
@@ -32,6 +35,7 @@ export default function LoginModal({Lshow,handleCloseL}) {
         handleCloseL()
 
     }
+    // reset email
     const handleRest=()=>{
         resetPass(LoginData.email)
     }
@@ -46,6 +50,7 @@ export default function LoginModal({Lshow,handleCloseL}) {
               {/* Login form */}
               <h2 className='text-start fs-3 fw-bold'>Sign in to your account</h2>
               <form className='mt-3  py-3' onSubmit={handleLoginSubmit}>
+            {/*email  */}
                   <FloatingLabel
                       controlId="floatingInput"
                       label="Email address"
@@ -54,7 +59,7 @@ export default function LoginModal({Lshow,handleCloseL}) {
                       <Form.Control type="email" className="text-start" placeholder="name@example.com" name='email' onChange={handleOnChangeL} />
                   </FloatingLabel>
 
-                  {/* ---------------- */}
+                  {/* --------password-------- */}
                   <FloatingLabel controlId="floatingPassword" label="Password" className="mb-5 ">
                       <Form.Control type="password" className="text-start" name="pass" placeholder="Password" onChange={handleOnChangeL} />
                   </FloatingLabel>

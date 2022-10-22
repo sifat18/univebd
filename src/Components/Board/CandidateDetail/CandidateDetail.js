@@ -3,9 +3,10 @@ import { Table } from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
 
 export default function CandidateDetail() {
+    // local variable to hold details
     const [details, setDetails] = useState({})
     const { id } = useParams()
-    // https://fierce-woodland-01411.herokuapp.com
+// loading data from databse
     useEffect(() => {
         fetch(`https://fierce-woodland-01411.herokuapp.com/api/candidate/${id}`).then(res => res.json()).then(data => setDetails(data))
     }, [id])

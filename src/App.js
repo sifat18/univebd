@@ -5,9 +5,6 @@ import React, { Suspense, useEffect } from 'react';
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import './App.css';
-
-// import Home from './Components/Home/Home';
-// import Learn from './Components/Learn/Learn';
 import {
   BrowserRouter, Route, Routes
 } from "react-router-dom";
@@ -75,16 +72,20 @@ const Search = React.lazy(() => import('./Components/Board/Candidates/Search'));
 const AddEmployer = React.lazy(() => import('./Components/Board/AddEmployer/AddEmployer'));
 const EmployerProfile = React.lazy(() => import('./Components/Board/EmployerPAges/profile/EmployerProfile'));
 
+// display loading 
 const loading = (
-  <div className="pt-3 text-center">
+<div className="pt-3 text-center">
     <div className="sk-spinner sk-spinner-pulse"></div>
   </div>
 )
+// app function starts here
 function App() {
+  // animation library loaded
   useEffect(() => {
     AOS.init();
   }, [])
   return (
+    // suspense for lazyloading
     <Suspense fallback={loading}>
       {/* //Authprovider wraps the contents BrowserRouter and distributes the user info from that is stored in it   */}
       <Authprovider>
@@ -94,7 +95,6 @@ function App() {
             {/* route definitions and resulting page components */}
             <Routes>
               <Route path="/" element={<Home />} />
-              {/* educ-5542f.firebaseapp.com */}
               <Route path="/why-unive" element={<Univewhy />} />
               <Route path="/how-it-works" element={<HowItworks />} />
               <Route path="/contact" element={<Contact />} />
@@ -128,8 +128,8 @@ function App() {
               <Route path="/press" element={<Press />} />
               <Route path="/learn/:courseID" element={<Overview />} />
               <Route path="/learn/start/:courseID" element={<PrivateRoute><CourseStart /></PrivateRoute>} />
-              <Route path="/dashboard" element={<PrivateRoute><Board /></PrivateRoute>} >
-                <Route path="" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
+              <Route path="/dashboard" element={<Board />} >
+                <Route path="" element={<Dashboard />} />
                 <Route path="profile/:user/edit" element={<ProfileEdit />} />
                 <Route path="employer_profile" element={<EmployRoute><EmployerProfile /></EmployRoute>} />
                 <Route path="tutor_profile" element={<EmployRoute><TutorProfile /></EmployRoute>} />

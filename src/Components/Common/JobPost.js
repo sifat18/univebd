@@ -5,16 +5,19 @@ import Badge from 'react-bootstrap/Badge';
 import { NavLink } from 'react-router-dom';
 import useAuth from './../Context/useAuth';
 export default function JobPost({job,show=true}) {
+  // data destructuring
   const {startDate}=job
- 
+//  user data
   const {user,admin}=useAuth()
-
+// function to delete job 
   const deleteJob=(id)=>{
     axios.delete(`https://fierce-woodland-01411.herokuapp.com/api/delete_job/${id}`).then(res=>res.data.acknowledged? window.location.reload(true):console.log('error at delete'))
   }
   return (
+    // displaying job data
     <Col>
             <Card body className='rounded mt-5 card-shadow' >
+            {/* condition to display new tag */}
             {moment.duration(moment(new Date()).diff(moment(startDate))).asHours()<=72 && <Badge bg="primary">New</Badge>}
               <p className='text-center fw-bold text-uppercase jobText'>{job.imgLink &&<img src={job.imgLink} alt='logo ' className='img-fluid  me-3 pb-2' width={35} heigth={35}/>}Looking For {job.position}</p>
               <Container className=''>

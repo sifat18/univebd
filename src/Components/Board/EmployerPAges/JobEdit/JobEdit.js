@@ -8,16 +8,19 @@ import "react-datepicker/dist/react-datepicker.css";
 import { useParams } from 'react-router-dom';
 
 export default function JobEdit() {
-  const [data, setData] = useState({});
+//  local states
+    const [data, setData] = useState({});
   const [skills, setSkills] = useState([]);
-  const imageStorageKey='a3a4f59a1a4c29023ff43f75bd8f551d'
   const [error, setError] = useState(null);
-
+  const [imgLink, setImgLink] = useState(null);
    // setting date variables 
    const [startDate, setStartDate] = useState('');
-   const [endDate, setEndDate] = useState('');
+  const [endDate, setEndDate] = useState('');  
+//   imgbb api key
+  const imageStorageKey='a3a4f59a1a4c29023ff43f75bd8f551d'
+// dynamic parameter
   const { id } = useParams()
-  const [imgLink, setImgLink] = useState(null);
+//   loading job post from db
   useEffect(() => {
       fetch(`https://fierce-woodland-01411.herokuapp.com/api/jobpost/${id}`).then(res => res.json()).then(data => {
         setData(data)
@@ -26,7 +29,7 @@ export default function JobEdit() {
         setSkills(data.skills)
       })
   }, [id])
-
+// generate image link
   const generateImageLink = e => {
             console.log(e.target.files[0])
     if (e.target.files[0].size > 500000){
@@ -58,7 +61,7 @@ export default function JobEdit() {
 // looping skills
    // storing form data
 
-
+// function to get input field values
    const handleOnChange = e => {
        const field = e.target.name;
        const value = e.target.value;
@@ -68,6 +71,8 @@ export default function JobEdit() {
        console.log(newUser)
 
    }
+// function to get submit
+
    const handleSubmit = e => {
        e.preventDefault()
        data.skills=skills
@@ -78,6 +83,7 @@ export default function JobEdit() {
        axios.put(`https://fierce-woodland-01411.herokuapp.com/api/jobpost/edit/${id}`, data).then(res => res.data ? handleShowT() : '')
 
    }   
+//    fucntion to add skill
    const handlekeyDown=(e)=>{
 if(e.key!=="Enter") return
 const value=e.target.value
@@ -85,15 +91,16 @@ if(!value.trim()) return
 setSkills([...skills,value])
 e.target.value=''
 }
+//    fucntion to remove skill
+
    const removeSkill=(item)=>{
        setSkills(skills.filter((el,i)=> i!==item))
    }
    return (
        <Container className='py-2'>
-           {/* Login form */}
            <form className='mt-3  py-3' onSubmit={handleSubmit}>
               
-               {/* --------- */}
+               {/* ----Organization----- */}
                <FloatingLabel
                    controlId="floatingInput"
                    label="Organization Name"
@@ -101,7 +108,7 @@ e.target.value=''
                >
                    <Form.Control required type="text" value={data?.organization} name="organization" className="text-start" placeholder="xyz" onChange={handleOnChange} />
                </FloatingLabel>
-               {/* ----------- */}
+               {/* -----Email------ */}
            
                <FloatingLabel
                    controlId="floatingInput"
@@ -186,7 +193,6 @@ e.target.value=''
                    label="Edit Required Skills [Press Enter After Each Skill]"
                    className="mt-2 mb-5 text-start "
                >
-               {/* <div className='tag-container'> */}
       
  <Form.Control onKeyDown={handlekeyDown}  type="text" className="text-start" placeholder="xyz"  />
    {/* <input   /> */}
@@ -201,7 +207,7 @@ e.target.value=''
    </div>
    }
    </FloatingLabel>
-   {/* ------------------------------ */}
+   {/* --------------job description---------------- */}
    <FloatingLabel controlId="floatingTextarea2" label="Job Description">
    <Form.Control
      as="textarea"
@@ -221,6 +227,7 @@ e.target.value=''
  <p className='w-100'>end date
  <DatePicker className='w-100' required  selected={endDate} onChange={(date) => setEndDate(date)} />
  </p></div>
+ {/* ------img  */}
  <Form.Group controlId="formFile" className="mb-3">
         <Form.Label>Company logo </Form.Label>
         <Form.Control type="file" onChange={e => generateImageLink(e)}/>
@@ -228,6 +235,7 @@ e.target.value=''
       {error && <p className='text-danger'>{error}</p>}
   
            </form>
+           {/* form end */}
            <button onClick={(e)=>handleSubmit(e)} className='btn btn-primary d-block w-100 mx-auto mt-2 py-3 ms-2 mb-5'>Submit </button>
            {/* modal */}
            <Modal show={showT} onHide={handleCloseT}>

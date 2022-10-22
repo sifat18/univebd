@@ -3,12 +3,15 @@ import React, { useState } from 'react'
 import { Button, Container, FloatingLabel, Form, Modal } from 'react-bootstrap'
 
 export default function EmployerProfile() {
-    const [data, setData] = useState({});
+//  local states
+const [data, setData] = useState({});
+//    modal display functions and variables 
 
     const [showT, setShowT] = useState(false);
     const handleCloseT = () => setShowT(false);
     const handleShowT = () => setShowT(true)
-    const handleOnChange = e => {
+// function to get input field values
+const handleOnChange = e => {
         const field = e.target.name;
         const value = e.target.value;
         const newUser = { ...data };
@@ -17,7 +20,8 @@ export default function EmployerProfile() {
         console.log(newUser)
 
     }
-    const handleSubmit = e => {
+// function to get submit
+const handleSubmit = e => {
         e.preventDefault()
         console.log(data);
 
@@ -26,8 +30,9 @@ export default function EmployerProfile() {
     }
     return (
         <Container className='py-2'>
-            {/* Login form */}
+            {/*  form */}
             <form className='mt-3  py-3' onSubmit={handleSubmit}>
+          {/* Contact */}
                 <FloatingLabel
                     controlId="floatingInput"
                     label="Contact Person Name"
@@ -35,7 +40,7 @@ export default function EmployerProfile() {
                 >
                     <Form.Control type="text" name="contact" className="text-start" placeholder="Jane doe" onChange={handleOnChange} />
                 </FloatingLabel>
-                {/* --------- */}
+                {/* ---Organization------ */}
                 <FloatingLabel
                     controlId="floatingInput"
                     label="Organization Name"
@@ -43,7 +48,7 @@ export default function EmployerProfile() {
                 >
                     <Form.Control type="text" name="organization" className="text-start" placeholder="xyz" onChange={handleOnChange} />
                 </FloatingLabel>
-                {/* ----------- */}
+                {/* -----Email------ */}
                 <FloatingLabel
                     controlId="floatingInput"
                     label="Email address"
@@ -51,7 +56,7 @@ export default function EmployerProfile() {
                 >
                     <Form.Control type="email" className="text-start" placeholder="name@example.com" name="email" onChange={handleOnChange} />
                 </FloatingLabel>
-                {/* ------------- */}
+                {/* ------Phone------- */}
 
                 <FloatingLabel
                     controlId="floatingInput"

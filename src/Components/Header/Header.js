@@ -17,28 +17,29 @@ import logo1 from '../images/logos/unive_logo.svg';
 import './header.css';
 
 export default function Header() {
+//    modal display states and function
     const [show, setShow] = useState(false);
-    const [Lshow, setLShow] = useState(false);
-
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-
+// login mdal
+    const [Lshow, setLShow] = useState(false);
     const handleCloseL = () => setLShow(false);
     const handleShowL = () => setLShow(true);
 
     // offcanvas
     const [showOff, setShowOff] = useState(false);
-
     const handleOff = () => setShowOff(false);
     const handleOn = () => setShowOff(true);
-
+// local states
     const [registerData, setregisterData] = useState({});
     const [passError, setpassError] = useState('');
     const history = useNavigate();
+    // getting methods from firebase
     const { createUser, signGoogle, emailPass, error, user, isLoading, logOut, admin } = useAuth();
     const location = useLocation();
 
     let repassword;
+    // register form field changes
     const handleOnChange = e => {
         const field = e.target.name;
         const value = e.target.value;
@@ -48,6 +49,8 @@ export default function Header() {
         console.log(newRegisterData)
 
     }
+    // check pass function
+
     const hadlePass = e => {
         console.log(e.target.value);
         repassword = e.target.value;
@@ -60,6 +63,7 @@ export default function Header() {
 
         }
     }
+    // submit register data
     const handleRegisterSubmit = e => {
         e.preventDefault()
         console.log(registerData);

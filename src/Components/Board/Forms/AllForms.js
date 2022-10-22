@@ -3,7 +3,8 @@ import { Container, Form, Table } from 'react-bootstrap'
 import TableData from '../../Common/TableData'
 
 export default function AllForms() {
-    const [contributer, setContributer] = useState([])
+  // local states 
+  const [contributer, setContributer] = useState([])
     const [courseDelete, setCourseDelete] = useState([])
     const [instructor, setInstructor] = useState([])
     const [recruitement, setRecruitement] = useState([])
@@ -11,8 +12,10 @@ export default function AllForms() {
     const [demo, setDemo] = useState([])
     const [enterprice, setEnterprice] = useState([])
     const [scholarship, setScholarship] = useState([])
+    const [choice, setChoice] = useState('choose form data ');
+    const [tableData, settableData] = useState([]);
+// loading data from db    // 
     useEffect(() => {
-        // fierce-woodland-01411.herokuapp.com
         fetch('https://fierce-woodland-01411.herokuapp.com/api/contributer').then(res => res.json()).then(data => setContributer(data))
         fetch('https://fierce-woodland-01411.herokuapp.com/api/instructor').then(res => res.json()).then(data => setInstructor(data))
         fetch('https://fierce-woodland-01411.herokuapp.com/api/unive_recruitement').then(res => res.json()).then(data => setRecruitement(data))
@@ -22,12 +25,13 @@ export default function AllForms() {
         fetch('https://fierce-woodland-01411.herokuapp.com/api/scholarship').then(res => res.json()).then(data => setScholarship(data))
         fetch('https://fierce-woodland-01411.herokuapp.com/api/course_delete').then(res => res.json()).then(data => setCourseDelete(data))
     }, [])
-    const [choice, setChoice] = useState('choose form data ');
-    const [tableData, settableData] = useState([]);
+  //  function to handle select input
     function handleSelectChange(event) {
       setChoice(event.target.value);
       handleDATA(event.target.value)
     }
+  //  function to change table data on  select input
+
     const handleDATA=(data)=>{
 switch(data){
   case 'contributer':
@@ -61,6 +65,7 @@ switch(data){
   return (
     <div>
       <Container className='my-5'>
+   {/* select input */}
       <Form.Select className='ms-2' aria-label="Type of Form:" name='form_type' onChange={handleSelectChange} value={choice}>
                 <option>Choose form data</option>
                 <option value="contributer">become a contributer</option>
@@ -73,7 +78,7 @@ switch(data){
                 <option value="courseDelete">course delete request</option>
               </Form.Select>
       </Container>
-
+{/* tabular display */}
      <TableData tableData={tableData} choice={choice}></TableData>
     </div>
   )

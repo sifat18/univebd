@@ -1,32 +1,37 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Button, Container, Form, Modal, Row, Table } from 'react-bootstrap';
+import useAuth from '../Context/useAuth';
 import JobPost from './JobPost';
 import SinglePagePdf from './SinglePagePdf';
 export default function AppliedCandidates() {
+  // modal display function and variable
   const [show, setShow] = useState(false);
   const handleClose = () =>  setShow(false);
   const handleShow = () => setShow(true);
-    
-    
-      
+        //local state 
     const [jobs, setJobs] = useState([])
-    const [showT, setShowT] = useState(false);
     const [pdf, setPdf] = useState(null);
+//  function to view pdf data
     const handleView=view=>{
       setPdf(view)
       handleShowT()
     }
+    // getting user
+    const { user } = useAuth()
+// modal2 display function and variable
+    const [showT, setShowT] = useState(false);
     const handleCloseT = () => {
       setPdf(null)
       setShowT(false)};
     const handleShowT = () => setShowT(true)
-     let ema='info@muspana.com'
+    //  laoding data based on job poster email
     useEffect(() => {
-        fetch(`https://fierce-woodland-01411.herokuapp.com/api/employer_posted/${ema}`).then(res=>res.json()).then(data=>setJobs(data))
-    }, [ema])
+        fetch(`https://fierce-woodland-01411.herokuapp.com/api/employer_posted/${user.email}`).then(res=>res.json()).then(data=>setJobs(data))
+    }, [user])
     let content=''
-    console.log('asd',jobs)
+    // console.log('asd',jobs)
+  // to display content
     if(jobs.length<1){
     content=(<p className='text-center mt-5'>No Jobs Available</p>)
     }else{
@@ -37,10 +42,10 @@ export default function AppliedCandidates() {
       </Row>
       )
     }
-
+// function to handle the status 
     function handleSelectChange(event,id) {
       // setStatus(event.target.value);
-      console.log(event.target.value,id,)
+      // console.log(event.target.value,id,)
       let status
   
           status=event.target.value
@@ -48,6 +53,7 @@ export default function AppliedCandidates() {
       }
   return (
     <>
+    {/* pdf view candidates */}
     {showT && <Container className='text-center'>
              <h2> Candidate Resume </h2>
              <hr/>
@@ -60,6 +66,7 @@ export default function AppliedCandidates() {
     <h2 className='my-4 text-center fw-bold my-5'> Browse  Available Jobs</h2>
    {content}
    </Container>
+   {/* applied candidates */}
    <Table responsive striped bordered hover>
       <thead>
         <tr>
@@ -91,6 +98,7 @@ export default function AppliedCandidates() {
                     ))}
       </tbody>
       </Table>
+      {/* modal for status chagne */}
       <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>Successful</Modal.Title>

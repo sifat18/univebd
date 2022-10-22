@@ -5,9 +5,11 @@ import './addcourse.css';
 
 
 export default function CourseAdd() {
+// variable for storign raw img
     const [imgLink, setImgLink] = useState(null);
+    // api key for imgbb for uploading
     const imageStorageKey='a3a4f59a1a4c29023ff43f75bd8f551d'
-   
+//    generating image link
     const generateImageLink = img => {
         const formData = new FormData();
         formData.append('image', img);
@@ -54,7 +56,7 @@ export default function CourseAdd() {
         Finalcourse.Module = [...module]
         setCourse(Finalcourse)
         // https://fierce-woodland-01411.herokuapp.com
-        console.log(Finalcourse)
+        // console.log(Finalcourse)
         axios.post(`https://fierce-woodland-01411.herokuapp.com/api/courses`, Finalcourse).then(res => res.data ? handleShow() : '')
 
     }
@@ -73,11 +75,13 @@ export default function CourseAdd() {
         <>
 
             <section>
+                {/* form starts here */}
                 <form onSubmit={submit} >
                     {/* basic info starts here */}
 
                     <Row className='formBg pb-3'>
                         <h3 className="my-3 py-3 text-light text-center">Basic Course Information</h3>
+                    {/* -------course name and demo */}
                         <div className='d-md-flex '>
     <p className='w-100 text-white'>Course Name
     <input
@@ -96,6 +100,8 @@ export default function CourseAdd() {
   </p>
   </div>
   <Row>
+                    {/* -------course about  and photo */}
+
   <div className='d-md-flex '>
   <p className='w-100 text-white'>About course
     <textarea
@@ -119,8 +125,10 @@ export default function CourseAdd() {
                     {/* basic ends here */}
                     {/* summary */}
                     <h3 className="my-3 py-3 text-dark text-center"> Course Summary</h3>
+                 
                     <Row className='formBg  py-3'>
                         <Col xs={12} md={3} className='courseFormpad' >
+                 {/* ---total module */}
                             <input
                                 name='total_modules'
                                 placeholder='Total Modules'
@@ -129,6 +137,8 @@ export default function CourseAdd() {
                             />
                         </Col>
                         <Col xs={12} md={3} className='courseFormpad' >
+                 {/* ---total Quizes */}
+                          
                             <input
                                 name='total_quizes'
                                 placeholder='Total Quizes'
@@ -137,6 +147,8 @@ export default function CourseAdd() {
                             />
                         </Col>
                         <Col xs={12} md={3} className='courseFormpad' >
+                 {/* ---total course_length */}
+          
                             <input
                                 name='course_length'
                                 placeholder='Course Length'
@@ -145,6 +157,7 @@ export default function CourseAdd() {
                             />
                         </Col>
                         <Col xs={12} md={3} className='courseFormpad' >
+                           {/* course lvel */}
                             <input
                                 name='course_level'
                                 placeholder='Course Level'
@@ -153,6 +166,7 @@ export default function CourseAdd() {
                             />
                         </Col>
                         <Col xs={12} md={3} className='courseFormpad mt-3' >
+                            {/* tag---------- */}
                             <input
                                 name='tag'
                                 placeholder='Tag'
@@ -164,8 +178,10 @@ export default function CourseAdd() {
                     {module.map((input, index) => (
                         //    {/* module start here */}
                         <Row className="my-5  formBg  py-2" key={index}>
+                            
                             <Row>
                                     <h3 className="my-2 mx-2 text-light text-center">Course Module {index + 1}</h3>
+    {/* module name and about */}
                                 <div className='d-md-flex '>
     <p className='w-100 text-white'>Module Name
     <input
@@ -193,6 +209,7 @@ export default function CourseAdd() {
                             {/* sub module 1 */}
                             <Row>
                                 <h2 className='text-light mt-5 text-center'>Sub Module 1</h2>
+                                {/* sub mod ----- video */}
                                 <div className='d-md-flex '>
     <p className='w-100 text-white'>Sub Module Name
     <input
@@ -212,6 +229,7 @@ export default function CourseAdd() {
                                         onChange={event => handleFormChange(index, event)} />
   </p>
   </div>
+  {/* sub mod 1 description */}
   <p className='text-light ps-3'>Sub Module Description</p>
 
                                     <textarea
@@ -228,6 +246,7 @@ export default function CourseAdd() {
                             {/* sub module 2 */}
                             <Row>
                                 <h2 className='text-light mt-5 text-center'>Sub Module 2</h2>
+                            {/* sub mod name and description */}
                                 <div className='d-md-flex '>
     <p className='w-100 text-white'>Sub Module Name
     <input
@@ -246,6 +265,8 @@ export default function CourseAdd() {
                                         onChange={event => handleFormChange(index, event)} />
   </p>
   </div>
+  {/* sub mod 2 description */}
+
   <p className='text-light ps-3'>Sub Module Description</p>
 
                                     <textarea
@@ -261,6 +282,8 @@ export default function CourseAdd() {
                             {/* sub module 3  */}
                             <Row>
                                 <h2 className='text-light mt-5 text-center'>Sub Module 3</h2>
+                            {/* submod name and description */}
+                      
                                 <div className='d-md-flex '>
     <p className='w-100 text-white'>Sub Module Name
     <input
@@ -280,6 +303,8 @@ export default function CourseAdd() {
                                         onChange={event => handleFormChange(index, event)} />
   </p>
   </div>
+  {/* sub mod 3 description */}
+
   <p className='text-light ps-3'>Sub Module Description</p>
 
                                     <textarea
@@ -296,6 +321,7 @@ export default function CourseAdd() {
                             <Row className='gx-5 mx-auto my-3 py-3'>
                                 <h2 className='text-light text-center'>Add Quizzes</h2>
                                 {/* quiz 1 */}
+                                {/* question and answer 1  */}
                                 <div className='d-md-flex  '>
 <div className='d-md-flex flex-column w-100 '>
     <p className='w-100 text-white'>Question 1
@@ -316,6 +342,7 @@ export default function CourseAdd() {
                                             onChange={event => handleFormChange(index, event)} />
   </p>
   </div>
+  {/* 4 options quiz-1 */}
   <div>
     <input
                                             name='qOP11'
@@ -350,6 +377,8 @@ export default function CourseAdd() {
    
                                 {/* quiz-2 */}
                                 <div className='d-md-flex mt-5'>
+                                {/* question and answer 2  */}
+
                                 <div className='d-md-flex flex-column w-100 '>
                                 <p className='w-100 text-white'>Question 2
     <input
@@ -369,6 +398,8 @@ export default function CourseAdd() {
                                             onChange={event => handleFormChange(index, event)} />
   </p>
   </div>
+  {/* 4 options quiz-2 */}
+
   <div className='mt-4'>
   <input
                                             name='qOP21'
@@ -403,6 +434,8 @@ export default function CourseAdd() {
               
                                 {/* quiz-3 */}
                                 <div className='d-md-flex mt-5'>
+                                {/* question and answer 3  */}
+
                                 <div className='d-md-flex flex-column w-100 '>
                                 <p className='w-100 text-white'>Question 3
     <input
@@ -422,6 +455,8 @@ export default function CourseAdd() {
                                             onChange={event => handleFormChange(index, event)} />
   </p>
   </div>
+  {/* 4 options quiz-3 */}
+
   <div className='mt-4'>
   <input
                                             name='qOP31'
@@ -460,6 +495,8 @@ export default function CourseAdd() {
                                
                                 {/* quiz-4 */}
                                 <div className='d-md-flex mt-5'>
+                                {/* question and answer 4  */}
+
                                 <div className='d-md-flex flex-column w-100 '>
                                 <p className='w-100 text-white'>Question 4
     <input
@@ -479,6 +516,9 @@ export default function CourseAdd() {
           onChange={event => handleFormChange(index, event)} />
   </p>
   </div>
+                               {/* 4 options quiz-4 */}
+
+  
   <div className='mt-4'>
   <input
         name='qOP41'
@@ -517,6 +557,8 @@ export default function CourseAdd() {
                              
                                 {/* quiz-5 */}
                                 <div className='d-md-flex mt-5'>
+                                {/* question and answer 5  */}
+
                                 <div className='d-md-flex flex-column w-100 '>
                                 <p className='w-100 text-white'>Question 5
     <input
@@ -535,6 +577,8 @@ export default function CourseAdd() {
         onChange={event => handleFormChange(index, event)} />
   </p>
   </div>
+                               {/* 4 options quiz-5 */}
+
   <div className='mt-4'>
   <input
             name='qOP51'

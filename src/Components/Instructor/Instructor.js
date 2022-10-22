@@ -8,30 +8,35 @@ import instruct from '../images/instructor/instruct.png'
 import phone from '../images/instructor/phone.png'
 import ppl from '../images/instructor/ppl.png'
 export default function Instructor() {
+// modal 1 display functiopn and variable
     const [show, setShow] = useState(false);
-    const [pdf, setPdf] = useState(null);
-
-    const [showT, setShowT] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+// modal 2 display functiopn and variable
+
+    const [showT, setShowT] = useState(false);
     const handleCloseT = () => setShowT(false);
     const handleShowT = () => {
         handleClose()
         setShowT(true)
             ;
     }
+// local states
     const [data, setData] = useState({});
-
+    const [pdf, setPdf] = useState(null);
     const [choice, setChoice] = useState('অনুগ্রহপূর্বক সিলেক্ট করুন ');
+    const [choice2, setChoice2] = useState('অনুগ্রহপূর্বক সিলেক্ট করুন ');
+  
+//   select function change
     function handleSelectChange(event) {
         setChoice(event.target.value);
         handleOnChange(event)
     }
-    const [choice2, setChoice2] = useState('অনুগ্রহপূর্বক সিলেক্ট করুন ');
     function handleSelectChange2(event) {
         setChoice2(event.target.value);
         handleOnChange(event)
     }
+//    form field changes function
 
     const handleOnChange = e => {
         const field = e.target.name;
@@ -42,11 +47,7 @@ export default function Instructor() {
         console.log(newUser)
 
     }
-    // const handleSubmit2 = e => {
-    //     e.preventDefault()
-    //     console.log(data);
-    //     axios.post(`https://fierce-woodland-01411.herokuapp.com/api/instructorForm2`, data).then(res => res.data ? handleShowT() : '')
-    // }
+//    form submit function
     const handleSubmit = e => {
         console.log('hit');
         e.preventDefault();

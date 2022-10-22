@@ -51,6 +51,7 @@ import logo47 from '../images/logos/United.png'
 import logo48 from '../images/logos/Walton.png'
 import logo49 from '../images/logos/Western.png'
 export default function Companies() {
+//   carousel setting
     const settings = {
         dots: false,
         infinite: true,
@@ -91,6 +92,7 @@ export default function Companies() {
     };
     return (
         <Row className='my-5  mx-auto text-center'>
+          {/* img slides */}
             <Slider {...settings}>
                 <div className='  text-center'>
                     <img className='img-fluid mx-auto my-auto ' src={logo1} alt="" height='150' width='150' />
@@ -241,28 +243,7 @@ export default function Companies() {
                     <img className='img-fluid mx-auto my-auto ' src={logo49} alt="" height='150' width='150' />
                 </div>
             </Slider>
-            {/*             
-            <Col xs={12} md={2}>
-                <img className='img-fluid py-5' src={logo1} alt="" height='150' width='150' />
-            </Col>
-            <Col xs={12} md={2}>
-                <img className='img-fluid py-5' src={logo2} alt="" height='150' width='150' />
-            </Col>
-            <Col xs={12} md={2}>
-                <img className='img-fluid py-5' src={logo3} alt="" height='150' width='150' />
-            </Col>
-            <Col xs={12} md={2}>
-                <img className='img-fluid py-5' src={logo4} alt="" height='150' width='150' />
-            </Col>
-            <Col xs={12} md={1}>
-                <img className='img-fluid py-5' src={logo5} alt="" height='250' width='250' />
-            </Col>
-            <Col xs={12} md={2}>
-                <img className='img-fluid py-5' src={logo6} alt="" height='150' width='150' />
-            </Col>
-            <Col xs={12} md={1}>
-                <img className='img-fluid ' src={logo7} alt="" height='150' width='150' />
-            </Col> */}
+          
 
         </Row>
     )

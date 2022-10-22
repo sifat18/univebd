@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom';
 export default function Edit() {
     const [imgLink, setImgLink] = useState(null);
     const imageStorageKey='a3a4f59a1a4c29023ff43f75bd8f551d'
-   
+//    generate image
     const generateImageLink = img => {
         const formData = new FormData();
         formData.append('image', img);
@@ -30,8 +30,8 @@ export default function Edit() {
         setShow(false)
         window.location.reload(true);
     };
-    // fierce-woodland-01411.herokuapp.com
     const handleShow = () => setShow(true);
+// loading data
     useEffect(() => {
         fetch(`https://fierce-woodland-01411.herokuapp.com/api/course/${id}`).then(res => res.json()).then(data => {
             setCourse(data)
@@ -163,47 +163,7 @@ export default function Edit() {
       </Form.Group>
    
   </div>
-                        {/* <Col xs={12} md={3} className='courseFormpad' >
-                            <FormControl type="text"
-                                name='coursename'
-                                placeholder='Course_Name'
-                                className=''
-                                onChange={handleOnChange}
-                                defaultValue={course?.coursename} />
-
-                        </Col> */}
-                        {/* <Col xs={12} md={3} className='courseFormpad'>
-                            <textarea
-                                name='about'
-                                placeholder='About_course'
-                                rows='5'
-                                cols='40'
-                                className='form-control'
-                                defaultValue={course?.about}
-                                onChange={handleOnChange}
-                            />
-
-                        </Col>
-                        <Col xs={12} md={3} className='courseFormpad'>
-                            <FormControl
-                                type='text'
-                                name='imageLink'
-                                placeholder='Image_Link'
-                                className=''
-                                defaultValue={course?.imageLink}
-                                onChange={handleOnChange} />
-
-                        </Col>
-                        <Col xs={12} md={3} className='courseFormpad'>
-                            <FormControl
-                                type='text'
-                                name='demoLink'
-                                placeholder='Demo_Link'
-                                className=''
-                                defaultValue={course?.demoLink}
-                                onChange={handleOnChange} />
-
-                        </Col> */}
+                        
                     </Row>
                     {/* basic ends here */}
 

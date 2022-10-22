@@ -196,8 +196,9 @@ export default function Contributor() {
                 </Modal.Header>
                 <Modal.Body>
                     <Container className='py-2'>
-                        {/* Login form */}
+                        {/*  form */}
                         <form className='mt-3  py-3' onSubmit={handleSubmit}>
+                        {/* Name */}
                             <FloatingLabel
                                 controlId="floatingInput"
                                 label="Full Name"
@@ -205,7 +206,7 @@ export default function Contributor() {
                             >
                                 <Form.Control type="text" name="FullName" className="text-start" placeholder="Jane doe" onChange={handleOnChange} />
                             </FloatingLabel>
-                            {/* ----------- */}
+                            {/* ----email------- */}
                             <FloatingLabel
                                 controlId="floatingInput"
                                 label="Email address"
@@ -214,7 +215,7 @@ export default function Contributor() {
                                 <Form.Control type="email" className="text-start" placeholder="name@example.com" name="email" onChange={handleOnChange} />
                             </FloatingLabel>
 
-                            {/* ----------- */}
+                            {/* ------Phone----- */}
 
                             <FloatingLabel
                                 controlId="floatingInput"
@@ -223,7 +224,7 @@ export default function Contributor() {
                             >
                                 <Form.Control type="number" name="PhoneNumber" className="text-start" placeholder="01299123" onChange={handleOnChange} />
                             </FloatingLabel>
-                            {/* ----------- */}
+                            {/* -----subject------ */}
                             <FloatingLabel
                                 controlId="floatingInput"
                                 label="The topics you want to write on"
@@ -232,7 +233,7 @@ export default function Contributor() {
                                 <Form.Control type="text" name="subject" className="text-start" placeholder="English" onChange={handleOnChange} />
                             </FloatingLabel>
 
-                            {/* ------------ */}
+                            {/* -----CV------- */}
 
                             <Form.Group controlId="formFile" className="text-start ms-2 mb-3">
                                 <Form.Label >CV (if any)</Form.Label>

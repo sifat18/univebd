@@ -10,14 +10,16 @@ import dr from '../images/icons8-down-arrow-40.png'
 import CourseCard from '../Common/CourseCard';
 
 export default function CourseCatalog() {
+
   const { tag } = useParams()
+// local state
   const [course, setCourse] = useState([])
   const [disp, setdisp] = useState(false)
-
+// display more or less course
   const handleShow = () => {
     setdisp(!disp)
   }
-  // https://fierce-woodland-01411.herokuapp.com
+// loading daat
   useEffect(() => {
     fetch(`https://fierce-woodland-01411.herokuapp.com/api/courses/${tag}`).then(res => res.json()).then(data => setCourse(data))
   }, [tag])

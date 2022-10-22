@@ -28,12 +28,7 @@ export default function Videos({ link, basic, handl2, curIdx, breif, show, nexVi
                     <p className='btn btn-info text-white w-50 d-block mt-3 mx-auto' onClick={handl2}> Go to Quiz</p>
                 }
             </Container>
-            {/* {curIdx - 1 >= 0 &&
-                <p className='btn btn-info text-white w-50 d-block mt-3 mx-auto' onClick={() => handle(curIdx - 1, false)}> আগের মডিউলে যান</p>
-            }
-            {curIdx >= 0 && curIdx + 1 <= maxMod &&
-                <p className='btn btn-info text-white w-50 d-block mt-3 mx-auto' onClick={() => handle(curIdx + 1, true)}> পরের মডিউলে যান</p>
-            } */}
+        
 
             <div className="d-flex justify-content-between">
                 {preVideo &&

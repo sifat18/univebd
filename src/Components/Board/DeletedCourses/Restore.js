@@ -3,12 +3,14 @@ import React, { useEffect, useState } from 'react'
 import { Button, Card, Col, Container, Row } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
 export default function Restore() {
+// course data state variable
     const [course, setcourse] = useState([])
-
+// loading deleted courses from db 
     useEffect(() => {
         fetch(`https://fierce-woodland-01411.herokuapp.com/api/deletedcourses`).then(res => res.json()).then(data => setcourse(data)
         )
     }, [])
+    // function to restore
     const handleRestore=(courseID)=>{
         const {_id,...rest}=courseID
         axios.post(`https://fierce-woodland-01411.herokuapp.com/api/courses`, rest).then(res => {
@@ -17,6 +19,7 @@ export default function Restore() {
         }}
         )
     }
+    // funtion to permanently delete
     const deleteCourse = (id) => {
         const {_id,...rest}=id
         console.log(rest)
@@ -30,6 +33,7 @@ export default function Restore() {
     <Container  fluid className='py-3 my-5  text-center allorderbg'>
 
     <h2 className='text-white fs-3 fw-bold text-center mb-3'> Deleted Courses</h2>
+ {/* course that were removed */}
     <Row Row xs={1} md={3} className="g-4 bigMargin" >
         {course.map((id) => (
             <Col key={id?.course?._id}>

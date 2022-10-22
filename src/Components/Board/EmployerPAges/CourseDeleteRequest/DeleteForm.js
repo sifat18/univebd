@@ -3,11 +3,13 @@ import React, { useState } from 'react'
 import { Button, Container, FloatingLabel, Form, Modal } from 'react-bootstrap'
 
 export default function DeleteForm() {
+//   local state
     const [data, setData] = useState({});
-
+// modal displaying functions and states
     const [showT, setShowT] = useState(false);
     const handleCloseT = () => setShowT(false);
     const handleShowT = () => setShowT(true)
+    // function to get input fields value
     const handleOnChange = e => {
         const field = e.target.name;
         const value = e.target.value;
@@ -17,6 +19,8 @@ export default function DeleteForm() {
         console.log(newUser)
 
     }
+    // function to submit form data
+
     const handleSubmit = e => {
         e.preventDefault()
         console.log(data);
@@ -26,8 +30,9 @@ export default function DeleteForm() {
     }
     return (
         <Container className='py-2'>
-            {/* Login form */}
+            {/*  form */}
             <form className='mt-3  py-3' onSubmit={handleSubmit}>
+                {/* -----Contact Person Name--- */}
                 <FloatingLabel
                     controlId="floatingInput"
                     label="Contact Person Name"
@@ -35,7 +40,7 @@ export default function DeleteForm() {
                 >
                     <Form.Control type="text" name="FullName" className="text-start" placeholder="Jane doe" onChange={handleOnChange} />
                 </FloatingLabel>
-                {/* --------- */}
+                {/* ----Course Name----- */}
                 <FloatingLabel
                     controlId="floatingInput"
                     label="Course Name"
@@ -43,7 +48,7 @@ export default function DeleteForm() {
                 >
                     <Form.Control type="text" name="course" className="text-start" placeholder="xyz" onChange={handleOnChange} />
                 </FloatingLabel>
-                {/* ----------- */}
+                {/* ------Email address----- */}
                 <FloatingLabel
                     controlId="floatingInput"
                     label="Email address"
@@ -51,7 +56,7 @@ export default function DeleteForm() {
                 >
                     <Form.Control type="email" className="text-start" placeholder="name@example.com" name="email" onChange={handleOnChange} />
                 </FloatingLabel>
-                {/* ------------- */}
+                {/* ------Phone------- */}
 
                 <FloatingLabel
                     controlId="floatingInput"

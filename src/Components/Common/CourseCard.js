@@ -7,6 +7,7 @@ import useAuth from '../Context/useAuth'
 import ar from '../images/icons8-arrow-.png'
 import st from '../images/steps.png'
 import ReactCardFlip from "react-card-flip";
+// card style
 const CardStyle = {
     border: "1px solid black",
     // padding: "20px",
@@ -14,8 +15,11 @@ const CardStyle = {
     height: "310px"
   };
 export default function CourseCard({id}) {
+// user info
     const { user, admin } = useAuth()
+    // local state
     const [isFlipped, setIsFlipped] = useState(false);
+//    function to delete course 
     const deleteCourse = (id) => {
         const {_id,...rest}=id
         console.log(rest)
@@ -61,26 +65,7 @@ export default function CourseCard({id}) {
             {admin &&  <Card.Footer className="text-muted"><Button className='p-1  jobText' variant="outline-danger" onClick={()=>deleteCourse(id)}>Delete Course <img src={'ar'} alt="" /></Button></Card.Footer>}
       </Card>
     </ReactCardFlip>
-        {/* <Card className=' card-shadow'>
-            <Card.Img variant="top" className='img-fluid ' src={id.imageLink} />
-            <Card.Body className='text-start'>
-                <p className='jobText '>Unive</p>
-                <Card.Title className='jobText fw-bold'>{id.coursename}</Card.Title>
-                <Card.Text className='jobText'>{id.about.slice(0, 100)}              </Card.Text>
-            </Card.Body>
-            <Row>
-                <Col xs={admin ? 4 : 6}>
-                    <p><img src={st} alt="" height={25} /></p>
-                    <p className='fs-7 jobText'>Beginner</p>
-                </Col>
-                <Col xs={admin ? 8 : 6} className='d-flex justify-content-around'>
-                    <NavLink to={`/learn/${id.coursename}`}> <Button className='p-1 jobText' variant="outline-dark">Preview <img src={ar} alt="" /></Button></NavLink>
-                    {admin && <NavLink to={`/dashboard/edit/${id.coursename}`}> <Button className='p-1 jobText' variant="outline-success">Edit Course <img src={'ar'} alt="" /></Button></NavLink>}
-
-                </Col>
-            </Row>
-            {admin &&  <Card.Footer className="text-muted"><Button className='p-1  jobText' variant="outline-danger" onClick={()=>deleteCourse(id)}>Delete Course <img src={'ar'} alt="" /></Button></Card.Footer>}
-        </Card> */}
+       
     </Col>
     )
 }

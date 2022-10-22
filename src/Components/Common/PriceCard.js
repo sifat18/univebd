@@ -6,6 +6,7 @@ export default function PriceCard() {
     return (
         <section className='container mt-5'>
             <Row className='my-5'>
+              {/* first plan */}
                 <Col xs={12} md={4} className='mt-5'>
                     <Card className="text-center pt-5">
                         <Card.Title> ফ্রী প্ল্যান </Card.Title>
@@ -24,7 +25,8 @@ export default function PriceCard() {
                         <Card.Footer className="text-muted">শুরু করুন</Card.Footer>
                     </Card>
                 </Col>
-                <Col xs={12} md={4}>
+              {/* 2nd plan */}
+              <Col xs={12} md={4}>
                     <Card className="text-center pt-5">
                         <Card.Title>অ্যানুয়াল প্ল্যান</Card.Title>
                         <p className='text-decoration-line-through'>৫০০ টাকা/ মাস</p>
@@ -43,7 +45,8 @@ export default function PriceCard() {
                         <Card.Footer className="text-muted">শুরু করুন</Card.Footer>
                     </Card>
                 </Col>
-                <Col xs={12} md={4} className='mt-5'>
+              {/* 3rd plan */}
+              <Col xs={12} md={4} className='mt-5'>
                     <Card className="text-center pt-5">
                         <Card.Title>গ্রোথ ট্র্যাক</Card.Title>
                         <p className='text-decoration-line-through'></p>

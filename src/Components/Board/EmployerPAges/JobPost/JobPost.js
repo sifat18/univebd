@@ -10,13 +10,13 @@ import { useNavigate } from 'react-router-dom';
 
 export default function JobPost() {
     const imageStorageKey='a3a4f59a1a4c29023ff43f75bd8f551d'
-    // setting date variables 
-    const navigate = useNavigate()
-    const [imgLink, setImgLink] = useState(null);
+//  local states
+const [imgLink, setImgLink] = useState(null);
     const formRef = useRef(null);
+    // setting date variables 
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
-//    modal display
+//    modal display functions and variables 
     const [showT, setShowT] = useState(false);
     const handleCloseT = () => {
               setShowT(false)
@@ -33,7 +33,7 @@ export default function JobPost() {
     const [data, setData] = useState({});
 
     const {user}=useAuth()
-
+// generate iamge
     const generateImageLink = img => {
         const formData = new FormData();
         formData.append('image', img);
@@ -48,6 +48,7 @@ export default function JobPost() {
                 const imgURL = result.data.url;
                 setImgLink(imgURL)
     }})} 
+// function to get input field values
 
     const handleOnChange = e => {
         const field = e.target.name;
@@ -59,6 +60,8 @@ export default function JobPost() {
         console.log(newUser)
 
     }
+// function to get submit
+
     const handleSubmit = e => {
         e.preventDefault()
         data.jobCreator=user.email
@@ -70,7 +73,9 @@ export default function JobPost() {
 
         axios.post(`https://fierce-woodland-01411.herokuapp.com/api/jobpost`, data).then(res => res.data ? handleShowT() : '')
 
-    }   
+    }  
+//    fucntion to add skill
+
     const handlekeyDown=(e)=>{
 if(e.key!=="Enter") return
 const value=e.target.value
@@ -78,15 +83,17 @@ if(!value.trim()) return
 setSkills([...skills,value])
 e.target.value=''
 }
+//    fucntion to remove skill
+
     const removeSkill=(item)=>{
         setSkills(skills.filter((el,i)=> i!==item))
     }
     return (
         <Container className='py-2'>
-            {/* Login form */}
+            {/*  form */}
             <form ref={formRef} className='mt-3  py-3' onSubmit={handleSubmit}>
                
-                {/* --------- */}
+                {/* Organization */}
                 <FloatingLabel
                     controlId="floatingInput"
                     label="Organization Name"
@@ -94,7 +101,7 @@ e.target.value=''
                 >
                     <Form.Control required type="text" name="organization" className="text-start" placeholder="xyz" onChange={handleOnChange} />
                 </FloatingLabel>
-                {/* ----------- */}
+                {/* ----Email------- */}
             
                 <FloatingLabel
                     controlId="floatingInput"
@@ -194,7 +201,8 @@ e.target.value=''
     </div>
     }
     </FloatingLabel>
-    {/* ------------------------------ */}
+   {/* --------------job description---------------- */}
+
     <FloatingLabel controlId="floatingTextarea2" label="Job Description">
     <Form.Control
       as="textarea"
@@ -213,6 +221,7 @@ e.target.value=''
   <p className='w-100'>end date
   <DatePicker className='w-100' required selected={endDate} onChange={(date) => setEndDate(date)} />
   </p></div>
+  {/* img------ */}
   <Form.Group controlId="formFile" className="mb-3">
         <Form.Label>Company logo </Form.Label>
         <Form.Control type="file" onChange={e => generateImageLink(e.target.files[0])}/>
