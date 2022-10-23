@@ -118,7 +118,7 @@ const Dashboard = () => {
                 <p>Total user: {totalUser}</p>
                 <p>Total active user: {activeUserTotal.length}</p>
               </Container>}
-              {admin &&
+              {/* {admin &&
                 <Table striped bordered hover resonsive>
                   <thead>
                     <tr>
@@ -139,7 +139,7 @@ const Dashboard = () => {
                     ))}
                   </tbody>
                 </Table>
-              }
+              } */}
             {/* </CCardBody> */}
           </CCard>
         {/* </CCol> */}

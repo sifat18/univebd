@@ -10,6 +10,7 @@ import { BsBuilding } from 'react-icons/bs';
 import moment from 'moment/moment';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import axios from 'axios';
 export default function ProfileEdit() {
     const [data, setData] = useState({});
     // function to handle common  input field changes
@@ -24,7 +25,15 @@ export default function ProfileEdit() {
     }
     // local variable to store skills
     const [skills, setSkills] = useState([]);
+// modal display for profile creation
+const [showFinal, setshowFinal] = useState(false);
+//    modal close 
+const handleCloseFinal = () => {
+    setShow(false)
+    window.location.reload(true);
+};
 
+const handleShowFinal = () => setShow(true);
     // form references to clear the fields on submission
     const formRef = useRef(null);
     const formRef2 = useRef(null);
@@ -54,6 +63,11 @@ export default function ProfileEdit() {
 
     function handleSelectChange4(event) {
         setSize(event.target.value);
+      }
+    // function handle the variable change size
+
+    function handleSelectChange5(event) {
+        setDegree(event.target.value);
       }
     //   start and end date variables 
     const [startDate, setStartDate] = useState(new Date());
@@ -164,7 +178,7 @@ handleCloseE()
         newData.skills=skills
         console.log(newData)
         formRef3.current.reset();
-        // axios.post(`https://fierce-woodland-01411.herokuapp.com/api/employerProfile`, data).then(res => res.data ? handleShowT() : '')
+        // axios.post(`https://fierce-woodland-01411.herokuapp.com/api/profile`, newData).then(res => res.data ? handleShowFinal() : '')
 
     }
     // local variables to define the display
@@ -344,6 +358,21 @@ handleCloseE()
         Add Experience
       </Button>
                </div>
+
+               {workDataArray.length >0 && workDataArray.map((work,id)=>(
+                <Row key={id} className='border mt-5 rounded workshadow'> 
+                   <h2 className='text-center text-decoration-underline'> {work.role}</h2>
+                   <section className='d-flex justify-content-between '>
+<div className='mx-2'>
+<p><span className="fw-bold"> Industry</span> {work.industry}</p>
+<p><span className="fw-bold">Employer </span>{work.employer}</p>
+</div>
+<div className='mx-2'>
+<p><span className="fw-bold">Started From</span> {work.startDate}</p>
+<p><span className="fw-bold">End Date </span>{work.endDate}</p>
+</div>                   </section>
+                   </Row>
+               )) }
             </section>
             }
                 {/* education part */}
@@ -356,6 +385,20 @@ handleCloseE()
         Add Education
       </Button>
                </div>
+               {eduDataArray.length >0 && eduDataArray.map((edu,id)=>(
+                <Row key={id} className='border mt-5 rounded workshadow'> 
+                   <h2 className='text-center text-decoration-underline'> {edu.degree}</h2>
+                   <section className='d-flex justify-content-between '>
+<div className='mx-2'>
+<p><span className="fw-bold">Institution </span>{edu.institution}</p>
+<p><span className="fw-bold"> Area of Concentration</span> {edu.area_of_concentration}</p>
+</div>
+<div className='me-1'>
+<p><span className="fw-bold">Started From</span> {edu.startDate}</p>
+<p><span className="fw-bold">End Date </span>{edu.endDate}</p>
+</div>                   </section>
+                   </Row>
+               )) }
             </section>
             }    
             {/* job */}
@@ -568,7 +611,7 @@ handleCloseE()
   <Button variant="secondary" onClick={handleClose}>
                         Cancel!!
                     </Button>
-                     <Button variant="success" onClick={handleClose}>
+                     <Button variant="success" onClick={workSubmit}>
                         Confirm!!
                     </Button>
                   
@@ -592,7 +635,7 @@ handleCloseE()
                 {/* -----Degree---- */}
                 <Form.Label className='fw-bold'>Degree</Form.Label>
               
-               <Form.Select className='mb-2' aria-label="Type of Form:"  onChange={handleSelectChange4} value={degree}>
+               <Form.Select className='mb-2' aria-label="Type of Form:"  onChange={handleSelectChange5} value={degree}>
                 <option></option>
                 <option value="psc">PSC</option>
                 <option value="jsc">JSC</option>
@@ -657,6 +700,19 @@ handleCloseE()
           
             </Modal>
               {/* end of education modal */}
+
+               {/* display final modal upon submission */}
+            <Modal show={showFinal} onHide={handleCloseFinal}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Profile Created</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>profile is created</Modal.Body>
+                <Modal.Footer>
+                    <Button variant="success" onClick={handleCloseFinal}>
+                        Ok!!
+                    </Button>
+                </Modal.Footer>
+            </Modal>
 
     </>
     
