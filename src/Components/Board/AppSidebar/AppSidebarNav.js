@@ -169,7 +169,7 @@ export const AppSidebarNav = () => {
         {
           component: CNavItem,
           name: 'Profile Setting',
-          to: `/dashboard/update_profile`,
+          to: `/dashboard/profile/${user.email}/edit`,
           icon: <ImProfile customClassName="nav-icon text-dark" />,
         },
         {

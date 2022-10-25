@@ -64,7 +64,6 @@ const CourseAdd = React.lazy(() => import('./Components/Addcourse/CourseAdd'));
 const Dashboard = React.lazy(() => import('./views/dashboard/Dashboard'));
 const MyCourses = React.lazy(() => import('./Components/Board/UserRoutes/MyCourses'));
 const Edit = React.lazy(() => import('./Components/CourseEdit/Edit'));
-const ProfileUpdate = React.lazy(() => import('./Components/Board/UserRoutes/Profile_Update'));
 const FormsAll = React.lazy(() => import('./Components/Board/Forms/AllForms'));
 // const Candidate = React.lazy(() => import('./Components/Board/Candidates/Candidate'));
 const CandidateDetail = React.lazy(() => import('./Components/Board/CandidateDetail/CandidateDetail'));
@@ -134,7 +133,6 @@ function App() {
                 <Route path="employer_profile" element={<EmployRoute><EmployerProfile /></EmployRoute>} />
                 <Route path="tutor_profile" element={<EmployRoute><TutorProfile /></EmployRoute>} />
                 <Route path="employer_jobpost" element={<JobPost />} />
-                <Route path="update_profile" element={<PrivateRoute><ProfileUpdate /></PrivateRoute>} />
                 <Route path="mycourses" element={<PrivateRoute><MyCourses /></PrivateRoute>} />
                 <Route path="myjobs" element={<PrivateRoute><MyJobs /></PrivateRoute>} />
                 <Route path="candidates" element={<AdminRoute><Search /></AdminRoute>} />
