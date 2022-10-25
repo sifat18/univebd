@@ -22,14 +22,14 @@ export default function AddEmployer() {
 // lodaing user data from database
    
     useEffect(() => {
-      fetch(`https://fierce-woodland-01411.herokuapp.com/api/users`).then(res => res.json()).then(data => {
+      fetch(`https://api.unive.com.bd/api/users`).then(res => res.json()).then(data => {
         setUser(data)
       })
     }, [])
     // setting the employer role in db
     const handleAddEmployer = e => {
         e.preventDefault()
-        axios.put(`https://fierce-woodland-01411.herokuapp.com/api/employer/${email}`).then(res => res.data.modifiedCount ? handleShow() : '')
+        axios.put(`https://api.unive.com.bd/api/employer/${email}`).then(res => res.data.modifiedCount ? handleShow() : '')
 
     }
     return (

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Accordion, Button, Col, Container, FloatingLabel, Form, Modal, Row } from 'react-bootstrap'
 import Footer from '../Footer/Footer'
 import Header from '../Header/Header'
@@ -39,8 +39,8 @@ export default function Contributor() {
         //   console.log(value);
         // }
         // 
-        // https://fierce-woodland-01411.herokuapp.com
-        fetch('https://fierce-woodland-01411.herokuapp.com/api/contributer', {
+        // https://api.unive.com.bd
+        fetch('https://api.unive.com.bd/api/contributer', {
             method: 'POST',
             body: formData
         })

@@ -1,14 +1,14 @@
-import React, { useEffect, useReducer, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Accordion, Col, Container, Row } from 'react-bootstrap'
+import { MdQuiz } from "react-icons/md"
+import { RiVideoAddLine } from "react-icons/ri"
 import { useParams } from 'react-router-dom'
-import Videos from '../Common/Videos'
-import Header from '../Header/Header'
-import { RiVideoAddLine } from "react-icons/ri";
-import { MdQuiz } from "react-icons/md";
-import './start.css'
-import Footer from '../Footer/Footer'
 import NewQuiz from '../Common/Quiz/NewQuiz'
+import Videos from '../Common/Videos'
 import useAuth from '../Context/useAuth'
+import Footer from '../Footer/Footer'
+import Header from '../Header/Header'
+import './start.css'
 export default function CourseStart() {
     const { user } = useAuth()
     // const initialState = {
@@ -108,9 +108,9 @@ export default function CourseStart() {
 
 
     // const curIndex = 0
-    // https://fierce-woodland-01411.herokuapp.com/course/${courseID}
+    // https://api.unive.com.bd/course/${courseID}
     useEffect(() => {
-        fetch(`https://fierce-woodland-01411.herokuapp.com/api/mycourse?_id=${courseID}&email=${user.email}`).then(res => res.json()).then(data => {
+        fetch(`https://api.unive.com.bd/api/mycourse?_id=${courseID}&email=${user.email}`).then(res => res.json()).then(data => {
             setcourses(data)
             // dispatch({
             //     type: 'setData',

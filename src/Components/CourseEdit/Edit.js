@@ -33,7 +33,7 @@ export default function Edit() {
     const handleShow = () => setShow(true);
 // loading data
     useEffect(() => {
-        fetch(`https://fierce-woodland-01411.herokuapp.com/api/course/${id}`).then(res => res.json()).then(data => {
+        fetch(`https://api.unive.com.bd/api/course/${id}`).then(res => res.json()).then(data => {
             setCourse(data)
             setModule(data.Module)
         })
@@ -111,10 +111,10 @@ export default function Edit() {
         Finalcourse.imageLink=imgLink || course.imageLink
         delete Finalcourse.Module;
         Finalcourse.Module = [...module]
-        setCourse(Finalcourse)  //https://fierce-woodland-01411.herokuapp.com/
+        setCourse(Finalcourse)  //https://api.unive.com.bd/
 
         console.log(Finalcourse)
-        axios.put(`https://fierce-woodland-01411.herokuapp.com/api/courses/edit/${id}`, Finalcourse).then(res => res.data ? handleShow() : '')
+        axios.put(`https://api.unive.com.bd/api/courses/edit/${id}`, Finalcourse).then(res => res.data ? handleShow() : '')
 
     }
     return (

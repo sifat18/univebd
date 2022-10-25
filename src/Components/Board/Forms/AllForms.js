@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { Container, Form, Table } from 'react-bootstrap'
+import { useEffect, useState } from 'react'
+import { Container, Form } from 'react-bootstrap'
 import TableData from '../../Common/TableData'
 
 export default function AllForms() {
@@ -16,14 +16,14 @@ export default function AllForms() {
     const [tableData, settableData] = useState([]);
 // loading data from db    // 
     useEffect(() => {
-        fetch('https://fierce-woodland-01411.herokuapp.com/api/contributer').then(res => res.json()).then(data => setContributer(data))
-        fetch('https://fierce-woodland-01411.herokuapp.com/api/instructor').then(res => res.json()).then(data => setInstructor(data))
-        fetch('https://fierce-woodland-01411.herokuapp.com/api/unive_recruitement').then(res => res.json()).then(data => setRecruitement(data))
-        fetch('https://fierce-woodland-01411.herokuapp.com/api/representative').then(res => res.json()).then(data => setRepresentative(data))
-        fetch('https://fierce-woodland-01411.herokuapp.com/api/demo').then(res => res.json()).then(data => setDemo(data))
-        fetch('https://fierce-woodland-01411.herokuapp.com/api/enterprice').then(res => res.json()).then(data => setEnterprice(data))
-        fetch('https://fierce-woodland-01411.herokuapp.com/api/scholarship').then(res => res.json()).then(data => setScholarship(data))
-        fetch('https://fierce-woodland-01411.herokuapp.com/api/course_delete').then(res => res.json()).then(data => setCourseDelete(data))
+        fetch('https://api.unive.com.bd/api/contributer').then(res => res.json()).then(data => setContributer(data))
+        fetch('https://api.unive.com.bd/api/instructor').then(res => res.json()).then(data => setInstructor(data))
+        fetch('https://api.unive.com.bd/api/unive_recruitement').then(res => res.json()).then(data => setRecruitement(data))
+        fetch('https://api.unive.com.bd/api/representative').then(res => res.json()).then(data => setRepresentative(data))
+        fetch('https://api.unive.com.bd/api/demo').then(res => res.json()).then(data => setDemo(data))
+        fetch('https://api.unive.com.bd/api/enterprice').then(res => res.json()).then(data => setEnterprice(data))
+        fetch('https://api.unive.com.bd/api/scholarship').then(res => res.json()).then(data => setScholarship(data))
+        fetch('https://api.unive.com.bd/api/course_delete').then(res => res.json()).then(data => setCourseDelete(data))
     }, [])
   //  function to handle select input
     function handleSelectChange(event) {

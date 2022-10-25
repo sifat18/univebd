@@ -1,12 +1,11 @@
 import axios from 'axios';
-import './jobpost.css';
-import { useRef, useState } from 'react'
-import { Button, Container, FloatingLabel, Form, Modal } from 'react-bootstrap'
+import moment from 'moment/moment';
+import { useRef, useState } from 'react';
+import { Button, Container, FloatingLabel, Form, Modal } from 'react-bootstrap';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import moment from 'moment/moment';
 import useAuth from '../../../Context/useAuth';
-import { useNavigate } from 'react-router-dom';
+import './jobpost.css';
 
 export default function JobPost() {
     const imageStorageKey='a3a4f59a1a4c29023ff43f75bd8f551d'
@@ -71,7 +70,7 @@ const [imgLink, setImgLink] = useState(null);
         data.endDate=moment(endDate).format('L') 
         console.log(data);
 
-        axios.post(`https://fierce-woodland-01411.herokuapp.com/api/jobpost`, data).then(res => res.data ? handleShowT() : '')
+        axios.post(`https://api.unive.com.bd/api/jobpost`, data).then(res => res.data ? handleShowT() : '')
 
     }  
 //    fucntion to add skill

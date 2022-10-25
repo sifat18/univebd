@@ -1,13 +1,11 @@
-import React, { useEffect, useState } from 'react'
-import { Button, Card, Col, Container, Row, Spinner } from 'react-bootstrap';
-import { NavLink, useParams } from 'react-router-dom';
-import RestCourses from '../Common/RestCourses';
-import Footer from '../Footer/Footer'
-import Header from '../Header/Header'
-import ar from '../images/icons8-arrow-.png'
-import st from '../images/steps.png'
-import dr from '../images/icons8-down-arrow-40.png'
+import { useEffect, useState } from 'react';
+import { Button, Container, Row, Spinner } from 'react-bootstrap';
+import { useParams } from 'react-router-dom';
 import CourseCard from '../Common/CourseCard';
+import RestCourses from '../Common/RestCourses';
+import Footer from '../Footer/Footer';
+import Header from '../Header/Header';
+import dr from '../images/icons8-down-arrow-40.png';
 
 export default function CourseCatalog() {
 
@@ -21,7 +19,7 @@ export default function CourseCatalog() {
   }
 // loading daat
   useEffect(() => {
-    fetch(`https://fierce-woodland-01411.herokuapp.com/api/courses/${tag}`).then(res => res.json()).then(data => setCourse(data))
+    fetch(`https://api.unive.com.bd/api/courses/${tag}`).then(res => res.json()).then(data => setCourse(data))
   }, [tag])
 
 

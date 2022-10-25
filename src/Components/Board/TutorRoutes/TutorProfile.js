@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { useState } from 'react';
 import { Button, Container, FloatingLabel, Form, Modal } from 'react-bootstrap';
 export default function TutorProfile() {
@@ -58,7 +57,7 @@ export default function TutorProfile() {
         formData.append('pdf', pdf);
 
 
-        fetch('https://fierce-woodland-01411.herokuapp.com/api/tutorProfile', {
+        fetch('https://api.unive.com.bd/api/tutorProfile', {
             method: 'POST',
             body: formData
           })
@@ -72,7 +71,7 @@ export default function TutorProfile() {
               }
             })
 
-        // axios.post(`https://fierce-woodland-01411.herokuapp.com/api/tutorProfile`, formData).then(res => res.data ? handleShowT() : '')
+        // axios.post(`https://api.unive.com.bd/api/tutorProfile`, formData).then(res => res.data ? handleShowT() : '')
 
     }
     return (

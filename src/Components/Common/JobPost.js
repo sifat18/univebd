@@ -11,7 +11,7 @@ export default function JobPost({job,show=true}) {
   const {user,admin}=useAuth()
 // function to delete job 
   const deleteJob=(id)=>{
-    axios.delete(`https://fierce-woodland-01411.herokuapp.com/api/delete_job/${id}`).then(res=>res.data.acknowledged? window.location.reload(true):console.log('error at delete'))
+    axios.delete(`https://api.unive.com.bd/api/delete_job/${id}`).then(res=>res.data.acknowledged? window.location.reload(true):console.log('error at delete'))
   }
   return (
     // displaying job data

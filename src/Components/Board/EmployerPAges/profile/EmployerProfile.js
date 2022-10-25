@@ -1,6 +1,6 @@
 import axios from 'axios';
-import React, { useState } from 'react'
-import { Button, Container, FloatingLabel, Form, Modal } from 'react-bootstrap'
+import { useState } from 'react';
+import { Button, Container, FloatingLabel, Form, Modal } from 'react-bootstrap';
 
 export default function EmployerProfile() {
 //  local states
@@ -25,7 +25,7 @@ const handleSubmit = e => {
         e.preventDefault()
         console.log(data);
 
-        axios.post(`https://fierce-woodland-01411.herokuapp.com/api/employerProfile`, data).then(res => res.data ? handleShowT() : '')
+        axios.post(`https://api.unive.com.bd/api/employerProfile`, data).then(res => res.data ? handleShowT() : '')
 
     }
     return (

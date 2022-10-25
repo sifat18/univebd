@@ -20,7 +20,7 @@ const Admin = () => {
     const [users, setUser] = useState([])
 // lodaing user data from database
     useEffect(() => {
-      fetch(`https://fierce-woodland-01411.herokuapp.com/api/users`).then(res => res.json()).then(data => {
+      fetch(`https://api.unive.com.bd/api/users`).then(res => res.json()).then(data => {
         setUser(data)
       })
     }, [])
@@ -28,7 +28,7 @@ const Admin = () => {
     // setting the admin role in db
     const handleAddAdmin = e => {
         e.preventDefault()
-        axios.put(`https://fierce-woodland-01411.herokuapp.com/api/admin/${email}`).then(res => res.data.modifiedCount ? handleShow() : '')
+        axios.put(`https://api.unive.com.bd/api/admin/${email}`).then(res => res.data.modifiedCount ? handleShow() : '')
 
     }
 

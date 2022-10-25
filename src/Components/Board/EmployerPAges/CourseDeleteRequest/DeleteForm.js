@@ -1,6 +1,6 @@
 import axios from 'axios';
-import React, { useState } from 'react'
-import { Button, Container, FloatingLabel, Form, Modal } from 'react-bootstrap'
+import { useState } from 'react';
+import { Button, Container, FloatingLabel, Form, Modal } from 'react-bootstrap';
 
 export default function DeleteForm() {
 //   local state
@@ -25,7 +25,7 @@ export default function DeleteForm() {
         e.preventDefault()
         console.log(data);
 
-        axios.post(`https://fierce-woodland-01411.herokuapp.com/api/course_delete`, data).then(res => res.data ? handleShowT() : '')
+        axios.post(`https://api.unive.com.bd/api/course_delete`, data).then(res => res.data ? handleShowT() : '')
 
     }
     return (

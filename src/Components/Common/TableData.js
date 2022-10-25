@@ -15,36 +15,36 @@ const handleClose = () =>  setShow(false);
     switch(choice){
       case 'contributer':
         status=event.target.value
-        axios.put(`https://fierce-woodland-01411.herokuapp.com/api/contributer/edit/${id}`,{status}).then(res => res.data ? handleShow() : '')
+        axios.put(`https://api.unive.com.bd/api/contributer/edit/${id}`,{status}).then(res => res.data ? handleShow() : '')
         break;
       case 'instructor':
         status=event.target.value
         console.log('instructor')
-        axios.put(`https://fierce-woodland-01411.herokuapp.com/api/instructor/edit/${id}`,{status}).then(res => res.data ?handleShow() : '')
+        axios.put(`https://api.unive.com.bd/api/instructor/edit/${id}`,{status}).then(res => res.data ?handleShow() : '')
         break;
       case 'recruitement':
         status=event.target.value
-        axios.put(`https://fierce-woodland-01411.herokuapp.com/api/unive_recruitement/edit/${id}`,{status}).then(res => res.data ? handleShow() : '')
+        axios.put(`https://api.unive.com.bd/api/unive_recruitement/edit/${id}`,{status}).then(res => res.data ? handleShow() : '')
         break;
       case 'representative':
         status=event.target.value
-        axios.put(`https://fierce-woodland-01411.herokuapp.com/api/representative/edit/${id}`,{status}).then(res => res.data ?handleShow() : '')
+        axios.put(`https://api.unive.com.bd/api/representative/edit/${id}`,{status}).then(res => res.data ?handleShow() : '')
         break;
       case 'demo':
         status=event.target.value
-        axios.put(`https://fierce-woodland-01411.herokuapp.com/api/demo/edit/${id}`,{status}).then(res => res.data ?handleShow() : '')
+        axios.put(`https://api.unive.com.bd/api/demo/edit/${id}`,{status}).then(res => res.data ?handleShow() : '')
         break;
       case 'enterprice':
         status=event.target.value
-        axios.put(`https://fierce-woodland-01411.herokuapp.com/api/enterprice/edit/${id}`,{status}).then(res => res.data ? handleShow() : '')
+        axios.put(`https://api.unive.com.bd/api/enterprice/edit/${id}`,{status}).then(res => res.data ? handleShow() : '')
         break;
       case 'scholarship':
         status=event.target.value
-        axios.put(`https://fierce-woodland-01411.herokuapp.com/api/scholarship/edit/${id}`,{status}).then(res => res.data ? handleShow() : '')
+        axios.put(`https://api.unive.com.bd/api/scholarship/edit/${id}`,{status}).then(res => res.data ? handleShow() : '')
         break;
       case 'courseDelete':
         status=event.target.value
-        axios.put(`https://fierce-woodland-01411.herokuapp.com/api/course_delete/edit/${id}`,{status}).then(res => res.data ? handleShow() : '')
+        axios.put(`https://api.unive.com.bd/api/course_delete/edit/${id}`,{status}).then(res => res.data ? handleShow() : '')
         break;
       default: 
     }

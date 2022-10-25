@@ -2,12 +2,12 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { Suspense, useEffect } from 'react';
-import "slick-carousel/slick/slick-theme.css";
-import "slick-carousel/slick/slick.css";
-import './App.css';
 import {
   BrowserRouter, Route, Routes
 } from "react-router-dom";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
+import './App.css';
 import AdminRoute from './Components/AdminRoute/AdminRoute';
 import Authprovider from './Components/AuthProvider/Authprovider';
 import Admin from './Components/Board/AddAdmin/Admin';
@@ -19,12 +19,12 @@ import EmployRoute from './Components/Board/EmployerRoute/EmployRoute';
 import TutorProfile from './Components/Board/TutorRoutes/TutorProfile';
 import MyJobs from './Components/Board/UserRoutes/MyJobs';
 import AppliedCandidates from './Components/Common/AppliedCandidates';
+import ProfileEdit from './Components/Common/ProfileEdit';
 import ScrollToTop from './Components/Common/ScrollToTop';
 import JobBrowsing from './Components/JobBrowsing/JobBrowsing';
 import JobDetails from './Components/JobDetails/JobDetails';
 import Nopage from './Components/Nopage/Nopage';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
-import ProfileEdit from './Components/Common/ProfileEdit';
 
 const Home = React.lazy(() => import("./Components/Home/Home"));
 const Learn = React.lazy(() => import("./Components/Learn/Learn"));
@@ -130,7 +130,7 @@ function App() {
               <Route path="/learn/start/:courseID" element={<PrivateRoute><CourseStart /></PrivateRoute>} />
               <Route path="/dashboard" element={<Board />} >
                 <Route path="" element={<Dashboard />} />
-                <Route path="profile/:user/edit" element={<ProfileEdit />} />
+                <Route path="profile/:email/edit" element={<ProfileEdit />} />
                 <Route path="employer_profile" element={<EmployRoute><EmployerProfile /></EmployRoute>} />
                 <Route path="tutor_profile" element={<EmployRoute><TutorProfile /></EmployRoute>} />
                 <Route path="employer_jobpost" element={<JobPost />} />

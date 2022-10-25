@@ -11,7 +11,7 @@ import Header from './../Header/Header'
 export default function JobBrowsing() {
   const [jobs, setJobs] = useState([])
 useEffect(() => {
-    fetch('https://fierce-woodland-01411.herokuapp.com/api/jobpost').then(res=>res.json()).then(data=>setJobs(data))
+    fetch('https://api.unive.com.bd/api/jobpost').then(res=>res.json()).then(data=>setJobs(data))
 }, [])
 let content=''
 if(jobs.length<1){

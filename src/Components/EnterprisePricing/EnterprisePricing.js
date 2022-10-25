@@ -1,12 +1,12 @@
-import React, { Suspense, useState } from 'react'
-import { Accordion, Button, Card, Col, Container, FloatingLabel, Form, Modal, Row } from 'react-bootstrap'
+import React, { Suspense, useState } from 'react';
+import { Accordion, Button, Card, Col, Container, FloatingLabel, Form, Modal, Row } from 'react-bootstrap';
 // import Companies from '../Common/Companies'
 // import Demo from '../Common/Demo'
-import Footer from '../Footer/Footer'
-import Header from '../Header/Header'
+import Footer from '../Footer/Footer';
+import Header from '../Header/Header';
 // import check from '../images/check.png'
+import axios from 'axios';
 import { BsCheck2Circle } from "react-icons/bs";
-import axios from 'axios'
 const Demo = React.lazy(() => import("../Common/Demo"));
 const Companies = React.lazy(() => import("../Common/Companies"));
 
@@ -34,7 +34,7 @@ export default function EnterprisePricing() {
     const handleSubmit = e => {
         e.preventDefault()
         console.log(data);
-        axios.post(`https://fierce-woodland-01411.herokuapp.com/api/enterprice`, data).then(res => res.data ? handleShowT() : '')
+        axios.post(`https://api.unive.com.bd/api/enterprice`, data).then(res => res.data ? handleShowT() : '')
 
     }
     return (

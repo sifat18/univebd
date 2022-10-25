@@ -1,14 +1,14 @@
-import React, { useState } from 'react'
-import { Accordion, Button, Col, Container, Row, Modal, Form, FloatingLabel } from 'react-bootstrap'
-import Companies from '../Common/Companies'
-import hr from '../images/hr/hr.png'
-import search from '../images/hr/search.png'
-import resume from '../images/hr/resume.png'
-import loud from '../images/hr/loud.png'
-import ContactForm from '../Common/ContactForm'
-import Header from '../Header/Header'
-import Footer from '../Footer/Footer'
 import axios from 'axios'
+import { useState } from 'react'
+import { Accordion, Button, Col, Container, FloatingLabel, Form, Modal, Row } from 'react-bootstrap'
+import Companies from '../Common/Companies'
+import ContactForm from '../Common/ContactForm'
+import Footer from '../Footer/Footer'
+import Header from '../Header/Header'
+import hr from '../images/hr/hr.png'
+import loud from '../images/hr/loud.png'
+import resume from '../images/hr/resume.png'
+import search from '../images/hr/search.png'
 export default function Recruiting() {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -50,13 +50,13 @@ export default function Recruiting() {
     const handleSubmit = e => {
         e.preventDefault()
         console.log(data);
-        axios.post(`https://fierce-woodland-01411.herokuapp.com/api/representative`, data).then(res => res.data ? handleShowT() : '')
+        axios.post(`https://api.unive.com.bd/api/representative`, data).then(res => res.data ? handleShowT() : '')
 
     }
     const handleSubmitR = e => {
         e.preventDefault()
         console.log(data2);
-        axios.post(`https://fierce-woodland-01411.herokuapp.com/api/unive_recruitement`, data2).then(res => res.data ? handleShowT() : '')
+        axios.post(`https://api.unive.com.bd/api/unive_recruitement`, data2).then(res => res.data ? handleShowT() : '')
 
     }
     return (

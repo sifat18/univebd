@@ -9,7 +9,7 @@ const { user } = useAuth()
     const [jobs, setJobs] = useState([])
 //    data load from db
 useEffect(() => {
-        fetch(`https://fierce-woodland-01411.herokuapp.com/api/jobApply/${user.email}`).then(res => res.json()).then(data => setJobs(data)
+        fetch(`https://api.unive.com.bd/api/jobApply/${user.email}`).then(res => res.json()).then(data => setJobs(data)
         )
     }, [user.email])
 

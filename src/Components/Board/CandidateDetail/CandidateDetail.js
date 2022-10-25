@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Table } from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
 
@@ -8,7 +8,7 @@ export default function CandidateDetail() {
     const { id } = useParams()
 // loading data from databse
     useEffect(() => {
-        fetch(`https://fierce-woodland-01411.herokuapp.com/api/candidate/${id}`).then(res => res.json()).then(data => setDetails(data))
+        fetch(`https://api.unive.com.bd/api/candidate/${id}`).then(res => res.json()).then(data => setDetails(data))
     }, [id])
     return (
         <>

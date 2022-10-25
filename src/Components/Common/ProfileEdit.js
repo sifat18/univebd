@@ -1,19 +1,24 @@
-import userEvent from '@testing-library/user-event';
-import React, { useRef, useState } from 'react'
-import { Button, Col, Container, FloatingLabel, Form, Modal, Nav, Row } from 'react-bootstrap'
-import { GrChat } from 'react-icons/gr';
-import { SiZwave } from 'react-icons/si';
-import { MdOutlineWork } from 'react-icons/md';
-import { FaUserGraduate } from 'react-icons/fa';
-import { TiDocumentText } from 'react-icons/ti';
-import { BsBuilding } from 'react-icons/bs';
+import axios from 'axios';
 import moment from 'moment/moment';
+import { useEffect, useRef, useState } from 'react';
+import { Button, Col, Container, FloatingLabel, Form, Modal, Nav, Row } from 'react-bootstrap';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import axios from 'axios';
+import { BsBuilding } from 'react-icons/bs';
+import { FaUserGraduate } from 'react-icons/fa';
+import { GrChat } from 'react-icons/gr';
+import { MdOutlineWork } from 'react-icons/md';
+import { SiZwave } from 'react-icons/si';
+import { useParams } from 'react-router-dom';
+import useAuth from './../Context/useAuth';
 export default function ProfileEdit() {
     const [data, setData] = useState({});
     // function to handle common  input field changes
+    const { email } = useParams()
+    const [profile, setProfile] = useState({})
+  
+console.log(profile)
+
     const handleOnChange = e => {
         const field = e.target.name;
         const value = e.target.value;
@@ -23,6 +28,8 @@ export default function ProfileEdit() {
         console.log(newUser)
 
     }
+    // getting user 
+    const {user}=useAuth()
     // local variable to store skills
     const [skills, setSkills] = useState([]);
 // modal display for profile creation
@@ -33,7 +40,7 @@ const handleCloseFinal = () => {
     window.location.reload(true);
 };
 
-const handleShowFinal = () => setShow(true);
+const handleShowFinal = () => setshowFinal(true);
     // form references to clear the fields on submission
     const formRef = useRef(null);
     const formRef2 = useRef(null);
@@ -169,6 +176,7 @@ handleCloseE()
     const handleSubmit = e => {
         e.preventDefault()
         let newData={...data};
+        newData.email=user.email
         newData.work=workDataArray
         newData.education=eduDataArray
         newData.typeOfJob=type
@@ -178,7 +186,7 @@ handleCloseE()
         newData.skills=skills
         console.log(newData)
         formRef3.current.reset();
-        // axios.post(`https://fierce-woodland-01411.herokuapp.com/api/profile`, newData).then(res => res.data ? handleShowFinal() : '')
+        axios.post(`https://api.unive.com.bd/api/profile`, newData).then(res => res.data ? handleShowFinal() : '')
 
     }
     // local variables to define the display
@@ -222,6 +230,14 @@ handleCloseE()
             setEducation(false)
             setJob(false)
     }}
+
+    useEffect(() => {
+        // api.unive.com.bd
+        fetch(`https://api.unive.com.bd/api/profile/${email}`).then(res => res.json()).then(data => {
+            setProfile(data)
+            setSkills(data.skills)
+        })
+    }, [email])
   return (
     <>
     <Container fluid className='bg-white py-3'>
@@ -258,8 +274,9 @@ handleCloseE()
                     controlId="floatingInput"
                     label="First Name"
                     className="mt-2 mb-3 text-start"
+                    
                 >
-                    <Form.Control type="text" name="first_name" className="text-start" placeholder="Jane doe" onChange={handleOnChange} />
+                    <Form.Control defaultValue={profile.first_name} type="text" name="first_name" className="text-start" placeholder="Jane doe" onChange={handleOnChange} />
                 </FloatingLabel>
                 {/* ------Last name--- */}
                 <Form.Label className='fw-bold'>Last Name</Form.Label>
@@ -268,7 +285,7 @@ handleCloseE()
                     label="Last Name"
                     className="mt-2 mb-3 text-start"
                 >
-                    <Form.Control type="text" name="last_name" className="text-start" placeholder="xyz" onChange={handleOnChange} />
+                    <Form.Control type="text" defaultValue={profile.last_name} name="last_name" className="text-start" placeholder="xyz" onChange={handleOnChange} />
                 </FloatingLabel>
                 {/* ----User name------- */}
                 <Form.Label className='fw-bold'>Username</Form.Label>
@@ -277,7 +294,7 @@ handleCloseE()
                     label="username"
                     className="mt-2 mb-3 text-start"
                 >
-                    <Form.Control type="text" name="username" className="text-start" placeholder='janedow' onChange={handleOnChange} />
+                    <Form.Control type="text" defaultValue={profile.username} name="username" className="text-start" placeholder='janedow' onChange={handleOnChange} />
                 </FloatingLabel>
                 {/* ----Bio--------- */}
                 <Form.Label className='fw-bold'>Bio</Form.Label>
@@ -290,6 +307,7 @@ handleCloseE()
       className='text-start'
       name="bio" placeholder='bio'
       style={{ height: '100px' }}
+      defaultValue={profile.bio}
     />
                 </FloatingLabel>
 
@@ -301,7 +319,7 @@ handleCloseE()
                     label="Current Role"
                     className="mt-2 mb-3 text-start"
                 >
-                    <Form.Control type="text" name="Current_Role" className="text-start" placeholder="Student" onChange={handleOnChange} />
+                    <Form.Control type="text" defaultValue={profile.Current_Role} name="Current_Role" className="text-start" placeholder="Student" onChange={handleOnChange} />
                 </FloatingLabel>
                 {/*------Employer------  */}
                 <Form.Label className='fw-bold'>Employer</Form.Label>
@@ -310,7 +328,7 @@ handleCloseE()
                     label="Employer"
                     className="mt-2 mb-3 text-start"
                 >
-                    <Form.Control type="text" name="employer" className="text-start" placeholder="Student" onChange={handleOnChange} />
+                    <Form.Control type="text" defaultValue={profile.employer} name="employer" className="text-start" placeholder="Student" onChange={handleOnChange} />
                 </FloatingLabel>
                 {/* -----domain */}
                 <Form.Label className='fw-bold'>Domain of Expertise</Form.Label>
@@ -319,7 +337,7 @@ handleCloseE()
                    label="Domain of Expertise"
                    className="mt-2 mb-3 text-start"
                >
-                   <Form.Control required type="text" name="domain" className="text-start" placeholder="Site Engineer" onChange={handleOnChange} />
+                   <Form.Control required type="text" defaultValue={profile.domain} name="domain" className="text-start" placeholder="Site Engineer" onChange={handleOnChange} />
                </FloatingLabel>
                 <hr />
                 {/*-----Social-------  */}
@@ -334,7 +352,7 @@ handleCloseE()
                     label="LinkedIn"
                     className="mt-2 mb-3 text-start"
                 >
-                    <Form.Control type="text" name="LinkedIn" className="text-start" placeholder="Student" onChange={handleOnChange} />
+                    <Form.Control type="text" defaultValue={profile.LinkedIn} name="LinkedIn" className="text-start" placeholder="Student" onChange={handleOnChange} />
                 </FloatingLabel>
                 {/* -------Website--------- */}
                 <Form.Label className='fw-bold'>Website
@@ -344,7 +362,7 @@ handleCloseE()
                     label="Website"
                     className="mt-2 mb-3 text-start"
                 >
-                    <Form.Control type="text" name="website" className="text-start" placeholder="Student" onChange={handleOnChange} />
+                    <Form.Control type="text" name="website"  defaultValue={profile.website}  className="text-start" placeholder="Student" onChange={handleOnChange} />
                 </FloatingLabel>
                 </section>}
     {/* work section */}
@@ -358,7 +376,20 @@ handleCloseE()
         Add Experience
       </Button>
                </div>
-
+               {profile?.work?.length >0 && profile?.work?.map((work,id)=>(
+                <Row key={id} className='border mt-5 rounded workshadow'> 
+                   <h2 className='text-center text-decoration-underline'> {work.role}</h2>
+                   <section className='d-flex justify-content-between '>
+<div className='mx-2'>
+<p><span className="fw-bold"> Industry</span> {work.industry}</p>
+<p><span className="fw-bold">Employer </span>{work.employer}</p>
+</div>
+<div className='mx-2'>
+<p><span className="fw-bold">Started From</span> {work.startDate}</p>
+<p><span className="fw-bold">End Date </span>{work.endDate}</p>
+</div>                   </section>
+                   </Row>
+               )) }
                {workDataArray.length >0 && workDataArray.map((work,id)=>(
                 <Row key={id} className='border mt-5 rounded workshadow'> 
                    <h2 className='text-center text-decoration-underline'> {work.role}</h2>
@@ -385,7 +416,21 @@ handleCloseE()
         Add Education
       </Button>
                </div>
-               {eduDataArray.length >0 && eduDataArray.map((edu,id)=>(
+               {profile?.education?.length>0 && profile?.education?.map((edu,id)=>(
+                <Row key={id} className='border mt-5 rounded workshadow'> 
+                   <h2 className='text-center text-decoration-underline'> {edu.degree}</h2>
+                   <section className='d-flex justify-content-between '>
+<div className='mx-2'>
+<p><span className="fw-bold">Institution </span>{edu.institution}</p>
+<p><span className="fw-bold"> Area of Concentration</span> {edu.area_of_concentration}</p>
+</div>
+<div className='me-1'>
+<p><span className="fw-bold">Started From</span> {edu.startDate}</p>
+<p><span className="fw-bold">End Date </span>{edu.endDate}</p>
+</div>                   </section>
+                   </Row>
+               )) }
+                {eduDataArray.length >0 && eduDataArray.map((edu,id)=>(
                 <Row key={id} className='border mt-5 rounded workshadow'> 
                    <h2 className='text-center text-decoration-underline'> {edu.degree}</h2>
                    <section className='d-flex justify-content-between '>
@@ -419,7 +464,7 @@ handleCloseE()
                    label="Role"
                    className="mt-2 mb-3 text-start"
                >
-                   <Form.Control required type="text" name="role" className="text-start" placeholder="Site Engineer" onChange={handleOnChange} />
+                   <Form.Control required defaultValue={profile.role} type="text" name="role" className="text-start" placeholder="Site Engineer" onChange={handleOnChange} />
                </FloatingLabel>
              
                {/* -----Type of job------ */}

@@ -1,6 +1,5 @@
-import axios from 'axios'
-import React, { useState } from 'react'
-import { Button, Modal, Col, Container, FloatingLabel, Form, Row } from 'react-bootstrap'
+import { useState } from 'react'
+import { Button, Col, Container, FloatingLabel, Form, Modal, Row } from 'react-bootstrap'
 import Footer from '../Footer/Footer'
 import Header from '../Header/Header'
 import scholarshipPic from '../images/scholarship/graduation.png'
@@ -37,7 +36,7 @@ export default function Scholarships() {
     //   console.log(value);
     // }
     // 
-    fetch('https://fierce-woodland-01411.herokuapp.com/api/scholarship', {
+    fetch('https://api.unive.com.bd/api/scholarship', {
       method: 'POST',
       body: formData
     })

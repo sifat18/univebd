@@ -132,8 +132,8 @@ const resetPass=(email)=>{
     useEffect(() => {
         setisLoading(true)
         console.log('start');
-        // fierce-woodland-01411.herokuapp.com
-        fetch(`https://fierce-woodland-01411.herokuapp.com/api/user/${user.email}`)
+        // api.unive.com.bd
+        fetch(`https://api.unive.com.bd/api/user/${user.email}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -162,7 +162,7 @@ const resetPass=(email)=>{
     const saveUser = (email, displayName, method) => {
         setisLoading(true)
         const userData = { email, displayName };
-        fetch('https://fierce-woodland-01411.herokuapp.com/api/user', {
+        fetch('https://api.unive.com.bd/api/user', {
             method: method,
             headers: {
                 'content-type': 'application/json'
@@ -179,7 +179,7 @@ const resetPass=(email)=>{
         console.log('in')
         const userData = { email, status };
 
-        fetch('https://fierce-woodland-01411.herokuapp.com/api/active', {
+        fetch('https://api.unive.com.bd/api/active', {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'

@@ -1,7 +1,7 @@
 import axios from 'axios';
-import React, { useState } from 'react'
-import { Button, Col, Container, FloatingLabel, Form, Modal, Row } from 'react-bootstrap'
-import './style.css'
+import { useState } from 'react';
+import { Button, Col, Container, FloatingLabel, Form, Modal, Row } from 'react-bootstrap';
+import './style.css';
 export default function Demo() {
 //    modal display function and state
     const [show, setShow] = useState(false);
@@ -30,7 +30,7 @@ export default function Demo() {
     const handleSubmit = e => {
         e.preventDefault()
         console.log(data);
-        axios.post(`https://fierce-woodland-01411.herokuapp.com/api/demo`, data).then(res => res.data ? handleShowT() : '')
+        axios.post(`https://api.unive.com.bd/api/demo`, data).then(res => res.data ? handleShowT() : '')
 
     }
     return (

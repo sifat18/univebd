@@ -8,16 +8,15 @@ import {
 
 
 import { useEffect, useState } from 'react'
-import pic1 from '../../Components/images/icons8-multiply-16.png'
-import { Col, Container, Dropdown, Form, Row, Table } from 'react-bootstrap'
-import { HiOutlineMinus } from 'react-icons/hi'
+import { Col, Container, Dropdown, Row } from 'react-bootstrap'
 import { AiTwotoneStar } from 'react-icons/ai'
 import { BsPencilSquare } from 'react-icons/bs'
-import { ImCross } from 'react-icons/im'
 import { FcCheckmark } from 'react-icons/fc'
+import { HiOutlineMinus } from 'react-icons/hi'
+import { ImCross } from 'react-icons/im'
 import { IoChatboxEllipsesOutline } from 'react-icons/io5'
-import useAuth from '../../Components/Context/useAuth'
 import { NavLink } from 'react-router-dom'
+import useAuth from '../../Components/Context/useAuth'
 
 const Dashboard = () => {
   const { user,admin } = useAuth()
@@ -25,7 +24,7 @@ const Dashboard = () => {
   const [users, setUser] = useState([])
   const [totalUser, setTotalUser] = useState(0)
   useEffect(() => {
-    fetch(`https://fierce-woodland-01411.herokuapp.com/api/users`).then(res => res.json()).then(data => {
+    fetch(`https://api.unive.com.bd/api/users`).then(res => res.json()).then(data => {
       setUser(data)
       setTotalUser(data.length)
     })
@@ -63,7 +62,7 @@ const Dashboard = () => {
   <Col xs={12} md={6} className=''>
     <div className=" d-flex justify-content-between align-items-center ">
     <h6 className='ms-3'>About</h6>
-   <NavLink to={`/dashboard/profile/${user.displayName}/edit`}> <BsPencilSquare className=' d-block my-2 fs-3 border py-1  '/></NavLink>
+   <NavLink to={`/dashboard/profile/${user.email}/edit`}> <BsPencilSquare className=' d-block my-2 fs-3 border py-1  '/></NavLink>
     </div>
     <div className='text-center mx-5 mt-5 mb-5 py-4 borderDotted text-secondary d-flex justify-content-center align-items-center'>
     <div className=''>Tell others about yourself</div>

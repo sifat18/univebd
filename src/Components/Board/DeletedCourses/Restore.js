@@ -1,21 +1,20 @@
 import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Button, Card, Col, Container, Row } from 'react-bootstrap'
-import { NavLink } from 'react-router-dom'
 export default function Restore() {
 // course data state variable
     const [course, setcourse] = useState([])
 // loading deleted courses from db 
     useEffect(() => {
-        fetch(`https://fierce-woodland-01411.herokuapp.com/api/deletedcourses`).then(res => res.json()).then(data => setcourse(data)
+        fetch(`https://api.unive.com.bd/api/deletedcourses`).then(res => res.json()).then(data => setcourse(data)
         )
     }, [])
     // function to restore
     const handleRestore=(courseID)=>{
         const {_id,...rest}=courseID
-        axios.post(`https://fierce-woodland-01411.herokuapp.com/api/courses`, rest).then(res => {
+        axios.post(`https://api.unive.com.bd/api/courses`, rest).then(res => {
         if(res.data){
-            axios.delete(`https://fierce-woodland-01411.herokuapp.com/api/deletedcourses/${rest.coursename}`).then(res=>res.data.acknowledged? window.location.reload(true):console.log('error at delete'))
+            axios.delete(`https://api.unive.com.bd/api/deletedcourses/${rest.coursename}`).then(res=>res.data.acknowledged? window.location.reload(true):console.log('error at delete'))
         }}
         )
     }
@@ -23,7 +22,7 @@ export default function Restore() {
     const deleteCourse = (id) => {
         const {_id,...rest}=id
         console.log(rest)
-        axios.delete(`https://fierce-woodland-01411.herokuapp.com/api/deletedcourses/${id.coursename}`).then(res => {
+        axios.delete(`https://api.unive.com.bd/api/deletedcourses/${id.coursename}`).then(res => {
             if (res.data.acknowledged) {
                window.location.reload(true)
             }

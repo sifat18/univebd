@@ -22,7 +22,7 @@ export default function JobEdit() {
   const { id } = useParams()
 //   loading job post from db
   useEffect(() => {
-      fetch(`https://fierce-woodland-01411.herokuapp.com/api/jobpost/${id}`).then(res => res.json()).then(data => {
+      fetch(`https://api.unive.com.bd/api/jobpost/${id}`).then(res => res.json()).then(data => {
         setData(data)
         setStartDate(new Date(data.startDate))
         setEndDate(new Date(data.endDate))
@@ -80,7 +80,7 @@ export default function JobEdit() {
        data.endDate=moment(endDate).format('L') 
        data.imgLink=imgLink || data?.imgLink
        console.log(imgLink);
-       axios.put(`https://fierce-woodland-01411.herokuapp.com/api/jobpost/edit/${id}`, data).then(res => res.data ? handleShowT() : '')
+       axios.put(`https://api.unive.com.bd/api/jobpost/edit/${id}`, data).then(res => res.data ? handleShowT() : '')
 
    }   
 //    fucntion to add skill

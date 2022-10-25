@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react';
 import { Accordion, Alert, Button, Card, Col, Container, Modal, Row } from 'react-bootstrap';
-import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
-import Popover from 'react-bootstrap/Popover';
 import { BsTropicalStorm } from "react-icons/bs";
 import { MdOutlinePlayLesson, MdOutlineQuiz, MdOutlineSlowMotionVideo, MdQuiz } from "react-icons/md";
 import { RiVideoAddLine } from "react-icons/ri";
@@ -11,11 +9,11 @@ import Read from '../Common/Read';
 import axios from 'axios';
 import { MdPersonPin } from "react-icons/md";
 import Companies from '../Common/Companies';
+import LoginModal from '../Common/LoginModal';
 import useAuth from '../Context/useAuth';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import './over.css';
-import LoginModal from '../Common/LoginModal';
 
 export default function Overview() {
     const navigate = useNavigate()
@@ -38,9 +36,9 @@ export default function Overview() {
     const [courses, setcourses] = useState({})
     const { courseID } = useParams()
     // single data load based on id
-    // https://fierce-woodland-01411.herokuapp.com
+    // https://api.unive.com.bd
     useEffect(() => {
-        fetch(`https://fierce-woodland-01411.herokuapp.com/api/course/${courseID}`).then(res => res.json()).then(data => setcourses(data))
+        fetch(`https://api.unive.com.bd/api/course/${courseID}`).then(res => res.json()).then(data => setcourses(data))
     }, [courseID])
     // const [arr, setArr] = useState(true)
     // const contentShow = () => {
@@ -53,7 +51,7 @@ export default function Overview() {
         const data = { email: user.email }
         data.course = courses;
         // data.orderStatus = 'Pending';
-        axios.post('https://fierce-woodland-01411.herokuapp.com/api/order', data).then(res => res.data.insertedId ? handleShow() : handleShowF())
+        axios.post('https://api.unive.com.bd/api/order', data).then(res => res.data.insertedId ? handleShow() : handleShowF())
 
     }
     return (

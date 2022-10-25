@@ -27,7 +27,7 @@ export default function AppliedCandidates() {
     const handleShowT = () => setShowT(true)
     //  laoding data based on job poster email
     useEffect(() => {
-        fetch(`https://fierce-woodland-01411.herokuapp.com/api/employer_posted/${user.email}`).then(res=>res.json()).then(data=>setJobs(data))
+        fetch(`https://api.unive.com.bd/api/employer_posted/${user.email}`).then(res=>res.json()).then(data=>setJobs(data))
     }, [user])
     let content=''
     // console.log('asd',jobs)
@@ -49,7 +49,7 @@ export default function AppliedCandidates() {
       let status
   
           status=event.target.value
-          axios.patch(`https://fierce-woodland-01411.herokuapp.com/api/jobApply/edit/${id}`,{status}).then(res => res.data ? handleShow() : '')
+          axios.patch(`https://api.unive.com.bd/api/jobApply/edit/${id}`,{status}).then(res => res.data ? handleShow() : '')
       }
   return (
     <>

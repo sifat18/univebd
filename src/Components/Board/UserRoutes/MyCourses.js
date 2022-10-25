@@ -10,7 +10,7 @@ export default function MyCourses() {
     const [course, setcourse] = useState([])
 //    data load from db
     useEffect(() => {
-        fetch(`https://fierce-woodland-01411.herokuapp.com/api/order/${user.email}`).then(res => res.json()).then(data => setcourse(data)
+        fetch(`https://api.unive.com.bd/api/order/${user.email}`).then(res => res.json()).then(data => setcourse(data)
         )
     }, [user.email])
 

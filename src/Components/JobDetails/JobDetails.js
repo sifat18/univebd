@@ -60,11 +60,11 @@ const handleClose = (flag) => {
     // ---
     const { id } = useParams()
     useEffect(() => {
-        fetch(`https://fierce-woodland-01411.herokuapp.com/api/jobpost/${id}`).then(res => res.json()).then(data => {
+        fetch(`https://api.unive.com.bd/api/jobpost/${id}`).then(res => res.json()).then(data => {
             setPost(data)
 
         })
-        fetch(`https://fierce-woodland-01411.herokuapp.com/api/jobApply/${user.email}`).then(res => res.json()).then(data => {
+        fetch(`https://api.unive.com.bd/api/jobApply/${user.email}`).then(res => res.json()).then(data => {
             setMyjobs(data)
         })
     }, [id,user.email])
@@ -87,8 +87,8 @@ const handleClose = (flag) => {
         // data.orderStatus = 'Pending';
     //    for (var value of formData.values()) {
     //       console.log(value);}
-        // axios.post('https://fierce-woodland-01411.herokuapp.com/api/jobApply', data).then(res => res.data.insertedId ? handleShow() : handleShowF())
-        fetch('https://fierce-woodland-01411.herokuapp.com/api/jobApply', {
+        // axios.post('https://api.unive.com.bd/api/jobApply', data).then(res => res.data.insertedId ? handleShow() : handleShowF())
+        fetch('https://api.unive.com.bd/api/jobApply', {
             method: 'POST',
             body: formData
         })

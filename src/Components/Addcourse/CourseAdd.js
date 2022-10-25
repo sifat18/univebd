@@ -55,9 +55,9 @@ export default function CourseAdd() {
         Finalcourse.imageLink=imgLink
         Finalcourse.Module = [...module]
         setCourse(Finalcourse)
-        // https://fierce-woodland-01411.herokuapp.com
+        // https://api.unive.com.bd
         // console.log(Finalcourse)
-        axios.post(`https://fierce-woodland-01411.herokuapp.com/api/courses`, Finalcourse).then(res => res.data ? handleShow() : '')
+        axios.post(`https://api.unive.com.bd/api/courses`, Finalcourse).then(res => res.data ? handleShow() : '')
 
     }
     const [course, setCourse] = useState({});
